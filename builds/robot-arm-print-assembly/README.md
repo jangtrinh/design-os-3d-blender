@@ -1,5 +1,7 @@
 # Arm — print plates and step-by-step assembly
 
+![38 fit-prototype parts on five print plates](../../docs/media/robot-arm-print-plates.png)
+
 **38 separate fit-prototype parts on 5 plates: 32 PETG + 6 TPU.** Geometry comes from the latest live Arm task revision, not the older baseline STL package. Three optional tool-library pieces are included.
 
 **Not released for a 250 g loaded run or manufacture.** These files support slicing and fit trials. Current wrist torque margin, thin/trimmed sections, actuator adapters, retentions and physical assembly/tool access remain unresolved. Closed meshes and the assembly movie do not establish those properties.

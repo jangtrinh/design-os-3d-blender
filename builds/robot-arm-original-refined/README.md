@@ -1,5 +1,7 @@
 # Arm — refinement of the original assembly film
 
+![Assembled robot arm, Cycles render at the final frame](../../docs/media/robot-arm-hero-cycles.png)
+
 Based on the user-selected `../robot-arm-print-assembly/video/arm-step-by-step.mp4`. Original production files remain untouched. This candidate preserves the original studio, materials, camera direction, assembly station and final hero direction; the last shot is widened8% to retain fingertip clearance.
 
 Camera remains stationary during every installation, subassembly seating, module transfer and wiring operation. Twelve explicit 1.5-second eased transitions connect the held shots. A new module's receiving floor arrives in the wide shot before the camera approaches it. The reviewer's 93 groups become 109 timed assembly/wiring events where mixed carrier/bearing, adapter/cheek and cover/fastener steps need separate arrival. No captions, subtitles or audio.
