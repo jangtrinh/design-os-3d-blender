@@ -20,7 +20,7 @@
 
 <p align="center"><b>Spec → build → verify → gate.</b> An agent operating system for Blender that ships parts you can print, not pictures you can post.</p>
 
-**Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [How this was built](#-how-this-was-built) · [Notes](#-notes) · [License](#-license)
+**Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [Notes](#-notes) · [License](#-license)
 
 
 An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
@@ -116,16 +116,11 @@ Contract → Plan (scene graph) → Code (pass files ≤ ~80 lines) → Critic �
 
 Status is deliberately separated per domain: **media accepted · motion checked at sampled poses · fit prototypes exported · manufacture BLOCKED** (wrist torque margin, retention hardware, thermal duty and loaded trials remain open — see the build READMEs). The frame sequences and draft renders (several GB) are not shipped.
 
-## 🛠️ How this was built
-
-The workflow was audited on 2026-09-05/06 by four independent read-only auditors, a web researcher, and the Codex agent that built the arm; findings and the resulting implementation program are in `plans/260905-2356-blender-workflow-audit/`. The single durable lesson: prose rules did not bind; only checks with a failing exit held, so every rule that could become code became code with a negative test, and the rest is labelled `MANUAL`.
-
 ## 📝 Notes
 
-- `AGENTS.md`, `.project-agent.md` and the core skill are written in Vietnamese with English identifiers; the knowledge base and code are English.
-- `<ROOT>` in docs means the absolute path of this repository on your machine.
-- `.agents/skills/img2threejs` is a vendored copy of [img2threejs](https://github.com/img2threejs/img2threejs) (Apache-2.0, license included); only its portable review concepts are routed by the catalog.
-- `tests/blender/` are acceptance tests for drone builds that are not included in this repository.
+- `AGENTS.md`, `.project-agent.md` and the core skill are in Vietnamese (English identifiers); knowledge base and code are English. `<ROOT>` = absolute path of this repo on your machine.
+- `.agents/skills/img2threejs` is a vendored copy of [img2threejs](https://github.com/img2threejs/img2threejs) (Apache-2.0, license included).
+- `tests/blender/` target drone builds that are not shipped here.
 
 ## 📄 License
 
