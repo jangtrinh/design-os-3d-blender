@@ -80,6 +80,13 @@ alongside it. Follow it rather than guessing.
 | `modeling-topology` | Quad-flow, poles, normals/sharpness attributes, transform application, and headless mesh construction/diagnostics via bmesh and `from_pydata`. |
 | `modifiers` | The modifier stack as an ordered evaluation graph — order rules, data-API configuration, headless application via depsgraph, boolean solver selection. |
 | `uv-unwrapping` | Seams, unwrap methods, packing margin math, texel density, UDIMs, multi-UV layouts, and the headless operator-context patterns UV work actually requires. |
+| character/creature anatomy, facial loops, blendshapes, hair curves | `15-character-creature/character-creature-modeling.md` |
+
+### 15 — Character & Creature
+
+| File | Description |
+|---|---|
+| `character-creature-modeling` | Humanoid & creature proportion canons, animation edge flow, the 52 ARKit blendshape targets, Blender 5.2 Hair Curves (`bpy.data.hair_curves` + `add_curves`), 2-bone IK rigs with twist bones, harmonic walk cycles, `RANDOM_WALK_SKIN` skin SSS and melanin hair optics. bpy names runtime-verified 2026-09-06; anatomy figures are literature, not standards. |
 
 ### 20 — Shading
 
@@ -188,6 +195,7 @@ Engineering research synthesis with equations, diagrams and citations; claim-spe
 8. **[`research/blender-advanced-materials-shading/`](../research/blender-advanced-materials-shading)** (5 reports: OpenPBR Principled BSDF microfacets, Random Walk SSS physics, Airy thin-film wave interference, procedural fractal fBm imperfections, Chiang-Marschner hair & velvet sheen).
 9. **[`research/blender-geometry-nodes-procedural/`](../research/blender-geometry-nodes-procedural)** (5 reports: Fields architecture & context evaluation, procedural hard-surface CAD & booleans, Simulation Zones & physics ODEs, Repeat Zones & recursion/Laplacian relaxation, OpenVDB Volume Grids & SDF smooth booleans).
 10. **[`research/industrial-wiring-harness-packaging/`](../research/industrial-wiring-harness-packaging)** (5 reports: Industrial bus physical layers & pinouts, connector dimensional standards & panel cutouts, cable mechanics & drag chains, IP sealing & thermal breathing vents, EMC grounding & harness manufacturing).
+11. **[`research/character-creature-anatomy-modeling/`](../research/character-creature-anatomy-modeling)** (6 reports: Human proportions & craniometrics, creature comparative anatomy & locomotion, animation topology & facial loops, FACS 52 ARKit blendshapes & CSK drivers, Blender 5.2 Hair Curves & soft-tissue physics, skeletal kinematics & biped locomotion & skin SSS & melanin optics).
 
 ---
 

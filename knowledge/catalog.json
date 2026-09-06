@@ -1,14 +1,14 @@
 {
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
-    "asset-example": 23,
-    "execution-source": 82,
+    "asset-example": 22,
+    "execution-source": 90,
     "imported-reference": 47,
-    "knowledge": 31,
-    "research-synthesis": 66,
+    "knowledge": 32,
+    "research-synthesis": 72,
     "workflow": 17
   },
-  "dependency_edges": 92,
+  "dependency_edges": 96,
   "foundations": [
     "knowledge/00-foundations/blender-version-matrix.md",
     "knowledge/00-foundations/bpy-scripting-core.md",
@@ -178,7 +178,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/recipes.md",
       "related": [],
-      "sha256": "0d6f342a291d86c558a140730ac62c53811dec551dd836771ade753691ff88c5",
+      "sha256": "2f72fadf9c23526373cc239bef8eacfb91d0c4b89c994edb2f2fd3f357a40848",
       "tags": [],
       "title": "Blender operational recipes",
       "use": "read"
@@ -3431,54 +3431,10 @@
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Example only; never run in user scene without separate candidate adaptation.",
-        "effects": "Clears all objects/collections and overwrites fixed blend.",
-        "reviewed_sha256": "db4adea049b37d50001c8becf3ddca136f4c88ab1d1a8e17ccb8eaa193be0ccf",
-        "runtime": "bpy"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
-      "kind": "asset-example",
-      "lines": 109,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/fpv-drone-native/build-native-drone.py",
-      "related": [],
-      "sha256": "db4adea049b37d50001c8becf3ddca136f4c88ab1d1a8e17ccb8eaa193be0ccf",
-      "tags": [],
-      "title": "build-native-drone.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "c95ff9d8c2ddcdae1af09f4ee7b38e61fcb01cb6ab28c51446ebfe30a2102516",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
-      "kind": "asset-example",
-      "lines": 169,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/fpv-drone-native/drone-mesh-library.py",
-      "related": [],
-      "sha256": "c95ff9d8c2ddcdae1af09f4ee7b38e61fcb01cb6ab28c51446ebfe30a2102516",
-      "tags": [],
-      "title": "drone-mesh-library.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "Read only; linked commands may mutate asset-specific outputs.",
-        "reviewed_sha256": "cd3bcb82104e34356fe24f004fb6e978bcd67531eb11e5dc70ef099fafd57fca",
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Presentation refinement only: camera/timing decisions and their evidence. Retention, adapters, insertion clearance, wiring and load/thermal qualification remain unresolved.",
+        "effects": "Read only; lists the delivered film, the scene file and the evidence reports.",
+        "reviewed_sha256": "a78ac89a4b9f59320d60ffab5ef94cf77a37b688ab69287cc6c103c16e2b07a9",
         "runtime": "documentation"
       },
       "annotation_revision": "matched",
@@ -3486,260 +3442,71 @@
       "headings": [
         {
           "line": 1,
-          "text": "Arm V2 — large-range motion study"
-        },
-        {
-          "line": 5,
-          "text": "Watch"
-        },
-        {
-          "line": 20,
-          "text": "Geometry differences from the engineering baseline"
-        },
-        {
-          "line": 30,
-          "text": "Verification scope"
-        },
-        {
-          "line": 37,
-          "text": "Reproduce"
+          "text": "Arm — refinement of the original assembly film"
         }
       ],
-      "kind": "asset-example",
-      "lines": 41,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/FLEXIBILITY.md",
-      "related": [],
-      "sha256": "cd3bcb82104e34356fe24f004fb6e978bcd67531eb11e5dc70ef099fafd57fca",
-      "tags": [],
-      "title": "Arm V2 — large-range motion study",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "Read only; linked commands may mutate asset-specific outputs.",
-        "reviewed_sha256": "688807bea2dab4327d6d8303c2bda155275a4fc552a5cf9caf3cc95dd4063a9e",
-        "runtime": "documentation"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [
-        {
-          "line": 1,
-          "text": "Arm V2 — full rebuild, preproduction"
-        },
-        {
-          "line": 7,
-          "text": "Open and inspect"
-        },
-        {
-          "line": 17,
-          "text": "Mechanical design represented"
-        },
-        {
-          "line": 25,
-          "text": "Hand and interchangeable heads"
-        },
-        {
-          "line": 33,
-          "text": "Rear electronics compartment"
-        },
-        {
-          "line": 37,
-          "text": "Digital evidence"
-        },
-        {
-          "line": 52,
-          "text": "Release gates"
-        },
-        {
-          "line": 60,
-          "text": "Reproduce"
-        }
-      ],
-      "kind": "asset-example",
-      "lines": 66,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/README.md",
-      "related": [],
-      "sha256": "688807bea2dab4327d6d8303c2bda155275a4fc552a5cf9caf3cc95dd4063a9e",
-      "tags": [],
-      "title": "Arm V2 — full rebuild, preproduction",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "Read only; linked commands may mutate asset-specific outputs.",
-        "reviewed_sha256": "ff899344b7209c43eff3a9aca0237bf196f70f42d00188c0f99bc805163f6f57",
-        "runtime": "documentation"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [
-        {
-          "line": 1,
-          "text": "Arm V2 — natural work sequence"
-        },
-        {
-          "line": 5,
-          "text": "What the robot does"
-        },
-        {
-          "line": 15,
-          "text": "Grasp and scene geometry"
-        },
-        {
-          "line": 23,
-          "text": "Verification and limits"
-        },
-        {
-          "line": 31,
-          "text": "Reproduce"
-        }
-      ],
-      "kind": "asset-example",
-      "lines": 35,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/TASK-DEMO.md",
-      "related": [],
-      "sha256": "ff899344b7209c43eff3a9aca0237bf196f70f42d00188c0f99bc805163f6f57",
-      "tags": [],
-      "title": "Arm V2 — natural work sequence",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "955c5cdb8b5ebed9bc489c5d5bd135c11062560809efd5dfdecfa0a466db5321",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
       "kind": "asset-example",
       "lines": 15,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/build-flexibility.py",
+      "path": "builds/robot-arm-original-refined/README.md",
       "related": [],
-      "sha256": "955c5cdb8b5ebed9bc489c5d5bd135c11062560809efd5dfdecfa0a466db5321",
+      "sha256": "a78ac89a4b9f59320d60ffab5ef94cf77a37b688ab69287cc6c103c16e2b07a9",
       "tags": [],
-      "title": "build-flexibility.py",
+      "title": "Arm — refinement of the original assembly film",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "3793c3e52132eab343590fda664d322329c84e64ffc96fe8ddb51f4235afbd18",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [
-        {
-          "line": 7,
-          "text": "A real reserve is attached to each link, in addition to modeled hardware mass."
-        },
-        {
-          "line": 14,
-          "text": "Fixed downstream shapes in 75 configurations; bound rotates gravity through all directions."
-        }
-      ],
-      "kind": "asset-example",
-      "lines": 49,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/check-operating-envelope.py",
-      "related": [],
-      "sha256": "3793c3e52132eab343590fda664d322329c84e64ffc96fe8ddb51f4235afbd18",
-      "tags": [],
-      "title": "A real reserve is attached to each link, in addition to modeled hardware mass.",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "3961aff19365196dcfabf981a99bfb50492f742a56a37afde435ffedf0c61101",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
-      "kind": "asset-example",
-      "lines": 19,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/check-stl-files.py",
-      "related": [],
-      "sha256": "3961aff19365196dcfabf981a99bfb50492f742a56a37afde435ffedf0c61101",
-      "tags": [],
-      "title": "check-stl-files.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "May print AGENT_OK with REQUIRES_REFINEMENT; inspect result and propagate failure explicitly.",
-        "effects": "Writes report.",
-        "reviewed_sha256": "19fe4b68e5f9af247750f4ac34d56c38e48fb37435d9d87f076ca4aa72ceb307",
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "The camera is sampled at start/mid/end of each event only; matrix agreement and framing are not insertion, retention or physical evidence.",
+        "effects": "Read-only screen of final transforms, held camera poses and on-screen arrival; writes reports/scene-check.json.",
+        "reviewed_sha256": "b023698fd6377698c20d2d41ee9724308af728756e9fe1b101de8a482ecbb1af",
         "runtime": "bpy"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "asset-example",
-      "lines": 25,
+      "lines": 41,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/check-task-path.py",
+      "path": "builds/robot-arm-original-refined/scripts/check-refined-scene.py",
       "related": [],
-      "sha256": "19fe4b68e5f9af247750f4ac34d56c38e48fb37435d9d87f076ca4aa72ceb307",
+      "sha256": "b023698fd6377698c20d2d41ee9724308af728756e9fe1b101de8a482ecbb1af",
       "tags": [],
-      "title": "check-task-path.py",
+      "title": "check-refined-scene.py",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Copy data before geometry edits; preserve original source.",
-        "effects": "Copies objects with shared mesh data; edits animation/scene.",
-        "reviewed_sha256": "dafc2b739207d15ab07c96397336c1e5e05c2cbc19d6fc6b9fe9297748201eb9",
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Sampled surface-intersection screen at chosen frames plus projected camera boxes: not continuous collision, solid containment or force.",
+        "effects": "Builds BVH trees from evaluated geometry at two frames, writes reports/overlap-before.json and asserts no waiting-fork/servo intersection.",
+        "reviewed_sha256": "7a6806f685935680bfdfa79fb4e158fb0a521a1420b2ecaa16ccd8af426ff0e4",
         "runtime": "bpy"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "asset-example",
-      "lines": 38,
+      "lines": 43,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/create-task-scene.py",
+      "path": "builds/robot-arm-original-refined/scripts/diagnose-subassembly-overlap.py",
       "related": [],
-      "sha256": "dafc2b739207d15ab07c96397336c1e5e05c2cbc19d6fc6b9fe9297748201eb9",
+      "sha256": "7a6806f685935680bfdfa79fb4e158fb0a521a1420b2ecaa16ccd8af426ff0e4",
       "tags": [],
-      "title": "create-task-scene.py",
+      "title": "diagnose-subassembly-overlap.py",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Fit-prototype only; older exported geometry differs from later clearance refinements.",
-        "effects": "Repairs original meshes and exports mm STLs to fixed paths.",
-        "reviewed_sha256": "968c8015e61a1c067e87548e2deca56b620ded9051c475e73af6bf9620d016fd",
-        "runtime": "bpy"
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Hardcoded /opt/homebrew ffmpeg/ffprobe paths and this build frame identity; the script itself records visual_review as PENDING, so an encode/decode pass is never the human review.",
+        "effects": "Verifies every rendered frame, encodes video/arm-step-by-step-refined.mp4, decodes sample frames, writes reports/media-check.json.",
+        "reviewed_sha256": "d7294274a154bbdf173bac8adaf31182db5ddf5382d56d342d161c208c3a1d0f",
+        "runtime": "Python + ffmpeg/PIL"
       },
       "annotation_revision": "matched",
       "description": "",
@@ -3748,175 +3515,416 @@
       "lines": 47,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/export-prototype-parts.py",
+      "path": "builds/robot-arm-original-refined/scripts/finalize-refined-video.py",
       "related": [],
-      "sha256": "968c8015e61a1c067e87548e2deca56b620ded9051c475e73af6bf9620d016fd",
+      "sha256": "d7294274a154bbdf173bac8adaf31182db5ddf5382d56d342d161c208c3a1d0f",
       "tags": [],
-      "title": "export-prototype-parts.py",
+      "title": "finalize-refined-video.py",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "742c2ea53f8dd0e0b5631a86513d7a94cd7ef09ab10f9a77ea0d4c2024ac4b32",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
-      "kind": "asset-example",
-      "lines": 50,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/final-delivery-audit.py",
-      "related": [],
-      "sha256": "742c2ea53f8dd0e0b5631a86513d7a94cd7ef09ab10f9a77ea0d4c2024ac4b32",
-      "tags": [],
-      "title": "final-delivery-audit.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Not continuous collision, deformed/evaluated surface or solid-containment proof.",
-        "effects": "Caches raw rigid mesh triangles for sampled contact screen.",
-        "reviewed_sha256": "c5cba8171e56e64b356b9b5a0784faf9ed065d48b0bc7af32f268b14421e5109",
-        "runtime": "bpy"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
-      "kind": "asset-example",
-      "lines": 46,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/flexibility-contact-lib.py",
-      "related": [],
-      "sha256": "c5cba8171e56e64b356b9b5a0784faf9ed065d48b0bc7af32f268b14421e5109",
-      "tags": [],
-      "title": "flexibility-contact-lib.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "fffc234679d775834caaa7dfbcecec04ecdb5e200d73b9241b491fca340a7c1e",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [
-        {
-          "line": 5,
-          "text": "Source timing is compressed from60 to40seconds while retaining all endpoint holds."
-        }
-      ],
-      "kind": "asset-example",
-      "lines": 34,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/flexibility-motion-plan.py",
-      "related": [],
-      "sha256": "fffc234679d775834caaa7dfbcecec04ecdb5e200d73b9241b491fca340a7c1e",
-      "tags": [],
-      "title": "Source timing is compressed from60 to40seconds while retaining all endpoint holds.",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "f2ba75ccb8c1defb8171ba6236e7a76eb7e453618f1c88e9bdafddf6a5342224",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
-      },
-      "annotation_revision": "matched",
-      "description": "",
-      "headings": [],
-      "kind": "asset-example",
-      "lines": 18,
-      "loads_with": [],
-      "name": null,
-      "path": "builds/robot-arm-v2-engineered/render-task-demo.py",
-      "related": [],
-      "sha256": "f2ba75ccb8c1defb8171ba6236e7a76eb7e453618f1c88e9bdafddf6a5342224",
-      "tags": [],
-      "title": "render-task-demo.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "cb5d73ce205bb03494e9ee3826f30761bc7eacce47aa460ed30fff71ef2eb3f8",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Motion plan computed as data before any scene edit; the ordering and camera policy are authoring choices for this asset, not physical constraints.",
+        "effects": "Reads the reviewed group/unit reports and rewrites reports/timing.json and reports/units.json.",
+        "reviewed_sha256": "aca90dee6c9af7656d46ea8b67bfaa21659f4ea8eb7441aa27979a674cade881",
+        "runtime": "Python (no bpy)"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [
         {
           "line": 6,
-          "text": "Grip the thin edge of a20x28x8mm workpiece at the upper part of the72mm pad."
+          "text": "Seat the preloaded fork before either closed carrier can obstruct its path."
         }
       ],
       "kind": "asset-example",
-      "lines": 51,
+      "lines": 86,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/task-motion-plan.py",
+      "path": "builds/robot-arm-original-refined/scripts/plan-grouped-timing.py",
       "related": [],
-      "sha256": "cb5d73ce205bb03494e9ee3826f30761bc7eacce47aa460ed30fff71ef2eb3f8",
+      "sha256": "aca90dee6c9af7656d46ea8b67bfaa21659f4ea8eb7441aa27979a674cade881",
       "tags": [],
-      "title": "Grip the thin edge of a20x28x8mm workpiece at the upper part of the72mm pad.",
+      "title": "Seat the preloaded fork before either closed carrier can obstruct its path.",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "1c9c695ed767859f7cfcaa3ecbc2c39245aee9283448b4687e1f4adbf9509e2f",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Delivery record for this one build (38 fit-prototype parts, five plates, assembly film). It states explicitly that nothing here is released for a 250 g loaded run or for manufacture.",
+        "effects": "Read only; it describes delivered build outputs, not commands to run.",
+        "reviewed_sha256": "c9740d502671634374f36eaebffcbcfac2cfeab04c221f814594b287bae3d0b2",
+        "runtime": "documentation"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Arm — print plates and step-by-step assembly"
+        },
+        {
+          "line": 9,
+          "text": "Open"
+        },
+        {
+          "line": 17,
+          "text": "Plate setup"
+        },
+        {
+          "line": 35,
+          "text": "What the movie assembles"
+        },
+        {
+          "line": 45,
+          "text": "Evidence"
+        }
+      ],
+      "kind": "asset-example",
+      "lines": 55,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/robot-arm-print-assembly/README.md",
+      "related": [],
+      "sha256": "c9740d502671634374f36eaebffcbcfac2cfeab04c221f814594b287bae3d0b2",
+      "tags": [],
+      "title": "Arm — print plates and step-by-step assembly",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Plate size, nozzle, layer height and materials are declared assumptions, not verified machine settings; the physical load gate stays blocked.",
+        "effects": "Read only; records the build contract (outcome, ownership, assumptions, passes, acceptance).",
+        "reviewed_sha256": "14bebe7d7c9c44d2efd60ee186baced37c7fe8b3a2969995c107c28cf448f7d5",
+        "runtime": "documentation"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Arm print breakdown and sequential assembly"
+        }
+      ],
+      "kind": "asset-example",
+      "lines": 15,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/robot-arm-print-assembly/plan.md",
+      "related": [],
+      "sha256": "14bebe7d7c9c44d2efd60ee186baced37c7fe8b3a2969995c107c28cf448f7d5",
+      "tags": [],
+      "title": "Arm print breakdown and sequential assembly",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Object copies share the source mesh data; copy the mesh before editing geometry. Names, step classes and the 402-object assert are specific to this build.",
+        "effects": "Copies frozen-source objects into a new A3-Step-assembly scene, keys arrival per step, writes reports/assembly-timeline.json and arm-step-assembly.blend.",
+        "reviewed_sha256": "3659ea2a7f943c1ba94e687cc766d435120d24cf0f6528de25c310fcdb15452d",
+        "runtime": "bpy"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "asset-example",
-      "lines": 39,
+      "lines": 74,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/verify-task-presentation.py",
+      "path": "builds/robot-arm-print-assembly/scripts/build-assembly.py",
       "related": [],
-      "sha256": "1c9c695ed767859f7cfcaa3ecbc2c39245aee9283448b4687e1f4adbf9509e2f",
+      "sha256": "3659ea2a7f943c1ba94e687cc766d435120d24cf0f6528de25c310fcdb15452d",
       "tags": [],
-      "title": "verify-task-presentation.py",
+      "title": "build-assembly.py",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "static scout; not runtime certification",
-        "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness.",
-        "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
-        "reviewed_sha256": "ec3a1e21e2da5722adee002434f97bbd9fd9dfb4603630deb195bf3246007fe1",
-        "runtime": "bpy or asset-specific Python; inspect entrypoint"
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Closed edges, positive volume, no collapsed triangle and plate bounds are read back from the actual files rather than the source meshes; no printer profile, supports or G-code, and no fit or load release.",
+        "effects": "Re-reads the exported STL bytes, verifies the manifest hashes, writes one 3MF and one STL package per plate plus reports/export-check.json.",
+        "reviewed_sha256": "d5b760146c3f952e29f05c7cb0acd58bdf98af5c2d3b092fe612b6ca0bb37f15",
+        "runtime": "Python (no bpy)"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "asset-example",
-      "lines": 25,
+      "lines": 57,
       "loads_with": [],
       "name": null,
-      "path": "builds/robot-arm-v2-engineered/verify-task-video.py",
+      "path": "builds/robot-arm-print-assembly/scripts/export-plate-packages.py",
       "related": [],
-      "sha256": "ec3a1e21e2da5722adee002434f97bbd9fd9dfb4603630deb195bf3246007fe1",
+      "sha256": "d5b760146c3f952e29f05c7cb0acd58bdf98af5c2d3b092fe612b6ca0bb37f15",
       "tags": [],
-      "title": "verify-task-video.py",
+      "title": "export-plate-packages.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Driven by ARM_SCENE/ARM_PREVIEW/ARM_DEVICE/ARM_THREADS with fixed output paths; its six-sample preview setting is this artifact choice, not a quality standard.",
+        "effects": "Renders preview stills or the whole animation of A3-Step-assembly into this build renders/video paths; switches Cycles to Metal GPU on request.",
+        "reviewed_sha256": "170ab8f1bb55684d799d2d264a1f7d33506a8a09a1cb530529dbc52a89626ce8",
+        "runtime": "bpy render"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "asset-example",
+      "lines": 21,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/robot-arm-print-assembly/scripts/render-media.py",
+      "related": [],
+      "sha256": "170ab8f1bb55684d799d2d264a1f7d33506a8a09a1cb530529dbc52a89626ce8",
+      "tags": [],
+      "title": "render-media.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "One stage of this asset pass chain: it continues the pass-01 scene and expects its hierarchy and parameter file. Not a generic builder.",
+        "effects": "Creates the shell, visor and front rim in the owned scene from pure lathe profiles and asserts wall thickness, bore radius, coaxiality and bbox.",
+        "reviewed_sha256": "c7dd7dca77bb048f7caa10e9808d9c763b0e782389bd739d117bac7c4e1f756a",
+        "runtime": "bpy"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 36,
+          "text": "the inner sphere reaches the bore radius only 0.9 mm under the flat rim (knife edge), so the"
+        },
+        {
+          "line": 37,
+          "text": "cavity is truncated by a flat ceiling one wall below the rim; the bore runs rim -> ceiling"
+        },
+        {
+          "line": 46,
+          "text": "Visor: thick hemisphere, equator lifted by the seal clearance; mesh in lid-pivot space"
+        },
+        {
+          "line": 62,
+          "text": "Front rim bezel: annulus seated on the sphere around the opening"
+        },
+        {
+          "line": 70,
+          "text": "--- measurements (evaluated, world) ---"
+        },
+        {
+          "line": 75,
+          "text": "visor equator centre must lie on the body axis"
+        }
+      ],
+      "kind": "asset-example",
+      "lines": 98,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/pass-02-shell-visor-rim-blockout.py",
+      "related": [],
+      "sha256": "c7dd7dca77bb048f7caa10e9808d9c763b0e782389bd739d117bac7c4e1f756a",
+      "tags": [],
+      "title": "the inner sphere reaches the bore radius only 0.9 mm under the flat rim (knife edge), so the",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "5-degree steps and every third visor vertex against an obstacle KD-tree: sampled digital geometry, declared in the file as not a continuous-collision proof.",
+        "effects": "Poses lid and rotor through a sampled sweep, restores the closed pose, writes reports/phase1-lid-sweep.json.",
+        "reviewed_sha256": "dd54fba4583ca01fbc05ade1afab08e2152052ab8da9179be8149848ebfae342",
+        "runtime": "bpy"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 58,
+          "text": "Sign test: the opening direction moves the visor apex away from the shell centre"
+        },
+        {
+          "line": 75,
+          "text": "Rotor poses: cushion + watch stay inside the cup bore / faceplate bore at every pose"
+        }
+      ],
+      "kind": "asset-example",
+      "lines": 100,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/pass-06-lid-sweep-and-rotor-poses.py",
+      "related": [],
+      "sha256": "dd54fba4583ca01fbc05ade1afab08e2152052ab8da9179be8149848ebfae342",
+      "tags": [],
+      "title": "Sign test: the opening direction moves the visor apex away from the shell centre",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Isolated re-verification of saved artifacts only; its own status block records manufacture as NOT_REQUESTED_NOT_VERIFIED and lists the exclusions.",
+        "effects": "Reopens the delivered blend, re-measures the gates from evaluated geometry, hashes scripts/parameters/renders and writes reports/acceptance.json.",
+        "reviewed_sha256": "a2c03652076d1c7f721065986e47e474933edc2f46c15eda46be23820aa53248",
+        "runtime": "bpy (separate headless process)"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "asset-example",
+      "lines": 102,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/pass-21-acceptance-isolated-check.py",
+      "related": [],
+      "sha256": "a2c03652076d1c7f721065986e47e474933edc2f46c15eda46be23820aa53248",
+      "tags": [],
+      "title": "pass-21-acceptance-isolated-check.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Asserts a background factory-startup process with no file loaded; never run it into a GUI session. The inventory comparison detects drift between build routes, it does not certify the geometry.",
+        "effects": "Executes passes 01-18 in the running process and writes reports/rebuild-isolated.json.",
+        "reviewed_sha256": "6437d849e1b776ae89346cbc83d62d0c1f0fffd6924c2a1192b9bb2f896d6487",
+        "runtime": "bpy (headless, factory startup)"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "asset-example",
+      "lines": 49,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/pass-22-rebuild-isolated.py",
+      "related": [],
+      "sha256": "6437d849e1b776ae89346cbc83d62d0c1f0fffd6924c2a1192b9bb2f896d6487",
+      "tags": [],
+      "title": "pass-22-rebuild-isolated.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Postconditions read the values back from fcurves and sampled frames; a keyed attachment is animation, not a physical hold. Object names and frame anchors are asset-specific.",
+        "effects": "Keys insert/lid/rotor/orbit motion in the live scene, saves watch-winder-capsule-anim.blend (GUI run only) and writes reports/animation-keys.json.",
+        "reviewed_sha256": "d711dae91ca8419a2ec9e0282e21238ffec96c13af72f835788222653043ed29",
+        "runtime": "bpy"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 33,
+          "text": "camera rig solved in the CLOSED hero pose so the orbit stays centred; frame must also hold the open lid"
+        },
+        {
+          "line": 37,
+          "text": "two solves: open-lid framing for the insert, closed framing (push-in) from the lid close onward"
+        },
+        {
+          "line": 80,
+          "text": "A: unit descends 70 mm along the rotor axis into the cup (eased)"
+        },
+        {
+          "line": 83,
+          "text": "lid: open through A, closes in B, stays closed"
+        },
+        {
+          "line": 87,
+          "text": "C: rotor one full turn (linear), then keeps turning slowly through the orbit"
+        },
+        {
+          "line": 91,
+          "text": "D: orbit 360° (linear)"
+        },
+        {
+          "line": 115,
+          "text": "--- sampled verification (evaluated at frames) ---"
+        }
+      ],
+      "kind": "asset-example",
+      "lines": 149,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/pass-24-animation-keys.py",
+      "related": [],
+      "sha256": "d711dae91ca8419a2ec9e0282e21238ffec96c13af72f835788222653043ed29",
+      "tags": [],
+      "title": "camera rig solved in the CLOSED hero pose so the orbit stays centred; frame must also hold the open lid",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "Asserts background mode so it never writes into the GUI session. Print orientations and expected heights are this asset design input; packing and numeric checks are not slicing, support or printability proof.",
+        "effects": "Builds a new WW_plates scene from the baked print blend, exports one millimetre STL per plate with sha256, re-imports one to prove the scale, renders plate previews, saves watch-winder-capsule-plates.blend and writes plates/manifest.json plus reports/print-plates.json.",
+        "reviewed_sha256": "cc60c2e8c62c32f91d9bfcecaa664e4ddf7af17f2bb7003de04bbe7ac322c95c",
+        "runtime": "bpy (headless only)"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 29,
+          "text": "---------------------------------------------------------------- 1. orient every instance"
+        },
+        {
+          "line": 52,
+          "text": "---------------------------------------------------------------- 2. scene + objects"
+        },
+        {
+          "line": 101,
+          "text": "---------------------------------------------------------------- 3. numeric verification"
+        },
+        {
+          "line": 122,
+          "text": "---------------------------------------------------------------- 4. STL export + round trip"
+        },
+        {
+          "line": 155,
+          "text": "---------------------------------------------------------------- 5. workbench previews"
+        },
+        {
+          "line": 183,
+          "text": "---------------------------------------------------------------- 6. save + manifests"
+        }
+      ],
+      "kind": "asset-example",
+      "lines": 205,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/pass-30-print-plates-layout.py",
+      "related": [],
+      "sha256": "cc60c2e8c62c32f91d9bfcecaa664e4ddf7af17f2bb7003de04bbe7ac322c95c",
+      "tags": [],
+      "title": "---------------------------------------------------------------- 1. orient every instance",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "static scout 2026-09-06: file read before describing it (public example re-point)",
+        "caution": "The caller owns units (spec values are millimetres) and winding: run orient_outward before using a result as a boolean operand. Poles are triangle fans.",
+        "effects": "Pure constructors returning (verts, faces) in metres for Mesh.from_pydata; no scene mutation.",
+        "reviewed_sha256": "d525c978e0f30615a91cc037f2828193267a54eabb8618a07dae3d673651825b",
+        "runtime": "Python (mathutils only, no bpy state)"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "asset-example",
+      "lines": 167,
+      "loads_with": [],
+      "name": null,
+      "path": "builds/watch-winder-capsule/scripts/ww_mesh.py",
+      "related": [],
+      "sha256": "d525c978e0f30615a91cc037f2828193267a54eabb8618a07dae3d673651825b",
+      "tags": [],
+      "title": "ww_mesh.py",
       "use": "inspect-adapt"
     },
     {
@@ -4035,7 +4043,7 @@
       "name": null,
       "path": "docs/blender-knowledge-workflows.md",
       "related": [],
-      "sha256": "568a0aabe87b38a9c6da2b9f7232cbce48cc95dc560760e9b6916c978be9929a",
+      "sha256": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
       "tags": [],
       "title": "Using Blender Knowledge in Real Work",
       "use": "read"
@@ -4086,7 +4094,7 @@
       "name": null,
       "path": "docs/blender-workflow-improvement-backlog.md",
       "related": [],
-      "sha256": "86b6ee934120adb11187d552ca6769995786d54b2a617c43d752917727fb0451",
+      "sha256": "c7a62322a57241c2ac751ae1cbd718c79fde4f274bed65a7b92a94b6e4638d6e",
       "tags": [],
       "title": "Blender workflow implementation backlog",
       "use": "read"
@@ -4133,7 +4141,7 @@
       "name": null,
       "path": "docs/system-architecture.md",
       "related": [],
-      "sha256": "6ea9850bf213061440a25803099d16b5aa12193714f0d23700c20d49f4cb153a",
+      "sha256": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
       "tags": [],
       "title": "Blender AI Orchestration Foundation",
       "use": "read"
@@ -5004,6 +5012,123 @@
         "headless"
       ],
       "title": "UV Unwrapping, Packing & Texel Density",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Character/creature onboarding audit 2026-09-06: frontmatter added, hair-curves API and SSS/hair citations corrected against a live Blender 5.2.0 LTS introspection run.",
+        "caution": "Anatomy/proportion tables and the SSS radius and scale values are artistic or literature figures, not standards - the ones the audit could not confirm are marked UNVERIFIED inline. The 52 ARKit targets are Apple's spec, not FACS AUs and not ISO/IEC 14496-2.",
+        "effects": "Read only; the snippets create data-blocks when adapted.",
+        "reviewed_sha256": "a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d",
+        "runtime": "documentation"
+      },
+      "annotation_revision": "matched",
+      "description": "Humanoid and creature proportion canons, animation edge-flow rules, the 52 ARKit blendshape target set, modern Hair Curves grooming, 2-bone IK rigs with twist bones, harmonic walk cycles, Random Walk Skin SSS and melanin hair optics — with the 5.2 socket and data-block names verified at runtime.",
+      "headings": [
+        {
+          "line": 12,
+          "text": "Character & Creature Modeling: Anatomy, Topology, FACS & Hair Systems"
+        },
+        {
+          "line": 24,
+          "text": "1. Mental Model"
+        },
+        {
+          "line": 38,
+          "text": "2. Decision First"
+        },
+        {
+          "line": 66,
+          "text": "3. Rules"
+        },
+        {
+          "line": 98,
+          "text": "4. bpy Patterns"
+        },
+        {
+          "line": 100,
+          "text": "4.1 Creating Modern Blender 5.2 Hair Curves via Data-API"
+        },
+        {
+          "line": 136,
+          "text": "4.2 Adding 52 ARKit Shape Keys Programmatically"
+        },
+        {
+          "line": 164,
+          "text": "5. Failure Modes"
+        },
+        {
+          "line": 177,
+          "text": "6. Parameter Defaults by Use Case"
+        },
+        {
+          "line": 189,
+          "text": "7. Verification Checklist"
+        },
+        {
+          "line": 210,
+          "text": "8. Skeletal Kinematics, Locomotion & Physically-Based Shading"
+        },
+        {
+          "line": 212,
+          "text": "8.1 2-Bone Analytical IK & Twist Bone Roll Distribution"
+        },
+        {
+          "line": 217,
+          "text": "8.2 4-Phase Harmonic Biped Walk Cycle"
+        },
+        {
+          "line": 224,
+          "text": "8.3 Physically-Based Skin SSS (`RANDOM_WALK_SKIN`)"
+        },
+        {
+          "line": 240,
+          "text": "8.4 Melanin Biochemical Hair Optics (`MELANIN` Parametrization)"
+        },
+        {
+          "line": 248,
+          "text": "9. Boilerplate Implementation Reference"
+        },
+        {
+          "line": 263,
+          "text": "10. Sources"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 277,
+      "loads_with": [
+        "rigging-armature",
+        "animation-fcurves",
+        "modeling-topology",
+        "materials-pbr"
+      ],
+      "name": "character-creature-modeling",
+      "path": "knowledge/15-character-creature/character-creature-modeling.md",
+      "related": [
+        "knowledge/40-animation/rigging-armature.md",
+        "knowledge/40-animation/animation-fcurves.md",
+        "knowledge/10-modeling/modeling-topology.md",
+        "knowledge/20-shading/materials-pbr.md"
+      ],
+      "sha256": "a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d",
+      "tags": [
+        "character",
+        "creature",
+        "anatomy",
+        "topology",
+        "edge-loops",
+        "facs",
+        "arkit",
+        "blendshapes",
+        "shape-keys",
+        "hair-curves",
+        "ik",
+        "skinning",
+        "walk-cycle",
+        "sss",
+        "hair-bsdf"
+      ],
+      "title": "Character & Creature Modeling: Anatomy, Topology, FACS & Hair Systems",
       "use": "read-verify"
     },
     {
@@ -7977,61 +8102,65 @@
           "text": "10 — Modeling"
         },
         {
-          "line": 84,
-          "text": "20 — Shading"
+          "line": 85,
+          "text": "15 — Character & Creature"
         },
         {
           "line": 91,
+          "text": "20 — Shading"
+        },
+        {
+          "line": 98,
           "text": "30 — Lighting & Render"
         },
         {
-          "line": 99,
+          "line": 106,
           "text": "40 — Animation & Rigging"
         },
         {
-          "line": 107,
+          "line": 114,
           "text": "50 — Procedural"
         },
         {
-          "line": 114,
+          "line": 121,
           "text": "60 — Pipeline"
         },
         {
-          "line": 124,
+          "line": 131,
           "text": "70 — Precision CAD & Robotics"
         },
         {
-          "line": 137,
+          "line": 144,
           "text": "File anatomy"
         },
         {
-          "line": 156,
+          "line": 163,
           "text": "Conventions and trust level"
         },
         {
-          "line": 174,
+          "line": 181,
           "text": "KB → Skills"
         },
         {
-          "line": 178,
+          "line": 185,
           "text": "Deep Engineering Research Repositories"
         },
         {
-          "line": 194,
+          "line": 202,
           "text": "Python Agent Boilerplate Library (`scripts/boilerplates/`)"
         },
         {
-          "line": 198,
+          "line": 206,
           "text": "Maintain the knowledge pipeline"
         }
       ],
       "kind": "knowledge",
-      "lines": 200,
+      "lines": 208,
       "loads_with": [],
       "name": null,
       "path": "knowledge/INDEX.md",
       "related": [],
-      "sha256": "08b3e996afcde0d096d3d50aa3176be0d9b958e75e2228842fc9ee35c64c2f84",
+      "sha256": "84ab0e6bb9cd3b3b338e0ff209751b488d97d9a8b3d6dd8e1ae29359c9409102",
       "tags": [],
       "title": "Blender Knowledge Foundation — INDEX",
       "use": "read-verify"
@@ -8040,12 +8169,12 @@
       "description": "",
       "headings": [],
       "kind": "workflow",
-      "lines": 2086,
+      "lines": 2385,
       "loads_with": [],
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "fad8013865e5b745cadb603b131db8a8f1aede7a906bb34501f7505e5f8be1ff",
+      "sha256": "27e16ed87957735312727297e3a480a93e7cdc355c3795abe30006491acf17d2",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -8254,129 +8383,169 @@
           "text": "Limitations"
         },
         {
-          "line": 682,
+          "line": 683,
           "text": "Topic: contact-wear-sealing"
         },
         {
-          "line": 708,
+          "line": 709,
           "text": "Topic: cycloid-profile-kinematics"
         },
         {
-          "line": 732,
+          "line": 733,
           "text": "Topic: actuator-duty-thermal"
         },
         {
-          "line": 752,
+          "line": 753,
           "text": "Topic: parametric-gear-profile"
         },
         {
-          "line": 773,
+          "line": 774,
           "text": "robotics-links-simulation"
         },
         {
-          "line": 777,
+          "line": 778,
           "text": "Base reading"
         },
         {
-          "line": 787,
+          "line": 788,
           "text": "Steps"
         },
         {
-          "line": 794,
+          "line": 795,
           "text": "Gates"
         },
         {
-          "line": 801,
+          "line": 802,
           "text": "Limitations"
         },
         {
-          "line": 807,
+          "line": 808,
           "text": "Topic: dynamic-harness-routing"
         },
         {
-          "line": 836,
+          "line": 837,
           "text": "render-export-delivery"
         },
         {
-          "line": 840,
+          "line": 841,
           "text": "Base reading"
         },
         {
-          "line": 849,
+          "line": 850,
           "text": "Steps"
         },
         {
-          "line": 856,
+          "line": 857,
           "text": "Gates"
         },
         {
-          "line": 863,
+          "line": 864,
           "text": "Limitations"
         },
         {
-          "line": 869,
+          "line": 870,
           "text": "Topic: renderer-diagnostics"
         },
         {
-          "line": 895,
+          "line": 896,
           "text": "Topic: participating-media"
         },
         {
-          "line": 916,
+          "line": 917,
           "text": "Topic: color-denoise-delivery"
         },
         {
-          "line": 940,
+          "line": 941,
           "text": "Topic: framing-export-contract"
         },
         {
-          "line": 964,
+          "line": 965,
           "text": "native-procedural-simulation"
         },
         {
-          "line": 968,
+          "line": 969,
           "text": "Base reading"
         },
         {
-          "line": 978,
+          "line": 979,
           "text": "Steps"
         },
         {
-          "line": 985,
+          "line": 986,
           "text": "Gates"
         },
         {
-          "line": 992,
+          "line": 993,
           "text": "Limitations"
         },
         {
-          "line": 997,
+          "line": 998,
           "text": "Topic: fields-parametric-solids"
         },
         {
-          "line": 1027,
+          "line": 1028,
           "text": "Topic: simulation-repeat-budgets"
         },
         {
-          "line": 1054,
+          "line": 1055,
           "text": "Topic: sdf-feature-preservation"
         },
         {
-          "line": 1076,
+          "line": 1077,
           "text": "Topic: graded-lattice-reinforcement"
         },
         {
-          "line": 1098,
+          "line": 1099,
           "text": "Topic: procedural-component-adapters"
+        },
+        {
+          "line": 1123,
+          "text": "native-character-creature"
+        },
+        {
+          "line": 1127,
+          "text": "Base reading"
+        },
+        {
+          "line": 1139,
+          "text": "Steps"
+        },
+        {
+          "line": 1147,
+          "text": "Gates"
+        },
+        {
+          "line": 1155,
+          "text": "Limitations"
+        },
+        {
+          "line": 1163,
+          "text": "Topic: character-proportion-anatomy"
+        },
+        {
+          "line": 1194,
+          "text": "Topic: animation-topology-facial-loops"
+        },
+        {
+          "line": 1219,
+          "text": "Topic: facs-blendshape-targets"
+        },
+        {
+          "line": 1246,
+          "text": "Topic: hair-curves-grooming-shading"
+        },
+        {
+          "line": 1277,
+          "text": "Topic: character-rig-locomotion"
         }
       ],
       "kind": "knowledge",
-      "lines": 1121,
+      "lines": 1305,
       "loads_with": [],
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "95a85a054e71d9f82b1f091e1ff22f9a4cf7d5c05ea450cf1ec3202db1b78b79",
+      "sha256": "be10d2517d0d9ae01b9124984f975139742dc0b6411ecf22f04155e40c03cae3",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -10292,6 +10461,492 @@
       "sha256": "41d49fef80d6ca98fd3dabc48e3b3b373edc4190be16d1815c98c36b271ac796",
       "tags": [],
       "title": "The Rigify Modular Auto-Rigging Architecture & Generation Pipeline",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: routing review plus a Native Asset Policy note; figures not certified.",
+        "caution": "The FLAME vertex count is flagged UNVERIFIED. SMPL-X/FLAME are cited as shape-space mathematics only - their model files are separately licensed third-party assets and must not be downloaded or vendored.",
+        "effects": "Read only; no code.",
+        "reviewed_sha256": "0926c81b148993aa204b3938748607becfd5f0964e4e6b2eab00bf6af312415b",
+        "runtime": "research synthesis"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Human Anatomical Proportions, Craniometrics & Parametric Morphology"
+        },
+        {
+          "line": 12,
+          "text": "1. Classical Proportional Canons & Head-Unit (HU) Metrics"
+        },
+        {
+          "line": 14,
+          "text": "1.1 The Head-Unit Metric Scale"
+        },
+        {
+          "line": 43,
+          "text": "2. Craniometrics & Facial Landmark Morphology (Farkas 1994)"
+        },
+        {
+          "line": 45,
+          "text": "2.1 The Frankfort Horizontal Plane"
+        },
+        {
+          "line": 51,
+          "text": "2.2 The Rule of Facial Thirds (Vertical Division)"
+        },
+        {
+          "line": 58,
+          "text": "2.3 The Rule of Facial Fifths (Transverse Division)"
+        },
+        {
+          "line": 81,
+          "text": "3. Sexual Dimorphism & Biomechanical Skeletal Angles"
+        },
+        {
+          "line": 83,
+          "text": "3.1 Biacromial vs Bi-iliac Index"
+        },
+        {
+          "line": 89,
+          "text": "3.2 Pelvic Tilt and the Quadriceps Angle ($Q$-Angle)"
+        },
+        {
+          "line": 102,
+          "text": "4. Mathematical Parametric Morphology: SMPL-X & FLAME"
+        },
+        {
+          "line": 108,
+          "text": "4.1 Statistical Shape Space ($\\mathbf{\\beta}$) Representation"
+        },
+        {
+          "line": 118,
+          "text": "4.2 Joint Location Prediction from Shape"
+        },
+        {
+          "line": 125,
+          "text": "5. Mathematical & Anthropometric Citations"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 133,
+      "loads_with": [],
+      "name": null,
+      "path": "research/character-creature-anatomy-modeling/01-HUMAN-ANATOMICAL-PROPORTIONS-CRANIOFACIAL.md",
+      "related": [],
+      "sha256": "0926c81b148993aa204b3938748607becfd5f0964e4e6b2eab00bf6af312415b",
+      "tags": [],
+      "title": "Human Anatomical Proportions, Craniometrics & Parametric Morphology",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: routing review; comparative-anatomy figures not certified.",
+        "caution": "Limb-length and elastic-recoil ratios are literature summaries flagged UNVERIFIED; the chimeric/monster sections are design reasoning, not biomechanics results.",
+        "effects": "Read only; no code.",
+        "reviewed_sha256": "8b4677f1408272d8840d45d2947668f8f5db7846485f61f351d1e0862af2dae8",
+        "runtime": "research synthesis"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Creature Comparative Anatomy, Locomotion Biomechanics & Chimeric Morphology"
+        },
+        {
+          "line": 12,
+          "text": "1. Vertebrate Locomotor Postures: Plantigrade, Digitigrade & Unguligrade"
+        },
+        {
+          "line": 37,
+          "text": "1.1 Comparative Kinematic Equations & Stride Length"
+        },
+        {
+          "line": 45,
+          "text": "Stride Length Scaling:"
+        },
+        {
+          "line": 51,
+          "text": "2. Skeletal Homology & Thoracic Scapular Suspension"
+        },
+        {
+          "line": 53,
+          "text": "2.1 The Quadruped Synsarcosis (The \"Free Scapula\")"
+        },
+        {
+          "line": 60,
+          "text": "2.2 Forelimb Skeletal Homology Mapping"
+        },
+        {
+          "line": 74,
+          "text": "3. Flight Morphology: Wing-to-Arm Conversion & Sternal Carina"
+        },
+        {
+          "line": 76,
+          "text": "3.1 Chiropteran (Bat) vs Pterosaur vs Avian Architectures"
+        },
+        {
+          "line": 93,
+          "text": "3.2 Sternal Carina (Keel) Scaling"
+        },
+        {
+          "line": 101,
+          "text": "4. Chimeric & Monster Morphologies"
+        },
+        {
+          "line": 103,
+          "text": "4.1 Hexapod & Centauroid Thoraco-Abdominal Decoupling"
+        },
+        {
+          "line": 110,
+          "text": "4.2 Morphogenesis of Horns, Antlers & Cranial Spikes"
+        },
+        {
+          "line": 126,
+          "text": "5. Mathematical & Comparative Citations"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 133,
+      "loads_with": [],
+      "name": null,
+      "path": "research/character-creature-anatomy-modeling/02-CREATURE-COMPARATIVE-ANATOMY-LOCOMOTION.md",
+      "related": [],
+      "sha256": "8b4677f1408272d8840d45d2947668f8f5db7846485f61f351d1e0862af2dae8",
+      "tags": [],
+      "title": "Creature Comparative Anatomy, Locomotion Biomechanics & Chimeric Morphology",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: routing review; two citations flagged as unconfirmable offline.",
+        "caution": "Hippolyte (2007) and Zander et al. (2004) could not be confirmed and are marked UNVERIFIED in the file; polygon budgets are rules of thumb, not standards.",
+        "effects": "Read only; no code.",
+        "reviewed_sha256": "917013bfac2105dc2d582f6821e52c0deb3d8c7f6888839c748d2e54b283d7a4",
+        "runtime": "research synthesis"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Animation Topology, Edge Flows & Facial Muscle Loops"
+        },
+        {
+          "line": 12,
+          "text": "1. Catmull-Clark Subdivision Surface Theory & Extraordinary Vertices"
+        },
+        {
+          "line": 14,
+          "text": "1.1 Regular vs Extraordinary Valence"
+        },
+        {
+          "line": 30,
+          "text": "1.2 Mathematical Pole Placement Discipline"
+        },
+        {
+          "line": 44,
+          "text": "2. Craniofacial Muscle Loop Topology (FACS Integration)"
+        },
+        {
+          "line": 69,
+          "text": "2.1 The Four Mandatory Closed Loops"
+        },
+        {
+          "line": 84,
+          "text": "3. Joint Articulation Topology: 3-Loop Hinges & Diamond Caps"
+        },
+        {
+          "line": 86,
+          "text": "3.1 The 3-Loop Hinge Rule (Knees, Elbows, Phalanges)"
+        },
+        {
+          "line": 106,
+          "text": "3.2 The Shoulder / Hip Diamond Cap"
+        },
+        {
+          "line": 113,
+          "text": "4. Production Quad Mesh Budgets & Density Standards"
+        },
+        {
+          "line": 126,
+          "text": "5. Mathematical & Topology Citations"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 133,
+      "loads_with": [],
+      "name": null,
+      "path": "research/character-creature-anatomy-modeling/03-ANIMATION-TOPOLOGY-EDGE-FLOWS-FACIAL-LOOPS.md",
+      "related": [],
+      "sha256": "917013bfac2105dc2d582f6821e52c0deb3d8c7f6888839c748d2e54b283d7a4",
+      "tags": [],
+      "title": "Animation Topology, Edge Flows & Facial Muscle Loops",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: ARKit/ISO conflation corrected, group counts corrected (15->19, 27->23) against the runtime-asserted 52-name inventory.",
+        "caution": "The 52 ARKit targets are NOT FACS Action Units and NOT ISO/IEC 14496-2 (MPEG-4 FAPs); cite Apple's spec. Blendshape orthogonality is a modelling convention, which is why correctives exist.",
+        "effects": "Read only; the foreach_set snippet mutates shape-key data when adapted.",
+        "reviewed_sha256": "47e1438fa1d1a316adb57d25015628019234628d3769e37ef8f91e9e1c6975ca",
+        "runtime": "research synthesis"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Facial Action Coding System (FACS), 52 ARKit Blendshapes & Shape Key Mathematics"
+        },
+        {
+          "line": 12,
+          "text": "1. The Facial Action Coding System (FACS) Biological Foundation"
+        },
+        {
+          "line": 31,
+          "text": "2. The 52 ARKit Blendshape Target Inventory"
+        },
+        {
+          "line": 67,
+          "text": "3. Mathematical Blendshape Deformation & Combination Keys"
+        },
+        {
+          "line": 69,
+          "text": "3.1 Linear Blendshape Summation"
+        },
+        {
+          "line": 73,
+          "text": "3.2 The Linear Superposition Failure & Corrective Keys (CSK)"
+        },
+        {
+          "line": 85,
+          "text": "4. Blender 5.2 Headless Shape Key Architecture (`Mesh.shape_keys`)"
+        },
+        {
+          "line": 87,
+          "text": "4.1 Data API Structure"
+        },
+        {
+          "line": 100,
+          "text": "4.2 High-Speed Vectorized Displacement via `foreach_set`"
+        },
+        {
+          "line": 105,
+          "text": "coords is a flat float array of length 3 * N: [x0, y0, z0, x1, y1, z1, ...]"
+        },
+        {
+          "line": 107,
+          "text": "Mutate coords in numpy or mathutils"
+        },
+        {
+          "line": 114,
+          "text": "5. Mathematical & FACS Citations"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 121,
+      "loads_with": [],
+      "name": null,
+      "path": "research/character-creature-anatomy-modeling/04-FACS-FACIAL-BLENDSHAPES-SHAPE-KEYS.md",
+      "related": [],
+      "sha256": "47e1438fa1d1a316adb57d25015628019234628d3769e37ef8f91e9e1c6975ca",
+      "tags": [],
+      "title": "Facial Action Coding System (FACS), 52 ARKit Blendshapes & Shape Key Mathematics",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: hair-curves creation code rewritten against a live 5.2.0 LTS run; the deprecation claim was softened to what the runtime shows.",
+        "caution": "The original snippet (bpy.data.curves.new(..., 'CURVES') and Object.surface) does not run in 5.2 and was replaced. Legacy particle hair is NOT removed in 5.2. Spitieris & Bergou (2012) is flagged UNVERIFIED; prefer Bergou et al. 2008/2010.",
+        "effects": "Read only; the corrected snippet creates a hair-curves data-block when adapted.",
+        "reviewed_sha256": "459b49ef08da6612390a492e22efdc2524183221fa72edf2d4a45449b0eae590",
+        "runtime": "research synthesis"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Modern Hair Curves Architecture, Cosserat Rod Dynamics & Soft-Tissue Biomechanics"
+        },
+        {
+          "line": 12,
+          "text": "1. Modern Blender 5.2 Hair Curves Architecture (`CURVES` Data-Block)"
+        },
+        {
+          "line": 14,
+          "text": "1.1 Legacy Particle Hair vs Modern Hair Curves"
+        },
+        {
+          "line": 37,
+          "text": "1.2 Programmatic Hair Curves Generation in Python"
+        },
+        {
+          "line": 41,
+          "text": "1. Create the hair-curves data-block and its object."
+        },
+        {
+          "line": 42,
+          "text": "bpy.data.curves.new(name, 'CURVES') raises TypeError: that enum is CURVE/SURFACE/FONT."
+        },
+        {
+          "line": 47,
+          "text": "2. Attach to the emitter scalp mesh. `surface` is on the DATA-block;"
+        },
+        {
+          "line": 48,
+          "text": "bpy.types.Object has no `surface` attribute."
+        },
+        {
+          "line": 54,
+          "text": "3. Allocate real strands, then write point positions and radii."
+        },
+        {
+          "line": 55,
+          "text": "Without add_curves() the data-block is empty and renders nothing."
+        },
+        {
+          "line": 63,
+          "text": "4. Per-strand surface binding attribute (FLOAT2 on the CURVE domain)."
+        },
+        {
+          "line": 71,
+          "text": "2. Procedural Hair Styling Pipeline in Geometry Nodes"
+        },
+        {
+          "line": 94,
+          "text": "2.1 Clumping Mathematical Formulation"
+        },
+        {
+          "line": 103,
+          "text": "3. Hair Strand Physical Mechanics: The Discrete Cosserat Rod"
+        },
+        {
+          "line": 107,
+          "text": "3.1 Kinematic Centerline & Orthonormal Material Frame"
+        },
+        {
+          "line": 112,
+          "text": "3.2 Elastic Energy & Equations of Motion"
+        },
+        {
+          "line": 124,
+          "text": "4. Soft-Tissue Biomechanics & Secondary Muscle Bulging"
+        },
+        {
+          "line": 126,
+          "text": "4.1 Pose Space Deformation (PSD / Lewis et al. 2000)"
+        },
+        {
+          "line": 135,
+          "text": "4.2 Secondary Flesh Jiggle (Damped Harmonic Oscillator)"
+        },
+        {
+          "line": 143,
+          "text": "5. Mathematical & Physical Citations"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 150,
+      "loads_with": [],
+      "name": null,
+      "path": "research/character-creature-anatomy-modeling/05-BLENDER-HAIR-CURVES-SKIN-TISSUE-PHYSICS.md",
+      "related": [],
+      "sha256": "459b49ef08da6612390a492e22efdc2524183221fa72edf2d4a45449b0eae590",
+      "tags": [],
+      "title": "Modern Hair Curves Architecture, Cosserat Rod Dynamics & Soft-Tissue Biomechanics",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: Kavan and Christensen-Burley misattributions corrected, gait phase naming re-attributed, skinning implementation gap recorded, Action.fcurves assert corrected.",
+        "caution": "Christensen-Burley 2015 is the BURLEY method, not the random walk; Kavan 2007 is dual quaternion skinning, not twist bones. The Gaussian weight formula is NOT what the boilerplate implements. Hildebrand 1976 and Jimenez 2010 citation details are flagged UNVERIFIED.",
+        "effects": "Read only; no code.",
+        "reviewed_sha256": "eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d",
+        "runtime": "research synthesis"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Skeletal Kinematics, Biped Locomotion, Skinning & Physically-Based Shading"
+        },
+        {
+          "line": 36,
+          "text": "1. Character Skeletal Kinematics & Armature Architecture"
+        },
+        {
+          "line": 38,
+          "text": "1.1 Hierarchical Forward & Inverse Kinematics"
+        },
+        {
+          "line": 53,
+          "text": "1.2 Twist Bones & The \"Candy-Wrapper\" Artifact"
+        },
+        {
+          "line": 66,
+          "text": "2. Biomechanics of Biped Locomotion (Gait Cycle Dynamics)"
+        },
+        {
+          "line": 68,
+          "text": "2.1 The Four Key Poses of an Animated Walk"
+        },
+        {
+          "line": 85,
+          "text": "2.2 Mathematical Kinematic Formulations for Procedural F-Curves"
+        },
+        {
+          "line": 116,
+          "text": "3. Production Skinning & Deformation Mechanics"
+        },
+        {
+          "line": 118,
+          "text": "3.1 Bounded Biharmonic & Smooth Distance Weighting"
+        },
+        {
+          "line": 141,
+          "text": "4. Physically-Based Skin Subsurface Scattering (SSS)"
+        },
+        {
+          "line": 143,
+          "text": "4.1 Normalized Random Walk Diffusion"
+        },
+        {
+          "line": 165,
+          "text": "4.2 Spectral Subsurface Radii (Hemoglobin Absorption Profile)"
+        },
+        {
+          "line": 182,
+          "text": "5. Melanin-Based Biochemical Hair & Fur Shading"
+        },
+        {
+          "line": 184,
+          "text": "5.1 The Marschner-Chiang Hair Scattering Model"
+        },
+        {
+          "line": 190,
+          "text": "5.2 Biochemical Melanin Absorption"
+        },
+        {
+          "line": 214,
+          "text": "6. Implementation Architecture Matrix"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 221,
+      "loads_with": [],
+      "name": null,
+      "path": "research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md",
+      "related": [],
+      "sha256": "eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d",
+      "tags": [],
+      "title": "Skeletal Kinematics, Biped Locomotion, Skinning & Physically-Based Shading",
       "use": "read-verify"
     },
     {
@@ -14020,6 +14675,182 @@
     },
     {
       "annotation": {
+        "basis": "Onboarding audit 2026-09-06: slotted-action access verified (Action.fcurves is gone in 5.2), 12 curves / loop closure / anti-phase / bounce-frequency / counter-rotation asserted; AGENT_OK.",
+        "caution": "A 5-key harmonic approximation, not a gait solve: no stance plateau so expect foot slide, and pelvis Z extrema fall at 0/T/2 rather than Winter's 12%/62%. Review an animatic before calling it a walk.",
+        "effects": "Creates animation data, an action, a slot and 12 F-curves on the target armature; renames the auto-created action.",
+        "reviewed_sha256": "220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 212,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_biped_locomotion.py",
+      "related": [],
+      "sha256": "220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43",
+      "tags": [],
+      "title": "bp_biped_locomotion.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: runtime measured (428 verts / 282 faces / 0.73 quad fraction), docstring corrected, hock-elevation asserts added; AGENT_OK.",
+        "caution": "Skeletal LAYOUT proxy: the reusable content is the segment angles (femur +35, tibia -40, metatarsus +25 deg), not the surface. Cone caps are n-gons; groups are unweighted.",
+        "effects": "Creates a mesh + object in the current scene and 9 empty vertex groups.",
+        "reviewed_sha256": "2c6d7ba67b19d8ad18568d2bc282d5ce3623db034722a3a3fa2f67111d30c379",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 194,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_creature_digitigrade.py",
+      "related": [],
+      "sha256": "2c6d7ba67b19d8ad18568d2bc282d5ce3623db034722a3a3fa2f67111d30c379",
+      "tags": [],
+      "title": "bp_creature_digitigrade.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: 52 names asserted unique, sculpted-target set asserted, corrective driver product verified through the depsgraph; AGENT_OK.",
+        "caution": "Only 6 of 52 targets carry sculpted deltas; the rest are identity keys. The head is a scaled UV sphere with no facial features. ARKit spec, not FACS AUs, not ISO/IEC 14496-2.",
+        "effects": "Creates a head proxy mesh, 53 shape keys and one driven corrective key.",
+        "reviewed_sha256": "8e611f7688efd291b95f52ebf779b4ac7d69e5cfd4a39919bcb8427948acb903",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 235,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_facs_blendshapes.py",
+      "related": [],
+      "sha256": "8e611f7688efd291b95f52ebf779b4ac7d69e5cfd4a39919bcb8427948acb903",
+      "tags": [],
+      "title": "bp_facs_blendshapes.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: dangling colour ramp fixed (Is Strand -> Intercept, ramp wired into Tint), model pinned to CHIANG, end-to-end Curves assignment asserted; AGENT_OK.",
+        "caution": "Melanin/redness phenotype values are artist guidance, not measured pigment concentrations. 5.2 names the strand-info node 'Curves Info' even though it is created as ShaderNodeHairInfo.",
+        "effects": "Creates a material with a Principled Hair BSDF node tree and a small hair-curves object.",
+        "reviewed_sha256": "a9904d4ae5c086900ba4973d7e9ad1d59fd06d95cb4f575a4ca529ece6228df2",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 125,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_fur_hair_shader.py",
+      "related": [],
+      "sha256": "a9904d4ae5c086900ba4973d7e9ad1d59fd06d95cb4f575a4ca529ece6228df2",
+      "tags": [],
+      "title": "bp_fur_hair_shader.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: REWRITTEN - the original produced zero curves and zero points; now emits 40x8 strands with tapered radii and asserts arc length; AGENT_OK.",
+        "caution": "The node tree only re-tapers radius: no interpolation, clumping, frizz or curl. surface_uv_coordinate values are a deterministic placeholder, not baked from the scalp UV map.",
+        "effects": "Creates a scalp mesh, a hair-curves data-block with geometry, and a Geometry Nodes group + modifier.",
+        "reviewed_sha256": "b5ae56714c849d3830cb652a27622faecfed64d9979769b9969e47c73314fd89",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 203,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_hair_curves_gen.py",
+      "related": [],
+      "sha256": "b5ae56714c849d3830cb652a27622faecfed64d9979769b9969e47c73314fd89",
+      "tags": [],
+      "title": "bp_hair_curves_gen.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: runtime measured (698 verts / 516 faces / 0.86 quad fraction / 16 non-manifold edges / 1.7989 m), docstring corrected, measured asserts added; AGENT_OK.",
+        "caution": "PROXY only: primitive union, quad-dominant not all-quad, non-manifold, hinge 'loops' are separate disc primitives, vertex groups carry no weights. Retopologise before rigging.",
+        "effects": "Creates a mesh + object in the current scene and 12 empty vertex groups; does not delete anything.",
+        "reviewed_sha256": "48f5bcc2ae2460dae78e17d64e3e925ca2d2dc4435c1e6cc998458b4e1d9b09f",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 216,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_humanoid_basemesh.py",
+      "related": [],
+      "sha256": "48f5bcc2ae2460dae78e17d64e3e925ca2d2dc4435c1e6cc998458b4e1d9b09f",
+      "tags": [],
+      "title": "bp_humanoid_basemesh.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: control-bone leak into deform groups fixed, bpy.ops primitive replaced with bmesh, 33 bones + IK + twist + weight-normalisation asserted; AGENT_OK.",
+        "caution": "Binding is NEAREST-BONE hard assignment (one group per vertex at weight 1.0), not smooth skinning - smooth the weights before any deformation-quality claim. Dual quaternion skinning stays off unless use_deform_preserve_volume is set.",
+        "effects": "Enters and leaves Edit Mode on the new armature; creates an armature, a test mesh, vertex groups and an Armature modifier.",
+        "reviewed_sha256": "079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 336,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py",
+      "related": [],
+      "sha256": "079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3",
+      "tags": [],
+      "title": "bp_humanoid_rig_ikfk.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Onboarding audit 2026-09-06: bpy.ops primitive replaced with bmesh, Subsurface IOR / Coat / bump asserts added, Christensen-Burley attribution corrected; AGENT_OK.",
+        "caution": "subsurface_method must be set BEFORE Subsurface IOR (that socket is disabled and unreachable by name under the default BURLEY). Radius (1.0, 0.22, 0.08) and scale 0.025 m are look choices; Blender's defaults are (1.0, 0.2, 0.1) and 0.005 m.",
+        "effects": "Creates a skin material node tree and a test sphere object.",
+        "reviewed_sha256": "2fa9c2a68e5ccf3022bb62eaf0e66ef46db1f5506b5e0d93380243555dd891bc",
+        "runtime": "bpy; inspect/adapt only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 143,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/character_creature/bp_skin_sss_shader.py",
+      "related": [],
+      "sha256": "2fa9c2a68e5ccf3022bb62eaf0e66ef46db1f5506b5e0d93380243555dd891bc",
+      "tags": [],
+      "title": "bp_skin_sss_shader.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
         "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
         "caution": "8-degree taper/minimum-wall claims not implemented; separate pillar/cutter are not assembled; unknown size falls back to M3.",
         "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
@@ -14357,15 +15188,15 @@
         },
         {
           "line": 11,
-          "text": "- builds/: the curated robot-arm demo, the watch-winder-capsule render+print demo,"
+          "text": "- builds/: exactly two builds — the robot arm final (robot-arm-original-refined +"
         },
         {
           "line": 12,
-          "text": "and the catalog example scripts;"
+          "text": "robot-arm-print-assembly) and watch-winder-capsule — plus the catalog example files;"
         },
         {
           "line": 13,
-          "text": "never frames, draft videos, *.log, snapshots or zip kits"
+          "text": "nothing else under builds/, and never frames, draft videos, *.log, snapshots or zip kits"
         },
         {
           "line": 14,
@@ -14408,29 +15239,33 @@
           "text": "not published; only the pipeline receipt the catalog tooling reads is carried over."
         },
         {
-          "line": 70,
+          "line": 68,
+          "text": "builds retired from the public export (2026-09-06 owner decision): remove stale copies."
+        },
+        {
+          "line": 72,
           "text": "--- verify standalone --------------------------------------------------------"
         },
         {
-          "line": 79,
+          "line": 81,
           "text": "Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in"
         },
         {
-          "line": 80,
+          "line": 82,
           "text": "shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt."
         },
         {
-          "line": 81,
+          "line": 83,
           "text": "Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies)."
         }
       ],
       "kind": "execution-source",
-      "lines": 86,
+      "lines": 88,
       "loads_with": [],
       "name": null,
       "path": "scripts/export-public-repo.sh",
       "related": [],
-      "sha256": "d3297d6d99c2566c2de18a438cf40825226f6f76e0be182c928830517f72aae2",
+      "sha256": "bd030bc0fc3ce226e390717d97e3d55193a59c21aa4317ea62cfa71d24f2766c",
       "tags": [],
       "title": "Export the curated public tree of this project into the design-os-3d-blender",
       "use": "inspect-adapt"
@@ -15342,12 +16177,12 @@
     }
   },
   "schema": 1,
-  "source_digest": "346dd72ebfbf8a4fe19deff6b31cd4cac196a28178bf0594e5ea857c15ff5624",
+  "source_digest": "215b1926d1f9671492c0a45e1d4f7e7463dbba67ffa73e04250cba8947b3e232",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".agents/skills/blender-agent-core/references/hard-rules.md": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
-    ".agents/skills/blender-agent-core/references/recipes.md": "0d6f342a291d86c558a140730ac62c53811dec551dd836771ade753691ff88c5",
+    ".agents/skills/blender-agent-core/references/recipes.md": "2f72fadf9c23526373cc239bef8eacfb91d0c4b89c994edb2f2fd3f357a40848",
     ".agents/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
     ".agents/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
     ".agents/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
@@ -15402,7 +16237,7 @@
     ".claude/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".claude/skills/blender-agent-core/references/hard-rules.md": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
-    ".claude/skills/blender-agent-core/references/recipes.md": "0d6f342a291d86c558a140730ac62c53811dec551dd836771ade753691ff88c5",
+    ".claude/skills/blender-agent-core/references/recipes.md": "2f72fadf9c23526373cc239bef8eacfb91d0c4b89c994edb2f2fd3f357a40848",
     ".claude/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
     ".claude/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
     ".claude/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
@@ -15457,29 +16292,28 @@
     ".project-agent.md": "91060d35f74d3d2b6741ec7da60be6c82153e573a7b6c91f53ddb52f40946652",
     "AGENTS.md": "57dd4e7ddef8be1561fcdadf10b60fa700a81b39de7b411a4123925aac23f353",
     "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
-    "builds/fpv-drone-native/build-native-drone.py": "db4adea049b37d50001c8becf3ddca136f4c88ab1d1a8e17ccb8eaa193be0ccf",
-    "builds/fpv-drone-native/drone-mesh-library.py": "c95ff9d8c2ddcdae1af09f4ee7b38e61fcb01cb6ab28c51446ebfe30a2102516",
-    "builds/robot-arm-v2-engineered/FLEXIBILITY.md": "cd3bcb82104e34356fe24f004fb6e978bcd67531eb11e5dc70ef099fafd57fca",
-    "builds/robot-arm-v2-engineered/README.md": "688807bea2dab4327d6d8303c2bda155275a4fc552a5cf9caf3cc95dd4063a9e",
-    "builds/robot-arm-v2-engineered/TASK-DEMO.md": "ff899344b7209c43eff3a9aca0237bf196f70f42d00188c0f99bc805163f6f57",
-    "builds/robot-arm-v2-engineered/build-flexibility.py": "955c5cdb8b5ebed9bc489c5d5bd135c11062560809efd5dfdecfa0a466db5321",
-    "builds/robot-arm-v2-engineered/check-operating-envelope.py": "3793c3e52132eab343590fda664d322329c84e64ffc96fe8ddb51f4235afbd18",
-    "builds/robot-arm-v2-engineered/check-stl-files.py": "3961aff19365196dcfabf981a99bfb50492f742a56a37afde435ffedf0c61101",
-    "builds/robot-arm-v2-engineered/check-task-path.py": "19fe4b68e5f9af247750f4ac34d56c38e48fb37435d9d87f076ca4aa72ceb307",
-    "builds/robot-arm-v2-engineered/create-task-scene.py": "dafc2b739207d15ab07c96397336c1e5e05c2cbc19d6fc6b9fe9297748201eb9",
-    "builds/robot-arm-v2-engineered/export-prototype-parts.py": "968c8015e61a1c067e87548e2deca56b620ded9051c475e73af6bf9620d016fd",
-    "builds/robot-arm-v2-engineered/final-delivery-audit.py": "742c2ea53f8dd0e0b5631a86513d7a94cd7ef09ab10f9a77ea0d4c2024ac4b32",
-    "builds/robot-arm-v2-engineered/flexibility-contact-lib.py": "c5cba8171e56e64b356b9b5a0784faf9ed065d48b0bc7af32f268b14421e5109",
-    "builds/robot-arm-v2-engineered/flexibility-motion-plan.py": "fffc234679d775834caaa7dfbcecec04ecdb5e200d73b9241b491fca340a7c1e",
-    "builds/robot-arm-v2-engineered/render-task-demo.py": "f2ba75ccb8c1defb8171ba6236e7a76eb7e453618f1c88e9bdafddf6a5342224",
-    "builds/robot-arm-v2-engineered/task-motion-plan.py": "cb5d73ce205bb03494e9ee3826f30761bc7eacce47aa460ed30fff71ef2eb3f8",
-    "builds/robot-arm-v2-engineered/verify-task-presentation.py": "1c9c695ed767859f7cfcaa3ecbc2c39245aee9283448b4687e1f4adbf9509e2f",
-    "builds/robot-arm-v2-engineered/verify-task-video.py": "ec3a1e21e2da5722adee002434f97bbd9fd9dfb4603630deb195bf3246007fe1",
+    "builds/robot-arm-original-refined/README.md": "a78ac89a4b9f59320d60ffab5ef94cf77a37b688ab69287cc6c103c16e2b07a9",
+    "builds/robot-arm-original-refined/scripts/check-refined-scene.py": "b023698fd6377698c20d2d41ee9724308af728756e9fe1b101de8a482ecbb1af",
+    "builds/robot-arm-original-refined/scripts/diagnose-subassembly-overlap.py": "7a6806f685935680bfdfa79fb4e158fb0a521a1420b2ecaa16ccd8af426ff0e4",
+    "builds/robot-arm-original-refined/scripts/finalize-refined-video.py": "d7294274a154bbdf173bac8adaf31182db5ddf5382d56d342d161c208c3a1d0f",
+    "builds/robot-arm-original-refined/scripts/plan-grouped-timing.py": "aca90dee6c9af7656d46ea8b67bfaa21659f4ea8eb7441aa27979a674cade881",
+    "builds/robot-arm-print-assembly/README.md": "c9740d502671634374f36eaebffcbcfac2cfeab04c221f814594b287bae3d0b2",
+    "builds/robot-arm-print-assembly/plan.md": "14bebe7d7c9c44d2efd60ee186baced37c7fe8b3a2969995c107c28cf448f7d5",
+    "builds/robot-arm-print-assembly/scripts/build-assembly.py": "3659ea2a7f943c1ba94e687cc766d435120d24cf0f6528de25c310fcdb15452d",
+    "builds/robot-arm-print-assembly/scripts/export-plate-packages.py": "d5b760146c3f952e29f05c7cb0acd58bdf98af5c2d3b092fe612b6ca0bb37f15",
+    "builds/robot-arm-print-assembly/scripts/render-media.py": "170ab8f1bb55684d799d2d264a1f7d33506a8a09a1cb530529dbc52a89626ce8",
+    "builds/watch-winder-capsule/scripts/pass-02-shell-visor-rim-blockout.py": "c7dd7dca77bb048f7caa10e9808d9c763b0e782389bd739d117bac7c4e1f756a",
+    "builds/watch-winder-capsule/scripts/pass-06-lid-sweep-and-rotor-poses.py": "dd54fba4583ca01fbc05ade1afab08e2152052ab8da9179be8149848ebfae342",
+    "builds/watch-winder-capsule/scripts/pass-21-acceptance-isolated-check.py": "a2c03652076d1c7f721065986e47e474933edc2f46c15eda46be23820aa53248",
+    "builds/watch-winder-capsule/scripts/pass-22-rebuild-isolated.py": "6437d849e1b776ae89346cbc83d62d0c1f0fffd6924c2a1192b9bb2f896d6487",
+    "builds/watch-winder-capsule/scripts/pass-24-animation-keys.py": "d711dae91ca8419a2ec9e0282e21238ffec96c13af72f835788222653043ed29",
+    "builds/watch-winder-capsule/scripts/pass-30-print-plates-layout.py": "cc60c2e8c62c32f91d9bfcecaa664e4ddf7af17f2bb7003de04bbe7ac322c95c",
+    "builds/watch-winder-capsule/scripts/ww_mesh.py": "d525c978e0f30615a91cc037f2828193267a54eabb8618a07dae3d673651825b",
     "docs/antigravity-setup.md": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
     "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
-    "docs/blender-knowledge-workflows.md": "568a0aabe87b38a9c6da2b9f7232cbce48cc95dc560760e9b6916c978be9929a",
-    "docs/blender-workflow-improvement-backlog.md": "86b6ee934120adb11187d552ca6769995786d54b2a617c43d752917727fb0451",
-    "docs/system-architecture.md": "6ea9850bf213061440a25803099d16b5aa12193714f0d23700c20d49f4cb153a",
+    "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
+    "docs/blender-workflow-improvement-backlog.md": "c7a62322a57241c2ac751ae1cbd718c79fde4f274bed65a7b92a94b6e4638d6e",
+    "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
     "knowledge/00-foundations/blender-version-matrix.md": "db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a",
     "knowledge/00-foundations/bpy-scripting-core.md": "8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c",
@@ -15487,6 +16321,7 @@
     "knowledge/10-modeling/modeling-topology.md": "1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608",
     "knowledge/10-modeling/modifiers.md": "88f4e06ffc4d5b9f74db1d00f2c0a95cee35cbe28a8248ab12b19dbf8f6a1ff1",
     "knowledge/10-modeling/uv-unwrapping.md": "059472e174c3f72ac21f14cc2cd463229d8e7184190143df82d3c089d62aad2d",
+    "knowledge/15-character-creature/character-creature-modeling.md": "a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d",
     "knowledge/20-shading/materials-pbr.md": "e455cc41465700c56266f5d9652adae920972e941644b27085b2982ab3fa8705",
     "knowledge/20-shading/texturing-baking.md": "10283f5e9e031dd2c840ef5ff4fa86648814d482661954d234bc0a48f31e4c73",
     "knowledge/30-lighting-render/compositing-output.md": "ce19c33464e1ea8ef58cc5c686406eb3d227272c4cc1feb98a4c361e1c42f2ab",
@@ -15509,9 +16344,9 @@
     "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md": "eab55760bfe566860b330463a65a8802b1dd569354d05e85ce96e5af3febd69d",
     "knowledge/70-cad-precision-robotics/print-plate-layout.md": "eb9f48179c1eb0a88253a92d49b4c4bee479b58349026e37810687b237802a98",
     "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
-    "knowledge/INDEX.md": "08b3e996afcde0d096d3d50aa3176be0d9b958e75e2228842fc9ee35c64c2f84",
-    "knowledge/catalog-config.json": "fad8013865e5b745cadb603b131db8a8f1aede7a906bb34501f7505e5f8be1ff",
-    "knowledge/generated-workflows.md": "95a85a054e71d9f82b1f091e1ff22f9a4cf7d5c05ea450cf1ec3202db1b78b79",
+    "knowledge/INDEX.md": "84ab0e6bb9cd3b3b338e0ff209751b488d97d9a8b3d6dd8e1ae29359c9409102",
+    "knowledge/catalog-config.json": "27e16ed87957735312727297e3a480a93e7cdc355c3795abe30006491acf17d2",
+    "knowledge/generated-workflows.md": "be10d2517d0d9ae01b9124984f975139742dc0b6411ecf22f04155e40c03cae3",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
     "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md": "619fc507661f1e78eb7e0d9c5b8f0d0f539f482c963f31669c76596cd5753dfc",
@@ -15543,6 +16378,12 @@
     "research/blender-rigging-skeleton-skinning/03-DUAL-QUATERNION-SKINNING-LBS.md": "fb2d01f4293bbf3c383009522ac757fee1fb43a50e3a3d6105ba93a6a58b381c",
     "research/blender-rigging-skeleton-skinning/04-PROCEDURAL-MECHANICAL-CHARACTER-RIGGING.md": "3abab897422d4863c1459564e05c7045e58bd4465609e13c4be8ac51da6e8dad",
     "research/blender-rigging-skeleton-skinning/05-RIGIFY-MODULAR-RIGGING-PIPELINE.md": "41d49fef80d6ca98fd3dabc48e3b3b373edc4190be16d1815c98c36b271ac796",
+    "research/character-creature-anatomy-modeling/01-HUMAN-ANATOMICAL-PROPORTIONS-CRANIOFACIAL.md": "0926c81b148993aa204b3938748607becfd5f0964e4e6b2eab00bf6af312415b",
+    "research/character-creature-anatomy-modeling/02-CREATURE-COMPARATIVE-ANATOMY-LOCOMOTION.md": "8b4677f1408272d8840d45d2947668f8f5db7846485f61f351d1e0862af2dae8",
+    "research/character-creature-anatomy-modeling/03-ANIMATION-TOPOLOGY-EDGE-FLOWS-FACIAL-LOOPS.md": "917013bfac2105dc2d582f6821e52c0deb3d8c7f6888839c748d2e54b283d7a4",
+    "research/character-creature-anatomy-modeling/04-FACS-FACIAL-BLENDSHAPES-SHAPE-KEYS.md": "47e1438fa1d1a316adb57d25015628019234628d3769e37ef8f91e9e1c6975ca",
+    "research/character-creature-anatomy-modeling/05-BLENDER-HAIR-CURVES-SKIN-TISSUE-PHYSICS.md": "459b49ef08da6612390a492e22efdc2524183221fa72edf2d4a45449b0eae590",
+    "research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md": "eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d",
     "research/how-image-to-3d-works.md": "896944614081676026bbb053714fd5de1e6abe99ab95d210cc0a7ac92c681264",
     "research/hunyuan3d.md": "7658d628b6c1631bdac5707cf4c67f709e13063b100adec584c40d7eb160693a",
     "research/industrial-wiring-harness-packaging/01-INDUSTRIAL-BUS-PHYSICAL-LAYERS-PINOUTS.md": "0de4f110d19f68c8b2fa83b1942970b058878e86f220e6aea2874fb11028d593",
@@ -15603,6 +16444,14 @@
     "scripts/boilerplates/cad_mechanics/bp_oring_glands.py": "75bd44c7c57fd6757e4227f669abb368f3a877fd44607fe29c1efbf5f22e9dbf",
     "scripts/boilerplates/cad_mechanics/bp_shaft_couplings.py": "ffb7d0044c8413a575b80e09470b2e8a9a4adfd2261d516179dc42de93853fe6",
     "scripts/boilerplates/cad_mechanics/bp_springs.py": "2773e4640a6919adfaec02d0d272095c0baac78df59d4cc6a120e55d7386ea0b",
+    "scripts/boilerplates/character_creature/bp_biped_locomotion.py": "220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43",
+    "scripts/boilerplates/character_creature/bp_creature_digitigrade.py": "2c6d7ba67b19d8ad18568d2bc282d5ce3623db034722a3a3fa2f67111d30c379",
+    "scripts/boilerplates/character_creature/bp_facs_blendshapes.py": "8e611f7688efd291b95f52ebf779b4ac7d69e5cfd4a39919bcb8427948acb903",
+    "scripts/boilerplates/character_creature/bp_fur_hair_shader.py": "a9904d4ae5c086900ba4973d7e9ad1d59fd06d95cb4f575a4ca529ece6228df2",
+    "scripts/boilerplates/character_creature/bp_hair_curves_gen.py": "b5ae56714c849d3830cb652a27622faecfed64d9979769b9969e47c73314fd89",
+    "scripts/boilerplates/character_creature/bp_humanoid_basemesh.py": "48f5bcc2ae2460dae78e17d64e3e925ca2d2dc4435c1e6cc998458b4e1d9b09f",
+    "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py": "079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3",
+    "scripts/boilerplates/character_creature/bp_skin_sss_shader.py": "2fa9c2a68e5ccf3022bb62eaf0e66ef46db1f5506b5e0d93380243555dd891bc",
     "scripts/boilerplates/dfam_3dprint/bp_insert_boss.py": "0bb053452708229c3a3a7f85e53a20eb32b28b3865d30f9d7b33ee045e87992b",
     "scripts/boilerplates/dfam_3dprint/bp_snap_fits.py": "1af01f09b98946ed9da8068e55e75383caa62d0a36dfecaa2780998c3e7bc488",
     "scripts/boilerplates/dfam_3dprint/bp_teardrop_holes.py": "9e2919971fb179490cae5b3b8344b5a28b01c3abc97e30a65907e4c81691c219",
@@ -15615,7 +16464,7 @@
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
-    "scripts/export-public-repo.sh": "d3297d6d99c2566c2de18a438cf40825226f6f76e0be182c928830517f72aae2",
+    "scripts/export-public-repo.sh": "bd030bc0fc3ce226e390717d97e3d55193a59c21aa4317ea62cfa71d24f2766c",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
@@ -15672,8 +16521,7 @@
   "workflows": {
     "mechanisms-transmissions": {
       "adapters": [
-        "scripts/compute-mesh-inertia.py",
-        "builds/robot-arm-v2-engineered/check-operating-envelope.py"
+        "scripts/compute-mesh-inertia.py"
       ],
       "concepts": [],
       "gates": [
@@ -15684,7 +16532,8 @@
       ],
       "limitations": [
         "The gear KB snippet lacks the root fillet it describes; the tolerance parameter is not implemented.",
-        "Holding a 250 g arm load for several minutes is BLOCKED; do not flip it to PASS from an animation."
+        "Holding a 250 g arm load for several minutes is BLOCKED; do not flip it to PASS from an animation.",
+        "No shipped example screens sustained holding torque; compute and declare a gravity/torque bound for the actual load case instead of borrowing one."
       ],
       "purpose": "Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.",
       "required": [
@@ -15812,10 +16661,10 @@
     },
     "native-animation-rigging": {
       "adapters": [
-        "builds/robot-arm-v2-engineered/task-motion-plan.py",
-        "builds/robot-arm-v2-engineered/create-task-scene.py",
-        "builds/robot-arm-v2-engineered/flexibility-contact-lib.py",
-        "builds/robot-arm-v2-engineered/verify-task-presentation.py"
+        "builds/robot-arm-original-refined/scripts/plan-grouped-timing.py",
+        "builds/robot-arm-print-assembly/scripts/build-assembly.py",
+        "builds/robot-arm-original-refined/scripts/diagnose-subassembly-overlap.py",
+        "builds/robot-arm-original-refined/scripts/check-refined-scene.py"
       ],
       "concepts": [
         ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"
@@ -15828,9 +16677,9 @@
         "Review the clip over time; a pose still does not replace motion review."
       ],
       "limitations": [
-        "The contact library currently samples raw rigid surfaces; it does not prove continuous collision or force.",
+        "The overlap diagnosis samples evaluated surfaces at chosen frames; it does not prove continuous collision or force.",
         "A scripted attachment animation does not prove the servo carries the load.",
-        "The create-task-scene example uses shared mesh data; copy the mesh before editing geometry."
+        "The assembly builder copies objects with shared mesh data; copy the mesh before editing geometry."
       ],
       "purpose": "Joints, hand, natural pick/place, range of motion, and explode/reassemble.",
       "required": [
@@ -15996,9 +16845,211 @@
         }
       }
     },
+    "native-character-creature": {
+      "adapters": [],
+      "concepts": [
+        ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md",
+        ".agents/skills/img2threejs/grimoire/feedback/shading_realism.md"
+      ],
+      "gates": [
+        "Stature within the declared canon's +/-2%; landmark elevations measured against the head unit.",
+        "Deforming zones are all-quad with no extraordinary pole on a crease or hinge line; eyelids close without inversion.",
+        "Weights are finite, non-negative, sum to 1.0 per vertex, and no control bone owns a vertex group.",
+        "Walk cycle F-curves close the loop at frame T and the anti-phase / bounce-frequency relations hold numerically.",
+        "Shader node trees have no dangling outputs; hair data-blocks contain actual curves (len(curves) > 0)."
+      ],
+      "limitations": [
+        "Every mesh generator in this pack is a PROXY (primitive union, quad-dominant, non-manifold, unweighted). None is animation-ready; retopologise before rigging and never claim all-quad topology from them.",
+        "Anatomy, proportion and biomechanics numbers come from cited literature and were NOT verified by the onboarding audit; only the bpy API names and the modules' own postconditions were.",
+        "Facial capture readiness is not demonstrated: 46 of the 52 ARKit targets are named identity keys with no sculpted delta.",
+        "Nothing here covers cloth, muscle simulation, or physical printability of a character; a character intended for print still needs specs/build-spec.schema.json and production-gate.py.",
+        "There is no worked character build in builds/ yet, so the workflow has no adapter examples - only boilerplates."
+      ],
+      "purpose": "Build a humanoid or creature that must deform: proportions, animation topology, facial blendshapes, hair/skin shading, IK rig and walk cycle.",
+      "required": [
+        "knowledge/15-character-creature/character-creature-modeling.md",
+        "knowledge/10-modeling/modeling-topology.md",
+        "knowledge/40-animation/rigging-armature.md",
+        "knowledge/40-animation/animation-fcurves.md",
+        "knowledge/20-shading/materials-pbr.md"
+      ],
+      "steps": [
+        "Contract first: humanoid or creature, locomotor posture, stature canon, delivery target (render / game / print) and whether the face must be capture-driven.",
+        "Blockout to the proportion canon and get the silhouette signed off before any detailing; measure stature and landmarks, do not eyeball them.",
+        "Retopologise to animation topology: closed facial loops, three-loop hinges, poles pushed onto bony planes.",
+        "Rig (IK + pole targets + twist bones), skin, and only then add blendshapes, hair curves and skin/hair shading.",
+        "Verify numerically at every step; review a short animatic before any long render. Endpoint poses do not prove motion."
+      ],
+      "supplemental": [
+        "knowledge/50-procedural/geometry-nodes.md",
+        "knowledge/40-animation/mocap-retargeting.md",
+        "knowledge/10-modeling/uv-unwrapping.md",
+        "knowledge/60-pipeline/optimization-realtime.md"
+      ],
+      "topics": {
+        "animation-topology-facial-loops": {
+          "gates": [
+            "Zero non-quad faces in deforming zones; zero extraordinary poles on eyelid rims, lip borders or hinge lines.",
+            "Eyelids close to a 0 mm gap without triangle inversion; the mouth pucker and stretch shapes do not tear.",
+            "Face and body quad counts are measured, not estimated."
+          ],
+          "limitations": [
+            "The polygon budget table is industry rule-of-thumb, explicitly marked UNVERIFIED by the 2026-09-06 audit.",
+            "Two of its six citations (Hippolyte 2007, Zander et al. 2004) could not be confirmed offline and are flagged in the file; the Catmull-Clark continuity claims stand on citations 1-2.",
+            "This document is topology theory only: no runnable code and no mesh is produced or checked by it."
+          ],
+          "review": {
+            "by": "character/creature onboarding audit 2026-09-06 (claude general-purpose subagent): runtime API introspection in Blender 5.2.0 LTS --factory-startup + all 8 modules re-run to AGENT_OK after fixes; anatomical/bibliographic figures NOT certified",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "research/character-creature-anatomy-modeling/03-ANIMATION-TOPOLOGY-EDGE-FLOWS-FACIAL-LOOPS.md": "917013bfac2105dc2d582f6821e52c0deb3d8c7f6888839c748d2e54b283d7a4"
+            }
+          },
+          "sources": [
+            "research/character-creature-anatomy-modeling/03-ANIMATION-TOPOLOGY-EDGE-FLOWS-FACIAL-LOOPS.md"
+          ],
+          "steps": [
+            "Route the four closed facial loops (orbicularis oculi, orbicularis oris, nasolabial, mandibular collar) before adding density anywhere else.",
+            "Push every unavoidable valence-3/5 pole onto a rigid bony plane and keep poles at least three loops away from any crease or hinge line.",
+            "Fix the polygon budget against the actual delivery target, then measure the mesh against it."
+          ],
+          "when": "When deciding edge flow, pole placement, facial loop layout, or a polygon budget for a deforming character."
+        },
+        "character-proportion-anatomy": {
+          "gates": [
+            "Measured stature within the declared canon's +/-2%; soles on the floor plane; knee and chin bands at their head-unit elevations.",
+            "For a digitigrade limb, the hock measures clearly above ground and knee > hock > paw descends monotonically.",
+            "Quad fraction and non-manifold edge count are reported as numbers, not asserted as 'clean'."
+          ],
+          "limitations": [
+            "Both generators emit a PRIMITIVE UNION, not a basemesh: ~86% / ~73% quads, 16 non-manifold edges on the humanoid, n-gon cone caps, and the 'three-loop hinges' are separate disc primitives rather than edge loops.",
+            "All landmark vertex groups are created EMPTY; nothing is weighted until a separate skinning pass runs.",
+            "Proportion tables, sexual-dimorphism angles and locomotion scaling ratios are cited from the literature but were not verified by this audit."
+          ],
+          "review": {
+            "by": "character/creature onboarding audit 2026-09-06 (claude general-purpose subagent): runtime API introspection in Blender 5.2.0 LTS --factory-startup + all 8 modules re-run to AGENT_OK after fixes; anatomical/bibliographic figures NOT certified",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "research/character-creature-anatomy-modeling/01-HUMAN-ANATOMICAL-PROPORTIONS-CRANIOFACIAL.md": "0926c81b148993aa204b3938748607becfd5f0964e4e6b2eab00bf6af312415b",
+              "research/character-creature-anatomy-modeling/02-CREATURE-COMPARATIVE-ANATOMY-LOCOMOTION.md": "8b4677f1408272d8840d45d2947668f8f5db7846485f61f351d1e0862af2dae8",
+              "scripts/boilerplates/character_creature/bp_creature_digitigrade.py": "2c6d7ba67b19d8ad18568d2bc282d5ce3623db034722a3a3fa2f67111d30c379",
+              "scripts/boilerplates/character_creature/bp_humanoid_basemesh.py": "48f5bcc2ae2460dae78e17d64e3e925ca2d2dc4435c1e6cc998458b4e1d9b09f"
+            }
+          },
+          "sources": [
+            "research/character-creature-anatomy-modeling/01-HUMAN-ANATOMICAL-PROPORTIONS-CRANIOFACIAL.md",
+            "research/character-creature-anatomy-modeling/02-CREATURE-COMPARATIVE-ANATOMY-LOCOMOTION.md",
+            "scripts/boilerplates/character_creature/bp_humanoid_basemesh.py",
+            "scripts/boilerplates/character_creature/bp_creature_digitigrade.py"
+          ],
+          "steps": [
+            "Declare stature, head-unit canon and sex/species archetype BEFORE geometry; peg every landmark elevation to the head unit.",
+            "For a creature, pick plantigrade / digitigrade / unguligrade first: it changes the whole hindlimb chain, not just the foot.",
+            "Blockout with the proxy generators, measure the stature and landmark elevations, then retopologise before rigging."
+          ],
+          "when": "When humanoid or creature proportions, stature canons, or limb posture must be fixed before any detailing."
+        },
+        "character-rig-locomotion": {
+          "gates": [
+            "Bone count and IK wiring measured; twist constraint copies only local Y at the declared influence.",
+            "Weights: one entry per vertex summing to 1.0, no NaN, and zero control-bone vertex groups.",
+            "F-curve values at frame 0 and frame T agree within 1e-4; left/right arm curves sum to ~0 at every frame; pelvis Z shows two extrema per stride."
+          ],
+          "limitations": [
+            "The binder is NEAREST-BONE HARD assignment (one group per vertex at weight 1.0), not the Gaussian falloff the research file's formula describes: partition of unity and non-negativity hold, smoothness does not.",
+            "The walk is a 5-key harmonic approximation, not a gait solve: no stance plateau (expect foot slide), and pelvis Z extrema land at 0/T-4/T-2/3T-4 rather than Winter's 12%/35%/62%/85%.",
+            "Kavan et al. 2007 is the dual-quaternion-skinning paper cited for the candy-wrapper artifact; it does not propose twist bones. Dual quaternion skinning stays off unless use_deform_preserve_volume is set."
+          ],
+          "review": {
+            "by": "character/creature onboarding audit 2026-09-06 (claude general-purpose subagent): runtime API introspection in Blender 5.2.0 LTS --factory-startup + all 8 modules re-run to AGENT_OK after fixes; anatomical/bibliographic figures NOT certified",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md": "eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d",
+              "scripts/boilerplates/character_creature/bp_biped_locomotion.py": "220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43",
+              "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py": "079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3"
+            }
+          },
+          "sources": [
+            "research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md",
+            "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py",
+            "scripts/boilerplates/character_creature/bp_biped_locomotion.py"
+          ],
+          "steps": [
+            "Build edit_bones inside mode_set('EDIT') (the sanctioned operator exception), then wire IK with target + pole target + pole angle + chain_count = 2 through the data API.",
+            "Exclude control bones from the deform set by scanning the WHOLE name for _IK / _Pole: side-suffixed controls like Hand_IK.L do not end with _IK.",
+            "Key the walk on the slotted action, then measure loop closure, arm anti-phase, bounce frequency and chest counter-rotation numerically before rendering anything."
+          ],
+          "when": "When building a humanoid IK/FK armature, twist bones, automatic weights, or a procedural walk cycle."
+        },
+        "facs-blendshape-targets": {
+          "gates": [
+            "52 unique target names present, Basis first, all sliders clamped to [0, 1].",
+            "The corrective key's driven value equals w_a * w_b after a view-layer update (measured, not assumed).",
+            "Count of targets with non-zero displacement is stated explicitly in the delivery note."
+          ],
+          "limitations": [
+            "The boilerplate sculpts only 6 of the 52 targets (jawOpen, mouthSmile L/R, eyeBlink L/R, browInnerUp); the other 46 are correctly-named IDENTITY keys, not expressions.",
+            "Its head is a scaled UV sphere: no eye sockets, lips or nostrils, and triangle fans at both poles. It exercises the plumbing, it is not a face.",
+            "The ARKit 52 are Apple's product spec, FACS-inspired; they are NOT Ekman Action Units and NOT ISO/IEC 14496-2 (that standard defines MPEG-4 FAPs). The research file's original heading claimed otherwise and was corrected by the audit."
+          ],
+          "review": {
+            "by": "character/creature onboarding audit 2026-09-06 (claude general-purpose subagent): runtime API introspection in Blender 5.2.0 LTS --factory-startup + all 8 modules re-run to AGENT_OK after fixes; anatomical/bibliographic figures NOT certified",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "research/character-creature-anatomy-modeling/04-FACS-FACIAL-BLENDSHAPES-SHAPE-KEYS.md": "47e1438fa1d1a316adb57d25015628019234628d3769e37ef8f91e9e1c6975ca",
+              "scripts/boilerplates/character_creature/bp_facs_blendshapes.py": "8e611f7688efd291b95f52ebf779b4ac7d69e5cfd4a39919bcb8427948acb903"
+            }
+          },
+          "sources": [
+            "research/character-creature-anatomy-modeling/04-FACS-FACIAL-BLENDSHAPES-SHAPE-KEYS.md",
+            "scripts/boilerplates/character_creature/bp_facs_blendshapes.py"
+          ],
+          "steps": [
+            "Create the full 52-target ARKit inventory with clamped [0, 1] sliders, then record separately how many targets actually carry sculpted deltas.",
+            "Author combination correctives as scripted drivers on the product of the two contributing weights and evaluate the depsgraph to prove the product.",
+            "Use foreach_set for bulk vertex displacement; per-vertex Python loops do not scale to a real head."
+          ],
+          "when": "When building facial shape keys, ARKit-compatible capture targets, or combination corrective drivers."
+        },
+        "hair-curves-grooming-shading": {
+          "gates": [
+            "len(curves_data.curves) > 0 and per-strand arc length within the declared strand_length band; radius tapers root to tip.",
+            "Principled Hair BSDF reports parametrization 'MELANIN' and model 'CHIANG'; Principled BSDF reports 'RANDOM_WALK_SKIN' and the intended radius triple.",
+            "Every non-output shader node has at least one linked output (a dangling colour ramp renders nothing and passes naive checks)."
+          ],
+          "limitations": [
+            "The Geometry Nodes tree only re-tapers radius: there is no guide interpolation, clumping, frizz or curl node despite the pipeline diagram in the research file.",
+            "surface_uv_coordinate values are written as a deterministic placeholder, not baked from the scalp UV map, so strands are not truly surface-bound yet.",
+            "Subsurface radius (1.0, 0.22, 0.08) and scale 0.025 m are artistic values, not standards; Blender's own defaults are (1.0, 0.2, 0.1) and 0.005 m. Christensen-Burley (2015) describes the BURLEY method, not the random walk."
+          ],
+          "review": {
+            "by": "character/creature onboarding audit 2026-09-06 (claude general-purpose subagent): runtime API introspection in Blender 5.2.0 LTS --factory-startup + all 8 modules re-run to AGENT_OK after fixes; anatomical/bibliographic figures NOT certified",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "research/character-creature-anatomy-modeling/05-BLENDER-HAIR-CURVES-SKIN-TISSUE-PHYSICS.md": "459b49ef08da6612390a492e22efdc2524183221fa72edf2d4a45449b0eae590",
+              "scripts/boilerplates/character_creature/bp_fur_hair_shader.py": "a9904d4ae5c086900ba4973d7e9ad1d59fd06d95cb4f575a4ca529ece6228df2",
+              "scripts/boilerplates/character_creature/bp_hair_curves_gen.py": "b5ae56714c849d3830cb652a27622faecfed64d9979769b9969e47c73314fd89",
+              "scripts/boilerplates/character_creature/bp_skin_sss_shader.py": "2fa9c2a68e5ccf3022bb62eaf0e66ef46db1f5506b5e0d93380243555dd891bc"
+            }
+          },
+          "sources": [
+            "research/character-creature-anatomy-modeling/05-BLENDER-HAIR-CURVES-SKIN-TISSUE-PHYSICS.md",
+            "scripts/boilerplates/character_creature/bp_hair_curves_gen.py",
+            "scripts/boilerplates/character_creature/bp_fur_hair_shader.py",
+            "scripts/boilerplates/character_creature/bp_skin_sss_shader.py"
+          ],
+          "steps": [
+            "Create the data-block with bpy.data.hair_curves.new(name), set surface + surface_uv_map on the DATA, then call add_curves() and write points[i].position/.radius.",
+            "For skin, set subsurface_method = 'RANDOM_WALK_SKIN' BEFORE reading or writing Subsurface IOR; a disabled socket is not reachable by name.",
+            "Drive root-to-tip hair variation from the strand-info 'Intercept' output into 'Tint'; verify no node output is left dangling."
+          ],
+          "when": "When grooming hair or fur on Blender 5.2 Curves, or shading skin and hair with the Principled BSDF / Principled Hair BSDF."
+        }
+      }
+    },
     "native-hard-surface": {
       "adapters": [
-        "builds/fpv-drone-native/drone-mesh-library.py",
+        "builds/watch-winder-capsule/scripts/ww_mesh.py",
         "scripts/make-comparison-sheet.sh"
       ],
       "concepts": [
@@ -16014,7 +17065,7 @@
       ],
       "limitations": [
         "Images do not determine occluded faces precisely.",
-        "The drone example carries its own assumptions; do not run its builder into the current scene."
+        "ww_mesh.py returns raw vertex/face data in metres; the caller owns winding, unit conversion and scene ownership."
       ],
       "purpose": "Build from reference images, silhouette, topology, and softly filleted bodies using Blender-native tools.",
       "required": [
@@ -16380,8 +17431,8 @@
     "polymer-functional-print": {
       "adapters": [
         "scripts/verify-3dprint-tolerances.py",
-        "builds/robot-arm-v2-engineered/export-prototype-parts.py",
-        "builds/robot-arm-v2-engineered/check-stl-files.py"
+        "builds/watch-winder-capsule/scripts/pass-30-print-plates-layout.py",
+        "builds/robot-arm-print-assembly/scripts/export-plate-packages.py"
       ],
       "concepts": [],
       "gates": [
@@ -16713,8 +17764,8 @@
     "render-export-delivery": {
       "adapters": [
         "scripts/headless-run.sh",
-        "builds/robot-arm-v2-engineered/render-task-demo.py",
-        "builds/robot-arm-v2-engineered/verify-task-video.py",
+        "builds/robot-arm-print-assembly/scripts/render-media.py",
+        "builds/robot-arm-original-refined/scripts/finalize-refined-video.py",
         "scripts/agent-verify-lib.py"
       ],
       "concepts": [],
@@ -16726,7 +17777,7 @@
       ],
       "limitations": [
         "The headless wrapper does not yet exit explicitly on a Python error; use the explicit CLI form from the core recipe.",
-        "The video example hardcodes an arm path/24fps/720 frames; the contract must be adapted to the task.",
+        "The video example hardcodes this build ffmpeg paths, 24 fps and frame identity, and leaves visual review PENDING; adapt the contract to the task.",
         "Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog."
       ],
       "purpose": "Caption-free video, batch rendering, encoding, and export/re-import.",
@@ -16858,7 +17909,7 @@
     "robotics-links-simulation": {
       "adapters": [
         "scripts/compute-mesh-inertia.py",
-        "builds/robot-arm-v2-engineered/flexibility-contact-lib.py"
+        "builds/robot-arm-original-refined/scripts/diagnose-subassembly-overlap.py"
       ],
       "concepts": [
         ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"

@@ -33,7 +33,7 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 ### Limitations
 
 - Images do not determine occluded faces precisely.
-- The drone example carries its own assumptions; do not run its builder into the current scene.
+- ww_mesh.py returns raw vertex/face data in metres; the caller owns winding, unit conversion and scene ownership.
 
 ### Topic: python-adapter-review
 
@@ -216,9 +216,9 @@ Joints, hand, natural pick/place, range of motion, and explode/reassemble.
 
 ### Limitations
 
-- The contact library currently samples raw rigid surfaces; it does not prove continuous collision or force.
+- The overlap diagnosis samples evaluated surfaces at chosen frames; it does not prove continuous collision or force.
 - A scripted attachment animation does not prove the servo carries the load.
-- The create-task-scene example uses shared mesh data; copy the mesh before editing geometry.
+- The assembly builder copies objects with shared mesh data; copy the mesh before editing geometry.
 
 ### Topic: rig-spaces-ik-mechanisms
 
@@ -678,6 +678,7 @@ Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.
 
 - The gear KB snippet lacks the root fillet it describes; the tolerance parameter is not implemented.
 - Holding a 250 g arm load for several minutes is BLOCKED; do not flip it to PASS from an animation.
+- No shipped example screens sustained holding torque; compute and declare a gravity/torque bound for the actual load case instead of borrowing one.
 
 ### Topic: contact-wear-sealing
 
@@ -863,7 +864,7 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 ### Limitations
 
 - The headless wrapper does not yet exit explicitly on a Python error; use the explicit CLI form from the core recipe.
-- The video example hardcodes an arm path/24fps/720 frames; the contract must be adapted to the task.
+- The video example hardcodes this build ffmpeg paths, 24 fps and frame identity, and leaves visual review PENDING; adapt the contract to the task.
 - Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog.
 
 ### Topic: renderer-diagnostics
@@ -1118,4 +1119,187 @@ When: When adapting a parametric cable/tube or flange graph.
 
 - The cable currently ignores Sag; the flange is only a disc minus a bore, with no hub/bolt pattern.
 - A nonempty mesh is not enough to prove the graph acted on the input.
+
+## native-character-creature
+
+Build a humanoid or creature that must deform: proportions, animation topology, facial blendshapes, hair/skin shading, IK rig and walk cycle.
+
+### Base reading
+
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/15-character-creature/character-creature-modeling.md` — read-verify; SHA256 `a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d`
+  Caution: Anatomy/proportion tables and the SSS radius and scale values are artistic or literature figures, not standards - the ones the audit could not confirm are marked UNVERIFIED inline. The 52 ARKit targets are Apple's spec, not FACS AUs and not ISO/IEC 14496-2.
+- `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608`
+- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
+- `knowledge/40-animation/animation-fcurves.md` — read-verify; SHA256 `1d0bc0a7456fb7dc092737f0d8f92b4aecc6d954061ace4fc6e07b9feaa9df81`
+- `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `e455cc41465700c56266f5d9652adae920972e941644b27085b2982ab3fa8705`
+
+### Steps
+
+- Contract first: humanoid or creature, locomotor posture, stature canon, delivery target (render / game / print) and whether the face must be capture-driven.
+- Blockout to the proportion canon and get the silhouette signed off before any detailing; measure stature and landmarks, do not eyeball them.
+- Retopologise to animation topology: closed facial loops, three-loop hinges, poles pushed onto bony planes.
+- Rig (IK + pole targets + twist bones), skin, and only then add blendshapes, hair curves and skin/hair shading.
+- Verify numerically at every step; review a short animatic before any long render. Endpoint poses do not prove motion.
+
+### Gates
+
+- Stature within the declared canon's +/-2%; landmark elevations measured against the head unit.
+- Deforming zones are all-quad with no extraordinary pole on a crease or hinge line; eyelids close without inversion.
+- Weights are finite, non-negative, sum to 1.0 per vertex, and no control bone owns a vertex group.
+- Walk cycle F-curves close the loop at frame T and the anti-phase / bounce-frequency relations hold numerically.
+- Shader node trees have no dangling outputs; hair data-blocks contain actual curves (len(curves) > 0).
+
+### Limitations
+
+- Every mesh generator in this pack is a PROXY (primitive union, quad-dominant, non-manifold, unweighted). None is animation-ready; retopologise before rigging and never claim all-quad topology from them.
+- Anatomy, proportion and biomechanics numbers come from cited literature and were NOT verified by the onboarding audit; only the bpy API names and the modules' own postconditions were.
+- Facial capture readiness is not demonstrated: 46 of the 52 ARKit targets are named identity keys with no sculpted delta.
+- Nothing here covers cloth, muscle simulation, or physical printability of a character; a character intended for print still needs specs/build-spec.schema.json and production-gate.py.
+- There is no worked character build in builds/ yet, so the workflow has no adapter examples - only boilerplates.
+
+### Topic: character-proportion-anatomy
+
+When: When humanoid or creature proportions, stature canons, or limb posture must be fixed before any detailing.
+
+- `research/character-creature-anatomy-modeling/01-HUMAN-ANATOMICAL-PROPORTIONS-CRANIOFACIAL.md` — read-verify; SHA256 `0926c81b148993aa204b3938748607becfd5f0964e4e6b2eab00bf6af312415b`
+  Caution: The FLAME vertex count is flagged UNVERIFIED. SMPL-X/FLAME are cited as shape-space mathematics only - their model files are separately licensed third-party assets and must not be downloaded or vendored.
+- `research/character-creature-anatomy-modeling/02-CREATURE-COMPARATIVE-ANATOMY-LOCOMOTION.md` — read-verify; SHA256 `8b4677f1408272d8840d45d2947668f8f5db7846485f61f351d1e0862af2dae8`
+  Caution: Limb-length and elastic-recoil ratios are literature summaries flagged UNVERIFIED; the chimeric/monster sections are design reasoning, not biomechanics results.
+- `scripts/boilerplates/character_creature/bp_humanoid_basemesh.py` — inspect-adapt; SHA256 `48f5bcc2ae2460dae78e17d64e3e925ca2d2dc4435c1e6cc998458b4e1d9b09f`
+  Caution: PROXY only: primitive union, quad-dominant not all-quad, non-manifold, hinge 'loops' are separate disc primitives, vertex groups carry no weights. Retopologise before rigging.
+- `scripts/boilerplates/character_creature/bp_creature_digitigrade.py` — inspect-adapt; SHA256 `2c6d7ba67b19d8ad18568d2bc282d5ce3623db034722a3a3fa2f67111d30c379`
+  Caution: Skeletal LAYOUT proxy: the reusable content is the segment angles (femur +35, tibia -40, metatarsus +25 deg), not the surface. Cone caps are n-gons; groups are unweighted.
+
+**Steps**
+
+- Declare stature, head-unit canon and sex/species archetype BEFORE geometry; peg every landmark elevation to the head unit.
+- For a creature, pick plantigrade / digitigrade / unguligrade first: it changes the whole hindlimb chain, not just the foot.
+- Blockout with the proxy generators, measure the stature and landmark elevations, then retopologise before rigging.
+
+**Gates**
+
+- Measured stature within the declared canon's +/-2%; soles on the floor plane; knee and chin bands at their head-unit elevations.
+- For a digitigrade limb, the hock measures clearly above ground and knee > hock > paw descends monotonically.
+- Quad fraction and non-manifold edge count are reported as numbers, not asserted as 'clean'.
+
+**Limitations**
+
+- Both generators emit a PRIMITIVE UNION, not a basemesh: ~86% / ~73% quads, 16 non-manifold edges on the humanoid, n-gon cone caps, and the 'three-loop hinges' are separate disc primitives rather than edge loops.
+- All landmark vertex groups are created EMPTY; nothing is weighted until a separate skinning pass runs.
+- Proportion tables, sexual-dimorphism angles and locomotion scaling ratios are cited from the literature but were not verified by this audit.
+
+### Topic: animation-topology-facial-loops
+
+When: When deciding edge flow, pole placement, facial loop layout, or a polygon budget for a deforming character.
+
+- `research/character-creature-anatomy-modeling/03-ANIMATION-TOPOLOGY-EDGE-FLOWS-FACIAL-LOOPS.md` — read-verify; SHA256 `917013bfac2105dc2d582f6821e52c0deb3d8c7f6888839c748d2e54b283d7a4`
+  Caution: Hippolyte (2007) and Zander et al. (2004) could not be confirmed and are marked UNVERIFIED in the file; polygon budgets are rules of thumb, not standards.
+
+**Steps**
+
+- Route the four closed facial loops (orbicularis oculi, orbicularis oris, nasolabial, mandibular collar) before adding density anywhere else.
+- Push every unavoidable valence-3/5 pole onto a rigid bony plane and keep poles at least three loops away from any crease or hinge line.
+- Fix the polygon budget against the actual delivery target, then measure the mesh against it.
+
+**Gates**
+
+- Zero non-quad faces in deforming zones; zero extraordinary poles on eyelid rims, lip borders or hinge lines.
+- Eyelids close to a 0 mm gap without triangle inversion; the mouth pucker and stretch shapes do not tear.
+- Face and body quad counts are measured, not estimated.
+
+**Limitations**
+
+- The polygon budget table is industry rule-of-thumb, explicitly marked UNVERIFIED by the 2026-09-06 audit.
+- Two of its six citations (Hippolyte 2007, Zander et al. 2004) could not be confirmed offline and are flagged in the file; the Catmull-Clark continuity claims stand on citations 1-2.
+- This document is topology theory only: no runnable code and no mesh is produced or checked by it.
+
+### Topic: facs-blendshape-targets
+
+When: When building facial shape keys, ARKit-compatible capture targets, or combination corrective drivers.
+
+- `research/character-creature-anatomy-modeling/04-FACS-FACIAL-BLENDSHAPES-SHAPE-KEYS.md` — read-verify; SHA256 `47e1438fa1d1a316adb57d25015628019234628d3769e37ef8f91e9e1c6975ca`
+  Caution: The 52 ARKit targets are NOT FACS Action Units and NOT ISO/IEC 14496-2 (MPEG-4 FAPs); cite Apple's spec. Blendshape orthogonality is a modelling convention, which is why correctives exist.
+- `scripts/boilerplates/character_creature/bp_facs_blendshapes.py` — inspect-adapt; SHA256 `8e611f7688efd291b95f52ebf779b4ac7d69e5cfd4a39919bcb8427948acb903`
+  Caution: Only 6 of 52 targets carry sculpted deltas; the rest are identity keys. The head is a scaled UV sphere with no facial features. ARKit spec, not FACS AUs, not ISO/IEC 14496-2.
+
+**Steps**
+
+- Create the full 52-target ARKit inventory with clamped [0, 1] sliders, then record separately how many targets actually carry sculpted deltas.
+- Author combination correctives as scripted drivers on the product of the two contributing weights and evaluate the depsgraph to prove the product.
+- Use foreach_set for bulk vertex displacement; per-vertex Python loops do not scale to a real head.
+
+**Gates**
+
+- 52 unique target names present, Basis first, all sliders clamped to [0, 1].
+- The corrective key's driven value equals w_a * w_b after a view-layer update (measured, not assumed).
+- Count of targets with non-zero displacement is stated explicitly in the delivery note.
+
+**Limitations**
+
+- The boilerplate sculpts only 6 of the 52 targets (jawOpen, mouthSmile L/R, eyeBlink L/R, browInnerUp); the other 46 are correctly-named IDENTITY keys, not expressions.
+- Its head is a scaled UV sphere: no eye sockets, lips or nostrils, and triangle fans at both poles. It exercises the plumbing, it is not a face.
+- The ARKit 52 are Apple's product spec, FACS-inspired; they are NOT Ekman Action Units and NOT ISO/IEC 14496-2 (that standard defines MPEG-4 FAPs). The research file's original heading claimed otherwise and was corrected by the audit.
+
+### Topic: hair-curves-grooming-shading
+
+When: When grooming hair or fur on Blender 5.2 Curves, or shading skin and hair with the Principled BSDF / Principled Hair BSDF.
+
+- `research/character-creature-anatomy-modeling/05-BLENDER-HAIR-CURVES-SKIN-TISSUE-PHYSICS.md` — read-verify; SHA256 `459b49ef08da6612390a492e22efdc2524183221fa72edf2d4a45449b0eae590`
+  Caution: The original snippet (bpy.data.curves.new(..., 'CURVES') and Object.surface) does not run in 5.2 and was replaced. Legacy particle hair is NOT removed in 5.2. Spitieris & Bergou (2012) is flagged UNVERIFIED; prefer Bergou et al. 2008/2010.
+- `scripts/boilerplates/character_creature/bp_hair_curves_gen.py` — inspect-adapt; SHA256 `b5ae56714c849d3830cb652a27622faecfed64d9979769b9969e47c73314fd89`
+  Caution: The node tree only re-tapers radius: no interpolation, clumping, frizz or curl. surface_uv_coordinate values are a deterministic placeholder, not baked from the scalp UV map.
+- `scripts/boilerplates/character_creature/bp_fur_hair_shader.py` — inspect-adapt; SHA256 `a9904d4ae5c086900ba4973d7e9ad1d59fd06d95cb4f575a4ca529ece6228df2`
+  Caution: Melanin/redness phenotype values are artist guidance, not measured pigment concentrations. 5.2 names the strand-info node 'Curves Info' even though it is created as ShaderNodeHairInfo.
+- `scripts/boilerplates/character_creature/bp_skin_sss_shader.py` — inspect-adapt; SHA256 `2fa9c2a68e5ccf3022bb62eaf0e66ef46db1f5506b5e0d93380243555dd891bc`
+  Caution: subsurface_method must be set BEFORE Subsurface IOR (that socket is disabled and unreachable by name under the default BURLEY). Radius (1.0, 0.22, 0.08) and scale 0.025 m are look choices; Blender's defaults are (1.0, 0.2, 0.1) and 0.005 m.
+
+**Steps**
+
+- Create the data-block with bpy.data.hair_curves.new(name), set surface + surface_uv_map on the DATA, then call add_curves() and write points[i].position/.radius.
+- For skin, set subsurface_method = 'RANDOM_WALK_SKIN' BEFORE reading or writing Subsurface IOR; a disabled socket is not reachable by name.
+- Drive root-to-tip hair variation from the strand-info 'Intercept' output into 'Tint'; verify no node output is left dangling.
+
+**Gates**
+
+- len(curves_data.curves) > 0 and per-strand arc length within the declared strand_length band; radius tapers root to tip.
+- Principled Hair BSDF reports parametrization 'MELANIN' and model 'CHIANG'; Principled BSDF reports 'RANDOM_WALK_SKIN' and the intended radius triple.
+- Every non-output shader node has at least one linked output (a dangling colour ramp renders nothing and passes naive checks).
+
+**Limitations**
+
+- The Geometry Nodes tree only re-tapers radius: there is no guide interpolation, clumping, frizz or curl node despite the pipeline diagram in the research file.
+- surface_uv_coordinate values are written as a deterministic placeholder, not baked from the scalp UV map, so strands are not truly surface-bound yet.
+- Subsurface radius (1.0, 0.22, 0.08) and scale 0.025 m are artistic values, not standards; Blender's own defaults are (1.0, 0.2, 0.1) and 0.005 m. Christensen-Burley (2015) describes the BURLEY method, not the random walk.
+
+### Topic: character-rig-locomotion
+
+When: When building a humanoid IK/FK armature, twist bones, automatic weights, or a procedural walk cycle.
+
+- `research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md` — read-verify; SHA256 `eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d`
+  Caution: Christensen-Burley 2015 is the BURLEY method, not the random walk; Kavan 2007 is dual quaternion skinning, not twist bones. The Gaussian weight formula is NOT what the boilerplate implements. Hildebrand 1976 and Jimenez 2010 citation details are flagged UNVERIFIED.
+- `scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py` — inspect-adapt; SHA256 `079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3`
+  Caution: Binding is NEAREST-BONE hard assignment (one group per vertex at weight 1.0), not smooth skinning - smooth the weights before any deformation-quality claim. Dual quaternion skinning stays off unless use_deform_preserve_volume is set.
+- `scripts/boilerplates/character_creature/bp_biped_locomotion.py` — inspect-adapt; SHA256 `220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43`
+  Caution: A 5-key harmonic approximation, not a gait solve: no stance plateau so expect foot slide, and pelvis Z extrema fall at 0/T/2 rather than Winter's 12%/62%. Review an animatic before calling it a walk.
+
+**Steps**
+
+- Build edit_bones inside mode_set('EDIT') (the sanctioned operator exception), then wire IK with target + pole target + pole angle + chain_count = 2 through the data API.
+- Exclude control bones from the deform set by scanning the WHOLE name for _IK / _Pole: side-suffixed controls like Hand_IK.L do not end with _IK.
+- Key the walk on the slotted action, then measure loop closure, arm anti-phase, bounce frequency and chest counter-rotation numerically before rendering anything.
+
+**Gates**
+
+- Bone count and IK wiring measured; twist constraint copies only local Y at the declared influence.
+- Weights: one entry per vertex summing to 1.0, no NaN, and zero control-bone vertex groups.
+- F-curve values at frame 0 and frame T agree within 1e-4; left/right arm curves sum to ~0 at every frame; pelvis Z shows two extrema per stride.
+
+**Limitations**
+
+- The binder is NEAREST-BONE HARD assignment (one group per vertex at weight 1.0), not the Gaussian falloff the research file's formula describes: partition of unity and non-negativity hold, smoothness does not.
+- The walk is a 5-key harmonic approximation, not a gait solve: no stance plateau (expect foot slide), and pelvis Z extrema land at 0/T-4/T-2/3T-4 rather than Winter's 12%/35%/62%/85%.
+- Kavan et al. 2007 is the dual-quaternion-skinning paper cited for the candy-wrapper artifact; it does not propose twist bones. Dual quaternion skinning stays off unless use_deform_preserve_volume is set.
 
