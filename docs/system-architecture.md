@@ -32,9 +32,9 @@ An already-local scaffold is eligible only when explicitly selected by the user.
 
 Use purpose-selected numeric checks, then visible previews for the questions numbers cannot answer. Animation requires a semantic/motion preview as well as extreme poses. Raw image sequences decouple Blender rendering from captions, formatting and encoding. A working render profile is a measured scene-specific choice; neither Metal nor any fixed sample count is universal acceptance.
 
-Actual final task film: 960×720, 24 fps, 720 frames, 30 seconds, six Cycles samples with denoising and no overlays. [Video check](../builds/robot-arm-v2-engineered/reports/task-video-check.json) records decode and sampled visual review. Settings describe this artifact, not a default quality guarantee.
+Actual delivered assembly film: 960×720, 24 fps, 3020 frames, 125.8 seconds, no overlays. [Media check](../builds/robot-arm-original-refined/reports/media-check.json) records the full decode and the sampled visual review. Settings describe this artifact, not a default quality guarantee.
 
-Media, motion, sampled surface contact, fit-prototype and manufacturing results stay separate. Geometry changes invalidate affected older evidence. The arm's 250 g multi-minute requirement remains blocked for manufacture despite successful animation; see the [build README](../builds/robot-arm-v2-engineered/README.md).
+Media, motion, sampled surface contact, fit-prototype and manufacturing results stay separate. Geometry changes invalidate affected older evidence. The arm's 250 g multi-minute requirement remains blocked for manufacture despite successful animation; see the [build README](../builds/robot-arm-print-assembly/README.md).
 
 ## Production contract and gate
 

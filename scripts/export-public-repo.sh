@@ -8,9 +8,9 @@
 #   - skills, knowledge, docs, specs, scripts, tests: everything except caches
 #   - research/: markdown only (no tools/ checkouts, venvs or media)
 #   - img2threejs: vendored without .git/.cache (Apache-2.0 license file kept)
-#   - builds/: the curated robot-arm demo, the watch-winder-capsule render+print demo,
-#     and the catalog example scripts;
-#     never frames, draft videos, *.log, snapshots or zip kits
+#   - builds/: exactly two builds — the robot arm final (robot-arm-original-refined +
+#     robot-arm-print-assembly) and watch-winder-capsule — plus the catalog example files;
+#     nothing else under builds/, and never frames, draft videos, *.log, snapshots or zip kits
 #   - plans/: nothing except the knowledge pipeline receipt
 # Exit: 0 verified · 1 verification failed · 2 bad input.
 set -euo pipefail
@@ -32,8 +32,8 @@ for s in blender-agent-core blender-image-to-3d blender-knowledge-workbench img2
 done
 
 # --- curated demo builds ------------------------------------------------------
-A=builds/robot-arm-original-refined; P=builds/robot-arm-print-assembly; V=builds/robot-arm-v2-engineered
-mkdir -p "$DST/$A/video" "$DST/$A/renders" "$DST/$P/video" "$DST/$P/renders" "$DST/$V" "$DST/builds/fpv-drone-native"
+A=builds/robot-arm-original-refined; P=builds/robot-arm-print-assembly
+mkdir -p "$DST/$A/video" "$DST/$A/renders" "$DST/$P/video" "$DST/$P/renders"
 cp "$A"/README.md "$A"/plan.md "$A"/arm-original-refined.blend "$DST/$A/"
 "${RS[@]}" --delete --exclude '*.log' "$A/reports" "$A/scripts" "$DST/$A/"
 cp "$A"/renders/*.png "$A"/renders/*.jpg "$DST/$A/renders/" 2>/dev/null || true
@@ -65,6 +65,8 @@ PY
 rm -rf "$DST/plans/260905-2356-blender-workflow-audit"
 mkdir -p "$DST/plans/knowledge-updates"
 cp plans/knowledge-updates/last-publication.json "$DST/plans/knowledge-updates/"
+# builds retired from the public export (2026-09-06 owner decision): remove stale copies.
+rm -rf "$DST/builds/robot-arm-v2-engineered" "$DST/builds/fpv-drone-native"
 find "$DST" -name '.DS_Store' -delete
 
 # --- verify standalone --------------------------------------------------------

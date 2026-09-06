@@ -1,7 +1,7 @@
 """Binary STL export in millimetres and an independent re-import audit.
 
-Writer promoted from builds/robot-arm-v2-engineered/export-prototype-parts.py
-(hand-written binary STL + sha256 manifest, vertices already in mm). The
+Writer promoted from an earlier robot-arm build export pass (hand-written
+binary STL + sha256 manifest, vertices already in mm). The
 re-import uses Blender's own STL reader, so the geometry is parsed by code that
 did not produce it; the mesh is then re-run through topology and bbox
 predicates. Because the re-import wipes the file (read_homefile), it runs last,

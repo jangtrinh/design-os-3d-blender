@@ -42,7 +42,7 @@ Eight root research articles about the generation/acquisition pipeline are kept 
 
 `blender-knowledge-workbench` selects the evidence; `blender-agent-core` owns execution/verify; `blender-image-to-3d` owns fidelity. Keep these three responsibilities; do not create a separate skill for each domain.
 
-Before using an adapter, read the annotation together with the source file: runtime, scene/names/input, unit/scale, where the output is written and the actual predicate. The drone example can delete the entire scene; the arm examples have fixed paths; a numeric check may write a report or modify the mesh. Create a separate candidate, declare the output and the checkpoint. Apply the [execution recipe](../.agents/skills/blender-agent-core/references/recipes.md#explicit-execution-context); do not run historical commands directly into the current GUI.
+Before using an adapter, read the annotation together with the source file: runtime, scene/names/input, unit/scale, where the output is written and the actual predicate. A pass script may expect the scene its predecessor built; the arm examples have fixed output paths; a numeric check may write a report or modify the mesh. Create a separate candidate, declare the output and the checkpoint. Apply the [execution recipe](../.agents/skills/blender-agent-core/references/recipes.md#explicit-execution-context); do not run historical commands directly into the current GUI.
 
 Keep the loop Spec → Plan → Code → Critic → Execute → Verify → Refine. Pick the cheapest measurement that answers the question, then look at images/motion for what only the eye can judge. The catalog does not fix the old helpers: [E1–E7](blender-workflow-improvement-backlog.md) is still backlog.
 

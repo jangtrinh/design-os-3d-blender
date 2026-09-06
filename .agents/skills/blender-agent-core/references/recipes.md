@@ -64,7 +64,7 @@ Trigger: linked joints, tool swaps, grasping or task demonstrations. Load `40-an
 4. Check path poses, camera envelope, attachment/release continuity and final supports. Record contact exceptions, sampling interval and predicate limits; use continuous/solid tests when the claim requires them.
 5. Preserve separate performance/physics status. A keyed relative payload transform proves authored alignment, not friction, grip force, holding torque or real controller behavior.
 
-Arm examples: [motion plan](../../../../builds/robot-arm-v2-engineered/task-motion-plan.py), [props/datum](../../../../builds/robot-arm-v2-engineered/task-props.py), [path check](../../../../builds/robot-arm-v2-engineered/check-task-path.py), [presentation check](../../../../builds/robot-arm-v2-engineered/verify-task-presentation.py). These are artifact-specific examples, not generic APIs. The path script currently writes failure status without a failing exit; inspect its JSON explicitly until E3 is implemented. Do not run these builders against a different/live file without reviewing their scene ownership and input assumptions.
+Arm examples: [timing plan](../../../../builds/robot-arm-original-refined/scripts/plan-grouped-timing.py) (pure data before any scene edit), [scene build](../../../../builds/robot-arm-print-assembly/scripts/build-assembly.py), [contact screen](../../../../builds/robot-arm-original-refined/scripts/diagnose-subassembly-overlap.py), [presentation check](../../../../builds/robot-arm-original-refined/scripts/check-refined-scene.py). These are artifact-specific examples, not generic APIs. The contact screen samples evaluated surfaces at chosen frames only; read its JSON as well as its exit status. Do not run these builders against a different/live file without reviewing their scene ownership and input assumptions.
 
 ## Assembly and exploded views
 
@@ -80,7 +80,7 @@ Trigger: printable, functional, load-bearing, removable hardware or thermal duty
 - Export separated fit prototypes with stated units and revision, then re-import/check actual files in a fresh process. Printing, fit trials and loaded thermal/strength tests remain independent release gates.
 - Carry physical blockers explicitly through film/export delivery. No visual-only acceptance can downgrade a user-approved payload/duty requirement.
 
-Arm reference: [independent final check](../../../../builds/robot-arm-v2-engineered/reports/independent-final-check.md) and [flexibility review](../../../../builds/robot-arm-v2-engineered/reports/independent-flexibility-review.md). This arm remains blocked for manufacture; baseline STL evidence does not certify revised clearance cuts.
+Arm reference: [mesh audit](../../../../builds/robot-arm-print-assembly/reports/mesh-audit.json) and [export check](../../../../builds/robot-arm-print-assembly/reports/export-check.json), with the release status in the [build README](../../../../builds/robot-arm-print-assembly/README.md). This arm remains blocked for manufacture; closed meshes and a checked geometry package do not certify fit, retention or load.
 
 ## Render delivery
 
@@ -92,7 +92,7 @@ Freeze input file, scene, renderer/device, samples/denoiser, resolution, camera,
 
 Render raw images, process optional overlays separately, then encode. Before using an encoder filter, inspect local availability. Verify frame count, dimensions, duration/fps, decode errors and representative decoded frames; watch motion for timing/flicker when making those quality claims. Delivery clean versus annotated follows this task's brief, not a global no-caption rule.
 
-Arm examples: [renderer](../../../../builds/robot-arm-v2-engineered/render-task-demo.py), [video verifier](../../../../builds/robot-arm-v2-engineered/verify-task-video.py), [final check](../../../../builds/robot-arm-v2-engineered/reports/task-video-check.json). This 30-second case used 720 raw PNGs; subtitle removal needed encoding only. Its settings are an example, not a universal quality target.
+Arm examples: [renderer](../../../../builds/robot-arm-print-assembly/scripts/render-media.py), [video verifier](../../../../builds/robot-arm-original-refined/scripts/finalize-refined-video.py), [final check](../../../../builds/robot-arm-original-refined/reports/media-check.json). That delivery encoded 3020 raw PNGs at 960x720/24 fps without overlays. Its settings are an example, not a universal quality target.
 
 ## Revision-bound acceptance
 

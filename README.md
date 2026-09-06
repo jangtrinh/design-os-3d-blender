@@ -40,7 +40,7 @@ Everything here is Blender-native: no vendor mesh generation, no downloaded asse
 | Boilerplates | `scripts/boilerplates/` (30 modules) | CAD, gears, fasteners, O-rings, connectors, rigs, geometry nodes, render — each self-tests under the sentinel contract |
 | Tests | `tests/execution`, `tests/production-gate`, `tests/knowledge` | 93 tests, all run against a real headless Blender |
 | Agent runtimes | `AGENTS.md` (Codex, any AGENTS.md reader) · `CLAUDE.md` (Claude Code) · `.agents/rules`, `.agents/workflows`, `.agents/mcp_config.json` (Google Antigravity) | Same skills folder (`.agents/skills`) is read natively by Antigravity; setup in `docs/antigravity-setup.md` |
-| Demo | `builds/robot-arm-*` | The robot-arm session: accepted assembly film, 38-part print kit, engineering reports — with their honest limits |
+| Worked examples | `builds/robot-arm-*`, `builds/watch-winder-capsule` | Two builds: the robot-arm session (accepted assembly film + 38-part print kit) and the watch-winder capsule (native render asset + gate-passed print plates) — each with its honest limits |
 
 ## 🔬 Proof: the robot arm is real geometry, not a picture
 
@@ -109,13 +109,20 @@ Contract → Plan (scene graph) → Code (pass files ≤ ~80 lines) → Critic �
 - **Verdict is one of** `continue · refine-spec · refine-code · request-input · stop`. Two failures on the same step change the *class* of approach; three escalate.
 - **Success is the sentinel**, never "Code executed successfully".
 
-## 🤖 Robot-arm demo (`builds/`)
+## 🤖 Worked examples (`builds/`)
+
+Two builds ship here, and nothing else under `builds/`.
+
+**Robot arm (final), in two folders:**
 
 - `robot-arm-original-refined/` — the accepted step-by-step assembly film (3,020 frames, Cycles), source `.blend`, clearance/overlap checks, decoded-frame review reports.
 - `robot-arm-print-assembly/` — 38 fit-prototype parts on 5 plates (PETG + TPU) as STL/3MF, parts list, assembly-step CSV, mesh audit and export checks.
-- `robot-arm-v2-engineered/` — the task-demo scripts the knowledge catalog cites as execution examples (motion plan, path check, STL export with manifest, delivery audit).
 
-Status is deliberately separated per domain: **media accepted · motion checked at sampled poses · fit prototypes exported · manufacture BLOCKED** (wrist torque margin, retention hardware, thermal duty and loaded trials remain open — see the build READMEs). The frame sequences and draft renders (several GB) are not shipped.
+**Watch-winder capsule:**
+
+- `watch-winder-capsule/` — a single-slot winder built from native geometry only: pass scripts (blockout → booleans → detail → materials → studio → film keys → print prep), `design-parameters.json`, `spec.json`, the small `.blend` files, numeric reports, the 17 gate-passed parts and the 6 print plates as STL, plus three contact sheets as proof of output.
+
+Status is deliberately separated per domain. Arm: **media accepted · motion checked at sampled poses · fit prototypes exported · manufacture BLOCKED** (wrist torque margin, retention hardware, thermal duty and loaded trials remain open). Winder: **stills delivered · motion PASS at sampled poses · digital gate PASS · fit visualization only · physical manufacture BLOCKED — nothing printed**. Both build READMEs carry the full evidence tables. The frame sequences, films and draft renders (several GB) are not shipped.
 
 ## 📝 Notes
 

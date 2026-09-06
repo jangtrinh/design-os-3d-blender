@@ -48,7 +48,7 @@ Optional experiment: compare one known profile with one candidate on the same th
 
 Priority: before any manufacturing claim. Owner: evidence/release task; physical tests require hardware owner or qualified mechanical reviewer. Scope: report aggregation and domain acceptance; actual wrist redesign is a separate arm workstream.
 
-Evidence: [independent final review](../builds/robot-arm-v2-engineered/reports/independent-final-check.md) retains wrist torque, shoulder margin and mounting/thermal limits. Later wrist clearance changed section volume; media success does not close those conditions.
+Evidence: the [print-assembly README](../builds/robot-arm-print-assembly/README.md) retains wrist torque margin, thin/trimmed sections, adapters, retention and tool access as unresolved. Later clearance work changed section volume; media success does not close those conditions.
 
 Acceptance: negative case with media PASS, sampled-screen PASS, changed geometry and unresolved torque remains manufacture BLOCKED; baseline STL/load approval cannot attach to revised geometry. No statements of continuous collision freedom from sampled surfaces. No 250 g multi-minute claim until relevant load, thermal, retention, adapter and anchoring evidence exists.
 
