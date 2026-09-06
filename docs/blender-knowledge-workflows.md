@@ -1,6 +1,6 @@
-# Dùng kiến thức Blender trong công việc thực tế
+# Using Blender Knowledge in Real Work
 
-Điểm vào: [blender-knowledge-workbench](../.agents/skills/blender-knowledge-workbench/SKILL.md). Công cụ dùng Python standard library, không cài dependency và không mở/sửa Blender.
+Entry point: [blender-knowledge-workbench](../.agents/skills/blender-knowledge-workbench/SKILL.md). The tool uses the Python standard library, installs no dependency and does not open or modify Blender.
 
 ```bash
 python3 scripts/blender-knowledge.py check
@@ -10,43 +10,43 @@ python3 scripts/blender-knowledge.py search "heat-set inserts" --limit 5
 python3 scripts/blender-knowledge.py show knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md --start 60 --lines 80
 ```
 
-Chạy ở root Blender hoặc dùng đường dẫn tuyệt đối tới script. CLI xuất JSON để AI đọc trực tiếp. `show` chỉ đọc path có trong catalog; không thực thi code. Search bỏ dấu, dùng từ khóa, không dịch hoặc suy luận ngữ nghĩa. ID workflow và các thuật ngữ kỹ thuật tiếng Anh giúp chọn chính xác hơn.
+Run it at the Blender root or use an absolute path to the script. The CLI outputs JSON for the AI to read directly. `show` only reads paths present in the catalog; it does not execute code. Search strips diacritics, works on keywords, and does not translate or infer semantics. Workflow IDs and English technical terms make the selection more accurate.
 
-## Workflow theo đầu ra
+## Workflows by output
 
-Danh sách và reading pack hiện hành do [catalog-config.json](../knowledge/catalog-config.json) sở hữu; `list` và `route` là nguồn thực thi, không sao chép toàn bộ cấu hình sang skill.
+The current list and reading packs are owned by [catalog-config.json](../knowledge/catalog-config.json); `list` and `route` are the executable source — do not copy the whole configuration into a skill.
 
-| Loại việc | Workflow |
+| Kind of work | Workflow |
 |---|---|
-| Dựng theo ảnh, polish hình/vật liệu | `native-hard-surface`, `native-product-visualization` |
-| Khớp, hand, thao tác, explode; procedural/simulation | `native-animation-rigging`, `native-procedural-simulation` |
-| In nhựa, tháo lắp, datum/dung sai | `polymer-functional-print`, `precision-assembly-metrology` |
-| Truyền động/tải và robot links/URDF | `mechanisms-transmissions`, `robotics-links-simulation` |
-| Render video hoặc export | `render-export-delivery` |
+| Building from images, shape/material polish | `native-hard-surface`, `native-product-visualization` |
+| Joints, hand, manipulation, explode; procedural/simulation | `native-animation-rigging`, `native-procedural-simulation` |
+| Plastic printing, assembly/disassembly, datum/tolerance | `polymer-functional-print`, `precision-assembly-metrology` |
+| Transmission/load and robot links/URDF | `mechanisms-transmissions`, `robotics-links-simulation` |
+| Video render or export | `render-export-delivery` |
 
-Mỗi pack trả: purpose → required → supplemental/concepts/adapters → steps → gates → limitations. Required tối đa 8 tài liệu, gồm 3 nền. Chỉ nạp lại tài liệu chưa có trong context. `loads_with` có vòng liên kết; catalog kiểm tra target, giữ đủ cạnh, nhưng không mở rộng đệ quy. Related chỉ là một hop đọc thêm.
+Each pack returns: purpose → required → supplemental/concepts/adapters → steps → gates → limitations. Required is at most 8 documents, including the 3 foundations. Only reload documents not already in context. `loads_with` contains link cycles; the catalog validates the targets and keeps all the edges, but does not expand recursively. Related is only one extra reading hop.
 
-Ví dụ arm: dùng `native-animation-rigging` làm primary để dựng task tự nhiên và show biên độ; bổ sung gate từ `mechanisms-transmissions` và `polymer-functional-print` cho chế tạo, `render-export-delivery` cho phim. Không nạp tất cả tài liệu của bốn pack. Video không phụ đề là yêu cầu của task hiện tại, không là quy tắc cho mọi video. Trạng thái chịu 250 g nhiều phút vẫn BLOCKED cho đến khi có bằng chứng cơ khí tương ứng.
+Arm example: use `native-animation-rigging` as the primary to build a natural task and show the range of motion; add gates from `mechanisms-transmissions` and `polymer-functional-print` for manufacturing, and `render-export-delivery` for the film. Do not load every document of the four packs. A video without subtitles is a requirement of the current task, not a rule for every video. The status of holding 250 g for several minutes stays BLOCKED until there is corresponding mechanical evidence.
 
-## Nguồn và mức tin cậy
+## Sources and confidence level
 
-Catalog tự quét Markdown trong `knowledge/`, `research/` (trừ tools), `docs/`, `.agents/skills/`; dữ liệu từ điển JSONL trong skills; script gốc, Python trong `scripts/boilerplates/` và Python tests. Build examples là danh sách chọn rõ trong config. `.claude/skills/` là mirror có hash, không tạo hit trùng. Không index `.git`, cache, môi trường ảo, binaries, media hoặc toàn bộ output cũ. Không có tuyên bố đã index mọi byte trong folder.
+The catalog scans Markdown in `knowledge/`, `research/` (excluding tools), `docs/`, `.agents/skills/` by itself; JSONL dictionary data inside skills; source scripts, Python in `scripts/boilerplates/` and Python tests. Build examples are an explicitly chosen list in the config. `.claude/skills/` is a hashed mirror and does not create duplicate hits. It does not index `.git`, caches, virtual environments, binaries, media or the whole of the old output. There is no claim that every byte in the folders has been indexed.
 
-[Catalog sinh tự động](../knowledge/catalog.json) ghi source path/SHA256, title/heading/line, dependencies, use class, mirror và các lưu ý static audit. Bốn file JSONL img2threejs được index như bốn nguồn văn bản; số record bên trong không phải số tài liệu của catalog.
+The [auto-generated catalog](../knowledge/catalog.json) records source path/SHA256, title/heading/line, dependencies, use class, mirror and the static-audit notes. The four img2threejs JSONL files are indexed as four text sources; the record count inside them is not the catalog's document count.
 
-Chỉ sáu grimoire concepts đã chọn được route từ img2threejs: phân tích ảnh, surface, detail inventory, joint attachment, shading review và self-correction. Phần còn lại có thể tìm ở `--scope all` để nghiên cứu lịch sử. Không import cơ chế Three.js/CS2, asset retrieval hay vendor fallback vào Blender. Bản package gốc và typo mirror được giữ nguyên có cảnh báo.
+Only six selected grimoire concepts are routed from img2threejs: image analysis, surface, detail inventory, joint attachment, shading review and self-correction. The rest can be found with `--scope all` for historical research. Do not import Three.js/CS2 mechanisms, asset retrieval or vendor fallback into Blender. The original package version and the typo mirror are kept as they are, with a warning.
 
-Tám bài root research về generation/acquisition pipeline được giữ ở `archive-only`, kể cả hai bài trộn lý thuyết/cleanup với đề xuất dịch vụ. Research engineering có bibliography vẫn là synthesis. Các snippet có sai lệch giữa tên gọi và code được gắn caution theo hash trong config. Khi dùng thông số/chuẩn/API, kiểm tra nguồn gốc và phiên bản phù hợp. Những lưu ý trong catalog không thay cho một cuộc kiểm định cơ khí đầy đủ.
+Eight root research articles about the generation/acquisition pipeline are kept as `archive-only`, including the two that mix theory/cleanup with service proposals. Engineering research with a bibliography is still synthesis. Snippets where the naming and the code diverge get a caution tagged by hash in the config. When using a parameter/standard/API, check the provenance and the appropriate version. The notes in the catalog do not replace a full mechanical qualification.
 
-## Từ đọc tài liệu đến chạy Blender
+## From reading documents to running Blender
 
-`blender-knowledge-workbench` chọn bằng chứng; `blender-agent-core` sở hữu execution/verify; `blender-image-to-3d` sở hữu fidelity. Giữ ba trách nhiệm này, không tạo một skill riêng cho từng lĩnh vực.
+`blender-knowledge-workbench` selects the evidence; `blender-agent-core` owns execution/verify; `blender-image-to-3d` owns fidelity. Keep these three responsibilities; do not create a separate skill for each domain.
 
-Trước khi dùng adapter, đọc annotation cùng file nguồn: runtime, scene/names/input, unit/scale, nơi ghi output và predicate thực sự. Ví dụ drone có thể xóa toàn scene; arm examples có fixed paths; numeric check có thể ghi report hoặc sửa mesh. Tạo candidate riêng, khai báo output và checkpoint. Áp dụng [execution recipe](../.agents/skills/blender-agent-core/references/recipes.md#explicit-execution-context); không chạy lệnh lịch sử trực tiếp vào GUI hiện tại.
+Before using an adapter, read the annotation together with the source file: runtime, scene/names/input, unit/scale, where the output is written and the actual predicate. The drone example can delete the entire scene; the arm examples have fixed paths; a numeric check may write a report or modify the mesh. Create a separate candidate, declare the output and the checkpoint. Apply the [execution recipe](../.agents/skills/blender-agent-core/references/recipes.md#explicit-execution-context); do not run historical commands directly into the current GUI.
 
-Giữ vòng Spec → Plan → Code → Critic → Execute → Verify → Refine. Chọn phép đo rẻ nhất trả lời được câu hỏi, rồi xem hình/chuyển động cho những điều mắt mới đánh giá được. Catalog không sửa các helper cũ: [E1–E7](blender-workflow-improvement-backlog.md) vẫn là backlog.
+Keep the loop Spec → Plan → Code → Critic → Execute → Verify → Refine. Pick the cheapest measurement that answers the question, then look at images/motion for what only the eye can judge. The catalog does not fix the old helpers: [E1–E7](blender-workflow-improvement-backlog.md) is still backlog.
 
-## Bảo trì và kiểm chứng
+## Maintenance and verification
 
 ```bash
 python3 scripts/blender-knowledge.py build
@@ -54,23 +54,23 @@ python3 scripts/blender-knowledge.py check
 python3 -m unittest discover -s tests/knowledge -v
 ```
 
-`build` quét và hash hai lần, từ chối snapshot thay đổi trong lúc đọc, ghi atomically. `check`, `list`, `route`, `search`, `show` đều đối chiếu lại nguồn: thay đổi/thêm/xóa source hoặc config làm catalog stale; dependency thiếu và owned mirror lệch là lỗi. Sau khi source writer hoàn tất, build lại catalog; nếu workflow playbook đã cũ, dùng pipeline prepare/review/publish để biên dịch lại. Catalog build đơn lẻ không làm playbook cũ trở thành hợp lệ. Không thể khóa một tiến trình bên ngoài chỉ bằng kiểm tra hash; trước execution phải giữ nguyên source revision đã chọn.
+`build` scans and hashes twice, rejects a snapshot that changes while being read, and writes atomically. `check`, `list`, `route`, `search`, `show` all re-check against the sources: changing/adding/deleting a source or the config makes the catalog stale; a missing dependency and a diverging owned mirror are errors. After the source writer finishes, rebuild the catalog; if the workflow playbook is out of date, use the prepare/review/publish pipeline to recompile it. A catalog build on its own does not make an old playbook valid. An external process cannot be locked out by hash checking alone; before execution the selected source revision must be kept unchanged.
 
-Đổi workflow/caution trong config; source technical docs do người sở hữu cập nhật. Annotation gồm hash lần review; hash mới không tự chứng minh vấn đề cũ đã được sửa. Đồng bộ ba skill project-owned sang `.claude/skills/`; không sửa/copy `.git` hoặc ép sync package img2threejs. Build catalog sau edit cuối cùng. Kiểm định corpus/schema/mirror không chứng nhận nội dung hoặc tốc độ làm việc; hiệu quả thực tế cần đo ở build tiếp theo.
+Change workflows/cautions in the config; the source technical docs are updated by their owner. The annotation includes the hash at review time; a new hash does not by itself prove the old problem has been fixed. Sync the three project-owned skills to `.claude/skills/`; do not modify/copy `.git` or force a sync of the img2threejs package. Build the catalog after the final edit. Validating corpus/schema/mirror does not certify content or working speed; real effectiveness has to be measured on the next build.
 
-## Pipeline cập nhật knowledge → workflow → skill
+## Pipeline for updating knowledge → workflow → skill
 
-[Quy trình biên soạn](../.agents/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md) sở hữu các bước và lệnh. Không cần tạo skill riêng cho từng bài research. Chọn topic theo task, giữ source review gắn hash và sinh [workflow playbook](../knowledge/generated-workflows.md) để skill đọc có chọn lọc.
+The [compilation procedure](../.agents/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md) owns the steps and the commands. There is no need to create a separate skill for each research article. Pick the topic by task, keep the hash-tagged source review and generate the [workflow playbook](../knowledge/generated-workflows.md) for skills to read selectively.
 
 ```mermaid
 flowchart LR
-  A[Nguồn mới hoặc sửa] --> B[Scan delta và nguồn chưa route]
-  B --> C[Đọc nguồn, biên soạn topic và caution]
-  C --> D[Prepare candidate cùng hash]
-  D --> E[Review và test]
+  A[New or modified source] --> B[Scan delta and unrouted sources]
+  B --> C[Read sources, compile topic and caution]
+  C --> D[Prepare candidate with hashes]
+  D --> E[Review and test]
   E --> F[Publish playbook]
-  F --> G[Rebuild catalog và lưu receipt]
-  G --> H[Skill chọn workflow/topic]
+  F --> G[Rebuild catalog and store receipt]
+  G --> H[Skill picks workflow/topic]
 ```
 
 ```bash
@@ -79,4 +79,4 @@ python3 scripts/knowledge-pipeline.py prepare --bundle plans/knowledge-updates/c
 python3 scripts/blender-knowledge.py route native-product-visualization --topic thin-film-optics
 ```
 
-`prepare` cần biên soạn config trước; publish dùng digest candidate đã review. Đây là pipeline có bước đánh giá của AI/người biên soạn, không phải tự chứng nhận kiến thức. Các topic tùy chọn nằm trong 9 workflow; `list`/`route` là danh sách hiện hành. Deferral có lý do+hash giữ tài liệu ngoài workflow mà không xóa khỏi search. Nguồn hoặc config thay đổi làm candidate hết hiệu lực; thay đổi nguồn topic làm route của topic yêu cầu review lại.
+`prepare` requires the config to be compiled first; publish uses the digest of the reviewed candidate. This is a pipeline with an assessment step by the AI/the compiler, not knowledge self-certification. The optional topics live inside the 9 workflows; `list`/`route` is the current list. A deferral with reason+hash keeps a document outside the workflows without removing it from search. A change to a source or the config invalidates a candidate; changing a topic's source makes that topic's route require a new review.

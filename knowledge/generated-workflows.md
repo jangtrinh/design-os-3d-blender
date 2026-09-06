@@ -6,7 +6,7 @@ Read only the workflow and conditional topic relevant to the task. Core owns exe
 
 ## native-hard-surface
 
-Dựng từ ảnh, silhouette, topology và body bo mềm bằng Blender-native.
+Build from reference images, silhouette, topology, and softly filleted bodies using Blender-native tools.
 
 ### Base reading
 
@@ -18,26 +18,26 @@ Dựng từ ảnh, silhouette, topology và body bo mềm bằng Blender-native.
 
 ### Steps
 
-- Lập fidelity contract và scene graph từ ảnh/đo đạc.
-- Blockout theo tỷ lệ và camera trước khi bo mép.
-- Dựng surface liên tục, tách bộ phận thật, rồi mới thêm detail.
-- So reference và góc khuất sau từng pass; chuyển verdict về core.
+- Establish the fidelity contract and scene graph from reference images/measurements.
+- Blockout to proportion and camera before filleting edges.
+- Build continuous surfaces, separate the real parts, and only then add detail.
+- Compare against reference and occluded angles after each pass; return the verdict to core.
 
 ### Gates
 
-- Landmark và kích thước có sai số được khai báo.
-- Không có phần critical chỉ tồn tại dưới dạng mô tả.
-- Topology/transforms đạt predicate của đối tượng.
-- Xem sheet cùng camera và ảnh 3/4; không dùng score tự chấm để hứa đúng 100%.
+- Landmarks and dimensions carry declared error margins.
+- No critical part exists only as a description.
+- Topology/transforms satisfy the object's predicate.
+- Review the sheet at the same camera plus the 3/4 image; do not use a self-scored number to promise 100% accuracy.
 
 ### Limitations
 
-- Ảnh không xác định chính xác mặt khuất.
-- Ví dụ drone có giả định riêng; không chạy builder vào scene hiện tại.
+- Images do not determine occluded faces precisely.
+- The drone example carries its own assumptions; do not run its builder into the current scene.
 
 ### Topic: python-adapter-review
 
-When: Khi muốn reuse thư viện bpy boilerplate thay vì viết helper mới.
+When: When reusing a bpy boilerplate library instead of writing a new helper.
 
 - `knowledge/00-foundations/python-agent-boilerplates.md` — read-verify; SHA256 `17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685`
   Caution: Registry claims verified, operator-free and standards-compliant behavior not established by actual modules. Static audits found missing bearing bores, sag, gear root/helical features, X-joint limits and physical thin-film optics; examples often test counts only. Bibliography is not certification; read module-specific cautions.
@@ -48,22 +48,22 @@ When: Khi muốn reuse thư viện bpy boilerplate thay vì viết helper mới.
 
 **Steps**
 
-- Chọn đúng module và đọc source thực; phân biệt snippet trong tài liệu với implementation.
-- Khai báo input/scene ownership, units, effects và output; tạo candidate riêng.
+- Pick the right module and read the actual source; distinguish documentation snippets from the implementation.
+- Declare input/scene ownership, units, effects, and output; create a separate candidate.
 
 **Gates**
 
-- Kiểm API/runtime và assertions theo hành vi task, không dựa vào header verified.
-- Đo actual geometry/state và xem output; giữ source gốc cho rollback.
+- Check the API/runtime and assertions against task behavior, not against a verified header.
+- Measure actual geometry/state and view the output; keep the original source for rollback.
 
 **Limitations**
 
-- clean_scene và thay node group/mesh có thể phá scene khác; không tự chạy vì được index.
-- Knowledge routing không chứng nhận mass/inertia, bone roll hoặc physics.
+- clean_scene and node group/mesh replacement can destroy another scene; do not run them just because they are indexed.
+- Knowledge routing does not certify mass/inertia, bone roll, or physics.
 
 ## native-product-visualization
 
-Vật liệu nhựa nhám, studio, camera và hình sản phẩm polish.
+Matte plastic materials, studio setup, camera, and polished product imagery.
 
 ### Base reading
 
@@ -76,25 +76,25 @@ Vật liệu nhựa nhám, studio, camera và hình sản phẩm polish.
 
 ### Steps
 
-- Chốt mục tiêu shot, nền, texture scale và độ nhám bằng reference.
-- Kiểm tra normals và bevel trước khi sửa shader.
-- Introspect node sockets; dùng neutral/grazing light để tách lỗi hình và vật liệu.
-- Render diagnostic cùng aspect rồi hoàn thiện shot.
+- Lock the shot goal, background, texture scale, and roughness against reference.
+- Check normals and bevels before editing the shader.
+- Introspect node sockets; use neutral/grazing light to separate geometry defects from material defects.
+- Render diagnostics at the same aspect ratio, then finish the shot.
 
 ### Gates
 
-- Framing toàn bộ phần chuyển động hoặc object trong camera.
-- Ánh sáng grazing không lộ shading defect hoặc surface rời.
-- Xem material ở neutral và hero view.
+- Framing covers the whole moving part or object inside the camera.
+- Grazing light exposes no shading defect or detached surface.
+- Review the material in both neutral and hero views.
 
 ### Limitations
 
-- Shader đẹp không chứng minh bề mặt in thực tế.
-- Turntable/preview helpers thay đổi scene; dùng bản candidate/process riêng.
+- A good-looking shader does not prove the real printed surface.
+- Turntable/preview helpers modify the scene; use a separate candidate copy/process.
 
 ### Topic: opaque-micro-surfaces
 
-When: Khi nhựa/kim loại sai phản xạ hoặc cần grain/imperfection có kích thước thật.
+When: When plastic/metal reflects incorrectly, or grain/imperfection at real-world size is required.
 
 - `research/blender-advanced-materials-shading/01-OPENPBR-PRINCIPLED-BSDF-SURFACE.md` — read-verify; SHA256 `7d05fab6bb6ed95d4201618835091fbbc0522dab79320c7ae0b0d78e4332fc46`
   Caution: Fac/Factor migration conflicts with sibling snippets; Principled/OpenPBR equivalence is unverified. Introspect sockets; avoid deprecated use_nodes.
@@ -107,42 +107,42 @@ When: Khi nhựa/kim loại sai phản xạ hoặc cần grain/imperfection có 
 
 **Steps**
 
-- Tách metallic/IOR/roughness; chốt unit và scale texture.
-- Chọn roughness, bump hay geometry theo chi tiết nhìn thấy.
+- Separate metallic/IOR/roughness; lock units and texture scale.
+- Choose roughness, bump, or geometry according to the visible detail.
 
 **Gates**
 
-- Introspect socket, material output và giá trị hữu hạn.
-- So crop neutral/grazing: không seam, grain quá lớn hoặc normal lỗi.
+- Introspect sockets, material output, and finite values.
+- Compare neutral/grazing crops: no seams, oversized grain, or broken normals.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: subsurface-optics
 
-When: Khi vật liệu mỏng/dày cần truyền tán xạ như silicone, sáp hoặc da.
+When: When thin/thick materials need transmissive scattering, such as silicone, wax, or skin.
 
 - `research/blender-advanced-materials-shading/02-SUBSURFACE-SCATTERING-RANDOM-WALK.md` — read-verify; SHA256 `5c5a282cf39829e75795c0cea0b1e82b090dd87539b5e2d6e02b0aabc74d269f`
   Caution: Absolute fidelity, dual-layer model and hardcoded Random Walk enum are unverified; radius ratios and dimensional scale need distinction.
 
 **Steps**
 
-- Chốt kích thước mesh, thickness và scale/radius tương đối.
-- Kiểm enum thuật toán trên runtime trước dựng material.
+- Lock mesh dimensions, thickness, and relative scale/radius.
+- Check the algorithm enum on the runtime before building the material.
 
 **Gates**
 
-- Bounds đúng unit; scale/radius được khai báo và hữu hạn.
-- So backlit thin/thick views với reference, không lấy preset làm ngưỡng pass.
+- Bounds are in the correct units; scale/radius is declared and finite.
+- Compare backlit thin/thick views against reference; do not take a preset as the pass threshold.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: thin-film-optics
 
-When: Khi brief cần màu giao thoa đổi theo góc nhìn hoặc lớp phủ mỏng.
+When: When the brief calls for interference color that shifts with viewing angle, or a thin coating.
 
 - `research/blender-advanced-materials-shading/03-THIN-FILM-INTERFERENCE-IRIDESCENCE.md` — read-verify; SHA256 `c3d776a5e078722e4ffabe65a173f91fe0378e633becd5f2129a64f77814b07f`
   Caution: Example connects Generated gradient to Coat Tint; it has no thickness/view-angle interference model. Spatial tint is not thin-film evidence.
@@ -151,42 +151,42 @@ When: Khi brief cần màu giao thoa đổi theo góc nhìn hoặc lớp phủ m
 
 **Steps**
 
-- Phân biệt tint theo vị trí và interference theo góc.
-- Xác nhận thickness/IOR sockets hoặc mô hình thực sự dùng.
+- Distinguish position-based tint from angle-based interference.
+- Confirm the thickness/IOR sockets or the model actually in use.
 
 **Gates**
 
-- Ghi đơn vị thickness và thông số IOR.
-- So ít nhất hai camera/light angles; gradient cố định không chứng minh thin film.
+- Record the thickness unit and the IOR parameters.
+- Compare at least two camera/light angles; a fixed gradient does not prove thin film.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: fiber-fabric-surfaces
 
-When: Chỉ khi hair/fur, velvet, satin hoặc hướng weave nhìn rõ trong shot.
+When: Only when hair/fur, velvet, satin, or weave direction is clearly visible in the shot.
 
 - `research/blender-advanced-materials-shading/05-PHYSICAL-HAIR-FABRIC-SHADING.md` — read-verify; SHA256 `83846c13bd7c1938d3616f0eb7c4a27bd86e7da6808402b8f589f5a9a31f9c7a`
   Caution: TRT bounce descriptions conflict; anisotropy/tangent node and shader enum claims need runtime inspection.
 
 **Steps**
 
-- Chọn strand shader hay surface sheen/anisotropy.
-- Chốt tangent/UV và kích thước sợi trước chỉnh màu.
+- Choose between a strand shader and surface sheen/anisotropy.
+- Lock tangent/UV and fiber size before adjusting color.
 
 **Gates**
 
-- Shader/enum/output/tangent hợp lệ.
-- Xem hướng highlight, silhouette và frame liên tiếp để phát hiện crawling.
+- Shader/enum/output/tangent are valid.
+- Review highlight direction, silhouette, and consecutive frames to detect crawling.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ## native-animation-rigging
 
-Khớp, hand, pick/place tự nhiên, biên độ và explode/reassemble.
+Joints, hand, natural pick/place, range of motion, and explode/reassemble.
 
 ### Base reading
 
@@ -201,28 +201,28 @@ Khớp, hand, pick/place tự nhiên, biên độ và explode/reassemble.
 
 ### Steps
 
-- Chốt joint frame, limit, TCP, hand interface và sơ đồ cha-con.
-- Định nghĩa task bằng tiếp cận → gắp → nhấc → chuyển → nhả; tách explode thành sequence lắp ráp.
-- Blockout motion và pose biên; chuyển hand phải giữ continuity ở frame gắn/nhả.
-- Screen contact theo phạm vi khai báo và xem animatic trước polish/render.
+- Lock joint frames, limits, TCP, hand interface, and the parent-child diagram.
+- Define the task as approach → grasp → lift → transfer → release; decompose explode into an assembly sequence.
+- Blockout the motion and the extreme poses; a hand transfer must preserve continuity at the attach/release frames.
+- Screen contact within the declared range and review the animatic before polish/render.
 
 ### Gates
 
-- Joint axes/limits và hierarchy đúng trong local/world space.
-- Không có bước nhảy transform ở grasp/release.
-- Biên độ, dựng thẳng, thao tác phía sau và quay trục có frame evidence khi được yêu cầu.
-- Đúng trình tự tháo fastener → rút phần, lắp lại khôi phục transform.
-- Xem clip theo thời gian; ảnh pose không thay thế review chuyển động.
+- Joint axes/limits and hierarchy are correct in local/world space.
+- No transform jump at grasp/release.
+- Range of motion, standing upright, rear-side manipulation, and axis rotation have frame evidence when required.
+- Correct order of fastener removal → part extraction; reassembly restores the transforms.
+- Review the clip over time; a pose still does not replace motion review.
 
 ### Limitations
 
-- Contact library hiện lấy mẫu raw rigid surfaces, không chứng minh continuous collision hay lực.
-- Animation scripted attachment không chứng minh servo chịu tải.
-- Ví dụ create-task-scene có mesh dùng chung; copy mesh trước khi sửa geometry.
+- The contact library currently samples raw rigid surfaces; it does not prove continuous collision or force.
+- A scripted attachment animation does not prove the servo carries the load.
+- The create-task-scene example uses shared mesh data; copy the mesh before editing geometry.
 
 ### Topic: rig-spaces-ik-mechanisms
 
-When: Khi cần armature scripting, IK/pole, piston, gear hoặc cable.
+When: When armature scripting, IK/pole, piston, gear, or cable is required.
 
 - `research/blender-rigging-skeleton-skinning/01-ARMATURE-MATRICES-BONE-TRANSFORMS.md` — read-verify; SHA256 `2ac1d81d4f2ed9f922406bd4baa6f63975a3f7e413b1ddf56b3801c1c43e93a0`
   Caution: Roll helper lacks zero-length/parallel guards; simplified hierarchy product is not a general evaluated constraint/inheritance transform.
@@ -237,24 +237,24 @@ When: Khi cần armature scripting, IK/pole, piston, gear hoặc cable.
 
 **Steps**
 
-- Chốt world/rest/pose spaces, axes, hierarchy và motion envelope.
-- Guard bone zero/parallel reference; hiệu chỉnh pole theo evaluated pose.
-- Tách anchor khỏi constrained parts; ghi stroke/ratio/space.
+- Lock world/rest/pose spaces, axes, hierarchy, and the motion envelope.
+- Guard against zero-length/parallel bone references; calibrate the pole against the evaluated pose.
+- Separate anchors from constrained parts; record stroke/ratio/space.
 
 **Gates**
 
-- Đo pivot và IK endpoint errors theo tolerance task.
-- Kiểm alignment/stroke/ratio ở pose biên và attachment events.
-- Xem sweep qua thẳng/đứng/gập; motion không chứng minh tải servo.
+- Measure pivot and IK endpoint errors against the task tolerance.
+- Check alignment/stroke/ratio at the extreme poses and at attachment events.
+- Review the sweep through straight/upright/folded configurations; motion does not prove servo load.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Adapter xóa mọi object khi gọi hàm dựng; chỉ inspect/adapt trong candidate riêng.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- The adapter deletes every object when its build function is called; only inspect/adapt it in a separate candidate.
 
 ### Topic: skinning-modular-rigs
 
-When: Khi mesh biến dạng, twist limbs hoặc dùng Rigify đã cài và được chọn.
+When: When meshes deform, limbs twist, or an installed and selected Rigify is used.
 
 - `research/blender-rigging-skeleton-skinning/03-DUAL-QUATERNION-SKINNING-LBS.md` — read-verify; SHA256 `fb2d01f4293bbf3c383009522ac757fee1fb43a50e3a3d6105ba93a6a58b381c`
   Caution: Unconditional volume-preservation claims conflict with bulging discussion. DQ property and weight normalization behavior need runtime/group-role checks.
@@ -263,66 +263,66 @@ When: Khi mesh biến dạng, twist limbs hoặc dùng Rigify đã cài và đư
 
 **Steps**
 
-- So LBS/preserve-volume/helper bones với cùng poses.
-- Phân biệt deform groups và masks; giữ metarig và xác định rig mới theo provenance.
+- Compare LBS/preserve-volume/helper bones at identical poses.
+- Distinguish deform groups from masks; keep the metarig and identify the new rig by provenance.
 
 **Gates**
 
-- Weights hữu hạn, nonnegative; thiếu weight/sum sai bị phát hiện.
-- Đo displacement khi IK/FK switch; xem bulging, sections và penetration.
+- Weights are finite and nonnegative; missing weights and wrong sums are detected.
+- Measure displacement across the IK/FK switch; review bulging, cross-sections, and penetration.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Không tự cài extension; object tên rig và operator success chưa đủ.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- Do not install extensions on your own; an object named rig and operator success are not enough.
 
 ### Topic: animation-curves-drivers
 
-When: Khi cần tạo keyframes, driver hoặc turntable từ helper Python.
+When: When keyframes, a driver, or a turntable must be created from a Python helper.
 
 - `scripts/boilerplates/bp_animation.py` — inspect-adapt; SHA256 `55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd`
   Caution: Indexed assignment is not general RNA array/path handling. Matching curves across all action slots/preexisting keys may be edited. Turntable has no Cycles loop; driver setup clears state.
 
 **Steps**
 
-- Xác định object/action/slot và RNA path được phép sửa; giữ animation cũ ngoài phạm vi.
-- Adapt helper cho path/index thực tế; chỉ tạo driver trên property đã chọn.
+- Identify the object/action/slot and the RNA paths you may edit; leave pre-existing animation outside the scope untouched.
+- Adapt the helper to the actual path/index; create drivers only on the selected property.
 
 **Gates**
 
-- Đo giá trị tại keyframe và giữa keyframes, kiểm tra đúng action slot và không đổi curve ngoài scope.
-- Kiểm tra endpoint/seam của loop và xem playback; một midpoint pass không chứng minh toàn chu kỳ.
+- Measure values at keyframes and between keyframes, verify the correct action slot, and confirm no curve outside the scope changed.
+- Check the loop endpoint/seam and review playback; a single midpoint pass does not prove the whole cycle.
 
 **Limitations**
 
-- Helper hiện tại có thể đổi nhiều action slots và xóa driver state; không chạy trực tiếp vào animation đang dùng.
-- Self-test hiện có chỉ kiểm tra một midpoint, chưa chứng nhận loop hoặc chuyển động tự nhiên.
+- The current helper can alter multiple action slots and wipe driver state; do not run it directly on animation in use.
+- The existing self-test checks only one midpoint; it does not certify the loop or natural motion.
 
 ### Topic: robot-joint-frame-adapter
 
-When: Khi reuse helper armature robot sáu khớp.
+When: When reusing the six-joint robot armature helper.
 
 - `scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py` — inspect-adapt; SHA256 `2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651`
   Caution: X-axis joint limits unconfigured; local frames not aligned/verified against mechanical axes. Deletes named rig and mutates active mode/context. Six bones do not prove 6-DOF kinematics or limit behavior.
 
 **Steps**
 
-- Khai báo joint frames, hierarchy, rotation axes và limits theo cơ cấu thực.
-- Align bone frames, khóa đúng các trục và cấu hình cả X/Y/Z trong candidate.
+- Declare joint frames, hierarchy, rotation axes, and limits from the real mechanism.
+- Align bone frames, lock the correct axes, and configure all of X/Y/Z in the candidate.
 
 **Gates**
 
-- Kiểm allowed/locked axes mọi joint; đối chiếu FK endpoint tại các pose có kết quả biết trước.
-- Sweep giới hạn, đo attachment/clearance và xem chuyển động; count bones không thay kinematics.
+- Check allowed/locked axes on every joint; cross-check the FK endpoint at poses with known expected results.
+- Sweep the limits, measure attachment/clearance, and review the motion; a bone count does not replace kinematics.
 
 **Limitations**
 
-- Helper bỏ sót X-axis limits và chưa ánh xạ bone frames thành trục cơ khí.
-- Chuyển động demo không chứng minh tải, torque, nhiệt hoặc chế tạo được.
+- The helper omits X-axis limits and does not map bone frames onto mechanical axes.
+- A demo motion does not prove load, torque, thermal behavior, or manufacturability.
 
 ### Topic: assembly-collision-staging
 
-When: Khi quay phim lắp ráp/explode hoặc phát hiện các phần chờ lắp và đường bay đè lên nhau.
+When: When filming assembly/explode, or detecting parts waiting to be installed and flight paths that overlap.
 
 - `research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md` — read-verify; SHA256 `22e2d4f0635550f1cedf9017c707e0bc116723cdac98b4c9ff7b08ebb29efb76`
   Caution: Lines39/46 unmeasured<1ms and universal0.20mm3 are not acceptance evidence; source-level units/evaluated geometry matter. Lines57-71 fixed120mm and perfectly jerk-free are overclaims: quintic third derivative endpoints=60. Lines82-94 collapsing unused cable points does not preserve length. Lines100-113 weights/packing are historical candidates, not general calibrated optimum; pair exclusions need named phase-bound justification. Actual Arm uses frame-sampled LINEAR F-curves: smooth quintic sample values do not establish a continuous C2 Blender trajectory.
@@ -332,26 +332,26 @@ When: Khi quay phim lắp ráp/explode hoặc phát hiện các phần chờ l�
 
 **Steps**
 
-- Tạo unit manifest và dependency graph theo receiver, internal parts, retention, wires rồi covers.
-- Tính staging riêng và kiểm world/projected gap; không chỉ kiểm pose cuối.
-- Kiểm cả arrival và seat qua thời gian; chọn waypoint/axis từ geometry và chỉ miễn trừ named mate đúng phase.
-- Xem animatic ngắn ở đoạn lỗi, cơ cấu tương tự và endpoint camera trước full render.
+- Create a unit manifest and dependency graph ordered by receiver, internal parts, retention, wires, then covers.
+- Compute staging separately and check world/projected gaps; do not check the final pose only.
+- Check both arrival and seating over time; pick waypoints/axes from geometry and exempt named mates only in the correct phase.
+- Review a short animatic at the failing segment, at similar mechanisms, and at the endpoint camera before a full render.
 
 **Gates**
 
-- Negative controls phải phát hiện waiting clash, clear-wait/blocked-transit, wrong phase exemption và solid containment.
-- Kiểm evaluated modifiers và scene units; báo riêng surface flags, solid predicate và phạm vi sample.
-- Camera giữ đúng chủ ý; quintic samples/LINEAR F-curves không được mô tả là zero jerk hoặc controller dynamics.
+- Negative controls must detect waiting clash, clear-wait/blocked-transit, wrong phase exemption, and solid containment.
+- Check evaluated modifiers and scene units; report surface flags, the solid predicate, and the sample range separately.
+- The camera holds the intended framing; quintic samples/LINEAR F-curves must not be described as zero jerk or controller dynamics.
 
 **Limitations**
 
-- 120mm lift,0.20mm³ và tuyên bố tốc độ là case/unverified values, không là chuẩn chung.
-- Audit adapter bỏ qua modifiers/scale trong Boolean; same-future-link blanket exclusions có thể giấu lỗi.
-- Mating với actuator-visual và media PASS không giải quyết cơ khí, hardware/tool access hoặc tải.
+- 120mm lift,0.20mm³ and the speed claim are case-specific/unverified values, not a general standard.
+- The audit adapter ignores modifiers/scale inside the Boolean; same-future-link blanket exclusions can hide defects.
+- Mating against an actuator-visual plus a media PASS does not settle mechanics, hardware/tool access, or load.
 
 ## polymer-functional-print
 
-In FDM nhựa, fit, inserts, tháo lắp, độ bền và vật liệu.
+FDM plastic printing, fit, inserts, assembly/disassembly, durability, and materials.
 
 ### Base reading
 
@@ -365,27 +365,27 @@ In FDM nhựa, fit, inserts, tháo lắp, độ bền và vật liệu.
 
 ### Steps
 
-- Chốt printer/nozzle/vật liệu/orientation, kích thước và interfaces.
-- Tách chi tiết theo đường lắp và access dụng cụ; chọn vít/insert theo drawing thật.
-- Thiết kế coupon fit và phần chịu tải với dữ liệu vật liệu theo hướng in.
-- Export candidate đúng unit và kiểm tra chính file xuất trước physical trial.
+- Lock printer/nozzle/material/orientation, dimensions, and interfaces.
+- Split parts along assembly lines and tool access; choose screws/inserts from real drawings.
+- Design fit coupons and load-bearing parts using material data for the print orientation.
+- Export the candidate in the correct units and inspect the exported file itself before a physical trial.
 
 ### Gates
 
-- Manifold, scale và local wall thực sự được đo.
-- Vít âm có chiều sâu, chiều dài ăn ren và tool access kiểm chứng.
-- Clearance/fit xác nhận bằng coupon, không chỉ bbox.
-- Tải/nhiệt/creep và sai lệch in có evidence trước release.
+- Manifoldness, scale, and local wall thickness are actually measured.
+- Recessed screws have verified depth, thread engagement length, and tool access.
+- Clearance/fit confirmed by coupon, not by bounding box alone.
+- Load/thermal/creep and print deviation have evidence before release.
 
 ### Limitations
 
-- Mesh pass hoặc hình đẹp không đủ gọi printing-ready chịu lực.
-- Helper tolerances hiện chỉ overhang/bbox; không có local-wall hay clearance test.
-- Research là synthesis chưa được chứng nhận; kiểm tra datasheet/standard hiện hành khi dùng số.
+- A mesh pass or a good-looking image is not enough to call something load-bearing print-ready.
+- The tolerance helper currently covers overhang/bbox only; there is no local-wall or clearance test.
+- The research is uncertified synthesis; check the current datasheet/standard whenever a number is used.
 
 ### Topic: advanced-deposition-process
 
-When: Khi high-flow, nonplanar hoặc LSAM được yêu cầu; chọn đúng nhánh.
+When: When high-flow, nonplanar, or LSAM is required; pick the correct branch.
 
 - `research/polymer-additive-manufacturing-advanced/01-POLYMER-EXTRUSION-RHEOLOGY-HOTENDS.md` — read-verify; SHA256 `1be0673cd2e35dae58d243c1c2ef0a5ae84cebcd2367ed1d2d3896cb3a4ab13e`
   Caution: Pressure-advance example mixes displacement with seconds*acceleration; resolve quantity/units before control or firmware use.
@@ -396,39 +396,39 @@ When: Khi high-flow, nonplanar hoặc LSAM được yêu cầu; chọn đúng nh
 
 **Steps**
 
-- Chốt hardware envelope/flow/thermal hoặc toolpath/finishing constraints.
+- Lock the hardware envelope/flow/thermal or the toolpath/finishing constraints.
 
 **Gates**
 
-- Kiểm path có tiến triển và toolhead envelope; calibration/coupon thật.
-- Không xuất G-code hay điều khiển máy chỉ từ research.
+- Check that the path progresses and that the toolhead envelope holds; use real calibration/coupons.
+- Do not emit G-code or drive a machine from research alone.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: polymer-selection
 
-When: Khi chưa chốt vật liệu hoặc cần đánh giá isotropy/temperature limits.
+When: When the material is not locked yet, or isotropy/temperature limits need assessment.
 
 - `research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md` — read-verify; SHA256 `593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57`
   Caution: Source has conflicting PETG crystallinity labels and absolute carbon-fiber warping claim; bibliography is not verification.
 
 **Steps**
 
-- Dùng taxonomy để đặt câu hỏi; chọn grade/process từ datasheet và coupon.
+- Use the taxonomy to frame the questions; choose grade/process from datasheets and coupons.
 
 **Gates**
 
-- Không dùng kết luận PETG/carbon-fiber tuyệt đối; dữ liệu phải cùng process/orientation.
+- Do not treat PETG/carbon-fiber conclusions as absolute; the data must come from the same process/orientation.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: print-boss-cutouts
 
-When: Khi dựng boss heat-set insert hoặc lỗ tự đỡ cho FDM.
+When: When building heat-set insert bosses or self-supporting holes for FDM.
 
 - `scripts/boilerplates/dfam_3dprint/bp_insert_boss.py` — inspect-adapt; SHA256 `0bb053452708229c3a3a7f85e53a20eb32b28b3865d30f9d7b33ee045e87992b`
   Caution: 8-degree taper/minimum-wall claims not implemented; separate pillar/cutter are not assembled; unknown size falls back to M3.
@@ -437,22 +437,22 @@ When: Khi dựng boss heat-set insert hoặc lỗ tự đỡ cho FDM.
 
 **Steps**
 
-- Chọn insert drawing, material/process/build orientation và coupon fit.
-- Dựng boss với cutter thực, kiểm taper theo chiều sâu và trục lỗ trước export.
+- Choose the insert drawing, material/process/build orientation, and the fit coupon.
+- Build the boss with a real cutter; check taper along depth and the hole axis before export.
 
 **Gates**
 
-- Đo hole/taper/minimum local wall sau subtraction, không lấy parameter name làm bằng chứng.
-- In coupon kiểm fit/insertion/pull-out hoặc support/bore retention theo chức năng.
+- Measure hole/taper/minimum local wall after subtraction; do not take a parameter name as evidence.
+- Print coupons to test fit/insertion/pull-out, or support/bore retention according to function.
 
 **Limitations**
 
-- Helper chưa ghép pillar/cutter; taper và wall claims không được enforce.
-- Self-support phụ thuộc process/orientation; face count không đủ.
+- The helper does not yet combine pillar and cutter; taper and wall claims are not enforced.
+- Self-support depends on process/orientation; a face count is not enough.
 
 ### Topic: plate-nesting-screen
 
-When: Khi dùng heuristic orientation và guillotine packing để xếp các part lên plate.
+When: When using heuristic orientation and guillotine packing to lay parts out on the plate.
 
 - `research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md` — read-verify; SHA256 `22e2d4f0635550f1cedf9017c707e0bc116723cdac98b4c9ff7b08ebb29efb76`
   Caution: Lines39/46 unmeasured<1ms and universal0.20mm3 are not acceptance evidence; source-level units/evaluated geometry matter. Lines57-71 fixed120mm and perfectly jerk-free are overclaims: quintic third derivative endpoints=60. Lines82-94 collapsing unused cable points does not preserve length. Lines100-113 weights/packing are historical candidates, not general calibrated optimum; pair exclusions need named phase-bound justification. Actual Arm uses frame-sampled LINEAR F-curves: smooth quintic sample values do not establish a continuous C2 Blender trajectory.
@@ -461,23 +461,23 @@ When: Khi dùng heuristic orientation và guillotine packing để xếp các pa
 
 **Steps**
 
-- Chọn vật liệu/process, đơn vị, bed usable area, margin và khoảng cách.
-- Thử orientation theo support, tiếp xúc bed, trục tải/anisotropy và tính tháo support.
-- Kiểm tất cả part sau packing bằng transform thực; từ chối part không vừa trước khi thêm plate.
+- Choose material/process, units, bed usable area, margin, and spacing.
+- Try orientations against support, bed contact, load axis/anisotropy, and support removability.
+- Check every part after packing using real transforms; reject parts that do not fit before adding a plate.
 
 **Gates**
 
-- Oversize fixture phải bị từ chối; không nhận rectangle âm, part ra ngoài biên hoặc trùng/thiếu inventory.
-- Re-import STL/slicer bằng đúng scale; heuristic score không thay đánh giá support và fit thực.
+- Oversize fixtures must be rejected; do not accept negative rectangles, parts outside the boundary, or duplicated/missing inventory.
+- Re-import the STL/slicer file at the correct scale; a heuristic score does not replace real support and fit assessment.
 
 **Limitations**
 
-- Packer hiện nhận oversize part khi mở plate mới; không dùng kết quả chưa kiểm làm print-ready.
-- Các weights/margin trong source là ví dụ lịch sử, không có bằng chứng optimal/calibrated chung.
+- The packer currently accepts an oversize part when it opens a new plate; do not treat an unverified result as print-ready.
+- The weights/margins in the source are historical examples with no evidence of being generally optimal/calibrated.
 
 ## precision-assembly-metrology
 
-CAD chính xác, datum, dung sai chuỗi và tháo lắp.
+Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 
 ### Base reading
 
@@ -489,25 +489,25 @@ CAD chính xác, datum, dung sai chuỗi và tháo lắp.
 
 ### Steps
 
-- Chốt datum/unit và danh sách interface.
-- Dùng drawing phần cứng thật để dựng nominal geometry.
-- Tính tolerance stack với phân bố/giả định ghi rõ.
-- Thiết kế đường lắp, access dụng cụ và phương pháp đo.
+- Lock datums/units and the interface list.
+- Use real hardware drawings to build the nominal geometry.
+- Compute the tolerance stack with the distribution/assumptions written out.
+- Design the assembly path, tool access, and the measurement method.
 
 ### Gates
 
-- Drawing và mesh cùng unit/datum/revision.
-- Vùng fit không dựa vào kích thước overall bbox.
-- Có đo hoặc coupon cho kích thước critical.
+- Drawing and mesh share the same units/datum/revision.
+- Fit zones do not rely on overall bounding-box dimensions.
+- Critical dimensions have a measurement or a coupon.
 
 ### Limitations
 
-- Blender mesh không tự cung cấp B-rep/GD&T hoặc tolerance solver.
-- Inertia helper chưa áp object scale/scene scale; không dùng số trực tiếp khi transform khác identity.
+- A Blender mesh does not by itself provide B-rep/GD&T or a tolerance solver.
+- The inertia helper does not apply object scale/scene scale; do not use its numbers directly when the transform is not identity.
 
 ### Topic: compliant-tendon-motion
 
-When: Khi cần flexure, cable-driven hand hoặc remote actuation.
+When: When a flexure, a cable-driven hand, or remote actuation is required.
 
 - `research/robotics-precision-cad/07-COMPLIANT-MECHANISMS-FLEXURES.md` — read-verify; SHA256 `6bb4eb0ab90270fc7a5d4b2c47691bd6d2e0a1abad02ad7890e2d9b3f90c2f27`
   Caution: Stiffness expression has suspect units; zero/infinite-life claims need material/duty evidence, not animation.
@@ -522,22 +522,22 @@ When: Khi cần flexure, cable-driven hand hoặc remote actuation.
 
 **Steps**
 
-- Chốt travel/stiffness/parasitic motion, routing/pretension/tension-only constraints.
+- Lock travel/stiffness/parasitic motion and routing/pretension/tension-only constraints.
 
 **Gates**
 
-- Đo neck/strain, clearance qua envelope và bend/tension limits.
-- Kiểm fatigue/creep/hysteresis theo vật liệu/duty thực.
-- Đo neck/root/thickness, snap engagement và coil clearance; kiểm thực dưới process/duty phù hợp.
+- Measure neck/strain, clearance across the envelope, and bend/tension limits.
+- Check fatigue/creep/hysteresis against the real material/duty.
+- Measure neck/root/thickness, snap engagement, and coil clearance; test physically under the matching process/duty.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Geometry demo có thể thiếu notch, mating part hoặc ground ends; face count không chứng nhận compliant performance.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- Demo geometry may lack notches, mating parts, or ground ends; a face count does not certify compliant performance.
 
 ### Topic: precision-material-tessellation
 
-When: Khi bore/tolerance/finish/heat-treatment cần budget định lượng.
+When: When bore/tolerance/finish/heat-treatment need a quantified budget.
 
 - `research/robotics-precision-cad/04-CAD-VS-POLY-BLENDER-BRIDGE.md` — read-verify; SHA256 `c2aec3777fa475e9d3e285c4b18bcc86ca918f3bf78dcc03f1ea19fa8860fe49`
   Caution: Radial sagitta is not directly a diameter/H7 budget; STEP does not by itself supply GD&T. No CAD addon activation follows.
@@ -548,21 +548,21 @@ When: Khi bore/tolerance/finish/heat-treatment cần budget định lượng.
 
 **Steps**
 
-- Tách nominal dimensions, tessellation error, process allowance và material grade.
+- Separate nominal dimensions, tessellation error, process allowance, and material grade.
 
 **Gates**
 
-- Phân biệt radial/diametral error, unit và export mesh.
-- Đối chiếu grade/temper/finish với drawing/data có nguồn.
+- Distinguish radial from diametral error, the units, and the exported mesh.
+- Cross-check grade/temper/finish against sourced drawings/data.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Không suy GD&T từ STEP export hoặc tự cài CAD addon.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- Do not infer GD&T from a STEP export, and do not install a CAD add-on on your own.
 
 ### Topic: hardware-interface-geometry
 
-When: Khi dùng helper ổ bi, nut/washer, keyway hoặc gland làm interface cơ khí.
+When: When using bearing, nut/washer, keyway, or gland helpers as mechanical interfaces.
 
 - `scripts/boilerplates/cad_mechanics/bp_ball_bearing.py` — inspect-adapt; SHA256 `8383db28f846246672060a6ea553a3314bc9525d7115b2cdabb08cb203b99b4d`
   Caution: Inner/outer rings are overlapping solid cylinders; bores/raceways absent; demo checks ball face count only.
@@ -575,22 +575,22 @@ When: Khi dùng helper ổ bi, nut/washer, keyway hoặc gland làm interface c�
 
 **Steps**
 
-- Chọn drawing phần cứng cụ thể, đơn vị và dung sai; từ chối fallback kích thước âm thầm.
-- Dựng/cắt đủ lỗ, rãnh và mặt tiếp xúc trong candidate; kiểm evaluated mesh sau union.
+- Choose a specific hardware drawing, units, and tolerances; reject silent dimension fallbacks.
+- Build/cut every hole, groove, and contact face in the candidate; check the evaluated mesh after the union.
 
 **Gates**
 
-- Đo bore/raceway/keyway và fit ở section; không chấp nhận solid cylinder thay ring.
-- Kiểm đúng local dimensions, squeeze/fill và topology; xác minh lực/mòn/seal bằng dữ liệu hoặc thử thực riêng.
+- Measure bore/raceway/keyway and fit in cross-section; do not accept a solid cylinder in place of a ring.
+- Verify local dimensions, squeeze/fill, and topology; verify force/wear/sealing separately with data or a physical test.
 
 **Limitations**
 
-- Tên tiêu chuẩn trong header và số mặt không chứng minh tương thích phần cứng.
-- Một số helper hiện thiếu bores/raceways/threads hoặc boolean union; chưa dùng làm chi tiết sản xuất trực tiếp.
+- A standard's name in the header and a face count do not prove hardware compatibility.
+- Some helpers currently lack bores/raceways/threads or the boolean union; do not use them directly as production parts.
 
 ### Topic: industrial-connector-panel-packaging
 
-When: Khi dựng connector, panel cutout, terminal và khoảng thao tác ở hộp điều khiển.
+When: When building connectors, panel cutouts, terminals, and service clearance in a control enclosure.
 
 - `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c`
   Caution: Lines36-49/154-158 present universal flats, bend and EMC spacing; treat as unverified task-specific inputs. Lines109-130 accept min_bend_radius but never use it; no curvature/strain-relief enforcement. Dimensions and connector coding require selected part drawings.
@@ -605,23 +605,23 @@ When: Khi dựng connector, panel cutout, terminal và khoảng thao tác ở h�
 
 **Steps**
 
-- Chốt mã connector/contact, pin-view, giao thức, cáp và drawing cụ thể; ghi chỗ nguồn mâu thuẫn.
-- Inspect/adapt cutter trong scene riêng; đo section, chiều dày panel, mặt gá và tool approach.
-- Khai báo pin-to-pin wire list, terminal/crimp và khoảng lắp tháo.
+- Lock connector/contact part numbers, pin view, protocol, cable, and the specific drawing; record where the sources conflict.
+- Inspect/adapt the cutter in a separate scene; measure the cross-section, panel thickness, mounting face, and tool approach.
+- Declare the pin-to-pin wire list, terminals/crimps, and the install/removal clearance.
 
 **Gates**
 
-- Thay tham số phải đổi đúng hình học; kiểm kích thước, topology và Boolean thật sau cắt.
-- D-cut smoke không thay fit coupon; chiều pin và drawing phiên bản phải khớp phần cứng được chọn.
+- Changing a parameter must change the geometry accordingly; check dimensions, topology, and the actual Boolean after the cut.
+- A D-cut smoke test does not replace a fit coupon; pin orientation and drawing revision must match the selected hardware.
 
 **Limitations**
 
-- Bảng pinout/kích thước là synthesis chưa kiểm định; không lấy pitch hoặc tên ISO làm bảo đảm tương thích.
-- Saddle hiện là cube không có slot; vent thiếu thread/membrane và bỏ qua tham số; cần sửa adapter trước sản xuất.
+- The pinout/dimension tables are unvalidated synthesis; do not treat a pitch or an ISO name as a compatibility guarantee.
+- The saddle is currently a cube with no slot; the vent lacks thread/membrane and ignores its parameters; the adapter must be fixed before production.
 
 ### Topic: enclosure-sealing-emc-harness
 
-When: Khi packaging hộp điều khiển cần sealing, nhiệt, shield hoặc tài liệu harness.
+When: When control-enclosure packaging needs sealing, thermal management, shielding, or harness documentation.
 
 - `research/industrial-wiring-harness-packaging/04-INGRESS-PROTECTION-SEALING-THERMAL-RELIEF.md` — read-verify; SHA256 `64e62ff9b34de40a3bee4a3f1adfaa5664b2ea58e673147af981762135390d44`
   Caution: Lines63-64 bolt pitch heuristic is not seal qualification. Lines87-89 use cold-temperature denominator while naming cooling vacuum, without matching initial-pressure reference. Lines96/117 universal membrane mandate and WEP values are unverified. IP rating requires assembled-product test, not CAD vent geometry.
@@ -632,23 +632,23 @@ When: Khi packaging hộp điều khiển cần sealing, nhiệt, shield hoặc 
 
 **Steps**
 
-- Tách yêu cầu môi trường thực khỏi ví dụ công nghiệp; chọn seal/vent theo đúng phần cứng.
-- Khai báo reference pressure/temperature và mô hình; kiểm tính nhất quán đơn vị và giả định.
-- Lập wire list, route, shield termination, crimp/tool và kiểm tra lắp ráp.
+- Separate the real environmental requirements from the industrial examples; choose seal/vent from the actual hardware.
+- Declare the reference pressure/temperature and the model; check unit consistency and the assumptions.
+- Draw up the wire list, routing, shield termination, crimp/tooling, and the assembly checks.
 
 **Gates**
 
-- Kiểm section/gland/mating và luồng thoát nhiệt thực; mô hình vent phải có đặc tính được yêu cầu.
-- Không công bố IP/EMC từ mesh: cần phương pháp thử và dữ liệu phù hợp cho cụm đã lắp.
+- Check cross-section/gland/mating and the real heat escape path; the vent model must carry the required characteristics.
+- Do not claim IP/EMC from a mesh: an appropriate test method and data for the assembled unit are required.
 
 **Limitations**
 
-- Các ngưỡng bolt spacing, membrane, EMC spacing và pull force trong nguồn chưa được xác nhận cho target.
-- Boilerplate vent bỏ qua kích thước ren/panel; hình thức kín hoặc gọn không xác nhận chức năng.
+- The bolt spacing, membrane, EMC spacing, and pull force thresholds in the sources are not confirmed for this target.
+- The boilerplate vent ignores thread/panel dimensions; looking sealed or compact does not confirm function.
 
 ## mechanisms-transmissions
 
-Bánh răng, giảm tốc, trục/ổ, tải giữ lâu và truyền động.
+Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.
 
 ### Base reading
 
@@ -662,26 +662,26 @@ Bánh răng, giảm tốc, trục/ổ, tải giữ lâu và truyền động.
 
 ### Steps
 
-- Chốt tải, reach, duty, tốc độ, hiệu suất và actuator envelope.
-- Tính worst-case moment gồm link, hand, payload; phân biệt continuous với stall torque.
-- Dựng reduction, bearings, fastener và cable space theo interface thật.
-- Kiểm backlash/va chạm/cường độ/nhiệt rồi xác nhận bằng bench test.
+- Lock load, reach, duty, speed, efficiency, and the actuator envelope.
+- Compute the worst-case moment including link, hand, and payload; distinguish continuous from stall torque.
+- Build the reduction, bearings, fasteners, and cable space from real interfaces.
+- Check backlash/collision/strength/thermal, then confirm with a bench test.
 
 ### Gates
 
-- Mass/CoM/inertia gắn unit và geometry revision.
-- Mô-men liên tục có margin theo yêu cầu, không lấy stall rating làm giữ lâu.
-- Gear profile/root/contact và bearing load được kiểm tra theo drawing/calculation.
-- Giữ trạng thái BLOCKED khi thông số actuator hoặc test thực còn thiếu.
+- Mass/CoM/inertia are tagged with units and the geometry revision.
+- Continuous torque has the required margin; do not take a stall rating as sustained holding.
+- Gear profile/root/contact and bearing load are checked against the drawing/calculation.
+- Stay BLOCKED while actuator specifications or a physical test are still missing.
 
 ### Limitations
 
-- Gear KB snippet chưa có root fillet như mô tả; tolerance tham số chưa thực hiện.
-- Arm 250 g giữ nhiều phút đang BLOCKED; không chuyển sang PASS từ animation.
+- The gear KB snippet lacks the root fillet it describes; the tolerance parameter is not implemented.
+- Holding a 250 g arm load for several minutes is BLOCKED; do not flip it to PASS from an animation.
 
 ### Topic: contact-wear-sealing
 
-When: Khi có wear/leakage/bearing/bushing/seal duty được yêu cầu.
+When: When wear/leakage/bearing/bushing/seal duty is required.
 
 - `research/advanced-tribology-contact-mechanics/01-HERTZIAN-CONTACT-STRESS.md` — read-verify; SHA256 `345be386539b7a407d38d5759f2cf363530b59ac69f86d5f69b837baebafc0c2`
   Caution: Source mixes subsurface depth values across line/point contact; resolve regime and equations before calculation.
@@ -698,16 +698,16 @@ When: Khi có wear/leakage/bearing/bushing/seal duty được yêu cầu.
 
 **Gates**
 
-- Kiểm đơn vị/phương trình đúng contact regime và data phần cứng.
-- Đo local fit; wear/temperature/leak thử thực trước performance claim.
+- Check that the units/equations match the contact regime and the hardware data.
+- Measure local fit; test wear/temperature/leakage physically before any performance claim.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: cycloid-profile-kinematics
 
-When: Chỉ khi cycloidal reduction đã được chọn.
+When: Only when a cycloidal reduction has already been chosen.
 
 - `research/advanced-tribology-contact-mechanics/03-CYCLOIDAL-SPEED-REDUCERS-MATHEMATICS.md` — read-verify; SHA256 `ccbc9d27cd6404d81249e90b47d522b9180bc8f57c79642b814d4a94b19e481d`
   Caution: Cusping/undercut criterion and universal coefficient range lack derivation; K1<1 alone is not manufacturability proof.
@@ -716,63 +716,63 @@ When: Chỉ khi cycloidal reduction đã được chọn.
 
 **Steps**
 
-- Chốt pins/lobes/eccentricity/phase/output holes/bearings.
-- Dựng candidate riêng; adapter chỉ là nguồn tham khảo.
+- Lock pins/lobes/eccentricity/phase/output holes/bearings.
+- Build a separate candidate; the adapter is a reference source only.
 
 **Gates**
 
-- Kiểm profile convergence, self-intersection, bores/walls trên evaluated mesh.
-- Sweep vòng input theo contract; kiểm clearance và output ratio.
+- Check profile convergence, self-intersection, and bores/walls on the evaluated mesh.
+- Sweep a full input revolution per the contract; check clearance and the output ratio.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Generator xóa scene, không tạo toàn bộ drive hay tự chứng minh ratio/manufacture.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- The generator wipes the scene, does not build the complete drive, and does not prove ratio/manufacturability by itself.
 
 ### Topic: actuator-duty-thermal
 
-When: Khi payload, giữ lâu hoặc chu kỳ lặp quyết định actuator.
+When: When payload, sustained holding, or repeated cycling drives the actuator choice.
 
 - `research/advanced-tribology-contact-mechanics/04-ACTUATOR-INERTIA-MATCHING-THERMAL.md` — read-verify; SHA256 `8cfcba1b7133177b918f05c264e91ba79aeef71b7a43c32919b384d96a76b5da`
   Caution: Optimal ratio equation needs dimensional review; stated Cth*Rth gives25–300seconds, not5–15minutes. Pulse/peak-current envelope unvalidated.
 
 **Steps**
 
-- Lập torque/speed trajectory, mass/inertia revision và mô hình điện/nhiệt.
+- Build the torque/speed trajectory, the mass/inertia revision, and the electrical/thermal model.
 
 **Gates**
 
-- Kiểm đơn vị, nguồn motor/driver, continuous và peak limits riêng.
-- Kiểm thermal response bằng duty thử thực trước loaded-hold claim.
+- Check units, the motor/driver source, and continuous versus peak limits separately.
+- Check the thermal response with a real duty test before any loaded-hold claim.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: parametric-gear-profile
 
-When: Khi dựng spur gear từ profile involute bằng BMesh.
+When: When building a spur gear from an involute profile with BMesh.
 
 - `scripts/boilerplates/cad_mechanics/bp_involute_gear.py` — inspect-adapt; SHA256 `5af44abbd8678d9e1a5e1eea10153a1fa06c5029c4a1637bdb9753104ae2ade4`
   Caution: Deletes same-name object/shared mesh; no helical/root-fillet implementation; flank phase/root geometry need validation; face count is not gear correctness.
 
 **Steps**
 
-- Chốt module, số răng, pressure angle, backlash và chiều rộng theo tải/drawing.
-- Kiểm công thức flank/pitch/root; tạo mesh candidate trước khi gắn vào truyền động.
+- Lock module, tooth count, pressure angle, backlash, and face width against load/drawing.
+- Verify the flank/pitch/root formulas; create the candidate mesh before mounting it into the transmission.
 
 **Gates**
 
-- Đo pitch tooth thickness và sai số profile ở nhiều sample counts; kiểm root, bore, manifold/self-intersection.
-- Sweep cặp bánh răng; đo ratio/interference/clearance; kiểm tải và vật liệu riêng.
+- Measure pitch tooth thickness and profile error at several sample counts; check root, bore, and manifoldness/self-intersection.
+- Sweep the gear pair; measure ratio/interference/clearance; check load and material separately.
 
 **Limitations**
 
-- Không có helical/root fillet như header; geometry sample chưa chứng minh gear đúng.
+- There is no helical/root fillet as the header claims; a geometry sample does not prove the gear is correct.
 
 ## robotics-links-simulation
 
-Robot links, URDF, coordinate frames, collision và inertia.
+Robot links, URDF, coordinate frames, collision, and inertia.
 
 ### Base reading
 
@@ -786,27 +786,27 @@ Robot links, URDF, coordinate frames, collision và inertia.
 
 ### Steps
 
-- Chốt hệ tọa độ từng link/joint và đơn vị SI ở boundary export.
-- Tách visual, collision, physical properties; kiểm mass/CoM/inertia bằng phương pháp đã validate.
-- Export articulation và import vào target simulator.
-- So pose/pivot/limit, collision shape và physical response với kỳ vọng.
+- Lock the coordinate system of each link/joint and SI units at the export boundary.
+- Separate visual, collision, and physical properties; check mass/CoM/inertia with a validated method.
+- Export the articulation and import it into the target simulator.
+- Compare pose/pivot/limit, collision shape, and physical response against expectations.
 
 ### Gates
 
-- Không áp rotation cố định chỉ từ tên phần mềm; verify basis vector và forward axis.
-- Collision shape được kiểm lồi/đơn giản thật, decimation không chứng minh convex.
-- Inertia tensor đối xứng và positive definite bằng eigenvalues hoặc principal minors.
-- Round-trip đúng link hierarchy, scale, limits; simulator test được lưu.
+- Do not apply a fixed rotation from a software name alone; verify the basis vectors and the forward axis.
+- Collision shapes are actually checked for convexity/simplicity; decimation does not prove convexity.
+- The inertia tensor is symmetric and positive definite, shown by eigenvalues or principal minors.
+- The round trip preserves link hierarchy, scale, and limits; the simulator test is saved.
 
 ### Limitations
 
-- Snippet URDF hiện format inertia truyền vào, không tính inertia.
-- Collision và tensor snippets trong KB chưa đủ predicate cần thiết.
-- Không chạy/install simulator chỉ vì đọc research.
+- The URDF snippet currently formats the inertia passed into it; it does not compute inertia.
+- The collision and tensor snippets in the KB do not carry the required predicates.
+- Do not run or install a simulator merely because research was read.
 
 ### Topic: dynamic-harness-routing
 
-When: Khi đi dây từ controller qua khớp chuyển động hoặc thiết kế carrier/drag chain.
+When: When routing wiring from the controller across moving joints, or designing a carrier/drag chain.
 
 - `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c`
   Caution: Lines36-49/154-158 present universal flats, bend and EMC spacing; treat as unverified task-specific inputs. Lines109-130 accept min_bend_radius but never use it; no curvature/strain-relief enforcement. Dimensions and connector coding require selected part drawings.
@@ -819,23 +819,23 @@ When: Khi đi dây từ controller qua khớp chuyển động hoặc thiết k�
 
 **Steps**
 
-- Chốt endpoint, cáp thực, connector, giới hạn uốn/xoắn và chiều dài tự do.
-- Dựng route theo từng joint pose; tính chiều dài, curvature và khoảng tránh cơ cấu.
-- Thiết kế retention/strain relief; kiểm link socket, stop và fastening trước khi gọi chain là hoạt động được.
+- Lock the endpoints, the real cable, connectors, bend/torsion limits, and the free length.
+- Build the route for each joint pose; compute length, curvature, and clearance from the mechanism.
+- Design retention/strain relief; check link sockets, stops, and fastening before calling the chain functional.
 
 **Gates**
 
-- Từ chối input âm và silent radius cap; đo min radius/length/torsion tại pose biên với units rõ.
-- Kiểm giao thoa chain và tính kết nối của từng link; kiểm thực với cáp/link đã chọn trước tuyên bố cycle life.
+- Reject negative inputs and silent radius caps; measure minimum radius/length/torsion at the extreme poses with explicit units.
+- Check chain interference and the connectivity of each link; test physically with the selected cable/link before claiming cycle life.
 
 **Limitations**
 
-- Curve reveal không bảo toàn chiều dài hoặc chứng minh đi dây thật.
-- Boilerplate hiện tạo primitive rời và thiếu socket/stop; kiểu conductor không chứng nhận flex life.
+- A curve reveal does not preserve length or prove real routing.
+- The boilerplate currently creates detached primitives and lacks sockets/stops; a conductor type does not certify flex life.
 
 ## render-export-delivery
 
-Video không phụ đề, render batch, encode và export/re-import.
+Caption-free video, batch rendering, encoding, and export/re-import.
 
 ### Base reading
 
@@ -848,27 +848,27 @@ Video không phụ đề, render batch, encode và export/re-import.
 
 ### Steps
 
-- Chốt source hash, camera, frame range, fps, aspect và yêu cầu overlay/audio.
-- Đo render profile trên frame đại diện trong process riêng.
-- Render raw frames với output/range riêng và kiểm đủ frame.
-- Encode/decode hoặc export/re-import đúng artifact; xem cả nhịp chuyển động.
+- Lock the source hash, camera, frame range, fps, aspect ratio, and overlay/audio requirements.
+- Measure the render profile on a representative frame in a separate process.
+- Render raw frames with a dedicated output/range and verify the frame count is complete.
+- Encode/decode or export/re-import the correct artifact; review the motion timing as well.
 
 ### Gates
 
-- Python errors phải trả nonzero và có postcondition; shell exit 0 chưa đủ.
-- Frame missing/corrupt/mixed revision bị loại trước encode.
-- Duration/fps/resolution/range đúng brief; video không text khi user yêu cầu.
-- Review đúng file đã hash; kỹ thuật và chất lượng visual ghi riêng.
+- Python errors must return nonzero and carry a postcondition; a shell exit 0 is not enough.
+- Missing/corrupt/mixed-revision frames are rejected before encoding.
+- Duration/fps/resolution/range match the brief; the video carries no text when the user asked for none.
+- Review the exact hashed file; record the technical results and the visual quality separately.
 
 ### Limitations
 
-- Headless wrapper chưa explicit Python-error exit; dùng CLI explicit theo core recipe.
-- Ví dụ video chứa fixed arm path/24fps/720frames; phải chuyển contract theo task.
-- Không resume dựa vào file tồn tại; stale-evidence enforcement E1–E5 còn backlog.
+- The headless wrapper does not yet exit explicitly on a Python error; use the explicit CLI form from the core recipe.
+- The video example hardcodes an arm path/24fps/720 frames; the contract must be adapted to the task.
+- Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog.
 
 ### Topic: renderer-diagnostics
 
-When: Khi cần đo CPU/Metal, sampling hoặc so giới hạn renderer.
+When: When CPU/Metal measurement, sampling, or a renderer-limit comparison is needed.
 
 - `research/blender-rendering-deep-dive/01-PATH-TRACING-CYCLES-ARCHITECTURE.md` — read-verify; SHA256 `1ca697b7e8199900a9c8b6d070d63efa52b249878bfdc8f240038ddceb03c4de`
   Caution: GPU-only preset is not measured device selection; backend is not enabled by device assignment alone. Bounce/clamping no-bias and95% claims unverified.
@@ -879,43 +879,43 @@ When: Khi cần đo CPU/Metal, sampling hoặc so giới hạn renderer.
 
 **Steps**
 
-- Benchmark frame đại diện cùng resolution/source; lựa chọn device theo phép đo.
-- Giữ Cycles batch theo policy; EEVEE chỉ khi capability được xác nhận.
+- Benchmark a representative frame at the same resolution/source; choose the device from the measurement.
+- Keep batch rendering on Cycles per policy; use EEVEE only when its capability is confirmed.
 
 **Gates**
 
-- Engine/device thực sự enabled, timing và settings được ghi.
-- So noise/detail và reflection artifacts; tốc độ không thay chất lượng.
+- The engine/device is actually enabled, and timing and settings are recorded.
+- Compare noise/detail and reflection artifacts; speed does not replace quality.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Không thừa hưởng GPU/Metal-only hoặc bounce preset từ research.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- Do not inherit a GPU/Metal-only or bounce preset from research.
 
 ### Topic: participating-media
 
-When: Chỉ khi scene có haze/cloud/volume cần kiểm soát.
+When: Only when the scene has haze/cloud/volume that must be controlled.
 
 - `research/blender-rendering-deep-dive/03-VOLUMETRIC-SCATTERING-ATMOSPHERICS.md` — read-verify; SHA256 `3398c162a9916827d9f8cecf08f61be50dde18b4079a93242e14a05684d008ca`
   Caution: Universal zero-banding/integrator claim is not proven by stepping snippet; fixed100-unit cube/density is not scene-scale calibration.
 
 **Steps**
 
-- Chốt volume bounds, density và path-length assumptions.
-- So baseline tắt atmosphere để tách exposure/material lỗi.
+- Lock volume bounds, density, and path-length assumptions.
+- Compare against a baseline with the atmosphere off to isolate exposure/material defects.
 
 **Gates**
 
-- Bounds/density hữu hạn và phù hợp scale.
-- Xem banding, light shafts, transmission và khả năng đọc sản phẩm.
+- Bounds/density are finite and consistent with the scale.
+- Review banding, light shafts, transmission, and product readability.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: color-denoise-delivery
 
-When: Khi highlight/output colors hoặc temporal noise cần chẩn đoán.
+When: When highlight/output colors or temporal noise need diagnosis.
 
 - `research/blender-rendering-deep-dive/04-COLOR-MANAGEMENT-AGX-ACES.md` — read-verify; SHA256 `92ad6a1fe1eb4909477b6b9a90821f2aaba9f29b4718a0b40c453b846ea0a7b0`
   Caution: Hardcoded color/look/sequencer values omit an actual EXR output-space contract; sRGB and Rec709 transfer assumptions need qualification.
@@ -924,22 +924,22 @@ When: Khi highlight/output colors hoặc temporal noise cần chẩn đoán.
 
 **Steps**
 
-- Chốt display/view/look/exposure và output encoding riêng.
-- Giữ raw noisy evidence; kiểm guide passes trước nối denoiser.
+- Lock display/view/look/exposure and the output encoding separately.
+- Keep the raw noisy evidence; check the guide passes before wiring up the denoiser.
 
 **Gates**
 
-- Introspect compositor/pass sockets; EXR contract có cấu hình thực.
-- So raw/denoised crop và clip liên tiếp: không mất detail, ghost hoặc boiling.
+- Introspect compositor/pass sockets; the EXR contract has a real configuration.
+- Compare raw/denoised crops and consecutive clips: no detail loss, ghosting, or boiling.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Không xóa compositor hiện hữu hoặc dùng sample minimum làm bảo đảm.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- Do not delete an existing compositor or treat a minimum sample count as a guarantee.
 
 ### Topic: framing-export-contract
 
-When: Khi tự căn camera hoặc xuất GLB/STL qua adapter.
+When: When auto-framing the camera or exporting GLB/STL through an adapter.
 
 - `scripts/boilerplates/pipeline_render/bp_export_pipeline.py` — inspect-adapt; SHA256 `f2499c0298d379263e2e8f2078d06ddbbfa6ca326a19e756c4b97290c0ce2ae1`
   Caution: Export operator FINISHED and file existence do not prove watertightness, units, contents or round-trip fidelity. Uses current selection/context and unvalidated output paths; self-test writes/deletes fixed /tmp filenames. Source citations are not export validation.
@@ -948,22 +948,22 @@ When: Khi tự căn camera hoặc xuất GLB/STL qua adapter.
 
 **Steps**
 
-- Chốt object selection, evaluated bounds, camera type/aspect và output path của candidate.
-- Adapt framing theo cả hai FOV; xuất với units và thuộc tính đúng contract.
+- Lock the object selection, evaluated bounds, camera type/aspect, and the candidate's output path.
+- Adapt framing for both FOV axes; export with the units and properties the contract requires.
 
 **Gates**
 
-- Chiếu evaluated bounds qua camera, kiểm cả X/Y, near/far clip tại mọi pose yêu cầu; xem ảnh render.
-- Đọc lại artifact độc lập, kiểm object/count/bounds/units/materials theo format; STL cần topology và dung sai riêng.
+- Project the evaluated bounds through the camera, check both X/Y and near/far clipping at every required pose; review the rendered image.
+- Read the artifact back independently and check object/count/bounds/units/materials per format; STL needs its own topology and tolerance checks.
 
 **Limitations**
 
-- FINISHED, file tồn tại hoặc camera distance không chứng minh output đúng.
-- Helper có thể đổi target/constraint hiện hữu và ghi đường dẫn cố định; không chạy self-test trên scene sản xuất.
+- FINISHED, an existing file, or a camera distance does not prove the output is correct.
+- The helper can change an existing target/constraint and write to a hardcoded path; do not run its self-test on a production scene.
 
 ## native-procedural-simulation
 
-Geometry Nodes, pattern, instances và simulation/caches bằng Blender-native.
+Geometry Nodes, patterns, instances, and simulation/caches using Blender-native tools.
 
 ### Base reading
 
@@ -977,26 +977,26 @@ Geometry Nodes, pattern, instances và simulation/caches bằng Blender-native.
 
 ### Steps
 
-- Chốt procedural inputs, unit, seed, instance domain và output contract.
-- Introspect node/socket/zone ở runtime; blockout graph nhỏ trước.
-- Kiểm evaluated geometry/instance transforms và cache trên frame đại diện.
-- Bake/render candidate riêng, xem kết quả nhiều frame.
+- Lock procedural inputs, units, seed, instance domain, and the output contract.
+- Introspect nodes/sockets/zones at runtime; blockout a small graph first.
+- Check evaluated geometry/instance transforms and the cache on a representative frame.
+- Bake/render a separate candidate and review the result across multiple frames.
 
 ### Gates
 
-- Counts/attributes/instances đúng với input; thay input đổi output như spec.
-- Kết quả evaluated và export không thiếu instances/modifiers.
-- Cache gắn revision và frame range; replay candidate có kết quả đúng.
-- Review visual và thời gian sau numeric checks.
+- Counts/attributes/instances match the input; changing an input changes the output as specified.
+- The evaluated result and the export are not missing instances/modifiers.
+- The cache is tagged with a revision and a frame range; replaying the candidate gives the correct result.
+- Review visuals and timing after the numeric checks.
 
 ### Limitations
 
-- Simulation mesh không tự chứng minh vật liệu hoặc phần cứng thật.
-- Physics cache và node API phụ thuộc runtime; không recall version.
+- A simulation mesh does not by itself prove real material or real hardware.
+- The physics cache and the node API depend on the runtime; do not recall the version from memory.
 
 ### Topic: fields-parametric-solids
 
-When: Khi field domains, attributes hoặc hình cơ khí tham số là mục tiêu.
+When: When field domains, attributes, or parametric mechanical shapes are the goal.
 
 - `research/blender-geometry-nodes-procedural/01-FIELDS-ARCHITECTURE-EVALUATION-MODEL.md` — read-verify; SHA256 `e067dbda62c98c67b8de34cb27377d9106a61e166d5c788fbd29f8566ce2dc99`
   Caution: Snippet clears node interface. Universal zero-memory/interpolation/persistence claims exceed evidence; test consumer domain and data type.
@@ -1011,22 +1011,22 @@ When: Khi field domains, attributes hoặc hình cơ khí tham số là mục ti
 
 **Steps**
 
-- Chốt input ranges/units/schema/consumer domains.
-- Introspect sockets rồi kiểm parameter matrix gồm biên.
+- Lock input ranges/units/schema/consumer domains.
+- Introspect the sockets, then check a parameter matrix that includes the boundary values.
 
 **Gates**
 
-- Đo evaluated dimensions, hole/component counts và topology.
-- Kiểm attribute name/domain/type/distribution thực; xem sections và shading.
+- Measure evaluated dimensions, hole/component counts, and topology.
+- Check the actual attribute name/domain/type/distribution; review cross-sections and shading.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- Adapter thiếu bốn lỗ gá như header; main xóa toàn bộ object.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- The adapter lacks the four mounting holes its header claims; its main routine deletes every object.
 
 ### Topic: simulation-repeat-budgets
 
-When: Khi cần state qua frame, substeps, branching hoặc iterative solver.
+When: When state across frames, substeps, branching, or an iterative solver is required.
 
 - `research/blender-geometry-nodes-procedural/03-SIMULATION-ZONES-PHYSICS-SOLVERS.md` — read-verify; SHA256 `8959b378ecad521c39fe3fd915c6b65a655d04c84830314a61adad76136a07c0`
   Caution: Indefinite stability/fixed substep/cache guarantees unproven; boids formulas lack empty-neighborhood/coincident guards.
@@ -1037,45 +1037,45 @@ When: Khi cần state qua frame, substeps, branching hoặc iterative solver.
 
 **Steps**
 
-- Tách inter-frame simulation và intra-frame loop.
-- Chốt timestep/state/seed/cache revision; xử lý empty/coincident neighborhoods.
-- So hai timestep/substep candidates và dự toán growth trước chạy.
+- Separate inter-frame simulation from the intra-frame loop.
+- Lock timestep/state/seed/cache revision; handle empty/coincident neighborhoods.
+- Compare two timestep/substep candidates and estimate the growth before running.
 
 **Gates**
 
-- Không NaN/Inf; count/time/memory trong budget task.
-- Đo convergence/state residual và replay; không yêu cầu tăng vertex với fixed topology.
-- Xem tunneling/stability/feature loss theo thời gian.
+- No NaN/Inf; count/time/memory stay within the task budget.
+- Measure convergence/state residual and replay; do not require vertex growth with fixed topology.
+- Review tunneling/stability/feature loss over time.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: sdf-feature-preservation
 
-When: Khi chọn SDF boolean hoặc volume remesh cho candidate native.
+When: When choosing SDF boolean or volume remesh for a native candidate.
 
 - `research/blender-geometry-nodes-procedural/05-VOLUME-GRIDS-SDF-BOOLEANS.md` — read-verify; SHA256 `420beb9331f727a560f9e3fcab806dfc7d08e47c37405017e37db4879dd4d233`
   Caution: Named smooth subtraction has no smoothing parameter; guaranteed manifold/print-ready/half-wall preservation is not established.
 
 **Steps**
 
-- Phân biệt fog/distance grid/isovalue.
-- Chọn voxel size theo feature và memory; giữ original.
+- Distinguish fog grid, distance grid, and isovalue.
+- Choose voxel size against feature size and memory; keep the original.
 
 **Gates**
 
-- So topology, openings, local walls/clearance và deviation ở hai resolutions.
-- Xem section và camera-matched sheet: không bịt lỗ/xóa vách.
+- Compare topology, openings, local walls/clearance, and deviation at two resolutions.
+- Review cross-sections and the camera-matched sheet: no filled-in holes or removed walls.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
-- SDF không tự bảo đảm manifold/printing-ready hoặc giữ wall từ quy tắc half-wall.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
+- SDF does not by itself guarantee manifoldness/print-readiness, nor preserve a wall through a half-wall rule.
 
 ### Topic: graded-lattice-reinforcement
 
-When: Khi lattice hoặc reinforcement nhằm mục tiêu mass/stiffness cụ thể.
+When: When a lattice or reinforcement targets a specific mass/stiffness goal.
 
 - `research/advanced-tribology-contact-mechanics/05-TOPOLOGY-OPTIMIZATION-LATTICES.md` — read-verify; SHA256 `e83faf7df5baa6639cdefeeb8484d463241f31e9bd2355f3134eb2a199a6f930`
   Caution: generate_gyroid_mesh only builds arrays/prints density; creates no Blender geometry or SIMP optimization. Field threshold is not physical wall thickness.
@@ -1084,20 +1084,20 @@ When: Khi lattice hoặc reinforcement nhằm mục tiêu mass/stiffness cụ th
 
 **Steps**
 
-- Chốt cell size/local wall/boundary/load paths và fiber directions.
+- Lock cell size/local wall/boundary/load paths and fiber directions.
 
 **Gates**
 
-- Cần mesh thật, density/wall và resolution convergence; field preview không phải mesh.
-- Kiểm orientation/boundary condition và physical stiffness riêng.
+- A real mesh, density/wall figures, and resolution convergence are required; a field preview is not a mesh.
+- Check orientation/boundary condition and physical stiffness separately.
 
 **Limitations**
 
-- Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.
+- Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
 ### Topic: procedural-component-adapters
 
-When: Khi adapt graph cáp/tube hoặc flange có tham số.
+When: When adapting a parametric cable/tube or flange graph.
 
 - `scripts/boilerplates/geometry_nodes/bp_gn_cables.py` — inspect-adapt; SHA256 `5212fe937edc66bab7b449d0232199ae768b21cc4bd98325e447c433df97eee0`
   Caution: Sag input unused; graph generates a straight tube despite catenary header. Replaces named group and leaves test object. Nonempty mesh does not verify sag, dimensions, caps or clearance.
@@ -1106,16 +1106,16 @@ When: Khi adapt graph cáp/tube hoặc flange có tham số.
 
 **Steps**
 
-- Chốt component shape, input ranges và output measurements; không lấy header làm contract đã đạt.
-- Inspect node/socket/interface thực; sửa feature còn thiếu trong candidate riêng.
+- Lock the component shape, input ranges, and output measurements; do not take a header as a contract already met.
+- Inspect the actual nodes/sockets/interface; add the missing features in a separate candidate.
 
 **Gates**
 
-- Đo endpoint/midpoint khi đổi Sag, đường kính, OD/bore/thickness và số lỗ theo component.
-- Kiểm valid/invalid boundaries, caps/components/manifold và section/render; drawing thật mới xác định flange cần gì.
+- Measure endpoint/midpoint when changing Sag, diameter, OD/bore/thickness, and hole count per component.
+- Check valid/invalid boundaries, caps/components/manifoldness, and cross-section/render; only a real drawing determines what the flange needs.
 
 **Limitations**
 
-- Cáp hiện không dùng Sag; flange chỉ có disc-minus-bore, chưa có hub/bolt pattern.
-- Nonempty mesh không đủ chứng minh graph thực hiện input.
+- The cable currently ignores Sag; the flange is only a disc minus a bore, with no hub/bolt pattern.
+- A nonempty mesh is not enough to prove the graph acted on the input.
 

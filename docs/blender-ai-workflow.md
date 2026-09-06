@@ -1,82 +1,82 @@
-# Workflow AI làm việc với Blender
+# AI Workflow for Working with Blender
 
-Áp dụng từ 2026-09-05; cập nhật 2026-09-06 sau audit (`plans/260905-2356-blender-workflow-audit/`): file vận hành chính là `AGENTS.md`, thành công quyết định bằng sentinel `AGENT_OK`/`AGENT_FAIL`, E1/E2 đã implement, gate production cho part in 3D. Giữ hai router execution/fidelity và bổ sung [knowledge workbench](blender-knowledge-workflows.md) để nối KB, research và portable concepts đã được scout. Không có benchmark chứng minh cần thêm nhiều skill hoặc thay MCP. Đây là quy trình đã đưa vào tài liệu; các helper cần sửa được ghi riêng trong [backlog](blender-workflow-improvement-backlog.md).
+In force since 2026-09-05; updated 2026-09-06 after the audit (`plans/260905-2356-blender-workflow-audit/`): the primary operational file is `AGENTS.md`, success is decided by the `AGENT_OK`/`AGENT_FAIL` sentinel, E1/E2 are implemented, production gate for 3D-printed parts. Keep the two execution/fidelity routers and add the [knowledge workbench](blender-knowledge-workflows.md) to connect the KB, research and the portable concepts that have been scouted. There is no benchmark proving that more skills or a different MCP are needed. This is the process as documented; the helpers that need fixing are recorded separately in the [backlog](blender-workflow-improvement-backlog.md).
 
-## Bắt đầu phiên mới
+## Starting a new session
 
-Đọc `.project-agent.md`, BRV manifest và node liên quan mới nhất; sau đó nạp `blender-agent-core`. Ghi rõ file/scene đang làm, controller duy nhất, đầu ra chính, tiêu chí đạt và yêu cầu chưa giải quyết. Không lấy trạng thái GUI trong checkpoint cũ làm trạng thái hiện tại.
+Read `.project-agent.md`, the BRV manifest and the latest related nodes; then load `blender-agent-core`. State clearly the file/scene being worked on, the single controller, the main output, the acceptance criteria and the unresolved requirements. Do not take the GUI state from an old checkpoint as the current state.
 
 ```mermaid
 flowchart LR
-    A[Chốt mục đích và bằng chứng] --> B[Đọc runtime và scene]
-    B --> C[Blockout hoặc storyboard]
-    C --> D[Build từng pass có checkpoint]
-    D --> E[Kiểm tra số và hình]
-    E --> F{Đạt tiêu chí?}
-    F -->|Sai spec| C
-    F -->|Sai code| D
-    F -->|Đạt| G[Render frame rồi encode]
-    G --> H[Kiểm tra đúng bản giao]
+    A[Fix the purpose and the evidence] --> B[Read runtime and scene]
+    B --> C[Blockout or storyboard]
+    C --> D[Build pass by pass with checkpoints]
+    D --> E[Check numbers and images]
+    E --> F{Criteria met?}
+    F -->|Spec wrong| C
+    F -->|Code wrong| D
+    F -->|Met| G[Render frames then encode]
+    G --> H[Verify the delivered revision]
 ```
 
-### Pipeline tám bước và artifact đầu ra
+### Eight-step pipeline and output artifacts
 
 ```text
-Contract → brief hiện hành, yêu cầu bất biến, giả định và tiêu chí có thể bác bỏ.
-Preflight → runtime/scene/units/dependencies/owner và kết quả kiểm tra kết nối đọc-only.
-Blockout hoặc storyboard → ảnh so reference hoặc animatic ngắn kiểm tra đúng điều dễ bất đồng.
-Build → scene graph, script từng pass, checkpoint và postconditions; một writer cho mỗi instance.
-Verify → report số gắn revision, ảnh/clip đã xem, verdict continue/refine-spec/refine-code/request-input/stop.
-Render → profile đã kiểm tra, input bất biến, raw frame sequence và log các range tách biệt.
-Deliver → MP4/export đã decode/re-import, review đúng bản, trạng thái bằng chứng riêng từng lĩnh vực.
-Retro → incident có nguồn, recipe hoặc backlog đúng nơi; không biến mọi sự kiện thành luật mới.
+Contract → current brief, invariant requirements, assumptions and falsifiable criteria.
+Preflight → runtime/scene/units/dependencies/owner and the result of a read-only connection check.
+Blockout or storyboard → reference comparison image or short animatic checking exactly what is easiest to disagree about.
+Build → scene graph, per-pass script, checkpoints and postconditions; one writer per instance.
+Verify → numeric report tied to the revision, images/clips actually viewed, verdict continue/refine-spec/refine-code/request-input/stop.
+Render → measured profile, invariant inputs, raw frame sequence and logs with the ranges kept separate.
+Deliver → MP4/export that has been decoded/re-imported, review of the correct revision, evidence status kept separate per domain.
+Retro → sourced incidents, recipe or backlog in the right place; do not turn every event into a new law.
 ```
 
-## Bộ năng lực cần có
+## Required capability set
 
-| Năng lực | Nơi dùng trong phiên sau | Điều phải chứng minh |
+| Capability | Where it is used in a later session | What must be proven |
 |---|---|---|
-| Điều khiển và kiểm tra | [blender-agent-core](../.agents/skills/blender-agent-core/SKILL.md), [hard rules](../.agents/skills/blender-agent-core/references/hard-rules.md) | Đúng scene, đơn vị, API, writer và tín hiệu thành công; timeout không đồng nghĩa rollback |
-| Dựng theo reference | [blender-image-to-3d](../.agents/skills/blender-image-to-3d/SKILL.md) + KB modeling/materials | Silhouette, tỷ lệ và hình đa góc; không hứa chính xác phần ảnh không thể hiện |
-| Khớp, thao tác và animation | [Recipe articulated task](../.agents/skills/blender-agent-core/references/recipes.md#articulated-task) + KB animation/robotics | Pivot/hierarchy đúng; chuyển động thật; grasp/release liên tục; câu chuyện và phạm vi động tác đọc được |
-| In 3D / đúng kích thước / đúng chuẩn | [Recipe production contract](../.agents/skills/blender-agent-core/references/recipes.md#production-contract) + `specs/README.md` + `scripts/production-gate.py` | `spec.json` trước khi detail; gate exit 0 với report gắn hash scene+spec; ghi rõ `exclusions` (tải, fit thật, nhiệt) |
-| Cơ khí và chế tạo | [Recipe mechanical evidence](../.agents/skills/blender-agent-core/references/recipes.md#mechanical-evidence) + KB precision/printing | Fits, vật liệu, khối lượng/tải/duty và các phép thử tương ứng; mesh kín không chứng minh chịu lực |
-| Render và giao artifact | [Recipe render delivery](../.agents/skills/blender-agent-core/references/recipes.md#render-delivery) + KB render/export | Profile phù hợp scene; giữ raw frames; encode/decode hoặc export/re-import; review đúng revision |
+| Control and checking | [blender-agent-core](../.agents/skills/blender-agent-core/SKILL.md), [hard rules](../.agents/skills/blender-agent-core/references/hard-rules.md) | Correct scene, units, API, writer and success signal; a timeout does not mean a rollback |
+| Building from a reference | [blender-image-to-3d](../.agents/skills/blender-image-to-3d/SKILL.md) + KB modeling/materials | Silhouette, proportions and multi-angle shape; do not promise accuracy for what the images do not show |
+| Joints, manipulation and animation | [Recipe articulated task](../.agents/skills/blender-agent-core/references/recipes.md#articulated-task) + KB animation/robotics | Correct pivot/hierarchy; real motion; continuous grasp/release; readable story and range of motion |
+| 3D printing / dimensional correctness / standards compliance | [Recipe production contract](../.agents/skills/blender-agent-core/references/recipes.md#production-contract) + `specs/README.md` + `scripts/production-gate.py` | `spec.json` before detailing; gate exit 0 with a report carrying the scene+spec hashes; state `exclusions` explicitly (load, real fit, thermal) |
+| Mechanics and manufacturing | [Recipe mechanical evidence](../.agents/skills/blender-agent-core/references/recipes.md#mechanical-evidence) + KB precision/printing | Fits, materials, mass/load/duty and the corresponding tests; a watertight mesh does not prove load capacity |
+| Render and artifact delivery | [Recipe render delivery](../.agents/skills/blender-agent-core/references/recipes.md#render-delivery) + KB render/export | A profile that suits the scene; keep the raw frames; encode/decode or export/re-import; review the correct revision |
 
-Các hàng domain là **recipe chuyên biệt**, chưa phải skill mới được cài. API chuyên sâu tiếp tục ở [Knowledge INDEX](../knowledge/INDEX.md), theo danh mục domain hiện hành. Knowledge workbench xử lý khoảng trống retrieval đã đo: index cũ không route các research collections và grimoire. Nó chọn reading pack, không thay execution hoặc tạo skill riêng cho các recipe trên.
+The domain rows are **specialised recipes**, not newly installed skills. In-depth APIs stay in the [Knowledge INDEX](../knowledge/INDEX.md), following the current domain catalogue. The knowledge workbench handles a measured retrieval gap: the old index did not route the research collections and the grimoire. It picks the reading pack; it does not replace execution or create a dedicated skill for the recipes above.
 
-## Cách vận hành ít phải làm lại
+## How to operate with less rework
 
-**Live để chỉnh, headless để batch.** Dùng MCP khi có và kết nối hoạt động; socket client là đường dự phòng đã có, không phải lý do tạo thêm daemon. Đọc trạng thái trước khi chạy pass. Tách process headless để fault-test/render; không để hai agent sửa một GUI. Quyền sở hữu hiện là quy ước thủ công, chưa có lock cưỡng chế.
+**Live for adjusting, headless for batch.** Use MCP when it is available and the connection works; the socket client is an existing fallback route, not a reason to create another daemon. Read the state before running a pass. Split off a headless process for fault-test/render; do not let two agents edit one GUI. Ownership is currently a manual convention, with no enforced lock.
 
-**Hỏi sớm những thông số đổi kiến trúc.** Với robot: payload, reach, thời gian giữ, actuator/drawing và cho phép tăng kích thước. Với video: người xem cần thấy điều gì qua hành động. Các lựa chọn ánh sáng hoặc preview có thể làm trước để người dùng nhìn được; không thêm vòng xin duyệt thường lệ.
+**Ask early about the parameters that change the architecture.** For a robot: payload, reach, hold time, actuator/drawing and permission to increase the size. For video: what the viewer needs to see through the action. Lighting choices or previews can be done up front so the user can look at them; do not add a routine approval round.
 
-**Chứng minh đúng loại việc.** Có ảnh → so silhouette trước chi tiết. Có khớp → kiểm tra frame/pivot/hierarchy trước motion polish. Có cầm vật → thử hand và vật ngay, không đợi render toàn phim. Có câu chuyện → xem animatic, không chỉ kiểm tra góc từng khớp. Ảnh tĩnh không chứng minh nhịp chuyển động, phép thử số không chứng minh cảm nhận thị giác.
+**Prove the right kind of thing.** Images available → compare silhouettes before detail. Joints present → check frame/pivot/hierarchy before motion polish. Object grasping present → test the hand and the object immediately, do not wait for a full-film render. A story present → watch the animatic, do not only check per-joint angles. A still image does not prove motion pacing, a numeric test does not prove visual perception.
 
-**Đổi yêu cầu theo phạm vi ảnh hưởng.** Đổi phụ đề → xử lý/encode lại. Đổi kịch bản → làm lại trajectory và kiểm tra phụ thuộc. Cắt thêm geometry → đánh dấu lại bằng chứng topology, collision, khối lượng và tải cần kiểm tra. Không hạ yêu cầu 250 g khi chuyển sang làm video.
+**Handle requirement changes according to their blast radius.** Subtitle change → re-process/re-encode. Script change → redo the trajectory and check the dependencies. Cutting more geometry → re-flag the topology, collision, mass and load evidence that has to be re-checked. Do not lower the 250 g requirement when switching to video work.
 
-**Tiết kiệm render bằng dữ liệu.** Không mặc định Metal luôn nhanh hơn, 128 samples luôn cần hoặc 6 samples luôn đủ. Dùng profile đã có nếu đạt yêu cầu. Nếu cần tối ưu, thử baseline và một biến thể trên cùng frame/resolution, lặp đo, xem chất lượng chuyển động rồi mới chọn. Giới hạn thử phải được ghi trước; chưa có con số tăng tốc tổng quát được chứng minh.
+**Save render cost with data.** Do not assume by default that Metal is always faster, that 128 samples are always needed or that 6 samples are always enough. Use an existing profile if it meets the requirement. If optimisation is needed, try a baseline and one variant on the same frame/resolution, repeat the measurement, look at the motion quality, and only then choose. The limits of the experiment must be written down beforehand; no general speed-up figure has been proven.
 
-## Trạng thái riêng cho từng loại bằng chứng
+## Separate status per kind of evidence
 
-| Trường | Ví dụ theo artifact/revision | Không được suy ra |
+| Field | Example per artifact/revision | Must not be inferred |
 |---|---|---|
-| Media | Video 720 frame/30 giây decode đạt; một số frame đã xem | Tất cả chất lượng thời gian đã được người review độc lập xem hết |
-| Motion | Khớp và payload chạy đúng trajectory được kiểm tra | Chương trình điều khiển servo hoặc lực ma sát đúng |
-| Surface screen | Các pose được lấy mẫu đạt kiểm tra giao bề mặt có exclusions | Clearance liên tục, solid containment hoặc mọi tư thế đều an toàn |
-| Fit prototype | STL revision gốc có kiểm tra geometry/export | STL đó đại diện geometry revision đã cắt thêm |
-| Manufacture | **BLOCKED** với mục tiêu 250 g giữ nhiều phút | Video đẹp hoặc topology đạt đã giải quyết tải/nhiệt/adapter |
+| Media | 720-frame/30-second video decodes successfully; some frames viewed | That all temporal quality has been fully viewed by an independent reviewer |
+| Motion | Joints and payload run the checked trajectory correctly | That the servo control program or the friction forces are correct |
+| Surface screen | The sampled poses pass the surface-intersection check with exclusions | Continuous clearance, solid containment, or that every pose is safe |
+| Fit prototype | The original STL revision has geometry/export checks | That this STL represents the geometry revision with the further cuts |
+| Manufacture | **BLOCKED** for the goal of holding 250 g for several minutes | That a good-looking video or passing topology has settled load/thermal/adapter |
 
-Mỗi report cần source identity, checker/config, frame range, exclusions, kết quả và thời điểm; nếu thiếu thì ghi thiếu. Quy trình gắn hash là yêu cầu mới ở mức tài liệu, chưa có một checker chung thực thi đầy đủ. [Backlog](blender-workflow-improvement-backlog.md) ghi rõ các lỗ hổng.
+Every report needs source identity, checker/config, frame range, exclusions, result and timestamp; if something is missing, record it as missing. The hash-tagging procedure is a new requirement at the documentation level; no single common checker enforces it fully yet. The [backlog](blender-workflow-improvement-backlog.md) states the gaps explicitly.
 
-## Assembly, dây và cập nhật kiến thức sau Arm
+## Assembly, wiring and knowledge updates after Arm
 
-Assembly là một loại chuyển động riêng: [recipe](../.agents/skills/blender-agent-core/references/assembly-sequences.md) yêu cầu kiểm trạng thái chờ, đường đưa vào và tiếp xúc cuối, thay vì chỉ kiểm pose hoàn chỉnh. Lắp từ trong ra ngoài theo phụ thuộc; giữ receiver trong hình và camera yên khi đang ghép. Lỗi lặp ở vai/khuỷu phải kiểm cùng lớp cơ cấu.
+Assembly is its own class of motion: the [recipe](../.agents/skills/blender-agent-core/references/assembly-sequences.md) requires checking the waiting state, the insertion path and the final contact, instead of only checking the completed pose. Assemble from the inside outwards following the dependencies; keep the receiver in frame and the camera still while mating. A repeated failure at the shoulder/elbow must be checked at the same mechanism layer.
 
-Nguồn mới đi qua scan → đọc/code review → tình huống đối chứng → topic/caution gắn hash → prepare/review/publish → forward route. Self-test ghi PASS không chứng minh các tham số thật sự tạo geometry, không chứng minh đơn vị hay fit. Các nguồn RES-CAD-ROB-13 và boilerplate wiring/collision đã được kiểm riêng; số 120mm, 0.20mm³ và ví dụ pinout không được tự nâng thành chuẩn chung. [Tổng kết toàn phiên](../plans/260905-2337-arm-session-retro/plan.md) nối journal, bằng chứng và kết quả pipeline.
+A new source goes through scan → read/code review → counter-check scenarios → hash-tagged topic/caution → prepare/review/publish → forward route. A self-test recording PASS does not prove that the parameters actually produce geometry, and does not prove units or fit. The RES-CAD-ROB-13 sources and the wiring/collision boilerplate were checked separately; the figures 120mm, 0.20mm³ and the pinout example must not be promoted by themselves into a general standard. The [full-session summary](../plans/260905-2337-arm-session-retro/plan.md) links the journal, the evidence and the pipeline results.
 
-## Bằng chứng và phạm vi tổng kết
+## Evidence and scope of the summary
 
-[Retro đo chi phí](../plans/reports/retro-260905-1946-blender-workflow.md), [debate năm góc nhìn](../plans/blender-workflow-retro/debate.md), [research và nguồn](../plans/blender-workflow-retro/research.md), [fault probes](../plans/blender-workflow-retro/reports/runtime-contract-probes.json). Kết luận chọn cách đóng gói là khuyến nghị đã phản biện; hiệu quả trên dự án tiếp theo còn cần đo.
+[Cost-measuring retro](../plans/reports/retro-260905-1946-blender-workflow.md), [five-perspective debate](../plans/blender-workflow-retro/debate.md), [research and sources](../plans/blender-workflow-retro/research.md), [fault probes](../plans/blender-workflow-retro/reports/runtime-contract-probes.json). The conclusion about the chosen way of packaging this is a recommendation that has been challenged; its effectiveness on the next project still has to be measured.
 
-Một bài học giữ lại: **mỗi tuyên bố phải đi cùng artifact và phép kiểm tra thực sự có thể bác bỏ nó**.
+One lesson kept: **every claim must come with an artifact and a check that can genuinely falsify it**.

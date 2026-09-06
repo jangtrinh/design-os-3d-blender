@@ -1,59 +1,59 @@
-# Review Rubric & Quantitative Gates (chưng cất từ img2threejs source, 260728)
+# Review Rubric & Quantitative Gates (distilled from the img2threejs source, 260728)
 
-## 1. Suitability rubric (Bước 0.1)
+## 1. Suitability rubric (Step 0.1)
 
-**PASS:** 1 vật thể rõ · chiếm đủ khung · silhouette mạnh · material chính nhìn thấy được · mặt khuất suy được (đối xứng) · xấp xỉ được bằng primitives.
-**CONDITIONAL:** chỉ 1 góc nhìn nhưng vật đối xứng xoay · che khuất một phần nhưng khối chính rõ · organic nhưng user chấp nhận stylized · không đòi hỏi logo/text chính xác.
-**REJECT:** vật thể mơ hồ · ảnh là scene không phải object · phần hình quan trọng bị che/mờ/crop · đòi độ chính xác chế tạo · vật chủ yếu là khói/chất lỏng/kính caustics/ren lưới (không có đường procedural).
-Reject → `request-input` (xin thêm góc, ảnh nét hơn hoặc bản vẽ kích thước); nếu đã được chấp nhận giảm fidelity thì đổi cách dựng Blender-native. Không dùng external generation/retrieval làm fallback.
+**PASS:** one clear object · fills enough of the frame · strong silhouette · main material visible · hidden faces inferable (symmetry) · approximable with primitives.
+**CONDITIONAL:** only one viewing angle but the object is rotationally symmetric · partially occluded but the main masses are clear · organic but the user accepts stylized · no exact logo/text required.
+**REJECT:** ambiguous object · the image is a scene, not an object · an important part of the shape is occluded/blurred/cropped · manufacturing accuracy demanded · the object is mostly smoke/liquid/glass caustics/mesh lace (no procedural route).
+Reject → `request-input` (ask for more angles, a sharper image or a dimensioned drawing); if reduced fidelity has already been accepted, switch to a different Blender-native construction. Do not use external generation/retrieval as a fallback.
 
-## 2. Complexity tier → targetMinDetails (spec gate định lượng)
+## 2. Complexity tier → targetMinDetails (quantitative spec gate)
 
-| Tier | Min details trong inventory | Ví dụ |
+| Tier | Min details in the inventory | Example |
 |---|---|---|
-| simple | 3 | cốc, hộp, bàn đơn giản |
-| moderate | 6 | ghế văn phòng, đèn bàn |
-| complex | 10 | xe đạp, loa vintage, máy ảnh |
-| ultra | 16 | cơ khí nhiều chi tiết, súng, đồng hồ |
+| simple | 3 | mug, box, simple table |
+| moderate | 6 | office chair, desk lamp |
+| complex | 10 | bicycle, vintage speaker, camera |
+| ultra | 16 | multi-part machinery, gun, watch |
 
-Scan theo `component-zones` (khi đã chia parts) hoặc `grid-3x3` (chưa chia). Mỗi detail ghi: region + kind + confidence (0-1) + **mapsTo** (component/material cụ thể). Detail chỉ mô tả bằng văn = gate FAIL. Không thổi phồng confidence để đủ số.
+Scan by `component-zones` (once parts are split) or `grid-3x3` (not yet split). Each detail records: region + kind + confidence (0-1) + **mapsTo** (a specific component/material). A detail described in prose only = gate FAIL. Do not inflate confidence to reach the count.
 
-## 3. Detail taxonomy → kỹ thuật Blender
+## 3. Detail taxonomy → Blender technique
 
 | Kind | Blender technique |
 |---|---|
-| gloss (vùng bóng) | roughness thấp 0.05-0.2 vùng đó (vertex group/texture mask); brushed metal → anisotropy |
-| bevel (bo cạnh) | **Bevel modifier — geometry thật**, không normal map, nếu ảnh có đường highlight sắc dọc cạnh |
-| fastener (ốc/rivet) | instancing: Array modifier / Geometry Nodes distribute — KHÔNG model từng con |
-| linework | 3 kỹ thuật, chọn theo bằng chứng: khắc chìm → groove geometry; sơn vẽ → texture/decal; panel-line → AO seam tối màu không có độ sâu |
-| seam | groove/ridge mảnh + AO tối trong khe |
-| stain/wear | procedural texture override: dirtAmount, cavityBias (bẩn đọng khe → AO/pointiness mask), streak theo trọng lực, patinaColor |
-| scratch/chip | roughness/normal perturbation cục bộ; chip đổi silhouette → boolean nhỏ |
-| decal | texture vùng (UV project); chỉ thêm geometry nếu có độ dày |
-| emissive | Emission shader + cân nhắc thêm light thật cạnh đó để hắt sáng |
-| hole | Boolean — lỗ thật đổi topology, không phải mảng tối |
-| groove/ridge | curve + profile hoặc displacement dọc path |
+| gloss (specular area) | low roughness 0.05-0.2 in that area (vertex group/texture mask); brushed metal → anisotropy |
+| bevel (edge rounding) | **Bevel modifier — real geometry**, not a normal map, if the image shows a sharp highlight line along the edge |
+| fastener (screw/rivet) | instancing: Array modifier / Geometry Nodes distribute — do NOT model each one |
+| linework | 3 techniques, chosen by evidence: engraved → groove geometry; painted → texture/decal; panel-line → dark AO seam with no depth |
+| seam | thin groove/ridge + dark AO inside the gap |
+| stain/wear | procedural texture override: dirtAmount, cavityBias (dirt settling in crevices → AO/pointiness mask), gravity-aligned streaks, patinaColor |
+| scratch/chip | local roughness/normal perturbation; a chip that changes the silhouette → small boolean |
+| decal | area texture (UV project); add geometry only if it has thickness |
+| emissive | Emission shader + consider adding a real light next to it for spill |
+| hole | Boolean — a real hole changes topology, it is not a dark patch |
+| groove/ridge | curve + profile, or displacement along a path |
 
-## 4. Vision review — cách chấm mỗi pass
+## 4. Vision review — how to score each pass
 
-- Mỗi pass chấm từ **1 comparison sheet duy nhất**; chọn ≤5 hệ trọng yếu của pass đó để soi (đừng soi tất cả mọi thứ mọi pass).
-- Feature chia tier: `critical` (bắt buộc đạt) / `important` / `detail`.
-- **Ngưỡng:** global score ≥ 0.7; mọi critical feature phải đạt ngưỡng riêng. Dưới → refine.
-- Không chắc (điểm dao động khi tự chấm lại) → coi như "probe": nhìn thêm góc khác rồi mới verdict.
+- Score each pass from **a single comparison sheet**; pick ≤5 systems critical to that pass to scrutinize (do not scrutinize everything in every pass).
+- Tier the features: `critical` (must pass) / `important` / `detail`.
+- **Threshold:** global score ≥ 0.7; every critical feature must meet its own threshold. Below → refine.
+- Uncertain (the score fluctuates when you re-score it yourself) → treat it as a "probe": look at another angle before issuing a verdict.
 
-## 5. Fidelity scale (báo cáo trung thực)
+## 5. Fidelity scale (report honestly)
 
-0.2 placeholder thô · 0.4 silhouette nhận ra được · 0.6 khối macro/meso đúng, material yếu · 0.75 vật đọc đúng, chi tiết xấp xỉ · 0.85 procedural match tốt · 0.95 gần tham chiếu (thường cần nhiều góc ảnh). **Không tự nhận ≥0.9 từ 1 ảnh mơ hồ.**
+0.2 rough placeholder · 0.4 recognizable silhouette · 0.6 macro/meso masses correct, weak material · 0.75 the object reads correctly, details approximate · 0.85 good procedural match · 0.95 close to the reference (usually needs several image angles). **Do not claim ≥0.9 from a single ambiguous image.**
 
-## 6. Root-cause: refine-spec vs refine-code
+## 6. Root cause: refine-spec vs refine-code
 
-**refine-spec khi:** thiếu/bịa component · sai họ primitive · sai tỉ lệ/hệ toạ độ từ gốc · material layer thiếu đặc tả · detail thiếu trong spec · bằng chứng ảnh mâu thuẫn spec.
-**refine-code khi:** spec rõ nhưng geometry sai · material param chưa implement · mask/wear thiếu trong code · hierarchy/pivot lệch spec · render có artifact.
-**request-input khi:** ảnh giấu hình quan trọng · material không suy được từ góc này · cần branding/text chính xác · fidelity đòi hỏi vượt khả năng 1 ảnh.
-**stop khi:** đạt mục tiêu · user chấp nhận xấp xỉ · phần còn lại cần reference mới/modeling tay/route khác.
+**refine-spec when:** a component is missing/invented · wrong primitive family · wrong proportions/coordinate system from the start · material layer under-specified · a detail is missing from the spec · image evidence contradicts the spec.
+**refine-code when:** the spec is clear but the geometry is wrong · material params not implemented · mask/wear missing in the code · hierarchy/pivot deviates from the spec · the render has artifacts.
+**request-input when:** the image hides an important shape · the material cannot be inferred from this angle · exact branding/text is required · the demanded fidelity exceeds what one image can support.
+**stop when:** the goal is met · the user accepts the approximation · the remainder needs new references/manual modeling/a different route.
 
-## 7. Bẫy đã được xác nhận (từ production log của họ)
+## 7. Confirmed traps (from their production log)
 
-1. **So pixel với ảnh chụp là vô nghĩa** — framing/background/lighting át hết fidelity (BMX faithful bị chấm reject 0.53). ĐỪNG cố pixel-match photo; chấm theo mục tiêu từng pass: silhouette đọc được? part có mặt? màu đúng tông?
-2. **2D gate mù 3D realism** — silhouette khớp vẫn có thể là "bìa cứng": cạnh sắc lịm không taper, metal trông như nhựa. LUÔN render thêm **góc 3/4** trước khi báo done; sheet chính diện pass chưa phải là xong.
-3. **Đừng suy feature từ tên gọi** — với vật thể có danh tính cụ thể (sản phẩm thật), xin ảnh chính diện + tên chính xác; đừng đoán cấu tạo từ mô tả.
+1. **Pixel-comparing against a photograph is meaningless** — framing/background/lighting overwhelm fidelity (a faithful BMX was scored reject 0.53). DO NOT try to pixel-match a photo; score against each pass's goal: does the silhouette read? are the parts present? is the color in the right tone?
+2. **A 2D gate is blind to 3D realism** — a matching silhouette can still be "cardboard": razor-sharp edges with no taper, metal that looks like plastic. ALWAYS render an extra **3/4 angle** before reporting done; a passing front-on sheet is not the finish line.
+3. **Do not infer features from the name** — for an object with a specific identity (a real product), ask for a front-on image + the exact name; do not guess the construction from a description.

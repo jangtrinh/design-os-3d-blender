@@ -4,13 +4,13 @@ Load only the section triggered by the task. These recipes reuse existing script
 
 ## Explicit execution context
 
-Preflight thủ công trước khi build, ghi lại trong task record:
+Manual preflight before building, recorded in the task record:
 
-- Interpreter thực sự chạy payload: Blender version/build, `sys.executable`, Python version; host Python có package không chứng minh Blender Python có package đó.
-- Dependencies đúng interpreter: kiểm tra import/`importlib.util.find_spec` của package được dùng; nếu thiếu, chọn code không phụ thuộc hoặc môi trường đã có. Không tự cài hàng loạt hoặc thử import mù lặp lại.
-- Scene hiện tại: absolute input path, scene name, mode, units/scale, active camera và frame range; xác nhận thuộc scope đã giao.
-- API cần dùng: introspect RNA enums/sockets/operator availability; compiler-check script trước execution và đặt imports/helpers/`__file__` trong namespace rõ ràng.
-- Controller duy nhất, checkpoint/input identity, output root, checker và postcondition của pass; port-open chỉ là tín hiệu transport, không phải scene readiness.
+- The interpreter that actually runs the payload: Blender version/build, `sys.executable`, Python version; the host Python having a package does not prove Blender's Python has that package.
+- Dependencies on the correct interpreter: check the import/`importlib.util.find_spec` of each package used; if one is missing, choose code without that dependency or an environment that already has it. Do not bulk-install or repeatedly try blind imports.
+- Current scene: absolute input path, scene name, mode, units/scale, active camera and frame range; confirm they belong to the assigned scope.
+- APIs to be used: introspect RNA enums/sockets/operator availability; compiler-check the script before execution and place imports/helpers/`__file__` in an explicit namespace.
+- A single controller, checkpoint/input identity, output root, and the pass's checker and postcondition; an open port is only a transport signal, not scene readiness.
 
 Each reviewed disk payload executed through MCP runs through the runtime module, which owns the namespace, the traceback and the sentinel:
 

@@ -10,18 +10,21 @@
 #   - img2threejs: vendored without .git/.cache (Apache-2.0 license file kept)
 #   - builds/: only the curated robot-arm demo + the catalog example scripts;
 #     never frames, draft videos, *.log, snapshots or zip kits
-#   - plans/: only the 2026-09-05 audit program (no journals, no backups)
+#   - plans/: nothing except the knowledge pipeline receipt
 # Exit: 0 verified · 1 verification failed · 2 bad input.
 set -euo pipefail
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DST="${1:-$SRC/../design-os-3d-blender}"
 [[ -d "$DST/.git" ]] || { echo "export-public-repo: $DST is not a git checkout" >&2; exit 2; }
+DST="$(cd "$DST" && pwd)"
+[[ "$SRC" != "$DST" ]] || { echo "export-public-repo: run the PROJECT copy of this script (SRC == DST: $SRC)" >&2; exit 2; }
 RS=(rsync -a --exclude '.DS_Store' --exclude '__pycache__' --exclude '*.pyc' --exclude '*.blend1')
 
 cd "$SRC"
 "${RS[@]}" AGENTS.md CLAUDE.md .project-agent.md "$DST/"
 "${RS[@]}" knowledge docs specs scripts tests "$DST/"
 "${RS[@]}" --delete --exclude 'tools' --include '*/' --include '*.md' --exclude '*' research/ "$DST/research/"
+"${RS[@]}" --delete .agents/rules .agents/workflows "$DST/.agents/"; cp .agents/mcp_config.json "$DST/.agents/"
 for s in blender-agent-core blender-image-to-3d blender-knowledge-workbench img2threejs; do
   "${RS[@]}" --delete --exclude '.git' --exclude '.cache' ".agents/skills/$s" "$DST/.agents/skills/"
   "${RS[@]}" --delete --exclude '.git' --exclude '.cache' ".claude/skills/$s" "$DST/.claude/skills/"
@@ -47,9 +50,10 @@ for rel in json.load(open(os.path.join(src, "knowledge/catalog-config.json")))["
     os.makedirs(os.path.dirname(os.path.join(dst, rel)), exist_ok=True)
     shutil.copy2(os.path.join(src, rel), os.path.join(dst, rel))
 PY
-mkdir -p "$DST/plans/260905-2356-blender-workflow-audit" "$DST/plans/knowledge-updates"
-cp plans/260905-2356-blender-workflow-audit/plan.md "$DST/plans/260905-2356-blender-workflow-audit/"
-"${RS[@]}" --delete plans/260905-2356-blender-workflow-audit/reports "$DST/plans/260905-2356-blender-workflow-audit/"
+# plans/ is internal history (journals, audit reports with quoted owner messages) and is
+# not published; only the pipeline receipt the catalog tooling reads is carried over.
+rm -rf "$DST/plans/260905-2356-blender-workflow-audit"
+mkdir -p "$DST/plans/knowledge-updates"
 cp plans/knowledge-updates/last-publication.json "$DST/plans/knowledge-updates/"
 find "$DST" -name '.DS_Store' -delete
 
@@ -61,5 +65,12 @@ for suite in tests/execution tests/production-gate tests/knowledge; do
 done
 if grep -rIlE 'sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH) PRIVATE' . --exclude-dir=.git >/dev/null; then
   echo "export-public-repo: secret-looking string found; refusing" >&2; exit 1
+fi
+# Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in
+# shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt.
+# Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies).
+VN='[ăâđêôơưĂÂĐÊÔƠƯạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỵỷỹ]'
+if VNHITS="$(grep -rlP "$VN" . --include='*.md' --include='*.json' --include='*.py' --include='*.sh' --exclude-dir=.git --exclude-dir=img2threejs | grep -v 'scripts/knowledge-query.py\|scripts/export-public-repo.sh')"; then
+  echo "export-public-repo: Vietnamese text remains in published files:" >&2; echo "$VNHITS" >&2; exit 1
 fi
 echo "export-public-repo: verified $(git -C "$DST" status --porcelain | wc -l | tr -d ' ') changed paths in $DST — review with 'git -C $DST status', then commit and push"

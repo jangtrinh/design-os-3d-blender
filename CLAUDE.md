@@ -1,10 +1,10 @@
 # CLAUDE.md — Blender AI Orchestration
 
-Đọc `.project-agent.md` trước (identity, binding rules). File vận hành chính là `AGENTS.md` (dùng chung Claude + Codex), import nguyên văn:
+Read `.project-agent.md` first (identity, binding rules). The primary operational file is `AGENTS.md` (shared by Claude + Codex), imported verbatim:
 
 @AGENTS.md
 
-## Ghi chú riêng cho Claude Code
-- MCP tools xuất hiện dạng `mcp__blender__*`; nếu chưa nạp, dùng `ToolSearch` với `select:mcp__blender__execute_blender_code,mcp__blender__get_viewport_screenshot`.
-- Subagent (Agent tool) chỉ được chạy Blender headless `--factory-startup`; **không** được gửi lệnh tới GUI đang mở — một writer duy nhất cho GUI là phiên controller.
-- Skill router cho mọi task Blender: `blender-agent-core` (Skill tool) trước bất kỳ skill domain nào.
+## Notes specific to Claude Code
+- MCP tools appear as `mcp__blender__*`; if they are not loaded, use `ToolSearch` with `select:mcp__blender__execute_blender_code,mcp__blender__get_viewport_screenshot`.
+- A subagent (Agent tool) may only run Blender headless with `--factory-startup`; it may **not** send commands to the open GUI — the single writer for the GUI is the controller session.
+- Skill router for every Blender task: `blender-agent-core` (Skill tool) before any domain skill.

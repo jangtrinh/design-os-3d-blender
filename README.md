@@ -15,7 +15,7 @@
   <img alt="Platform: macOS | Linux" src="https://img.shields.io/badge/platform-macOS_%7C_Linux-lightgrey">
   <img alt="Assets: 100% Blender-native" src="https://img.shields.io/badge/assets-100%25_Blender--native-8A2BE2">
   <img alt="MCP: blender-mcp compatible" src="https://img.shields.io/badge/MCP-blender--mcp_compatible-0aa">
-  <img alt="Agents: Claude Code | Codex" src="https://img.shields.io/badge/agents-Claude_Code_%7C_Codex-000">
+  <img alt="Agents: Claude Code | Codex | Antigravity" src="https://img.shields.io/badge/agents-Claude_Code_%7C_Codex_%7C_Antigravity-000">
 </p>
 
 <p align="center"><b>Spec → build → verify → gate.</b> An agent operating system for Blender that ships parts you can print, not pictures you can post.</p>
@@ -23,7 +23,7 @@
 **Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [Notes](#-notes) · [License](#-license)
 
 
-An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
+An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, Google Antigravity, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
 
 Everything here is Blender-native: no vendor mesh generation, no downloaded assets, no paid model calls.
 
@@ -39,6 +39,7 @@ Everything here is Blender-native: no vendor mesh generation, no downloaded asse
 | Production gate | `specs/build-spec.schema.json`, `scripts/production-gate.py` (+ `scripts/production_gate/`) | Spec → manifold/self-intersection/volume, dimensions ± tolerance, wall/overhang screens, hole diameters vs ISO 273 / ISO 4762 / heat-set tables, STL round-trip + sha256 manifest; report bound to scene+spec hashes |
 | Boilerplates | `scripts/boilerplates/` (30 modules) | CAD, gears, fasteners, O-rings, connectors, rigs, geometry nodes, render — each self-tests under the sentinel contract |
 | Tests | `tests/execution`, `tests/production-gate`, `tests/knowledge` | 93 tests, all run against a real headless Blender |
+| Agent runtimes | `AGENTS.md` (Codex, any AGENTS.md reader) · `CLAUDE.md` (Claude Code) · `.agents/rules`, `.agents/workflows`, `.agents/mcp_config.json` (Google Antigravity) | Same skills folder (`.agents/skills`) is read natively by Antigravity; setup in `docs/antigravity-setup.md` |
 | Demo | `builds/robot-arm-*` | The robot-arm session: accepted assembly film, 38-part print kit, engineering reports — with their honest limits |
 
 ## 🔬 Proof: the robot arm is real geometry, not a picture
@@ -118,7 +119,7 @@ Status is deliberately separated per domain: **media accepted · motion checked 
 
 ## 📝 Notes
 
-- `AGENTS.md`, `.project-agent.md` and the core skill are in Vietnamese (English identifiers); knowledge base and code are English. `<ROOT>` = absolute path of this repo on your machine.
+- `<ROOT>` in docs and snippets = absolute path of this repo on your machine.
 - `.agents/skills/img2threejs` is a vendored copy of [img2threejs](https://github.com/img2threejs/img2threejs) (Apache-2.0, license included).
 - `tests/blender/` target drone builds that are not shipped here.
 

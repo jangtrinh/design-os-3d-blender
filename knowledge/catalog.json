@@ -6,7 +6,7 @@
     "imported-reference": 47,
     "knowledge": 30,
     "research-synthesis": 66,
-    "workflow": 16
+    "workflow": 17
   },
   "dependency_edges": 89,
   "foundations": [
@@ -24,23 +24,23 @@
         },
         {
           "line": 10,
-          "text": "0. Routing theo task"
+          "text": "0. Routing by task"
         },
         {
           "line": 24,
-          "text": "1. Knowledge routing (bắt buộc)"
+          "text": "1. Knowledge routing (mandatory)"
         },
         {
           "line": 27,
-          "text": "2. Loop (R1–R8 rút gọn — bản đầy đủ trong agent-workflow-loop.md)"
+          "text": "2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)"
         },
         {
           "line": 37,
-          "text": "3. Verify ladder (rẻ → đắt; số trả lời được thì không tốn ảnh)"
+          "text": "3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)"
         },
         {
           "line": 52,
-          "text": "4. Execution modes (check theo thứ tự)"
+          "text": "4. Execution modes (check in order)"
         },
         {
           "line": 58,
@@ -57,7 +57,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/SKILL.md",
       "related": [],
-      "sha256": "a7ac94a427ce3b738abaa5127db1f18a75363f77af487c28347eb21ffb2398b8",
+      "sha256": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
       "tags": [],
       "title": "Blender Agent Core",
       "use": "read"
@@ -174,7 +174,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/recipes.md",
       "related": [],
-      "sha256": "124bd0f0784b86997c93fdb034e34ef953d6ac11bc23f5b89839b7b280434473",
+      "sha256": "3f45934cee4142548a7a303d177c2684e66a3ddc98462691418ebd6ccf482441",
       "tags": [],
       "title": "Blender operational recipes",
       "use": "read"
@@ -235,35 +235,35 @@
       "headings": [
         {
           "line": 1,
-          "text": "Review Rubric & Quantitative Gates (chưng cất từ img2threejs source, 260728)"
+          "text": "Review Rubric & Quantitative Gates (distilled from the img2threejs source, 260728)"
         },
         {
           "line": 3,
-          "text": "1. Suitability rubric (Bước 0.1)"
+          "text": "1. Suitability rubric (Step 0.1)"
         },
         {
           "line": 10,
-          "text": "2. Complexity tier → targetMinDetails (spec gate định lượng)"
+          "text": "2. Complexity tier → targetMinDetails (quantitative spec gate)"
         },
         {
           "line": 21,
-          "text": "3. Detail taxonomy → kỹ thuật Blender"
+          "text": "3. Detail taxonomy → Blender technique"
         },
         {
           "line": 37,
-          "text": "4. Vision review — cách chấm mỗi pass"
+          "text": "4. Vision review — how to score each pass"
         },
         {
           "line": 44,
-          "text": "5. Fidelity scale (báo cáo trung thực)"
+          "text": "5. Fidelity scale (report honestly)"
         },
         {
           "line": 48,
-          "text": "6. Root-cause: refine-spec vs refine-code"
+          "text": "6. Root cause: refine-spec vs refine-code"
         },
         {
           "line": 55,
-          "text": "7. Bẫy đã được xác nhận (từ production log của họ)"
+          "text": "7. Confirmed traps (from their production log)"
         }
       ],
       "kind": "workflow",
@@ -276,9 +276,9 @@
       "name": null,
       "path": ".agents/skills/blender-image-to-3d/references/review-rubric.md",
       "related": [],
-      "sha256": "3c65c42fa9822a3674e84449aaf5353bce5178201264c9aed396fca23ffb11c1",
+      "sha256": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
       "tags": [],
-      "title": "Review Rubric & Quantitative Gates (chưng cất từ img2threejs source, 260728)",
+      "title": "Review Rubric & Quantitative Gates (distilled from the img2threejs source, 260728)",
       "use": "read"
     },
     {
@@ -3354,7 +3354,7 @@
       "name": null,
       "path": ".project-agent.md",
       "related": [],
-      "sha256": "7dffcceaa65b5778fbec896bd065d2e7cedcae8b202a2989e763a0445fbb5546",
+      "sha256": "0b8699af27adf4e337cfa5b1bd6e9a45a8c58ed3dc8ce6bfe273f95cd7479418",
       "tags": [],
       "title": "Project Agent — Blender AI Orchestration",
       "use": "read"
@@ -3364,7 +3364,7 @@
       "headings": [
         {
           "line": 1,
-          "text": "AGENTS.md — Blender AI Orchestration (file vận hành chính)"
+          "text": "AGENTS.md — Blender AI Orchestration (primary operational file)"
         },
         {
           "line": 5,
@@ -3372,23 +3372,23 @@
         },
         {
           "line": 14,
-          "text": "Loop bắt buộc cho mọi task dựng cảnh"
+          "text": "Mandatory loop for every scene-building task"
         },
         {
           "line": 31,
-          "text": "Failure map (theo record thật, không phải lý thuyết)"
+          "text": "Failure map (from real records, not theory)"
         },
         {
           "line": 42,
-          "text": "Visual feedback cho user (BẮT BUỘC)"
+          "text": "Visual feedback for the user (MANDATORY)"
         },
         {
           "line": 45,
-          "text": "Giao hàng"
+          "text": "Delivery"
         },
         {
           "line": 48,
-          "text": "Bản đồ tài nguyên"
+          "text": "Resource map"
         }
       ],
       "kind": "workflow",
@@ -3397,9 +3397,9 @@
       "name": null,
       "path": "AGENTS.md",
       "related": [],
-      "sha256": "1ee20e282dd55977cc4933a09a05f7e393714b0e61810fc1ca6e7cebfb5c9b06",
+      "sha256": "526d321dd38ec6157d9aa79f43ba88310de7350aa0ff9a5ece6d0850cced974c",
       "tags": [],
-      "title": "AGENTS.md — Blender AI Orchestration (file vận hành chính)",
+      "title": "AGENTS.md — Blender AI Orchestration (primary operational file)",
       "use": "read"
     },
     {
@@ -3411,7 +3411,7 @@
         },
         {
           "line": 7,
-          "text": "Ghi chú riêng cho Claude Code"
+          "text": "Notes specific to Claude Code"
         }
       ],
       "kind": "workflow",
@@ -3420,7 +3420,7 @@
       "name": null,
       "path": "CLAUDE.md",
       "related": [],
-      "sha256": "16b0670ad4a4c7fb50501ef8aea2060359f18d0652e1556ff782d7502cfedcfc",
+      "sha256": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
       "tags": [],
       "title": "CLAUDE.md — Blender AI Orchestration",
       "use": "read"
@@ -3920,35 +3920,70 @@
       "headings": [
         {
           "line": 1,
-          "text": "Workflow AI làm việc với Blender"
+          "text": "Google Antigravity Setup"
+        },
+        {
+          "line": 6,
+          "text": "Where Antigravity finds things here"
+        },
+        {
+          "line": 25,
+          "text": "MCP config for blender-mcp"
+        },
+        {
+          "line": 44,
+          "text": "Connect the addon before using MCP tools"
+        },
+        {
+          "line": 50,
+          "text": "One writer only"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 54,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/antigravity-setup.md",
+      "related": [],
+      "sha256": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
+      "tags": [],
+      "title": "Google Antigravity Setup",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "AI Workflow for Working with Blender"
         },
         {
           "line": 5,
-          "text": "Bắt đầu phiên mới"
+          "text": "Starting a new session"
         },
         {
           "line": 22,
-          "text": "Pipeline tám bước và artifact đầu ra"
+          "text": "Eight-step pipeline and output artifacts"
         },
         {
           "line": 35,
-          "text": "Bộ năng lực cần có"
+          "text": "Required capability set"
         },
         {
           "line": 48,
-          "text": "Cách vận hành ít phải làm lại"
+          "text": "How to operate with less rework"
         },
         {
           "line": 60,
-          "text": "Trạng thái riêng cho từng loại bằng chứng"
+          "text": "Separate status per kind of evidence"
         },
         {
           "line": 72,
-          "text": "Assembly, dây và cập nhật kiến thức sau Arm"
+          "text": "Assembly, wiring and knowledge updates after Arm"
         },
         {
           "line": 78,
-          "text": "Bằng chứng và phạm vi tổng kết"
+          "text": "Evidence and scope of the summary"
         }
       ],
       "kind": "workflow",
@@ -3957,9 +3992,9 @@
       "name": null,
       "path": "docs/blender-ai-workflow.md",
       "related": [],
-      "sha256": "85136cf653beeac23f68d347bf72701376524bbc5bb7602d75877a7ae1257b96",
+      "sha256": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
       "tags": [],
-      "title": "Workflow AI làm việc với Blender",
+      "title": "AI Workflow for Working with Blender",
       "use": "read"
     },
     {
@@ -3967,27 +4002,27 @@
       "headings": [
         {
           "line": 1,
-          "text": "Dùng kiến thức Blender trong công việc thực tế"
+          "text": "Using Blender Knowledge in Real Work"
         },
         {
           "line": 15,
-          "text": "Workflow theo đầu ra"
+          "text": "Workflows by output"
         },
         {
           "line": 31,
-          "text": "Nguồn và mức tin cậy"
+          "text": "Sources and confidence level"
         },
         {
           "line": 41,
-          "text": "Từ đọc tài liệu đến chạy Blender"
+          "text": "From reading documents to running Blender"
         },
         {
           "line": 49,
-          "text": "Bảo trì và kiểm chứng"
+          "text": "Maintenance and verification"
         },
         {
           "line": 61,
-          "text": "Pipeline cập nhật knowledge → workflow → skill"
+          "text": "Pipeline for updating knowledge → workflow → skill"
         }
       ],
       "kind": "workflow",
@@ -3996,9 +4031,9 @@
       "name": null,
       "path": "docs/blender-knowledge-workflows.md",
       "related": [],
-      "sha256": "7f79751a491586fbabb840be433abe99e611df292b8da1f27f34c7c98c21303e",
+      "sha256": "568a0aabe87b38a9c6da2b9f7232cbce48cc95dc560760e9b6916c978be9929a",
       "tags": [],
-      "title": "Dùng kiến thức Blender trong công việc thực tế",
+      "title": "Using Blender Knowledge in Real Work",
       "use": "read"
     },
     {
@@ -7936,7 +7971,7 @@
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "dfba853dad8bd92fca2930020163513368756a684df55bbd6f2745b2806d5cab",
+      "sha256": "ad79e57decfc5e81b9bce8429c6812e1b6010571fd2de62840573684f7d6d5fc",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -8267,7 +8302,7 @@
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "7475156aff7a18f6251e27b47d1666e0e2bc05c4eec7f606eb4d76ca245a85ed",
+      "sha256": "95a85a054e71d9f82b1f091e1ff22f9a4cf7d5c05ea450cf1ec3202db1b78b79",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -14256,32 +14291,52 @@
         },
         {
           "line": 13,
-          "text": "- plans/: only the 2026-09-05 audit program (no journals, no backups)"
+          "text": "- plans/: nothing except the knowledge pipeline receipt"
         },
         {
           "line": 14,
           "text": "Exit: 0 verified · 1 verification failed · 2 bad input."
         },
         {
-          "line": 30,
+          "line": 33,
           "text": "--- curated demo builds ------------------------------------------------------"
         },
         {
-          "line": 41,
+          "line": 44,
           "text": "files the knowledge catalog cites as execution examples (must exist for `check`)"
         },
         {
-          "line": 56,
+          "line": 53,
+          "text": "plans/ is internal history (journals, audit reports with quoted owner messages) and is"
+        },
+        {
+          "line": 54,
+          "text": "not published; only the pipeline receipt the catalog tooling reads is carried over."
+        },
+        {
+          "line": 60,
           "text": "--- verify standalone --------------------------------------------------------"
+        },
+        {
+          "line": 69,
+          "text": "Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in"
+        },
+        {
+          "line": 70,
+          "text": "shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt."
+        },
+        {
+          "line": 71,
+          "text": "Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies)."
         }
       ],
       "kind": "execution-source",
-      "lines": 65,
+      "lines": 76,
       "loads_with": [],
       "name": null,
       "path": "scripts/export-public-repo.sh",
       "related": [],
-      "sha256": "2fbea2fe11c27364184869cb066a2debee9df5ed3d631ab5e7687e62c7936291",
+      "sha256": "f5c976813d7ba31caf1f5094fe314917d96892a142ec2ba99cca57d030f7726f",
       "tags": [],
       "title": "Export the curated public tree of this project into the design-os-3d-blender",
       "use": "inspect-adapt"
@@ -15193,14 +15248,14 @@
     }
   },
   "schema": 1,
-  "source_digest": "e1f28f1040b633f7ccee270bf33a7c416e6f2dabb1aa9a431176325c21cec249",
+  "source_digest": "92283a28f6513c30d2b2890803b1cda59a87bc2f48c1b561a937d64d47398e17",
   "source_hashes": {
-    ".agents/skills/blender-agent-core/SKILL.md": "a7ac94a427ce3b738abaa5127db1f18a75363f77af487c28347eb21ffb2398b8",
+    ".agents/skills/blender-agent-core/SKILL.md": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".agents/skills/blender-agent-core/references/hard-rules.md": "84ae5502ef5365b9c79281157cd4d970c22ff8c8e7c0a58ad6cdd993b2ff9d50",
-    ".agents/skills/blender-agent-core/references/recipes.md": "124bd0f0784b86997c93fdb034e34ef953d6ac11bc23f5b89839b7b280434473",
+    ".agents/skills/blender-agent-core/references/recipes.md": "3f45934cee4142548a7a303d177c2684e66a3ddc98462691418ebd6ccf482441",
     ".agents/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
-    ".agents/skills/blender-image-to-3d/references/review-rubric.md": "3c65c42fa9822a3674e84449aaf5353bce5178201264c9aed396fca23ffb11c1",
+    ".agents/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
     ".agents/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
     ".agents/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "f9620eb64634b442d855b0532dab3e6c84321b646825931f479294051ad9350a",
     ".agents/skills/img2threejs/.github/pull_request_template.md": "9fd84ce46787230045427bb017dc5e78ede9383b315cf01b2c4192ab49c1ffb9",
@@ -15250,12 +15305,12 @@
     ".agents/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".agents/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".claude/skills/blender-agent-core/SKILL.md": "a7ac94a427ce3b738abaa5127db1f18a75363f77af487c28347eb21ffb2398b8",
+    ".claude/skills/blender-agent-core/SKILL.md": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".claude/skills/blender-agent-core/references/hard-rules.md": "84ae5502ef5365b9c79281157cd4d970c22ff8c8e7c0a58ad6cdd993b2ff9d50",
-    ".claude/skills/blender-agent-core/references/recipes.md": "124bd0f0784b86997c93fdb034e34ef953d6ac11bc23f5b89839b7b280434473",
+    ".claude/skills/blender-agent-core/references/recipes.md": "3f45934cee4142548a7a303d177c2684e66a3ddc98462691418ebd6ccf482441",
     ".claude/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
-    ".claude/skills/blender-image-to-3d/references/review-rubric.md": "3c65c42fa9822a3674e84449aaf5353bce5178201264c9aed396fca23ffb11c1",
+    ".claude/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
     ".claude/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
     ".claude/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "f9620eb64634b442d855b0532dab3e6c84321b646825931f479294051ad9350a",
     ".claude/skills/img2threejs/.github/pull_request_template.md": "9fd84ce46787230045427bb017dc5e78ede9383b315cf01b2c4192ab49c1ffb9",
@@ -15305,9 +15360,9 @@
     ".claude/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".claude/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".claude/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".project-agent.md": "7dffcceaa65b5778fbec896bd065d2e7cedcae8b202a2989e763a0445fbb5546",
-    "AGENTS.md": "1ee20e282dd55977cc4933a09a05f7e393714b0e61810fc1ca6e7cebfb5c9b06",
-    "CLAUDE.md": "16b0670ad4a4c7fb50501ef8aea2060359f18d0652e1556ff782d7502cfedcfc",
+    ".project-agent.md": "0b8699af27adf4e337cfa5b1bd6e9a45a8c58ed3dc8ce6bfe273f95cd7479418",
+    "AGENTS.md": "526d321dd38ec6157d9aa79f43ba88310de7350aa0ff9a5ece6d0850cced974c",
+    "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
     "builds/fpv-drone-native/build-native-drone.py": "db4adea049b37d50001c8becf3ddca136f4c88ab1d1a8e17ccb8eaa193be0ccf",
     "builds/fpv-drone-native/drone-mesh-library.py": "c95ff9d8c2ddcdae1af09f4ee7b38e61fcb01cb6ab28c51446ebfe30a2102516",
     "builds/robot-arm-v2-engineered/FLEXIBILITY.md": "cd3bcb82104e34356fe24f004fb6e978bcd67531eb11e5dc70ef099fafd57fca",
@@ -15326,8 +15381,9 @@
     "builds/robot-arm-v2-engineered/task-motion-plan.py": "cb5d73ce205bb03494e9ee3826f30761bc7eacce47aa460ed30fff71ef2eb3f8",
     "builds/robot-arm-v2-engineered/verify-task-presentation.py": "1c9c695ed767859f7cfcaa3ecbc2c39245aee9283448b4687e1f4adbf9509e2f",
     "builds/robot-arm-v2-engineered/verify-task-video.py": "ec3a1e21e2da5722adee002434f97bbd9fd9dfb4603630deb195bf3246007fe1",
-    "docs/blender-ai-workflow.md": "85136cf653beeac23f68d347bf72701376524bbc5bb7602d75877a7ae1257b96",
-    "docs/blender-knowledge-workflows.md": "7f79751a491586fbabb840be433abe99e611df292b8da1f27f34c7c98c21303e",
+    "docs/antigravity-setup.md": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
+    "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
+    "docs/blender-knowledge-workflows.md": "568a0aabe87b38a9c6da2b9f7232cbce48cc95dc560760e9b6916c978be9929a",
     "docs/blender-workflow-improvement-backlog.md": "2d476276d36ef2ca967104031bbc77771ea617ee3f9f88f0d614347556d84692",
     "docs/system-architecture.md": "6ea9850bf213061440a25803099d16b5aa12193714f0d23700c20d49f4cb153a",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
@@ -15359,8 +15415,8 @@
     "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md": "eab55760bfe566860b330463a65a8802b1dd569354d05e85ce96e5af3febd69d",
     "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
     "knowledge/INDEX.md": "8e4c8bdddde49e22881e7595c36ac541ecad36c32eb3b3635d9077143ad6c2fa",
-    "knowledge/catalog-config.json": "dfba853dad8bd92fca2930020163513368756a684df55bbd6f2745b2806d5cab",
-    "knowledge/generated-workflows.md": "7475156aff7a18f6251e27b47d1666e0e2bc05c4eec7f606eb4d76ca245a85ed",
+    "knowledge/catalog-config.json": "ad79e57decfc5e81b9bce8429c6812e1b6010571fd2de62840573684f7d6d5fc",
+    "knowledge/generated-workflows.md": "95a85a054e71d9f82b1f091e1ff22f9a4cf7d5c05ea450cf1ec3202db1b78b79",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
     "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md": "619fc507661f1e78eb7e0d9c5b8f0d0f539f482c963f31669c76596cd5753dfc",
@@ -15464,7 +15520,7 @@
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
-    "scripts/export-public-repo.sh": "2fbea2fe11c27364184869cb066a2debee9df5ed3d631ab5e7687e62c7936291",
+    "scripts/export-public-repo.sh": "f5c976813d7ba31caf1f5094fe314917d96892a142ec2ba99cca57d030f7726f",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
@@ -15526,26 +15582,26 @@
       ],
       "concepts": [],
       "gates": [
-        "Mass/CoM/inertia gắn unit và geometry revision.",
-        "Mô-men liên tục có margin theo yêu cầu, không lấy stall rating làm giữ lâu.",
-        "Gear profile/root/contact và bearing load được kiểm tra theo drawing/calculation.",
-        "Giữ trạng thái BLOCKED khi thông số actuator hoặc test thực còn thiếu."
+        "Mass/CoM/inertia are tagged with units and the geometry revision.",
+        "Continuous torque has the required margin; do not take a stall rating as sustained holding.",
+        "Gear profile/root/contact and bearing load are checked against the drawing/calculation.",
+        "Stay BLOCKED while actuator specifications or a physical test are still missing."
       ],
       "limitations": [
-        "Gear KB snippet chưa có root fillet như mô tả; tolerance tham số chưa thực hiện.",
-        "Arm 250 g giữ nhiều phút đang BLOCKED; không chuyển sang PASS từ animation."
+        "The gear KB snippet lacks the root fillet it describes; the tolerance parameter is not implemented.",
+        "Holding a 250 g arm load for several minutes is BLOCKED; do not flip it to PASS from an animation."
       ],
-      "purpose": "Bánh răng, giảm tốc, trục/ổ, tải giữ lâu và truyền động.",
+      "purpose": "Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.",
       "required": [
         "knowledge/70-cad-precision-robotics/gears-transmission-modeling.md",
         "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md",
         "knowledge/70-cad-precision-robotics/cad-precision-modeling.md"
       ],
       "steps": [
-        "Chốt tải, reach, duty, tốc độ, hiệu suất và actuator envelope.",
-        "Tính worst-case moment gồm link, hand, payload; phân biệt continuous với stall torque.",
-        "Dựng reduction, bearings, fastener và cable space theo interface thật.",
-        "Kiểm backlash/va chạm/cường độ/nhiệt rồi xác nhận bằng bench test."
+        "Lock load, reach, duty, speed, efficiency, and the actuator envelope.",
+        "Compute the worst-case moment including link, hand, and payload; distinguish continuous from stall torque.",
+        "Build the reduction, bearings, fasteners, and cable space from real interfaces.",
+        "Check backlash/collision/strength/thermal, then confirm with a bench test."
       ],
       "supplemental": [
         "research/mechanical-engineering-foundations/01-MACHINE-ELEMENTS-TRANSMISSIONS.md",
@@ -15556,11 +15612,11 @@
       "topics": {
         "actuator-duty-thermal": {
           "gates": [
-            "Kiểm đơn vị, nguồn motor/driver, continuous và peak limits riêng.",
-            "Kiểm thermal response bằng duty thử thực trước loaded-hold claim."
+            "Check units, the motor/driver source, and continuous versus peak limits separately.",
+            "Check the thermal response with a real duty test before any loaded-hold claim."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping",
@@ -15573,17 +15629,17 @@
             "research/advanced-tribology-contact-mechanics/04-ACTUATOR-INERTIA-MATCHING-THERMAL.md"
           ],
           "steps": [
-            "Lập torque/speed trajectory, mass/inertia revision và mô hình điện/nhiệt."
+            "Build the torque/speed trajectory, the mass/inertia revision, and the electrical/thermal model."
           ],
-          "when": "Khi payload, giữ lâu hoặc chu kỳ lặp quyết định actuator."
+          "when": "When payload, sustained holding, or repeated cycling drives the actuator choice."
         },
         "contact-wear-sealing": {
           "gates": [
-            "Kiểm đơn vị/phương trình đúng contact regime và data phần cứng.",
-            "Đo local fit; wear/temperature/leak thử thực trước performance claim."
+            "Check that the units/equations match the contact regime and the hardware data.",
+            "Measure local fit; test wear/temperature/leakage physically before any performance claim."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping",
@@ -15604,16 +15660,16 @@
           "steps": [
             "Ghi material pair, contact regime, load/speed/finish/lubrication/seal duty."
           ],
-          "when": "Khi có wear/leakage/bearing/bushing/seal duty được yêu cầu."
+          "when": "When wear/leakage/bearing/bushing/seal duty is required."
         },
         "cycloid-profile-kinematics": {
           "gates": [
-            "Kiểm profile convergence, self-intersection, bores/walls trên evaluated mesh.",
-            "Sweep vòng input theo contract; kiểm clearance và output ratio."
+            "Check profile convergence, self-intersection, and bores/walls on the evaluated mesh.",
+            "Sweep a full input revolution per the contract; check clearance and the output ratio."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Generator xóa scene, không tạo toàn bộ drive hay tự chứng minh ratio/manufacture."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "The generator wipes the scene, does not build the complete drive, and does not prove ratio/manufacturability by itself."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping",
@@ -15628,18 +15684,18 @@
             "scripts/generate-cycloid-drive.py"
           ],
           "steps": [
-            "Chốt pins/lobes/eccentricity/phase/output holes/bearings.",
-            "Dựng candidate riêng; adapter chỉ là nguồn tham khảo."
+            "Lock pins/lobes/eccentricity/phase/output holes/bearings.",
+            "Build a separate candidate; the adapter is a reference source only."
           ],
-          "when": "Chỉ khi cycloidal reduction đã được chọn."
+          "when": "Only when a cycloidal reduction has already been chosen."
         },
         "parametric-gear-profile": {
           "gates": [
-            "Đo pitch tooth thickness và sai số profile ở nhiều sample counts; kiểm root, bore, manifold/self-intersection.",
-            "Sweep cặp bánh răng; đo ratio/interference/clearance; kiểm tải và vật liệu riêng."
+            "Measure pitch tooth thickness and profile error at several sample counts; check root, bore, and manifoldness/self-intersection.",
+            "Sweep the gear pair; measure ratio/interference/clearance; check load and material separately."
           ],
           "limitations": [
-            "Không có helical/root fillet như header; geometry sample chưa chứng minh gear đúng."
+            "There is no helical/root fillet as the header claims; a geometry sample does not prove the gear is correct."
           ],
           "review": {
             "by": "scout full static audit; controller curated checks",
@@ -15652,10 +15708,10 @@
             "scripts/boilerplates/cad_mechanics/bp_involute_gear.py"
           ],
           "steps": [
-            "Chốt module, số răng, pressure angle, backlash và chiều rộng theo tải/drawing.",
-            "Kiểm công thức flank/pitch/root; tạo mesh candidate trước khi gắn vào truyền động."
+            "Lock module, tooth count, pressure angle, backlash, and face width against load/drawing.",
+            "Verify the flank/pitch/root formulas; create the candidate mesh before mounting it into the transmission."
           ],
-          "when": "Khi dựng spur gear từ profile involute bằng BMesh."
+          "when": "When building a spur gear from an involute profile with BMesh."
         }
       }
     },
@@ -15670,18 +15726,18 @@
         ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"
       ],
       "gates": [
-        "Joint axes/limits và hierarchy đúng trong local/world space.",
-        "Không có bước nhảy transform ở grasp/release.",
-        "Biên độ, dựng thẳng, thao tác phía sau và quay trục có frame evidence khi được yêu cầu.",
-        "Đúng trình tự tháo fastener → rút phần, lắp lại khôi phục transform.",
-        "Xem clip theo thời gian; ảnh pose không thay thế review chuyển động."
+        "Joint axes/limits and hierarchy are correct in local/world space.",
+        "No transform jump at grasp/release.",
+        "Range of motion, standing upright, rear-side manipulation, and axis rotation have frame evidence when required.",
+        "Correct order of fastener removal → part extraction; reassembly restores the transforms.",
+        "Review the clip over time; a pose still does not replace motion review."
       ],
       "limitations": [
-        "Contact library hiện lấy mẫu raw rigid surfaces, không chứng minh continuous collision hay lực.",
-        "Animation scripted attachment không chứng minh servo chịu tải.",
-        "Ví dụ create-task-scene có mesh dùng chung; copy mesh trước khi sửa geometry."
+        "The contact library currently samples raw rigid surfaces; it does not prove continuous collision or force.",
+        "A scripted attachment animation does not prove the servo carries the load.",
+        "The create-task-scene example uses shared mesh data; copy the mesh before editing geometry."
       ],
-      "purpose": "Khớp, hand, pick/place tự nhiên, biên độ và explode/reassemble.",
+      "purpose": "Joints, hand, natural pick/place, range of motion, and explode/reassemble.",
       "required": [
         "knowledge/40-animation/rigging-armature.md",
         "knowledge/40-animation/animation-fcurves.md",
@@ -15689,10 +15745,10 @@
         "knowledge/60-pipeline/scene-organization.md"
       ],
       "steps": [
-        "Chốt joint frame, limit, TCP, hand interface và sơ đồ cha-con.",
-        "Định nghĩa task bằng tiếp cận → gắp → nhấc → chuyển → nhả; tách explode thành sequence lắp ráp.",
-        "Blockout motion và pose biên; chuyển hand phải giữ continuity ở frame gắn/nhả.",
-        "Screen contact theo phạm vi khai báo và xem animatic trước polish/render."
+        "Lock joint frames, limits, TCP, hand interface, and the parent-child diagram.",
+        "Define the task as approach → grasp → lift → transfer → release; decompose explode into an assembly sequence.",
+        "Blockout the motion and the extreme poses; a hand transfer must preserve continuity at the attach/release frames.",
+        "Screen contact within the declared range and review the animatic before polish/render."
       ],
       "supplemental": [
         "knowledge/40-animation/mocap-retargeting.md"
@@ -15700,12 +15756,12 @@
       "topics": {
         "animation-curves-drivers": {
           "gates": [
-            "Đo giá trị tại keyframe và giữa keyframes, kiểm tra đúng action slot và không đổi curve ngoài scope.",
-            "Kiểm tra endpoint/seam của loop và xem playback; một midpoint pass không chứng minh toàn chu kỳ."
+            "Measure values at keyframes and between keyframes, verify the correct action slot, and confirm no curve outside the scope changed.",
+            "Check the loop endpoint/seam and review playback; a single midpoint pass does not prove the whole cycle."
           ],
           "limitations": [
-            "Helper hiện tại có thể đổi nhiều action slots và xóa driver state; không chạy trực tiếp vào animation đang dùng.",
-            "Self-test hiện có chỉ kiểm tra một midpoint, chưa chứng nhận loop hoặc chuyển động tự nhiên."
+            "The current helper can alter multiple action slots and wipe driver state; do not run it directly on animation in use.",
+            "The existing self-test checks only one midpoint; it does not certify the loop or natural motion."
           ],
           "review": {
             "by": "boilerplate scout full static read; controller curation",
@@ -15718,21 +15774,21 @@
             "scripts/boilerplates/bp_animation.py"
           ],
           "steps": [
-            "Xác định object/action/slot và RNA path được phép sửa; giữ animation cũ ngoài phạm vi.",
-            "Adapt helper cho path/index thực tế; chỉ tạo driver trên property đã chọn."
+            "Identify the object/action/slot and the RNA paths you may edit; leave pre-existing animation outside the scope untouched.",
+            "Adapt the helper to the actual path/index; create drivers only on the selected property."
           ],
-          "when": "Khi cần tạo keyframes, driver hoặc turntable từ helper Python."
+          "when": "When keyframes, a driver, or a turntable must be created from a Python helper."
         },
         "assembly-collision-staging": {
           "gates": [
-            "Negative controls phải phát hiện waiting clash, clear-wait/blocked-transit, wrong phase exemption và solid containment.",
-            "Kiểm evaluated modifiers và scene units; báo riêng surface flags, solid predicate và phạm vi sample.",
-            "Camera giữ đúng chủ ý; quintic samples/LINEAR F-curves không được mô tả là zero jerk hoặc controller dynamics."
+            "Negative controls must detect waiting clash, clear-wait/blocked-transit, wrong phase exemption, and solid containment.",
+            "Check evaluated modifiers and scene units; report surface flags, the solid predicate, and the sample range separately.",
+            "The camera holds the intended framing; quintic samples/LINEAR F-curves must not be described as zero jerk or controller dynamics."
           ],
           "limitations": [
-            "120mm lift,0.20mm³ và tuyên bố tốc độ là case/unverified values, không là chuẩn chung.",
-            "Audit adapter bỏ qua modifiers/scale trong Boolean; same-future-link blanket exclusions có thể giấu lỗi.",
-            "Mating với actuator-visual và media PASS không giải quyết cơ khí, hardware/tool access hoặc tải."
+            "120mm lift,0.20mm³ and the speed claim are case-specific/unverified values, not a general standard.",
+            "The audit adapter ignores modifiers/scale inside the Boolean; same-future-link blanket exclusions can hide defects.",
+            "Mating against an actuator-visual plus a media PASS does not settle mechanics, hardware/tool access, or load."
           ],
           "review": {
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
@@ -15749,22 +15805,22 @@
             ".agents/skills/blender-agent-core/references/assembly-sequences.md"
           ],
           "steps": [
-            "Tạo unit manifest và dependency graph theo receiver, internal parts, retention, wires rồi covers.",
-            "Tính staging riêng và kiểm world/projected gap; không chỉ kiểm pose cuối.",
-            "Kiểm cả arrival và seat qua thời gian; chọn waypoint/axis từ geometry và chỉ miễn trừ named mate đúng phase.",
-            "Xem animatic ngắn ở đoạn lỗi, cơ cấu tương tự và endpoint camera trước full render."
+            "Create a unit manifest and dependency graph ordered by receiver, internal parts, retention, wires, then covers.",
+            "Compute staging separately and check world/projected gaps; do not check the final pose only.",
+            "Check both arrival and seating over time; pick waypoints/axes from geometry and exempt named mates only in the correct phase.",
+            "Review a short animatic at the failing segment, at similar mechanisms, and at the endpoint camera before a full render."
           ],
-          "when": "Khi quay phim lắp ráp/explode hoặc phát hiện các phần chờ lắp và đường bay đè lên nhau."
+          "when": "When filming assembly/explode, or detecting parts waiting to be installed and flight paths that overlap."
         },
         "rig-spaces-ik-mechanisms": {
           "gates": [
-            "Đo pivot và IK endpoint errors theo tolerance task.",
-            "Kiểm alignment/stroke/ratio ở pose biên và attachment events.",
-            "Xem sweep qua thẳng/đứng/gập; motion không chứng minh tải servo."
+            "Measure pivot and IK endpoint errors against the task tolerance.",
+            "Check alignment/stroke/ratio at the extreme poses and at attachment events.",
+            "Review the sweep through straight/upright/folded configurations; motion does not prove servo load."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Adapter xóa mọi object khi gọi hàm dựng; chỉ inspect/adapt trong candidate riêng."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "The adapter deletes every object when its build function is called; only inspect/adapt it in a separate candidate."
           ],
           "review": {
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
@@ -15785,20 +15841,20 @@
             "scripts/boilerplates/bp_rigging.py"
           ],
           "steps": [
-            "Chốt world/rest/pose spaces, axes, hierarchy và motion envelope.",
-            "Guard bone zero/parallel reference; hiệu chỉnh pole theo evaluated pose.",
-            "Tách anchor khỏi constrained parts; ghi stroke/ratio/space."
+            "Lock world/rest/pose spaces, axes, hierarchy, and the motion envelope.",
+            "Guard against zero-length/parallel bone references; calibrate the pole against the evaluated pose.",
+            "Separate anchors from constrained parts; record stroke/ratio/space."
           ],
-          "when": "Khi cần armature scripting, IK/pole, piston, gear hoặc cable."
+          "when": "When armature scripting, IK/pole, piston, gear, or cable is required."
         },
         "robot-joint-frame-adapter": {
           "gates": [
-            "Kiểm allowed/locked axes mọi joint; đối chiếu FK endpoint tại các pose có kết quả biết trước.",
-            "Sweep giới hạn, đo attachment/clearance và xem chuyển động; count bones không thay kinematics."
+            "Check allowed/locked axes on every joint; cross-check the FK endpoint at poses with known expected results.",
+            "Sweep the limits, measure attachment/clearance, and review the motion; a bone count does not replace kinematics."
           ],
           "limitations": [
-            "Helper bỏ sót X-axis limits và chưa ánh xạ bone frames thành trục cơ khí.",
-            "Chuyển động demo không chứng minh tải, torque, nhiệt hoặc chế tạo được."
+            "The helper omits X-axis limits and does not map bone frames onto mechanical axes.",
+            "A demo motion does not prove load, torque, thermal behavior, or manufacturability."
           ],
           "review": {
             "by": "specialist scout full source audit; controller curation",
@@ -15811,19 +15867,19 @@
             "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py"
           ],
           "steps": [
-            "Khai báo joint frames, hierarchy, rotation axes và limits theo cơ cấu thực.",
-            "Align bone frames, khóa đúng các trục và cấu hình cả X/Y/Z trong candidate."
+            "Declare joint frames, hierarchy, rotation axes, and limits from the real mechanism.",
+            "Align bone frames, lock the correct axes, and configure all of X/Y/Z in the candidate."
           ],
-          "when": "Khi reuse helper armature robot sáu khớp."
+          "when": "When reusing the six-joint robot armature helper."
         },
         "skinning-modular-rigs": {
           "gates": [
-            "Weights hữu hạn, nonnegative; thiếu weight/sum sai bị phát hiện.",
-            "Đo displacement khi IK/FK switch; xem bulging, sections và penetration."
+            "Weights are finite and nonnegative; missing weights and wrong sums are detected.",
+            "Measure displacement across the IK/FK switch; review bulging, cross-sections, and penetration."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Không tự cài extension; object tên rig và operator success chưa đủ."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "Do not install extensions on your own; an object named rig and operator success are not enough."
           ],
           "review": {
             "by": "evolution_rig_scout; controller source mapping",
@@ -15838,10 +15894,10 @@
             "research/blender-rigging-skeleton-skinning/05-RIGIFY-MODULAR-RIGGING-PIPELINE.md"
           ],
           "steps": [
-            "So LBS/preserve-volume/helper bones với cùng poses.",
-            "Phân biệt deform groups và masks; giữ metarig và xác định rig mới theo provenance."
+            "Compare LBS/preserve-volume/helper bones at identical poses.",
+            "Distinguish deform groups from masks; keep the metarig and identify the new rig by provenance."
           ],
-          "when": "Khi mesh biến dạng, twist limbs hoặc dùng Rigify đã cài và được chọn."
+          "when": "When meshes deform, limbs twist, or an installed and selected Rigify is used."
         }
       }
     },
@@ -15856,25 +15912,25 @@
         ".agents/skills/img2threejs/grimoire/intake/detail_inventory.md"
       ],
       "gates": [
-        "Landmark và kích thước có sai số được khai báo.",
-        "Không có phần critical chỉ tồn tại dưới dạng mô tả.",
-        "Topology/transforms đạt predicate của đối tượng.",
-        "Xem sheet cùng camera và ảnh 3/4; không dùng score tự chấm để hứa đúng 100%."
+        "Landmarks and dimensions carry declared error margins.",
+        "No critical part exists only as a description.",
+        "Topology/transforms satisfy the object's predicate.",
+        "Review the sheet at the same camera plus the 3/4 image; do not use a self-scored number to promise 100% accuracy."
       ],
       "limitations": [
-        "Ảnh không xác định chính xác mặt khuất.",
-        "Ví dụ drone có giả định riêng; không chạy builder vào scene hiện tại."
+        "Images do not determine occluded faces precisely.",
+        "The drone example carries its own assumptions; do not run its builder into the current scene."
       ],
-      "purpose": "Dựng từ ảnh, silhouette, topology và body bo mềm bằng Blender-native.",
+      "purpose": "Build from reference images, silhouette, topology, and softly filleted bodies using Blender-native tools.",
       "required": [
         "knowledge/10-modeling/modeling-topology.md",
         "knowledge/10-modeling/modifiers.md"
       ],
       "steps": [
-        "Lập fidelity contract và scene graph từ ảnh/đo đạc.",
-        "Blockout theo tỷ lệ và camera trước khi bo mép.",
-        "Dựng surface liên tục, tách bộ phận thật, rồi mới thêm detail.",
-        "So reference và góc khuất sau từng pass; chuyển verdict về core."
+        "Establish the fidelity contract and scene graph from reference images/measurements.",
+        "Blockout to proportion and camera before filleting edges.",
+        "Build continuous surfaces, separate the real parts, and only then add detail.",
+        "Compare against reference and occluded angles after each pass; return the verdict to core."
       ],
       "supplemental": [
         "knowledge/10-modeling/uv-unwrapping.md"
@@ -15882,12 +15938,12 @@
       "topics": {
         "python-adapter-review": {
           "gates": [
-            "Kiểm API/runtime và assertions theo hành vi task, không dựa vào header verified.",
-            "Đo actual geometry/state và xem output; giữ source gốc cho rollback."
+            "Check the API/runtime and assertions against task behavior, not against a verified header.",
+            "Measure actual geometry/state and view the output; keep the original source for rollback."
           ],
           "limitations": [
-            "clean_scene và thay node group/mesh có thể phá scene khác; không tự chạy vì được index.",
-            "Knowledge routing không chứng nhận mass/inertia, bone roll hoặc physics."
+            "clean_scene and node group/mesh replacement can destroy another scene; do not run them just because they are indexed.",
+            "Knowledge routing does not certify mass/inertia, bone roll, or physics."
           ],
           "review": {
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
@@ -15904,10 +15960,10 @@
             "scripts/boilerplates/run_all_boilerplate_tests.py"
           ],
           "steps": [
-            "Chọn đúng module và đọc source thực; phân biệt snippet trong tài liệu với implementation.",
-            "Khai báo input/scene ownership, units, effects và output; tạo candidate riêng."
+            "Pick the right module and read the actual source; distinguish documentation snippets from the implementation.",
+            "Declare input/scene ownership, units, effects, and output; create a separate candidate."
           ],
-          "when": "Khi muốn reuse thư viện bpy boilerplate thay vì viết helper mới."
+          "when": "When reusing a bpy boilerplate library instead of writing a new helper."
         }
       }
     },
@@ -15917,26 +15973,26 @@
       ],
       "concepts": [],
       "gates": [
-        "Counts/attributes/instances đúng với input; thay input đổi output như spec.",
-        "Kết quả evaluated và export không thiếu instances/modifiers.",
-        "Cache gắn revision và frame range; replay candidate có kết quả đúng.",
-        "Review visual và thời gian sau numeric checks."
+        "Counts/attributes/instances match the input; changing an input changes the output as specified.",
+        "The evaluated result and the export are not missing instances/modifiers.",
+        "The cache is tagged with a revision and a frame range; replaying the candidate gives the correct result.",
+        "Review visuals and timing after the numeric checks."
       ],
       "limitations": [
-        "Simulation mesh không tự chứng minh vật liệu hoặc phần cứng thật.",
-        "Physics cache và node API phụ thuộc runtime; không recall version."
+        "A simulation mesh does not by itself prove real material or real hardware.",
+        "The physics cache and the node API depend on the runtime; do not recall the version from memory."
       ],
-      "purpose": "Geometry Nodes, pattern, instances và simulation/caches bằng Blender-native.",
+      "purpose": "Geometry Nodes, patterns, instances, and simulation/caches using Blender-native tools.",
       "required": [
         "knowledge/50-procedural/geometry-nodes.md",
         "knowledge/50-procedural/simulation-physics.md",
         "knowledge/10-modeling/modifiers.md"
       ],
       "steps": [
-        "Chốt procedural inputs, unit, seed, instance domain và output contract.",
-        "Introspect node/socket/zone ở runtime; blockout graph nhỏ trước.",
-        "Kiểm evaluated geometry/instance transforms và cache trên frame đại diện.",
-        "Bake/render candidate riêng, xem kết quả nhiều frame."
+        "Lock procedural inputs, units, seed, instance domain, and the output contract.",
+        "Introspect nodes/sockets/zones at runtime; blockout a small graph first.",
+        "Check evaluated geometry/instance transforms and the cache on a representative frame.",
+        "Bake/render a separate candidate and review the result across multiple frames."
       ],
       "supplemental": [
         "knowledge/40-animation/animation-fcurves.md",
@@ -15945,12 +16001,12 @@
       "topics": {
         "fields-parametric-solids": {
           "gates": [
-            "Đo evaluated dimensions, hole/component counts và topology.",
-            "Kiểm attribute name/domain/type/distribution thực; xem sections và shading."
+            "Measure evaluated dimensions, hole/component counts, and topology.",
+            "Check the actual attribute name/domain/type/distribution; review cross-sections and shading."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Adapter thiếu bốn lỗ gá như header; main xóa toàn bộ object."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "The adapter lacks the four mounting holes its header claims; its main routine deletes every object."
           ],
           "review": {
             "by": "evolution_rig_scout; controller source mapping; boilerplate source scout static review",
@@ -15971,18 +16027,18 @@
             "scripts/boilerplates/bp_bmesh_cad.py"
           ],
           "steps": [
-            "Chốt input ranges/units/schema/consumer domains.",
-            "Introspect sockets rồi kiểm parameter matrix gồm biên."
+            "Lock input ranges/units/schema/consumer domains.",
+            "Introspect the sockets, then check a parameter matrix that includes the boundary values."
           ],
-          "when": "Khi field domains, attributes hoặc hình cơ khí tham số là mục tiêu."
+          "when": "When field domains, attributes, or parametric mechanical shapes are the goal."
         },
         "graded-lattice-reinforcement": {
           "gates": [
-            "Cần mesh thật, density/wall và resolution convergence; field preview không phải mesh.",
-            "Kiểm orientation/boundary condition và physical stiffness riêng."
+            "A real mesh, density/wall figures, and resolution convergence are required; a field preview is not a mesh.",
+            "Check orientation/boundary condition and physical stiffness separately."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping",
@@ -15997,18 +16053,18 @@
             "research/polymer-additive-manufacturing-advanced/02-CONTINUOUS-FIBER-COMPOSITES-CFRTP.md"
           ],
           "steps": [
-            "Chốt cell size/local wall/boundary/load paths và fiber directions."
+            "Lock cell size/local wall/boundary/load paths and fiber directions."
           ],
-          "when": "Khi lattice hoặc reinforcement nhằm mục tiêu mass/stiffness cụ thể."
+          "when": "When a lattice or reinforcement targets a specific mass/stiffness goal."
         },
         "procedural-component-adapters": {
           "gates": [
-            "Đo endpoint/midpoint khi đổi Sag, đường kính, OD/bore/thickness và số lỗ theo component.",
-            "Kiểm valid/invalid boundaries, caps/components/manifold và section/render; drawing thật mới xác định flange cần gì."
+            "Measure endpoint/midpoint when changing Sag, diameter, OD/bore/thickness, and hole count per component.",
+            "Check valid/invalid boundaries, caps/components/manifoldness, and cross-section/render; only a real drawing determines what the flange needs."
           ],
           "limitations": [
-            "Cáp hiện không dùng Sag; flange chỉ có disc-minus-bore, chưa có hub/bolt pattern.",
-            "Nonempty mesh không đủ chứng minh graph thực hiện input."
+            "The cable currently ignores Sag; the flange is only a disc minus a bore, with no hub/bolt pattern.",
+            "A nonempty mesh is not enough to prove the graph acted on the input."
           ],
           "review": {
             "by": "specialist scout full source audit; controller curation",
@@ -16023,19 +16079,19 @@
             "scripts/boilerplates/geometry_nodes/bp_gn_pipe_flange.py"
           ],
           "steps": [
-            "Chốt component shape, input ranges và output measurements; không lấy header làm contract đã đạt.",
-            "Inspect node/socket/interface thực; sửa feature còn thiếu trong candidate riêng."
+            "Lock the component shape, input ranges, and output measurements; do not take a header as a contract already met.",
+            "Inspect the actual nodes/sockets/interface; add the missing features in a separate candidate."
           ],
-          "when": "Khi adapt graph cáp/tube hoặc flange có tham số."
+          "when": "When adapting a parametric cable/tube or flange graph."
         },
         "sdf-feature-preservation": {
           "gates": [
-            "So topology, openings, local walls/clearance và deviation ở hai resolutions.",
-            "Xem section và camera-matched sheet: không bịt lỗ/xóa vách."
+            "Compare topology, openings, local walls/clearance, and deviation at two resolutions.",
+            "Review cross-sections and the camera-matched sheet: no filled-in holes or removed walls."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "SDF không tự bảo đảm manifold/printing-ready hoặc giữ wall từ quy tắc half-wall."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "SDF does not by itself guarantee manifoldness/print-readiness, nor preserve a wall through a half-wall rule."
           ],
           "review": {
             "by": "evolution_rig_scout; controller source mapping",
@@ -16048,19 +16104,19 @@
             "research/blender-geometry-nodes-procedural/05-VOLUME-GRIDS-SDF-BOOLEANS.md"
           ],
           "steps": [
-            "Phân biệt fog/distance grid/isovalue.",
-            "Chọn voxel size theo feature và memory; giữ original."
+            "Distinguish fog grid, distance grid, and isovalue.",
+            "Choose voxel size against feature size and memory; keep the original."
           ],
-          "when": "Khi chọn SDF boolean hoặc volume remesh cho candidate native."
+          "when": "When choosing SDF boolean or volume remesh for a native candidate."
         },
         "simulation-repeat-budgets": {
           "gates": [
-            "Không NaN/Inf; count/time/memory trong budget task.",
-            "Đo convergence/state residual và replay; không yêu cầu tăng vertex với fixed topology.",
-            "Xem tunneling/stability/feature loss theo thời gian."
+            "No NaN/Inf; count/time/memory stay within the task budget.",
+            "Measure convergence/state residual and replay; do not require vertex growth with fixed topology.",
+            "Review tunneling/stability/feature loss over time."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "evolution_rig_scout; controller source mapping; boilerplate source scout static review",
@@ -16077,11 +16133,11 @@
             "scripts/boilerplates/bp_physics.py"
           ],
           "steps": [
-            "Tách inter-frame simulation và intra-frame loop.",
-            "Chốt timestep/state/seed/cache revision; xử lý empty/coincident neighborhoods.",
-            "So hai timestep/substep candidates và dự toán growth trước chạy."
+            "Separate inter-frame simulation from the intra-frame loop.",
+            "Lock timestep/state/seed/cache revision; handle empty/coincident neighborhoods.",
+            "Compare two timestep/substep candidates and estimate the growth before running."
           ],
-          "when": "Khi cần state qua frame, substeps, branching hoặc iterative solver."
+          "when": "When state across frames, substeps, branching, or an iterative solver is required."
         }
       }
     },
@@ -16095,25 +16151,25 @@
         ".agents/skills/img2threejs/grimoire/review/self_correction.md"
       ],
       "gates": [
-        "Framing toàn bộ phần chuyển động hoặc object trong camera.",
-        "Ánh sáng grazing không lộ shading defect hoặc surface rời.",
-        "Xem material ở neutral và hero view."
+        "Framing covers the whole moving part or object inside the camera.",
+        "Grazing light exposes no shading defect or detached surface.",
+        "Review the material in both neutral and hero views."
       ],
       "limitations": [
-        "Shader đẹp không chứng minh bề mặt in thực tế.",
-        "Turntable/preview helpers thay đổi scene; dùng bản candidate/process riêng."
+        "A good-looking shader does not prove the real printed surface.",
+        "Turntable/preview helpers modify the scene; use a separate candidate copy/process."
       ],
-      "purpose": "Vật liệu nhựa nhám, studio, camera và hình sản phẩm polish.",
+      "purpose": "Matte plastic materials, studio setup, camera, and polished product imagery.",
       "required": [
         "knowledge/20-shading/materials-pbr.md",
         "knowledge/30-lighting-render/lighting.md",
         "knowledge/60-pipeline/product-viz-and-shots.md"
       ],
       "steps": [
-        "Chốt mục tiêu shot, nền, texture scale và độ nhám bằng reference.",
-        "Kiểm tra normals và bevel trước khi sửa shader.",
-        "Introspect node sockets; dùng neutral/grazing light để tách lỗi hình và vật liệu.",
-        "Render diagnostic cùng aspect rồi hoàn thiện shot."
+        "Lock the shot goal, background, texture scale, and roughness against reference.",
+        "Check normals and bevels before editing the shader.",
+        "Introspect node sockets; use neutral/grazing light to separate geometry defects from material defects.",
+        "Render diagnostics at the same aspect ratio, then finish the shot."
       ],
       "supplemental": [
         "knowledge/20-shading/texturing-baking.md",
@@ -16122,11 +16178,11 @@
       "topics": {
         "fiber-fabric-surfaces": {
           "gates": [
-            "Shader/enum/output/tangent hợp lệ.",
-            "Xem hướng highlight, silhouette và frame liên tiếp để phát hiện crawling."
+            "Shader/enum/output/tangent are valid.",
+            "Review highlight direction, silhouette, and consecutive frames to detect crawling."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "evolution_render_scout; controller source mapping",
@@ -16139,18 +16195,18 @@
             "research/blender-advanced-materials-shading/05-PHYSICAL-HAIR-FABRIC-SHADING.md"
           ],
           "steps": [
-            "Chọn strand shader hay surface sheen/anisotropy.",
-            "Chốt tangent/UV và kích thước sợi trước chỉnh màu."
+            "Choose between a strand shader and surface sheen/anisotropy.",
+            "Lock tangent/UV and fiber size before adjusting color."
           ],
-          "when": "Chỉ khi hair/fur, velvet, satin hoặc hướng weave nhìn rõ trong shot."
+          "when": "Only when hair/fur, velvet, satin, or weave direction is clearly visible in the shot."
         },
         "opaque-micro-surfaces": {
           "gates": [
-            "Introspect socket, material output và giá trị hữu hạn.",
-            "So crop neutral/grazing: không seam, grain quá lớn hoặc normal lỗi."
+            "Introspect sockets, material output, and finite values.",
+            "Compare neutral/grazing crops: no seams, oversized grain, or broken normals."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
@@ -16169,18 +16225,18 @@
             "scripts/boilerplates/materials_shading/bp_mat_metals.py"
           ],
           "steps": [
-            "Tách metallic/IOR/roughness; chốt unit và scale texture.",
-            "Chọn roughness, bump hay geometry theo chi tiết nhìn thấy."
+            "Separate metallic/IOR/roughness; lock units and texture scale.",
+            "Choose roughness, bump, or geometry according to the visible detail."
           ],
-          "when": "Khi nhựa/kim loại sai phản xạ hoặc cần grain/imperfection có kích thước thật."
+          "when": "When plastic/metal reflects incorrectly, or grain/imperfection at real-world size is required."
         },
         "subsurface-optics": {
           "gates": [
-            "Bounds đúng unit; scale/radius được khai báo và hữu hạn.",
-            "So backlit thin/thick views với reference, không lấy preset làm ngưỡng pass."
+            "Bounds are in the correct units; scale/radius is declared and finite.",
+            "Compare backlit thin/thick views against reference; do not take a preset as the pass threshold."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "evolution_render_scout; controller source mapping",
@@ -16193,18 +16249,18 @@
             "research/blender-advanced-materials-shading/02-SUBSURFACE-SCATTERING-RANDOM-WALK.md"
           ],
           "steps": [
-            "Chốt kích thước mesh, thickness và scale/radius tương đối.",
-            "Kiểm enum thuật toán trên runtime trước dựng material."
+            "Lock mesh dimensions, thickness, and relative scale/radius.",
+            "Check the algorithm enum on the runtime before building the material."
           ],
-          "when": "Khi vật liệu mỏng/dày cần truyền tán xạ như silicone, sáp hoặc da."
+          "when": "When thin/thick materials need transmissive scattering, such as silicone, wax, or skin."
         },
         "thin-film-optics": {
           "gates": [
-            "Ghi đơn vị thickness và thông số IOR.",
-            "So ít nhất hai camera/light angles; gradient cố định không chứng minh thin film."
+            "Record the thickness unit and the IOR parameters.",
+            "Compare at least two camera/light angles; a fixed gradient does not prove thin film."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "evolution_render_scout; controller source mapping; specialist adapter static audit",
@@ -16219,10 +16275,10 @@
             "scripts/boilerplates/materials_shading/bp_mat_thinfilm.py"
           ],
           "steps": [
-            "Phân biệt tint theo vị trí và interference theo góc.",
-            "Xác nhận thickness/IOR sockets hoặc mô hình thực sự dùng."
+            "Distinguish position-based tint from angle-based interference.",
+            "Confirm the thickness/IOR sockets or the model actually in use."
           ],
-          "when": "Khi brief cần màu giao thoa đổi theo góc nhìn hoặc lớp phủ mỏng."
+          "when": "When the brief calls for interference color that shifts with viewing angle, or a thin coating."
         }
       }
     },
@@ -16234,27 +16290,27 @@
       ],
       "concepts": [],
       "gates": [
-        "Manifold, scale và local wall thực sự được đo.",
-        "Vít âm có chiều sâu, chiều dài ăn ren và tool access kiểm chứng.",
-        "Clearance/fit xác nhận bằng coupon, không chỉ bbox.",
-        "Tải/nhiệt/creep và sai lệch in có evidence trước release."
+        "Manifoldness, scale, and local wall thickness are actually measured.",
+        "Recessed screws have verified depth, thread engagement length, and tool access.",
+        "Clearance/fit confirmed by coupon, not by bounding box alone.",
+        "Load/thermal/creep and print deviation have evidence before release."
       ],
       "limitations": [
-        "Mesh pass hoặc hình đẹp không đủ gọi printing-ready chịu lực.",
-        "Helper tolerances hiện chỉ overhang/bbox; không có local-wall hay clearance test.",
-        "Research là synthesis chưa được chứng nhận; kiểm tra datasheet/standard hiện hành khi dùng số."
+        "A mesh pass or a good-looking image is not enough to call something load-bearing print-ready.",
+        "The tolerance helper currently covers overhang/bbox only; there is no local-wall or clearance test.",
+        "The research is uncertified synthesis; check the current datasheet/standard whenever a number is used."
       ],
-      "purpose": "In FDM nhựa, fit, inserts, tháo lắp, độ bền và vật liệu.",
+      "purpose": "FDM plastic printing, fit, inserts, assembly/disassembly, durability, and materials.",
       "required": [
         "knowledge/60-pipeline/3d-printing.md",
         "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md",
         "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md"
       ],
       "steps": [
-        "Chốt printer/nozzle/vật liệu/orientation, kích thước và interfaces.",
-        "Tách chi tiết theo đường lắp và access dụng cụ; chọn vít/insert theo drawing thật.",
-        "Thiết kế coupon fit và phần chịu tải với dữ liệu vật liệu theo hướng in.",
-        "Export candidate đúng unit và kiểm tra chính file xuất trước physical trial."
+        "Lock printer/nozzle/material/orientation, dimensions, and interfaces.",
+        "Split parts along assembly lines and tool access; choose screws/inserts from real drawings.",
+        "Design fit coupons and load-bearing parts using material data for the print orientation.",
+        "Export the candidate in the correct units and inspect the exported file itself before a physical trial."
       ],
       "supplemental": [
         "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md",
@@ -16265,11 +16321,11 @@
       "topics": {
         "advanced-deposition-process": {
           "gates": [
-            "Kiểm path có tiến triển và toolhead envelope; calibration/coupon thật.",
-            "Không xuất G-code hay điều khiển máy chỉ từ research."
+            "Check that the path progresses and that the toolhead envelope holds; use real calibration/coupons.",
+            "Do not emit G-code or drive a machine from research alone."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping",
@@ -16286,18 +16342,18 @@
             "research/polymer-additive-manufacturing-advanced/05-LARGE-FORMAT-LSAM-PELLET-PRINTING.md"
           ],
           "steps": [
-            "Chốt hardware envelope/flow/thermal hoặc toolpath/finishing constraints."
+            "Lock the hardware envelope/flow/thermal or the toolpath/finishing constraints."
           ],
-          "when": "Khi high-flow, nonplanar hoặc LSAM được yêu cầu; chọn đúng nhánh."
+          "when": "When high-flow, nonplanar, or LSAM is required; pick the correct branch."
         },
         "plate-nesting-screen": {
           "gates": [
-            "Oversize fixture phải bị từ chối; không nhận rectangle âm, part ra ngoài biên hoặc trùng/thiếu inventory.",
-            "Re-import STL/slicer bằng đúng scale; heuristic score không thay đánh giá support và fit thực."
+            "Oversize fixtures must be rejected; do not accept negative rectangles, parts outside the boundary, or duplicated/missing inventory.",
+            "Re-import the STL/slicer file at the correct scale; a heuristic score does not replace real support and fit assessment."
           ],
           "limitations": [
-            "Packer hiện nhận oversize part khi mở plate mới; không dùng kết quả chưa kiểm làm print-ready.",
-            "Các weights/margin trong source là ví dụ lịch sử, không có bằng chứng optimal/calibrated chung."
+            "The packer currently accepts an oversize part when it opens a new plate; do not treat an unverified result as print-ready.",
+            "The weights/margins in the source are historical examples with no evidence of being generally optimal/calibrated."
           ],
           "review": {
             "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
@@ -16312,18 +16368,18 @@
             "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py"
           ],
           "steps": [
-            "Chọn vật liệu/process, đơn vị, bed usable area, margin và khoảng cách.",
-            "Thử orientation theo support, tiếp xúc bed, trục tải/anisotropy và tính tháo support.",
-            "Kiểm tất cả part sau packing bằng transform thực; từ chối part không vừa trước khi thêm plate."
+            "Choose material/process, units, bed usable area, margin, and spacing.",
+            "Try orientations against support, bed contact, load axis/anisotropy, and support removability.",
+            "Check every part after packing using real transforms; reject parts that do not fit before adding a plate."
           ],
-          "when": "Khi dùng heuristic orientation và guillotine packing để xếp các part lên plate."
+          "when": "When using heuristic orientation and guillotine packing to lay parts out on the plate."
         },
         "polymer-selection": {
           "gates": [
-            "Không dùng kết luận PETG/carbon-fiber tuyệt đối; dữ liệu phải cùng process/orientation."
+            "Do not treat PETG/carbon-fiber conclusions as absolute; the data must come from the same process/orientation."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "prior corpus scout; controller source mapping",
@@ -16336,18 +16392,18 @@
             "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md"
           ],
           "steps": [
-            "Dùng taxonomy để đặt câu hỏi; chọn grade/process từ datasheet và coupon."
+            "Use the taxonomy to frame the questions; choose grade/process from datasheets and coupons."
           ],
-          "when": "Khi chưa chốt vật liệu hoặc cần đánh giá isotropy/temperature limits."
+          "when": "When the material is not locked yet, or isotropy/temperature limits need assessment."
         },
         "print-boss-cutouts": {
           "gates": [
-            "Đo hole/taper/minimum local wall sau subtraction, không lấy parameter name làm bằng chứng.",
-            "In coupon kiểm fit/insertion/pull-out hoặc support/bore retention theo chức năng."
+            "Measure hole/taper/minimum local wall after subtraction; do not take a parameter name as evidence.",
+            "Print coupons to test fit/insertion/pull-out, or support/bore retention according to function."
           ],
           "limitations": [
-            "Helper chưa ghép pillar/cutter; taper và wall claims không được enforce.",
-            "Self-support phụ thuộc process/orientation; face count không đủ."
+            "The helper does not yet combine pillar and cutter; taper and wall claims are not enforced.",
+            "Self-support depends on process/orientation; a face count is not enough."
           ],
           "review": {
             "by": "scout full static audit; controller curated checks",
@@ -16362,10 +16418,10 @@
             "scripts/boilerplates/dfam_3dprint/bp_teardrop_holes.py"
           ],
           "steps": [
-            "Chọn insert drawing, material/process/build orientation và coupon fit.",
-            "Dựng boss với cutter thực, kiểm taper theo chiều sâu và trục lỗ trước export."
+            "Choose the insert drawing, material/process/build orientation, and the fit coupon.",
+            "Build the boss with a real cutter; check taper along depth and the hole axis before export."
           ],
-          "when": "Khi dựng boss heat-set insert hoặc lỗ tự đỡ cho FDM."
+          "when": "When building heat-set insert bosses or self-supporting holes for FDM."
         }
       }
     },
@@ -16375,24 +16431,24 @@
       ],
       "concepts": [],
       "gates": [
-        "Drawing và mesh cùng unit/datum/revision.",
-        "Vùng fit không dựa vào kích thước overall bbox.",
-        "Có đo hoặc coupon cho kích thước critical."
+        "Drawing and mesh share the same units/datum/revision.",
+        "Fit zones do not rely on overall bounding-box dimensions.",
+        "Critical dimensions have a measurement or a coupon."
       ],
       "limitations": [
-        "Blender mesh không tự cung cấp B-rep/GD&T hoặc tolerance solver.",
-        "Inertia helper chưa áp object scale/scene scale; không dùng số trực tiếp khi transform khác identity."
+        "A Blender mesh does not by itself provide B-rep/GD&T or a tolerance solver.",
+        "The inertia helper does not apply object scale/scene scale; do not use its numbers directly when the transform is not identity."
       ],
-      "purpose": "CAD chính xác, datum, dung sai chuỗi và tháo lắp.",
+      "purpose": "Precision CAD, datums, tolerance stacks, and assembly/disassembly.",
       "required": [
         "knowledge/70-cad-precision-robotics/cad-precision-modeling.md",
         "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md"
       ],
       "steps": [
-        "Chốt datum/unit và danh sách interface.",
-        "Dùng drawing phần cứng thật để dựng nominal geometry.",
-        "Tính tolerance stack với phân bố/giả định ghi rõ.",
-        "Thiết kế đường lắp, access dụng cụ và phương pháp đo."
+        "Lock datums/units and the interface list.",
+        "Use real hardware drawings to build the nominal geometry.",
+        "Compute the tolerance stack with the distribution/assumptions written out.",
+        "Design the assembly path, tool access, and the measurement method."
       ],
       "supplemental": [
         "research/robotics-precision-cad/02-PRECISION-ENGINEERING-GDT.md",
@@ -16402,13 +16458,13 @@
       "topics": {
         "compliant-tendon-motion": {
           "gates": [
-            "Đo neck/strain, clearance qua envelope và bend/tension limits.",
-            "Kiểm fatigue/creep/hysteresis theo vật liệu/duty thực.",
-            "Đo neck/root/thickness, snap engagement và coil clearance; kiểm thực dưới process/duty phù hợp."
+            "Measure neck/strain, clearance across the envelope, and bend/tension limits.",
+            "Check fatigue/creep/hysteresis against the real material/duty.",
+            "Measure neck/root/thickness, snap engagement, and coil clearance; test physically under the matching process/duty."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Geometry demo có thể thiếu notch, mating part hoặc ground ends; face count không chứng nhận compliant performance."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "Demo geometry may lack notches, mating parts, or ground ends; a face count does not certify compliant performance."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping; mechanical adapter scout full static audit",
@@ -16429,18 +16485,18 @@
             "scripts/boilerplates/dfam_3dprint/bp_snap_fits.py"
           ],
           "steps": [
-            "Chốt travel/stiffness/parasitic motion, routing/pretension/tension-only constraints."
+            "Lock travel/stiffness/parasitic motion and routing/pretension/tension-only constraints."
           ],
-          "when": "Khi cần flexure, cable-driven hand hoặc remote actuation."
+          "when": "When a flexure, a cable-driven hand, or remote actuation is required."
         },
         "enclosure-sealing-emc-harness": {
           "gates": [
-            "Kiểm section/gland/mating và luồng thoát nhiệt thực; mô hình vent phải có đặc tính được yêu cầu.",
-            "Không công bố IP/EMC từ mesh: cần phương pháp thử và dữ liệu phù hợp cho cụm đã lắp."
+            "Check cross-section/gland/mating and the real heat escape path; the vent model must carry the required characteristics.",
+            "Do not claim IP/EMC from a mesh: an appropriate test method and data for the assembled unit are required."
           ],
           "limitations": [
-            "Các ngưỡng bolt spacing, membrane, EMC spacing và pull force trong nguồn chưa được xác nhận cho target.",
-            "Boilerplate vent bỏ qua kích thước ren/panel; hình thức kín hoặc gọn không xác nhận chức năng."
+            "The bolt spacing, membrane, EMC spacing, and pull force thresholds in the sources are not confirmed for this target.",
+            "The boilerplate vent ignores thread/panel dimensions; looking sealed or compact does not confirm function."
           ],
           "review": {
             "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
@@ -16457,20 +16513,20 @@
             "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py"
           ],
           "steps": [
-            "Tách yêu cầu môi trường thực khỏi ví dụ công nghiệp; chọn seal/vent theo đúng phần cứng.",
-            "Khai báo reference pressure/temperature và mô hình; kiểm tính nhất quán đơn vị và giả định.",
-            "Lập wire list, route, shield termination, crimp/tool và kiểm tra lắp ráp."
+            "Separate the real environmental requirements from the industrial examples; choose seal/vent from the actual hardware.",
+            "Declare the reference pressure/temperature and the model; check unit consistency and the assumptions.",
+            "Draw up the wire list, routing, shield termination, crimp/tooling, and the assembly checks."
           ],
-          "when": "Khi packaging hộp điều khiển cần sealing, nhiệt, shield hoặc tài liệu harness."
+          "when": "When control-enclosure packaging needs sealing, thermal management, shielding, or harness documentation."
         },
         "hardware-interface-geometry": {
           "gates": [
-            "Đo bore/raceway/keyway và fit ở section; không chấp nhận solid cylinder thay ring.",
-            "Kiểm đúng local dimensions, squeeze/fill và topology; xác minh lực/mòn/seal bằng dữ liệu hoặc thử thực riêng."
+            "Measure bore/raceway/keyway and fit in cross-section; do not accept a solid cylinder in place of a ring.",
+            "Verify local dimensions, squeeze/fill, and topology; verify force/wear/sealing separately with data or a physical test."
           ],
           "limitations": [
-            "Tên tiêu chuẩn trong header và số mặt không chứng minh tương thích phần cứng.",
-            "Một số helper hiện thiếu bores/raceways/threads hoặc boolean union; chưa dùng làm chi tiết sản xuất trực tiếp."
+            "A standard's name in the header and a face count do not prove hardware compatibility.",
+            "Some helpers currently lack bores/raceways/threads or the boolean union; do not use them directly as production parts."
           ],
           "review": {
             "by": "scout full static audit; controller curated checks",
@@ -16489,19 +16545,19 @@
             "scripts/boilerplates/cad_mechanics/bp_shaft_couplings.py"
           ],
           "steps": [
-            "Chọn drawing phần cứng cụ thể, đơn vị và dung sai; từ chối fallback kích thước âm thầm.",
-            "Dựng/cắt đủ lỗ, rãnh và mặt tiếp xúc trong candidate; kiểm evaluated mesh sau union."
+            "Choose a specific hardware drawing, units, and tolerances; reject silent dimension fallbacks.",
+            "Build/cut every hole, groove, and contact face in the candidate; check the evaluated mesh after the union."
           ],
-          "when": "Khi dùng helper ổ bi, nut/washer, keyway hoặc gland làm interface cơ khí."
+          "when": "When using bearing, nut/washer, keyway, or gland helpers as mechanical interfaces."
         },
         "industrial-connector-panel-packaging": {
           "gates": [
-            "Thay tham số phải đổi đúng hình học; kiểm kích thước, topology và Boolean thật sau cắt.",
-            "D-cut smoke không thay fit coupon; chiều pin và drawing phiên bản phải khớp phần cứng được chọn."
+            "Changing a parameter must change the geometry accordingly; check dimensions, topology, and the actual Boolean after the cut.",
+            "A D-cut smoke test does not replace a fit coupon; pin orientation and drawing revision must match the selected hardware."
           ],
           "limitations": [
-            "Bảng pinout/kích thước là synthesis chưa kiểm định; không lấy pitch hoặc tên ISO làm bảo đảm tương thích.",
-            "Saddle hiện là cube không có slot; vent thiếu thread/membrane và bỏ qua tham số; cần sửa adapter trước sản xuất."
+            "The pinout/dimension tables are unvalidated synthesis; do not treat a pitch or an ISO name as a compatibility guarantee.",
+            "The saddle is currently a cube with no slot; the vent lacks thread/membrane and ignores its parameters; the adapter must be fixed before production."
           ],
           "review": {
             "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
@@ -16522,20 +16578,20 @@
             "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py"
           ],
           "steps": [
-            "Chốt mã connector/contact, pin-view, giao thức, cáp và drawing cụ thể; ghi chỗ nguồn mâu thuẫn.",
-            "Inspect/adapt cutter trong scene riêng; đo section, chiều dày panel, mặt gá và tool approach.",
-            "Khai báo pin-to-pin wire list, terminal/crimp và khoảng lắp tháo."
+            "Lock connector/contact part numbers, pin view, protocol, cable, and the specific drawing; record where the sources conflict.",
+            "Inspect/adapt the cutter in a separate scene; measure the cross-section, panel thickness, mounting face, and tool approach.",
+            "Declare the pin-to-pin wire list, terminals/crimps, and the install/removal clearance."
           ],
-          "when": "Khi dựng connector, panel cutout, terminal và khoảng thao tác ở hộp điều khiển."
+          "when": "When building connectors, panel cutouts, terminals, and service clearance in a control enclosure."
         },
         "precision-material-tessellation": {
           "gates": [
-            "Phân biệt radial/diametral error, unit và export mesh.",
-            "Đối chiếu grade/temper/finish với drawing/data có nguồn."
+            "Distinguish radial from diametral error, the units, and the exported mesh.",
+            "Cross-check grade/temper/finish against sourced drawings/data."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Không suy GD&T từ STEP export hoặc tự cài CAD addon."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "Do not infer GD&T from a STEP export, and do not install a CAD add-on on your own."
           ],
           "review": {
             "by": "knowledge_corpus_scout; controller source mapping; boilerplate source scout static review",
@@ -16552,9 +16608,9 @@
             "scripts/boilerplates/bp_cad_robotics.py"
           ],
           "steps": [
-            "Tách nominal dimensions, tessellation error, process allowance và material grade."
+            "Separate nominal dimensions, tessellation error, process allowance, and material grade."
           ],
-          "when": "Khi bore/tolerance/finish/heat-treatment cần budget định lượng."
+          "when": "When bore/tolerance/finish/heat-treatment need a quantified budget."
         }
       }
     },
@@ -16567,27 +16623,27 @@
       ],
       "concepts": [],
       "gates": [
-        "Python errors phải trả nonzero và có postcondition; shell exit 0 chưa đủ.",
-        "Frame missing/corrupt/mixed revision bị loại trước encode.",
-        "Duration/fps/resolution/range đúng brief; video không text khi user yêu cầu.",
-        "Review đúng file đã hash; kỹ thuật và chất lượng visual ghi riêng."
+        "Python errors must return nonzero and carry a postcondition; a shell exit 0 is not enough.",
+        "Missing/corrupt/mixed-revision frames are rejected before encoding.",
+        "Duration/fps/resolution/range match the brief; the video carries no text when the user asked for none.",
+        "Review the exact hashed file; record the technical results and the visual quality separately."
       ],
       "limitations": [
-        "Headless wrapper chưa explicit Python-error exit; dùng CLI explicit theo core recipe.",
-        "Ví dụ video chứa fixed arm path/24fps/720frames; phải chuyển contract theo task.",
-        "Không resume dựa vào file tồn tại; stale-evidence enforcement E1–E5 còn backlog."
+        "The headless wrapper does not yet exit explicitly on a Python error; use the explicit CLI form from the core recipe.",
+        "The video example hardcodes an arm path/24fps/720 frames; the contract must be adapted to the task.",
+        "Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog."
       ],
-      "purpose": "Video không phụ đề, render batch, encode và export/re-import.",
+      "purpose": "Caption-free video, batch rendering, encoding, and export/re-import.",
       "required": [
         "knowledge/30-lighting-render/render-engines.md",
         "knowledge/30-lighting-render/compositing-output.md",
         "knowledge/60-pipeline/export-interchange.md"
       ],
       "steps": [
-        "Chốt source hash, camera, frame range, fps, aspect và yêu cầu overlay/audio.",
-        "Đo render profile trên frame đại diện trong process riêng.",
-        "Render raw frames với output/range riêng và kiểm đủ frame.",
-        "Encode/decode hoặc export/re-import đúng artifact; xem cả nhịp chuyển động."
+        "Lock the source hash, camera, frame range, fps, aspect ratio, and overlay/audio requirements.",
+        "Measure the render profile on a representative frame in a separate process.",
+        "Render raw frames with a dedicated output/range and verify the frame count is complete.",
+        "Encode/decode or export/re-import the correct artifact; review the motion timing as well."
       ],
       "supplemental": [
         "knowledge/60-pipeline/optimization-realtime.md",
@@ -16596,12 +16652,12 @@
       "topics": {
         "color-denoise-delivery": {
           "gates": [
-            "Introspect compositor/pass sockets; EXR contract có cấu hình thực.",
-            "So raw/denoised crop và clip liên tiếp: không mất detail, ghost hoặc boiling."
+            "Introspect compositor/pass sockets; the EXR contract has a real configuration.",
+            "Compare raw/denoised crops and consecutive clips: no detail loss, ghosting, or boiling."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Không xóa compositor hiện hữu hoặc dùng sample minimum làm bảo đảm."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "Do not delete an existing compositor or treat a minimum sample count as a guarantee."
           ],
           "review": {
             "by": "evolution_render_scout; controller source mapping",
@@ -16616,19 +16672,19 @@
             "research/blender-rendering-deep-dive/05-DENOISING-OIDN-OPTIX-TEMPORAL.md"
           ],
           "steps": [
-            "Chốt display/view/look/exposure và output encoding riêng.",
-            "Giữ raw noisy evidence; kiểm guide passes trước nối denoiser."
+            "Lock display/view/look/exposure and the output encoding separately.",
+            "Keep the raw noisy evidence; check the guide passes before wiring up the denoiser."
           ],
-          "when": "Khi highlight/output colors hoặc temporal noise cần chẩn đoán."
+          "when": "When highlight/output colors or temporal noise need diagnosis."
         },
         "framing-export-contract": {
           "gates": [
-            "Chiếu evaluated bounds qua camera, kiểm cả X/Y, near/far clip tại mọi pose yêu cầu; xem ảnh render.",
-            "Đọc lại artifact độc lập, kiểm object/count/bounds/units/materials theo format; STL cần topology và dung sai riêng."
+            "Project the evaluated bounds through the camera, check both X/Y and near/far clipping at every required pose; review the rendered image.",
+            "Read the artifact back independently and check object/count/bounds/units/materials per format; STL needs its own topology and tolerance checks."
           ],
           "limitations": [
-            "FINISHED, file tồn tại hoặc camera distance không chứng minh output đúng.",
-            "Helper có thể đổi target/constraint hiện hữu và ghi đường dẫn cố định; không chạy self-test trên scene sản xuất."
+            "FINISHED, an existing file, or a camera distance does not prove the output is correct.",
+            "The helper can change an existing target/constraint and write to a hardcoded path; do not run its self-test on a production scene."
           ],
           "review": {
             "by": "controller full source read",
@@ -16643,18 +16699,18 @@
             "scripts/boilerplates/pipeline_render/bp_cam_autoframing.py"
           ],
           "steps": [
-            "Chốt object selection, evaluated bounds, camera type/aspect và output path của candidate.",
-            "Adapt framing theo cả hai FOV; xuất với units và thuộc tính đúng contract."
+            "Lock the object selection, evaluated bounds, camera type/aspect, and the candidate's output path.",
+            "Adapt framing for both FOV axes; export with the units and properties the contract requires."
           ],
-          "when": "Khi tự căn camera hoặc xuất GLB/STL qua adapter."
+          "when": "When auto-framing the camera or exporting GLB/STL through an adapter."
         },
         "participating-media": {
           "gates": [
-            "Bounds/density hữu hạn và phù hợp scale.",
-            "Xem banding, light shafts, transmission và khả năng đọc sản phẩm."
+            "Bounds/density are finite and consistent with the scale.",
+            "Review banding, light shafts, transmission, and product readability."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements."
           ],
           "review": {
             "by": "evolution_render_scout; controller source mapping",
@@ -16667,19 +16723,19 @@
             "research/blender-rendering-deep-dive/03-VOLUMETRIC-SCATTERING-ATMOSPHERICS.md"
           ],
           "steps": [
-            "Chốt volume bounds, density và path-length assumptions.",
-            "So baseline tắt atmosphere để tách exposure/material lỗi."
+            "Lock volume bounds, density, and path-length assumptions.",
+            "Compare against a baseline with the atmosphere off to isolate exposure/material defects."
           ],
-          "when": "Chỉ khi scene có haze/cloud/volume cần kiểm soát."
+          "when": "Only when the scene has haze/cloud/volume that must be controlled."
         },
         "renderer-diagnostics": {
           "gates": [
-            "Engine/device thực sự enabled, timing và settings được ghi.",
-            "So noise/detail và reflection artifacts; tốc độ không thay chất lượng."
+            "The engine/device is actually enabled, and timing and settings are recorded.",
+            "Compare noise/detail and reflection artifacts; speed does not replace quality."
           ],
           "limitations": [
-            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
-            "Không thừa hưởng GPU/Metal-only hoặc bounce preset từ research."
+            "Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.",
+            "Do not inherit a GPU/Metal-only or bounce preset from research."
           ],
           "review": {
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
@@ -16696,10 +16752,10 @@
             "scripts/boilerplates/bp_render_camera.py"
           ],
           "steps": [
-            "Benchmark frame đại diện cùng resolution/source; lựa chọn device theo phép đo.",
-            "Giữ Cycles batch theo policy; EEVEE chỉ khi capability được xác nhận."
+            "Benchmark a representative frame at the same resolution/source; choose the device from the measurement.",
+            "Keep batch rendering on Cycles per policy; use EEVEE only when its capability is confirmed."
           ],
-          "when": "Khi cần đo CPU/Metal, sampling hoặc so giới hạn renderer."
+          "when": "When CPU/Metal measurement, sampling, or a renderer-limit comparison is needed."
         }
       }
     },
@@ -16712,27 +16768,27 @@
         ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"
       ],
       "gates": [
-        "Không áp rotation cố định chỉ từ tên phần mềm; verify basis vector và forward axis.",
-        "Collision shape được kiểm lồi/đơn giản thật, decimation không chứng minh convex.",
-        "Inertia tensor đối xứng và positive definite bằng eigenvalues hoặc principal minors.",
-        "Round-trip đúng link hierarchy, scale, limits; simulator test được lưu."
+        "Do not apply a fixed rotation from a software name alone; verify the basis vectors and the forward axis.",
+        "Collision shapes are actually checked for convexity/simplicity; decimation does not prove convexity.",
+        "The inertia tensor is symmetric and positive definite, shown by eigenvalues or principal minors.",
+        "The round trip preserves link hierarchy, scale, and limits; the simulator test is saved."
       ],
       "limitations": [
-        "Snippet URDF hiện format inertia truyền vào, không tính inertia.",
-        "Collision và tensor snippets trong KB chưa đủ predicate cần thiết.",
-        "Không chạy/install simulator chỉ vì đọc research."
+        "The URDF snippet currently formats the inertia passed into it; it does not compute inertia.",
+        "The collision and tensor snippets in the KB do not carry the required predicates.",
+        "Do not run or install a simulator merely because research was read."
       ],
-      "purpose": "Robot links, URDF, coordinate frames, collision và inertia.",
+      "purpose": "Robot links, URDF, coordinate frames, collision, and inertia.",
       "required": [
         "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
         "knowledge/40-animation/rigging-armature.md",
         "knowledge/60-pipeline/export-interchange.md"
       ],
       "steps": [
-        "Chốt hệ tọa độ từng link/joint và đơn vị SI ở boundary export.",
-        "Tách visual, collision, physical properties; kiểm mass/CoM/inertia bằng phương pháp đã validate.",
-        "Export articulation và import vào target simulator.",
-        "So pose/pivot/limit, collision shape và physical response với kỳ vọng."
+        "Lock the coordinate system of each link/joint and SI units at the export boundary.",
+        "Separate visual, collision, and physical properties; check mass/CoM/inertia with a validated method.",
+        "Export the articulation and import it into the target simulator.",
+        "Compare pose/pivot/limit, collision shape, and physical response against expectations."
       ],
       "supplemental": [
         "research/robotics-precision-cad/01-MECHANICAL-ROBOTICS-FUNDAMENTALS.md",
@@ -16742,12 +16798,12 @@
       "topics": {
         "dynamic-harness-routing": {
           "gates": [
-            "Từ chối input âm và silent radius cap; đo min radius/length/torsion tại pose biên với units rõ.",
-            "Kiểm giao thoa chain và tính kết nối của từng link; kiểm thực với cáp/link đã chọn trước tuyên bố cycle life."
+            "Reject negative inputs and silent radius caps; measure minimum radius/length/torsion at the extreme poses with explicit units.",
+            "Check chain interference and the connectivity of each link; test physically with the selected cable/link before claiming cycle life."
           ],
           "limitations": [
-            "Curve reveal không bảo toàn chiều dài hoặc chứng minh đi dây thật.",
-            "Boilerplate hiện tạo primitive rời và thiếu socket/stop; kiểu conductor không chứng nhận flex life."
+            "A curve reveal does not preserve length or prove real routing.",
+            "The boilerplate currently creates detached primitives and lacks sockets/stops; a conductor type does not certify flex life."
           ],
           "review": {
             "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
@@ -16766,11 +16822,11 @@
             "scripts/boilerplates/cad_mechanics/bp_cable_dragchain.py"
           ],
           "steps": [
-            "Chốt endpoint, cáp thực, connector, giới hạn uốn/xoắn và chiều dài tự do.",
-            "Dựng route theo từng joint pose; tính chiều dài, curvature và khoảng tránh cơ cấu.",
-            "Thiết kế retention/strain relief; kiểm link socket, stop và fastening trước khi gọi chain là hoạt động được."
+            "Lock the endpoints, the real cable, connectors, bend/torsion limits, and the free length.",
+            "Build the route for each joint pose; compute length, curvature, and clearance from the mechanism.",
+            "Design retention/strain relief; check link sockets, stops, and fastening before calling the chain functional."
           ],
-          "when": "Khi đi dây từ controller qua khớp chuyển động hoặc thiết kế carrier/drag chain."
+          "when": "When routing wiring from the controller across moving joints, or designing a carrier/drag chain."
         }
       }
     }

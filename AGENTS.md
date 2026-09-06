@@ -1,60 +1,60 @@
-# AGENTS.md — Blender AI Orchestration (file vận hành chính)
+# AGENTS.md — Blender AI Orchestration (primary operational file)
 
-**Thứ tự ưu tiên khi mâu thuẫn:** `.project-agent.md` (identity + binding rules) > file này > `.agents/skills/*/SKILL.md` + references > `knowledge/` > `docs/` (tường thuật, không phải luật). `CLAUDE.md` chỉ import file này. Rule ghi `MANUAL` = kỷ luật controller, chưa có code enforce.
+**Precedence order on conflict:** `.project-agent.md` (identity + binding rules) > this file > `.agents/skills/*/SKILL.md` + references > `knowledge/` > `docs/` (narrative, not law). `CLAUDE.md` only imports this file. A rule marked `MANUAL` = controller discipline, not yet enforced by code.
 
 ## Mission
-`<ROOT>` trong file này = đường dẫn tuyệt đối của repo trên máy đang chạy (ví dụ local của Jang: `/Users/jang/Products/Blender`).
+`<ROOT>` in this file = the absolute path of the repo on the machine currently running (e.g. Jang's local: `/Users/jang/Products/Blender`).
 
-AI dựng 3D/animation/render trong Blender **5.2.0 LTS** (local = target KB) qua 2 đường:
-- **Interactive:** MCP server `blender` → addon trong GUI (phải Connect). Tool dùng được: `execute_blender_code`, `get_object_info`, `get_viewport_screenshot`, `get_scene_info` (chỉ trả 10 object đầu — lấy danh sách đầy đủ bằng bpy). Các tool PolyHaven/Sketchfab/Hyper3D/Hunyuan/`set_texture` **bị cấm** bởi Native Asset Policy.
-- **Headless:** `scripts/headless-run.sh <pass.py>` — process mới `--factory-startup`, dùng cho batch, render, fault-probe, gate.
+AI builds 3D/animation/render in Blender **5.2.0 LTS** (local = KB target) through 2 routes:
+- **Interactive:** MCP server `blender` → addon in the GUI (must Connect). Usable tools: `execute_blender_code`, `get_object_info`, `get_viewport_screenshot`, `get_scene_info` (returns only the first 10 objects — get the full list with bpy). The PolyHaven/Sketchfab/Hyper3D/Hunyuan/`set_texture` tools are **forbidden** by the Native Asset Policy.
+- **Headless:** `scripts/headless-run.sh <pass.py>` — new process with `--factory-startup`, used for batch, render, fault-probe, gate.
 
-Mục tiêu sản phẩm (Jang, 2026-09-06): **production level — in 3D được, đúng kích thước, đúng tiêu chuẩn.** Ảnh/video "nhìn đúng" không phải acceptance.
+Product goal (Jang, 2026-09-06): **production level — 3D-printable, dimensionally correct, standards-compliant.** An image/video that "looks right" is not acceptance.
 
-## Loop bắt buộc cho mọi task dựng cảnh
+## Mandatory loop for every scene-building task
 ```
 Contract → Plan (scene graph) → Code (pass files) → Critic → Execute → Verify → Verdict
 ```
-0. **Contract trước khi vào chi tiết.** Part sẽ in/chế tạo → viết `builds/<slug>/spec.json` theo `specs/build-spec.schema.json` (kích thước ± dung sai, lỗ/boss, fastener theo chuẩn, vật liệu/process, hướng in, min wall, load case đã khai báo). Thiếu kích thước/payload/duty → verdict `request-input`, **không** dựng chi tiết. Có ảnh reference → fidelity contract (skill `blender-image-to-3d`). Lịch sử: mọi rebuild toàn bộ đều do spec đến sau khi đã detail.
-1. **Plan:** scene graph — objects, hierarchy, vị trí, materials, camera, lights. Task dài → `plans/`.
-2. **Code:** data API trước, `bpy.ops` là ngoại lệ (`knowledge/00-foundations/bpy-scripting-core.md`). Mỗi pass = 1 file `builds/<slug>/pass-NN-<muc-dich>.py` ≤ ~80 dòng, kết thúc bằng postcondition số qua `emit_ok`.
-3. **Critic (tự soát):** import/`__file__` nằm trong payload (namespace MCP không persist)? tên socket/enum/operator đã introspect runtime? đơn vị (1 BU = 1 m, spec tính mm)? mutation trước assert? op phá huỷ → `checkpoint()` trước?
+0. **Contract before going into detail.** A part that will be printed/manufactured → write `builds/<slug>/spec.json` following `specs/build-spec.schema.json` (dimensions ± tolerances, holes/bosses, standard-compliant fasteners, material/process, print orientation, min wall, declared load case). Missing dimensions/payload/duty → verdict `request-input`, do **not** build detail. Reference image available → fidelity contract (skill `blender-image-to-3d`). History: every full rebuild was caused by the spec arriving after detailing had started.
+1. **Plan:** scene graph — objects, hierarchy, positions, materials, camera, lights. Long task → `plans/`.
+2. **Code:** data API first, `bpy.ops` is the exception (`knowledge/00-foundations/bpy-scripting-core.md`). Each pass = 1 file `builds/<slug>/pass-NN-<purpose>.py` ≤ ~80 lines, ending with a numeric postcondition via `emit_ok`.
+3. **Critic (self-check):** are import/`__file__` inside the payload (the MCP namespace does not persist)? have socket/enum/operator names been introspected at runtime? units (1 BU = 1 m, spec in mm)? mutation before assert? destructive op → `checkpoint()` first?
 4. **Execute:**
    - MCP: `import sys; sys.path.insert(0, "<ROOT>/scripts"); import agent_runtime as rt; rt.run_file("/abs/builds/<slug>/pass-NN.py")`
    - Headless: `bash scripts/headless-run.sh builds/<slug>/pass-NN.py`
-   - **Quyết định bằng dòng cuối stdout** `AGENT_OK {json}` / `AGENT_FAIL {json}`; "Code executed successfully" chỉ là transport. Exit code Blender sai cả hai chiều. Timeout sau khi đã gửi mutation → outcome unknown: đọc state trước khi gửi lại.
-5. **Verify ladder (rẻ → đắt; số trả lời được thì không tốn ảnh):** (1) assert số: `assert_exists`, `tri_count`, `world_bbox`, `has_material`, fcurve keys → (2) `framing()` + `preview_render(engine="EEVEE"|"CYCLES")` + `frame_stats()` (≈0.2 s ở 256px trên scene nhỏ, cả hai engine chạy headless macOS; restore state) → (3) viewport screenshot **sau khi ghi kỳ vọng + điều gì falsify** → (4) Cycles preview thấp sample → (5) comparison sheet khi có reference → (6) turntable. Part production: `python3 scripts/production-gate.py --scene <blend> --spec <spec.json> --report <out.json>` exit 0 trước khi giao; đính report.
-6. **Verdict (chọn đúng 1):** `continue` · `refine-spec` (gốc rễ ở spec — sửa spec trước) · `refine-code` · `request-input` · `stop` (= báo user, đổi hướng). 2 lần fail cùng bước → đổi **class** approach; 3 lần → `request-input`.
+   - **Decide by the last stdout line** `AGENT_OK {json}` / `AGENT_FAIL {json}`; "Code executed successfully" is only transport. Blender's exit code is wrong in both directions. Timeout after a mutation has already been sent → outcome unknown: read state before sending again.
+5. **Verify ladder (cheap → expensive; if a number can answer it, spend no image):** (1) numeric asserts: `assert_exists`, `tri_count`, `world_bbox`, `has_material`, fcurve keys → (2) `framing()` + `preview_render(engine="EEVEE"|"CYCLES")` + `frame_stats()` (≈0.2 s at 256px on a small scene, both engines run headless on macOS; restore state) → (3) viewport screenshot **after writing down the expectation + what would falsify it** → (4) low-sample Cycles preview → (5) comparison sheet when a reference exists → (6) turntable. Production part: `python3 scripts/production-gate.py --scene <blend> --spec <spec.json> --report <out.json>` exit 0 before delivery; attach the report.
+6. **Verdict (pick exactly 1):** `continue` · `refine-spec` (root cause is in the spec — fix the spec first) · `refine-code` · `request-input` · `stop` (= tell the user, change direction). 2 failures at the same step → change the approach **class**; 3 failures → `request-input`.
 
-**Điểm quyết định của owner (MANUAL, bắt buộc):** blockout sheet trước khi detail; animatic ≤ 120 frame trước bất kỳ render > 120 frame; chỉ render dài sau khi owner đã thấy và chốt. Record: 2 lần render-rồi-bỏ (~26 phút, ~3.000 frame) xảy ra sau khi retro đã ghi rule này thành prose.
+**Owner decision points (MANUAL, mandatory):** blockout sheet before detailing; animatic ≤ 120 frames before any render > 120 frames; long renders only after the owner has seen and signed off. Record: 2 render-then-discard events (~26 minutes, ~3,000 frames) happened after a retro had already written this rule down as prose.
 
-## Failure map (theo record thật, không phải lý thuyết)
-| Triệu chứng | Nguyên nhân thường gặp | Làm gì |
+## Failure map (from real records, not theory)
+| Symptom | Common cause | What to do |
 |---|---|---|
-| `NameError` trong "executed successfully" | helper/import từ call trước không còn | đặt import + `rt.load_lib()` trong payload |
-| Assert hình học/STL fail dù mesh "đẹp" | degenerate faces, non-manifold sau boolean | `production-gate.py` topology + đọc lại STL |
-| Endpoint PASS nhưng giữa chuyển động đè nhau | chỉ verify trạng thái cuối | sweep theo frame + animatic; `assembly-sequences.md` |
-| Render đen/silhouette đen | persistent_data stale, camera trong wall, không light | `framing()`, `frame_stats()`, `persistent_data=False` |
-| Render đúng nhưng owner từ chối | camera/nhịp/scope không có trong contract | `refine-spec`; hỏi trước, không render lại mù |
-| `ModuleNotFoundError` (scipy/fitz) | Python của Blender ≠ host Python | `importlib.util.find_spec` trong preflight; code không phụ thuộc |
-| MCP connection error | addon chưa Connect | báo user, không retry |
+| `NameError` inside "executed successfully" | helper/import from the previous call no longer exists | put the import + `rt.load_lib()` in the payload |
+| Geometry/STL assert fails although the mesh looks "clean" | degenerate faces, non-manifold after boolean | `production-gate.py` topology + re-read the STL |
+| Endpoint PASS but interpenetration mid-motion | only the final state was verified | per-frame sweep + animatic; `assembly-sequences.md` |
+| Black render / black silhouette | persistent_data stale, camera inside a wall, no light | `framing()`, `frame_stats()`, `persistent_data=False` |
+| Render correct but owner rejects it | camera/pacing/scope not in the contract | `refine-spec`; ask first, do not blindly re-render |
+| `ModuleNotFoundError` (scipy/fitz) | Blender's Python ≠ host Python | `importlib.util.find_spec` in preflight; code must not depend on it |
+| MCP connection error | addon not Connected | tell the user, do not retry |
 
-## Visual feedback cho user (BẮT BUỘC)
-MCP live: user nhìn object mọc trong viewport. Headless: sau mỗi pass `open <sheet.png>`; build xong `open -a Blender <file.blend>`. Build > 2 phút → báo số pass + ước lượng thời gian trước.
+## Visual feedback for the user (MANDATORY)
+MCP live: the user watches objects grow in the viewport. Headless: after each pass `open <sheet.png>`; when the build finishes `open -a Blender <file.blend>`. Build > 2 minutes → announce the number of passes + a time estimate up front.
 
-## Giao hàng
-README của build ghi trạng thái **riêng** cho media / motion / fit / manufacture; đính `gate-report.json`, hash input, frame range; geometry đổi → evidence cũ vô hiệu. Không suy ra tải/nhiệt/độ bền từ check số hoặc video; thiếu bằng chứng vật lý → manufacture **BLOCKED** ghi rõ.
+## Delivery
+The build's README records **separate** status for media / motion / fit / manufacture; attach `gate-report.json`, input hashes, frame range; geometry changed → old evidence is void. Do not infer load/thermal/strength from numeric checks or video; missing physical evidence → manufacture **BLOCKED**, stated explicitly.
 
-## Bản đồ tài nguyên
-| Cần | Đọc/dùng |
+## Resource map
+| Need | Read/use |
 |---|---|
-| Loop chi tiết, execution modes, verify ladder | `.agents/skills/blender-agent-core/SKILL.md` (+ `references/`) |
-| Có ảnh reference | `.agents/skills/blender-image-to-3d/SKILL.md` |
-| Reading pack theo task | `python3 scripts/blender-knowledge.py list` / `route <workflow-id>` (skill `blender-knowledge-workbench`) |
-| 3 file KB nền (bắt buộc) | `knowledge/00-foundations/{blender-version-matrix,bpy-scripting-core,agent-workflow-loop}.md` |
-| Spec/gate production | `specs/README.md`, `scripts/production-gate.py` |
-| Sense organs trong bpy | `scripts/agent-verify-lib.py` (đọc-only an toàn; `preview_render` restore state; `verify_export` chạy process riêng) |
-| Preview nhanh / so ảnh | `scripts/turntable-preview.py`, `scripts/make-comparison-sheet.sh` |
-| Kiến trúc, backlog | `docs/system-architecture.md`, `docs/blender-workflow-improvement-backlog.md` |
+| Detailed loop, execution modes, verify ladder | `.agents/skills/blender-agent-core/SKILL.md` (+ `references/`) |
+| Reference image available | `.agents/skills/blender-image-to-3d/SKILL.md` |
+| Reading pack for the task | `python3 scripts/blender-knowledge.py list` / `route <workflow-id>` (skill `blender-knowledge-workbench`) |
+| 3 foundation KB files (mandatory) | `knowledge/00-foundations/{blender-version-matrix,bpy-scripting-core,agent-workflow-loop}.md` |
+| Production spec/gate | `specs/README.md`, `scripts/production-gate.py` |
+| Sense organs inside bpy | `scripts/agent-verify-lib.py` (safe read-only; `preview_render` restores state; `verify_export` runs a separate process) |
+| Fast preview / image comparison | `scripts/turntable-preview.py`, `scripts/make-comparison-sheet.sh` |
+| Architecture, backlog | `docs/system-architecture.md`, `docs/blender-workflow-improvement-backlog.md` |
 
-Native Asset Policy, QRemeshify gate và các binding rule khác: `.project-agent.md` (không lặp lại ở đây).
+Native Asset Policy, QRemeshify gate and the other binding rules: `.project-agent.md` (not repeated here).
