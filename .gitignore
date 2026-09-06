@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Blender
+*.blend1
+*.blend2
+output/
+assets/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Local-only state
+plans/knowledge-updates/publish.lock
+plans/knowledge-updates/candidate*.json
+.brv/
+.codex/

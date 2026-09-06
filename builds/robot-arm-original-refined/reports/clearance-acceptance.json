@@ -1,0 +1,7 @@
+{
+  "status": "PASS_VISUAL_ASSEMBLY_PATH",
+  "scene_sha256": "06e248dc8d2902862fb7a82679dc740dafa2197081ba3203f7f8b760f1911811",
+  "real_servo_case_collisions": 0,
+  "waiting_cross_pairs": 0,
+  "limits": "Output visual mates and final carrier-floor contacts remain; hardware, fit and manufacturability not approved."
+}

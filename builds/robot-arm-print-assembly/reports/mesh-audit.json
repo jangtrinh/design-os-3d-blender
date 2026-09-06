@@ -1,0 +1,1033 @@
+{
+  "parts": [
+    {
+      "id": "P01",
+      "object": "A3-src-base-electronics-shell",
+      "source": "A2-base-electronics-shell-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 348,
+        "faces": 262,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        348
+      ],
+      "volume_mm3": 32522.021942548938,
+      "dimensions_mm": [
+        63.00000101327896,
+        65.99999964237213,
+        27.999999932944775
+      ],
+      "wall_ray_samples": 187,
+      "wall_min_mm": 0.33840641768872737,
+      "wall_p01_mm": 0.3384064758963883,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P02",
+      "object": "A3-src-base-matte-cover",
+      "source": "A2-base-matte-cover-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 3220,
+        "faces": 1674,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        3220
+      ],
+      "volume_mm3": 164786.40163591885,
+      "dimensions_mm": [
+        173.99999499320984,
+        115.99999666213989,
+        8.999999612569809
+      ],
+      "wall_ray_samples": 1033,
+      "wall_min_mm": 4.499998757785559,
+      "wall_p01_mm": 8.805603137409687,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P03",
+      "object": "A3-src-elbow-flush-bearing-cap--1",
+      "source": "A2-elbow-flush-bearing-cap--1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2508,
+        "faces": 1268,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2508
+      ],
+      "volume_mm3": 7700.27086511031,
+      "dimensions_mm": [
+        57.999998331069946,
+        4.0000020526349545,
+        57.999998331069946
+      ],
+      "wall_ray_samples": 722,
+      "wall_min_mm": 0.6999962489888072,
+      "wall_p01_mm": 1.9983908852398393,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P04",
+      "object": "A3-src-elbow-flush-bearing-cap-1",
+      "source": "A2-elbow-flush-bearing-cap-1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2507,
+        "faces": 1268,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2507
+      ],
+      "volume_mm3": 7700.270864960883,
+      "dimensions_mm": [
+        57.999998331069946,
+        4.0000020526349545,
+        57.999998331069946
+      ],
+      "wall_ray_samples": 727,
+      "wall_min_mm": 0.6999971221037209,
+      "wall_p01_mm": 1.9983908852398393,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P05",
+      "object": "A3-src-elbow-motor-mount--1",
+      "source": "A2-elbow-motor-mount--1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2718,
+        "faces": 1412,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2718
+      ],
+      "volume_mm3": 8321.245314603017,
+      "dimensions_mm": [
+        5.499999970197678,
+        30.99999949336052,
+        52.99999937415123
+      ],
+      "wall_ray_samples": 621,
+      "wall_min_mm": 1.0513403678148985,
+      "wall_p01_mm": 1.0513404842302203,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P06",
+      "object": "A3-src-elbow-motor-mount-1",
+      "source": "A2-elbow-motor-mount-1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2718,
+        "faces": 1412,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2718
+      ],
+      "volume_mm3": 8321.24531451273,
+      "dimensions_mm": [
+        5.499999970197678,
+        30.99999949336052,
+        52.99999937415123
+      ],
+      "wall_ray_samples": 620,
+      "wall_min_mm": 1.0513403678148985,
+      "wall_p01_mm": 1.0513406006455421,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P07",
+      "object": "A3-src-electronics-service-lid",
+      "source": "A2-electronics-service-lid-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 1104,
+        "faces": 602,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        1104
+      ],
+      "volume_mm3": 15968.41105316621,
+      "dimensions_mm": [
+        63.00000101327896,
+        65.99999964237213,
+        4.000000189989805
+      ],
+      "wall_ray_samples": 362,
+      "wall_min_mm": 3.9999991414904597,
+      "wall_p01_mm": 3.9999991414904597,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P08",
+      "object": "A3-src-fixed-TPU-pad-40",
+      "source": "A2-fixed-TPU-pad-40-task",
+      "kind": "TPU",
+      "tool_library": false,
+      "before": {
+        "verts": 96,
+        "faces": 98,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        96
+      ],
+      "volume_mm3": 299.70258065119583,
+      "dimensions_mm": [
+        4.000000189989805,
+        8.00000037997961,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 42,
+      "wall_min_mm": 4.000000072813035,
+      "wall_p01_mm": 4.000000072813035,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P09",
+      "object": "A3-src-fixed-TPU-pad-56",
+      "source": "A2-fixed-TPU-pad-56-task",
+      "kind": "TPU",
+      "tool_library": false,
+      "before": {
+        "verts": 96,
+        "faces": 98,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        96
+      ],
+      "volume_mm3": 299.70258065119583,
+      "dimensions_mm": [
+        4.000000189989805,
+        8.00000037997961,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 42,
+      "wall_min_mm": 4.000000072813035,
+      "wall_p01_mm": 4.000000072813035,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P10",
+      "object": "A3-src-fixed-TPU-pad-72",
+      "source": "A2-fixed-TPU-pad-72-task",
+      "kind": "TPU",
+      "tool_library": false,
+      "before": {
+        "verts": 96,
+        "faces": 98,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        96
+      ],
+      "volume_mm3": 299.70258065119583,
+      "dimensions_mm": [
+        4.000000189989805,
+        8.00000037997961,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 42,
+      "wall_min_mm": 4.000000072813035,
+      "wall_p01_mm": 4.000000072813035,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P11",
+      "object": "A3-src-fixed-jaw",
+      "source": "A2-fixed-jaw-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 4236,
+        "faces": 2468,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        4236
+      ],
+      "volume_mm3": 12569.294369688272,
+      "dimensions_mm": [
+        28.00000086426735,
+        8.00000037997961,
+        97.25863672792912
+      ],
+      "wall_ray_samples": 1971,
+      "wall_min_mm": 0.04684681986216456,
+      "wall_p01_mm": 0.07558399298684672,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P12",
+      "object": "A3-src-gripper-tool-plate",
+      "source": "A2-gripper-tool-plate-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 3209,
+        "faces": 1675,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        3209
+      ],
+      "volume_mm3": 13908.904004515529,
+      "dimensions_mm": [
+        48.00000041723251,
+        52.000001072883606,
+        6.000000052154064
+      ],
+      "wall_ray_samples": 751,
+      "wall_min_mm": 2.4000002296477554,
+      "wall_p01_mm": 3.9782033992767336,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P13",
+      "object": "A3-src-hand-case-retainer",
+      "source": "A2-hand-case-retainer-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2082,
+        "faces": 1093,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2082
+      ],
+      "volume_mm3": 5156.36253655968,
+      "dimensions_mm": [
+        35.999998450279236,
+        39.000000804662704,
+        4.000000189989805
+      ],
+      "wall_ray_samples": 422,
+      "wall_min_mm": 0.07568747165603563,
+      "wall_p01_mm": 0.07568807556051761,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P14",
+      "object": "A3-src-hand-servo-cradle",
+      "source": "A2-hand-servo-cradle-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 4330,
+        "faces": 2404,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        4330
+      ],
+      "volume_mm3": 42295.753936191395,
+      "dimensions_mm": [
+        89.99999612569809,
+        66.99999794363976,
+        47.49999986961484
+      ],
+      "wall_ray_samples": 1179,
+      "wall_min_mm": 0.17531643894724547,
+      "wall_p01_mm": 0.8012613972485065,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P15",
+      "object": "A3-src-lower-U-body",
+      "source": "A2-lower-U-body-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 7632,
+        "faces": 4504,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        7632
+      ],
+      "volume_mm3": 41451.57397292113,
+      "dimensions_mm": [
+        52.500002551823854,
+        70.00000029802322,
+        108.0000065267086
+      ],
+      "wall_ray_samples": 3130,
+      "wall_min_mm": 0.21795427816212176,
+      "wall_p01_mm": 0.8683722109369933,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P16",
+      "object": "A3-src-moving-TPU-pad-40",
+      "source": "A2-moving-TPU-pad-40-task",
+      "kind": "TPU",
+      "tool_library": false,
+      "before": {
+        "verts": 96,
+        "faces": 98,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        96
+      ],
+      "volume_mm3": 299.70258065119583,
+      "dimensions_mm": [
+        4.000000189989805,
+        8.00000037997961,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 42,
+      "wall_min_mm": 4.000000072813035,
+      "wall_p01_mm": 4.000000072813035,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P17",
+      "object": "A3-src-moving-TPU-pad-56",
+      "source": "A2-moving-TPU-pad-56-task",
+      "kind": "TPU",
+      "tool_library": false,
+      "before": {
+        "verts": 96,
+        "faces": 98,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        96
+      ],
+      "volume_mm3": 299.70258065119583,
+      "dimensions_mm": [
+        4.000000189989805,
+        8.00000037997961,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 42,
+      "wall_min_mm": 4.000000072813035,
+      "wall_p01_mm": 4.000000072813035,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P18",
+      "object": "A3-src-moving-TPU-pad-72",
+      "source": "A2-moving-TPU-pad-72-task",
+      "kind": "TPU",
+      "tool_library": false,
+      "before": {
+        "verts": 96,
+        "faces": 98,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        96
+      ],
+      "volume_mm3": 299.70258065119583,
+      "dimensions_mm": [
+        4.000000189989805,
+        8.00000037997961,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 42,
+      "wall_min_mm": 4.000000072813035,
+      "wall_p01_mm": 4.000000072813035,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P19",
+      "object": "A3-src-moving-jaw",
+      "source": "A2-moving-jaw-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 4233,
+        "faces": 2469,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        4233
+      ],
+      "volume_mm3": 12569.296615129413,
+      "dimensions_mm": [
+        28.00000086426735,
+        8.00000037997961,
+        97.25865162909031
+      ],
+      "wall_ray_samples": 1969,
+      "wall_min_mm": 0.04684699084716849,
+      "wall_p01_mm": 0.07558399298684672,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P20",
+      "object": "A3-src-pen-clamp-12mm-adapter",
+      "source": "A2-pen-clamp-12mm-adapter",
+      "kind": "PETG",
+      "tool_library": true,
+      "before": {
+        "verts": 3463,
+        "faces": 1804,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        3463
+      ],
+      "volume_mm3": 13006.992160345766,
+      "dimensions_mm": [
+        48.00000041723251,
+        52.000001072883606,
+        6.000000052154064
+      ],
+      "wall_ray_samples": 874,
+      "wall_min_mm": 2.4000002296477554,
+      "wall_p01_mm": 2.6399287154734132,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P21",
+      "object": "A3-src-pen-split-collet",
+      "source": "A2-pen-split-collet",
+      "kind": "PETG",
+      "tool_library": true,
+      "before": {
+        "verts": 2190,
+        "faces": 1158,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2190
+      ],
+      "volume_mm3": 13200.758010973777,
+      "dimensions_mm": [
+        26.000000536441803,
+        26.000000536441803,
+        26.000000536441803
+      ],
+      "wall_ray_samples": 903,
+      "wall_min_mm": 0.4676404052250087,
+      "wall_p01_mm": 0.5532017086468637,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P22",
+      "object": "A3-src-roll-motor-cradle",
+      "source": "A2-roll-motor-cradle-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 128,
+        "faces": 116,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        128
+      ],
+      "volume_mm3": 6367.1690919561825,
+      "dimensions_mm": [
+        54.00000140070915,
+        35.999998450279236,
+        8.999999612569809
+      ],
+      "wall_ray_samples": 61,
+      "wall_min_mm": 3.7435983532875774,
+      "wall_p01_mm": 3.7435983532875774,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P23",
+      "object": "A3-src-shoulder-diamond-fascia",
+      "source": "A2-shoulder-diamond-fascia-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 166,
+        "faces": 146,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        166
+      ],
+      "volume_mm3": 3283.848070133381,
+      "dimensions_mm": [
+        2.4999999441206455,
+        56.0000017285347,
+        26.000000536441803
+      ],
+      "wall_ray_samples": 96,
+      "wall_min_mm": 2.3965594583958385,
+      "wall_p01_mm": 2.3965594583958385,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P24",
+      "object": "A3-src-shoulder-flush-bearing-cap--1",
+      "source": "A2-shoulder-flush-bearing-cap--1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2508,
+        "faces": 1268,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2508
+      ],
+      "volume_mm3": 7700.27086511031,
+      "dimensions_mm": [
+        57.999998331069946,
+        4.0000020526349545,
+        57.999998331069946
+      ],
+      "wall_ray_samples": 722,
+      "wall_min_mm": 0.6999962489888072,
+      "wall_p01_mm": 1.9983908852398393,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P25",
+      "object": "A3-src-shoulder-flush-bearing-cap-1",
+      "source": "A2-shoulder-flush-bearing-cap-1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2507,
+        "faces": 1268,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2507
+      ],
+      "volume_mm3": 7700.270864960883,
+      "dimensions_mm": [
+        57.999998331069946,
+        4.0000020526349545,
+        57.999998331069946
+      ],
+      "wall_ray_samples": 727,
+      "wall_min_mm": 0.6999971221037209,
+      "wall_p01_mm": 1.9983908852398393,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P26",
+      "object": "A3-src-shoulder-motor-mount--1",
+      "source": "A2-shoulder-motor-mount--1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2718,
+        "faces": 1412,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2718
+      ],
+      "volume_mm3": 8321.245314603017,
+      "dimensions_mm": [
+        5.499999970197678,
+        30.99999949336052,
+        52.99999937415123
+      ],
+      "wall_ray_samples": 621,
+      "wall_min_mm": 1.0513403678148985,
+      "wall_p01_mm": 1.0513404842302203,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P27",
+      "object": "A3-src-shoulder-motor-mount-1",
+      "source": "A2-shoulder-motor-mount-1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2718,
+        "faces": 1412,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2718
+      ],
+      "volume_mm3": 8321.24531451273,
+      "dimensions_mm": [
+        5.499999970197678,
+        30.99999949336052,
+        52.99999937415123
+      ],
+      "wall_ray_samples": 620,
+      "wall_min_mm": 1.0513403678148985,
+      "wall_p01_mm": 1.0513406006455421,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P28",
+      "object": "A3-src-tool-dock",
+      "source": "A2-tool-dock-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 4260,
+        "faces": 2211,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        4260
+      ],
+      "volume_mm3": 13306.626019940806,
+      "dimensions_mm": [
+        48.00000041723251,
+        52.000001072883606,
+        6.000000052154064
+      ],
+      "wall_ray_samples": 1070,
+      "wall_min_mm": 0.22084798471294342,
+      "wall_p01_mm": 0.4034962031826377,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P29",
+      "object": "A3-src-universal-blank-adapter",
+      "source": "A2-universal-blank-adapter",
+      "kind": "PETG",
+      "tool_library": true,
+      "before": {
+        "verts": 3693,
+        "faces": 1918,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        3693
+      ],
+      "volume_mm3": 13757.22448883752,
+      "dimensions_mm": [
+        48.00000041723251,
+        52.000001072883606,
+        6.000000052154064
+      ],
+      "wall_ray_samples": 1214,
+      "wall_min_mm": 2.4000002296477554,
+      "wall_p01_mm": 3.9494860676884653,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P30",
+      "object": "A3-src-upper-U-body",
+      "source": "A2-upper-U-body-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 7534,
+        "faces": 4450,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        7534
+      ],
+      "volume_mm3": 57422.37563304725,
+      "dimensions_mm": [
+        52.500002551823854,
+        70.00000029802322,
+        134.0000033378601
+      ],
+      "wall_ray_samples": 2993,
+      "wall_min_mm": 0.8543814175598323,
+      "wall_p01_mm": 0.868370464707166,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P31",
+      "object": "A3-src-wrist-case-retainer",
+      "source": "A2-wrist-case-retainer-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 3200,
+        "faces": 1658,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        3200
+      ],
+      "volume_mm3": 7408.328606842523,
+      "dimensions_mm": [
+        37.99999877810478,
+        41.999999433755875,
+        4.999999888241291
+      ],
+      "wall_ray_samples": 485,
+      "wall_min_mm": 0.20000115833934395,
+      "wall_p01_mm": 0.20186473481114953,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P32",
+      "object": "A3-src-wrist-cheek--1",
+      "source": "A2-wrist-cheek--1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2742,
+        "faces": 1553,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2742
+      ],
+      "volume_mm3": 6786.63502657829,
+      "dimensions_mm": [
+        32.00000151991844,
+        4.999999888241291,
+        53.761860355734825
+      ],
+      "wall_ray_samples": 927,
+      "wall_min_mm": 0.2530364137444645,
+      "wall_p01_mm": 0.2550484488554299,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P33",
+      "object": "A3-src-wrist-cheek-1",
+      "source": "A2-wrist-cheek-1-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 2735,
+        "faces": 1550,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        2735
+      ],
+      "volume_mm3": 6786.635026822815,
+      "dimensions_mm": [
+        32.00000151991844,
+        4.999999888241291,
+        53.761860355734825
+      ],
+      "wall_ray_samples": 926,
+      "wall_min_mm": 0.25354162713736295,
+      "wall_p01_mm": 0.25504847795926033,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P34",
+      "object": "A3-src-wrist-cross-bridge",
+      "source": "A2-wrist-cross-bridge-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 1035,
+        "faces": 842,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        1035
+      ],
+      "volume_mm3": 4665.552079048571,
+      "dimensions_mm": [
+        8.999999612569809,
+        64.00000303983688,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 92,
+      "wall_min_mm": 2.1690776331186292,
+      "wall_p01_mm": 2.1690776331186292,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P35",
+      "object": "A3-src-wrist-pitch-cassette",
+      "source": "A2-wrist-pitch-cassette-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 4132,
+        "faces": 2258,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        4132
+      ],
+      "volume_mm3": 35305.20105239999,
+      "dimensions_mm": [
+        53.79999987781048,
+        46.00000008940697,
+        70.00000402331352
+      ],
+      "wall_ray_samples": 1047,
+      "wall_min_mm": 0.24999806115627288,
+      "wall_p01_mm": 0.8012642494238913,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P36",
+      "object": "A3-src-wrist-vented-cover",
+      "source": "A2-wrist-vented-cover-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 206,
+        "faces": 199,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        206
+      ],
+      "volume_mm3": 3889.459029294941,
+      "dimensions_mm": [
+        3.000000026077032,
+        49.74956810474396,
+        30.946021899580956
+      ],
+      "wall_ray_samples": 61,
+      "wall_min_mm": 2.999999676069617,
+      "wall_p01_mm": 2.999999676069617,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P37",
+      "object": "A3-src-yaw-bearing-pedestal",
+      "source": "A2-yaw-bearing-pedestal-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 3937,
+        "faces": 2241,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        3937
+      ],
+      "volume_mm3": 107714.56556870458,
+      "dimensions_mm": [
+        75.99999755620956,
+        64.00000303983688,
+        32.999999821186066
+      ],
+      "wall_ray_samples": 992,
+      "wall_min_mm": 3.5206380991101263,
+      "wall_p01_mm": 3.529555745592713,
+      "status": "TOPOLOGY_PASS"
+    },
+    {
+      "id": "P38",
+      "object": "A3-src-yaw-rounded-skirt",
+      "source": "A2-yaw-rounded-skirt-task",
+      "kind": "PETG",
+      "tool_library": false,
+      "before": {
+        "verts": 192,
+        "faces": 144,
+        "bad_edges": 0
+      },
+      "bad_edges": 0,
+      "flipped_edges": 0,
+      "components": [
+        192
+      ],
+      "volume_mm3": 8637.424192459375,
+      "dimensions_mm": [
+        96.00000083446503,
+        93.99999678134918,
+        9.999999776482582
+      ],
+      "wall_ray_samples": 80,
+      "wall_min_mm": 1.202109036205709,
+      "wall_p01_mm": 1.202109036205709,
+      "status": "TOPOLOGY_PASS"
+    }
+  ],
+  "units": "mm",
+  "limitations": "Wall ray screen uses face centroids area >=0.3mm2 and opposing normals; not an exhaustive thickness or strength proof. Source untouched.",
+  "failed": []
+}

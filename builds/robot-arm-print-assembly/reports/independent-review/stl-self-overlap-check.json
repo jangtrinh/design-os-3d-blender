@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "files": 38,
+  "nonadjacent_overlap_pairs": 0,
+  "parts_with_nonadjacent_overlaps": [],
+  "scope": "Blender BVH triangle-overlap screen on actual binary STL triangles; pairs sharing a mesh vertex are treated as adjacent and excluded. This is not slicer repair or a physical strength check."
+}

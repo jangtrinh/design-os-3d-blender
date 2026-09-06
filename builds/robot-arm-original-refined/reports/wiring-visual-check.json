@@ -1,0 +1,15 @@
+{
+  "status": "PASS_VISUAL_LAYOUT",
+  "scene_sha256": "522afd6712129a2cf751de5a2dd9d517847619dc9783fd4732da79683487f361",
+  "image": "renders/wiring-rear-check.png",
+  "findings": [
+    "Six servo leads form a shared rear bundle with short branches",
+    "All leads originate at enclosed rear controller",
+    "No separate external supply or computer box",
+    "Controller enclosure closed after routing"
+  ],
+  "limits": [
+    "Rear view is a disposable visual check, not a changed movie camera",
+    "Physical cable clearance, strain relief, connector and electrical suitability remain unverified"
+  ]
+}

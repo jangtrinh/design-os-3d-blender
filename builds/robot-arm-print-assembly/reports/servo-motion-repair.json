@@ -1,0 +1,66 @@
+{
+  "status": "PASS_RIGID_SERVO_ARRIVAL",
+  "units": {
+    "yaw": [
+      "--1"
+    ],
+    "shoulder": [
+      "--1",
+      "-1"
+    ],
+    "elbow": [
+      "--1",
+      "-1"
+    ],
+    "roll": [
+      "--1",
+      "-1"
+    ],
+    "gripper": [
+      "--1",
+      "-1"
+    ]
+  },
+  "changed_frames": [
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    933,
+    934,
+    935,
+    938,
+    939,
+    942,
+    944,
+    1127,
+    1128,
+    1129,
+    1132,
+    1133,
+    1135
+  ],
+  "base_sha256": "c3861ff2a9768b22b43c2fccdfeb5716c0aeff1d316ca0f586bf0c9574c25071",
+  "candidate_sha256": "20e27bc6022251d1a07ff6cad86098f11aade295178e9e2af2adfc83b69495ba",
+  "scope": "Location curves only; visible state unchanged outside reported arrival frames. Hidden pre-arrival extrapolation changes too; no geometry or camera changes."
+}

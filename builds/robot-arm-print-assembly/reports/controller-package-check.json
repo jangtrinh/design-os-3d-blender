@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "parts": 38,
+  "plates": 5,
+  "checks": [
+    "Actual STL hash and byte length",
+    "Actual 3MF ZIP integrity, mm units, object coverage, material segregation and vertex bounds"
+  ],
+  "plate_sheet_visually_inspected": "renders/plates-final0001.png"
+}

@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "parts": 38,
+  "part_triangles": 183678,
+  "materials": {
+    "PETG": 32,
+    "TPU": 6
+  },
+  "plates": [
+    {
+      "plate": 1,
+      "material": "PETG",
+      "objects": 3,
+      "triangles": 29482,
+      "bounds_mm": [
+        [
+          7.0,
+          213.0
+        ],
+        [
+          7.0,
+          207.0
+        ],
+        [
+          0.0,
+          52.5
+        ]
+      ]
+    },
+    {
+      "plate": 2,
+      "material": "PETG",
+      "objects": 5,
+      "triangles": 33408,
+      "bounds_mm": [
+        [
+          7.0,
+          213.0
+        ],
+        [
+          7.0,
+          206.8000030517578
+        ],
+        [
+          0.0,
+          52.5
+        ]
+      ]
+    },
+    {
+      "plate": 3,
+      "material": "PETG",
+      "objects": 10,
+      "triangles": 58258,
+      "bounds_mm": [
+        [
+          7.0,
+          211.0
+        ],
+        [
+          7.0,
+          210.25865173339844
+        ],
+        [
+          0.0,
+          8.000003814697266
+        ]
+      ]
+    },
+    {
+      "plate": 4,
+      "material": "PETG",
+      "objects": 14,
+      "triangles": 61402,
+      "bounds_mm": [
+        [
+          7.0,
+          207.74957275390625
+        ],
+        [
+          7.0,
+          213.0
+        ],
+        [
+          0.0,
+          26.0
+        ]
+      ]
+    },
+    {
+      "plate": 5,
+      "material": "TPU",
+      "objects": 6,
+      "triangles": 1128,
+      "bounds_mm": [
+        [
+          7.0,
+          107.0
+        ],
+        [
+          7.0,
+          15.0
+        ],
+        [
+          0.0,
+          4.000000476837158
+        ]
+      ]
+    }
+  ],
+  "source_counts": {
+    "print": 38,
+    "machined-metal": 14,
+    "actuator": 6,
+    "actuator-visual": 4,
+    "purchased-adapter": 8,
+    "bearing": 5,
+    "electronics-envelope": 2,
+    "hardware": 328
+  },
+  "frozen_sha256": "75b716e552eb1905d725d80c2d36c46fd7916f64d81ce1b78e57bd68f2b9f9bc"
+}

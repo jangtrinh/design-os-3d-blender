@@ -1,0 +1,2085 @@
+{
+  "version": 1,
+  "examples": [
+    "builds/robot-arm-v2-engineered/README.md",
+    "builds/robot-arm-v2-engineered/TASK-DEMO.md",
+    "builds/robot-arm-v2-engineered/FLEXIBILITY.md",
+    "builds/robot-arm-v2-engineered/build-flexibility.py",
+    "builds/robot-arm-v2-engineered/create-task-scene.py",
+    "builds/robot-arm-v2-engineered/task-motion-plan.py",
+    "builds/robot-arm-v2-engineered/flexibility-motion-plan.py",
+    "builds/robot-arm-v2-engineered/flexibility-contact-lib.py",
+    "builds/robot-arm-v2-engineered/check-task-path.py",
+    "builds/robot-arm-v2-engineered/verify-task-presentation.py",
+    "builds/robot-arm-v2-engineered/verify-task-video.py",
+    "builds/robot-arm-v2-engineered/render-task-demo.py",
+    "builds/robot-arm-v2-engineered/export-prototype-parts.py",
+    "builds/robot-arm-v2-engineered/check-stl-files.py",
+    "builds/robot-arm-v2-engineered/check-operating-envelope.py",
+    "builds/robot-arm-v2-engineered/final-delivery-audit.py",
+    "builds/fpv-drone-native/build-native-drone.py",
+    "builds/fpv-drone-native/drone-mesh-library.py"
+  ],
+  "portable": [
+    ".agents/skills/img2threejs/grimoire/intake/image_analysis.md",
+    ".agents/skills/img2threejs/grimoire/intake/surface_topology.md",
+    ".agents/skills/img2threejs/grimoire/intake/detail_inventory.md",
+    ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md",
+    ".agents/skills/img2threejs/grimoire/feedback/shading_realism.md",
+    ".agents/skills/img2threejs/grimoire/review/self_correction.md"
+  ],
+  "foundations": [
+    "knowledge/00-foundations/blender-version-matrix.md",
+    "knowledge/00-foundations/bpy-scripting-core.md",
+    "knowledge/00-foundations/agent-workflow-loop.md"
+  ],
+  "annotations": {
+    "scripts/headless-run.sh": {
+      "reviewed_sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+      "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py)",
+      "runtime": "shell → Blender",
+      "effects": "Runs payload through scripts/agent-run-headless.py → agent_runtime.run_file in a fresh --factory-startup process; writes whatever the payload writes.",
+      "caution": "Exit 0/1/2/3 derived from the last-line AGENT_OK/AGENT_FAIL sentinel; HEADLESS_RAW=1 bypasses the runtime and falls back to Blender's unreliable exit. Not a sandbox."
+    },
+    "scripts/blender-socket-client.py": {
+      "reviewed_sha256": "a3e6658a996c04746a79785199c89237058423c342078e36155e6478b961b1ee",
+      "basis": "Fixed and tested against a fake addon server 2026-09-06 (tests/execution/test_socket_client.py); real addon not exercised by tests",
+      "runtime": "Python + live addon TCP9876",
+      "effects": "May mutate live scene; partial execution possible on timeout.",
+      "caution": "EOF/error-status/truncation fixed; exit 0/1/2/3 by sentinel. Timeout after send = unknown outcome; do not retry mutation blindly."
+    },
+    "scripts/agent-verify-lib.py": {
+      "reviewed_sha256": "00ce1ce41cf9b73f96f866a7aceb10ccc0f5c3cd8875f87ec87c3dcdb1533323",
+      "basis": "Rewritten as facade over scripts/agent_verify/ and tested 2026-09-06 (tests/execution/test_verify_lib.py)",
+      "runtime": "bpy",
+      "effects": "Read-only helpers; preview_render restores every touched setting in finally; verify_export runs in a disposable subprocess; scaffold writes only factory-default settings unless force=True.",
+      "caution": "Numeric helpers return data — the caller defines the failing predicate. checkpoint() writes under AGENT_CHECKPOINT_DIR or <repo>/output/checkpoints."
+    },
+    "scripts/turntable-preview.py": {
+      "reviewed_sha256": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
+      "basis": "static scout; not runtime certification | re-read 2026-09-06: output default now derived from repo root (AGENT_REPO_ROOT / script location), no hardcoded user path",
+      "runtime": "bpy render",
+      "effects": "Adds camera/pivot/light, changes settings, includes all visible meshes, writes frames.",
+      "caution": "Scene-specific framing/GPU assumption; no restoration."
+    },
+    "scripts/make-comparison-sheet.sh": {
+      "reviewed_sha256": "e724f6b38d4a65deae9484cf67846d23dac81a09140c2c0baa3f78bed658e80c",
+      "basis": "static scout; not runtime certification | re-read 2026-09-06: output default now derived from repo root (AGENT_REPO_ROOT / script location), no hardcoded user path",
+      "runtime": "shell + ImageMagick",
+      "effects": "Writes sheet; temporary files only.",
+      "caution": "Side-by-side composition, no camera alignment/fidelity measurement."
+    },
+    "scripts/compute-mesh-inertia.py": {
+      "reviewed_sha256": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Evaluates and triangulates mesh for integration; inspect source before use.",
+      "caution": "Local coordinates: ignores object scale and scene scale_length; identity-cube test only."
+    },
+    "scripts/verify-3dprint-tolerances.py": {
+      "reviewed_sha256": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Reads geometry for diagnostic output.",
+      "caution": "Overhang+bbox only; no local wall/clearance; --test success string has no numeric assertions."
+    },
+    "scripts/prepare-qremeshify-input.py": {
+      "reviewed_sha256": "80ef45db24f36c2c86d70109308c9a0b394829e9a54e92be125a4562252326c7",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Applies/repairs/decimates selected scaffold, saves candidate.",
+      "caution": "Selected-local scaffold only; preflight manifold/budget; destructive on working data."
+    },
+    "scripts/run-qremeshify.py": {
+      "reviewed_sha256": "ebaa502081eab5448e3d7897991d6ca254727c7a33bfc0587cc5fceca6da10bb",
+      "basis": "static scout; not runtime certification",
+      "runtime": "Python + native binary + Blender",
+      "effects": "Launches offline solver, writes candidate/log.",
+      "caution": "Pinned hashes/quarantine/timeout required; no approval to remove quarantine or retrieve assets."
+    },
+    "scripts/qremeshify-headless-adapter.py": {
+      "reviewed_sha256": "0f52f3c4128ac38cad74d94e99a3273833c9e2215b86a7599cf5a69970f09454",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy + native library",
+      "effects": "Mutates mesh and saves candidate.",
+      "caution": "Use reviewed wrapper only; prerequisite manifold/budget not fully enforced by adapter."
+    },
+    "scripts/render-qremeshify-candidate.py": {
+      "reviewed_sha256": "4dba52ccc917dfb494193d1c91a22d9501869bf74c6ea76f75e3b770baefa923",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy render",
+      "effects": "Changes camera/settings; writes render.",
+      "caution": "Drone-specific names/views; inspect/adapt, not generic renderer."
+    },
+    "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": {
+      "reviewed_sha256": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently."
+    },
+    "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md": {
+      "reviewed_sha256": "eab55760bfe566860b330463a65a8802b1dd569354d05e85ce96e5af3febd69d",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Static audit: bottom semicircle spans90deg; chamfer example creates cylinder; wall test is bbox. Verify actual geometry before reuse."
+    },
+    "knowledge/70-cad-precision-robotics/gears-transmission-modeling.md": {
+      "reviewed_sha256": "1975a92284d94b2b84cf09707c7594935f3bde34bf448b6624efb37a415dbe86",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Static audit: root radius and tolerance arguments unused; root fillets not constructed."
+    },
+    "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": {
+      "reviewed_sha256": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Source has conflicting PETG crystallinity labels and absolute carbon-fiber warping claim; bibliography is not verification."
+    },
+    "builds/robot-arm-v2-engineered/README.md": {
+      "reviewed_sha256": "688807bea2dab4327d6d8303c2bda155275a4fc552a5cf9caf3cc95dd4063a9e",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/TASK-DEMO.md": {
+      "reviewed_sha256": "ff899344b7209c43eff3a9aca0237bf196f70f42d00188c0f99bc805163f6f57",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/FLEXIBILITY.md": {
+      "reviewed_sha256": "cd3bcb82104e34356fe24f004fb6e978bcd67531eb11e5dc70ef099fafd57fca",
+      "basis": "static scout; not runtime certification",
+      "runtime": "documentation",
+      "effects": "Read only; linked commands may mutate asset-specific outputs.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/build-flexibility.py": {
+      "reviewed_sha256": "955c5cdb8b5ebed9bc489c5d5bd135c11062560809efd5dfdecfa0a466db5321",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/create-task-scene.py": {
+      "reviewed_sha256": "dafc2b739207d15ab07c96397336c1e5e05c2cbc19d6fc6b9fe9297748201eb9",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Copies objects with shared mesh data; edits animation/scene.",
+      "caution": "Copy data before geometry edits; preserve original source."
+    },
+    "builds/robot-arm-v2-engineered/task-motion-plan.py": {
+      "reviewed_sha256": "cb5d73ce205bb03494e9ee3826f30761bc7eacce47aa460ed30fff71ef2eb3f8",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/flexibility-motion-plan.py": {
+      "reviewed_sha256": "fffc234679d775834caaa7dfbcecec04ecdb5e200d73b9241b491fca340a7c1e",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/flexibility-contact-lib.py": {
+      "reviewed_sha256": "c5cba8171e56e64b356b9b5a0784faf9ed065d48b0bc7af32f268b14421e5109",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Caches raw rigid mesh triangles for sampled contact screen.",
+      "caution": "Not continuous collision, deformed/evaluated surface or solid-containment proof."
+    },
+    "builds/robot-arm-v2-engineered/check-task-path.py": {
+      "reviewed_sha256": "19fe4b68e5f9af247750f4ac34d56c38e48fb37435d9d87f076ca4aa72ceb307",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Writes report.",
+      "caution": "May print AGENT_OK with REQUIRES_REFINEMENT; inspect result and propagate failure explicitly."
+    },
+    "builds/robot-arm-v2-engineered/verify-task-presentation.py": {
+      "reviewed_sha256": "1c9c695ed767859f7cfcaa3ecbc2c39245aee9283448b4687e1f4adbf9509e2f",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/verify-task-video.py": {
+      "reviewed_sha256": "ec3a1e21e2da5722adee002434f97bbd9fd9dfb4603630deb195bf3246007fe1",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/render-task-demo.py": {
+      "reviewed_sha256": "f2ba75ccb8c1defb8171ba6236e7a76eb7e453618f1c88e9bdafddf6a5342224",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/export-prototype-parts.py": {
+      "reviewed_sha256": "968c8015e61a1c067e87548e2deca56b620ded9051c475e73af6bf9620d016fd",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Repairs original meshes and exports mm STLs to fixed paths.",
+      "caution": "Fit-prototype only; older exported geometry differs from later clearance refinements."
+    },
+    "builds/robot-arm-v2-engineered/check-stl-files.py": {
+      "reviewed_sha256": "3961aff19365196dcfabf981a99bfb50492f742a56a37afde435ffedf0c61101",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/check-operating-envelope.py": {
+      "reviewed_sha256": "3793c3e52132eab343590fda664d322329c84e64ffc96fe8ddb51f4235afbd18",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/robot-arm-v2-engineered/final-delivery-audit.py": {
+      "reviewed_sha256": "742c2ea53f8dd0e0b5631a86513d7a94cd7ef09ab10f9a77ea0d4c2024ac4b32",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "builds/fpv-drone-native/build-native-drone.py": {
+      "reviewed_sha256": "db4adea049b37d50001c8becf3ddca136f4c88ab1d1a8e17ccb8eaa193be0ccf",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy",
+      "effects": "Clears all objects/collections and overwrites fixed blend.",
+      "caution": "Example only; never run in user scene without separate candidate adaptation."
+    },
+    "builds/fpv-drone-native/drone-mesh-library.py": {
+      "reviewed_sha256": "c95ff9d8c2ddcdae1af09f4ee7b38e61fcb01cb6ab28c51446ebfe30a2102516",
+      "basis": "static scout; not runtime certification",
+      "runtime": "bpy or asset-specific Python; inspect entrypoint",
+      "effects": "May overwrite fixed build/report/output paths; adapt in isolated candidate.",
+      "caution": "Historical asset contract only; not reusable unchanged or proof of manufacturing readiness."
+    },
+    "knowledge/50-procedural/geometry-nodes.md": {
+      "reviewed_sha256": "4e4dc95e1d559e39c4446d62b3a2b9ea6abbd85e35e461b25b15a2abf6c981a6",
+      "basis": "static forward test and controller source inspection, lines582–586 | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "runtime": "knowledge snippet",
+      "effects": "Read and adapt checklist predicates before execution.",
+      "caution": "Vertex-count growth does not verify pure instancing, and fixed-topology simulation need not change vertex count. Check instance counts/transforms or expected simulation state; require topology growth only if the task specifies it."
+    },
+    "research/blender-advanced-materials-shading/01-OPENPBR-PRINCIPLED-BSDF-SURFACE.md": {
+      "reviewed_sha256": "7d05fab6bb6ed95d4201618835091fbbc0522dab79320c7ae0b0d78e4332fc46",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Fac/Factor migration conflicts with sibling snippets; Principled/OpenPBR equivalence is unverified. Introspect sockets; avoid deprecated use_nodes."
+    },
+    "research/blender-advanced-materials-shading/02-SUBSURFACE-SCATTERING-RANDOM-WALK.md": {
+      "reviewed_sha256": "5c5a282cf39829e75795c0cea0b1e82b090dd87539b5e2d6e02b0aabc74d269f",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Absolute fidelity, dual-layer model and hardcoded Random Walk enum are unverified; radius ratios and dimensional scale need distinction."
+    },
+    "research/blender-advanced-materials-shading/03-THIN-FILM-INTERFERENCE-IRIDESCENCE.md": {
+      "reviewed_sha256": "c3d776a5e078722e4ffabe65a173f91fe0378e633becd5f2129a64f77814b07f",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Example connects Generated gradient to Coat Tint; it has no thickness/view-angle interference model. Spatial tint is not thin-film evidence."
+    },
+    "research/blender-advanced-materials-shading/04-PROCEDURAL-MICRO-SURFACE-IMPERFECTIONS.md": {
+      "reviewed_sha256": "e41d624f3506ba398bab369df5770050e4e52f0d708e860966a08a685b27fc2a",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Snippet uses 3D Object Noise rather than the described triplanar blending. Bump unit/presets are not calibrated physical thickness."
+    },
+    "research/blender-advanced-materials-shading/05-PHYSICAL-HAIR-FABRIC-SHADING.md": {
+      "reviewed_sha256": "83846c13bd7c1938d3616f0eb7c4a27bd86e7da6808402b8f589f5a9a31f9c7a",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "TRT bounce descriptions conflict; anisotropy/tangent node and shader enum claims need runtime inspection."
+    },
+    "research/blender-rendering-deep-dive/01-PATH-TRACING-CYCLES-ARCHITECTURE.md": {
+      "reviewed_sha256": "1ca697b7e8199900a9c8b6d070d63efa52b249878bfdc8f240038ddceb03c4de",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "GPU-only preset is not measured device selection; backend is not enabled by device assignment alone. Bounce/clamping no-bias and95% claims unverified."
+    },
+    "research/blender-rendering-deep-dive/02-EEVEE-NEXT-REALTIME-RENDER-PIPELINE.md": {
+      "reviewed_sha256": "44c0b09d2b7ecb81e4f72f83e9409234007ef6e884d504a444b7285ee1f2896b",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Legacy engine identifier and universal Metal mandate conflict with current project runtime-introspection and measured CPU/Metal policy."
+    },
+    "research/blender-rendering-deep-dive/03-VOLUMETRIC-SCATTERING-ATMOSPHERICS.md": {
+      "reviewed_sha256": "3398c162a9916827d9f8cecf08f61be50dde18b4079a93242e14a05684d008ca",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Universal zero-banding/integrator claim is not proven by stepping snippet; fixed100-unit cube/density is not scene-scale calibration."
+    },
+    "research/blender-rendering-deep-dive/04-COLOR-MANAGEMENT-AGX-ACES.md": {
+      "reviewed_sha256": "92ad6a1fe1eb4909477b6b9a90821f2aaba9f29b4718a0b40c453b846ea0a7b0",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Hardcoded color/look/sequencer values omit an actual EXR output-space contract; sRGB and Rec709 transfer assumptions need qualification."
+    },
+    "research/blender-rendering-deep-dive/05-DENOISING-OIDN-OPTIX-TEMPORAL.md": {
+      "reviewed_sha256": "bfbe6228752fb87ad29ed1e75868cf2d3d5e63ceee83b1287b64703bc7a51da3",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Snippet clears legacy scene compositor, assumes ViewLayer and pass sockets; conflicts with current KB. No real EXR setup or disocclusion rejection in shown blend."
+    },
+    "research/blender-rigging-skeleton-skinning/01-ARMATURE-MATRICES-BONE-TRANSFORMS.md": {
+      "reviewed_sha256": "2ac1d81d4f2ed9f922406bd4baa6f63975a3f7e413b1ddf56b3801c1c43e93a0",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Roll helper lacks zero-length/parallel guards; simplified hierarchy product is not a general evaluated constraint/inheritance transform."
+    },
+    "research/blender-rigging-skeleton-skinning/02-INVERSE-KINEMATICS-SOLVERS-MATHEMATICS.md": {
+      "reviewed_sha256": "ac3e18104c8ded749a2c9da37fd01194f743fc716edf449360ad016e7368fe29",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Claimed exact pole calibration does not read rest-axis/roll and lacks straight/coincident guards; example uses a fixed pole angle."
+    },
+    "research/blender-rigging-skeleton-skinning/03-DUAL-QUATERNION-SKINNING-LBS.md": {
+      "reviewed_sha256": "fb2d01f4293bbf3c383009522ac757fee1fb43a50e3a3d6105ba93a6a58b381c",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Unconditional volume-preservation claims conflict with bulging discussion. DQ property and weight normalization behavior need runtime/group-role checks."
+    },
+    "research/blender-rigging-skeleton-skinning/04-PROCEDURAL-MECHANICAL-CHARACTER-RIGGING.md": {
+      "reviewed_sha256": "3abab897422d4863c1459564e05c7045e58bd4465609e13c4be8ac51da6e8dad",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Mutually constrained piston targets risk a dependency cycle; driver expression is not contact/load proof and spaces/axes need explicit validation."
+    },
+    "research/blender-rigging-skeleton-skinning/05-RIGIFY-MODULAR-RIGGING-PIPELINE.md": {
+      "reviewed_sha256": "41d49fef80d6ca98fd3dabc48e3b3b373edc4190be16d1815c98c36b271ac796",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "WGT taxonomy and ORG-hand matrix_world statement are unverified/inconsistent with pose-space guidance; preexisting rig name can be mistaken for output."
+    },
+    "research/blender-geometry-nodes-procedural/01-FIELDS-ARCHITECTURE-EVALUATION-MODEL.md": {
+      "reviewed_sha256": "e067dbda62c98c67b8de34cb27377d9106a61e166d5c788fbd29f8566ce2dc99",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Snippet clears node interface. Universal zero-memory/interpolation/persistence claims exceed evidence; test consumer domain and data type."
+    },
+    "research/blender-geometry-nodes-procedural/02-PROCEDURAL-HARD-SURFACE-CAD-MODELING.md": {
+      "reviewed_sha256": "1fa9d830e42ba72055c9affa9ff59b3acf2537d9d1721681d7e6e61af9d552f3",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Pipe snippet lacks interior bore; Boolean index-remap/solver and unconditional robustness claims need runtime inspection."
+    },
+    "research/blender-geometry-nodes-procedural/03-SIMULATION-ZONES-PHYSICS-SOLVERS.md": {
+      "reviewed_sha256": "8959b378ecad521c39fe3fd915c6b65a655d04c84830314a61adad76136a07c0",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Indefinite stability/fixed substep/cache guarantees unproven; boids formulas lack empty-neighborhood/coincident guards."
+    },
+    "research/blender-geometry-nodes-procedural/04-REPEAT-ZONES-FRACTALS-RECURSION.md": {
+      "reviewed_sha256": "ac7657d383102eec3294e8bc24af5d101ffdd7bf867e18c08c38c073e2a7adf1",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "0.707 is mislabeled golden-ratio decay; fixed iteration/resource claims unverified. Position smoothing does not guarantee equilateral quads."
+    },
+    "research/blender-geometry-nodes-procedural/05-VOLUME-GRIDS-SDF-BOOLEANS.md": {
+      "reviewed_sha256": "420beb9331f727a560f9e3fcab806dfc7d08e47c37405017e37db4879dd4d233",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Named smooth subtraction has no smoothing parameter; guaranteed manifold/print-ready/half-wall preservation is not established."
+    },
+    "research/advanced-tribology-contact-mechanics/01-HERTZIAN-CONTACT-STRESS.md": {
+      "reviewed_sha256": "345be386539b7a407d38d5759f2cf363530b59ac69f86d5f69b837baebafc0c2",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Source mixes subsurface depth values across line/point contact; resolve regime and equations before calculation."
+    },
+    "research/advanced-tribology-contact-mechanics/02-TRIBOLOGY-LUBRICATION-STRIBECK.md": {
+      "reviewed_sha256": "38b7690b920d9c43be0c88082e2b77fcd8a515424044318a14f7e4c59a460496",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Quantity called dimensionless reduces to length with declared units; zero-wear and360deg purge prescriptions are not general rules."
+    },
+    "research/advanced-tribology-contact-mechanics/03-CYCLOIDAL-SPEED-REDUCERS-MATHEMATICS.md": {
+      "reviewed_sha256": "ccbc9d27cd6404d81249e90b47d522b9180bc8f57c79642b814d4a94b19e481d",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Cusping/undercut criterion and universal coefficient range lack derivation; K1<1 alone is not manufacturability proof."
+    },
+    "research/advanced-tribology-contact-mechanics/04-ACTUATOR-INERTIA-MATCHING-THERMAL.md": {
+      "reviewed_sha256": "8cfcba1b7133177b918f05c264e91ba79aeef71b7a43c32919b384d96a76b5da",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Optimal ratio equation needs dimensional review; stated Cth*Rth gives25–300seconds, not5–15minutes. Pulse/peak-current envelope unvalidated."
+    },
+    "research/advanced-tribology-contact-mechanics/05-TOPOLOGY-OPTIMIZATION-LATTICES.md": {
+      "reviewed_sha256": "e83faf7df5baa6639cdefeeb8484d463241f31e9bd2355f3134eb2a199a6f930",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "generate_gyroid_mesh only builds arrays/prints density; creates no Blender geometry or SIMP optimization. Field threshold is not physical wall thickness."
+    },
+    "research/polymer-additive-manufacturing-advanced/01-POLYMER-EXTRUSION-RHEOLOGY-HOTENDS.md": {
+      "reviewed_sha256": "1be0673cd2e35dae58d243c1c2ef0a5ae84cebcd2367ed1d2d3896cb3a4ab13e",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Pressure-advance example mixes displacement with seconds*acceleration; resolve quantity/units before control or firmware use."
+    },
+    "research/polymer-additive-manufacturing-advanced/02-CONTINUOUS-FIBER-COMPOSITES-CFRTP.md": {
+      "reviewed_sha256": "6e4260f9be456a71959911ba1af3882f1c6b5868dca4edcb819050fd71ed2667",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Quasi-isotropic in-plane layup does not justify zero directional weakness/warping claims for arbitrary through-thickness print behavior."
+    },
+    "research/polymer-additive-manufacturing-advanced/03-NON-PLANAR-SLICING-STRESS-ALIGNMENT.md": {
+      "reviewed_sha256": "ad6b19112a6f25f67bd8c129a58cbf5571f1dfdaa42c5435dac64aa8e5aadeb7",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Streamline loop never advances current_vert, repeatedly appending the same next point; no field read, reprojection or collision solver."
+    },
+    "research/polymer-additive-manufacturing-advanced/04-POLYMER-TRIBOLOGY-GEARS-BUSHINGS.md": {
+      "reviewed_sha256": "e39d9245c95345dc96524d23523f7df90f4ea7b4e14852bb4030f5191a7589ca",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "PV/process tables and resistance units require source data; flash-temperature expression contains undefined Wbt."
+    },
+    "research/polymer-additive-manufacturing-advanced/05-LARGE-FORMAT-LSAM-PELLET-PRINTING.md": {
+      "reviewed_sha256": "8458936f98c3796d58ae45cf9eab428952c532a197d069b085f9f7a0d059d0b5",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "No usable tmax calibration; total strain energy compared to fracture toughness without crack geometry/area; stock allowances unqualified."
+    },
+    "research/mechanical-engineering-foundations/03-MATERIALS-METALLURGY-HEAT-TREATMENT.md": {
+      "reviewed_sha256": "73724dbe3b68749c29462f8093f84a183dc5fc8df897ecdbff16cc2a8a648f13",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Grade/process dependence incomplete; zero-distortion/uniform-thickness/zero-dimension-change statements are not unconditional process guarantees."
+    },
+    "research/mechanical-engineering-foundations/04-FLUID-POWER-SEALS-O-RINGS.md": {
+      "reviewed_sha256": "34d279fbc34d937346a4ed6f509aba7e267c80e69094eba6dfa42a26a058f175",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Fraction/percent notation changes; verify selected gland, seal, fluid, temperature and tolerance against actual drawing."
+    },
+    "research/robotics-precision-cad/04-CAD-VS-POLY-BLENDER-BRIDGE.md": {
+      "reviewed_sha256": "c2aec3777fa475e9d3e285c4b18bcc86ca918f3bf78dcc03f1ea19fa8860fe49",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Radial sagitta is not directly a diameter/H7 budget; STEP does not by itself supply GD&T. No CAD addon activation follows."
+    },
+    "research/robotics-precision-cad/07-COMPLIANT-MECHANISMS-FLEXURES.md": {
+      "reviewed_sha256": "6bb4eb0ab90270fc7a5d4b2c47691bd6d2e0a1abad02ad7890e2d9b3f90c2f27",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Stiffness expression has suspect units; zero/infinite-life claims need material/duty evidence, not animation."
+    },
+    "research/robotics-precision-cad/09-CABLE-TENDON-TRANSMISSIONS.md": {
+      "reviewed_sha256": "3ce580cbbf877b2e96963a83e8d63cbb30cfe11eada9050d8f8d9b63ccdba0ec",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "research synthesis",
+      "effects": "Read only; snippets require candidate adaptation.",
+      "caution": "Zero backlash/creep and universal pulley ratios unverified; actual cable, pretension, bend life and termination matter."
+    },
+    "scripts/generate-procedural-rig.py": {
+      "reviewed_sha256": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "bpy; AST parsed only",
+      "effects": "Scene-destructive generator; inspect/adapt into isolated candidate, never execute merely from routing.",
+      "caution": "Callable builder deletes all bpy.data objects. Fixed pole angle; no claimed exact calibration, pose sweep, mesh/limits/load/visual validation."
+    },
+    "scripts/generate-procedural-geonodes.py": {
+      "reviewed_sha256": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "bpy; AST parsed only",
+      "effects": "Scene-destructive generator; inspect/adapt into isolated candidate, never execute merely from routing.",
+      "caution": "main deletes all objects. Graph omits advertised four mounting holes/stress_zone; fixed cutter/boss do not cover input range. Attribute existence alone is not validation."
+    },
+    "scripts/generate-cycloid-drive.py": {
+      "reviewed_sha256": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
+      "basis": "Static scout report; routing review only, no runtime or physical certification.",
+      "runtime": "bpy; AST parsed only",
+      "effects": "Scene-destructive generator; inspect/adapt into isolated candidate, never execute merely from routing.",
+      "caution": "main deletes all objects; fixed profile sampling, incomplete drive/housing and no ratio/contact/manifold checks. Raw count/success text is not acceptance."
+    },
+    "knowledge/00-foundations/python-agent-boilerplates.md": {
+      "reviewed_sha256": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
+      "basis": "Controller re-read expanded registry; static module audits linked in catalog. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "runtime": "Documentation with bpy snippets",
+      "effects": "Examples can clear all objects, replace node groups, bake modifiers and change mesh data.",
+      "caution": "Registry claims verified, operator-free and standards-compliant behavior not established by actual modules. Static audits found missing bearing bores, sag, gear root/helical features, X-joint limits and physical thin-film optics; examples often test counts only. Bibliography is not certification; read module-specific cautions."
+    },
+    "scripts/boilerplates/bp_core.py": {
+      "reviewed_sha256": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "clean_scene deletes global objects; mode errors swallowed; named data removal can affect other users. Evaluated mesh cleanup handle is lost; substring socket resolution is ambiguous."
+    },
+    "scripts/boilerplates/bp_bmesh_cad.py": {
+      "reviewed_sha256": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "Named global data deletion and modifier baking replace mesh/clear stack. Manifold flags do not prove winding, self-intersection, dimensions or clearance."
+    },
+    "scripts/boilerplates/bp_geonodes.py": {
+      "reviewed_sha256": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "Named node group deletion is global. Missing node group returns silently; input fallback unverified. Self-test checks nonempty geometry, not parameter behavior."
+    },
+    "scripts/boilerplates/bp_rigging.py": {
+      "reviewed_sha256": "6978e0ef90b15f73881915785706c2e9f2a7fcd07c4c5974037a8f25efc46090",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "calculate_deterministic_roll always returns 0.0. Operator context is not restored, missing parents ignored, control bones remain deforming. No IK calibration."
+    },
+    "scripts/boilerplates/bp_animation.py": {
+      "reviewed_sha256": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "Indexed assignment is not general RNA array/path handling. Matching curves across all action slots/preexisting keys may be edited. Turntable has no Cycles loop; driver setup clears state."
+    },
+    "scripts/boilerplates/bp_materials_pbr.py": {
+      "reviewed_sha256": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "Named material deletion affects global data; missing sockets silently ignored; data.materials assignment can affect shared mesh users. No actual rendered self-test."
+    },
+    "scripts/boilerplates/bp_render_camera.py": {
+      "reviewed_sha256": "a0462c9844057b058c04e855b47d26c21be2513adb242a74288e9b9ae20e90e2",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "GPU backend chosen by enumerating get_devices_for_type per backend (returns METAL on this Mac); never gates on the empty compute_device_type enum. Changes backend preferences and deletes named camera/lights in its self-test."
+    },
+    "scripts/boilerplates/bp_physics.py": {
+      "reviewed_sha256": "310830e00597192f942742ea24a580ba26f1a04e65bf75c8a632fc523201ccea",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "World setup uses operators; linking a collection is assumed to create rigid_body immediately. Cache frame stepping lacks clear/bake/context restoration; isolate and verify actual world membership."
+    },
+    "scripts/boilerplates/bp_cad_robotics.py": {
+      "reviewed_sha256": "f4cefba47a6540da6fd19de46eb9cee9998c3065d9f974a2dcde69498435b566",
+      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "runtime": "bpy; inspect/adapt only",
+      "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
+      "caution": "Advertised inertia tensor is not computed/returned. Mass uses local evaluated coordinates without object/scene scale or validity guards. Counterbore concatenates capped cylinders, not a boolean union. Hull ignores modifiers."
+    },
+    "scripts/boilerplates/run_all_boilerplate_tests.py": {
+      "reviewed_sha256": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
+      "basis": "Controller rerun 2026-09-06: 30/30 PASS, liar module FAIL, handled-operator-error PASS",
+      "runtime": "Python orchestrates subprocesses on import",
+      "effects": "Spawns one --factory-startup Blender per module; writes nothing outside scratch.",
+      "caution": "PASS = last-line AGENT_OK from the sentinel shim, not a magic string. --list prints the generated registry. A module PASS proves it runs and asserts its own postconditions, not standards-correct constants."
+    },
+    "scripts/boilerplates/pipeline_render/bp_export_pipeline.py": {
+      "reviewed_sha256": "f2499c0298d379263e2e8f2078d06ddbbfa6ca326a19e756c4b97290c0ce2ae1",
+      "basis": "Controller full static read; no Blender execution.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Mutates camera/constraints/scene or exports files; requires explicit object and path ownership.",
+      "caution": "Export operator FINISHED and file existence do not prove watertightness, units, contents or round-trip fidelity. Uses current selection/context and unvalidated output paths; self-test writes/deletes fixed /tmp filenames. Source citations are not export validation."
+    },
+    "scripts/boilerplates/pipeline_render/bp_cam_autoframing.py": {
+      "reviewed_sha256": "78234a210fb236dcd25a08b9cd2faddca9c1976fd9f6cdb4deb200f13d2ce780",
+      "basis": "Controller full static read; no Blender execution.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Mutates camera/constraints/scene or exports files; requires explicit object and path ownership.",
+      "caution": "Only horizontal FOV/sensor_width considered; ignores render aspect, sensor fit, shift, clipping and orthographic cameras. Original bound_box may omit evaluated deformation. Reuses TRACK_TO and named target, assumes world values equal local location. Distance >2 test does not prove framing."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_ball_bearing.py": {
+      "reviewed_sha256": "8383db28f846246672060a6ea553a3314bc9525d7115b2cdabb08cb203b99b4d",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Inner/outer rings are overlapping solid cylinders; bores/raceways absent; demo checks ball face count only."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_fasteners_iso.py": {
+      "reviewed_sha256": "ad3513d1e7e4d031db513de349827e8e4a78bc8233b4ec3d7f59ec851adb6613",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Only nut/washer exist; nut bore is hexagonal and unthreaded; unknown size silently becomes M6; face-count checks only."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_flexures.py": {
+      "reviewed_sha256": "362939358115d1d70e38c2e452f5cdc4d4453947c21cb3344d5be5187a398f4e",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene. Object builder bakes modifiers, removes its original mesh/cutters and may leave orphan data on failure.",
+      "caution": "BMesh flexure function returns uncut cube; object variant bakes booleans with implicit operation; compliance validity and web geometry ungated."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_involute_gear.py": {
+      "reviewed_sha256": "5af44abbd8678d9e1a5e1eea10153a1fa06c5029c4a1637bdb9753104ae2ade4",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene. Replaces globally named object/mesh, possibly affecting shared users.",
+      "caution": "Deletes same-name object/shared mesh; no helical/root-fillet implementation; flank phase/root geometry need validation; face count is not gear correctness."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_oring_glands.py": {
+      "reviewed_sha256": "75bd44c7c57fd6757e4227f669abb368f3a877fd44607fe29c1efbf5f22e9dbf",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Static face gland only; claimed squeeze/fill limits not enforced; no seal-performance or geometry checks."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_shaft_couplings.py": {
+      "reviewed_sha256": "ffb7d0044c8413a575b80e09470b2e8a9a4adfd2261d516179dc42de93853fe6",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Box/cylinder composites are not unioned; range fallback can silently choose wrong key; no spline/coupling or fit verification."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_springs.py": {
+      "reviewed_sha256": "2773e4640a6919adfaec02d0d272095c0baac78df59d4cc6a120e55d7386ea0b",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Helix lacks ground ends; single washer only; axial versus normal thickness differs; no self-contact, load or fatigue gate."
+    },
+    "scripts/boilerplates/dfam_3dprint/bp_insert_boss.py": {
+      "reviewed_sha256": "0bb053452708229c3a3a7f85e53a20eb32b28b3865d30f9d7b33ee045e87992b",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "8-degree taper/minimum-wall claims not implemented; separate pillar/cutter are not assembled; unknown size falls back to M3."
+    },
+    "scripts/boilerplates/dfam_3dprint/bp_snap_fits.py": {
+      "reviewed_sha256": "1af01f09b98946ed9da8068e55e75383caa62d0a36dfecaa2780998c3e7bc488",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Taper formula differs from implementation; strain table is unverified; no mating/root-fillet/engagement check; polygon count only."
+    },
+    "scripts/boilerplates/dfam_3dprint/bp_teardrop_holes.py": {
+      "reviewed_sha256": "9e2919971fb179490cae5b3b8344b5a28b01c3abc97e30a65907e4c81691c219",
+      "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
+      "runtime": "bpy + bmesh inspect/adapt",
+      "effects": "Factory calls allocate/link mesh objects; guarded demos leave objects in the current scene.",
+      "caution": "Parameterized cutter lacks input guards and print validation; face count cannot establish self-support or retained bore dimensions."
+    },
+    "scripts/boilerplates/geometry_nodes/bp_gn_cables.py": {
+      "reviewed_sha256": "5212fe937edc66bab7b449d0232199ae768b21cc4bd98325e447c433df97eee0",
+      "basis": "Specialist source scout full static read and AST parse; no runtime certification.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Replaces globally named node group; guarded demo creates and leaves mesh object/modifier.",
+      "caution": "Sag input unused; graph generates a straight tube despite catenary header. Replaces named group and leaves test object. Nonempty mesh does not verify sag, dimensions, caps or clearance."
+    },
+    "scripts/boilerplates/geometry_nodes/bp_gn_pipe_flange.py": {
+      "reviewed_sha256": "7e7ea9168e56dc6d4c677a548e3815d46786ca9845c479f3402b4fc3685991e1",
+      "basis": "Specialist source scout full static read and AST parse; no runtime certification.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Replaces globally named node group; guarded demo creates and leaves mesh object/modifier.",
+      "caution": "Disc-minus-bore only; promised Hub Length, bolt pattern and ASME dimensional/class contract absent. Positional Boolean sockets need runtime inspection; replaces group; nonempty-mesh test only."
+    },
+    "scripts/boilerplates/materials_shading/bp_mat_metals.py": {
+      "reviewed_sha256": "c8ec6e3e66989bac62cc2a22c02c902666a8368ed77145c938aaac04de6775e9",
+      "basis": "Specialist source scout full static read and AST parse; no runtime certification.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Replaces globally named material; guarded demo creates materials in current data.",
+      "caution": "Missing sockets silently skipped; unknown preset becomes aluminum. Deletes same-name material. Two-node test does not verify values, links, tangent orientation or physical reflectance; Optional annotation unresolved."
+    },
+    "scripts/boilerplates/materials_shading/bp_mat_thinfilm.py": {
+      "reviewed_sha256": "8d1870e3b0e47a3a09d7b26b8559f3764d63aee199b6ee29b8106d88cfb62e67",
+      "basis": "Specialist source scout full static read and AST parse; no runtime certification.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Replaces globally named material; guarded demo creates materials in current data.",
+      "caution": "Facing-to-Base-Color ramp produces stylized angle coloration, not claimed Airy/thickness optics. Four stops despite five-stop comment; deletes material. Node count is not optical verification."
+    },
+    "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": {
+      "reviewed_sha256": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
+      "basis": "Specialist source scout full static read and AST parse; no runtime certification.",
+      "runtime": "bpy inspect/adapt",
+      "effects": "Deletes/recreates named object and armature; changes active object/mode without restoring caller context.",
+      "caution": "X-axis joint limits unconfigured; local frames not aligned/verified against mechanical axes. Deletes named rig and mutates active mode/context. Six bones do not prove 6-DOF kinematics or limit behavior."
+    },
+    "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": {
+      "reviewed_sha256": "8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Lines36-49/154-158 present universal flats, bend and EMC spacing; treat as unverified task-specific inputs. Lines109-130 accept min_bend_radius but never use it; no curvature/strain-relief enforcement. Dimensions and connector coding require selected part drawings."
+    },
+    "research/industrial-wiring-harness-packaging/01-INDUSTRIAL-BUS-PHYSICAL-LAYERS-PINOUTS.md": {
+      "reviewed_sha256": "0de4f110d19f68c8b2fa83b1942970b058878e86f220e6aea2874fb11028d593",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Lines51-60 collapse protocols/speeds/pinouts; A/B labels and terminal numbering require selected endpoint pin-view verification. Line73 says A>B while schematic pulls B high. HART loop resistance shares a table column with cable characteristic impedance. Lines153-159 mating/standoff envelopes are not universal dimensions."
+    },
+    "research/industrial-wiring-harness-packaging/02-CONNECTOR-DIMENSIONAL-STANDARDS-PANEL-CUTOUTS.md": {
+      "reviewed_sha256": "9bfd07b3b14ff26bc4ce263638dd428616117fb211398719b2c844e9284140b7",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Lines80-82 RJ45 bayonet dimensions conflict with robotics source12; line131 DT04-4P dimensions conflict with extended boilerplate. Lines139-146 pitch alone does not establish terminal ratings, cutout or access. Choose actual housing/contact/terminal revision and drawings before machining."
+    },
+    "research/industrial-wiring-harness-packaging/03-CABLE-MECHANICS-FLEX-LIFE-DRAG-CHAINS.md": {
+      "reviewed_sha256": "9505da833fe0db557b3385b4c94251829a5e5926ce37c86ed8987d98049256c6",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Lines23-26 conductor class is not cycle-life qualification; generic radius, torsion/free-length and20-50N retraction values are unverified for target hardware. Chain neutral-axis layout, cable length/bend/torsion and endpoint strain relief require per-pose checks; no physical life proof."
+    },
+    "research/industrial-wiring-harness-packaging/04-INGRESS-PROTECTION-SEALING-THERMAL-RELIEF.md": {
+      "reviewed_sha256": "64e62ff9b34de40a3bee4a3f1adfaa5664b2ea58e673147af981762135390d44",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Lines63-64 bolt pitch heuristic is not seal qualification. Lines87-89 use cold-temperature denominator while naming cooling vacuum, without matching initial-pressure reference. Lines96/117 universal membrane mandate and WEP values are unverified. IP rating requires assembled-product test, not CAD vent geometry."
+    },
+    "research/industrial-wiring-harness-packaging/05-EMC-GROUNDING-SHIELDING-HARNESS-MANUFACTURING.md": {
+      "reviewed_sha256": "0187d9f805ba6d158e2e475df576dfa7c692abe33d7088e1d4e85e537b9c7124",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Production Architecture Specification label is not certification. Shield transfer impedance, universal segregation/crimp/pull-force and heat-shrink IP claims are unverified. Separation categories conflict with KB/source12. Pin-to-pin wire list must identify actual contact, wire, terminal/crimp tool and drawing revisions; formboard arc length does not prove strain relief."
+    },
+    "research/robotics-precision-cad/12-INDUSTRIAL-WIRING-CONNECTORS-HARNESS-ROUTING.md": {
+      "reviewed_sha256": "6ac53feff1fdfe7a1f10cb7e12875c130f24ecfb966357f6c80a6ca74754ed04",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Generic cutout offsets, connector dimensions, EMC categories and breather mandate are unverified; source02 differs for RJ45 bayonet dimensions and source01 differs for PROFIBUS termination. Do not infer suitable terminal/contact selection from protocol or pitch; verify selected part and cable specification."
+    },
+    "research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md": {
+      "reviewed_sha256": "22e2d4f0635550f1cedf9017c707e0bc116723cdac98b4c9ff7b08ebb29efb76",
+      "basis": "Full source static review; synthesis and citations not independently standards-verified.",
+      "runtime": "documentation",
+      "effects": "Read only; embedded snippets create scene data when adapted.",
+      "caution": "Lines39/46 unmeasured<1ms and universal0.20mm3 are not acceptance evidence; source-level units/evaluated geometry matter. Lines57-71 fixed120mm and perfectly jerk-free are overclaims: quintic third derivative endpoints=60. Lines82-94 collapsing unused cable points does not preserve length. Lines100-113 weights/packing are historical candidates, not general calibrated optimum; pair exclusions need named phase-bound justification. Actual Arm uses frame-sampled LINEAR F-curves: smooth quintic sample values do not establish a continuous C2 Blender trajectory."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py": {
+      "reviewed_sha256": "e7af4179f5ff43404dbbbc791c688f01a93040e6c8d00b0ee8cd76a88aa433ad",
+      "basis": "Full source read; exact-copy smoke and bounded negative diagnostics on Blender5.2.0 LTS, not physical certification.",
+      "runtime": "bpy headless, copied disposable scene only",
+      "effects": "Creates mesh/curve/collection objects; audit also creates/removes temporary boolean copies. Main self-test mutates active scene.",
+      "caution": "Lines76-99 boolean copies raw mesh, ignores evaluated modifiers and scene scale_length; runtime reproduced false zero versus5999.95mm3 modifier clash and1e9 unit error. BVH cannot detect contained solids (0pairs with1000mm3). Lines147-149 total_steps=2 divides by zero; lines207-222 accepts oversize parts. No obstacle input or collision-free proof;0.20mm3 and zero-jerk claims are not universal."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_cable_dragchain.py": {
+      "reviewed_sha256": "d1a95bc9acd1f7473c037a5716cb53dd9214ea38c865cb25c4489e972c79d978",
+      "basis": "Full source read; exact-copy smoke and bounded negative diagnostics on Blender5.2.0 LTS, not physical certification.",
+      "runtime": "bpy headless, copied disposable scene only",
+      "effects": "Creates scene mesh/curve/collection data; main self-test mutates its disposable scene.",
+      "caution": "Lines34-35 silently cap bend radius below own required minimum; negative dimensions yield negative link count. Lines71-76 production socket/stop claims exceed construction: runtime9disconnected primitive solids, no sockets/stops/union. Assembly poses are visual candidates; rated cable radius/torsion, link interference, fastening and endpoint strain relief unverified."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py": {
+      "reviewed_sha256": "e6799635a8f6275cb8ecd5aeea4c3192ca99720f3e315bcf801f134f79650a8e",
+      "basis": "Full source read; exact-copy smoke and bounded negative diagnostics on Blender5.2.0 LTS, not physical certification.",
+      "runtime": "bpy headless, copied disposable scene only",
+      "effects": "Creates scene mesh/curve/collection data; main self-test mutates its disposable scene.",
+      "caution": "Lines142-189 thread_size changes name only; panel_thickness ignored, no real thread/membrane/vent. Runtime3disconnected solids. DT04 cutter shape differs from source02 and own documented tab size. EMC/IP compliance claims are unverified; cutter defaults require selected supplier drawing plus boolean/section checks."
+    },
+    "scripts/boilerplates/cad_mechanics/bp_connectors_wiring.py": {
+      "reviewed_sha256": "c562ffea81232edf20bb2236280cc06dc96f955f8796e2ac5be368e527850ce2",
+      "basis": "Full source read; exact-copy smoke and bounded negative diagnostics on Blender5.2.0 LTS, not physical certification.",
+      "runtime": "bpy headless, copied disposable scene only",
+      "effects": "Creates scene mesh/curve/collection data; main self-test mutates its disposable scene.",
+      "caution": "Lines132-157 saddle is a solid8vertex cube: slot_width/slot_height unused. Lines160-186 AUTO Bezier does not enforce curvature, arc length or strain relief and leaves end caps disabled; runtime accepted0.370mm bend radius for7mm cable. D-cut default dimensions/manifold smoke passed; standard/fit claim still unverified."
+    }
+  },
+  "workflows": {
+    "native-hard-surface": {
+      "purpose": "Dựng từ ảnh, silhouette, topology và body bo mềm bằng Blender-native.",
+      "required": [
+        "knowledge/10-modeling/modeling-topology.md",
+        "knowledge/10-modeling/modifiers.md"
+      ],
+      "supplemental": [
+        "knowledge/10-modeling/uv-unwrapping.md"
+      ],
+      "concepts": [
+        ".agents/skills/img2threejs/grimoire/intake/image_analysis.md",
+        ".agents/skills/img2threejs/grimoire/intake/surface_topology.md",
+        ".agents/skills/img2threejs/grimoire/intake/detail_inventory.md"
+      ],
+      "adapters": [
+        "builds/fpv-drone-native/drone-mesh-library.py",
+        "scripts/make-comparison-sheet.sh"
+      ],
+      "steps": [
+        "Lập fidelity contract và scene graph từ ảnh/đo đạc.",
+        "Blockout theo tỷ lệ và camera trước khi bo mép.",
+        "Dựng surface liên tục, tách bộ phận thật, rồi mới thêm detail.",
+        "So reference và góc khuất sau từng pass; chuyển verdict về core."
+      ],
+      "gates": [
+        "Landmark và kích thước có sai số được khai báo.",
+        "Không có phần critical chỉ tồn tại dưới dạng mô tả.",
+        "Topology/transforms đạt predicate của đối tượng.",
+        "Xem sheet cùng camera và ảnh 3/4; không dùng score tự chấm để hứa đúng 100%."
+      ],
+      "limitations": [
+        "Ảnh không xác định chính xác mặt khuất.",
+        "Ví dụ drone có giả định riêng; không chạy builder vào scene hiện tại."
+      ],
+      "topics": {
+        "python-adapter-review": {
+          "when": "Khi muốn reuse thư viện bpy boilerplate thay vì viết helper mới.",
+          "sources": [
+            "knowledge/00-foundations/python-agent-boilerplates.md",
+            "scripts/boilerplates/bp_core.py",
+            "scripts/boilerplates/run_all_boilerplate_tests.py"
+          ],
+          "steps": [
+            "Chọn đúng module và đọc source thực; phân biệt snippet trong tài liệu với implementation.",
+            "Khai báo input/scene ownership, units, effects và output; tạo candidate riêng."
+          ],
+          "gates": [
+            "Kiểm API/runtime và assertions theo hành vi task, không dựa vào header verified.",
+            "Đo actual geometry/state và xem output; giữ source gốc cho rollback."
+          ],
+          "limitations": [
+            "clean_scene và thay node group/mesh có thể phá scene khác; không tự chạy vì được index.",
+            "Knowledge routing không chứng nhận mass/inertia, bone roll hoặc physics."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
+            "source_hashes": {
+              "knowledge/00-foundations/python-agent-boilerplates.md": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
+              "scripts/boilerplates/bp_core.py": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
+              "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f"
+            }
+          }
+        }
+      }
+    },
+    "native-product-visualization": {
+      "purpose": "Vật liệu nhựa nhám, studio, camera và hình sản phẩm polish.",
+      "required": [
+        "knowledge/20-shading/materials-pbr.md",
+        "knowledge/30-lighting-render/lighting.md",
+        "knowledge/60-pipeline/product-viz-and-shots.md"
+      ],
+      "supplemental": [
+        "knowledge/20-shading/texturing-baking.md",
+        "knowledge/30-lighting-render/compositing-output.md"
+      ],
+      "concepts": [
+        ".agents/skills/img2threejs/grimoire/feedback/shading_realism.md",
+        ".agents/skills/img2threejs/grimoire/review/self_correction.md"
+      ],
+      "adapters": [
+        "scripts/agent-verify-lib.py",
+        "scripts/turntable-preview.py"
+      ],
+      "steps": [
+        "Chốt mục tiêu shot, nền, texture scale và độ nhám bằng reference.",
+        "Kiểm tra normals và bevel trước khi sửa shader.",
+        "Introspect node sockets; dùng neutral/grazing light để tách lỗi hình và vật liệu.",
+        "Render diagnostic cùng aspect rồi hoàn thiện shot."
+      ],
+      "gates": [
+        "Framing toàn bộ phần chuyển động hoặc object trong camera.",
+        "Ánh sáng grazing không lộ shading defect hoặc surface rời.",
+        "Xem material ở neutral và hero view."
+      ],
+      "limitations": [
+        "Shader đẹp không chứng minh bề mặt in thực tế.",
+        "Turntable/preview helpers thay đổi scene; dùng bản candidate/process riêng."
+      ],
+      "topics": {
+        "opaque-micro-surfaces": {
+          "when": "Khi nhựa/kim loại sai phản xạ hoặc cần grain/imperfection có kích thước thật.",
+          "sources": [
+            "research/blender-advanced-materials-shading/01-OPENPBR-PRINCIPLED-BSDF-SURFACE.md",
+            "research/blender-advanced-materials-shading/04-PROCEDURAL-MICRO-SURFACE-IMPERFECTIONS.md",
+            "scripts/boilerplates/bp_materials_pbr.py",
+            "scripts/boilerplates/materials_shading/bp_mat_metals.py"
+          ],
+          "steps": [
+            "Tách metallic/IOR/roughness; chốt unit và scale texture.",
+            "Chọn roughness, bump hay geometry theo chi tiết nhìn thấy."
+          ],
+          "gates": [
+            "Introspect socket, material output và giá trị hữu hạn.",
+            "So crop neutral/grazing: không seam, grain quá lớn hoặc normal lỗi."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
+            "source_hashes": {
+              "research/blender-advanced-materials-shading/01-OPENPBR-PRINCIPLED-BSDF-SURFACE.md": "7d05fab6bb6ed95d4201618835091fbbc0522dab79320c7ae0b0d78e4332fc46",
+              "research/blender-advanced-materials-shading/04-PROCEDURAL-MICRO-SURFACE-IMPERFECTIONS.md": "e41d624f3506ba398bab369df5770050e4e52f0d708e860966a08a685b27fc2a",
+              "scripts/boilerplates/bp_materials_pbr.py": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
+              "scripts/boilerplates/materials_shading/bp_mat_metals.py": "c8ec6e3e66989bac62cc2a22c02c902666a8368ed77145c938aaac04de6775e9"
+            }
+          }
+        },
+        "subsurface-optics": {
+          "when": "Khi vật liệu mỏng/dày cần truyền tán xạ như silicone, sáp hoặc da.",
+          "sources": [
+            "research/blender-advanced-materials-shading/02-SUBSURFACE-SCATTERING-RANDOM-WALK.md"
+          ],
+          "steps": [
+            "Chốt kích thước mesh, thickness và scale/radius tương đối.",
+            "Kiểm enum thuật toán trên runtime trước dựng material."
+          ],
+          "gates": [
+            "Bounds đúng unit; scale/radius được khai báo và hữu hạn.",
+            "So backlit thin/thick views với reference, không lấy preset làm ngưỡng pass."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_render_scout; controller source mapping",
+            "source_hashes": {
+              "research/blender-advanced-materials-shading/02-SUBSURFACE-SCATTERING-RANDOM-WALK.md": "5c5a282cf39829e75795c0cea0b1e82b090dd87539b5e2d6e02b0aabc74d269f"
+            }
+          }
+        },
+        "thin-film-optics": {
+          "when": "Khi brief cần màu giao thoa đổi theo góc nhìn hoặc lớp phủ mỏng.",
+          "sources": [
+            "research/blender-advanced-materials-shading/03-THIN-FILM-INTERFERENCE-IRIDESCENCE.md",
+            "scripts/boilerplates/materials_shading/bp_mat_thinfilm.py"
+          ],
+          "steps": [
+            "Phân biệt tint theo vị trí và interference theo góc.",
+            "Xác nhận thickness/IOR sockets hoặc mô hình thực sự dùng."
+          ],
+          "gates": [
+            "Ghi đơn vị thickness và thông số IOR.",
+            "So ít nhất hai camera/light angles; gradient cố định không chứng minh thin film."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_render_scout; controller source mapping; specialist adapter static audit",
+            "source_hashes": {
+              "research/blender-advanced-materials-shading/03-THIN-FILM-INTERFERENCE-IRIDESCENCE.md": "c3d776a5e078722e4ffabe65a173f91fe0378e633becd5f2129a64f77814b07f",
+              "scripts/boilerplates/materials_shading/bp_mat_thinfilm.py": "8d1870e3b0e47a3a09d7b26b8559f3764d63aee199b6ee29b8106d88cfb62e67"
+            }
+          }
+        },
+        "fiber-fabric-surfaces": {
+          "when": "Chỉ khi hair/fur, velvet, satin hoặc hướng weave nhìn rõ trong shot.",
+          "sources": [
+            "research/blender-advanced-materials-shading/05-PHYSICAL-HAIR-FABRIC-SHADING.md"
+          ],
+          "steps": [
+            "Chọn strand shader hay surface sheen/anisotropy.",
+            "Chốt tangent/UV và kích thước sợi trước chỉnh màu."
+          ],
+          "gates": [
+            "Shader/enum/output/tangent hợp lệ.",
+            "Xem hướng highlight, silhouette và frame liên tiếp để phát hiện crawling."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_render_scout; controller source mapping",
+            "source_hashes": {
+              "research/blender-advanced-materials-shading/05-PHYSICAL-HAIR-FABRIC-SHADING.md": "83846c13bd7c1938d3616f0eb7c4a27bd86e7da6808402b8f589f5a9a31f9c7a"
+            }
+          }
+        }
+      }
+    },
+    "native-animation-rigging": {
+      "purpose": "Khớp, hand, pick/place tự nhiên, biên độ và explode/reassemble.",
+      "required": [
+        "knowledge/40-animation/rigging-armature.md",
+        "knowledge/40-animation/animation-fcurves.md",
+        "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
+        "knowledge/60-pipeline/scene-organization.md"
+      ],
+      "supplemental": [
+        "knowledge/40-animation/mocap-retargeting.md"
+      ],
+      "concepts": [
+        ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"
+      ],
+      "adapters": [
+        "builds/robot-arm-v2-engineered/task-motion-plan.py",
+        "builds/robot-arm-v2-engineered/create-task-scene.py",
+        "builds/robot-arm-v2-engineered/flexibility-contact-lib.py",
+        "builds/robot-arm-v2-engineered/verify-task-presentation.py"
+      ],
+      "steps": [
+        "Chốt joint frame, limit, TCP, hand interface và sơ đồ cha-con.",
+        "Định nghĩa task bằng tiếp cận → gắp → nhấc → chuyển → nhả; tách explode thành sequence lắp ráp.",
+        "Blockout motion và pose biên; chuyển hand phải giữ continuity ở frame gắn/nhả.",
+        "Screen contact theo phạm vi khai báo và xem animatic trước polish/render."
+      ],
+      "gates": [
+        "Joint axes/limits và hierarchy đúng trong local/world space.",
+        "Không có bước nhảy transform ở grasp/release.",
+        "Biên độ, dựng thẳng, thao tác phía sau và quay trục có frame evidence khi được yêu cầu.",
+        "Đúng trình tự tháo fastener → rút phần, lắp lại khôi phục transform.",
+        "Xem clip theo thời gian; ảnh pose không thay thế review chuyển động."
+      ],
+      "limitations": [
+        "Contact library hiện lấy mẫu raw rigid surfaces, không chứng minh continuous collision hay lực.",
+        "Animation scripted attachment không chứng minh servo chịu tải.",
+        "Ví dụ create-task-scene có mesh dùng chung; copy mesh trước khi sửa geometry."
+      ],
+      "topics": {
+        "rig-spaces-ik-mechanisms": {
+          "when": "Khi cần armature scripting, IK/pole, piston, gear hoặc cable.",
+          "sources": [
+            "research/blender-rigging-skeleton-skinning/01-ARMATURE-MATRICES-BONE-TRANSFORMS.md",
+            "research/blender-rigging-skeleton-skinning/02-INVERSE-KINEMATICS-SOLVERS-MATHEMATICS.md",
+            "research/blender-rigging-skeleton-skinning/04-PROCEDURAL-MECHANICAL-CHARACTER-RIGGING.md",
+            "scripts/generate-procedural-rig.py",
+            "scripts/boilerplates/bp_rigging.py"
+          ],
+          "steps": [
+            "Chốt world/rest/pose spaces, axes, hierarchy và motion envelope.",
+            "Guard bone zero/parallel reference; hiệu chỉnh pole theo evaluated pose.",
+            "Tách anchor khỏi constrained parts; ghi stroke/ratio/space."
+          ],
+          "gates": [
+            "Đo pivot và IK endpoint errors theo tolerance task.",
+            "Kiểm alignment/stroke/ratio ở pose biên và attachment events.",
+            "Xem sweep qua thẳng/đứng/gập; motion không chứng minh tải servo."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Adapter xóa mọi object khi gọi hàm dựng; chỉ inspect/adapt trong candidate riêng."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
+            "source_hashes": {
+              "research/blender-rigging-skeleton-skinning/01-ARMATURE-MATRICES-BONE-TRANSFORMS.md": "2ac1d81d4f2ed9f922406bd4baa6f63975a3f7e413b1ddf56b3801c1c43e93a0",
+              "research/blender-rigging-skeleton-skinning/02-INVERSE-KINEMATICS-SOLVERS-MATHEMATICS.md": "ac3e18104c8ded749a2c9da37fd01194f743fc716edf449360ad016e7368fe29",
+              "research/blender-rigging-skeleton-skinning/04-PROCEDURAL-MECHANICAL-CHARACTER-RIGGING.md": "3abab897422d4863c1459564e05c7045e58bd4465609e13c4be8ac51da6e8dad",
+              "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
+              "scripts/boilerplates/bp_rigging.py": "6978e0ef90b15f73881915785706c2e9f2a7fcd07c4c5974037a8f25efc46090"
+            }
+          }
+        },
+        "skinning-modular-rigs": {
+          "when": "Khi mesh biến dạng, twist limbs hoặc dùng Rigify đã cài và được chọn.",
+          "sources": [
+            "research/blender-rigging-skeleton-skinning/03-DUAL-QUATERNION-SKINNING-LBS.md",
+            "research/blender-rigging-skeleton-skinning/05-RIGIFY-MODULAR-RIGGING-PIPELINE.md"
+          ],
+          "steps": [
+            "So LBS/preserve-volume/helper bones với cùng poses.",
+            "Phân biệt deform groups và masks; giữ metarig và xác định rig mới theo provenance."
+          ],
+          "gates": [
+            "Weights hữu hạn, nonnegative; thiếu weight/sum sai bị phát hiện.",
+            "Đo displacement khi IK/FK switch; xem bulging, sections và penetration."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Không tự cài extension; object tên rig và operator success chưa đủ."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_rig_scout; controller source mapping",
+            "source_hashes": {
+              "research/blender-rigging-skeleton-skinning/03-DUAL-QUATERNION-SKINNING-LBS.md": "fb2d01f4293bbf3c383009522ac757fee1fb43a50e3a3d6105ba93a6a58b381c",
+              "research/blender-rigging-skeleton-skinning/05-RIGIFY-MODULAR-RIGGING-PIPELINE.md": "41d49fef80d6ca98fd3dabc48e3b3b373edc4190be16d1815c98c36b271ac796"
+            }
+          }
+        },
+        "animation-curves-drivers": {
+          "when": "Khi cần tạo keyframes, driver hoặc turntable từ helper Python.",
+          "sources": [
+            "scripts/boilerplates/bp_animation.py"
+          ],
+          "steps": [
+            "Xác định object/action/slot và RNA path được phép sửa; giữ animation cũ ngoài phạm vi.",
+            "Adapt helper cho path/index thực tế; chỉ tạo driver trên property đã chọn."
+          ],
+          "gates": [
+            "Đo giá trị tại keyframe và giữa keyframes, kiểm tra đúng action slot và không đổi curve ngoài scope.",
+            "Kiểm tra endpoint/seam của loop và xem playback; một midpoint pass không chứng minh toàn chu kỳ."
+          ],
+          "limitations": [
+            "Helper hiện tại có thể đổi nhiều action slots và xóa driver state; không chạy trực tiếp vào animation đang dùng.",
+            "Self-test hiện có chỉ kiểm tra một midpoint, chưa chứng nhận loop hoặc chuyển động tự nhiên."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "boilerplate scout full static read; controller curation",
+            "source_hashes": {
+              "scripts/boilerplates/bp_animation.py": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd"
+            }
+          }
+        },
+        "robot-joint-frame-adapter": {
+          "when": "Khi reuse helper armature robot sáu khớp.",
+          "sources": [
+            "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py"
+          ],
+          "steps": [
+            "Khai báo joint frames, hierarchy, rotation axes và limits theo cơ cấu thực.",
+            "Align bone frames, khóa đúng các trục và cấu hình cả X/Y/Z trong candidate."
+          ],
+          "gates": [
+            "Kiểm allowed/locked axes mọi joint; đối chiếu FK endpoint tại các pose có kết quả biết trước.",
+            "Sweep giới hạn, đo attachment/clearance và xem chuyển động; count bones không thay kinematics."
+          ],
+          "limitations": [
+            "Helper bỏ sót X-axis limits và chưa ánh xạ bone frames thành trục cơ khí.",
+            "Chuyển động demo không chứng minh tải, torque, nhiệt hoặc chế tạo được."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "specialist scout full source audit; controller curation",
+            "source_hashes": {
+              "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651"
+            }
+          }
+        },
+        "assembly-collision-staging": {
+          "when": "Khi quay phim lắp ráp/explode hoặc phát hiện các phần chờ lắp và đường bay đè lên nhau.",
+          "sources": [
+            "research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md",
+            "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py",
+            ".agents/skills/blender-agent-core/references/assembly-sequences.md"
+          ],
+          "steps": [
+            "Tạo unit manifest và dependency graph theo receiver, internal parts, retention, wires rồi covers.",
+            "Tính staging riêng và kiểm world/projected gap; không chỉ kiểm pose cuối.",
+            "Kiểm cả arrival và seat qua thời gian; chọn waypoint/axis từ geometry và chỉ miễn trừ named mate đúng phase.",
+            "Xem animatic ngắn ở đoạn lỗi, cơ cấu tương tự và endpoint camera trước full render."
+          ],
+          "gates": [
+            "Negative controls phải phát hiện waiting clash, clear-wait/blocked-transit, wrong phase exemption và solid containment.",
+            "Kiểm evaluated modifiers và scene units; báo riêng surface flags, solid predicate và phạm vi sample.",
+            "Camera giữ đúng chủ ý; quintic samples/LINEAR F-curves không được mô tả là zero jerk hoặc controller dynamics."
+          ],
+          "limitations": [
+            "120mm lift,0.20mm³ và tuyên bố tốc độ là case/unverified values, không là chuẩn chung.",
+            "Audit adapter bỏ qua modifiers/scale trong Boolean; same-future-link blanket exclusions có thể giấu lỗi.",
+            "Mating với actuator-visual và media PASS không giải quyết cơ khí, hardware/tool access hoặc tải."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
+            "source_hashes": {
+              "research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md": "22e2d4f0635550f1cedf9017c707e0bc116723cdac98b4c9ff7b08ebb29efb76",
+              "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py": "e7af4179f5ff43404dbbbc791c688f01a93040e6c8d00b0ee8cd76a88aa433ad",
+              ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7"
+            }
+          }
+        }
+      }
+    },
+    "polymer-functional-print": {
+      "purpose": "In FDM nhựa, fit, inserts, tháo lắp, độ bền và vật liệu.",
+      "required": [
+        "knowledge/60-pipeline/3d-printing.md",
+        "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md",
+        "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md"
+      ],
+      "supplemental": [
+        "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md",
+        "research/3d-printing-polymer-engineering/03-DFAM-GEOMETRIC-RULES-TOLERANCES.md",
+        "research/3d-printing-polymer-engineering/04-FASTENERS-INSERTS-BEARINGS-INTEGRATION.md",
+        "research/3d-printing-polymer-engineering/05-THERMAL-WARPING-CHAMBER-ANNEALING.md"
+      ],
+      "concepts": [],
+      "adapters": [
+        "scripts/verify-3dprint-tolerances.py",
+        "builds/robot-arm-v2-engineered/export-prototype-parts.py",
+        "builds/robot-arm-v2-engineered/check-stl-files.py"
+      ],
+      "steps": [
+        "Chốt printer/nozzle/vật liệu/orientation, kích thước và interfaces.",
+        "Tách chi tiết theo đường lắp và access dụng cụ; chọn vít/insert theo drawing thật.",
+        "Thiết kế coupon fit và phần chịu tải với dữ liệu vật liệu theo hướng in.",
+        "Export candidate đúng unit và kiểm tra chính file xuất trước physical trial."
+      ],
+      "gates": [
+        "Manifold, scale và local wall thực sự được đo.",
+        "Vít âm có chiều sâu, chiều dài ăn ren và tool access kiểm chứng.",
+        "Clearance/fit xác nhận bằng coupon, không chỉ bbox.",
+        "Tải/nhiệt/creep và sai lệch in có evidence trước release."
+      ],
+      "limitations": [
+        "Mesh pass hoặc hình đẹp không đủ gọi printing-ready chịu lực.",
+        "Helper tolerances hiện chỉ overhang/bbox; không có local-wall hay clearance test.",
+        "Research là synthesis chưa được chứng nhận; kiểm tra datasheet/standard hiện hành khi dùng số."
+      ],
+      "topics": {
+        "advanced-deposition-process": {
+          "when": "Khi high-flow, nonplanar hoặc LSAM được yêu cầu; chọn đúng nhánh.",
+          "sources": [
+            "research/polymer-additive-manufacturing-advanced/01-POLYMER-EXTRUSION-RHEOLOGY-HOTENDS.md",
+            "research/polymer-additive-manufacturing-advanced/03-NON-PLANAR-SLICING-STRESS-ALIGNMENT.md",
+            "research/polymer-additive-manufacturing-advanced/05-LARGE-FORMAT-LSAM-PELLET-PRINTING.md"
+          ],
+          "steps": [
+            "Chốt hardware envelope/flow/thermal hoặc toolpath/finishing constraints."
+          ],
+          "gates": [
+            "Kiểm path có tiến triển và toolhead envelope; calibration/coupon thật.",
+            "Không xuất G-code hay điều khiển máy chỉ từ research."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping",
+            "source_hashes": {
+              "research/polymer-additive-manufacturing-advanced/01-POLYMER-EXTRUSION-RHEOLOGY-HOTENDS.md": "1be0673cd2e35dae58d243c1c2ef0a5ae84cebcd2367ed1d2d3896cb3a4ab13e",
+              "research/polymer-additive-manufacturing-advanced/03-NON-PLANAR-SLICING-STRESS-ALIGNMENT.md": "ad6b19112a6f25f67bd8c129a58cbf5571f1dfdaa42c5435dac64aa8e5aadeb7",
+              "research/polymer-additive-manufacturing-advanced/05-LARGE-FORMAT-LSAM-PELLET-PRINTING.md": "8458936f98c3796d58ae45cf9eab428952c532a197d069b085f9f7a0d059d0b5"
+            }
+          }
+        },
+        "polymer-selection": {
+          "when": "Khi chưa chốt vật liệu hoặc cần đánh giá isotropy/temperature limits.",
+          "sources": [
+            "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md"
+          ],
+          "steps": [
+            "Dùng taxonomy để đặt câu hỏi; chọn grade/process từ datasheet và coupon."
+          ],
+          "gates": [
+            "Không dùng kết luận PETG/carbon-fiber tuyệt đối; dữ liệu phải cùng process/orientation."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "prior corpus scout; controller source mapping",
+            "source_hashes": {
+              "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57"
+            }
+          }
+        },
+        "print-boss-cutouts": {
+          "when": "Khi dựng boss heat-set insert hoặc lỗ tự đỡ cho FDM.",
+          "sources": [
+            "scripts/boilerplates/dfam_3dprint/bp_insert_boss.py",
+            "scripts/boilerplates/dfam_3dprint/bp_teardrop_holes.py"
+          ],
+          "steps": [
+            "Chọn insert drawing, material/process/build orientation và coupon fit.",
+            "Dựng boss với cutter thực, kiểm taper theo chiều sâu và trục lỗ trước export."
+          ],
+          "gates": [
+            "Đo hole/taper/minimum local wall sau subtraction, không lấy parameter name làm bằng chứng.",
+            "In coupon kiểm fit/insertion/pull-out hoặc support/bore retention theo chức năng."
+          ],
+          "limitations": [
+            "Helper chưa ghép pillar/cutter; taper và wall claims không được enforce.",
+            "Self-support phụ thuộc process/orientation; face count không đủ."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "scout full static audit; controller curated checks",
+            "source_hashes": {
+              "scripts/boilerplates/dfam_3dprint/bp_insert_boss.py": "0bb053452708229c3a3a7f85e53a20eb32b28b3865d30f9d7b33ee045e87992b",
+              "scripts/boilerplates/dfam_3dprint/bp_teardrop_holes.py": "9e2919971fb179490cae5b3b8344b5a28b01c3abc97e30a65907e4c81691c219"
+            }
+          }
+        },
+        "plate-nesting-screen": {
+          "when": "Khi dùng heuristic orientation và guillotine packing để xếp các part lên plate.",
+          "sources": [
+            "research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md",
+            "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py"
+          ],
+          "steps": [
+            "Chọn vật liệu/process, đơn vị, bed usable area, margin và khoảng cách.",
+            "Thử orientation theo support, tiếp xúc bed, trục tải/anisotropy và tính tháo support.",
+            "Kiểm tất cả part sau packing bằng transform thực; từ chối part không vừa trước khi thêm plate."
+          ],
+          "gates": [
+            "Oversize fixture phải bị từ chối; không nhận rectangle âm, part ra ngoài biên hoặc trùng/thiếu inventory.",
+            "Re-import STL/slicer bằng đúng scale; heuristic score không thay đánh giá support và fit thực."
+          ],
+          "limitations": [
+            "Packer hiện nhận oversize part khi mở plate mới; không dùng kết quả chưa kiểm làm print-ready.",
+            "Các weights/margin trong source là ví dụ lịch sử, không có bằng chứng optimal/calibrated chung."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
+            "source_hashes": {
+              "research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md": "22e2d4f0635550f1cedf9017c707e0bc116723cdac98b4c9ff7b08ebb29efb76",
+              "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py": "e7af4179f5ff43404dbbbc791c688f01a93040e6c8d00b0ee8cd76a88aa433ad"
+            }
+          }
+        }
+      }
+    },
+    "precision-assembly-metrology": {
+      "purpose": "CAD chính xác, datum, dung sai chuỗi và tháo lắp.",
+      "required": [
+        "knowledge/70-cad-precision-robotics/cad-precision-modeling.md",
+        "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md"
+      ],
+      "supplemental": [
+        "research/robotics-precision-cad/02-PRECISION-ENGINEERING-GDT.md",
+        "research/robotics-precision-cad/03-DFMA-STANDARDS.md",
+        "research/robotics-precision-cad/08-TOLERANCE-STACKUP-METROLOGY.md"
+      ],
+      "concepts": [],
+      "adapters": [
+        "scripts/compute-mesh-inertia.py"
+      ],
+      "steps": [
+        "Chốt datum/unit và danh sách interface.",
+        "Dùng drawing phần cứng thật để dựng nominal geometry.",
+        "Tính tolerance stack với phân bố/giả định ghi rõ.",
+        "Thiết kế đường lắp, access dụng cụ và phương pháp đo."
+      ],
+      "gates": [
+        "Drawing và mesh cùng unit/datum/revision.",
+        "Vùng fit không dựa vào kích thước overall bbox.",
+        "Có đo hoặc coupon cho kích thước critical."
+      ],
+      "limitations": [
+        "Blender mesh không tự cung cấp B-rep/GD&T hoặc tolerance solver.",
+        "Inertia helper chưa áp object scale/scene scale; không dùng số trực tiếp khi transform khác identity."
+      ],
+      "topics": {
+        "compliant-tendon-motion": {
+          "when": "Khi cần flexure, cable-driven hand hoặc remote actuation.",
+          "sources": [
+            "research/robotics-precision-cad/07-COMPLIANT-MECHANISMS-FLEXURES.md",
+            "research/robotics-precision-cad/09-CABLE-TENDON-TRANSMISSIONS.md",
+            "scripts/boilerplates/cad_mechanics/bp_flexures.py",
+            "scripts/boilerplates/cad_mechanics/bp_springs.py",
+            "scripts/boilerplates/dfam_3dprint/bp_snap_fits.py"
+          ],
+          "steps": [
+            "Chốt travel/stiffness/parasitic motion, routing/pretension/tension-only constraints."
+          ],
+          "gates": [
+            "Đo neck/strain, clearance qua envelope và bend/tension limits.",
+            "Kiểm fatigue/creep/hysteresis theo vật liệu/duty thực.",
+            "Đo neck/root/thickness, snap engagement và coil clearance; kiểm thực dưới process/duty phù hợp."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Geometry demo có thể thiếu notch, mating part hoặc ground ends; face count không chứng nhận compliant performance."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping; mechanical adapter scout full static audit",
+            "source_hashes": {
+              "research/robotics-precision-cad/07-COMPLIANT-MECHANISMS-FLEXURES.md": "6bb4eb0ab90270fc7a5d4b2c47691bd6d2e0a1abad02ad7890e2d9b3f90c2f27",
+              "research/robotics-precision-cad/09-CABLE-TENDON-TRANSMISSIONS.md": "3ce580cbbf877b2e96963a83e8d63cbb30cfe11eada9050d8f8d9b63ccdba0ec",
+              "scripts/boilerplates/cad_mechanics/bp_flexures.py": "362939358115d1d70e38c2e452f5cdc4d4453947c21cb3344d5be5187a398f4e",
+              "scripts/boilerplates/cad_mechanics/bp_springs.py": "2773e4640a6919adfaec02d0d272095c0baac78df59d4cc6a120e55d7386ea0b",
+              "scripts/boilerplates/dfam_3dprint/bp_snap_fits.py": "1af01f09b98946ed9da8068e55e75383caa62d0a36dfecaa2780998c3e7bc488"
+            }
+          }
+        },
+        "precision-material-tessellation": {
+          "when": "Khi bore/tolerance/finish/heat-treatment cần budget định lượng.",
+          "sources": [
+            "research/robotics-precision-cad/04-CAD-VS-POLY-BLENDER-BRIDGE.md",
+            "research/mechanical-engineering-foundations/03-MATERIALS-METALLURGY-HEAT-TREATMENT.md",
+            "scripts/boilerplates/bp_cad_robotics.py"
+          ],
+          "steps": [
+            "Tách nominal dimensions, tessellation error, process allowance và material grade."
+          ],
+          "gates": [
+            "Phân biệt radial/diametral error, unit và export mesh.",
+            "Đối chiếu grade/temper/finish với drawing/data có nguồn."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Không suy GD&T từ STEP export hoặc tự cài CAD addon."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping; boilerplate source scout static review",
+            "source_hashes": {
+              "research/robotics-precision-cad/04-CAD-VS-POLY-BLENDER-BRIDGE.md": "c2aec3777fa475e9d3e285c4b18bcc86ca918f3bf78dcc03f1ea19fa8860fe49",
+              "research/mechanical-engineering-foundations/03-MATERIALS-METALLURGY-HEAT-TREATMENT.md": "73724dbe3b68749c29462f8093f84a183dc5fc8df897ecdbff16cc2a8a648f13",
+              "scripts/boilerplates/bp_cad_robotics.py": "f4cefba47a6540da6fd19de46eb9cee9998c3065d9f974a2dcde69498435b566"
+            }
+          }
+        },
+        "hardware-interface-geometry": {
+          "when": "Khi dùng helper ổ bi, nut/washer, keyway hoặc gland làm interface cơ khí.",
+          "sources": [
+            "scripts/boilerplates/cad_mechanics/bp_ball_bearing.py",
+            "scripts/boilerplates/cad_mechanics/bp_fasteners_iso.py",
+            "scripts/boilerplates/cad_mechanics/bp_oring_glands.py",
+            "scripts/boilerplates/cad_mechanics/bp_shaft_couplings.py"
+          ],
+          "steps": [
+            "Chọn drawing phần cứng cụ thể, đơn vị và dung sai; từ chối fallback kích thước âm thầm.",
+            "Dựng/cắt đủ lỗ, rãnh và mặt tiếp xúc trong candidate; kiểm evaluated mesh sau union."
+          ],
+          "gates": [
+            "Đo bore/raceway/keyway và fit ở section; không chấp nhận solid cylinder thay ring.",
+            "Kiểm đúng local dimensions, squeeze/fill và topology; xác minh lực/mòn/seal bằng dữ liệu hoặc thử thực riêng."
+          ],
+          "limitations": [
+            "Tên tiêu chuẩn trong header và số mặt không chứng minh tương thích phần cứng.",
+            "Một số helper hiện thiếu bores/raceways/threads hoặc boolean union; chưa dùng làm chi tiết sản xuất trực tiếp."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "scout full static audit; controller curated checks",
+            "source_hashes": {
+              "scripts/boilerplates/cad_mechanics/bp_ball_bearing.py": "8383db28f846246672060a6ea553a3314bc9525d7115b2cdabb08cb203b99b4d",
+              "scripts/boilerplates/cad_mechanics/bp_fasteners_iso.py": "ad3513d1e7e4d031db513de349827e8e4a78bc8233b4ec3d7f59ec851adb6613",
+              "scripts/boilerplates/cad_mechanics/bp_oring_glands.py": "75bd44c7c57fd6757e4227f669abb368f3a877fd44607fe29c1efbf5f22e9dbf",
+              "scripts/boilerplates/cad_mechanics/bp_shaft_couplings.py": "ffb7d0044c8413a575b80e09470b2e8a9a4adfd2261d516179dc42de93853fe6"
+            }
+          }
+        },
+        "industrial-connector-panel-packaging": {
+          "when": "Khi dựng connector, panel cutout, terminal và khoảng thao tác ở hộp điều khiển.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md",
+            "research/industrial-wiring-harness-packaging/01-INDUSTRIAL-BUS-PHYSICAL-LAYERS-PINOUTS.md",
+            "research/industrial-wiring-harness-packaging/02-CONNECTOR-DIMENSIONAL-STANDARDS-PANEL-CUTOUTS.md",
+            "scripts/boilerplates/cad_mechanics/bp_connectors_wiring.py",
+            "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py"
+          ],
+          "steps": [
+            "Chốt mã connector/contact, pin-view, giao thức, cáp và drawing cụ thể; ghi chỗ nguồn mâu thuẫn.",
+            "Inspect/adapt cutter trong scene riêng; đo section, chiều dày panel, mặt gá và tool approach.",
+            "Khai báo pin-to-pin wire list, terminal/crimp và khoảng lắp tháo."
+          ],
+          "gates": [
+            "Thay tham số phải đổi đúng hình học; kiểm kích thước, topology và Boolean thật sau cắt.",
+            "D-cut smoke không thay fit coupon; chiều pin và drawing phiên bản phải khớp phần cứng được chọn."
+          ],
+          "limitations": [
+            "Bảng pinout/kích thước là synthesis chưa kiểm định; không lấy pitch hoặc tên ISO làm bảo đảm tương thích.",
+            "Saddle hiện là cube không có slot; vent thiếu thread/membrane và bỏ qua tham số; cần sửa adapter trước sản xuất."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c",
+              "research/industrial-wiring-harness-packaging/01-INDUSTRIAL-BUS-PHYSICAL-LAYERS-PINOUTS.md": "0de4f110d19f68c8b2fa83b1942970b058878e86f220e6aea2874fb11028d593",
+              "research/industrial-wiring-harness-packaging/02-CONNECTOR-DIMENSIONAL-STANDARDS-PANEL-CUTOUTS.md": "9bfd07b3b14ff26bc4ce263638dd428616117fb211398719b2c844e9284140b7",
+              "scripts/boilerplates/cad_mechanics/bp_connectors_wiring.py": "c562ffea81232edf20bb2236280cc06dc96f955f8796e2ac5be368e527850ce2",
+              "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py": "e6799635a8f6275cb8ecd5aeea4c3192ca99720f3e315bcf801f134f79650a8e"
+            }
+          }
+        },
+        "enclosure-sealing-emc-harness": {
+          "when": "Khi packaging hộp điều khiển cần sealing, nhiệt, shield hoặc tài liệu harness.",
+          "sources": [
+            "research/industrial-wiring-harness-packaging/04-INGRESS-PROTECTION-SEALING-THERMAL-RELIEF.md",
+            "research/industrial-wiring-harness-packaging/05-EMC-GROUNDING-SHIELDING-HARNESS-MANUFACTURING.md",
+            "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py"
+          ],
+          "steps": [
+            "Tách yêu cầu môi trường thực khỏi ví dụ công nghiệp; chọn seal/vent theo đúng phần cứng.",
+            "Khai báo reference pressure/temperature và mô hình; kiểm tính nhất quán đơn vị và giả định.",
+            "Lập wire list, route, shield termination, crimp/tool và kiểm tra lắp ráp."
+          ],
+          "gates": [
+            "Kiểm section/gland/mating và luồng thoát nhiệt thực; mô hình vent phải có đặc tính được yêu cầu.",
+            "Không công bố IP/EMC từ mesh: cần phương pháp thử và dữ liệu phù hợp cho cụm đã lắp."
+          ],
+          "limitations": [
+            "Các ngưỡng bolt spacing, membrane, EMC spacing và pull force trong nguồn chưa được xác nhận cho target.",
+            "Boilerplate vent bỏ qua kích thước ren/panel; hình thức kín hoặc gọn không xác nhận chức năng."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
+            "source_hashes": {
+              "research/industrial-wiring-harness-packaging/04-INGRESS-PROTECTION-SEALING-THERMAL-RELIEF.md": "64e62ff9b34de40a3bee4a3f1adfaa5664b2ea58e673147af981762135390d44",
+              "research/industrial-wiring-harness-packaging/05-EMC-GROUNDING-SHIELDING-HARNESS-MANUFACTURING.md": "0187d9f805ba6d158e2e475df576dfa7c692abe33d7088e1d4e85e537b9c7124",
+              "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py": "e6799635a8f6275cb8ecd5aeea4c3192ca99720f3e315bcf801f134f79650a8e"
+            }
+          }
+        }
+      }
+    },
+    "mechanisms-transmissions": {
+      "purpose": "Bánh răng, giảm tốc, trục/ổ, tải giữ lâu và truyền động.",
+      "required": [
+        "knowledge/70-cad-precision-robotics/gears-transmission-modeling.md",
+        "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md",
+        "knowledge/70-cad-precision-robotics/cad-precision-modeling.md"
+      ],
+      "supplemental": [
+        "research/mechanical-engineering-foundations/01-MACHINE-ELEMENTS-TRANSMISSIONS.md",
+        "research/mechanical-engineering-foundations/02-STRENGTH-OF-MATERIALS-FATIGUE.md",
+        "research/mechanical-engineering-foundations/05-SPRINGS-DAMPING-FASTENERS.md",
+        "research/robotics-precision-cad/06-GEAR-TRANSMISSIONS-MATHEMATICS.md"
+      ],
+      "concepts": [],
+      "adapters": [
+        "scripts/compute-mesh-inertia.py",
+        "builds/robot-arm-v2-engineered/check-operating-envelope.py"
+      ],
+      "steps": [
+        "Chốt tải, reach, duty, tốc độ, hiệu suất và actuator envelope.",
+        "Tính worst-case moment gồm link, hand, payload; phân biệt continuous với stall torque.",
+        "Dựng reduction, bearings, fastener và cable space theo interface thật.",
+        "Kiểm backlash/va chạm/cường độ/nhiệt rồi xác nhận bằng bench test."
+      ],
+      "gates": [
+        "Mass/CoM/inertia gắn unit và geometry revision.",
+        "Mô-men liên tục có margin theo yêu cầu, không lấy stall rating làm giữ lâu.",
+        "Gear profile/root/contact và bearing load được kiểm tra theo drawing/calculation.",
+        "Giữ trạng thái BLOCKED khi thông số actuator hoặc test thực còn thiếu."
+      ],
+      "limitations": [
+        "Gear KB snippet chưa có root fillet như mô tả; tolerance tham số chưa thực hiện.",
+        "Arm 250 g giữ nhiều phút đang BLOCKED; không chuyển sang PASS từ animation."
+      ],
+      "topics": {
+        "contact-wear-sealing": {
+          "when": "Khi có wear/leakage/bearing/bushing/seal duty được yêu cầu.",
+          "sources": [
+            "research/advanced-tribology-contact-mechanics/01-HERTZIAN-CONTACT-STRESS.md",
+            "research/advanced-tribology-contact-mechanics/02-TRIBOLOGY-LUBRICATION-STRIBECK.md",
+            "research/polymer-additive-manufacturing-advanced/04-POLYMER-TRIBOLOGY-GEARS-BUSHINGS.md",
+            "research/mechanical-engineering-foundations/04-FLUID-POWER-SEALS-O-RINGS.md"
+          ],
+          "steps": [
+            "Ghi material pair, contact regime, load/speed/finish/lubrication/seal duty."
+          ],
+          "gates": [
+            "Kiểm đơn vị/phương trình đúng contact regime và data phần cứng.",
+            "Đo local fit; wear/temperature/leak thử thực trước performance claim."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping",
+            "source_hashes": {
+              "research/advanced-tribology-contact-mechanics/01-HERTZIAN-CONTACT-STRESS.md": "345be386539b7a407d38d5759f2cf363530b59ac69f86d5f69b837baebafc0c2",
+              "research/advanced-tribology-contact-mechanics/02-TRIBOLOGY-LUBRICATION-STRIBECK.md": "38b7690b920d9c43be0c88082e2b77fcd8a515424044318a14f7e4c59a460496",
+              "research/polymer-additive-manufacturing-advanced/04-POLYMER-TRIBOLOGY-GEARS-BUSHINGS.md": "e39d9245c95345dc96524d23523f7df90f4ea7b4e14852bb4030f5191a7589ca",
+              "research/mechanical-engineering-foundations/04-FLUID-POWER-SEALS-O-RINGS.md": "34d279fbc34d937346a4ed6f509aba7e267c80e69094eba6dfa42a26a058f175"
+            }
+          }
+        },
+        "cycloid-profile-kinematics": {
+          "when": "Chỉ khi cycloidal reduction đã được chọn.",
+          "sources": [
+            "research/advanced-tribology-contact-mechanics/03-CYCLOIDAL-SPEED-REDUCERS-MATHEMATICS.md",
+            "scripts/generate-cycloid-drive.py"
+          ],
+          "steps": [
+            "Chốt pins/lobes/eccentricity/phase/output holes/bearings.",
+            "Dựng candidate riêng; adapter chỉ là nguồn tham khảo."
+          ],
+          "gates": [
+            "Kiểm profile convergence, self-intersection, bores/walls trên evaluated mesh.",
+            "Sweep vòng input theo contract; kiểm clearance và output ratio."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Generator xóa scene, không tạo toàn bộ drive hay tự chứng minh ratio/manufacture."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping",
+            "source_hashes": {
+              "research/advanced-tribology-contact-mechanics/03-CYCLOIDAL-SPEED-REDUCERS-MATHEMATICS.md": "ccbc9d27cd6404d81249e90b47d522b9180bc8f57c79642b814d4a94b19e481d",
+              "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8"
+            }
+          }
+        },
+        "actuator-duty-thermal": {
+          "when": "Khi payload, giữ lâu hoặc chu kỳ lặp quyết định actuator.",
+          "sources": [
+            "research/advanced-tribology-contact-mechanics/04-ACTUATOR-INERTIA-MATCHING-THERMAL.md"
+          ],
+          "steps": [
+            "Lập torque/speed trajectory, mass/inertia revision và mô hình điện/nhiệt."
+          ],
+          "gates": [
+            "Kiểm đơn vị, nguồn motor/driver, continuous và peak limits riêng.",
+            "Kiểm thermal response bằng duty thử thực trước loaded-hold claim."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping",
+            "source_hashes": {
+              "research/advanced-tribology-contact-mechanics/04-ACTUATOR-INERTIA-MATCHING-THERMAL.md": "8cfcba1b7133177b918f05c264e91ba79aeef71b7a43c32919b384d96a76b5da"
+            }
+          }
+        },
+        "parametric-gear-profile": {
+          "when": "Khi dựng spur gear từ profile involute bằng BMesh.",
+          "sources": [
+            "scripts/boilerplates/cad_mechanics/bp_involute_gear.py"
+          ],
+          "steps": [
+            "Chốt module, số răng, pressure angle, backlash và chiều rộng theo tải/drawing.",
+            "Kiểm công thức flank/pitch/root; tạo mesh candidate trước khi gắn vào truyền động."
+          ],
+          "gates": [
+            "Đo pitch tooth thickness và sai số profile ở nhiều sample counts; kiểm root, bore, manifold/self-intersection.",
+            "Sweep cặp bánh răng; đo ratio/interference/clearance; kiểm tải và vật liệu riêng."
+          ],
+          "limitations": [
+            "Không có helical/root fillet như header; geometry sample chưa chứng minh gear đúng."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "scout full static audit; controller curated checks",
+            "source_hashes": {
+              "scripts/boilerplates/cad_mechanics/bp_involute_gear.py": "5af44abbd8678d9e1a5e1eea10153a1fa06c5029c4a1637bdb9753104ae2ade4"
+            }
+          }
+        }
+      }
+    },
+    "robotics-links-simulation": {
+      "purpose": "Robot links, URDF, coordinate frames, collision và inertia.",
+      "required": [
+        "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
+        "knowledge/40-animation/rigging-armature.md",
+        "knowledge/60-pipeline/export-interchange.md"
+      ],
+      "supplemental": [
+        "research/robotics-precision-cad/01-MECHANICAL-ROBOTICS-FUNDAMENTALS.md",
+        "research/robotics-precision-cad/05-ROBOTICS-SIMULATION-PIPELINE.md",
+        "research/robotics-precision-cad/10-HUMANOID-HARDWARE-ACTUATORS.md"
+      ],
+      "concepts": [
+        ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"
+      ],
+      "adapters": [
+        "scripts/compute-mesh-inertia.py",
+        "builds/robot-arm-v2-engineered/flexibility-contact-lib.py"
+      ],
+      "steps": [
+        "Chốt hệ tọa độ từng link/joint và đơn vị SI ở boundary export.",
+        "Tách visual, collision, physical properties; kiểm mass/CoM/inertia bằng phương pháp đã validate.",
+        "Export articulation và import vào target simulator.",
+        "So pose/pivot/limit, collision shape và physical response với kỳ vọng."
+      ],
+      "gates": [
+        "Không áp rotation cố định chỉ từ tên phần mềm; verify basis vector và forward axis.",
+        "Collision shape được kiểm lồi/đơn giản thật, decimation không chứng minh convex.",
+        "Inertia tensor đối xứng và positive definite bằng eigenvalues hoặc principal minors.",
+        "Round-trip đúng link hierarchy, scale, limits; simulator test được lưu."
+      ],
+      "limitations": [
+        "Snippet URDF hiện format inertia truyền vào, không tính inertia.",
+        "Collision và tensor snippets trong KB chưa đủ predicate cần thiết.",
+        "Không chạy/install simulator chỉ vì đọc research."
+      ],
+      "topics": {
+        "dynamic-harness-routing": {
+          "when": "Khi đi dây từ controller qua khớp chuyển động hoặc thiết kế carrier/drag chain.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md",
+            "research/industrial-wiring-harness-packaging/03-CABLE-MECHANICS-FLEX-LIFE-DRAG-CHAINS.md",
+            "research/robotics-precision-cad/12-INDUSTRIAL-WIRING-CONNECTORS-HARNESS-ROUTING.md",
+            "scripts/boilerplates/cad_mechanics/bp_cable_dragchain.py"
+          ],
+          "steps": [
+            "Chốt endpoint, cáp thực, connector, giới hạn uốn/xoắn và chiều dài tự do.",
+            "Dựng route theo từng joint pose; tính chiều dài, curvature và khoảng tránh cơ cấu.",
+            "Thiết kế retention/strain relief; kiểm link socket, stop và fastening trước khi gọi chain là hoạt động được."
+          ],
+          "gates": [
+            "Từ chối input âm và silent radius cap; đo min radius/length/torsion tại pose biên với units rõ.",
+            "Kiểm giao thoa chain và tính kết nối của từng link; kiểm thực với cáp/link đã chọn trước tuyên bố cycle life."
+          ],
+          "limitations": [
+            "Curve reveal không bảo toàn chiều dài hoặc chứng minh đi dây thật.",
+            "Boilerplate hiện tạo primitive rời và thiếu socket/stop; kiểu conductor không chứng nhận flex life."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c",
+              "research/industrial-wiring-harness-packaging/03-CABLE-MECHANICS-FLEX-LIFE-DRAG-CHAINS.md": "9505da833fe0db557b3385b4c94251829a5e5926ce37c86ed8987d98049256c6",
+              "research/robotics-precision-cad/12-INDUSTRIAL-WIRING-CONNECTORS-HARNESS-ROUTING.md": "6ac53feff1fdfe7a1f10cb7e12875c130f24ecfb966357f6c80a6ca74754ed04",
+              "scripts/boilerplates/cad_mechanics/bp_cable_dragchain.py": "d1a95bc9acd1f7473c037a5716cb53dd9214ea38c865cb25c4489e972c79d978"
+            }
+          }
+        }
+      }
+    },
+    "render-export-delivery": {
+      "purpose": "Video không phụ đề, render batch, encode và export/re-import.",
+      "required": [
+        "knowledge/30-lighting-render/render-engines.md",
+        "knowledge/30-lighting-render/compositing-output.md",
+        "knowledge/60-pipeline/export-interchange.md"
+      ],
+      "supplemental": [
+        "knowledge/60-pipeline/optimization-realtime.md",
+        "knowledge/60-pipeline/product-viz-and-shots.md"
+      ],
+      "concepts": [],
+      "adapters": [
+        "scripts/headless-run.sh",
+        "builds/robot-arm-v2-engineered/render-task-demo.py",
+        "builds/robot-arm-v2-engineered/verify-task-video.py",
+        "scripts/agent-verify-lib.py"
+      ],
+      "steps": [
+        "Chốt source hash, camera, frame range, fps, aspect và yêu cầu overlay/audio.",
+        "Đo render profile trên frame đại diện trong process riêng.",
+        "Render raw frames với output/range riêng và kiểm đủ frame.",
+        "Encode/decode hoặc export/re-import đúng artifact; xem cả nhịp chuyển động."
+      ],
+      "gates": [
+        "Python errors phải trả nonzero và có postcondition; shell exit 0 chưa đủ.",
+        "Frame missing/corrupt/mixed revision bị loại trước encode.",
+        "Duration/fps/resolution/range đúng brief; video không text khi user yêu cầu.",
+        "Review đúng file đã hash; kỹ thuật và chất lượng visual ghi riêng."
+      ],
+      "limitations": [
+        "Headless wrapper chưa explicit Python-error exit; dùng CLI explicit theo core recipe.",
+        "Ví dụ video chứa fixed arm path/24fps/720frames; phải chuyển contract theo task.",
+        "Không resume dựa vào file tồn tại; stale-evidence enforcement E1–E5 còn backlog."
+      ],
+      "topics": {
+        "renderer-diagnostics": {
+          "when": "Khi cần đo CPU/Metal, sampling hoặc so giới hạn renderer.",
+          "sources": [
+            "research/blender-rendering-deep-dive/01-PATH-TRACING-CYCLES-ARCHITECTURE.md",
+            "research/blender-rendering-deep-dive/02-EEVEE-NEXT-REALTIME-RENDER-PIPELINE.md",
+            "scripts/boilerplates/bp_render_camera.py"
+          ],
+          "steps": [
+            "Benchmark frame đại diện cùng resolution/source; lựa chọn device theo phép đo.",
+            "Giữ Cycles batch theo policy; EEVEE chỉ khi capability được xác nhận."
+          ],
+          "gates": [
+            "Engine/device thực sự enabled, timing và settings được ghi.",
+            "So noise/detail và reflection artifacts; tốc độ không thay chất lượng."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Không thừa hưởng GPU/Metal-only hoặc bounce preset từ research."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
+            "source_hashes": {
+              "research/blender-rendering-deep-dive/01-PATH-TRACING-CYCLES-ARCHITECTURE.md": "1ca697b7e8199900a9c8b6d070d63efa52b249878bfdc8f240038ddceb03c4de",
+              "research/blender-rendering-deep-dive/02-EEVEE-NEXT-REALTIME-RENDER-PIPELINE.md": "44c0b09d2b7ecb81e4f72f83e9409234007ef6e884d504a444b7285ee1f2896b",
+              "scripts/boilerplates/bp_render_camera.py": "a0462c9844057b058c04e855b47d26c21be2513adb242a74288e9b9ae20e90e2"
+            }
+          }
+        },
+        "participating-media": {
+          "when": "Chỉ khi scene có haze/cloud/volume cần kiểm soát.",
+          "sources": [
+            "research/blender-rendering-deep-dive/03-VOLUMETRIC-SCATTERING-ATMOSPHERICS.md"
+          ],
+          "steps": [
+            "Chốt volume bounds, density và path-length assumptions.",
+            "So baseline tắt atmosphere để tách exposure/material lỗi."
+          ],
+          "gates": [
+            "Bounds/density hữu hạn và phù hợp scale.",
+            "Xem banding, light shafts, transmission và khả năng đọc sản phẩm."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_render_scout; controller source mapping",
+            "source_hashes": {
+              "research/blender-rendering-deep-dive/03-VOLUMETRIC-SCATTERING-ATMOSPHERICS.md": "3398c162a9916827d9f8cecf08f61be50dde18b4079a93242e14a05684d008ca"
+            }
+          }
+        },
+        "color-denoise-delivery": {
+          "when": "Khi highlight/output colors hoặc temporal noise cần chẩn đoán.",
+          "sources": [
+            "research/blender-rendering-deep-dive/04-COLOR-MANAGEMENT-AGX-ACES.md",
+            "research/blender-rendering-deep-dive/05-DENOISING-OIDN-OPTIX-TEMPORAL.md"
+          ],
+          "steps": [
+            "Chốt display/view/look/exposure và output encoding riêng.",
+            "Giữ raw noisy evidence; kiểm guide passes trước nối denoiser."
+          ],
+          "gates": [
+            "Introspect compositor/pass sockets; EXR contract có cấu hình thực.",
+            "So raw/denoised crop và clip liên tiếp: không mất detail, ghost hoặc boiling."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Không xóa compositor hiện hữu hoặc dùng sample minimum làm bảo đảm."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_render_scout; controller source mapping",
+            "source_hashes": {
+              "research/blender-rendering-deep-dive/04-COLOR-MANAGEMENT-AGX-ACES.md": "92ad6a1fe1eb4909477b6b9a90821f2aaba9f29b4718a0b40c453b846ea0a7b0",
+              "research/blender-rendering-deep-dive/05-DENOISING-OIDN-OPTIX-TEMPORAL.md": "bfbe6228752fb87ad29ed1e75868cf2d3d5e63ceee83b1287b64703bc7a51da3"
+            }
+          }
+        },
+        "framing-export-contract": {
+          "when": "Khi tự căn camera hoặc xuất GLB/STL qua adapter.",
+          "sources": [
+            "scripts/boilerplates/pipeline_render/bp_export_pipeline.py",
+            "scripts/boilerplates/pipeline_render/bp_cam_autoframing.py"
+          ],
+          "steps": [
+            "Chốt object selection, evaluated bounds, camera type/aspect và output path của candidate.",
+            "Adapt framing theo cả hai FOV; xuất với units và thuộc tính đúng contract."
+          ],
+          "gates": [
+            "Chiếu evaluated bounds qua camera, kiểm cả X/Y, near/far clip tại mọi pose yêu cầu; xem ảnh render.",
+            "Đọc lại artifact độc lập, kiểm object/count/bounds/units/materials theo format; STL cần topology và dung sai riêng."
+          ],
+          "limitations": [
+            "FINISHED, file tồn tại hoặc camera distance không chứng minh output đúng.",
+            "Helper có thể đổi target/constraint hiện hữu và ghi đường dẫn cố định; không chạy self-test trên scene sản xuất."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "controller full source read",
+            "source_hashes": {
+              "scripts/boilerplates/pipeline_render/bp_export_pipeline.py": "f2499c0298d379263e2e8f2078d06ddbbfa6ca326a19e756c4b97290c0ce2ae1",
+              "scripts/boilerplates/pipeline_render/bp_cam_autoframing.py": "78234a210fb236dcd25a08b9cd2faddca9c1976fd9f6cdb4deb200f13d2ce780"
+            }
+          }
+        }
+      }
+    },
+    "native-procedural-simulation": {
+      "purpose": "Geometry Nodes, pattern, instances và simulation/caches bằng Blender-native.",
+      "required": [
+        "knowledge/50-procedural/geometry-nodes.md",
+        "knowledge/50-procedural/simulation-physics.md",
+        "knowledge/10-modeling/modifiers.md"
+      ],
+      "supplemental": [
+        "knowledge/40-animation/animation-fcurves.md",
+        "knowledge/60-pipeline/optimization-realtime.md"
+      ],
+      "concepts": [],
+      "adapters": [
+        "scripts/agent-verify-lib.py"
+      ],
+      "steps": [
+        "Chốt procedural inputs, unit, seed, instance domain và output contract.",
+        "Introspect node/socket/zone ở runtime; blockout graph nhỏ trước.",
+        "Kiểm evaluated geometry/instance transforms và cache trên frame đại diện.",
+        "Bake/render candidate riêng, xem kết quả nhiều frame."
+      ],
+      "gates": [
+        "Counts/attributes/instances đúng với input; thay input đổi output như spec.",
+        "Kết quả evaluated và export không thiếu instances/modifiers.",
+        "Cache gắn revision và frame range; replay candidate có kết quả đúng.",
+        "Review visual và thời gian sau numeric checks."
+      ],
+      "limitations": [
+        "Simulation mesh không tự chứng minh vật liệu hoặc phần cứng thật.",
+        "Physics cache và node API phụ thuộc runtime; không recall version."
+      ],
+      "topics": {
+        "fields-parametric-solids": {
+          "when": "Khi field domains, attributes hoặc hình cơ khí tham số là mục tiêu.",
+          "sources": [
+            "research/blender-geometry-nodes-procedural/01-FIELDS-ARCHITECTURE-EVALUATION-MODEL.md",
+            "research/blender-geometry-nodes-procedural/02-PROCEDURAL-HARD-SURFACE-CAD-MODELING.md",
+            "scripts/generate-procedural-geonodes.py",
+            "scripts/boilerplates/bp_geonodes.py",
+            "scripts/boilerplates/bp_bmesh_cad.py"
+          ],
+          "steps": [
+            "Chốt input ranges/units/schema/consumer domains.",
+            "Introspect sockets rồi kiểm parameter matrix gồm biên."
+          ],
+          "gates": [
+            "Đo evaluated dimensions, hole/component counts và topology.",
+            "Kiểm attribute name/domain/type/distribution thực; xem sections và shading."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "Adapter thiếu bốn lỗ gá như header; main xóa toàn bộ object."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_rig_scout; controller source mapping; boilerplate source scout static review",
+            "source_hashes": {
+              "research/blender-geometry-nodes-procedural/01-FIELDS-ARCHITECTURE-EVALUATION-MODEL.md": "e067dbda62c98c67b8de34cb27377d9106a61e166d5c788fbd29f8566ce2dc99",
+              "research/blender-geometry-nodes-procedural/02-PROCEDURAL-HARD-SURFACE-CAD-MODELING.md": "1fa9d830e42ba72055c9affa9ff59b3acf2537d9d1721681d7e6e61af9d552f3",
+              "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
+              "scripts/boilerplates/bp_geonodes.py": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+              "scripts/boilerplates/bp_bmesh_cad.py": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086"
+            }
+          }
+        },
+        "simulation-repeat-budgets": {
+          "when": "Khi cần state qua frame, substeps, branching hoặc iterative solver.",
+          "sources": [
+            "research/blender-geometry-nodes-procedural/03-SIMULATION-ZONES-PHYSICS-SOLVERS.md",
+            "research/blender-geometry-nodes-procedural/04-REPEAT-ZONES-FRACTALS-RECURSION.md",
+            "scripts/boilerplates/bp_physics.py"
+          ],
+          "steps": [
+            "Tách inter-frame simulation và intra-frame loop.",
+            "Chốt timestep/state/seed/cache revision; xử lý empty/coincident neighborhoods.",
+            "So hai timestep/substep candidates và dự toán growth trước chạy."
+          ],
+          "gates": [
+            "Không NaN/Inf; count/time/memory trong budget task.",
+            "Đo convergence/state residual và replay; không yêu cầu tăng vertex với fixed topology.",
+            "Xem tunneling/stability/feature loss theo thời gian."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_rig_scout; controller source mapping; boilerplate source scout static review",
+            "source_hashes": {
+              "research/blender-geometry-nodes-procedural/03-SIMULATION-ZONES-PHYSICS-SOLVERS.md": "8959b378ecad521c39fe3fd915c6b65a655d04c84830314a61adad76136a07c0",
+              "research/blender-geometry-nodes-procedural/04-REPEAT-ZONES-FRACTALS-RECURSION.md": "ac7657d383102eec3294e8bc24af5d101ffdd7bf867e18c08c38c073e2a7adf1",
+              "scripts/boilerplates/bp_physics.py": "310830e00597192f942742ea24a580ba26f1a04e65bf75c8a632fc523201ccea"
+            }
+          }
+        },
+        "sdf-feature-preservation": {
+          "when": "Khi chọn SDF boolean hoặc volume remesh cho candidate native.",
+          "sources": [
+            "research/blender-geometry-nodes-procedural/05-VOLUME-GRIDS-SDF-BOOLEANS.md"
+          ],
+          "steps": [
+            "Phân biệt fog/distance grid/isovalue.",
+            "Chọn voxel size theo feature và memory; giữ original."
+          ],
+          "gates": [
+            "So topology, openings, local walls/clearance và deviation ở hai resolutions.",
+            "Xem section và camera-matched sheet: không bịt lỗ/xóa vách."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task.",
+            "SDF không tự bảo đảm manifold/printing-ready hoặc giữ wall từ quy tắc half-wall."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "evolution_rig_scout; controller source mapping",
+            "source_hashes": {
+              "research/blender-geometry-nodes-procedural/05-VOLUME-GRIDS-SDF-BOOLEANS.md": "420beb9331f727a560f9e3fcab806dfc7d08e47c37405017e37db4879dd4d233"
+            }
+          }
+        },
+        "graded-lattice-reinforcement": {
+          "when": "Khi lattice hoặc reinforcement nhằm mục tiêu mass/stiffness cụ thể.",
+          "sources": [
+            "research/advanced-tribology-contact-mechanics/05-TOPOLOGY-OPTIMIZATION-LATTICES.md",
+            "research/polymer-additive-manufacturing-advanced/02-CONTINUOUS-FIBER-COMPOSITES-CFRTP.md"
+          ],
+          "steps": [
+            "Chốt cell size/local wall/boundary/load paths và fiber directions."
+          ],
+          "gates": [
+            "Cần mesh thật, density/wall và resolution convergence; field preview không phải mesh.",
+            "Kiểm orientation/boundary condition và physical stiffness riêng."
+          ],
+          "limitations": [
+            "Nguồn research chưa chứng nhận API/số liệu; kiểm runtime và nguồn gốc theo yêu cầu task."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "knowledge_corpus_scout; controller source mapping",
+            "source_hashes": {
+              "research/advanced-tribology-contact-mechanics/05-TOPOLOGY-OPTIMIZATION-LATTICES.md": "e83faf7df5baa6639cdefeeb8484d463241f31e9bd2355f3134eb2a199a6f930",
+              "research/polymer-additive-manufacturing-advanced/02-CONTINUOUS-FIBER-COMPOSITES-CFRTP.md": "6e4260f9be456a71959911ba1af3882f1c6b5868dca4edcb819050fd71ed2667"
+            }
+          }
+        },
+        "procedural-component-adapters": {
+          "when": "Khi adapt graph cáp/tube hoặc flange có tham số.",
+          "sources": [
+            "scripts/boilerplates/geometry_nodes/bp_gn_cables.py",
+            "scripts/boilerplates/geometry_nodes/bp_gn_pipe_flange.py"
+          ],
+          "steps": [
+            "Chốt component shape, input ranges và output measurements; không lấy header làm contract đã đạt.",
+            "Inspect node/socket/interface thực; sửa feature còn thiếu trong candidate riêng."
+          ],
+          "gates": [
+            "Đo endpoint/midpoint khi đổi Sag, đường kính, OD/bore/thickness và số lỗ theo component.",
+            "Kiểm valid/invalid boundaries, caps/components/manifold và section/render; drawing thật mới xác định flange cần gì."
+          ],
+          "limitations": [
+            "Cáp hiện không dùng Sag; flange chỉ có disc-minus-bore, chưa có hub/bolt pattern.",
+            "Nonempty mesh không đủ chứng minh graph thực hiện input."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "specialist scout full source audit; controller curation",
+            "source_hashes": {
+              "scripts/boilerplates/geometry_nodes/bp_gn_cables.py": "5212fe937edc66bab7b449d0232199ae768b21cc4bd98325e447c433df97eee0",
+              "scripts/boilerplates/geometry_nodes/bp_gn_pipe_flange.py": "7e7ea9168e56dc6d4c677a548e3815d46786ca9845c479f3402b4fc3685991e1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "routing_exclusions": {
+    "research/robotics-precision-cad/00-BRAINSTORM-CONTRACT.md": {
+      "reason": "Historical research planning contract, not a technical procedure; searchable as background.",
+      "reviewed_sha256": "fd43778d7310f2a19b79dde5b810a4ca2c77103b13d18b34538cde3ca8464b72"
+    }
+  }
+}

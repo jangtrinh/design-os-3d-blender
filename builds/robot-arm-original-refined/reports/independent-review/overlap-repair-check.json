@@ -1,0 +1,232 @@
+{
+  "status": "PASS_WITH_PHYSICAL_LIMITS",
+  "artifact_sha256": "06e248dc8d2902862fb7a82679dc740dafa2197081ba3203f7f8b760f1911811",
+  "frames": 3031,
+  "order": {
+    "shoulder": {
+      "fork_seat": [
+        543,
+        615
+      ],
+      "carrier_left_seat": [
+        663,
+        687
+      ],
+      "carrier_right_seat": [
+        753,
+        777
+      ],
+      "fork_before_both_carriers": true
+    },
+    "elbow": {
+      "fork_seat": [
+        1223,
+        1295
+      ],
+      "carrier_left_seat": [
+        1343,
+        1367
+      ],
+      "carrier_right_seat": [
+        1433,
+        1457
+      ],
+      "fork_before_both_carriers": true
+    }
+  },
+  "waiting": [
+    {
+      "module": "elbow",
+      "subassembly": "carrier-left",
+      "frame": 1342,
+      "pairs": []
+    },
+    {
+      "module": "elbow",
+      "subassembly": "carrier-right",
+      "frame": 1432,
+      "pairs": []
+    },
+    {
+      "module": "elbow",
+      "subassembly": "fork",
+      "frame": 1222,
+      "pairs": [],
+      "projected_axis": [
+        0.8762158751487732,
+        0.4819187521934509,
+        0.0
+      ],
+      "moving_span_m": [
+        0.4081870336085558,
+        0.5679578520357609
+      ],
+      "fixed_span_m": [
+        0.23973442614078522,
+        0.34289583354257047
+      ],
+      "projected_gap_mm": 65.29120006598532
+    },
+    {
+      "module": "shoulder",
+      "subassembly": "carrier-left",
+      "frame": 662,
+      "pairs": []
+    },
+    {
+      "module": "shoulder",
+      "subassembly": "carrier-right",
+      "frame": 752,
+      "pairs": []
+    },
+    {
+      "module": "shoulder",
+      "subassembly": "fork",
+      "frame": 542,
+      "pairs": [],
+      "projected_axis": [
+        0.8762158751487732,
+        0.4819187521934509,
+        0.0
+      ],
+      "moving_span_m": [
+        0.3489788039587438,
+        0.48304029181599617
+      ],
+      "fixed_span_m": [
+        0.22175709903240204,
+        0.30767005402594805
+      ],
+      "projected_gap_mm": 41.30874993279576
+    }
+  ],
+  "sweeps": [
+    {
+      "module": "elbow",
+      "subassembly": "carrier-left",
+      "frames": [
+        1343,
+        1367
+      ],
+      "pairs": [
+        {
+          "moving": "A5-part-elbow-bearing-carrier--1",
+          "fixed": "A5-part-elbow-cradle-floor",
+          "first": 1362,
+          "last": 1367,
+          "max_triangle_pairs": 1449,
+          "classification": "other-body",
+          "moving_type": "machined-metal",
+          "fixed_type": "machined-metal"
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "subassembly": "carrier-right",
+      "frames": [
+        1433,
+        1457
+      ],
+      "pairs": [
+        {
+          "moving": "A5-part-elbow-bearing-carrier-1",
+          "fixed": "A5-part-elbow-cradle-floor",
+          "first": 1452,
+          "last": 1457,
+          "max_triangle_pairs": 1476,
+          "classification": "other-body",
+          "moving_type": "machined-metal",
+          "fixed_type": "machined-metal"
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "subassembly": "fork",
+      "frames": [
+        1223,
+        1295
+      ],
+      "pairs": [
+        {
+          "moving": "A5-part-elbow-drive-flange--1",
+          "fixed": "A5-part-elbow-output--1",
+          "first": 1286,
+          "last": 1295,
+          "max_triangle_pairs": 5542,
+          "classification": "actuator-visual-mate",
+          "moving_type": "machined-metal",
+          "fixed_type": "actuator-visual"
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "subassembly": "carrier-left",
+      "frames": [
+        663,
+        687
+      ],
+      "pairs": [
+        {
+          "moving": "A5-part-shoulder-bearing-carrier--1",
+          "fixed": "A5-part-shoulder-cradle-floor",
+          "first": 682,
+          "last": 687,
+          "max_triangle_pairs": 1343,
+          "classification": "other-body",
+          "moving_type": "machined-metal",
+          "fixed_type": "machined-metal"
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "subassembly": "carrier-right",
+      "frames": [
+        753,
+        777
+      ],
+      "pairs": [
+        {
+          "moving": "A5-part-shoulder-bearing-carrier-1",
+          "fixed": "A5-part-shoulder-cradle-floor",
+          "first": 772,
+          "last": 777,
+          "max_triangle_pairs": 1232,
+          "classification": "other-body",
+          "moving_type": "machined-metal",
+          "fixed_type": "machined-metal"
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "subassembly": "fork",
+      "frames": [
+        543,
+        615
+      ],
+      "pairs": [
+        {
+          "moving": "A5-part-shoulder-drive-flange--1",
+          "fixed": "A5-part-shoulder-output--1",
+          "first": 606,
+          "last": 615,
+          "max_triangle_pairs": 5322,
+          "classification": "actuator-visual-mate",
+          "moving_type": "machined-metal",
+          "fixed_type": "actuator-visual"
+        }
+      ]
+    }
+  ],
+  "final_world_matrix_max_error": 1.1920928955078125e-07,
+  "final_world_matrix_max_error_object": "A5-part-tool-retention-(17, 18)-thread-envelope",
+  "limits": [
+    "BVH surface intersections do not measure penetration volume.",
+    "Actuator-visual output meshes are illustrative and cannot validate physical insertion.",
+    "The screen excludes hardware meshes and does not prove fit, tool access, retention, or load capacity."
+  ]
+}

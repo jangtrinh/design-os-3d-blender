@@ -1,0 +1,10 @@
+{
+  "status": "EXACT_PREFIX_REUSE_PASS",
+  "frames": 2931,
+  "old_scene_sha256": "11d88f93996dcb1eb54a21fe8dbf4bd769b0abd7284b9472e9b77cb12510bd6e",
+  "new_scene_sha256": "06e248dc8d2902862fb7a82679dc740dafa2197081ba3203f7f8b760f1911811",
+  "changed_source_frames": [
+    2943,
+    3031
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "status": "MEASURED",
+  "artifact_sha256": "522afd6712129a2cf751de5a2dd9d517847619dc9783fd4732da79683487f361",
+  "results": [
+    {
+      "joint": "shoulder",
+      "servo_case_part_type": "actuator",
+      "output_part_types": {
+        "A5-part-shoulder-output--1": "actuator-visual",
+        "A5-part-shoulder-output-1": "actuator-visual"
+      },
+      "local_link_axis": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304
+      ],
+      "paths": {
+        "vertical_plus_z": [
+          {
+            "offset_mm": 100,
+            "pairs": []
+          },
+          {
+            "offset_mm": 80,
+            "pairs": []
+          },
+          {
+            "offset_mm": 60,
+            "pairs": []
+          },
+          {
+            "offset_mm": 50,
+            "pairs": []
+          },
+          {
+            "offset_mm": 40,
+            "pairs": []
+          },
+          {
+            "offset_mm": 35,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 22
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4
+              }
+            ]
+          },
+          {
+            "offset_mm": 30,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 593
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 528
+              }
+            ]
+          },
+          {
+            "offset_mm": 25,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 1241
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 938
+              }
+            ]
+          },
+          {
+            "offset_mm": 20,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 1724
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 1775
+              }
+            ]
+          },
+          {
+            "offset_mm": 15,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 2740
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 2387
+              }
+            ]
+          },
+          {
+            "offset_mm": 10,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 3955
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4047
+              }
+            ]
+          },
+          {
+            "offset_mm": 8,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4204
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4027
+              }
+            ]
+          },
+          {
+            "offset_mm": 6,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4872
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4719
+              }
+            ]
+          },
+          {
+            "offset_mm": 4,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 5417
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 5395
+              }
+            ]
+          },
+          {
+            "offset_mm": 3,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 5123
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 5016
+              }
+            ]
+          },
+          {
+            "offset_mm": 2,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4742
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4535
+              }
+            ]
+          },
+          {
+            "offset_mm": 1,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4725
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4310
+              }
+            ]
+          },
+          {
+            "offset_mm": 0,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4651
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 3840
+              }
+            ]
+          }
+        ],
+        "local_link_plus_z": [
+          {
+            "offset_mm": 100,
+            "pairs": []
+          },
+          {
+            "offset_mm": 80,
+            "pairs": []
+          },
+          {
+            "offset_mm": 60,
+            "pairs": []
+          },
+          {
+            "offset_mm": 50,
+            "pairs": []
+          },
+          {
+            "offset_mm": 40,
+            "pairs": []
+          },
+          {
+            "offset_mm": 35,
+            "pairs": []
+          },
+          {
+            "offset_mm": 30,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 523
+              }
+            ]
+          },
+          {
+            "offset_mm": 25,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 1342
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 496
+              }
+            ]
+          },
+          {
+            "offset_mm": 20,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 1828
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 1330
+              }
+            ]
+          },
+          {
+            "offset_mm": 15,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 2828
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 2060
+              }
+            ]
+          },
+          {
+            "offset_mm": 10,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4022
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 3799
+              }
+            ]
+          },
+          {
+            "offset_mm": 8,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4202
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 3998
+              }
+            ]
+          },
+          {
+            "offset_mm": 6,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4828
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4786
+              }
+            ]
+          },
+          {
+            "offset_mm": 4,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 5608
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 5300
+              }
+            ]
+          },
+          {
+            "offset_mm": 3,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 5288
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 5036
+              }
+            ]
+          },
+          {
+            "offset_mm": 2,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4703
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4466
+              }
+            ]
+          },
+          {
+            "offset_mm": 1,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4682
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 4166
+              }
+            ]
+          },
+          {
+            "offset_mm": 0,
+            "pairs": [
+              {
+                "moving": "A5-part-shoulder-drive-flange--1",
+                "fixed": "A5-part-shoulder-output--1",
+                "triangle_pairs": 4651
+              },
+              {
+                "moving": "A5-part-shoulder-drive-flange-1",
+                "fixed": "A5-part-shoulder-output-1",
+                "triangle_pairs": 3840
+              }
+            ]
+          }
+        ]
+      },
+      "flange_fasteners": [
+        {
+          "side": "-1",
+          "head_center_mm": [
+            18.999993801116943,
+            -32.999999821186066,
+            119.00000274181366
+          ],
+          "head_y_range_mm": [
+            -34.49999913573265,
+            -31.50000050663948
+          ],
+          "thread_center_mm": [
+            18.999993801116943,
+            -28.50000374019146,
+            119.00000274181366
+          ],
+          "head_to_thread_unit": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "driver_approach_unit": [
+            -0.0,
+            -1.0,
+            -0.0
+          ]
+        },
+        {
+          "side": "1",
+          "head_center_mm": [
+            18.999993801116943,
+            32.999999821186066,
+            119.00000274181366
+          ],
+          "head_y_range_mm": [
+            31.50000050663948,
+            34.49999913573265
+          ],
+          "thread_center_mm": [
+            18.999993801116943,
+            28.50000187754631,
+            119.00000274181366
+          ],
+          "head_to_thread_unit": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "driver_approach_unit": [
+            -0.0,
+            1.0,
+            -0.0
+          ]
+        }
+      ]
+    },
+    {
+      "joint": "elbow",
+      "servo_case_part_type": "actuator",
+      "output_part_types": {
+        "A5-part-elbow-output--1": "actuator-visual",
+        "A5-part-elbow-output-1": "actuator-visual"
+      },
+      "local_link_axis": [
+        -0.9063078165054321,
+        0.0,
+        0.42261838912963867
+      ],
+      "paths": {
+        "vertical_plus_z": [
+          {
+            "offset_mm": 100,
+            "pairs": []
+          },
+          {
+            "offset_mm": 80,
+            "pairs": []
+          },
+          {
+            "offset_mm": 60,
+            "pairs": []
+          },
+          {
+            "offset_mm": 50,
+            "pairs": []
+          },
+          {
+            "offset_mm": 40,
+            "pairs": []
+          },
+          {
+            "offset_mm": 35,
+            "pairs": []
+          },
+          {
+            "offset_mm": 30,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 679
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 954
+              }
+            ]
+          },
+          {
+            "offset_mm": 25,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 917
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 1186
+              }
+            ]
+          },
+          {
+            "offset_mm": 20,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 2118
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 1962
+              }
+            ]
+          },
+          {
+            "offset_mm": 15,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 3062
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 2848
+              }
+            ]
+          },
+          {
+            "offset_mm": 10,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4253
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4029
+              }
+            ]
+          },
+          {
+            "offset_mm": 8,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4390
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4107
+              }
+            ]
+          },
+          {
+            "offset_mm": 6,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4909
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4710
+              }
+            ]
+          },
+          {
+            "offset_mm": 4,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 5606
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 5266
+              }
+            ]
+          },
+          {
+            "offset_mm": 3,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 5308
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 5067
+              }
+            ]
+          },
+          {
+            "offset_mm": 2,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4793
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4468
+              }
+            ]
+          },
+          {
+            "offset_mm": 1,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4699
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4116
+              }
+            ]
+          },
+          {
+            "offset_mm": 0,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4655
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 3837
+              }
+            ]
+          }
+        ],
+        "local_link_plus_z": [
+          {
+            "offset_mm": 100,
+            "pairs": []
+          },
+          {
+            "offset_mm": 80,
+            "pairs": []
+          },
+          {
+            "offset_mm": 60,
+            "pairs": []
+          },
+          {
+            "offset_mm": 50,
+            "pairs": []
+          },
+          {
+            "offset_mm": 40,
+            "pairs": []
+          },
+          {
+            "offset_mm": 35,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 54
+              }
+            ]
+          },
+          {
+            "offset_mm": 30,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 523
+              }
+            ]
+          },
+          {
+            "offset_mm": 25,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 1340
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 496
+              }
+            ]
+          },
+          {
+            "offset_mm": 20,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 1828
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 1330
+              }
+            ]
+          },
+          {
+            "offset_mm": 15,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 2828
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 2060
+              }
+            ]
+          },
+          {
+            "offset_mm": 10,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4022
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 3799
+              }
+            ]
+          },
+          {
+            "offset_mm": 8,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4203
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 3999
+              }
+            ]
+          },
+          {
+            "offset_mm": 6,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4828
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4786
+              }
+            ]
+          },
+          {
+            "offset_mm": 4,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 5607
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 5300
+              }
+            ]
+          },
+          {
+            "offset_mm": 3,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 5288
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 5038
+              }
+            ]
+          },
+          {
+            "offset_mm": 2,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4703
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4468
+              }
+            ]
+          },
+          {
+            "offset_mm": 1,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4682
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 4170
+              }
+            ]
+          },
+          {
+            "offset_mm": 0,
+            "pairs": [
+              {
+                "moving": "A5-part-elbow-drive-flange--1",
+                "fixed": "A5-part-elbow-output--1",
+                "triangle_pairs": 4655
+              },
+              {
+                "moving": "A5-part-elbow-drive-flange-1",
+                "fixed": "A5-part-elbow-output-1",
+                "triangle_pairs": 3837
+              }
+            ]
+          }
+        ]
+      },
+      "flange_fasteners": [
+        {
+          "side": "-1",
+          "head_center_mm": [
+            71.99046015739441,
+            -32.999999821186066,
+            215.34301340579987
+          ],
+          "head_y_range_mm": [
+            -34.49999913573265,
+            -31.50000050663948
+          ],
+          "thread_center_mm": [
+            71.99046015739441,
+            -28.50000374019146,
+            215.34301340579987
+          ],
+          "head_to_thread_unit": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "driver_approach_unit": [
+            -0.0,
+            -1.0,
+            -0.0
+          ]
+        },
+        {
+          "side": "1",
+          "head_center_mm": [
+            71.99046015739441,
+            32.999999821186066,
+            215.34301340579987
+          ],
+          "head_y_range_mm": [
+            31.50000050663948,
+            34.49999913573265
+          ],
+          "thread_center_mm": [
+            71.99046015739441,
+            28.50000187754631,
+            215.34301340579987
+          ],
+          "head_to_thread_unit": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "driver_approach_unit": [
+            -0.0,
+            1.0,
+            -0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": "Output meshes are actuator-visual envelopes; intersection timing is presentation geometry evidence, not a certified physical servo interface."
+}

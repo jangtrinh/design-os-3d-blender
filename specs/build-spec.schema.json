@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blender.local/specs/build-spec.schema.json",
+  "title": "Blender production build spec, v1",
+  "description": "Declares, BEFORE detailing, what a physical part must measure. scripts/production-gate.py enforces it against a .blend. Every field is in millimetres. Passing the gate is DIGITAL evidence only: geometry, dimensions and screens. It is not load, fit-trial, thermal or slicer evidence.",
+  "type": "object",
+  "required": ["units", "parts"],
+  "properties": {
+    "schema_version": {"type": "integer", "enum": [1], "description": "Spec schema version. Optional; the gate assumes 1."},
+    "units": {"type": "string", "enum": ["mm"], "description": "REQUIRED. Only mm is accepted. Any other value is a contract error (exit 2)."},
+    "project": {"type": "string", "description": "Free text name of the build."},
+    "parts": {
+      "type": "array", "minItems": 1, "description": "REQUIRED. One entry per physical part to be manufactured.",
+      "items": {"$ref": "#/$defs/part"}
+    },
+    "fasteners": {
+      "type": "array", "description": "Bill of fasteners. Declared only: the gate does NOT check that a screw fits, only that declared hole diameters match the standard table.",
+      "items": {"$ref": "#/$defs/fastener_bom"}
+    },
+    "load_cases": {
+      "type": "array", "description": "DECLARED ONLY. The gate never evaluates a load case; it copies them into report.exclusions so the omission is visible.",
+      "items": {"type": "object"}
+    },
+    "required_checks": {
+      "type": "array", "description": "Check names that MUST appear with status pass. A named check that did not run makes the gate fail (exit 1).",
+      "items": {"type": "string"}
+    },
+    "physical_evidence": {
+      "type": "array", "description": "DECLARED ONLY. Physical trials the owner still owes (print, fit, torque, heat). Copied into report.exclusions.",
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "part": {
+      "type": "object",
+      "required": ["id", "object", "target_dims_mm", "tol_mm"],
+      "properties": {
+        "id": {"type": "string", "description": "REQUIRED. Stable part id used in report.failed[]."},
+        "object": {"type": "string", "description": "REQUIRED. Exact Blender object name in the scene. Absent object => exit 2."},
+        "target_dims_mm": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "exclusiveMinimum": 0}, "description": "REQUIRED. World-space bounding-box X,Y,Z in mm."},
+        "tol_mm": {"type": "number", "exclusiveMinimum": 0, "description": "REQUIRED. Symmetric tolerance on each bbox dimension."},
+        "material": {"type": "string", "description": "Optional. Recorded, never checked."},
+        "process": {"type": "string", "description": "Optional, e.g. FDM-0.4mm. Recorded, never checked."},
+        "orientation_up": {"type": "string", "enum": ["+x", "-x", "+y", "-y", "+z", "-z"], "description": "Optional (default +z). Build axis used by the overhang screen."},
+        "min_wall_mm": {"type": "number", "exclusiveMinimum": 0, "description": "Optional. Minimum material thickness. Enforced by a RAY SCREEN, not an exhaustive proof."},
+        "max_overhang_deg": {"type": "number", "description": "Optional (default 45). Angle from the build axis beyond which a face counts as an overhang."},
+        "max_overhang_area_pct": {"type": "number", "description": "Optional. If present the overhang screen becomes a gate; if absent it is reported as info only."},
+        "expected_shells": {"type": "integer", "minimum": 1, "description": "Optional (default 1). Number of separate closed surfaces the part must have."},
+        "features": {"type": "array", "items": {"$ref": "#/$defs/feature"}, "description": "Optional. Measured features. Anything not listed here is NOT measured."}
+      }
+    },
+    "feature": {
+      "type": "object",
+      "required": ["type", "axis", "center_mm", "diameter_mm", "tol_mm"],
+      "properties": {
+        "id": {"type": "string", "description": "Optional. Defaults to f<index>."},
+        "type": {"type": "string", "enum": ["hole", "boss", "slot"], "description": "REQUIRED. Only 'hole' is measured in v1; boss and slot are recorded and reported as unchecked."},
+        "axis": {"description": "REQUIRED. 'x' | 'y' | 'z' or a 3-number direction.", "anyOf": [{"type": "string", "enum": ["x", "y", "z"]}, {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}]},
+        "center_mm": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}, "description": "REQUIRED. A point on the feature axis, world mm."},
+        "diameter_mm": {"type": "number", "exclusiveMinimum": 0, "description": "REQUIRED. Nominal diameter."},
+        "depth_mm": {"type": "number", "exclusiveMinimum": 0, "description": "Optional. Present => blind feature, depth is measured. Absent => through feature, the axial ray must exit."},
+        "tol_mm": {"type": "number", "exclusiveMinimum": 0, "description": "REQUIRED. Symmetric tolerance on the measured diameter (and depth if declared)."},
+        "fastener": {"$ref": "#/$defs/fastener"}
+      }
+    },
+    "fastener": {
+      "type": "object", "required": ["standard", "size"],
+      "description": "Optional. Makes the gate compare diameter_mm against a published table.",
+      "properties": {
+        "standard": {"type": "string", "enum": ["ISO 273", "ISO 4762", "heatset"], "description": "ISO 273 / ISO 4762 => clearance hole. heatset => insert pilot hole."},
+        "size": {"type": "string", "description": "Thread designation, e.g. M3."},
+        "series": {"type": "string", "enum": ["close", "medium", "coarse"], "description": "ISO 273 series, default medium."}
+      }
+    },
+    "fastener_bom": {
+      "type": "object", "required": ["standard", "size"],
+      "properties": {
+        "standard": {"type": "string"}, "size": {"type": "string"},
+        "length_mm": {"type": "number"}, "grade": {"type": "string"}, "qty": {"type": "integer"}
+      }
+    }
+  }
+}

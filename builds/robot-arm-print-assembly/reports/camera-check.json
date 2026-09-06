@@ -1,0 +1,9 @@
+{
+  "checked_endpoints": 67,
+  "outside": [],
+  "frame_range": [
+    25,
+    1429
+  ],
+  "predicate": "Every arriving group bounding box inside camera at its seated endpoint; chapter closeups intentionally exclude other modules."
+}

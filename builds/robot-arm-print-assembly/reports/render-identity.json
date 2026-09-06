@@ -1,0 +1,25 @@
+{
+  "inputs": {
+    "arm-step-assembly.blend": "c3861ff2a9768b22b43c2fccdfeb5716c0aeff1d316ca0f586bf0c9574c25071",
+    "scripts/render-media.py": "170ab8f1bb55684d799d2d264a1f7d33506a8a09a1cb530529dbc52a89626ce8",
+    "reports/assembly-timeline.json": "1395228454c0f22bf0545afb38b0f270fa3adc76d6a566fb63689e08a38fe727"
+  },
+  "scene": "A3-Step-assembly",
+  "frame_start": 25,
+  "frame_end": 1429,
+  "frames": 1405,
+  "fps": 24,
+  "resolution": [
+    960,
+    720
+  ],
+  "engine": "Cycles",
+  "device": "Apple M4 Pro METAL 16 cores",
+  "samples": 6,
+  "denoising": true,
+  "gpu_denoising": true,
+  "raw_folder": "video/frames",
+  "benchmark": "reports/metal-benchmark.log",
+  "limitations": "Media only; no physical assembly/load certification.",
+  "recorded_utc": "2026-09-05T14:14:32.064805+00:00"
+}

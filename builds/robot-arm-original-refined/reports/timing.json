@@ -1,0 +1,2066 @@
+{
+  "events": [
+    {
+      "type": "install",
+      "start": 1,
+      "end": 19,
+      "shot": "base",
+      "units": [
+        "A5-unit-001"
+      ],
+      "module": "base",
+      "group_index": 1,
+      "title": "Place table anchor plate",
+      "flags": [
+        "anchor-unmodeled"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 23,
+      "end": 41,
+      "shot": "base",
+      "units": [
+        "A5-unit-002"
+      ],
+      "module": "base",
+      "group_index": 2,
+      "title": "Place base cover",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 45,
+      "end": 63,
+      "shot": "base",
+      "units": [
+        "A5-unit-003"
+      ],
+      "module": "base",
+      "group_index": 3,
+      "title": "Place open rear electronics shell",
+      "flags": [
+        "shell-open",
+        "retention-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 67,
+      "end": 85,
+      "shot": "base",
+      "units": [
+        "A5-unit-004"
+      ],
+      "module": "base",
+      "group_index": 4,
+      "title": "Place stationary yaw adapter",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 89,
+      "end": 107,
+      "shot": "base",
+      "units": [
+        "A5-unit-005"
+      ],
+      "module": "base",
+      "group_index": 5,
+      "title": "Place yaw servo",
+      "flags": [
+        "purchased-unit"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 111,
+      "end": 129,
+      "shot": "base",
+      "units": [
+        "A5-unit-006"
+      ],
+      "module": "base",
+      "group_index": 6,
+      "title": "Place yaw bearing pedestal",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 133,
+      "end": 147,
+      "shot": "base",
+      "units": [
+        "A5-unit-007",
+        "A5-unit-008",
+        "A5-unit-009",
+        "A5-unit-010"
+      ],
+      "module": "base",
+      "group_index": 7,
+      "title": "Fasten yaw pedestal symmetrically",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 151,
+      "end": 169,
+      "shot": "base",
+      "units": [
+        "A5-unit-011"
+      ],
+      "module": "base",
+      "group_index": 8,
+      "title": "Seat yaw bearing",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 173,
+      "end": 191,
+      "shot": "base",
+      "units": [
+        "A5-unit-012"
+      ],
+      "module": "base",
+      "group_index": 9,
+      "title": "Place moving yaw adapter and turntable",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 195,
+      "end": 213,
+      "shot": "base",
+      "units": [
+        "A5-unit-013"
+      ],
+      "module": "base",
+      "group_index": 9,
+      "title": "Place moving yaw adapter and turntable",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 217,
+      "end": 231,
+      "shot": "base",
+      "units": [
+        "A5-unit-014",
+        "A5-unit-015",
+        "A5-unit-016",
+        "A5-unit-017"
+      ],
+      "module": "base",
+      "group_index": 10,
+      "title": "Fasten yaw horn symmetrically",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 235,
+      "end": 271,
+      "from": "base",
+      "to": "wide"
+    },
+    {
+      "type": "install",
+      "start": 275,
+      "end": 293,
+      "shot": "wide",
+      "units": [
+        "A5-unit-018"
+      ],
+      "module": "shoulder",
+      "group_index": 11,
+      "title": "Place shoulder cassette floor",
+      "flags": []
+    },
+    {
+      "type": "camera-transition",
+      "start": 297,
+      "end": 333,
+      "from": "wide",
+      "to": "station"
+    },
+    {
+      "type": "install",
+      "start": 337,
+      "end": 355,
+      "shot": "station",
+      "units": [
+        "A5-unit-019",
+        "A5-unit-022"
+      ],
+      "module": "shoulder",
+      "group_index": 12,
+      "title": "Place both shoulder motor-mount cheeks",
+      "flags": [
+        "grouped-symmetric-parts"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 359,
+      "end": 373,
+      "shot": "station",
+      "units": [
+        "A5-unit-020",
+        "A5-unit-021",
+        "A5-unit-023",
+        "A5-unit-024"
+      ],
+      "module": "shoulder",
+      "group_index": 13,
+      "title": "Capture four shoulder mount-foot nuts",
+      "flags": [
+        "capture-nuts"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 377,
+      "end": 401,
+      "shot": "station",
+      "units": [
+        "A5-unit-019",
+        "A5-unit-020",
+        "A5-unit-021",
+        "A5-unit-022",
+        "A5-unit-023",
+        "A5-unit-024"
+      ],
+      "module": "shoulder",
+      "group_index": 14
+    },
+    {
+      "type": "install",
+      "start": 405,
+      "end": 423,
+      "shot": "station",
+      "units": [
+        "A5-unit-025"
+      ],
+      "module": "shoulder",
+      "group_index": 15,
+      "title": "Place integral shoulder servo unit",
+      "flags": [
+        "purchased-unit",
+        "integral-actuator-visuals"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 427,
+      "end": 441,
+      "shot": "station",
+      "units": [
+        "A5-unit-026",
+        "A5-unit-027",
+        "A5-unit-028",
+        "A5-unit-031",
+        "A5-unit-032",
+        "A5-unit-033"
+      ],
+      "module": "shoulder",
+      "group_index": 16,
+      "title": "Fasten shoulder servo case",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 445,
+      "end": 459,
+      "shot": "station",
+      "units": [
+        "A5-unit-029",
+        "A5-unit-030",
+        "A5-unit-034",
+        "A5-unit-035"
+      ],
+      "module": "shoulder",
+      "group_index": 17,
+      "title": "Fasten shoulder mounts to floor",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 463,
+      "end": 481,
+      "shot": "station",
+      "units": [
+        "A5-unit-036"
+      ],
+      "module": "shoulder",
+      "group_index": 18,
+      "title": "Place lower U-body",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 485,
+      "end": 503,
+      "shot": "station",
+      "units": [
+        "A5-unit-037",
+        "A5-unit-042"
+      ],
+      "module": "shoulder",
+      "group_index": 19,
+      "title": "Place both shoulder drive flanges",
+      "flags": [
+        "grouped-symmetric-parts"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 507,
+      "end": 521,
+      "shot": "station",
+      "units": [
+        "A5-unit-038",
+        "A5-unit-039",
+        "A5-unit-040",
+        "A5-unit-041",
+        "A5-unit-043",
+        "A5-unit-044",
+        "A5-unit-045",
+        "A5-unit-046"
+      ],
+      "module": "shoulder",
+      "group_index": 20,
+      "title": "Fasten both shoulder drive flanges",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 525,
+      "end": 539,
+      "shot": "station",
+      "units": [
+        "A5-unit-047",
+        "A5-unit-048",
+        "A5-unit-049",
+        "A5-unit-050"
+      ],
+      "module": "shoulder",
+      "group_index": 21,
+      "title": "Capture four lower cassette nuts",
+      "flags": [
+        "capture-nuts",
+        "before-enclosing-module"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 543,
+      "end": 615,
+      "shot": "station",
+      "units": [
+        "A5-unit-036",
+        "A5-unit-037",
+        "A5-unit-038",
+        "A5-unit-039",
+        "A5-unit-040",
+        "A5-unit-041",
+        "A5-unit-042",
+        "A5-unit-043",
+        "A5-unit-044",
+        "A5-unit-045",
+        "A5-unit-046",
+        "A5-unit-047",
+        "A5-unit-048",
+        "A5-unit-049",
+        "A5-unit-050"
+      ],
+      "module": "shoulder",
+      "group_index": 25
+    },
+    {
+      "type": "install",
+      "start": 619,
+      "end": 637,
+      "shot": "station",
+      "units": [
+        "A5-unit-051"
+      ],
+      "module": "shoulder",
+      "group_index": 22,
+      "title": "Prepare left shoulder carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 641,
+      "end": 659,
+      "shot": "station",
+      "units": [
+        "A5-unit-052"
+      ],
+      "module": "shoulder",
+      "group_index": 22,
+      "title": "Prepare left shoulder carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 663,
+      "end": 687,
+      "shot": "station",
+      "units": [
+        "A5-unit-051",
+        "A5-unit-052"
+      ],
+      "module": "shoulder",
+      "group_index": 23
+    },
+    {
+      "type": "install",
+      "start": 691,
+      "end": 705,
+      "shot": "station",
+      "units": [
+        "A5-unit-053",
+        "A5-unit-054"
+      ],
+      "module": "shoulder",
+      "group_index": 24,
+      "title": "Fasten left shoulder carrier",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 709,
+      "end": 727,
+      "shot": "station",
+      "units": [
+        "A5-unit-055"
+      ],
+      "module": "shoulder",
+      "group_index": 26,
+      "title": "Prepare right shoulder carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 731,
+      "end": 749,
+      "shot": "station",
+      "units": [
+        "A5-unit-056"
+      ],
+      "module": "shoulder",
+      "group_index": 26,
+      "title": "Prepare right shoulder carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 753,
+      "end": 777,
+      "shot": "station",
+      "units": [
+        "A5-unit-055",
+        "A5-unit-056"
+      ],
+      "module": "shoulder",
+      "group_index": 27
+    },
+    {
+      "type": "install",
+      "start": 781,
+      "end": 795,
+      "shot": "station",
+      "units": [
+        "A5-unit-057",
+        "A5-unit-058"
+      ],
+      "module": "shoulder",
+      "group_index": 28,
+      "title": "Fasten right shoulder carrier",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 799,
+      "end": 813,
+      "shot": "station",
+      "units": [
+        "A5-unit-059",
+        "A5-unit-060",
+        "A5-unit-061",
+        "A5-unit-062",
+        "A5-unit-063",
+        "A5-unit-064",
+        "A5-unit-065",
+        "A5-unit-066",
+        "A5-unit-067",
+        "A5-unit-068",
+        "A5-unit-069",
+        "A5-unit-070",
+        "A5-unit-071",
+        "A5-unit-072",
+        "A5-unit-073",
+        "A5-unit-074"
+      ],
+      "module": "shoulder",
+      "group_index": 29,
+      "title": "Fasten both shoulder output circles",
+      "flags": [
+        "grouped-symmetric-fasteners",
+        "after-dual-bearing-support"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 817,
+      "end": 835,
+      "shot": "station",
+      "units": [
+        "A5-unit-075",
+        "A5-unit-080"
+      ],
+      "module": "shoulder",
+      "group_index": 30,
+      "title": "Install both shoulder bearing caps and cap screws",
+      "flags": [
+        "structural-retainers",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 839,
+      "end": 853,
+      "shot": "station",
+      "units": [
+        "A5-unit-076",
+        "A5-unit-077",
+        "A5-unit-078",
+        "A5-unit-079",
+        "A5-unit-081",
+        "A5-unit-082",
+        "A5-unit-083",
+        "A5-unit-084"
+      ],
+      "module": "shoulder",
+      "group_index": 30,
+      "title": "Install both shoulder bearing caps and cap screws",
+      "flags": [
+        "structural-retainers",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 857,
+      "end": 893,
+      "from": "station",
+      "to": "wide"
+    },
+    {
+      "type": "seat-module",
+      "start": 897,
+      "end": 933,
+      "shot": "wide",
+      "units": [
+        "A5-unit-018",
+        "A5-unit-019",
+        "A5-unit-020",
+        "A5-unit-021",
+        "A5-unit-022",
+        "A5-unit-023",
+        "A5-unit-024",
+        "A5-unit-025",
+        "A5-unit-026",
+        "A5-unit-027",
+        "A5-unit-028",
+        "A5-unit-029",
+        "A5-unit-030",
+        "A5-unit-031",
+        "A5-unit-032",
+        "A5-unit-033",
+        "A5-unit-034",
+        "A5-unit-035",
+        "A5-unit-036",
+        "A5-unit-037",
+        "A5-unit-038",
+        "A5-unit-039",
+        "A5-unit-040",
+        "A5-unit-041",
+        "A5-unit-042",
+        "A5-unit-043",
+        "A5-unit-044",
+        "A5-unit-045",
+        "A5-unit-046",
+        "A5-unit-047",
+        "A5-unit-048",
+        "A5-unit-049",
+        "A5-unit-050",
+        "A5-unit-051",
+        "A5-unit-052",
+        "A5-unit-053",
+        "A5-unit-054",
+        "A5-unit-055",
+        "A5-unit-056",
+        "A5-unit-057",
+        "A5-unit-058",
+        "A5-unit-059",
+        "A5-unit-060",
+        "A5-unit-061",
+        "A5-unit-062",
+        "A5-unit-063",
+        "A5-unit-064",
+        "A5-unit-065",
+        "A5-unit-066",
+        "A5-unit-067",
+        "A5-unit-068",
+        "A5-unit-069",
+        "A5-unit-070",
+        "A5-unit-071",
+        "A5-unit-072",
+        "A5-unit-073",
+        "A5-unit-074",
+        "A5-unit-075",
+        "A5-unit-076",
+        "A5-unit-077",
+        "A5-unit-078",
+        "A5-unit-079",
+        "A5-unit-080",
+        "A5-unit-081",
+        "A5-unit-082",
+        "A5-unit-083",
+        "A5-unit-084"
+      ],
+      "module": "shoulder",
+      "group_index": 31
+    },
+    {
+      "type": "install",
+      "start": 937,
+      "end": 951,
+      "shot": "wide",
+      "units": [
+        "A5-unit-085",
+        "A5-unit-086",
+        "A5-unit-087",
+        "A5-unit-088"
+      ],
+      "module": "shoulder",
+      "group_index": 32,
+      "title": "Install floor interface bolts",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 955,
+      "end": 973,
+      "shot": "wide",
+      "units": [
+        "A5-unit-089"
+      ],
+      "module": "elbow",
+      "group_index": 33,
+      "title": "Place elbow cassette floor",
+      "flags": []
+    },
+    {
+      "type": "camera-transition",
+      "start": 977,
+      "end": 1013,
+      "from": "wide",
+      "to": "station"
+    },
+    {
+      "type": "install",
+      "start": 1017,
+      "end": 1035,
+      "shot": "station",
+      "units": [
+        "A5-unit-090",
+        "A5-unit-093"
+      ],
+      "module": "elbow",
+      "group_index": 34,
+      "title": "Place both elbow motor-mount cheeks",
+      "flags": [
+        "grouped-symmetric-parts"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1039,
+      "end": 1053,
+      "shot": "station",
+      "units": [
+        "A5-unit-091",
+        "A5-unit-092",
+        "A5-unit-094",
+        "A5-unit-095"
+      ],
+      "module": "elbow",
+      "group_index": 35,
+      "title": "Capture four elbow mount-foot nuts",
+      "flags": [
+        "capture-nuts"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 1057,
+      "end": 1081,
+      "shot": "station",
+      "units": [
+        "A5-unit-090",
+        "A5-unit-091",
+        "A5-unit-092",
+        "A5-unit-093",
+        "A5-unit-094",
+        "A5-unit-095"
+      ],
+      "module": "elbow",
+      "group_index": 36
+    },
+    {
+      "type": "install",
+      "start": 1085,
+      "end": 1103,
+      "shot": "station",
+      "units": [
+        "A5-unit-096"
+      ],
+      "module": "elbow",
+      "group_index": 37,
+      "title": "Place integral elbow servo unit",
+      "flags": [
+        "purchased-unit",
+        "integral-actuator-visuals"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1107,
+      "end": 1121,
+      "shot": "station",
+      "units": [
+        "A5-unit-097",
+        "A5-unit-098",
+        "A5-unit-099",
+        "A5-unit-102",
+        "A5-unit-103",
+        "A5-unit-104"
+      ],
+      "module": "elbow",
+      "group_index": 38,
+      "title": "Fasten elbow servo case",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1125,
+      "end": 1139,
+      "shot": "station",
+      "units": [
+        "A5-unit-100",
+        "A5-unit-101",
+        "A5-unit-105",
+        "A5-unit-106"
+      ],
+      "module": "elbow",
+      "group_index": 39,
+      "title": "Fasten elbow mounts to floor",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1143,
+      "end": 1161,
+      "shot": "station",
+      "units": [
+        "A5-unit-107"
+      ],
+      "module": "elbow",
+      "group_index": 40,
+      "title": "Place upper U-body",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 1165,
+      "end": 1183,
+      "shot": "station",
+      "units": [
+        "A5-unit-108",
+        "A5-unit-113"
+      ],
+      "module": "elbow",
+      "group_index": 41,
+      "title": "Place both elbow drive flanges",
+      "flags": [
+        "grouped-symmetric-parts"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1187,
+      "end": 1201,
+      "shot": "station",
+      "units": [
+        "A5-unit-109",
+        "A5-unit-110",
+        "A5-unit-111",
+        "A5-unit-112",
+        "A5-unit-114",
+        "A5-unit-115",
+        "A5-unit-116",
+        "A5-unit-117"
+      ],
+      "module": "elbow",
+      "group_index": 42,
+      "title": "Fasten both elbow drive flanges",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1205,
+      "end": 1219,
+      "shot": "station",
+      "units": [
+        "A5-unit-118",
+        "A5-unit-119",
+        "A5-unit-120",
+        "A5-unit-121"
+      ],
+      "module": "elbow",
+      "group_index": 43,
+      "title": "Capture four upper cassette nuts",
+      "flags": [
+        "capture-nuts",
+        "before-enclosing-module"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 1223,
+      "end": 1295,
+      "shot": "station",
+      "units": [
+        "A5-unit-107",
+        "A5-unit-108",
+        "A5-unit-109",
+        "A5-unit-110",
+        "A5-unit-111",
+        "A5-unit-112",
+        "A5-unit-113",
+        "A5-unit-114",
+        "A5-unit-115",
+        "A5-unit-116",
+        "A5-unit-117",
+        "A5-unit-118",
+        "A5-unit-119",
+        "A5-unit-120",
+        "A5-unit-121"
+      ],
+      "module": "elbow",
+      "group_index": 47
+    },
+    {
+      "type": "install",
+      "start": 1299,
+      "end": 1317,
+      "shot": "station",
+      "units": [
+        "A5-unit-122"
+      ],
+      "module": "elbow",
+      "group_index": 44,
+      "title": "Prepare left elbow carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1321,
+      "end": 1339,
+      "shot": "station",
+      "units": [
+        "A5-unit-123"
+      ],
+      "module": "elbow",
+      "group_index": 44,
+      "title": "Prepare left elbow carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 1343,
+      "end": 1367,
+      "shot": "station",
+      "units": [
+        "A5-unit-122",
+        "A5-unit-123"
+      ],
+      "module": "elbow",
+      "group_index": 45
+    },
+    {
+      "type": "install",
+      "start": 1371,
+      "end": 1385,
+      "shot": "station",
+      "units": [
+        "A5-unit-124",
+        "A5-unit-125"
+      ],
+      "module": "elbow",
+      "group_index": 46,
+      "title": "Fasten left elbow carrier",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1389,
+      "end": 1407,
+      "shot": "station",
+      "units": [
+        "A5-unit-126"
+      ],
+      "module": "elbow",
+      "group_index": 48,
+      "title": "Prepare right elbow carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1411,
+      "end": 1429,
+      "shot": "station",
+      "units": [
+        "A5-unit-127"
+      ],
+      "module": "elbow",
+      "group_index": 48,
+      "title": "Prepare right elbow carrier and bearing",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "seat-subassembly",
+      "start": 1433,
+      "end": 1457,
+      "shot": "station",
+      "units": [
+        "A5-unit-126",
+        "A5-unit-127"
+      ],
+      "module": "elbow",
+      "group_index": 49
+    },
+    {
+      "type": "install",
+      "start": 1461,
+      "end": 1475,
+      "shot": "station",
+      "units": [
+        "A5-unit-128",
+        "A5-unit-129"
+      ],
+      "module": "elbow",
+      "group_index": 50,
+      "title": "Fasten right elbow carrier",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1479,
+      "end": 1493,
+      "shot": "station",
+      "units": [
+        "A5-unit-130",
+        "A5-unit-131",
+        "A5-unit-132",
+        "A5-unit-133",
+        "A5-unit-134",
+        "A5-unit-135",
+        "A5-unit-136",
+        "A5-unit-137",
+        "A5-unit-138",
+        "A5-unit-139",
+        "A5-unit-140",
+        "A5-unit-141",
+        "A5-unit-142",
+        "A5-unit-143",
+        "A5-unit-144",
+        "A5-unit-145"
+      ],
+      "module": "elbow",
+      "group_index": 51,
+      "title": "Fasten both elbow output circles",
+      "flags": [
+        "grouped-symmetric-fasteners",
+        "after-dual-bearing-support"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1497,
+      "end": 1515,
+      "shot": "station",
+      "units": [
+        "A5-unit-146",
+        "A5-unit-151"
+      ],
+      "module": "elbow",
+      "group_index": 52,
+      "title": "Install both elbow bearing caps and cap screws",
+      "flags": [
+        "structural-retainers",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1519,
+      "end": 1533,
+      "shot": "station",
+      "units": [
+        "A5-unit-147",
+        "A5-unit-148",
+        "A5-unit-149",
+        "A5-unit-150",
+        "A5-unit-152",
+        "A5-unit-153",
+        "A5-unit-154",
+        "A5-unit-155"
+      ],
+      "module": "elbow",
+      "group_index": 52,
+      "title": "Install both elbow bearing caps and cap screws",
+      "flags": [
+        "structural-retainers",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 1537,
+      "end": 1573,
+      "from": "station",
+      "to": "wide"
+    },
+    {
+      "type": "seat-module",
+      "start": 1577,
+      "end": 1613,
+      "shot": "wide",
+      "units": [
+        "A5-unit-089",
+        "A5-unit-090",
+        "A5-unit-091",
+        "A5-unit-092",
+        "A5-unit-093",
+        "A5-unit-094",
+        "A5-unit-095",
+        "A5-unit-096",
+        "A5-unit-097",
+        "A5-unit-098",
+        "A5-unit-099",
+        "A5-unit-100",
+        "A5-unit-101",
+        "A5-unit-102",
+        "A5-unit-103",
+        "A5-unit-104",
+        "A5-unit-105",
+        "A5-unit-106",
+        "A5-unit-107",
+        "A5-unit-108",
+        "A5-unit-109",
+        "A5-unit-110",
+        "A5-unit-111",
+        "A5-unit-112",
+        "A5-unit-113",
+        "A5-unit-114",
+        "A5-unit-115",
+        "A5-unit-116",
+        "A5-unit-117",
+        "A5-unit-118",
+        "A5-unit-119",
+        "A5-unit-120",
+        "A5-unit-121",
+        "A5-unit-122",
+        "A5-unit-123",
+        "A5-unit-124",
+        "A5-unit-125",
+        "A5-unit-126",
+        "A5-unit-127",
+        "A5-unit-128",
+        "A5-unit-129",
+        "A5-unit-130",
+        "A5-unit-131",
+        "A5-unit-132",
+        "A5-unit-133",
+        "A5-unit-134",
+        "A5-unit-135",
+        "A5-unit-136",
+        "A5-unit-137",
+        "A5-unit-138",
+        "A5-unit-139",
+        "A5-unit-140",
+        "A5-unit-141",
+        "A5-unit-142",
+        "A5-unit-143",
+        "A5-unit-144",
+        "A5-unit-145",
+        "A5-unit-146",
+        "A5-unit-147",
+        "A5-unit-148",
+        "A5-unit-149",
+        "A5-unit-150",
+        "A5-unit-151",
+        "A5-unit-152",
+        "A5-unit-153",
+        "A5-unit-154",
+        "A5-unit-155"
+      ],
+      "module": "elbow",
+      "group_index": 53
+    },
+    {
+      "type": "install",
+      "start": 1617,
+      "end": 1631,
+      "shot": "wide",
+      "units": [
+        "A5-unit-156",
+        "A5-unit-157",
+        "A5-unit-158",
+        "A5-unit-159"
+      ],
+      "module": "elbow",
+      "group_index": 54,
+      "title": "Install cassette interface bolts",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1635,
+      "end": 1653,
+      "shot": "wide",
+      "units": [
+        "A5-unit-160"
+      ],
+      "module": "wrist",
+      "group_index": 55,
+      "title": "Place wrist pitch cassette",
+      "flags": []
+    },
+    {
+      "type": "camera-transition",
+      "start": 1657,
+      "end": 1693,
+      "from": "wide",
+      "to": "station"
+    },
+    {
+      "type": "install",
+      "start": 1697,
+      "end": 1711,
+      "shot": "station",
+      "units": [
+        "A5-unit-161",
+        "A5-unit-162",
+        "A5-unit-163",
+        "A5-unit-164"
+      ],
+      "module": "wrist",
+      "group_index": 56,
+      "title": "Capture four wrist cage nuts",
+      "flags": [
+        "capture-nuts",
+        "before-case-retainer"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1715,
+      "end": 1733,
+      "shot": "station",
+      "units": [
+        "A5-unit-165"
+      ],
+      "module": "wrist",
+      "group_index": 57,
+      "title": "Place wrist servo",
+      "flags": [
+        "purchased-unit"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1737,
+      "end": 1755,
+      "shot": "station",
+      "units": [
+        "A5-unit-166"
+      ],
+      "module": "wrist",
+      "group_index": 58,
+      "title": "Install wrist case retainer",
+      "flags": [
+        "structural-retainer"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1759,
+      "end": 1773,
+      "shot": "station",
+      "units": [
+        "A5-unit-167",
+        "A5-unit-168",
+        "A5-unit-169",
+        "A5-unit-170"
+      ],
+      "module": "wrist",
+      "group_index": 59,
+      "title": "Fasten wrist servo cage",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1777,
+      "end": 1795,
+      "shot": "station",
+      "units": [
+        "A5-unit-171"
+      ],
+      "module": "wrist",
+      "group_index": 60,
+      "title": "Place left wrist adapter, hub, and cheek",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1799,
+      "end": 1817,
+      "shot": "station",
+      "units": [
+        "A5-unit-172"
+      ],
+      "module": "wrist",
+      "group_index": 60,
+      "title": "Place left wrist adapter, hub, and cheek",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1821,
+      "end": 1839,
+      "shot": "station",
+      "units": [
+        "A5-unit-173"
+      ],
+      "module": "wrist",
+      "group_index": 60,
+      "title": "Place left wrist adapter, hub, and cheek",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1843,
+      "end": 1857,
+      "shot": "station",
+      "units": [
+        "A5-unit-174",
+        "A5-unit-175",
+        "A5-unit-176",
+        "A5-unit-177"
+      ],
+      "module": "wrist",
+      "group_index": 61,
+      "title": "Fasten left wrist pivot circle",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1861,
+      "end": 1879,
+      "shot": "station",
+      "units": [
+        "A5-unit-178"
+      ],
+      "module": "wrist",
+      "group_index": 62,
+      "title": "Place right wrist adapter, hub, and cheek",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1883,
+      "end": 1901,
+      "shot": "station",
+      "units": [
+        "A5-unit-179"
+      ],
+      "module": "wrist",
+      "group_index": 62,
+      "title": "Place right wrist adapter, hub, and cheek",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1905,
+      "end": 1923,
+      "shot": "station",
+      "units": [
+        "A5-unit-180"
+      ],
+      "module": "wrist",
+      "group_index": 62,
+      "title": "Place right wrist adapter, hub, and cheek",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1927,
+      "end": 1941,
+      "shot": "station",
+      "units": [
+        "A5-unit-181",
+        "A5-unit-182",
+        "A5-unit-183",
+        "A5-unit-184"
+      ],
+      "module": "wrist",
+      "group_index": 63,
+      "title": "Fasten right wrist pivot circle",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1945,
+      "end": 1963,
+      "shot": "station",
+      "units": [
+        "A5-unit-185"
+      ],
+      "module": "wrist",
+      "group_index": 64,
+      "title": "Place wrist cross bridge",
+      "flags": [
+        "retention-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1967,
+      "end": 1985,
+      "shot": "station",
+      "units": [
+        "A5-unit-186"
+      ],
+      "module": "wrist",
+      "group_index": 65,
+      "title": "Place roll motor cradle",
+      "flags": [
+        "retention-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 1989,
+      "end": 2007,
+      "shot": "station",
+      "units": [
+        "A5-unit-187",
+        "A5-unit-188"
+      ],
+      "module": "wrist",
+      "group_index": 66,
+      "title": "Place both roll adapter envelopes",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2011,
+      "end": 2029,
+      "shot": "station",
+      "units": [
+        "A5-unit-189"
+      ],
+      "module": "wrist",
+      "group_index": 67,
+      "title": "Place roll servo",
+      "flags": [
+        "purchased-unit"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2033,
+      "end": 2051,
+      "shot": "station",
+      "units": [
+        "A5-unit-190"
+      ],
+      "module": "wrist",
+      "group_index": 68,
+      "title": "Place tool dock",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 2055,
+      "end": 2069,
+      "shot": "station",
+      "units": [
+        "A5-unit-191",
+        "A5-unit-192",
+        "A5-unit-193",
+        "A5-unit-194"
+      ],
+      "module": "wrist",
+      "group_index": 69,
+      "title": "Capture four tool-lock nuts",
+      "flags": [
+        "capture-nuts",
+        "before-tool-interface"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2073,
+      "end": 2087,
+      "shot": "station",
+      "units": [
+        "A5-unit-195",
+        "A5-unit-196"
+      ],
+      "module": "wrist",
+      "group_index": 70,
+      "title": "Seat two tool dowels",
+      "flags": [
+        "fit-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2091,
+      "end": 2105,
+      "shot": "station",
+      "units": [
+        "A5-unit-197",
+        "A5-unit-198",
+        "A5-unit-199",
+        "A5-unit-200"
+      ],
+      "module": "wrist",
+      "group_index": 71,
+      "title": "Fasten roll dock",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 2109,
+      "end": 2145,
+      "from": "station",
+      "to": "wide"
+    },
+    {
+      "type": "seat-module",
+      "start": 2149,
+      "end": 2185,
+      "shot": "wide",
+      "units": [
+        "A5-unit-160",
+        "A5-unit-161",
+        "A5-unit-162",
+        "A5-unit-163",
+        "A5-unit-164",
+        "A5-unit-165",
+        "A5-unit-166",
+        "A5-unit-167",
+        "A5-unit-168",
+        "A5-unit-169",
+        "A5-unit-170",
+        "A5-unit-171",
+        "A5-unit-172",
+        "A5-unit-173",
+        "A5-unit-174",
+        "A5-unit-175",
+        "A5-unit-176",
+        "A5-unit-177",
+        "A5-unit-178",
+        "A5-unit-179",
+        "A5-unit-180",
+        "A5-unit-181",
+        "A5-unit-182",
+        "A5-unit-183",
+        "A5-unit-184",
+        "A5-unit-185",
+        "A5-unit-186",
+        "A5-unit-187",
+        "A5-unit-188",
+        "A5-unit-189",
+        "A5-unit-190",
+        "A5-unit-191",
+        "A5-unit-192",
+        "A5-unit-193",
+        "A5-unit-194",
+        "A5-unit-195",
+        "A5-unit-196",
+        "A5-unit-197",
+        "A5-unit-198",
+        "A5-unit-199",
+        "A5-unit-200"
+      ],
+      "module": "wrist",
+      "group_index": 72
+    },
+    {
+      "type": "install",
+      "start": 2189,
+      "end": 2203,
+      "shot": "wide",
+      "units": [
+        "A5-unit-201",
+        "A5-unit-202",
+        "A5-unit-203",
+        "A5-unit-204"
+      ],
+      "module": "wrist",
+      "group_index": 73,
+      "title": "Install wrist cassette interface bolts",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2207,
+      "end": 2225,
+      "shot": "wide",
+      "units": [
+        "A5-unit-205"
+      ],
+      "module": "hand",
+      "group_index": 74,
+      "title": "Place gripper tool plate",
+      "flags": []
+    },
+    {
+      "type": "camera-transition",
+      "start": 2229,
+      "end": 2265,
+      "from": "wide",
+      "to": "station"
+    },
+    {
+      "type": "install",
+      "start": 2269,
+      "end": 2283,
+      "shot": "station",
+      "units": [
+        "A5-unit-206",
+        "A5-unit-207"
+      ],
+      "module": "hand",
+      "group_index": 75,
+      "title": "Capture two tool-plate adapter nuts",
+      "flags": [
+        "capture-nuts",
+        "before-cradle"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2287,
+      "end": 2305,
+      "shot": "station",
+      "units": [
+        "A5-unit-208"
+      ],
+      "module": "hand",
+      "group_index": 76,
+      "title": "Place hand servo cradle",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 2309,
+      "end": 2323,
+      "shot": "station",
+      "units": [
+        "A5-unit-209",
+        "A5-unit-210",
+        "A5-unit-211",
+        "A5-unit-212",
+        "A5-unit-213",
+        "A5-unit-214",
+        "A5-unit-215",
+        "A5-unit-216"
+      ],
+      "module": "hand",
+      "group_index": 77,
+      "title": "Capture jaw and case-clamp receiver nuts",
+      "flags": [
+        "capture-nuts",
+        "before-servo-and-retainer"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2327,
+      "end": 2341,
+      "shot": "station",
+      "units": [
+        "A5-unit-217",
+        "A5-unit-218"
+      ],
+      "module": "hand",
+      "group_index": 78,
+      "title": "Fasten cradle to tool plate",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2345,
+      "end": 2363,
+      "shot": "station",
+      "units": [
+        "A5-unit-219",
+        "A5-unit-220"
+      ],
+      "module": "hand",
+      "group_index": 79,
+      "title": "Place both gripper adapter envelopes",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2367,
+      "end": 2385,
+      "shot": "station",
+      "units": [
+        "A5-unit-221"
+      ],
+      "module": "hand",
+      "group_index": 80,
+      "title": "Place gripper servo",
+      "flags": [
+        "purchased-unit"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2389,
+      "end": 2407,
+      "shot": "station",
+      "units": [
+        "A5-unit-222"
+      ],
+      "module": "hand",
+      "group_index": 81,
+      "title": "Install hand case retainer",
+      "flags": [
+        "structural-retainer"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2411,
+      "end": 2425,
+      "shot": "station",
+      "units": [
+        "A5-unit-223",
+        "A5-unit-224",
+        "A5-unit-225",
+        "A5-unit-226"
+      ],
+      "module": "hand",
+      "group_index": 82,
+      "title": "Fasten hand case clamp",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2429,
+      "end": 2447,
+      "shot": "station",
+      "units": [
+        "A5-unit-227"
+      ],
+      "module": "hand",
+      "group_index": 83,
+      "title": "Place fixed jaw",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 2451,
+      "end": 2465,
+      "shot": "station",
+      "units": [
+        "A5-unit-228",
+        "A5-unit-229",
+        "A5-unit-230",
+        "A5-unit-231"
+      ],
+      "module": "hand",
+      "group_index": 84,
+      "title": "Fasten fixed jaw",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2469,
+      "end": 2487,
+      "shot": "station",
+      "units": [
+        "A5-unit-232"
+      ],
+      "module": "hand",
+      "group_index": 85,
+      "title": "Place moving jaw",
+      "flags": []
+    },
+    {
+      "type": "install",
+      "start": 2491,
+      "end": 2505,
+      "shot": "station",
+      "units": [
+        "A5-unit-233",
+        "A5-unit-234",
+        "A5-unit-235",
+        "A5-unit-236"
+      ],
+      "module": "hand",
+      "group_index": 86,
+      "title": "Fasten moving jaw",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2509,
+      "end": 2527,
+      "shot": "station",
+      "units": [
+        "A5-unit-237",
+        "A5-unit-238",
+        "A5-unit-239",
+        "A5-unit-240",
+        "A5-unit-241",
+        "A5-unit-242"
+      ],
+      "module": "hand",
+      "group_index": 87,
+      "title": "Install all six TPU grip pads",
+      "flags": [
+        "grouped-print-variants"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 2531,
+      "end": 2567,
+      "from": "station",
+      "to": "wide"
+    },
+    {
+      "type": "seat-module",
+      "start": 2571,
+      "end": 2607,
+      "shot": "wide",
+      "units": [
+        "A5-unit-205",
+        "A5-unit-206",
+        "A5-unit-207",
+        "A5-unit-208",
+        "A5-unit-209",
+        "A5-unit-210",
+        "A5-unit-211",
+        "A5-unit-212",
+        "A5-unit-213",
+        "A5-unit-214",
+        "A5-unit-215",
+        "A5-unit-216",
+        "A5-unit-217",
+        "A5-unit-218",
+        "A5-unit-219",
+        "A5-unit-220",
+        "A5-unit-221",
+        "A5-unit-222",
+        "A5-unit-223",
+        "A5-unit-224",
+        "A5-unit-225",
+        "A5-unit-226",
+        "A5-unit-227",
+        "A5-unit-228",
+        "A5-unit-229",
+        "A5-unit-230",
+        "A5-unit-231",
+        "A5-unit-232",
+        "A5-unit-233",
+        "A5-unit-234",
+        "A5-unit-235",
+        "A5-unit-236",
+        "A5-unit-237",
+        "A5-unit-238",
+        "A5-unit-239",
+        "A5-unit-240",
+        "A5-unit-241",
+        "A5-unit-242"
+      ],
+      "module": "hand",
+      "group_index": 88
+    },
+    {
+      "type": "install",
+      "start": 2611,
+      "end": 2625,
+      "shot": "wide",
+      "units": [
+        "A5-unit-243",
+        "A5-unit-244",
+        "A5-unit-245",
+        "A5-unit-246"
+      ],
+      "module": "hand",
+      "group_index": 89,
+      "title": "Install four tool-retention bolts",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 2629,
+      "end": 2665,
+      "from": "wide",
+      "to": "cpu"
+    },
+    {
+      "type": "install",
+      "start": 2669,
+      "end": 2687,
+      "shot": "cpu",
+      "units": [
+        "A5-unit-247",
+        "A5-unit-248"
+      ],
+      "module": "electronics",
+      "group_index": 90,
+      "title": "Install controller envelope and service connector",
+      "flags": [
+        "inside-open-shell",
+        "electronics-placeholder"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 2691,
+      "end": 2727,
+      "from": "cpu",
+      "to": "wide"
+    },
+    {
+      "type": "wire",
+      "start": 2731,
+      "end": 2755,
+      "shot": "wide",
+      "object": "A5-wire-yaw",
+      "group_index": 91,
+      "module": "electronics"
+    },
+    {
+      "type": "wire",
+      "start": 2759,
+      "end": 2783,
+      "shot": "wide",
+      "object": "A5-wire-shoulder",
+      "group_index": 91,
+      "module": "electronics"
+    },
+    {
+      "type": "wire",
+      "start": 2787,
+      "end": 2811,
+      "shot": "wide",
+      "object": "A5-wire-elbow",
+      "group_index": 91,
+      "module": "electronics"
+    },
+    {
+      "type": "wire",
+      "start": 2815,
+      "end": 2839,
+      "shot": "wide",
+      "object": "A5-wire-wrist",
+      "group_index": 91,
+      "module": "electronics"
+    },
+    {
+      "type": "wire",
+      "start": 2843,
+      "end": 2867,
+      "shot": "wide",
+      "object": "A5-wire-roll",
+      "group_index": 91,
+      "module": "electronics"
+    },
+    {
+      "type": "wire",
+      "start": 2871,
+      "end": 2895,
+      "shot": "wide",
+      "object": "A5-wire-gripper",
+      "group_index": 91,
+      "module": "electronics"
+    },
+    {
+      "type": "install",
+      "start": 2899,
+      "end": 2917,
+      "shot": "wide",
+      "units": [
+        "A5-unit-249",
+        "A5-unit-250",
+        "A5-unit-251"
+      ],
+      "module": "finish",
+      "group_index": 92,
+      "title": "Install exterior skirt, fascia, and wrist cover",
+      "flags": [
+        "final-covers",
+        "retention-unvalidated"
+      ]
+    },
+    {
+      "type": "install",
+      "start": 2921,
+      "end": 2939,
+      "shot": "wide",
+      "units": [
+        "A5-unit-252"
+      ],
+      "module": "finish",
+      "group_index": 93,
+      "title": "Install electronics service lid last",
+      "flags": [
+        "final-cover",
+        "after-electronics-and-wiring",
+        "retention-unvalidated"
+      ]
+    },
+    {
+      "type": "camera-transition",
+      "start": 2943,
+      "end": 2979,
+      "from": "wide",
+      "to": "hero"
+    }
+  ],
+  "frames": 3031,
+  "fps": 24,
+  "reviewed_groups": 93,
+  "source_units": 252,
+  "camera_transition_frames": 36,
+  "camera_policy": "Fixed camera throughout each install, subassembly seat, module transfer and wiring; explicit transitions only."
+}

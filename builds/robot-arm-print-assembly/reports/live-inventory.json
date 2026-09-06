@@ -1,0 +1,7643 @@
+[
+  {
+    "name": "A2-base-matte-cover-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      174.0,
+      116.0,
+      9.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-yaw-bearing-pedestal-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      76.0,
+      64.0,
+      33.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "revision": "Corner envelope R43 preserves all four mounting bosses inside the rotating skirt cavity"
+    }
+  },
+  {
+    "name": "A2-yaw-rounded-skirt-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      96.0,
+      94.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-diamond-fascia-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      56.0,
+      26.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "revision": "Fascia56mm wide,2.5mm thick, moved2.5mm inward to clear fork cheeks at horizontal shoulder; cosmetic cover only"
+    }
+  },
+  {
+    "name": "A2-base-electronics-shell-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      63.0,
+      66.0,
+      28.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "revision": "Exterior63x66x28mm; cavity height about25.5mm; lowered11mm for yaw clearance; generic controller, not Raspberry Pi fitting"
+    }
+  },
+  {
+    "name": "A2-electronics-service-lid-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      63.0,
+      66.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-flush-bearing-cap--1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      58.0,
+      4.0,
+      58.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-flush-bearing-cap-1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      58.0,
+      4.0,
+      58.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-motor-mount--1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      31.0,
+      53.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-motor-mount-1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      31.0,
+      53.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-lower-U-body-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      52.5,
+      70.0,
+      108.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "joint_spacing_mm": "111",
+      "print_orientation": "broad bridge flat; support side cheeks"
+    }
+  },
+  {
+    "name": "A2-elbow-flush-bearing-cap--1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      58.0,
+      4.0,
+      58.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-elbow-flush-bearing-cap-1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      58.0,
+      4.0,
+      58.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-elbow-motor-mount--1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      31.0,
+      53.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-elbow-motor-mount-1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      31.0,
+      53.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-upper-U-body-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      52.5,
+      70.0,
+      134.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "joint_spacing_mm": "137",
+      "print_orientation": "broad bridge flat; support side cheeks"
+    }
+  },
+  {
+    "name": "A2-wrist-cheek--1-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      32.0,
+      5.0,
+      53.76
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-wrist-cheek-1-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      32.0,
+      5.0,
+      53.76
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-wrist-cross-bridge-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      9.0,
+      64.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "revision": "Swept clearance for selected demo poses; residual wall strength and actual hardware fit NOT validated"
+    }
+  },
+  {
+    "name": "A2-roll-motor-cradle-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      54.0,
+      36.0,
+      9.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-wrist-vented-cover-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      49.75,
+      30.95
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-hand-servo-cradle-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      90.0,
+      67.0,
+      47.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "fit_status": "clamping and spline retention require real servo fixture test",
+      "revision": "Swept clearance for selected demo poses; residual wall strength and actual hardware fit NOT validated"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      28.0,
+      8.0,
+      97.26
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-moving-TPU-pad-40-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "print",
+    "material": "TPU grip pads",
+    "dims_mm": [
+      4.0,
+      8.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "material": "TPU grip pads"
+    }
+  },
+  {
+    "name": "A2-moving-TPU-pad-56-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "print",
+    "material": "TPU grip pads",
+    "dims_mm": [
+      4.0,
+      8.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "material": "TPU grip pads"
+    }
+  },
+  {
+    "name": "A2-moving-TPU-pad-72-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "print",
+    "material": "TPU grip pads",
+    "dims_mm": [
+      4.0,
+      8.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "material": "TPU grip pads"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      28.0,
+      8.0,
+      97.26
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-fixed-TPU-pad-40-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "print",
+    "material": "TPU grip pads",
+    "dims_mm": [
+      4.0,
+      8.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "material": "TPU grip pads"
+    }
+  },
+  {
+    "name": "A2-fixed-TPU-pad-56-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "print",
+    "material": "TPU grip pads",
+    "dims_mm": [
+      4.0,
+      8.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "material": "TPU grip pads"
+    }
+  },
+  {
+    "name": "A2-fixed-TPU-pad-72-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "print",
+    "material": "TPU grip pads",
+    "dims_mm": [
+      4.0,
+      8.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "material": "TPU grip pads"
+    }
+  },
+  {
+    "name": "A2-tool-dock-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      48.0,
+      52.0,
+      6.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "interface": "A2-T48, 4xM3 rectangle34x36, 2x3mm pins24 apart"
+    }
+  },
+  {
+    "name": "A2-gripper-tool-plate-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      48.0,
+      52.0,
+      6.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "interface": "A2-T48, 4xM3 rectangle34x36, 2x3mm pins24 apart"
+    }
+  },
+  {
+    "name": "A2-wrist-pitch-cassette-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      53.8,
+      46.0,
+      70.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "fit_status": "case clamp clearance must be shimmed to actual C018 case; do not clamp cable or output"
+    }
+  },
+  {
+    "name": "A2-wrist-case-retainer-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      38.0,
+      42.0,
+      5.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-hand-case-retainer-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "print",
+    "material": null,
+    "dims_mm": [
+      36.0,
+      39.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "print",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "hardware_note": "M3x52 finished length (trim M3x55); shim0.5mm at case top, verify clamp torque experimentally"
+    }
+  },
+  {
+    "name": "A2-table-anchor-plate-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      170.0,
+      112.0,
+      6.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "anchoring": "4x M6 through-table or separate clamp; tabletop dimensions required"
+    }
+  },
+  {
+    "name": "A2-yaw-turntable-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      88.0,
+      86.0,
+      15.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-drive-flange--1-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      44.0,
+      20.0,
+      44.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "vendor_M3_engagement": "UNKNOWN; gauge actual flange before selecting bolt length"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-carrier--1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      56.0,
+      10.0,
+      80.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "bearing_fit": "42.10 is assembly clearance prototype; final seat tolerances require machining drawing"
+    }
+  },
+  {
+    "name": "A2-shoulder-drive-flange-1-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      44.0,
+      20.0,
+      44.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "vendor_M3_engagement": "UNKNOWN; gauge actual flange before selecting bolt length"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-carrier-1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      56.0,
+      10.0,
+      80.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "bearing_fit": "42.10 is assembly clearance prototype; final seat tolerances require machining drawing"
+    }
+  },
+  {
+    "name": "A2-shoulder-cradle-floor-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      48.0,
+      91.0,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-elbow-drive-flange--1-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      44.0,
+      20.0,
+      44.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "vendor_M3_engagement": "UNKNOWN; gauge actual flange before selecting bolt length"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-carrier--1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      56.0,
+      10.0,
+      80.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "bearing_fit": "42.10 is assembly clearance prototype; final seat tolerances require machining drawing"
+    }
+  },
+  {
+    "name": "A2-elbow-drive-flange-1-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      44.0,
+      20.0,
+      44.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "vendor_M3_engagement": "UNKNOWN; gauge actual flange before selecting bolt length"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-carrier-1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      56.0,
+      10.0,
+      80.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "bearing_fit": "42.10 is assembly clearance prototype; final seat tolerances require machining drawing"
+    }
+  },
+  {
+    "name": "A2-elbow-cradle-floor-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      59.0,
+      91.0,
+      34.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-wrist-extension-hub--1-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      21.0,
+      9.8,
+      21.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "interface_status": "custom 25T drive adapter / 6mm idler adapter; spline drawing must be gauged"
+    }
+  },
+  {
+    "name": "A2-wrist-extension-hub-1-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "machined-metal",
+    "material": null,
+    "dims_mm": [
+      21.0,
+      9.8,
+      21.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "machined-metal",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "interface_status": "custom 25T drive adapter / 6mm idler adapter; spline drawing must be gauged"
+    }
+  },
+  {
+    "name": "A2-shoulder-servo-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-case-frame-task",
+    "part_type": "actuator",
+    "material": null,
+    "dims_mm": [
+      33.5,
+      44.0,
+      58.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "200",
+      "model": "FEETECH SM105BL-C001",
+      "rated_torque_Nm": "4.903325"
+    }
+  },
+  {
+    "name": "A2-shoulder-output--1-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "actuator-visual",
+    "material": null,
+    "dims_mm": [
+      26.0,
+      2.55,
+      26.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator-visual",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-1-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "actuator-visual",
+    "material": null,
+    "dims_mm": [
+      26.0,
+      2.55,
+      26.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator-visual",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-yaw-servo-task",
+    "type": "MESH",
+    "parent": "A2-yaw-case-frame-task",
+    "part_type": "actuator",
+    "material": null,
+    "dims_mm": [
+      24.7,
+      35.0,
+      45.2
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "55",
+      "model": "FEETECH ST-3215-C018",
+      "rated_torque_Nm": "0.980665"
+    }
+  },
+  {
+    "name": "A2-yaw-output--1-task",
+    "type": "MESH",
+    "parent": "A2-yaw-case-frame-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-yaw-output-1-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-yaw-61805-bearing-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "bearing",
+    "material": null,
+    "dims_mm": [
+      37.0,
+      37.0,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "bearing",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "22"
+    }
+  },
+  {
+    "name": "A2-TTL-RS485-controller-envelope-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "electronics-envelope",
+    "material": null,
+    "dims_mm": [
+      43.0,
+      49.0,
+      2.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "electronics-envelope",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "hardware_status": "space reservation; exact controller BOM pending"
+    }
+  },
+  {
+    "name": "A2-service-connector-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "electronics-envelope",
+    "material": null,
+    "dims_mm": [
+      6.0,
+      14.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "electronics-envelope",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 4)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 4)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 5)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 6)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(-1, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-61806-bearing--1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "bearing",
+    "material": null,
+    "dims_mm": [
+      42.0,
+      7.0,
+      42.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "bearing",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "model": "61806 30x42x7",
+      "mass_g": "27",
+      "radial_static_catalog_N": "2900"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 0.7853981633974483)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 0.7853981633974483)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 2.356194490192345)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 2.356194490192345)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 3.9269908169872414)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 3.9269908169872414)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 5.497787143782138)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(-1, 5.497787143782138)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 4)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 4)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 5)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 6)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-output-bolt-(1, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-61806-bearing-1-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "bearing",
+    "material": null,
+    "dims_mm": [
+      42.0,
+      7.0,
+      42.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "bearing",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "model": "61806 30x42x7",
+      "mass_g": "27",
+      "radial_static_catalog_N": "2900"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 0.7853981633974483)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 0.7853981633974483)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 2.356194490192345)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 2.356194490192345)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 3.9269908169872414)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 3.9269908169872414)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 5.497787143782138)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-shoulder-bearing-cap-(1, 5.497787143782138)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(-4, -40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(-4, -40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(4, -40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(4, -40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(-4, 40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(-4, 40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(4, 40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-shoulder-carrier-foot-(4, 40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(-16, -34)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(-16, -34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(-16, 34)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(-16, 34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(16, -34)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(16, -34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(16, 34)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-shoulder-floor-(16, 34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      10.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(-1, -8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(-1, -8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(-1, -8, -6)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(-1, -8, -6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(-1, 8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(-1, 8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-nut-(-1, -11)-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(-1, -11)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(-1, -11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-nut-(-1, 11)-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(-1, 11)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(-1, 11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(1, -8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(1, -8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(1, -8, -6)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(1, -8, -6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(1, 8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-shoulder-case-mount-(1, 8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-nut-(1, -11)-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(1, -11)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(1, -11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-nut-(1, 11)-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(1, 11)-head-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-shoulder-mount-foot-(1, 11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-shoulder-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(-1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-lower-flange-(1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-lower-cassette-nut-(-16, 63)-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-lower-cassette-nut-(-16, 77)-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-lower-cassette-nut-(16, 63)-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-lower-cassette-nut-(16, 77)-task",
+    "type": "MESH",
+    "parent": "A2-J02-shoulder-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-elbow-servo-task",
+    "type": "MESH",
+    "parent": "A2-elbow-case-frame-task",
+    "part_type": "actuator",
+    "material": null,
+    "dims_mm": [
+      33.5,
+      44.0,
+      58.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "200",
+      "model": "FEETECH SM105BL-C001",
+      "rated_torque_Nm": "4.903325"
+    }
+  },
+  {
+    "name": "A2-elbow-output--1-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "actuator-visual",
+    "material": null,
+    "dims_mm": [
+      26.0,
+      2.55,
+      26.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator-visual",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-elbow-output-1-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "actuator-visual",
+    "material": null,
+    "dims_mm": [
+      26.0,
+      2.55,
+      26.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator-visual",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 4)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 4)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 5)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 6)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(-1, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-61806-bearing--1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "bearing",
+    "material": null,
+    "dims_mm": [
+      42.0,
+      7.0,
+      42.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "bearing",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "model": "61806 30x42x7",
+      "mass_g": "27",
+      "radial_static_catalog_N": "2900"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 0.7853981633974483)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 0.7853981633974483)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 2.356194490192345)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 2.356194490192345)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 3.9269908169872414)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 3.9269908169872414)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 5.497787143782138)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(-1, 5.497787143782138)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 4)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 4)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 5)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 6)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-output-bolt-(1, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-61806-bearing-1-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "bearing",
+    "material": null,
+    "dims_mm": [
+      42.0,
+      7.0,
+      42.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "bearing",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "model": "61806 30x42x7",
+      "mass_g": "27",
+      "radial_static_catalog_N": "2900"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 0.7853981633974483)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 0.7853981633974483)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 2.356194490192345)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 2.356194490192345)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 3.9269908169872414)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 3.9269908169872414)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 5.497787143782138)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-elbow-bearing-cap-(1, 5.497787143782138)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(-4, -40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(-4, -40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(4, -40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(4, -40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(-4, 40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(-4, 40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(4, 40.5)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-elbow-carrier-foot-(4, 40.5)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(-1, -8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(-1, -8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(-1, -8, -6)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(-1, -8, -6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(-1, 8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(-1, 8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-nut-(-1, -11)-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(-1, -11)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(-1, -11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-nut-(-1, 11)-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(-1, 11)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(-1, 11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(1, -8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(1, -8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(1, -8, -6)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(1, -8, -6)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(1, 8, -38)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      4.6,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x5"
+    }
+  },
+  {
+    "name": "A2-elbow-case-mount-(1, 8, -38)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.0,
+      2.5,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-nut-(1, -11)-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(1, -11)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(1, -11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-nut-(1, 11)-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(1, 11)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x11"
+    }
+  },
+  {
+    "name": "A2-elbow-mount-foot-(1, 11)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      11.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(-16, -48)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(-16, -48)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(-16, -34)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(-16, -34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(16, -48)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(16, -48)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(16, -34)-head-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-elbow-cassette-(16, -34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-elbow-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(-1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 1)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 1)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 2)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 2)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 3)-head-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x6"
+    }
+  },
+  {
+    "name": "A2-upper-flange-(1, 3)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      6.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-upper-cassette-nut-(-16, 89)-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-upper-cassette-nut-(-16, 103)-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-upper-cassette-nut-(16, 89)-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-upper-cassette-nut-(16, 103)-task",
+    "type": "MESH",
+    "parent": "A2-J03-elbow-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.2,
+      8.08,
+      7.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4 hex nut"
+    }
+  },
+  {
+    "name": "A2-wrist-servo-task",
+    "type": "MESH",
+    "parent": "A2-wrist-case-frame-task",
+    "part_type": "actuator",
+    "material": null,
+    "dims_mm": [
+      24.7,
+      35.0,
+      45.2
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "55",
+      "model": "FEETECH ST-3215-C018",
+      "rated_torque_Nm": "0.980665"
+    }
+  },
+  {
+    "name": "A2-wrist-output--1-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-wrist-output-1-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, 7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, 7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, -7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, -7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, 0, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, 0, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, 0, -7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(-1, 0, -7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, 7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, 7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, -7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, -7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, 0, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, 0, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, 0, -7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x6"
+    }
+  },
+  {
+    "name": "A2-wrist-pivot-(1, 0, -7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J04-wrist-pitch-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      6.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-roll-servo-task",
+    "type": "MESH",
+    "parent": "A2-roll-case-frame-task",
+    "part_type": "actuator",
+    "material": null,
+    "dims_mm": [
+      24.7,
+      35.0,
+      45.2
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "55",
+      "model": "FEETECH ST-3215-C018",
+      "rated_torque_Nm": "0.980665"
+    }
+  },
+  {
+    "name": "A2-roll-output--1-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-roll-output-1-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-tool-lock-nut-(-17, -18)-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-tool-lock-nut-(-17, 18)-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-tool-lock-nut-(17, -18)-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-tool-lock-nut-(17, 18)-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(-17, -18)-head-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(-17, -18)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(-17, 18)-head-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(-17, 18)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(17, -18)-head-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(17, -18)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(17, 18)-head-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-tool-retention-(17, 18)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-tool-dowel--12-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-tool-dowel-12-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED"
+    }
+  },
+  {
+    "name": "A2-gripper-servo-task",
+    "type": "MESH",
+    "parent": "A2-gripper-case-frame-task",
+    "part_type": "actuator",
+    "material": null,
+    "dims_mm": [
+      24.7,
+      35.0,
+      45.2
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "actuator",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "55",
+      "model": "FEETECH ST-3215-C018",
+      "rated_torque_Nm": "0.980665"
+    }
+  },
+  {
+    "name": "A2-gripper-output--1-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-gripper-output-1-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "purchased-adapter",
+    "material": null,
+    "dims_mm": [
+      20.0,
+      2.2,
+      20.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "purchased-adapter",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "mass_g": "4",
+      "procurement_gate": "25T drive or 6mm idler adapter with PCD14 M2.5; exact compatible supplier part must be verified"
+    }
+  },
+  {
+    "name": "A2-hand-adapter-nut-8-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-hand-adapter-bolt-8-head-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-hand-adapter-bolt-8-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-hand-adapter-nut-20-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-hand-adapter-bolt-20-head-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x8"
+    }
+  },
+  {
+    "name": "A2-hand-adapter-bolt-20-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-tool-coupling-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      8.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x10"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      10.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(-7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x10"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(-7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      10.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(0, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x10"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(0, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      10.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(0, -7)-head-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      3.0,
+      5.52
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x10"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-bolt-(0, -7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-fixed-jaw-anchor-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      10.0,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-nut-(21, 0)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      2.4,
+      6.35
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-nut-(35, 0)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      2.4,
+      6.35
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-nut-(28, 7)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      2.4,
+      6.35
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-fixed-jaw-nut-(28, -7)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      2.4,
+      6.35
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x12"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      12.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(-7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x12"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(-7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      12.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(0, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x12"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(0, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      12.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(0, -7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x12"
+    }
+  },
+  {
+    "name": "A2-yaw-horn-bolt-(0, -7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J01-yaw-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      12.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(-27, -23)-head-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x40"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(-27, -23)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      40.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(-27, 23)-head-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x40"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(-27, 23)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      40.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(27, -23)-head-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x40"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(27, -23)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      40.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(27, 23)-head-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      7.36,
+      7.36,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x40"
+    }
+  },
+  {
+    "name": "A2-yaw-pedestal-(27, 23)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-root-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      4.0,
+      40.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(-16, -48)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(-16, -48)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(-16, -34)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(-16, -34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(16, -48)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(16, -48)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(16, -34)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.0,
+      7.36,
+      7.36
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M4x10"
+    }
+  },
+  {
+    "name": "A2-wrist-cassette-(16, -34)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-nut-(-15.8, -12)-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(-15.8, -12)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x50"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(-15.8, -12)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      50.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-nut-(-15.8, 12)-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(-15.8, 12)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x50"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(-15.8, 12)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      50.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-nut-(15.8, -12)-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(15.8, -12)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x50"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(15.8, -12)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      50.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-nut-(15.8, 12)-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(15.8, 12)-head-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x50"
+    }
+  },
+  {
+    "name": "A2-wrist-cage-(15.8, 12)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-wrist-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      50.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x4"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(-7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x4"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(-7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(0, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x4"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(0, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(0, -7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      4.6,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x4"
+    }
+  },
+  {
+    "name": "A2-roll-dock-bolt-(0, -7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J05-wrist-roll-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      2.5,
+      4.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x7"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      7.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(-7, 0)-head-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x7"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(-7, 0)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      7.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(0, 7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x7"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(0, 7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      7.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(0, -7)-head-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      4.6,
+      2.5,
+      4.6
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M2.5x7"
+    }
+  },
+  {
+    "name": "A2-moving-jaw-bolt-(0, -7)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-J06-gripper-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      2.5,
+      7.0,
+      2.5
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-hand-clamp-nut-(-15.25, -9)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(-15.25, -9)-head-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x52"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(-15.25, -9)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      52.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-hand-clamp-nut-(-15.25, -16)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(-15.25, -16)-head-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x52"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(-15.25, -16)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      52.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-hand-clamp-nut-(15.25, -12)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(15.25, -12)-head-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x52"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(15.25, -12)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      52.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  },
+  {
+    "name": "A2-hand-clamp-nut-(15.25, 12)-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.5,
+      6.35,
+      2.4
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3 hex nut"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(15.25, 12)-head-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      5.52,
+      5.52,
+      3.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "assembly_hardware": "M3x52"
+    }
+  },
+  {
+    "name": "A2-hand-case-clamp-(15.25, 12)-thread-envelope-task",
+    "type": "MESH",
+    "parent": "A2-gripper-fixed-task",
+    "part_type": "hardware",
+    "material": null,
+    "dims_mm": [
+      3.0,
+      3.0,
+      52.0
+    ],
+    "props": {
+      "native_geometry": "True",
+      "part_type": "hardware",
+      "explode_mm": "<bpy id property array [3]>",
+      "manufacturing_status": "PROTOTYPE_NOT_RELEASED",
+      "thread_model": "cylindrical envelope, pitch omitted"
+    }
+  }
+]

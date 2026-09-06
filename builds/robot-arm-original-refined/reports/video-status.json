@@ -1,0 +1,11 @@
+{
+  "status": "DELIVERED_VISUAL_REPAIR_WITH_PHYSICAL_LIMITS",
+  "scene_sha256": "06e248dc8d2902862fb7a82679dc740dafa2197081ba3203f7f8b760f1911811",
+  "video_sha256": "2cbb5f0e994d4c45d548f1c3c0536c321f2b89f5f0b06bcf4c8c4d52ef5d9d8b",
+  "video": "video/arm-step-by-step-refined.mp4",
+  "duration_seconds": 125.83333333333333,
+  "frames": 3020,
+  "full_decode_exit_code": 0,
+  "visual_review": "PASS_SAMPLED: decoded shoulder/elbow staging and seat frames, full contact sheet, and unclipped final hero",
+  "limits": "Physical servo-output mating, retention, fits, hardware/tool access and loaded operation remain unverified."
+}

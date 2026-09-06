@@ -1,0 +1,2047 @@
+{
+  "version": "5.2.0 LTS",
+  "controller": "root",
+  "source_file": "/Users/jang/Products/Blender/builds/robot-arm-print-assembly/source-session-checkpoint.blend",
+  "source_sha256": "d03cf808f5555d89821fb8e4d095420bdc4cc169781cf2ed01a334168634feae",
+  "frozen_sha256": "75b716e552eb1905d725d80c2d36c46fd7916f64d81ce1b78e57bd68f2b9f9bc",
+  "counts": {
+    "print": 38,
+    "machined-metal": 14,
+    "actuator": 6,
+    "actuator-visual": 4,
+    "purchased-adapter": 8,
+    "bearing": 5,
+    "electronics-envelope": 2,
+    "hardware": 328
+  },
+  "objects": [
+    {
+      "source": "A2-base-matte-cover-task",
+      "frozen": "A3-src-base-matte-cover",
+      "kind": "print"
+    },
+    {
+      "source": "A2-yaw-bearing-pedestal-task",
+      "frozen": "A3-src-yaw-bearing-pedestal",
+      "kind": "print"
+    },
+    {
+      "source": "A2-yaw-rounded-skirt-task",
+      "frozen": "A3-src-yaw-rounded-skirt",
+      "kind": "print"
+    },
+    {
+      "source": "A2-shoulder-diamond-fascia-task",
+      "frozen": "A3-src-shoulder-diamond-fascia",
+      "kind": "print"
+    },
+    {
+      "source": "A2-base-electronics-shell-task",
+      "frozen": "A3-src-base-electronics-shell",
+      "kind": "print"
+    },
+    {
+      "source": "A2-electronics-service-lid-task",
+      "frozen": "A3-src-electronics-service-lid",
+      "kind": "print"
+    },
+    {
+      "source": "A2-shoulder-flush-bearing-cap--1-task",
+      "frozen": "A3-src-shoulder-flush-bearing-cap--1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-shoulder-flush-bearing-cap-1-task",
+      "frozen": "A3-src-shoulder-flush-bearing-cap-1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-shoulder-motor-mount--1-task",
+      "frozen": "A3-src-shoulder-motor-mount--1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-shoulder-motor-mount-1-task",
+      "frozen": "A3-src-shoulder-motor-mount-1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-lower-U-body-task",
+      "frozen": "A3-src-lower-U-body",
+      "kind": "print"
+    },
+    {
+      "source": "A2-elbow-flush-bearing-cap--1-task",
+      "frozen": "A3-src-elbow-flush-bearing-cap--1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-elbow-flush-bearing-cap-1-task",
+      "frozen": "A3-src-elbow-flush-bearing-cap-1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-elbow-motor-mount--1-task",
+      "frozen": "A3-src-elbow-motor-mount--1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-elbow-motor-mount-1-task",
+      "frozen": "A3-src-elbow-motor-mount-1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-upper-U-body-task",
+      "frozen": "A3-src-upper-U-body",
+      "kind": "print"
+    },
+    {
+      "source": "A2-wrist-cheek--1-task",
+      "frozen": "A3-src-wrist-cheek--1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-wrist-cheek-1-task",
+      "frozen": "A3-src-wrist-cheek-1",
+      "kind": "print"
+    },
+    {
+      "source": "A2-wrist-cross-bridge-task",
+      "frozen": "A3-src-wrist-cross-bridge",
+      "kind": "print"
+    },
+    {
+      "source": "A2-roll-motor-cradle-task",
+      "frozen": "A3-src-roll-motor-cradle",
+      "kind": "print"
+    },
+    {
+      "source": "A2-wrist-vented-cover-task",
+      "frozen": "A3-src-wrist-vented-cover",
+      "kind": "print"
+    },
+    {
+      "source": "A2-hand-servo-cradle-task",
+      "frozen": "A3-src-hand-servo-cradle",
+      "kind": "print"
+    },
+    {
+      "source": "A2-moving-jaw-task",
+      "frozen": "A3-src-moving-jaw",
+      "kind": "print"
+    },
+    {
+      "source": "A2-moving-TPU-pad-40-task",
+      "frozen": "A3-src-moving-TPU-pad-40",
+      "kind": "print"
+    },
+    {
+      "source": "A2-moving-TPU-pad-56-task",
+      "frozen": "A3-src-moving-TPU-pad-56",
+      "kind": "print"
+    },
+    {
+      "source": "A2-moving-TPU-pad-72-task",
+      "frozen": "A3-src-moving-TPU-pad-72",
+      "kind": "print"
+    },
+    {
+      "source": "A2-fixed-jaw-task",
+      "frozen": "A3-src-fixed-jaw",
+      "kind": "print"
+    },
+    {
+      "source": "A2-fixed-TPU-pad-40-task",
+      "frozen": "A3-src-fixed-TPU-pad-40",
+      "kind": "print"
+    },
+    {
+      "source": "A2-fixed-TPU-pad-56-task",
+      "frozen": "A3-src-fixed-TPU-pad-56",
+      "kind": "print"
+    },
+    {
+      "source": "A2-fixed-TPU-pad-72-task",
+      "frozen": "A3-src-fixed-TPU-pad-72",
+      "kind": "print"
+    },
+    {
+      "source": "A2-tool-dock-task",
+      "frozen": "A3-src-tool-dock",
+      "kind": "print"
+    },
+    {
+      "source": "A2-gripper-tool-plate-task",
+      "frozen": "A3-src-gripper-tool-plate",
+      "kind": "print"
+    },
+    {
+      "source": "A2-wrist-pitch-cassette-task",
+      "frozen": "A3-src-wrist-pitch-cassette",
+      "kind": "print"
+    },
+    {
+      "source": "A2-wrist-case-retainer-task",
+      "frozen": "A3-src-wrist-case-retainer",
+      "kind": "print"
+    },
+    {
+      "source": "A2-hand-case-retainer-task",
+      "frozen": "A3-src-hand-case-retainer",
+      "kind": "print"
+    },
+    {
+      "source": "A2-table-anchor-plate-task",
+      "frozen": "A3-src-table-anchor-plate",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-yaw-turntable-task",
+      "frozen": "A3-src-yaw-turntable",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-shoulder-drive-flange--1-task",
+      "frozen": "A3-src-shoulder-drive-flange--1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-shoulder-bearing-carrier--1-task",
+      "frozen": "A3-src-shoulder-bearing-carrier--1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-shoulder-drive-flange-1-task",
+      "frozen": "A3-src-shoulder-drive-flange-1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-shoulder-bearing-carrier-1-task",
+      "frozen": "A3-src-shoulder-bearing-carrier-1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-shoulder-cradle-floor-task",
+      "frozen": "A3-src-shoulder-cradle-floor",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-elbow-drive-flange--1-task",
+      "frozen": "A3-src-elbow-drive-flange--1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-elbow-bearing-carrier--1-task",
+      "frozen": "A3-src-elbow-bearing-carrier--1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-elbow-drive-flange-1-task",
+      "frozen": "A3-src-elbow-drive-flange-1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-elbow-bearing-carrier-1-task",
+      "frozen": "A3-src-elbow-bearing-carrier-1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-elbow-cradle-floor-task",
+      "frozen": "A3-src-elbow-cradle-floor",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-wrist-extension-hub--1-task",
+      "frozen": "A3-src-wrist-extension-hub--1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-wrist-extension-hub-1-task",
+      "frozen": "A3-src-wrist-extension-hub-1",
+      "kind": "machined-metal"
+    },
+    {
+      "source": "A2-shoulder-servo-task",
+      "frozen": "A3-src-shoulder-servo",
+      "kind": "actuator"
+    },
+    {
+      "source": "A2-shoulder-output--1-task",
+      "frozen": "A3-src-shoulder-output--1",
+      "kind": "actuator-visual"
+    },
+    {
+      "source": "A2-shoulder-output-1-task",
+      "frozen": "A3-src-shoulder-output-1",
+      "kind": "actuator-visual"
+    },
+    {
+      "source": "A2-yaw-servo-task",
+      "frozen": "A3-src-yaw-servo",
+      "kind": "actuator"
+    },
+    {
+      "source": "A2-yaw-output--1-task",
+      "frozen": "A3-src-yaw-output--1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-yaw-output-1-task",
+      "frozen": "A3-src-yaw-output-1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-yaw-61805-bearing-task",
+      "frozen": "A3-src-yaw-61805-bearing",
+      "kind": "bearing"
+    },
+    {
+      "source": "A2-TTL-RS485-controller-envelope-task",
+      "frozen": "A3-src-TTL-RS485-controller-envelope",
+      "kind": "electronics-envelope"
+    },
+    {
+      "source": "A2-service-connector-task",
+      "frozen": "A3-src-service-connector",
+      "kind": "electronics-envelope"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 0)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 0)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 1)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 1)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 2)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 2)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 3)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 3)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 4)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 4)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 4)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 4)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 5)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 5)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 6)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 6)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 7)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(-1, 7)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(-1, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-61806-bearing--1-task",
+      "frozen": "A3-src-shoulder-61806-bearing--1",
+      "kind": "bearing"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 0.7853981633974483)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 0.7853981633974483)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 0.7853981633974483)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 0.7853981633974483)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 2.356194490192345)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 2.356194490192345)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 2.356194490192345)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 2.356194490192345)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 3.9269908169872414)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 3.9269908169872414)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 3.9269908169872414)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 3.9269908169872414)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 5.497787143782138)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 5.497787143782138)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(-1, 5.497787143782138)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(-1, 5.497787143782138)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 0)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 0)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 1)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 1)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 2)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 2)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 3)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 3)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 4)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 4)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 4)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 4)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 5)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 5)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 6)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 6)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 7)-head-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-output-bolt-(1, 7)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-output-bolt-(1, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-61806-bearing-1-task",
+      "frozen": "A3-src-shoulder-61806-bearing-1",
+      "kind": "bearing"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 0.7853981633974483)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 0.7853981633974483)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 0.7853981633974483)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 0.7853981633974483)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 2.356194490192345)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 2.356194490192345)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 2.356194490192345)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 2.356194490192345)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 3.9269908169872414)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 3.9269908169872414)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 3.9269908169872414)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 3.9269908169872414)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 5.497787143782138)-head-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 5.497787143782138)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-bearing-cap-(1, 5.497787143782138)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-bearing-cap-(1, 5.497787143782138)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(-4, -40.5)-head-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(-4, -40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(-4, -40.5)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(-4, -40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(4, -40.5)-head-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(4, -40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(4, -40.5)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(4, -40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(-4, 40.5)-head-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(-4, 40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(-4, 40.5)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(-4, 40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(4, 40.5)-head-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(4, 40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-carrier-foot-(4, 40.5)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-carrier-foot-(4, 40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(-16, -34)-head-task",
+      "frozen": "A3-src-shoulder-floor-(-16, -34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(-16, -34)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-floor-(-16, -34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(-16, 34)-head-task",
+      "frozen": "A3-src-shoulder-floor-(-16, 34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(-16, 34)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-floor-(-16, 34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(16, -34)-head-task",
+      "frozen": "A3-src-shoulder-floor-(16, -34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(16, -34)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-floor-(16, -34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(16, 34)-head-task",
+      "frozen": "A3-src-shoulder-floor-(16, 34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-floor-(16, 34)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-floor-(16, 34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(-1, -8, -38)-head-task",
+      "frozen": "A3-src-shoulder-case-mount-(-1, -8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(-1, -8, -38)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-case-mount-(-1, -8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(-1, -8, -6)-head-task",
+      "frozen": "A3-src-shoulder-case-mount-(-1, -8, -6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(-1, -8, -6)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-case-mount-(-1, -8, -6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(-1, 8, -38)-head-task",
+      "frozen": "A3-src-shoulder-case-mount-(-1, 8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(-1, 8, -38)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-case-mount-(-1, 8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-nut-(-1, -11)-task",
+      "frozen": "A3-src-shoulder-mount-foot-nut-(-1, -11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(-1, -11)-head-task",
+      "frozen": "A3-src-shoulder-mount-foot-(-1, -11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(-1, -11)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-mount-foot-(-1, -11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-nut-(-1, 11)-task",
+      "frozen": "A3-src-shoulder-mount-foot-nut-(-1, 11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(-1, 11)-head-task",
+      "frozen": "A3-src-shoulder-mount-foot-(-1, 11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(-1, 11)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-mount-foot-(-1, 11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(1, -8, -38)-head-task",
+      "frozen": "A3-src-shoulder-case-mount-(1, -8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(1, -8, -38)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-case-mount-(1, -8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(1, -8, -6)-head-task",
+      "frozen": "A3-src-shoulder-case-mount-(1, -8, -6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(1, -8, -6)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-case-mount-(1, -8, -6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(1, 8, -38)-head-task",
+      "frozen": "A3-src-shoulder-case-mount-(1, 8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-case-mount-(1, 8, -38)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-case-mount-(1, 8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-nut-(1, -11)-task",
+      "frozen": "A3-src-shoulder-mount-foot-nut-(1, -11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(1, -11)-head-task",
+      "frozen": "A3-src-shoulder-mount-foot-(1, -11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(1, -11)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-mount-foot-(1, -11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-nut-(1, 11)-task",
+      "frozen": "A3-src-shoulder-mount-foot-nut-(1, 11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(1, 11)-head-task",
+      "frozen": "A3-src-shoulder-mount-foot-(1, 11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-shoulder-mount-foot-(1, 11)-thread-envelope-task",
+      "frozen": "A3-src-shoulder-mount-foot-(1, 11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 0)-head-task",
+      "frozen": "A3-src-lower-flange-(-1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 0)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(-1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 1)-head-task",
+      "frozen": "A3-src-lower-flange-(-1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 1)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(-1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 2)-head-task",
+      "frozen": "A3-src-lower-flange-(-1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 2)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(-1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 3)-head-task",
+      "frozen": "A3-src-lower-flange-(-1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(-1, 3)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(-1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 0)-head-task",
+      "frozen": "A3-src-lower-flange-(1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 0)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 1)-head-task",
+      "frozen": "A3-src-lower-flange-(1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 1)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 2)-head-task",
+      "frozen": "A3-src-lower-flange-(1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 2)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 3)-head-task",
+      "frozen": "A3-src-lower-flange-(1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-flange-(1, 3)-thread-envelope-task",
+      "frozen": "A3-src-lower-flange-(1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-cassette-nut-(-16, 63)-task",
+      "frozen": "A3-src-lower-cassette-nut-(-16, 63)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-cassette-nut-(-16, 77)-task",
+      "frozen": "A3-src-lower-cassette-nut-(-16, 77)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-cassette-nut-(16, 63)-task",
+      "frozen": "A3-src-lower-cassette-nut-(16, 63)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-lower-cassette-nut-(16, 77)-task",
+      "frozen": "A3-src-lower-cassette-nut-(16, 77)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-servo-task",
+      "frozen": "A3-src-elbow-servo",
+      "kind": "actuator"
+    },
+    {
+      "source": "A2-elbow-output--1-task",
+      "frozen": "A3-src-elbow-output--1",
+      "kind": "actuator-visual"
+    },
+    {
+      "source": "A2-elbow-output-1-task",
+      "frozen": "A3-src-elbow-output-1",
+      "kind": "actuator-visual"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 0)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 0)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 1)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 1)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 2)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 2)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 3)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 3)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 4)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 4)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 4)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 4)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 5)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 5)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 6)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 6)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 7)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(-1, 7)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(-1, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-61806-bearing--1-task",
+      "frozen": "A3-src-elbow-61806-bearing--1",
+      "kind": "bearing"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 0.7853981633974483)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 0.7853981633974483)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 0.7853981633974483)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 0.7853981633974483)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 2.356194490192345)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 2.356194490192345)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 2.356194490192345)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 2.356194490192345)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 3.9269908169872414)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 3.9269908169872414)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 3.9269908169872414)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 3.9269908169872414)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 5.497787143782138)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 5.497787143782138)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(-1, 5.497787143782138)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(-1, 5.497787143782138)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 0)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 0)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 1)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 1)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 2)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 2)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 3)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 3)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 4)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 4)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 4)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 4)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 5)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 5)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 6)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 6)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 7)-head-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-output-bolt-(1, 7)-thread-envelope-task",
+      "frozen": "A3-src-elbow-output-bolt-(1, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-61806-bearing-1-task",
+      "frozen": "A3-src-elbow-61806-bearing-1",
+      "kind": "bearing"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 0.7853981633974483)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 0.7853981633974483)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 0.7853981633974483)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 0.7853981633974483)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 2.356194490192345)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 2.356194490192345)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 2.356194490192345)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 2.356194490192345)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 3.9269908169872414)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 3.9269908169872414)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 3.9269908169872414)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 3.9269908169872414)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 5.497787143782138)-head-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 5.497787143782138)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-bearing-cap-(1, 5.497787143782138)-thread-envelope-task",
+      "frozen": "A3-src-elbow-bearing-cap-(1, 5.497787143782138)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(-4, -40.5)-head-task",
+      "frozen": "A3-src-elbow-carrier-foot-(-4, -40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(-4, -40.5)-thread-envelope-task",
+      "frozen": "A3-src-elbow-carrier-foot-(-4, -40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(4, -40.5)-head-task",
+      "frozen": "A3-src-elbow-carrier-foot-(4, -40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(4, -40.5)-thread-envelope-task",
+      "frozen": "A3-src-elbow-carrier-foot-(4, -40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(-4, 40.5)-head-task",
+      "frozen": "A3-src-elbow-carrier-foot-(-4, 40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(-4, 40.5)-thread-envelope-task",
+      "frozen": "A3-src-elbow-carrier-foot-(-4, 40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(4, 40.5)-head-task",
+      "frozen": "A3-src-elbow-carrier-foot-(4, 40.5)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-carrier-foot-(4, 40.5)-thread-envelope-task",
+      "frozen": "A3-src-elbow-carrier-foot-(4, 40.5)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(-1, -8, -38)-head-task",
+      "frozen": "A3-src-elbow-case-mount-(-1, -8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(-1, -8, -38)-thread-envelope-task",
+      "frozen": "A3-src-elbow-case-mount-(-1, -8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(-1, -8, -6)-head-task",
+      "frozen": "A3-src-elbow-case-mount-(-1, -8, -6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(-1, -8, -6)-thread-envelope-task",
+      "frozen": "A3-src-elbow-case-mount-(-1, -8, -6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(-1, 8, -38)-head-task",
+      "frozen": "A3-src-elbow-case-mount-(-1, 8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(-1, 8, -38)-thread-envelope-task",
+      "frozen": "A3-src-elbow-case-mount-(-1, 8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-nut-(-1, -11)-task",
+      "frozen": "A3-src-elbow-mount-foot-nut-(-1, -11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(-1, -11)-head-task",
+      "frozen": "A3-src-elbow-mount-foot-(-1, -11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(-1, -11)-thread-envelope-task",
+      "frozen": "A3-src-elbow-mount-foot-(-1, -11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-nut-(-1, 11)-task",
+      "frozen": "A3-src-elbow-mount-foot-nut-(-1, 11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(-1, 11)-head-task",
+      "frozen": "A3-src-elbow-mount-foot-(-1, 11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(-1, 11)-thread-envelope-task",
+      "frozen": "A3-src-elbow-mount-foot-(-1, 11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(1, -8, -38)-head-task",
+      "frozen": "A3-src-elbow-case-mount-(1, -8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(1, -8, -38)-thread-envelope-task",
+      "frozen": "A3-src-elbow-case-mount-(1, -8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(1, -8, -6)-head-task",
+      "frozen": "A3-src-elbow-case-mount-(1, -8, -6)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(1, -8, -6)-thread-envelope-task",
+      "frozen": "A3-src-elbow-case-mount-(1, -8, -6)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(1, 8, -38)-head-task",
+      "frozen": "A3-src-elbow-case-mount-(1, 8, -38)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-case-mount-(1, 8, -38)-thread-envelope-task",
+      "frozen": "A3-src-elbow-case-mount-(1, 8, -38)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-nut-(1, -11)-task",
+      "frozen": "A3-src-elbow-mount-foot-nut-(1, -11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(1, -11)-head-task",
+      "frozen": "A3-src-elbow-mount-foot-(1, -11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(1, -11)-thread-envelope-task",
+      "frozen": "A3-src-elbow-mount-foot-(1, -11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-nut-(1, 11)-task",
+      "frozen": "A3-src-elbow-mount-foot-nut-(1, 11)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(1, 11)-head-task",
+      "frozen": "A3-src-elbow-mount-foot-(1, 11)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-mount-foot-(1, 11)-thread-envelope-task",
+      "frozen": "A3-src-elbow-mount-foot-(1, 11)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(-16, -48)-head-task",
+      "frozen": "A3-src-elbow-cassette-(-16, -48)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(-16, -48)-thread-envelope-task",
+      "frozen": "A3-src-elbow-cassette-(-16, -48)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(-16, -34)-head-task",
+      "frozen": "A3-src-elbow-cassette-(-16, -34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(-16, -34)-thread-envelope-task",
+      "frozen": "A3-src-elbow-cassette-(-16, -34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(16, -48)-head-task",
+      "frozen": "A3-src-elbow-cassette-(16, -48)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(16, -48)-thread-envelope-task",
+      "frozen": "A3-src-elbow-cassette-(16, -48)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(16, -34)-head-task",
+      "frozen": "A3-src-elbow-cassette-(16, -34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-elbow-cassette-(16, -34)-thread-envelope-task",
+      "frozen": "A3-src-elbow-cassette-(16, -34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 0)-head-task",
+      "frozen": "A3-src-upper-flange-(-1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 0)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(-1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 1)-head-task",
+      "frozen": "A3-src-upper-flange-(-1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 1)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(-1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 2)-head-task",
+      "frozen": "A3-src-upper-flange-(-1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 2)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(-1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 3)-head-task",
+      "frozen": "A3-src-upper-flange-(-1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(-1, 3)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(-1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 0)-head-task",
+      "frozen": "A3-src-upper-flange-(1, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 0)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(1, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 1)-head-task",
+      "frozen": "A3-src-upper-flange-(1, 1)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 1)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(1, 1)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 2)-head-task",
+      "frozen": "A3-src-upper-flange-(1, 2)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 2)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(1, 2)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 3)-head-task",
+      "frozen": "A3-src-upper-flange-(1, 3)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-flange-(1, 3)-thread-envelope-task",
+      "frozen": "A3-src-upper-flange-(1, 3)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-cassette-nut-(-16, 89)-task",
+      "frozen": "A3-src-upper-cassette-nut-(-16, 89)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-cassette-nut-(-16, 103)-task",
+      "frozen": "A3-src-upper-cassette-nut-(-16, 103)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-cassette-nut-(16, 89)-task",
+      "frozen": "A3-src-upper-cassette-nut-(16, 89)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-upper-cassette-nut-(16, 103)-task",
+      "frozen": "A3-src-upper-cassette-nut-(16, 103)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-servo-task",
+      "frozen": "A3-src-wrist-servo",
+      "kind": "actuator"
+    },
+    {
+      "source": "A2-wrist-output--1-task",
+      "frozen": "A3-src-wrist-output--1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-wrist-output-1-task",
+      "frozen": "A3-src-wrist-output-1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, 7, 0)-head-task",
+      "frozen": "A3-src-wrist-pivot-(-1, 7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, 7, 0)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(-1, 7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, -7, 0)-head-task",
+      "frozen": "A3-src-wrist-pivot-(-1, -7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, -7, 0)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(-1, -7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, 0, 7)-head-task",
+      "frozen": "A3-src-wrist-pivot-(-1, 0, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, 0, 7)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(-1, 0, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, 0, -7)-head-task",
+      "frozen": "A3-src-wrist-pivot-(-1, 0, -7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(-1, 0, -7)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(-1, 0, -7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, 7, 0)-head-task",
+      "frozen": "A3-src-wrist-pivot-(1, 7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, 7, 0)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(1, 7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, -7, 0)-head-task",
+      "frozen": "A3-src-wrist-pivot-(1, -7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, -7, 0)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(1, -7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, 0, 7)-head-task",
+      "frozen": "A3-src-wrist-pivot-(1, 0, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, 0, 7)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(1, 0, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, 0, -7)-head-task",
+      "frozen": "A3-src-wrist-pivot-(1, 0, -7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-pivot-(1, 0, -7)-thread-envelope-task",
+      "frozen": "A3-src-wrist-pivot-(1, 0, -7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-servo-task",
+      "frozen": "A3-src-roll-servo",
+      "kind": "actuator"
+    },
+    {
+      "source": "A2-roll-output--1-task",
+      "frozen": "A3-src-roll-output--1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-roll-output-1-task",
+      "frozen": "A3-src-roll-output-1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-tool-lock-nut-(-17, -18)-task",
+      "frozen": "A3-src-tool-lock-nut-(-17, -18)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-lock-nut-(-17, 18)-task",
+      "frozen": "A3-src-tool-lock-nut-(-17, 18)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-lock-nut-(17, -18)-task",
+      "frozen": "A3-src-tool-lock-nut-(17, -18)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-lock-nut-(17, 18)-task",
+      "frozen": "A3-src-tool-lock-nut-(17, 18)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(-17, -18)-head-task",
+      "frozen": "A3-src-tool-retention-(-17, -18)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(-17, -18)-thread-envelope-task",
+      "frozen": "A3-src-tool-retention-(-17, -18)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(-17, 18)-head-task",
+      "frozen": "A3-src-tool-retention-(-17, 18)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(-17, 18)-thread-envelope-task",
+      "frozen": "A3-src-tool-retention-(-17, 18)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(17, -18)-head-task",
+      "frozen": "A3-src-tool-retention-(17, -18)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(17, -18)-thread-envelope-task",
+      "frozen": "A3-src-tool-retention-(17, -18)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(17, 18)-head-task",
+      "frozen": "A3-src-tool-retention-(17, 18)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-retention-(17, 18)-thread-envelope-task",
+      "frozen": "A3-src-tool-retention-(17, 18)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-dowel--12-task",
+      "frozen": "A3-src-tool-dowel--12",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-tool-dowel-12-task",
+      "frozen": "A3-src-tool-dowel-12",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-gripper-servo-task",
+      "frozen": "A3-src-gripper-servo",
+      "kind": "actuator"
+    },
+    {
+      "source": "A2-gripper-output--1-task",
+      "frozen": "A3-src-gripper-output--1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-gripper-output-1-task",
+      "frozen": "A3-src-gripper-output-1",
+      "kind": "purchased-adapter"
+    },
+    {
+      "source": "A2-hand-adapter-nut-8-task",
+      "frozen": "A3-src-hand-adapter-nut-8",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-adapter-bolt-8-head-task",
+      "frozen": "A3-src-hand-adapter-bolt-8-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-adapter-bolt-8-thread-envelope-task",
+      "frozen": "A3-src-hand-adapter-bolt-8-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-adapter-nut-20-task",
+      "frozen": "A3-src-hand-adapter-nut-20",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-adapter-bolt-20-head-task",
+      "frozen": "A3-src-hand-adapter-bolt-20-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-adapter-bolt-20-thread-envelope-task",
+      "frozen": "A3-src-hand-adapter-bolt-20-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(7, 0)-head-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(7, 0)-thread-envelope-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(-7, 0)-head-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(-7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(-7, 0)-thread-envelope-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(-7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(0, 7)-head-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(0, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(0, 7)-thread-envelope-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(0, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(0, -7)-head-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(0, -7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-bolt-(0, -7)-thread-envelope-task",
+      "frozen": "A3-src-fixed-jaw-bolt-(0, -7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-nut-(21, 0)-task",
+      "frozen": "A3-src-fixed-jaw-nut-(21, 0)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-nut-(35, 0)-task",
+      "frozen": "A3-src-fixed-jaw-nut-(35, 0)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-nut-(28, 7)-task",
+      "frozen": "A3-src-fixed-jaw-nut-(28, 7)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-fixed-jaw-nut-(28, -7)-task",
+      "frozen": "A3-src-fixed-jaw-nut-(28, -7)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(7, 0)-head-task",
+      "frozen": "A3-src-yaw-horn-bolt-(7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(7, 0)-thread-envelope-task",
+      "frozen": "A3-src-yaw-horn-bolt-(7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(-7, 0)-head-task",
+      "frozen": "A3-src-yaw-horn-bolt-(-7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(-7, 0)-thread-envelope-task",
+      "frozen": "A3-src-yaw-horn-bolt-(-7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(0, 7)-head-task",
+      "frozen": "A3-src-yaw-horn-bolt-(0, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(0, 7)-thread-envelope-task",
+      "frozen": "A3-src-yaw-horn-bolt-(0, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(0, -7)-head-task",
+      "frozen": "A3-src-yaw-horn-bolt-(0, -7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-horn-bolt-(0, -7)-thread-envelope-task",
+      "frozen": "A3-src-yaw-horn-bolt-(0, -7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(-27, -23)-head-task",
+      "frozen": "A3-src-yaw-pedestal-(-27, -23)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(-27, -23)-thread-envelope-task",
+      "frozen": "A3-src-yaw-pedestal-(-27, -23)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(-27, 23)-head-task",
+      "frozen": "A3-src-yaw-pedestal-(-27, 23)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(-27, 23)-thread-envelope-task",
+      "frozen": "A3-src-yaw-pedestal-(-27, 23)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(27, -23)-head-task",
+      "frozen": "A3-src-yaw-pedestal-(27, -23)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(27, -23)-thread-envelope-task",
+      "frozen": "A3-src-yaw-pedestal-(27, -23)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(27, 23)-head-task",
+      "frozen": "A3-src-yaw-pedestal-(27, 23)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-yaw-pedestal-(27, 23)-thread-envelope-task",
+      "frozen": "A3-src-yaw-pedestal-(27, 23)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(-16, -48)-head-task",
+      "frozen": "A3-src-wrist-cassette-(-16, -48)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(-16, -48)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cassette-(-16, -48)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(-16, -34)-head-task",
+      "frozen": "A3-src-wrist-cassette-(-16, -34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(-16, -34)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cassette-(-16, -34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(16, -48)-head-task",
+      "frozen": "A3-src-wrist-cassette-(16, -48)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(16, -48)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cassette-(16, -48)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(16, -34)-head-task",
+      "frozen": "A3-src-wrist-cassette-(16, -34)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cassette-(16, -34)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cassette-(16, -34)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-nut-(-15.8, -12)-task",
+      "frozen": "A3-src-wrist-cage-nut-(-15.8, -12)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(-15.8, -12)-head-task",
+      "frozen": "A3-src-wrist-cage-(-15.8, -12)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(-15.8, -12)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cage-(-15.8, -12)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-nut-(-15.8, 12)-task",
+      "frozen": "A3-src-wrist-cage-nut-(-15.8, 12)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(-15.8, 12)-head-task",
+      "frozen": "A3-src-wrist-cage-(-15.8, 12)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(-15.8, 12)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cage-(-15.8, 12)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-nut-(15.8, -12)-task",
+      "frozen": "A3-src-wrist-cage-nut-(15.8, -12)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(15.8, -12)-head-task",
+      "frozen": "A3-src-wrist-cage-(15.8, -12)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(15.8, -12)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cage-(15.8, -12)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-nut-(15.8, 12)-task",
+      "frozen": "A3-src-wrist-cage-nut-(15.8, 12)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(15.8, 12)-head-task",
+      "frozen": "A3-src-wrist-cage-(15.8, 12)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-wrist-cage-(15.8, 12)-thread-envelope-task",
+      "frozen": "A3-src-wrist-cage-(15.8, 12)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(7, 0)-head-task",
+      "frozen": "A3-src-roll-dock-bolt-(7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(7, 0)-thread-envelope-task",
+      "frozen": "A3-src-roll-dock-bolt-(7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(-7, 0)-head-task",
+      "frozen": "A3-src-roll-dock-bolt-(-7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(-7, 0)-thread-envelope-task",
+      "frozen": "A3-src-roll-dock-bolt-(-7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(0, 7)-head-task",
+      "frozen": "A3-src-roll-dock-bolt-(0, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(0, 7)-thread-envelope-task",
+      "frozen": "A3-src-roll-dock-bolt-(0, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(0, -7)-head-task",
+      "frozen": "A3-src-roll-dock-bolt-(0, -7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-roll-dock-bolt-(0, -7)-thread-envelope-task",
+      "frozen": "A3-src-roll-dock-bolt-(0, -7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(7, 0)-head-task",
+      "frozen": "A3-src-moving-jaw-bolt-(7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(7, 0)-thread-envelope-task",
+      "frozen": "A3-src-moving-jaw-bolt-(7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(-7, 0)-head-task",
+      "frozen": "A3-src-moving-jaw-bolt-(-7, 0)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(-7, 0)-thread-envelope-task",
+      "frozen": "A3-src-moving-jaw-bolt-(-7, 0)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(0, 7)-head-task",
+      "frozen": "A3-src-moving-jaw-bolt-(0, 7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(0, 7)-thread-envelope-task",
+      "frozen": "A3-src-moving-jaw-bolt-(0, 7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(0, -7)-head-task",
+      "frozen": "A3-src-moving-jaw-bolt-(0, -7)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-moving-jaw-bolt-(0, -7)-thread-envelope-task",
+      "frozen": "A3-src-moving-jaw-bolt-(0, -7)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-clamp-nut-(-15.25, -9)-task",
+      "frozen": "A3-src-hand-clamp-nut-(-15.25, -9)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(-15.25, -9)-head-task",
+      "frozen": "A3-src-hand-case-clamp-(-15.25, -9)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(-15.25, -9)-thread-envelope-task",
+      "frozen": "A3-src-hand-case-clamp-(-15.25, -9)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-clamp-nut-(-15.25, -16)-task",
+      "frozen": "A3-src-hand-clamp-nut-(-15.25, -16)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(-15.25, -16)-head-task",
+      "frozen": "A3-src-hand-case-clamp-(-15.25, -16)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(-15.25, -16)-thread-envelope-task",
+      "frozen": "A3-src-hand-case-clamp-(-15.25, -16)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-clamp-nut-(15.25, -12)-task",
+      "frozen": "A3-src-hand-clamp-nut-(15.25, -12)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(15.25, -12)-head-task",
+      "frozen": "A3-src-hand-case-clamp-(15.25, -12)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(15.25, -12)-thread-envelope-task",
+      "frozen": "A3-src-hand-case-clamp-(15.25, -12)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-clamp-nut-(15.25, 12)-task",
+      "frozen": "A3-src-hand-clamp-nut-(15.25, 12)",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(15.25, 12)-head-task",
+      "frozen": "A3-src-hand-case-clamp-(15.25, 12)-head",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-hand-case-clamp-(15.25, 12)-thread-envelope-task",
+      "frozen": "A3-src-hand-case-clamp-(15.25, 12)-thread-envelope",
+      "kind": "hardware"
+    },
+    {
+      "source": "A2-universal-blank-adapter",
+      "frozen": "A3-src-universal-blank-adapter",
+      "kind": "print",
+      "tool_library": true
+    },
+    {
+      "source": "A2-pen-clamp-12mm-adapter",
+      "frozen": "A3-src-pen-clamp-12mm-adapter",
+      "kind": "print",
+      "tool_library": true
+    },
+    {
+      "source": "A2-pen-split-collet",
+      "frozen": "A3-src-pen-split-collet",
+      "kind": "print",
+      "tool_library": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "shoulder": {
+    "fork_offset": [
+      0.11653334647417068,
+      0.06409334391355515,
+      0.0
+    ],
+    "projected_gap_mm": 35,
+    "carrier_axial_staging_mm": 75
+  },
+  "elbow": {
+    "fork_offset": [
+      0.1817924529314041,
+      0.09998585283756256,
+      0.0
+    ],
+    "projected_gap_mm": 35,
+    "carrier_axial_staging_mm": 75
+  }
+}

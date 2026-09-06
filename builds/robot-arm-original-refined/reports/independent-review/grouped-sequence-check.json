@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "grouped_operations": 93,
+  "source_meshes_once": 402,
+  "physical_fasteners_paired": 146,
+  "large_servo_units_integral": 2,
+  "captive_nut_dependencies": "PASS",
+  "late_interfaces_after_seat": "PASS",
+  "electronics_wiring_closure_order": "PASS",
+  "final_operation": "Install electronics service lid last"
+}

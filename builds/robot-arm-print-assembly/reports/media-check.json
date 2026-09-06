@@ -1,0 +1,165 @@
+{
+  "status": "PASS_ENCODE_FULL_DECODE",
+  "duration_seconds": 58.541667,
+  "frames": 1405,
+  "fps": 24,
+  "size": [
+    960,
+    720
+  ],
+  "subtitle_streams": 0,
+  "movie_sha256": "f2be2b48371db902898e0f68f6d3bec4f8e7e93a8d79183cf9d4daa1d42fb03a",
+  "final_blend_sha256": "20e27bc6022251d1a07ff6cad86098f11aade295178e9e2af2adfc83b69495ba",
+  "replaced_frames": {
+    "249": {
+      "before": "c51689e4338a23e984c26575e8929c77b34d28ca29ece61f781705123f475921",
+      "after": "91e531bb74441c540ba79d58868b62cdd99e303e0813210442222f29651fb5d3"
+    },
+    "250": {
+      "before": "ab62babcc9f7c26bed4565d97d4520e1b2789207b60c8069bf88531c9cf22bd7",
+      "after": "d97c13809935a13d01545260ae60239897dc0b9306313acbc16e5d84a2253d3e"
+    },
+    "251": {
+      "before": "f988dc8c0ea8bbcab1d6ea453ab5e06147d01b5254cf73c4453cd476d379735f",
+      "after": "2ba20e988a1d41b09c4e464bb8fea0203ad23fdb0862baeb11290e5bcf4acc6f"
+    },
+    "252": {
+      "before": "9992f1b92c4fc182b5ba0816439626432146e736011f144f6a20f1ed11ff5a45",
+      "after": "36be218e40e3bad1f2e6b74064db37e9ad61fb93d03397e2704162ed26e9bb89"
+    },
+    "253": {
+      "before": "b53a78b86274309883962a6778eb20a3e117d350a83b8e0fb3510c85486d50f2",
+      "after": "6b8b155ae3b8d2fd975a68d130c0ad192f435fcc18ecb953d5e9d12e5bfc3450"
+    },
+    "254": {
+      "before": "4725e2eea48a5b32e3fd364da483a74396e6faf98c3090452f3e8be29283a3b6",
+      "after": "a9c0b3b1fd26ea74558ce688a0256041100cfcd4d4e560b6782f4589c807f6d2"
+    },
+    "255": {
+      "before": "0ee257ce2fe15c02b565b0202ace490f6da0b9c854fc332a868a4d00ccbb2e2e",
+      "after": "66de30050d400847d06b6550a1401a2d21e744744499c46d134ae9801db5738f"
+    },
+    "256": {
+      "before": "4027e357ffca7a10b187d506885d1c067931368ba6d48c709e345c9fb77f26d2",
+      "after": "eeebbb60b16dbd33aa663a4a8ca845595c2e6c0dcd23a4d7e3d1c4e59b42d2cf"
+    },
+    "257": {
+      "before": "c8bebc264a4c19a0b55213771f9ad7980020b7e9aff8a020f5acdfe931b7996b",
+      "after": "db25d192efbadbd18944edc06952c6be1ae6942e0a5fbbfbac0eb68b5f825f6e"
+    },
+    "258": {
+      "before": "0ea4fb7322e4d3c90dc5363ef9a7210e654407ea9e85c47b26d4a19d6cc92419",
+      "after": "da87872d9a49ae8c4e33573dd733ac9016b3e081236431392c96aae29ee98fb8"
+    },
+    "259": {
+      "before": "1d4dfd66f1ace0b3f3bef774957deaad842eb80ff928348bccc0a83a3739d30c",
+      "after": "b17f5d37abcacd64120aa5f42ae82b127a08279e08818b33cbb80949a8d809a5"
+    },
+    "260": {
+      "before": "3206f4c97277533c3e511d87d71bddcaeb5e67e6532a8759ce6389bc8b35e499",
+      "after": "ebb22cb791249f971eaecef6b3ee61e7430541186325254fd94553ef67e1042b"
+    },
+    "535": {
+      "before": "5bc541209791df3cf0b06b7b13db8ca7d8ac6eafb39ee868d4968ed052c45a13",
+      "after": "2eb379a5b70d076327525d1e95ea26af79113ca11d377cefbf49fd9fff846c2c"
+    },
+    "536": {
+      "before": "16fdee3a9fc885bcc1935a90a137fc87489f3c8cfa0069c7f66a2c48323ddfc8",
+      "after": "3f2842f72aafd765d8af21a58d13ab74dbfc9dc6f650835d0b6425ea4b03226a"
+    },
+    "537": {
+      "before": "db300f22f0a21344a3837b7a5c52a831e73355af85afe9bb70bd1d8cdfb18226",
+      "after": "3a0181013bfbfc24de333340ac143d61575276d6e6ff31167b0bcaa71beff568"
+    },
+    "538": {
+      "before": "948cb11e955649b864c2b3aad4610007232de785d2515d46696d1f9c5abfa9b9",
+      "after": "4943819769a09de8ac79d09a8022a0e33ee4b0c41ff25e67f0373fb38979b2fc"
+    },
+    "539": {
+      "before": "ea6cc9c89550c10b5f60947b4992cfd141b4b4d71358efebaced3960fef8aee2",
+      "after": "d6ce0c5a3f3ca68626252ecf5abf1feefcccab40a31b789f3e5ee120b15d81a4"
+    },
+    "540": {
+      "before": "520fa3d466158839ba5be791f869257ad12a5578409b6ed50057e1a4ad0289ad",
+      "after": "035575a239680e88ac27633dda0e4e6ec8103ba1fb15fbe767bb6417043904f2"
+    },
+    "541": {
+      "before": "16d306657f25f4a8995c77f9cb855ebd4e73a9ecdd088de5601017b784f9ef11",
+      "after": "4d013a9099183afa49462a73d12956c17b16efc07a8eff271150818074af129e"
+    },
+    "542": {
+      "before": "33aa156dfa76c73176ba69391c51bae09d1acb8d9cb4f6f49c5954504a39a71a",
+      "after": "42e587d8d8f57b8461985b6c1c918b9a204b519e12a12fb7b3509fcf473942b2"
+    },
+    "543": {
+      "before": "06d05f9e660f502f08ffb98719fd7339f58a2f330e68ad6a817e1fe22010bb19",
+      "after": "ebcbe6db4943e759e87a643321928608aa5cbe645763036e94e4f29ab1bee4b5"
+    },
+    "544": {
+      "before": "21fe4859a836249f226dadae3325666025ed3c38107e290d4682b892814f13d3",
+      "after": "7e56541948feedfeb91eecd4ac3da25919c18f7e78d845a12278568e7573c351"
+    },
+    "545": {
+      "before": "31ae92ad2e69671bef9406ac13a88384dce82bea442ae3090233ef4d314a32f2",
+      "after": "f99d5613ffbbb772e093bdee316323ddbb73a9e93987d4449281f90bd1ac8cbc"
+    },
+    "546": {
+      "before": "6f7ac0ef7a8500f3db69cf0b5454c82012f96a9c0d9e9b4f0b71f910734e0104",
+      "after": "71a21ec4382a0338fb9549e835511433d83371c9b5913668f1ce59889835a04e"
+    },
+    "933": {
+      "before": "6d2a47f52ce14bcb7b11b6794ce6441087cdd684e422a70bebff3b1ed775a828",
+      "after": "84c5411cf2465cdb5eb7c05c6b49e0ef0ec4c6f429f8634592ee1b9f876079d4"
+    },
+    "934": {
+      "before": "eb7f89ec13533f3eecde05ae49cca35b72bbaa99d52fa737b1d51d05669baba7",
+      "after": "18235c13cc94243be25290d99ed1f2f083af6a943702cb1940a92c58d3cd3bfd"
+    },
+    "935": {
+      "before": "fc34025e3addc1980ce0ef8c9e1d42cbd3b32f4f01134c84f9b5684c54eb61fd",
+      "after": "137eeadaaeffc7ea04de2358c9449a0beb83aa67af2d07c62e23db03b5bbaa0d"
+    },
+    "938": {
+      "before": "4e198e9eb9fc012b62ba716ca308c047c6dfb7c282dd68409d24b9818526eb4b",
+      "after": "1172a80e171fe79e9286d271b689bd6c02911a7f9baddafb168a4cb90aecc92f"
+    },
+    "939": {
+      "before": "db66298df9fcbcdf59b72ad0e7559a3e055920fd3ab911b3813b01268529b6f4",
+      "after": "378a23da70f1f1667f844ed011c8bd69e8e17c67fe1ffec0b24c66385b0f6457"
+    },
+    "942": {
+      "before": "ee0957f57890409680f940393f1d935ebd60bdcc5f585c3edb62d56ec200a885",
+      "after": "0e025efc5296e8842a666f8a8e772897f3ce4feccc0b5ba36a20f5237cee1b2d"
+    },
+    "944": {
+      "before": "a130ec9fdd395cd056740b613b8c3514215f3b5c218a2a305b84119d621369ba",
+      "after": "c8779af11cb965855c1f5c357ad4ab3ca272eec0d96600fc0e7b16bc134c1fe8"
+    },
+    "1127": {
+      "before": "6b19815026da72cb7badc15078f24208b4e1dd57fd04e66755b9eb7f43ce5923",
+      "after": "213fe3a581500e776c1f9e29deb06021e6a504dd3420847977060baeb529942a"
+    },
+    "1128": {
+      "before": "004cfbfbdd0de6c838c38cef5d23e66fa240848dedafb76c6ae31d8766682485",
+      "after": "ed767415e3085a638d76f8e244df9180b620766ecfe0958bb60c5e9e254df464"
+    },
+    "1129": {
+      "before": "50b2ca7be5a21a5ac00f66e9e949e38ddec4c802e5cf1c0178cb387e804a683c",
+      "after": "53f874f0b2ae44439b50c1b07f1191c20f5a0c93de78bda99fa4aa1866ce426c"
+    },
+    "1132": {
+      "before": "dea3b26fce2bd5f3e73aef86fc4eba7919c5ba6a52b73e9c926eb83a7dc98293",
+      "after": "b30196b93c9c3a20b613a6311cf7889d49e463ac9d86582187dda842ef198060"
+    },
+    "1133": {
+      "before": "356064123aaee6e41d61b26852998d17a951c064536eb6591b36200dca29cf97",
+      "after": "f4a3cf5bb7ae9b91a1eab1a4242998c314d4e225b513920831ad75876be37e80"
+    },
+    "1135": {
+      "before": "92b101e04eb62553452a65c3b86c9e5930b4bc958ed9c31e640c12cf8a7f0fc6",
+      "after": "c4f1dea943203f52e2308030d71879962ca253b2c4a40515deea35ad7567dde8"
+    }
+  },
+  "render_provenance": "Base render-identity.json plus servo-motion-repair.json; all37 changed visible frames re-rendered from independently reviewed candidate using the same Metal settings.",
+  "visual_review": "PASS: controller inspected16 decoded-video frames spanning all modules, repaired servo arrivals, transfers and final assembly; separate temporal animatic and corrected transfer sheets inspected."
+}

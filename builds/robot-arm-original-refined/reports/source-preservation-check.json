@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "sha256": {
+    "/Users/jang/Products/Blender/builds/robot-arm-print-assembly/arm-step-assembly.blend": "20e27bc6022251d1a07ff6cad86098f11aade295178e9e2af2adfc83b69495ba",
+    "/Users/jang/Products/Blender/builds/robot-arm-print-assembly/video/arm-step-by-step.mp4": "f2be2b48371db902898e0f68f6d3bec4f8e7e93a8d79183cf9d4daa1d42fb03a",
+    "/Users/jang/Products/Blender/builds/robot-arm-original-refined/arm-original-refined.blend": "522afd6712129a2cf751de5a2dd9d517847619dc9783fd4732da79683487f361"
+  }
+}

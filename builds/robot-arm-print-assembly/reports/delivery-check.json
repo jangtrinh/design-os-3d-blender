@@ -1,0 +1,25 @@
+{
+  "status": "DONE_WITH_CONCERNS",
+  "scope_delivered": [
+    "38 separate STLs",
+    "5 material-separated220mm plates with3MF/STL",
+    "67-event editable assembly",
+    "58.541667s no-subtitle MP4"
+  ],
+  "manufacturing_release": "BLOCKED: unresolved retention, selected hardware interfaces, local walls, insertion/tool access, wrist torque and250g multi-minute thermal/load qualification.",
+  "assembly_canonical_correction": "Resolved: arm-step-assembly.blend is byte-identical to independently reviewed corrected candidate;37 changed frames replaced before encoding.",
+  "plate_post_review_change": "GUI camera framing and overlays/shading only; all print export hashes unchanged.",
+  "visual_evidence": [
+    "renders/plates-final0001.png",
+    "renders/servo-repair-sheet.jpg",
+    "renders/video-final-review.jpg"
+  ],
+  "source_files_unchanged": true,
+  "hashes": {
+    "arm-print-plates.blend": "95efd16d2c66b7ca2ccc7da26a99e4683397348a2abde45450aa339c1e7d93c2",
+    "arm-step-assembly.blend": "20e27bc6022251d1a07ff6cad86098f11aade295178e9e2af2adfc83b69495ba",
+    "video/arm-step-by-step.mp4": "f2be2b48371db902898e0f68f6d3bec4f8e7e93a8d79183cf9d4daa1d42fb03a",
+    "parts-list.csv": "a121cf96509e0d0411ad107a336e489f53d2f2bdf425eb9be0234c2a1102ea28",
+    "assembly-steps.csv": "734117057db104eb3ecbb05064f538c2fb652eca0d8ca71d11541c0f106e9003"
+  }
+}

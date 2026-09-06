@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "artifact_sha256": "06e248dc8d2902862fb7a82679dc740dafa2197081ba3203f7f8b760f1911811",
+  "source_blend_sha256": "20e27bc6022251d1a07ff6cad86098f11aade295178e9e2af2adfc83b69495ba",
+  "source_meshes": 402,
+  "mesh_digest_mismatches": [],
+  "modifier_mismatches": [],
+  "final_world_matrix_max_error": 1.1920928955078125e-07,
+  "final_world_matrix_max_error_object": "A5-part-tool-retention-(17, 18)-thread-envelope",
+  "physical_units": 252,
+  "scheduled_units_once": 252,
+  "grouped_operations": 93,
+  "timed_events": 121,
+  "physical_fasteners_paired": 146,
+  "rigid_unit_max_matrix_error": 1.2852251529693604e-07,
+  "rigid_unit_max_where": [
+    "A5-unit-235",
+    "A5-part-moving-jaw-bolt-(0, 7)-thread-envelope",
+    2496
+  ],
+  "nut_order": "PASS",
+  "late_interfaces": "PASS",
+  "electronics_wiring_covers": "PASS",
+  "receiver_first_wide_introductions": [
+    {
+      "module": "shoulder",
+      "receiver_group": 11,
+      "receiver_end": 293,
+      "transition": [
+        297,
+        333
+      ],
+      "next_install_start": 337
+    },
+    {
+      "module": "elbow",
+      "receiver_group": 33,
+      "receiver_end": 973,
+      "transition": [
+        977,
+        1013
+      ],
+      "next_install_start": 1017
+    },
+    {
+      "module": "wrist",
+      "receiver_group": 55,
+      "receiver_end": 1653,
+      "transition": [
+        1657,
+        1693
+      ],
+      "next_install_start": 1697
+    },
+    {
+      "module": "hand",
+      "receiver_group": 74,
+      "receiver_end": 2225,
+      "transition": [
+        2229,
+        2265
+      ],
+      "next_install_start": 2269
+    }
+  ],
+  "servo_wires": [
+    "A5-wire-elbow",
+    "A5-wire-gripper",
+    "A5-wire-roll",
+    "A5-wire-shoulder",
+    "A5-wire-wrist",
+    "A5-wire-yaw"
+  ],
+  "external_supply_or_power_cord": false,
+  "camera_rotation_max_change_rad": 0.0,
+  "camera_static_event_translation_max_m": 0.0,
+  "camera_static_event_scale_max": 0.0,
+  "camera_max_translation_per_frame_m": 0.018166526508259565,
+  "camera_max_scale_change_per_frame": 0.03954184055328369,
+  "camera_transitions": 12,
+  "arrival_endpoint_failures": [],
+  "seat_transfer_failures": [],
+  "limits": [
+    "Bounding-box framing is a numeric screen, not a rendered visual-quality review.",
+    "Motion does not prove physical insertion, tool access, fit, retention, wiring, strength, thermal behavior, or 250 g multi-minute operation."
+  ]
+}

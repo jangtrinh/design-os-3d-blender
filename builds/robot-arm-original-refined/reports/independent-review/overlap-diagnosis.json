@@ -1,0 +1,2497 @@
+{
+  "status": "MEASURED",
+  "artifact_sha256": "522afd6712129a2cf751de5a2dd9d517847619dc9783fd4732da79683487f361",
+  "method": "Evaluated world-space triangle BVH intersections plus subassembly-union AABB overlap; BVH triangle contact does not prove penetration volume.",
+  "records": [
+    {
+      "module": "shoulder",
+      "frame": 555,
+      "visible_structural_objects": 10,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            30.507847666740417
+          ],
+          "aabb_overlap_mm3": 130475.89711542948
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            12.623071670532227
+          ],
+          "aabb_overlap_mm3": 2152.2408324850094
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            12.623071670532227
+          ],
+          "aabb_overlap_mm3": 2152.2409618031143
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1240
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1589
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 588,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            30.507847666740417
+          ],
+          "aabb_overlap_mm3": 130475.89711542948
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            12.623071670532227
+          ],
+          "aabb_overlap_mm3": 2152.2408324850094
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            12.623071670532227
+          ],
+          "aabb_overlap_mm3": 2152.2409618031143
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1240
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1589
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 599,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.049996733665466,
+            40.12306034564972
+          ],
+          "aabb_overlap_mm3": 20334.357566323884
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999997913837433,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.67847213498
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            30.507847666740417
+          ],
+          "aabb_overlap_mm3": 130475.89711542948
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            12.623071670532227
+          ],
+          "aabb_overlap_mm3": 2152.2408324850094
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            12.623071670532227
+          ],
+          "aabb_overlap_mm3": 2152.2409618031143
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1255
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1240
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1589
+        },
+        {
+          "left": "A5-part-shoulder-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 302
+        },
+        {
+          "left": "A5-part-shoulder-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-shoulder-61806-bearing--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 263
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 630,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.049996733665466,
+            52.62310802936554
+          ],
+          "aabb_overlap_mm3": 26669.378798679492
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999997913837433,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.67847213498
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            43.00789535045624
+          ],
+          "aabb_overlap_mm3": 183936.07409463116
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            25.123119354248047
+          ],
+          "aabb_overlap_mm3": 4283.506005898109
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            25.123119354248047
+          ],
+          "aabb_overlap_mm3": 4283.50626327399
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1255
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 3059
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 3491
+        },
+        {
+          "left": "A5-part-shoulder-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 457
+        },
+        {
+          "left": "A5-part-shoulder-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-shoulder-61806-bearing--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 302
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 639,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.049996733665466,
+            65.12309610843658
+          ],
+          "aabb_overlap_mm3": 33004.369823415116
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999997913837433,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.67847213498
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            55.50788342952728
+          ],
+          "aabb_overlap_mm3": 237395.99615681663
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.76101668569
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.761402118735
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1255
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4893
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 652,
+      "visible_structural_objects": 12,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ],
+        "carrier-right": [
+          "A5-part-shoulder-bearing-carrier-1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.049996733665466,
+            65.12309610843658
+          ],
+          "aabb_overlap_mm3": 33004.369823415116
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999997913837433,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.67847213498
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            55.50788342952728
+          ],
+          "aabb_overlap_mm3": 237395.99615681663
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.76101668569
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.761402118735
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1255
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4893
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 696,
+      "visible_structural_objects": 13,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ],
+        "carrier-right": [
+          "A5-part-shoulder-bearing-carrier-1",
+          "A5-part-shoulder-61806-bearing-1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.049996733665466,
+            65.12309610843658
+          ],
+          "aabb_overlap_mm3": 33004.369823415116
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999997913837433,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.67847213498
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            55.50788342952728
+          ],
+          "aabb_overlap_mm3": 237395.99615681663
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.76101668569
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.761402118735
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1255
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4893
+        }
+      ]
+    },
+    {
+      "module": "shoulder",
+      "frame": 705,
+      "visible_structural_objects": 13,
+      "subassemblies": {
+        "main": [
+          "A5-part-shoulder-cradle-floor",
+          "A5-part-shoulder-servo",
+          "A5-part-shoulder-output--1",
+          "A5-part-shoulder-output-1"
+        ],
+        "mount-left": [
+          "A5-part-shoulder-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-shoulder-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-lower-U-body",
+          "A5-part-shoulder-drive-flange--1",
+          "A5-part-shoulder-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-shoulder-bearing-carrier--1",
+          "A5-part-shoulder-61806-bearing--1"
+        ],
+        "carrier-right": [
+          "A5-part-shoulder-bearing-carrier-1",
+          "A5-part-shoulder-61806-bearing-1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.049996733665466,
+            65.12309610843658
+          ],
+          "aabb_overlap_mm3": 33004.369823415116
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999997913837433,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.67847213498
+        },
+        {
+          "subassemblies": [
+            "carrier-right",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            55.9999942779541,
+            9.050002321600914,
+            65.12309610843658
+          ],
+          "aabb_overlap_mm3": 33004.39020201783
+        },
+        {
+          "subassemblies": [
+            "carrier-right",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            9.999999776482582,
+            70.88479399681091
+          ],
+          "aabb_overlap_mm3": 34024.68480972654
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            47.99997806549072,
+            89.09999579191208,
+            55.50788342952728
+          ],
+          "aabb_overlap_mm3": 237395.99615681663
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.76101668569
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            37.62310743331909
+          ],
+          "aabb_overlap_mm3": 6414.761402118735
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999763071537,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530392102308
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            5.50001859664917,
+            30.99999949336052,
+            53.00000309944153
+          ],
+          "aabb_overlap_mm3": 9036.530935065237
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 101
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 96
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1255
+        },
+        {
+          "left": "A5-part-shoulder-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-bearing-carrier-1",
+          "right_subassembly": "carrier-right",
+          "triangle_pair_count": 1172
+        },
+        {
+          "left": "A5-part-shoulder-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-shoulder-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-shoulder-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4893
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1163,
+      "visible_structural_objects": 10,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            29.78987991809845
+          ],
+          "aabb_overlap_mm3": 213961.77793919249
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            24.663373827934265
+          ],
+          "aabb_overlap_mm3": 31626.779622415233
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 917
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1435
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1198,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            29.78987991809845
+          ],
+          "aabb_overlap_mm3": 213961.77793919249
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            24.663373827934265
+          ],
+          "aabb_overlap_mm3": 31626.779622415233
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 917
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1435
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1207,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.049996733665466,
+            47.82111942768097
+          ],
+          "aabb_overlap_mm3": 39470.39619916011
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999997913837433,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.95809254604
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            29.78987991809845
+          ],
+          "aabb_overlap_mm3": 213961.77793919249
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            24.663373827934265
+          ],
+          "aabb_overlap_mm3": 31626.779622415233
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1449
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 917
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 1435
+        },
+        {
+          "left": "A5-part-elbow-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 272
+        },
+        {
+          "left": "A5-part-elbow-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-elbow-61806-bearing--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 228
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1238,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.049996733665466,
+            60.3211373090744
+          ],
+          "aabb_overlap_mm3": 49787.60884871582
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999997913837433,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.95809254604
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            42.28989779949188
+          ],
+          "aabb_overlap_mm3": 303741.4634407028
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            37.1633917093277
+          ],
+          "aabb_overlap_mm3": 47656.026617135576
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            8.879110217094421
+          ],
+          "aabb_overlap_mm3": 11386.020457352963
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1449
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 3722
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 3733
+        },
+        {
+          "left": "A5-part-elbow-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 436
+        },
+        {
+          "left": "A5-part-elbow-drive-flange--1",
+          "left_subassembly": "fork",
+          "right": "A5-part-elbow-61806-bearing--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 304
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1247,
+      "visible_structural_objects": 11,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.049996733665466,
+            72.82112538814545
+          ],
+          "aabb_overlap_mm3": 60104.79690015492
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999997913837433,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.95809254604
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            54.78988587856293
+          ],
+          "aabb_overlap_mm3": 393520.93489106884
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            21.379098296165466
+          ],
+          "aabb_overlap_mm3": 27415.23019854539
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1449
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4897
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1260,
+      "visible_structural_objects": 12,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ],
+        "carrier-right": [
+          "A5-part-elbow-bearing-carrier-1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.049996733665466,
+            72.82112538814545
+          ],
+          "aabb_overlap_mm3": 60104.79690015492
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999997913837433,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.95809254604
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            54.78988587856293
+          ],
+          "aabb_overlap_mm3": 393520.93489106884
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            21.379098296165466
+          ],
+          "aabb_overlap_mm3": 27415.23019854539
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1449
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4897
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1304,
+      "visible_structural_objects": 13,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ],
+        "carrier-right": [
+          "A5-part-elbow-bearing-carrier-1",
+          "A5-part-elbow-61806-bearing-1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.049996733665466,
+            72.82112538814545
+          ],
+          "aabb_overlap_mm3": 60104.79690015492
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999997913837433,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.95809254604
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            54.78988587856293
+          ],
+          "aabb_overlap_mm3": 393520.93489106884
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            21.379098296165466
+          ],
+          "aabb_overlap_mm3": 27415.23019854539
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1449
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4897
+        }
+      ]
+    },
+    {
+      "module": "elbow",
+      "frame": 1313,
+      "visible_structural_objects": 13,
+      "subassemblies": {
+        "main": [
+          "A5-part-elbow-cradle-floor",
+          "A5-part-elbow-servo",
+          "A5-part-elbow-output--1",
+          "A5-part-elbow-output-1"
+        ],
+        "mount-left": [
+          "A5-part-elbow-motor-mount--1"
+        ],
+        "mount-right": [
+          "A5-part-elbow-motor-mount-1"
+        ],
+        "fork": [
+          "A5-part-upper-U-body",
+          "A5-part-elbow-drive-flange--1",
+          "A5-part-elbow-drive-flange-1"
+        ],
+        "carrier-left": [
+          "A5-part-elbow-bearing-carrier--1",
+          "A5-part-elbow-61806-bearing--1"
+        ],
+        "carrier-right": [
+          "A5-part-elbow-bearing-carrier-1",
+          "A5-part-elbow-61806-bearing-1"
+        ]
+      },
+      "union_aabb_overlaps": [
+        {
+          "subassemblies": [
+            "carrier-left",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.049996733665466,
+            72.82112538814545
+          ],
+          "aabb_overlap_mm3": 60104.79690015492
+        },
+        {
+          "subassemblies": [
+            "carrier-left",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999997913837433,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.95809254604
+        },
+        {
+          "subassemblies": [
+            "carrier-right",
+            "fork"
+          ],
+          "aabb_overlap_mm": [
+            91.2017822265625,
+            9.050002321600914,
+            72.82112538814545
+          ],
+          "aabb_overlap_mm3": 60104.83401196115
+        },
+        {
+          "subassemblies": [
+            "carrier-right",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            78.48882675170898,
+            9.999999776482582,
+            78.48884165287018
+          ],
+          "aabb_overlap_mm3": 61604.96956736607
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "main"
+          ],
+          "aabb_overlap_mm": [
+            80.61015605926514,
+            89.09999579191208,
+            54.78988587856293
+          ],
+          "aabb_overlap_mm3": 393520.93489106884
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "fork",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            21.379098296165466
+          ],
+          "aabb_overlap_mm3": 27415.23019854539
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-left"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999763071537,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.860646113004
+        },
+        {
+          "subassemblies": [
+            "main",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            41.365742683410645,
+            30.99999949336052,
+            41.365742683410645
+          ],
+          "aabb_overlap_mm3": 53044.86383333107
+        },
+        {
+          "subassemblies": [
+            "mount-left",
+            "mount-right"
+          ],
+          "aabb_overlap_mm": [
+            13.081490993499756,
+            30.99999576807022,
+            13.081461191177368
+          ],
+          "aabb_overlap_mm3": 5304.874795191249
+        }
+      ],
+      "cross_subassembly_bvh_pairs": [
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount--1",
+          "right_subassembly": "mount-left",
+          "triangle_pair_count": 1116
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-motor-mount-1",
+          "right_subassembly": "mount-right",
+          "triangle_pair_count": 660
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier--1",
+          "right_subassembly": "carrier-left",
+          "triangle_pair_count": 1449
+        },
+        {
+          "left": "A5-part-elbow-cradle-floor",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-bearing-carrier-1",
+          "right_subassembly": "carrier-right",
+          "triangle_pair_count": 1469
+        },
+        {
+          "left": "A5-part-elbow-output--1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange--1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4646
+        },
+        {
+          "left": "A5-part-elbow-output-1",
+          "left_subassembly": "main",
+          "right": "A5-part-elbow-drive-flange-1",
+          "right_subassembly": "fork",
+          "triangle_pair_count": 4897
+        }
+      ]
+    }
+  ]
+}

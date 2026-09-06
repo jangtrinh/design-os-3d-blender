@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "source_meshes": 402,
+  "final_matrix_error": 1.1920928955078125e-07,
+  "held_event_count": 109,
+  "camera_transitions": 12,
+  "bad_arrival_endpoints": [],
+  "frames": 3031,
+  "fps": 24,
+  "six_servo_wires": true,
+  "external_black_box": false,
+  "limits": "Camera samples at start/mid/end; insertion, retention and physical performance unverified.",
+  "scene_sha256": "06e248dc8d2902862fb7a82679dc740dafa2197081ba3203f7f8b760f1911811"
+}

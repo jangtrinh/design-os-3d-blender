@@ -1,0 +1,4547 @@
+{
+  "source": {
+    "version": "5.2.0 LTS",
+    "controller": "root",
+    "source_file": "/Users/jang/Products/Blender/builds/robot-arm-print-assembly/source-session-checkpoint.blend",
+    "source_sha256": "d03cf808f5555d89821fb8e4d095420bdc4cc169781cf2ed01a334168634feae",
+    "frozen_sha256": "75b716e552eb1905d725d80c2d36c46fd7916f64d81ce1b78e57bd68f2b9f9bc",
+    "counts": {
+      "print": 38,
+      "machined-metal": 14,
+      "actuator": 6,
+      "actuator-visual": 4,
+      "purchased-adapter": 8,
+      "bearing": 5,
+      "electronics-envelope": 2,
+      "hardware": 328
+    },
+    "objects": [
+      {
+        "source": "A2-base-matte-cover-task",
+        "frozen": "A3-src-base-matte-cover",
+        "kind": "print"
+      },
+      {
+        "source": "A2-yaw-bearing-pedestal-task",
+        "frozen": "A3-src-yaw-bearing-pedestal",
+        "kind": "print"
+      },
+      {
+        "source": "A2-yaw-rounded-skirt-task",
+        "frozen": "A3-src-yaw-rounded-skirt",
+        "kind": "print"
+      },
+      {
+        "source": "A2-shoulder-diamond-fascia-task",
+        "frozen": "A3-src-shoulder-diamond-fascia",
+        "kind": "print"
+      },
+      {
+        "source": "A2-base-electronics-shell-task",
+        "frozen": "A3-src-base-electronics-shell",
+        "kind": "print"
+      },
+      {
+        "source": "A2-electronics-service-lid-task",
+        "frozen": "A3-src-electronics-service-lid",
+        "kind": "print"
+      },
+      {
+        "source": "A2-shoulder-flush-bearing-cap--1-task",
+        "frozen": "A3-src-shoulder-flush-bearing-cap--1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-shoulder-flush-bearing-cap-1-task",
+        "frozen": "A3-src-shoulder-flush-bearing-cap-1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-shoulder-motor-mount--1-task",
+        "frozen": "A3-src-shoulder-motor-mount--1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-shoulder-motor-mount-1-task",
+        "frozen": "A3-src-shoulder-motor-mount-1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-lower-U-body-task",
+        "frozen": "A3-src-lower-U-body",
+        "kind": "print"
+      },
+      {
+        "source": "A2-elbow-flush-bearing-cap--1-task",
+        "frozen": "A3-src-elbow-flush-bearing-cap--1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-elbow-flush-bearing-cap-1-task",
+        "frozen": "A3-src-elbow-flush-bearing-cap-1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-elbow-motor-mount--1-task",
+        "frozen": "A3-src-elbow-motor-mount--1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-elbow-motor-mount-1-task",
+        "frozen": "A3-src-elbow-motor-mount-1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-upper-U-body-task",
+        "frozen": "A3-src-upper-U-body",
+        "kind": "print"
+      },
+      {
+        "source": "A2-wrist-cheek--1-task",
+        "frozen": "A3-src-wrist-cheek--1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-wrist-cheek-1-task",
+        "frozen": "A3-src-wrist-cheek-1",
+        "kind": "print"
+      },
+      {
+        "source": "A2-wrist-cross-bridge-task",
+        "frozen": "A3-src-wrist-cross-bridge",
+        "kind": "print"
+      },
+      {
+        "source": "A2-roll-motor-cradle-task",
+        "frozen": "A3-src-roll-motor-cradle",
+        "kind": "print"
+      },
+      {
+        "source": "A2-wrist-vented-cover-task",
+        "frozen": "A3-src-wrist-vented-cover",
+        "kind": "print"
+      },
+      {
+        "source": "A2-hand-servo-cradle-task",
+        "frozen": "A3-src-hand-servo-cradle",
+        "kind": "print"
+      },
+      {
+        "source": "A2-moving-jaw-task",
+        "frozen": "A3-src-moving-jaw",
+        "kind": "print"
+      },
+      {
+        "source": "A2-moving-TPU-pad-40-task",
+        "frozen": "A3-src-moving-TPU-pad-40",
+        "kind": "print"
+      },
+      {
+        "source": "A2-moving-TPU-pad-56-task",
+        "frozen": "A3-src-moving-TPU-pad-56",
+        "kind": "print"
+      },
+      {
+        "source": "A2-moving-TPU-pad-72-task",
+        "frozen": "A3-src-moving-TPU-pad-72",
+        "kind": "print"
+      },
+      {
+        "source": "A2-fixed-jaw-task",
+        "frozen": "A3-src-fixed-jaw",
+        "kind": "print"
+      },
+      {
+        "source": "A2-fixed-TPU-pad-40-task",
+        "frozen": "A3-src-fixed-TPU-pad-40",
+        "kind": "print"
+      },
+      {
+        "source": "A2-fixed-TPU-pad-56-task",
+        "frozen": "A3-src-fixed-TPU-pad-56",
+        "kind": "print"
+      },
+      {
+        "source": "A2-fixed-TPU-pad-72-task",
+        "frozen": "A3-src-fixed-TPU-pad-72",
+        "kind": "print"
+      },
+      {
+        "source": "A2-tool-dock-task",
+        "frozen": "A3-src-tool-dock",
+        "kind": "print"
+      },
+      {
+        "source": "A2-gripper-tool-plate-task",
+        "frozen": "A3-src-gripper-tool-plate",
+        "kind": "print"
+      },
+      {
+        "source": "A2-wrist-pitch-cassette-task",
+        "frozen": "A3-src-wrist-pitch-cassette",
+        "kind": "print"
+      },
+      {
+        "source": "A2-wrist-case-retainer-task",
+        "frozen": "A3-src-wrist-case-retainer",
+        "kind": "print"
+      },
+      {
+        "source": "A2-hand-case-retainer-task",
+        "frozen": "A3-src-hand-case-retainer",
+        "kind": "print"
+      },
+      {
+        "source": "A2-table-anchor-plate-task",
+        "frozen": "A3-src-table-anchor-plate",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-yaw-turntable-task",
+        "frozen": "A3-src-yaw-turntable",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-shoulder-drive-flange--1-task",
+        "frozen": "A3-src-shoulder-drive-flange--1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-shoulder-bearing-carrier--1-task",
+        "frozen": "A3-src-shoulder-bearing-carrier--1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-shoulder-drive-flange-1-task",
+        "frozen": "A3-src-shoulder-drive-flange-1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-shoulder-bearing-carrier-1-task",
+        "frozen": "A3-src-shoulder-bearing-carrier-1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-shoulder-cradle-floor-task",
+        "frozen": "A3-src-shoulder-cradle-floor",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-elbow-drive-flange--1-task",
+        "frozen": "A3-src-elbow-drive-flange--1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-elbow-bearing-carrier--1-task",
+        "frozen": "A3-src-elbow-bearing-carrier--1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-elbow-drive-flange-1-task",
+        "frozen": "A3-src-elbow-drive-flange-1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-elbow-bearing-carrier-1-task",
+        "frozen": "A3-src-elbow-bearing-carrier-1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-elbow-cradle-floor-task",
+        "frozen": "A3-src-elbow-cradle-floor",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-wrist-extension-hub--1-task",
+        "frozen": "A3-src-wrist-extension-hub--1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-wrist-extension-hub-1-task",
+        "frozen": "A3-src-wrist-extension-hub-1",
+        "kind": "machined-metal"
+      },
+      {
+        "source": "A2-shoulder-servo-task",
+        "frozen": "A3-src-shoulder-servo",
+        "kind": "actuator"
+      },
+      {
+        "source": "A2-shoulder-output--1-task",
+        "frozen": "A3-src-shoulder-output--1",
+        "kind": "actuator-visual"
+      },
+      {
+        "source": "A2-shoulder-output-1-task",
+        "frozen": "A3-src-shoulder-output-1",
+        "kind": "actuator-visual"
+      },
+      {
+        "source": "A2-yaw-servo-task",
+        "frozen": "A3-src-yaw-servo",
+        "kind": "actuator"
+      },
+      {
+        "source": "A2-yaw-output--1-task",
+        "frozen": "A3-src-yaw-output--1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-yaw-output-1-task",
+        "frozen": "A3-src-yaw-output-1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-yaw-61805-bearing-task",
+        "frozen": "A3-src-yaw-61805-bearing",
+        "kind": "bearing"
+      },
+      {
+        "source": "A2-TTL-RS485-controller-envelope-task",
+        "frozen": "A3-src-TTL-RS485-controller-envelope",
+        "kind": "electronics-envelope"
+      },
+      {
+        "source": "A2-service-connector-task",
+        "frozen": "A3-src-service-connector",
+        "kind": "electronics-envelope"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 0)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 0)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 1)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 1)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 2)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 2)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 3)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 3)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 4)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 4)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 4)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 4)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 5)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 5)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 6)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 6)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 7)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(-1, 7)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(-1, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-61806-bearing--1-task",
+        "frozen": "A3-src-shoulder-61806-bearing--1",
+        "kind": "bearing"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 0.7853981633974483)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 0.7853981633974483)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 0.7853981633974483)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 0.7853981633974483)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 2.356194490192345)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 2.356194490192345)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 2.356194490192345)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 2.356194490192345)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 3.9269908169872414)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 3.9269908169872414)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 3.9269908169872414)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 3.9269908169872414)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 5.497787143782138)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 5.497787143782138)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(-1, 5.497787143782138)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(-1, 5.497787143782138)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 0)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 0)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 1)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 1)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 2)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 2)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 3)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 3)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 4)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 4)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 4)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 4)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 5)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 5)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 6)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 6)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 7)-head-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-output-bolt-(1, 7)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-output-bolt-(1, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-61806-bearing-1-task",
+        "frozen": "A3-src-shoulder-61806-bearing-1",
+        "kind": "bearing"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 0.7853981633974483)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 0.7853981633974483)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 0.7853981633974483)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 0.7853981633974483)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 2.356194490192345)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 2.356194490192345)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 2.356194490192345)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 2.356194490192345)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 3.9269908169872414)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 3.9269908169872414)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 3.9269908169872414)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 3.9269908169872414)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 5.497787143782138)-head-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 5.497787143782138)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-bearing-cap-(1, 5.497787143782138)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-bearing-cap-(1, 5.497787143782138)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(-4, -40.5)-head-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(-4, -40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(-4, -40.5)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(-4, -40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(4, -40.5)-head-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(4, -40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(4, -40.5)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(4, -40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(-4, 40.5)-head-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(-4, 40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(-4, 40.5)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(-4, 40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(4, 40.5)-head-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(4, 40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-carrier-foot-(4, 40.5)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-carrier-foot-(4, 40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(-16, -34)-head-task",
+        "frozen": "A3-src-shoulder-floor-(-16, -34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(-16, -34)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-floor-(-16, -34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(-16, 34)-head-task",
+        "frozen": "A3-src-shoulder-floor-(-16, 34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(-16, 34)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-floor-(-16, 34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(16, -34)-head-task",
+        "frozen": "A3-src-shoulder-floor-(16, -34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(16, -34)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-floor-(16, -34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(16, 34)-head-task",
+        "frozen": "A3-src-shoulder-floor-(16, 34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-floor-(16, 34)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-floor-(16, 34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(-1, -8, -38)-head-task",
+        "frozen": "A3-src-shoulder-case-mount-(-1, -8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(-1, -8, -38)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-case-mount-(-1, -8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(-1, -8, -6)-head-task",
+        "frozen": "A3-src-shoulder-case-mount-(-1, -8, -6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(-1, -8, -6)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-case-mount-(-1, -8, -6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(-1, 8, -38)-head-task",
+        "frozen": "A3-src-shoulder-case-mount-(-1, 8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(-1, 8, -38)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-case-mount-(-1, 8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-nut-(-1, -11)-task",
+        "frozen": "A3-src-shoulder-mount-foot-nut-(-1, -11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(-1, -11)-head-task",
+        "frozen": "A3-src-shoulder-mount-foot-(-1, -11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(-1, -11)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-mount-foot-(-1, -11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-nut-(-1, 11)-task",
+        "frozen": "A3-src-shoulder-mount-foot-nut-(-1, 11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(-1, 11)-head-task",
+        "frozen": "A3-src-shoulder-mount-foot-(-1, 11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(-1, 11)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-mount-foot-(-1, 11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(1, -8, -38)-head-task",
+        "frozen": "A3-src-shoulder-case-mount-(1, -8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(1, -8, -38)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-case-mount-(1, -8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(1, -8, -6)-head-task",
+        "frozen": "A3-src-shoulder-case-mount-(1, -8, -6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(1, -8, -6)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-case-mount-(1, -8, -6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(1, 8, -38)-head-task",
+        "frozen": "A3-src-shoulder-case-mount-(1, 8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-case-mount-(1, 8, -38)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-case-mount-(1, 8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-nut-(1, -11)-task",
+        "frozen": "A3-src-shoulder-mount-foot-nut-(1, -11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(1, -11)-head-task",
+        "frozen": "A3-src-shoulder-mount-foot-(1, -11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(1, -11)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-mount-foot-(1, -11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-nut-(1, 11)-task",
+        "frozen": "A3-src-shoulder-mount-foot-nut-(1, 11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(1, 11)-head-task",
+        "frozen": "A3-src-shoulder-mount-foot-(1, 11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-shoulder-mount-foot-(1, 11)-thread-envelope-task",
+        "frozen": "A3-src-shoulder-mount-foot-(1, 11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 0)-head-task",
+        "frozen": "A3-src-lower-flange-(-1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 0)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(-1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 1)-head-task",
+        "frozen": "A3-src-lower-flange-(-1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 1)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(-1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 2)-head-task",
+        "frozen": "A3-src-lower-flange-(-1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 2)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(-1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 3)-head-task",
+        "frozen": "A3-src-lower-flange-(-1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(-1, 3)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(-1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 0)-head-task",
+        "frozen": "A3-src-lower-flange-(1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 0)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 1)-head-task",
+        "frozen": "A3-src-lower-flange-(1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 1)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 2)-head-task",
+        "frozen": "A3-src-lower-flange-(1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 2)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 3)-head-task",
+        "frozen": "A3-src-lower-flange-(1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-flange-(1, 3)-thread-envelope-task",
+        "frozen": "A3-src-lower-flange-(1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-cassette-nut-(-16, 63)-task",
+        "frozen": "A3-src-lower-cassette-nut-(-16, 63)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-cassette-nut-(-16, 77)-task",
+        "frozen": "A3-src-lower-cassette-nut-(-16, 77)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-cassette-nut-(16, 63)-task",
+        "frozen": "A3-src-lower-cassette-nut-(16, 63)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-lower-cassette-nut-(16, 77)-task",
+        "frozen": "A3-src-lower-cassette-nut-(16, 77)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-servo-task",
+        "frozen": "A3-src-elbow-servo",
+        "kind": "actuator"
+      },
+      {
+        "source": "A2-elbow-output--1-task",
+        "frozen": "A3-src-elbow-output--1",
+        "kind": "actuator-visual"
+      },
+      {
+        "source": "A2-elbow-output-1-task",
+        "frozen": "A3-src-elbow-output-1",
+        "kind": "actuator-visual"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 0)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 0)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 1)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 1)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 2)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 2)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 3)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 3)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 4)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 4)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 4)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 4)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 5)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 5)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 6)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 6)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 7)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(-1, 7)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(-1, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-61806-bearing--1-task",
+        "frozen": "A3-src-elbow-61806-bearing--1",
+        "kind": "bearing"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 0.7853981633974483)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 0.7853981633974483)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 0.7853981633974483)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 0.7853981633974483)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 2.356194490192345)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 2.356194490192345)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 2.356194490192345)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 2.356194490192345)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 3.9269908169872414)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 3.9269908169872414)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 3.9269908169872414)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 3.9269908169872414)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 5.497787143782138)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 5.497787143782138)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(-1, 5.497787143782138)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(-1, 5.497787143782138)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 0)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 0)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 1)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 1)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 2)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 2)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 3)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 3)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 4)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 4)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 4)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 4)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 5)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 5)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 6)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 6)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 7)-head-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-output-bolt-(1, 7)-thread-envelope-task",
+        "frozen": "A3-src-elbow-output-bolt-(1, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-61806-bearing-1-task",
+        "frozen": "A3-src-elbow-61806-bearing-1",
+        "kind": "bearing"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 0.7853981633974483)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 0.7853981633974483)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 0.7853981633974483)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 0.7853981633974483)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 2.356194490192345)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 2.356194490192345)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 2.356194490192345)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 2.356194490192345)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 3.9269908169872414)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 3.9269908169872414)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 3.9269908169872414)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 3.9269908169872414)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 5.497787143782138)-head-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 5.497787143782138)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-bearing-cap-(1, 5.497787143782138)-thread-envelope-task",
+        "frozen": "A3-src-elbow-bearing-cap-(1, 5.497787143782138)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(-4, -40.5)-head-task",
+        "frozen": "A3-src-elbow-carrier-foot-(-4, -40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(-4, -40.5)-thread-envelope-task",
+        "frozen": "A3-src-elbow-carrier-foot-(-4, -40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(4, -40.5)-head-task",
+        "frozen": "A3-src-elbow-carrier-foot-(4, -40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(4, -40.5)-thread-envelope-task",
+        "frozen": "A3-src-elbow-carrier-foot-(4, -40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(-4, 40.5)-head-task",
+        "frozen": "A3-src-elbow-carrier-foot-(-4, 40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(-4, 40.5)-thread-envelope-task",
+        "frozen": "A3-src-elbow-carrier-foot-(-4, 40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(4, 40.5)-head-task",
+        "frozen": "A3-src-elbow-carrier-foot-(4, 40.5)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-carrier-foot-(4, 40.5)-thread-envelope-task",
+        "frozen": "A3-src-elbow-carrier-foot-(4, 40.5)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(-1, -8, -38)-head-task",
+        "frozen": "A3-src-elbow-case-mount-(-1, -8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(-1, -8, -38)-thread-envelope-task",
+        "frozen": "A3-src-elbow-case-mount-(-1, -8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(-1, -8, -6)-head-task",
+        "frozen": "A3-src-elbow-case-mount-(-1, -8, -6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(-1, -8, -6)-thread-envelope-task",
+        "frozen": "A3-src-elbow-case-mount-(-1, -8, -6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(-1, 8, -38)-head-task",
+        "frozen": "A3-src-elbow-case-mount-(-1, 8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(-1, 8, -38)-thread-envelope-task",
+        "frozen": "A3-src-elbow-case-mount-(-1, 8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-nut-(-1, -11)-task",
+        "frozen": "A3-src-elbow-mount-foot-nut-(-1, -11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(-1, -11)-head-task",
+        "frozen": "A3-src-elbow-mount-foot-(-1, -11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(-1, -11)-thread-envelope-task",
+        "frozen": "A3-src-elbow-mount-foot-(-1, -11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-nut-(-1, 11)-task",
+        "frozen": "A3-src-elbow-mount-foot-nut-(-1, 11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(-1, 11)-head-task",
+        "frozen": "A3-src-elbow-mount-foot-(-1, 11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(-1, 11)-thread-envelope-task",
+        "frozen": "A3-src-elbow-mount-foot-(-1, 11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(1, -8, -38)-head-task",
+        "frozen": "A3-src-elbow-case-mount-(1, -8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(1, -8, -38)-thread-envelope-task",
+        "frozen": "A3-src-elbow-case-mount-(1, -8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(1, -8, -6)-head-task",
+        "frozen": "A3-src-elbow-case-mount-(1, -8, -6)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(1, -8, -6)-thread-envelope-task",
+        "frozen": "A3-src-elbow-case-mount-(1, -8, -6)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(1, 8, -38)-head-task",
+        "frozen": "A3-src-elbow-case-mount-(1, 8, -38)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-case-mount-(1, 8, -38)-thread-envelope-task",
+        "frozen": "A3-src-elbow-case-mount-(1, 8, -38)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-nut-(1, -11)-task",
+        "frozen": "A3-src-elbow-mount-foot-nut-(1, -11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(1, -11)-head-task",
+        "frozen": "A3-src-elbow-mount-foot-(1, -11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(1, -11)-thread-envelope-task",
+        "frozen": "A3-src-elbow-mount-foot-(1, -11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-nut-(1, 11)-task",
+        "frozen": "A3-src-elbow-mount-foot-nut-(1, 11)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(1, 11)-head-task",
+        "frozen": "A3-src-elbow-mount-foot-(1, 11)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-mount-foot-(1, 11)-thread-envelope-task",
+        "frozen": "A3-src-elbow-mount-foot-(1, 11)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(-16, -48)-head-task",
+        "frozen": "A3-src-elbow-cassette-(-16, -48)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(-16, -48)-thread-envelope-task",
+        "frozen": "A3-src-elbow-cassette-(-16, -48)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(-16, -34)-head-task",
+        "frozen": "A3-src-elbow-cassette-(-16, -34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(-16, -34)-thread-envelope-task",
+        "frozen": "A3-src-elbow-cassette-(-16, -34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(16, -48)-head-task",
+        "frozen": "A3-src-elbow-cassette-(16, -48)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(16, -48)-thread-envelope-task",
+        "frozen": "A3-src-elbow-cassette-(16, -48)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(16, -34)-head-task",
+        "frozen": "A3-src-elbow-cassette-(16, -34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-elbow-cassette-(16, -34)-thread-envelope-task",
+        "frozen": "A3-src-elbow-cassette-(16, -34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 0)-head-task",
+        "frozen": "A3-src-upper-flange-(-1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 0)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(-1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 1)-head-task",
+        "frozen": "A3-src-upper-flange-(-1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 1)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(-1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 2)-head-task",
+        "frozen": "A3-src-upper-flange-(-1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 2)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(-1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 3)-head-task",
+        "frozen": "A3-src-upper-flange-(-1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(-1, 3)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(-1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 0)-head-task",
+        "frozen": "A3-src-upper-flange-(1, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 0)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(1, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 1)-head-task",
+        "frozen": "A3-src-upper-flange-(1, 1)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 1)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(1, 1)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 2)-head-task",
+        "frozen": "A3-src-upper-flange-(1, 2)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 2)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(1, 2)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 3)-head-task",
+        "frozen": "A3-src-upper-flange-(1, 3)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-flange-(1, 3)-thread-envelope-task",
+        "frozen": "A3-src-upper-flange-(1, 3)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-cassette-nut-(-16, 89)-task",
+        "frozen": "A3-src-upper-cassette-nut-(-16, 89)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-cassette-nut-(-16, 103)-task",
+        "frozen": "A3-src-upper-cassette-nut-(-16, 103)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-cassette-nut-(16, 89)-task",
+        "frozen": "A3-src-upper-cassette-nut-(16, 89)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-upper-cassette-nut-(16, 103)-task",
+        "frozen": "A3-src-upper-cassette-nut-(16, 103)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-servo-task",
+        "frozen": "A3-src-wrist-servo",
+        "kind": "actuator"
+      },
+      {
+        "source": "A2-wrist-output--1-task",
+        "frozen": "A3-src-wrist-output--1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-wrist-output-1-task",
+        "frozen": "A3-src-wrist-output-1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, 7, 0)-head-task",
+        "frozen": "A3-src-wrist-pivot-(-1, 7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, 7, 0)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(-1, 7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, -7, 0)-head-task",
+        "frozen": "A3-src-wrist-pivot-(-1, -7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, -7, 0)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(-1, -7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, 0, 7)-head-task",
+        "frozen": "A3-src-wrist-pivot-(-1, 0, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, 0, 7)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(-1, 0, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, 0, -7)-head-task",
+        "frozen": "A3-src-wrist-pivot-(-1, 0, -7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(-1, 0, -7)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(-1, 0, -7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, 7, 0)-head-task",
+        "frozen": "A3-src-wrist-pivot-(1, 7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, 7, 0)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(1, 7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, -7, 0)-head-task",
+        "frozen": "A3-src-wrist-pivot-(1, -7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, -7, 0)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(1, -7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, 0, 7)-head-task",
+        "frozen": "A3-src-wrist-pivot-(1, 0, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, 0, 7)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(1, 0, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, 0, -7)-head-task",
+        "frozen": "A3-src-wrist-pivot-(1, 0, -7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-pivot-(1, 0, -7)-thread-envelope-task",
+        "frozen": "A3-src-wrist-pivot-(1, 0, -7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-servo-task",
+        "frozen": "A3-src-roll-servo",
+        "kind": "actuator"
+      },
+      {
+        "source": "A2-roll-output--1-task",
+        "frozen": "A3-src-roll-output--1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-roll-output-1-task",
+        "frozen": "A3-src-roll-output-1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-tool-lock-nut-(-17, -18)-task",
+        "frozen": "A3-src-tool-lock-nut-(-17, -18)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-lock-nut-(-17, 18)-task",
+        "frozen": "A3-src-tool-lock-nut-(-17, 18)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-lock-nut-(17, -18)-task",
+        "frozen": "A3-src-tool-lock-nut-(17, -18)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-lock-nut-(17, 18)-task",
+        "frozen": "A3-src-tool-lock-nut-(17, 18)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(-17, -18)-head-task",
+        "frozen": "A3-src-tool-retention-(-17, -18)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(-17, -18)-thread-envelope-task",
+        "frozen": "A3-src-tool-retention-(-17, -18)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(-17, 18)-head-task",
+        "frozen": "A3-src-tool-retention-(-17, 18)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(-17, 18)-thread-envelope-task",
+        "frozen": "A3-src-tool-retention-(-17, 18)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(17, -18)-head-task",
+        "frozen": "A3-src-tool-retention-(17, -18)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(17, -18)-thread-envelope-task",
+        "frozen": "A3-src-tool-retention-(17, -18)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(17, 18)-head-task",
+        "frozen": "A3-src-tool-retention-(17, 18)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-retention-(17, 18)-thread-envelope-task",
+        "frozen": "A3-src-tool-retention-(17, 18)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-dowel--12-task",
+        "frozen": "A3-src-tool-dowel--12",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-tool-dowel-12-task",
+        "frozen": "A3-src-tool-dowel-12",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-gripper-servo-task",
+        "frozen": "A3-src-gripper-servo",
+        "kind": "actuator"
+      },
+      {
+        "source": "A2-gripper-output--1-task",
+        "frozen": "A3-src-gripper-output--1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-gripper-output-1-task",
+        "frozen": "A3-src-gripper-output-1",
+        "kind": "purchased-adapter"
+      },
+      {
+        "source": "A2-hand-adapter-nut-8-task",
+        "frozen": "A3-src-hand-adapter-nut-8",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-adapter-bolt-8-head-task",
+        "frozen": "A3-src-hand-adapter-bolt-8-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-adapter-bolt-8-thread-envelope-task",
+        "frozen": "A3-src-hand-adapter-bolt-8-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-adapter-nut-20-task",
+        "frozen": "A3-src-hand-adapter-nut-20",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-adapter-bolt-20-head-task",
+        "frozen": "A3-src-hand-adapter-bolt-20-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-adapter-bolt-20-thread-envelope-task",
+        "frozen": "A3-src-hand-adapter-bolt-20-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(7, 0)-head-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(7, 0)-thread-envelope-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(-7, 0)-head-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(-7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(-7, 0)-thread-envelope-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(-7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(0, 7)-head-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(0, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(0, 7)-thread-envelope-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(0, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(0, -7)-head-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(0, -7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-bolt-(0, -7)-thread-envelope-task",
+        "frozen": "A3-src-fixed-jaw-bolt-(0, -7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-nut-(21, 0)-task",
+        "frozen": "A3-src-fixed-jaw-nut-(21, 0)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-nut-(35, 0)-task",
+        "frozen": "A3-src-fixed-jaw-nut-(35, 0)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-nut-(28, 7)-task",
+        "frozen": "A3-src-fixed-jaw-nut-(28, 7)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-fixed-jaw-nut-(28, -7)-task",
+        "frozen": "A3-src-fixed-jaw-nut-(28, -7)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(7, 0)-head-task",
+        "frozen": "A3-src-yaw-horn-bolt-(7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(7, 0)-thread-envelope-task",
+        "frozen": "A3-src-yaw-horn-bolt-(7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(-7, 0)-head-task",
+        "frozen": "A3-src-yaw-horn-bolt-(-7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(-7, 0)-thread-envelope-task",
+        "frozen": "A3-src-yaw-horn-bolt-(-7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(0, 7)-head-task",
+        "frozen": "A3-src-yaw-horn-bolt-(0, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(0, 7)-thread-envelope-task",
+        "frozen": "A3-src-yaw-horn-bolt-(0, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(0, -7)-head-task",
+        "frozen": "A3-src-yaw-horn-bolt-(0, -7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-horn-bolt-(0, -7)-thread-envelope-task",
+        "frozen": "A3-src-yaw-horn-bolt-(0, -7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(-27, -23)-head-task",
+        "frozen": "A3-src-yaw-pedestal-(-27, -23)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(-27, -23)-thread-envelope-task",
+        "frozen": "A3-src-yaw-pedestal-(-27, -23)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(-27, 23)-head-task",
+        "frozen": "A3-src-yaw-pedestal-(-27, 23)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(-27, 23)-thread-envelope-task",
+        "frozen": "A3-src-yaw-pedestal-(-27, 23)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(27, -23)-head-task",
+        "frozen": "A3-src-yaw-pedestal-(27, -23)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(27, -23)-thread-envelope-task",
+        "frozen": "A3-src-yaw-pedestal-(27, -23)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(27, 23)-head-task",
+        "frozen": "A3-src-yaw-pedestal-(27, 23)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-yaw-pedestal-(27, 23)-thread-envelope-task",
+        "frozen": "A3-src-yaw-pedestal-(27, 23)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(-16, -48)-head-task",
+        "frozen": "A3-src-wrist-cassette-(-16, -48)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(-16, -48)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cassette-(-16, -48)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(-16, -34)-head-task",
+        "frozen": "A3-src-wrist-cassette-(-16, -34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(-16, -34)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cassette-(-16, -34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(16, -48)-head-task",
+        "frozen": "A3-src-wrist-cassette-(16, -48)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(16, -48)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cassette-(16, -48)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(16, -34)-head-task",
+        "frozen": "A3-src-wrist-cassette-(16, -34)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cassette-(16, -34)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cassette-(16, -34)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-nut-(-15.8, -12)-task",
+        "frozen": "A3-src-wrist-cage-nut-(-15.8, -12)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(-15.8, -12)-head-task",
+        "frozen": "A3-src-wrist-cage-(-15.8, -12)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(-15.8, -12)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cage-(-15.8, -12)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-nut-(-15.8, 12)-task",
+        "frozen": "A3-src-wrist-cage-nut-(-15.8, 12)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(-15.8, 12)-head-task",
+        "frozen": "A3-src-wrist-cage-(-15.8, 12)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(-15.8, 12)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cage-(-15.8, 12)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-nut-(15.8, -12)-task",
+        "frozen": "A3-src-wrist-cage-nut-(15.8, -12)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(15.8, -12)-head-task",
+        "frozen": "A3-src-wrist-cage-(15.8, -12)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(15.8, -12)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cage-(15.8, -12)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-nut-(15.8, 12)-task",
+        "frozen": "A3-src-wrist-cage-nut-(15.8, 12)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(15.8, 12)-head-task",
+        "frozen": "A3-src-wrist-cage-(15.8, 12)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-wrist-cage-(15.8, 12)-thread-envelope-task",
+        "frozen": "A3-src-wrist-cage-(15.8, 12)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(7, 0)-head-task",
+        "frozen": "A3-src-roll-dock-bolt-(7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(7, 0)-thread-envelope-task",
+        "frozen": "A3-src-roll-dock-bolt-(7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(-7, 0)-head-task",
+        "frozen": "A3-src-roll-dock-bolt-(-7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(-7, 0)-thread-envelope-task",
+        "frozen": "A3-src-roll-dock-bolt-(-7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(0, 7)-head-task",
+        "frozen": "A3-src-roll-dock-bolt-(0, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(0, 7)-thread-envelope-task",
+        "frozen": "A3-src-roll-dock-bolt-(0, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(0, -7)-head-task",
+        "frozen": "A3-src-roll-dock-bolt-(0, -7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-roll-dock-bolt-(0, -7)-thread-envelope-task",
+        "frozen": "A3-src-roll-dock-bolt-(0, -7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(7, 0)-head-task",
+        "frozen": "A3-src-moving-jaw-bolt-(7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(7, 0)-thread-envelope-task",
+        "frozen": "A3-src-moving-jaw-bolt-(7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(-7, 0)-head-task",
+        "frozen": "A3-src-moving-jaw-bolt-(-7, 0)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(-7, 0)-thread-envelope-task",
+        "frozen": "A3-src-moving-jaw-bolt-(-7, 0)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(0, 7)-head-task",
+        "frozen": "A3-src-moving-jaw-bolt-(0, 7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(0, 7)-thread-envelope-task",
+        "frozen": "A3-src-moving-jaw-bolt-(0, 7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(0, -7)-head-task",
+        "frozen": "A3-src-moving-jaw-bolt-(0, -7)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-moving-jaw-bolt-(0, -7)-thread-envelope-task",
+        "frozen": "A3-src-moving-jaw-bolt-(0, -7)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-clamp-nut-(-15.25, -9)-task",
+        "frozen": "A3-src-hand-clamp-nut-(-15.25, -9)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(-15.25, -9)-head-task",
+        "frozen": "A3-src-hand-case-clamp-(-15.25, -9)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(-15.25, -9)-thread-envelope-task",
+        "frozen": "A3-src-hand-case-clamp-(-15.25, -9)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-clamp-nut-(-15.25, -16)-task",
+        "frozen": "A3-src-hand-clamp-nut-(-15.25, -16)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(-15.25, -16)-head-task",
+        "frozen": "A3-src-hand-case-clamp-(-15.25, -16)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(-15.25, -16)-thread-envelope-task",
+        "frozen": "A3-src-hand-case-clamp-(-15.25, -16)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-clamp-nut-(15.25, -12)-task",
+        "frozen": "A3-src-hand-clamp-nut-(15.25, -12)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(15.25, -12)-head-task",
+        "frozen": "A3-src-hand-case-clamp-(15.25, -12)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(15.25, -12)-thread-envelope-task",
+        "frozen": "A3-src-hand-case-clamp-(15.25, -12)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-clamp-nut-(15.25, 12)-task",
+        "frozen": "A3-src-hand-clamp-nut-(15.25, 12)",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(15.25, 12)-head-task",
+        "frozen": "A3-src-hand-case-clamp-(15.25, 12)-head",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-hand-case-clamp-(15.25, 12)-thread-envelope-task",
+        "frozen": "A3-src-hand-case-clamp-(15.25, 12)-thread-envelope",
+        "kind": "hardware"
+      },
+      {
+        "source": "A2-universal-blank-adapter",
+        "frozen": "A3-src-universal-blank-adapter",
+        "kind": "print",
+        "tool_library": true
+      },
+      {
+        "source": "A2-pen-clamp-12mm-adapter",
+        "frozen": "A3-src-pen-clamp-12mm-adapter",
+        "kind": "print",
+        "tool_library": true
+      },
+      {
+        "source": "A2-pen-split-collet",
+        "frozen": "A3-src-pen-split-collet",
+        "kind": "print",
+        "tool_library": true
+      }
+    ]
+  },
+  "bed_mm": [
+    220,
+    220
+  ],
+  "gap_mm": 8,
+  "edge_margin_mm": 7,
+  "units": "mm",
+  "status": "UNRELEASED_FIT_PROTOTYPES",
+  "parts": [
+    {
+      "id": "P01",
+      "name": "base-electronics-shell",
+      "object": "A3-P01-base-electronics-shell",
+      "source": "A2-base-electronics-shell-task",
+      "material": "PETG",
+      "dims": [
+        63.0,
+        66.0,
+        28.0
+      ],
+      "stl": "parts/P01-base-electronics-shell.stl",
+      "stl_sha256": "f4586fd15c67bc40deb405c62450888bf2ee662f8dca2938cb657765f3673eff",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 3657.2836979757994,
+        "downward_overhang_area_mm2": 547.8201865116716,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          31.5,
+          33.0,
+          19.5
+        ]
+      },
+      "plate": 2,
+      "xy": [
+        123.00000762939453,
+        82.0
+      ],
+      "turn": true,
+      "footprint": [
+        66.0,
+        63.0
+      ],
+      "placed_bounds_mm": [
+        123.00000762939453,
+        82.0,
+        189.00000762939453,
+        145.0
+      ]
+    },
+    {
+      "id": "P02",
+      "name": "base-matte-cover",
+      "object": "A3-P02-base-matte-cover",
+      "source": "A2-base-matte-cover-task",
+      "material": "PETG",
+      "dims": [
+        174.0,
+        116.0,
+        9.0
+      ],
+      "stl": "parts/P02-base-matte-cover.stl",
+      "stl_sha256": "40bd32369ce19eb25dbf49cc8c0c38b3c6559d2254513b34c42d912c27c8d193",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 17915.179309511586,
+        "downward_overhang_area_mm2": 865.8603765070438,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          87.0,
+          58.0,
+          4.5
+        ]
+      },
+      "plate": 1,
+      "xy": [
+        7,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        174.0,
+        116.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        7,
+        181.0,
+        123.0
+      ]
+    },
+    {
+      "id": "P03",
+      "name": "elbow-flush-bearing-cap--1",
+      "object": "A3-P03-elbow-flush-bearing-cap--1",
+      "source": "A2-elbow-flush-bearing-cap--1-task",
+      "material": "PETG",
+      "dims": [
+        58.0,
+        58.0,
+        4.000003814697266
+      ],
+      "stl": "parts/P03-elbow-flush-bearing-cap--1.stl",
+      "stl_sha256": "9595bbc8992b8744efef01838e6491f8bc0eb2c3a8765e25db99ecc029db7a04",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 1988.3876739186235,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            1.0
+          ],
+          [
+            -0.0,
+            -1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          29.0,
+          29.0,
+          2.000001907348633
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        80.99999237060547,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        58.0,
+        58.0
+      ],
+      "placed_bounds_mm": [
+        80.99999237060547,
+        7,
+        138.99999237060547,
+        65.0
+      ]
+    },
+    {
+      "id": "P04",
+      "name": "elbow-flush-bearing-cap-1",
+      "object": "A3-P04-elbow-flush-bearing-cap-1",
+      "source": "A2-elbow-flush-bearing-cap-1-task",
+      "material": "PETG",
+      "dims": [
+        58.0,
+        58.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P04-elbow-flush-bearing-cap-1.stl",
+      "stl_sha256": "77fec39f387117d7e71b4855d7ba39e66e4dce920ecff510cb8c241d8f9d77d7",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1988.385985896457,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          29.0,
+          29.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        146.99999237060547,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        58.0,
+        58.0
+      ],
+      "placed_bounds_mm": [
+        146.99999237060547,
+        7,
+        204.99999237060547,
+        65.0
+      ]
+    },
+    {
+      "id": "P05",
+      "name": "elbow-motor-mount--1",
+      "object": "A3-P05-elbow-motor-mount--1",
+      "source": "A2-elbow-motor-mount--1-task",
+      "material": "PETG",
+      "dims": [
+        53.0,
+        31.0,
+        5.500001907348633
+      ],
+      "stl": "parts/P05-elbow-motor-mount--1.stl",
+      "stl_sha256": "47d6bfbe1e59d021aeacc0e75feee5fd00b40c5c3bd66659e7f06fd41ffc78bb",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 1484.4279864973942,
+        "downward_overhang_area_mm2": 35.37698557920521,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          26.5,
+          15.5,
+          2.7500009536743164
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        63.0,
+        7
+      ],
+      "turn": true,
+      "footprint": [
+        31.0,
+        53.0
+      ],
+      "placed_bounds_mm": [
+        63.0,
+        7,
+        94.0,
+        60.0
+      ]
+    },
+    {
+      "id": "P06",
+      "name": "elbow-motor-mount-1",
+      "object": "A3-P06-elbow-motor-mount-1",
+      "source": "A2-elbow-motor-mount-1-task",
+      "material": "PETG",
+      "dims": [
+        53.0,
+        31.0,
+        5.500001907348633
+      ],
+      "stl": "parts/P06-elbow-motor-mount-1.stl",
+      "stl_sha256": "55e1aaa968d1b1e2b062a1bcb3b0f40a29f6cfe1ac54eff399ace776d55fdf10",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1484.4280939882992,
+        "downward_overhang_area_mm2": 35.376985408674955,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            -0.0,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          26.5,
+          15.5,
+          2.7500009536743164
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        63.0,
+        68.0
+      ],
+      "turn": false,
+      "footprint": [
+        53.0,
+        31.0
+      ],
+      "placed_bounds_mm": [
+        63.0,
+        68.0,
+        116.0,
+        99.0
+      ]
+    },
+    {
+      "id": "P07",
+      "name": "electronics-service-lid",
+      "object": "A3-P07-electronics-service-lid",
+      "source": "A2-electronics-service-lid-task",
+      "material": "PETG",
+      "dims": [
+        65.99999237060547,
+        62.99999237060547,
+        4.000007152557373
+      ],
+      "stl": "parts/P07-electronics-service-lid.stl",
+      "stl_sha256": "51fefdf0b3871e31340ea84d90fa56f2d797069911dbd937afe530804f656d67",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 3875.9807646329136,
+        "downward_overhang_area_mm2": 251.24488456640393,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.9999999403953552,
+            6.181723932741079e-08
+          ],
+          [
+            0.9999999403953552,
+            3.422854177870249e-08,
+            -6.181723932741079e-08
+          ],
+          [
+            -6.181723932741079e-08,
+            6.181723932741079e-08,
+            -0.9999999403953552
+          ]
+        ],
+        "translation": [
+          32.999996185302734,
+          31.499996185302734,
+          2.0000035762786865
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        7,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        65.99999237060547,
+        62.99999237060547
+      ],
+      "placed_bounds_mm": [
+        7,
+        7,
+        72.99999237060547,
+        69.99999237060547
+      ]
+    },
+    {
+      "id": "P08",
+      "name": "fixed-TPU-pad-40",
+      "object": "A3-P08-fixed-TPU-pad-40",
+      "source": "A2-fixed-TPU-pad-40-task",
+      "material": "TPU",
+      "dims": [
+        10.0,
+        8.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P08-fixed-TPU-pad-40.stl",
+      "stl_sha256": "7f72e701bc1ef5e38e0c65d4187101feebba9357079698b1bcee39d18367e199",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 78.03325070199207,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          4.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 5,
+      "xy": [
+        7,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        10.0,
+        8.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        7,
+        17.0,
+        15.0
+      ]
+    },
+    {
+      "id": "P09",
+      "name": "fixed-TPU-pad-56",
+      "object": "A3-P09-fixed-TPU-pad-56",
+      "source": "A2-fixed-TPU-pad-56-task",
+      "material": "TPU",
+      "dims": [
+        10.0,
+        8.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P09-fixed-TPU-pad-56.stl",
+      "stl_sha256": "7f72e701bc1ef5e38e0c65d4187101feebba9357079698b1bcee39d18367e199",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 78.03325070199207,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          4.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 5,
+      "xy": [
+        25.0,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        10.0,
+        8.0
+      ],
+      "placed_bounds_mm": [
+        25.0,
+        7,
+        35.0,
+        15.0
+      ]
+    },
+    {
+      "id": "P10",
+      "name": "fixed-TPU-pad-72",
+      "object": "A3-P10-fixed-TPU-pad-72",
+      "source": "A2-fixed-TPU-pad-72-task",
+      "material": "TPU",
+      "dims": [
+        10.0,
+        8.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P10-fixed-TPU-pad-72.stl",
+      "stl_sha256": "7f72e701bc1ef5e38e0c65d4187101feebba9357079698b1bcee39d18367e199",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 78.03325070199207,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          4.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 5,
+      "xy": [
+        43.0,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        10.0,
+        8.0
+      ],
+      "placed_bounds_mm": [
+        43.0,
+        7,
+        53.0,
+        15.0
+      ]
+    },
+    {
+      "id": "P11",
+      "name": "fixed-jaw",
+      "object": "A3-P11-fixed-jaw",
+      "source": "A2-fixed-jaw-task",
+      "material": "PETG",
+      "dims": [
+        28.0,
+        97.25863647460938,
+        8.000003814697266
+      ],
+      "stl": "parts/P11-fixed-jaw.stl",
+      "stl_sha256": "8f007a13cb12477ceb9d0659b4a482172c1e061bb772dce1b75665ca8a161cf0",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1534.1394218921778,
+        "downward_overhang_area_mm2": 108.37046931300165,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          14.0,
+          83.25863647460938,
+          4.000000476837158
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        182.99999237060547,
+        73.0
+      ],
+      "turn": false,
+      "footprint": [
+        28.0,
+        97.25863647460938
+      ],
+      "placed_bounds_mm": [
+        182.99999237060547,
+        73.0,
+        210.99999237060547,
+        170.25863647460938
+      ]
+    },
+    {
+      "id": "P12",
+      "name": "gripper-tool-plate",
+      "object": "A3-P12-gripper-tool-plate",
+      "source": "A2-gripper-tool-plate-task",
+      "material": "PETG",
+      "dims": [
+        48.0,
+        52.0,
+        6.0
+      ],
+      "stl": "parts/P12-gripper-tool-plate.stl",
+      "stl_sha256": "fb39a53554f76609fe0e0e5cfbb8dcc9fab8d563ab033c7e82837248059824e8",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 2240.40108673762,
+        "downward_overhang_area_mm2": 42.14158207105356,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          24.0,
+          26.0,
+          3.0
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        73.0,
+        139.0
+      ],
+      "turn": true,
+      "footprint": [
+        52.0,
+        48.0
+      ],
+      "placed_bounds_mm": [
+        73.0,
+        139.0,
+        125.0,
+        187.0
+      ]
+    },
+    {
+      "id": "P13",
+      "name": "hand-case-retainer",
+      "object": "A3-P13-hand-case-retainer",
+      "source": "A2-hand-case-retainer-task",
+      "material": "PETG",
+      "dims": [
+        36.0,
+        39.0,
+        4.0
+      ],
+      "stl": "parts/P13-hand-case-retainer.stl",
+      "stl_sha256": "f23cfca552eefe1fe486d33a9a4e10ee8809c73e2bff3447ec1d768040a50e44",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1369.8369989469938,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          18.0,
+          19.5,
+          2.0
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        91.0,
+        156.0
+      ],
+      "turn": false,
+      "footprint": [
+        36.0,
+        39.0
+      ],
+      "placed_bounds_mm": [
+        91.0,
+        156.0,
+        127.0,
+        195.0
+      ]
+    },
+    {
+      "id": "P14",
+      "name": "hand-servo-cradle",
+      "object": "A3-P14-hand-servo-cradle",
+      "source": "A2-hand-servo-cradle-task",
+      "material": "PETG",
+      "dims": [
+        90.0,
+        67.0,
+        47.5
+      ],
+      "stl": "parts/P14-hand-servo-cradle.stl",
+      "stl_sha256": "0f153f14ca7ae21434a70db32ed17944f7be1d27f1b127610715370c88d93c56",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 371.4707692097363,
+        "downward_overhang_area_mm2": 1397.7515208978275,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          65.0,
+          32.0,
+          3.5
+        ]
+      },
+      "plate": 2,
+      "xy": [
+        123.00000762939453,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        90.0,
+        67.0
+      ],
+      "placed_bounds_mm": [
+        123.00000762939453,
+        7,
+        213.00000762939453,
+        74.0
+      ]
+    },
+    {
+      "id": "P15",
+      "name": "lower-U-body",
+      "object": "A3-P15-lower-U-body",
+      "source": "A2-lower-U-body-task",
+      "material": "PETG",
+      "dims": [
+        108.00000762939453,
+        70.0,
+        52.5
+      ],
+      "stl": "parts/P15-lower-U-body.stl",
+      "stl_sha256": "5e98f12ab04a2c689a7601dcad9418b607beaa53fdcdc71c7910187e72198a83",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 2321.0438207570405,
+        "downward_overhang_area_mm2": 1161.77508544979,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          80.50000762939453,
+          35.0,
+          3.5000009536743164
+        ]
+      },
+      "plate": 2,
+      "xy": [
+        7,
+        110.99999237060547
+      ],
+      "turn": false,
+      "footprint": [
+        108.00000762939453,
+        70.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        110.99999237060547,
+        115.00000762939453,
+        180.99999237060547
+      ]
+    },
+    {
+      "id": "P16",
+      "name": "moving-TPU-pad-40",
+      "object": "A3-P16-moving-TPU-pad-40",
+      "source": "A2-moving-TPU-pad-40-task",
+      "material": "TPU",
+      "dims": [
+        10.0,
+        8.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P16-moving-TPU-pad-40.stl",
+      "stl_sha256": "7f72e701bc1ef5e38e0c65d4187101feebba9357079698b1bcee39d18367e199",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 78.03325070199207,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          4.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 5,
+      "xy": [
+        61.0,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        10.0,
+        8.0
+      ],
+      "placed_bounds_mm": [
+        61.0,
+        7,
+        71.0,
+        15.0
+      ]
+    },
+    {
+      "id": "P17",
+      "name": "moving-TPU-pad-56",
+      "object": "A3-P17-moving-TPU-pad-56",
+      "source": "A2-moving-TPU-pad-56-task",
+      "material": "TPU",
+      "dims": [
+        10.0,
+        8.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P17-moving-TPU-pad-56.stl",
+      "stl_sha256": "7f72e701bc1ef5e38e0c65d4187101feebba9357079698b1bcee39d18367e199",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 78.03325070199207,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          4.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 5,
+      "xy": [
+        79.0,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        10.0,
+        8.0
+      ],
+      "placed_bounds_mm": [
+        79.0,
+        7,
+        89.0,
+        15.0
+      ]
+    },
+    {
+      "id": "P18",
+      "name": "moving-TPU-pad-72",
+      "object": "A3-P18-moving-TPU-pad-72",
+      "source": "A2-moving-TPU-pad-72-task",
+      "material": "TPU",
+      "dims": [
+        10.0,
+        8.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P18-moving-TPU-pad-72.stl",
+      "stl_sha256": "7f72e701bc1ef5e38e0c65d4187101feebba9357079698b1bcee39d18367e199",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 78.03325070199207,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          4.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 5,
+      "xy": [
+        97.0,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        10.0,
+        8.0
+      ],
+      "placed_bounds_mm": [
+        97.0,
+        7,
+        107.0,
+        15.0
+      ]
+    },
+    {
+      "id": "P19",
+      "name": "moving-jaw",
+      "object": "A3-P19-moving-jaw",
+      "source": "A2-moving-jaw-task",
+      "material": "PETG",
+      "dims": [
+        28.0,
+        97.25865173339844,
+        8.000003814697266
+      ],
+      "stl": "parts/P19-moving-jaw.stl",
+      "stl_sha256": "63f88908219fab39776317e339e870d3f1597d5e280b68fec2adec9635adf5af",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1534.1395393875246,
+        "downward_overhang_area_mm2": 108.37045640954557,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          14.0,
+          83.25865173339844,
+          4.000000476837158
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        146.99999237060547,
+        73.0
+      ],
+      "turn": false,
+      "footprint": [
+        28.0,
+        97.25865173339844
+      ],
+      "placed_bounds_mm": [
+        146.99999237060547,
+        73.0,
+        174.99999237060547,
+        170.25865173339844
+      ]
+    },
+    {
+      "id": "P20",
+      "name": "pen-clamp-12mm-adapter",
+      "object": "A3-P20-pen-clamp-12mm-adapter",
+      "source": "A2-pen-clamp-12mm-adapter",
+      "material": "PETG",
+      "dims": [
+        48.0,
+        52.0,
+        6.0
+      ],
+      "stl": "parts/P20-pen-clamp-12mm-adapter.stl",
+      "stl_sha256": "5f8a9e771d3e3bef34f86d9e18a65464d4812bffaef50c637c075b8c6accd8fa",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 2072.934767284096,
+        "downward_overhang_area_mm2": 233.17066643357975,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": true,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          24.0,
+          26.0,
+          3.0
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        7,
+        143.99999237060547
+      ],
+      "turn": true,
+      "footprint": [
+        52.0,
+        48.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        143.99999237060547,
+        59.0,
+        191.99999237060547
+      ]
+    },
+    {
+      "id": "P21",
+      "name": "pen-split-collet",
+      "object": "A3-P21-pen-split-collet",
+      "source": "A2-pen-split-collet",
+      "material": "PETG",
+      "dims": [
+        26.0,
+        26.0,
+        26.0
+      ],
+      "stl": "parts/P21-pen-split-collet.stl",
+      "stl_sha256": "8e017e86dbcffb5c072980a0474eccf34f332bf26994c15e0b41988653778634",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 529.3999819855344,
+        "downward_overhang_area_mm2": 85.97716555414081,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": true,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          13.0,
+          13.0,
+          13.0
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        135.0,
+        130.9460220336914
+      ],
+      "turn": false,
+      "footprint": [
+        26.0,
+        26.0
+      ],
+      "placed_bounds_mm": [
+        135.0,
+        130.9460220336914,
+        161.0,
+        156.9460220336914
+      ]
+    },
+    {
+      "id": "P22",
+      "name": "roll-motor-cradle",
+      "object": "A3-P22-roll-motor-cradle",
+      "source": "A2-roll-motor-cradle-task",
+      "material": "PETG",
+      "dims": [
+        54.0,
+        36.0,
+        9.0
+      ],
+      "stl": "parts/P22-roll-motor-cradle.stl",
+      "stl_sha256": "131636a331b99ebe72a7deada587012ac600704df00b54755fb9e7cd71caa85a",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 579.5954039058415,
+        "downward_overhang_area_mm2": 170.26498244376853,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          27.0,
+          18.0,
+          4.5
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        7,
+        126.99999618530273
+      ],
+      "turn": true,
+      "footprint": [
+        36.0,
+        54.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        126.99999618530273,
+        43.0,
+        180.99999618530273
+      ]
+    },
+    {
+      "id": "P23",
+      "name": "shoulder-diamond-fascia",
+      "object": "A3-P23-shoulder-diamond-fascia",
+      "source": "A2-shoulder-diamond-fascia-task",
+      "material": "PETG",
+      "dims": [
+        26.0,
+        56.0,
+        2.5000007152557373
+      ],
+      "stl": "parts/P23-shoulder-diamond-fascia.stl",
+      "stl_sha256": "4a2d6ba8499920a9a46e40717a5753ac8f8ce3603673a7ac250f4a9c39c9192b",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1343.9190432791293,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            -0.0,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          13.0,
+          28.0,
+          1.2500003576278687
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        181.74956512451172,
+        92.0
+      ],
+      "turn": false,
+      "footprint": [
+        26.0,
+        56.0
+      ],
+      "placed_bounds_mm": [
+        181.74956512451172,
+        92.0,
+        207.74956512451172,
+        148.0
+      ]
+    },
+    {
+      "id": "P24",
+      "name": "shoulder-flush-bearing-cap--1",
+      "object": "A3-P24-shoulder-flush-bearing-cap--1",
+      "source": "A2-shoulder-flush-bearing-cap--1-task",
+      "material": "PETG",
+      "dims": [
+        58.0,
+        58.0,
+        4.000003814697266
+      ],
+      "stl": "parts/P24-shoulder-flush-bearing-cap--1.stl",
+      "stl_sha256": "9595bbc8992b8744efef01838e6491f8bc0eb2c3a8765e25db99ecc029db7a04",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 1988.3876739186235,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            1.0
+          ],
+          [
+            -0.0,
+            -1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          29.0,
+          29.0,
+          2.000001907348633
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        80.99999237060547,
+        73.0
+      ],
+      "turn": false,
+      "footprint": [
+        58.0,
+        58.0
+      ],
+      "placed_bounds_mm": [
+        80.99999237060547,
+        73.0,
+        138.99999237060547,
+        131.0
+      ]
+    },
+    {
+      "id": "P25",
+      "name": "shoulder-flush-bearing-cap-1",
+      "object": "A3-P25-shoulder-flush-bearing-cap-1",
+      "source": "A2-shoulder-flush-bearing-cap-1-task",
+      "material": "PETG",
+      "dims": [
+        58.0,
+        58.0,
+        4.000000476837158
+      ],
+      "stl": "parts/P25-shoulder-flush-bearing-cap-1.stl",
+      "stl_sha256": "77fec39f387117d7e71b4855d7ba39e66e4dce920ecff510cb8c241d8f9d77d7",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1988.385985896457,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          29.0,
+          29.0,
+          2.000000238418579
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        7,
+        77.99999237060547
+      ],
+      "turn": false,
+      "footprint": [
+        58.0,
+        58.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        77.99999237060547,
+        65.0,
+        135.99999237060547
+      ]
+    },
+    {
+      "id": "P26",
+      "name": "shoulder-motor-mount--1",
+      "object": "A3-P26-shoulder-motor-mount--1",
+      "source": "A2-shoulder-motor-mount--1-task",
+      "material": "PETG",
+      "dims": [
+        53.0,
+        31.0,
+        5.500001907348633
+      ],
+      "stl": "parts/P26-shoulder-motor-mount--1.stl",
+      "stl_sha256": "47d6bfbe1e59d021aeacc0e75feee5fd00b40c5c3bd66659e7f06fd41ffc78bb",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 1484.4279864973942,
+        "downward_overhang_area_mm2": 35.37698557920521,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          26.5,
+          15.5,
+          2.7500009536743164
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        102.0,
+        7
+      ],
+      "turn": true,
+      "footprint": [
+        31.0,
+        53.0
+      ],
+      "placed_bounds_mm": [
+        102.0,
+        7,
+        133.0,
+        60.0
+      ]
+    },
+    {
+      "id": "P27",
+      "name": "shoulder-motor-mount-1",
+      "object": "A3-P27-shoulder-motor-mount-1",
+      "source": "A2-shoulder-motor-mount-1-task",
+      "material": "PETG",
+      "dims": [
+        53.0,
+        31.0,
+        5.500001907348633
+      ],
+      "stl": "parts/P27-shoulder-motor-mount-1.stl",
+      "stl_sha256": "55e1aaa968d1b1e2b062a1bcb3b0f40a29f6cfe1ac54eff399ace776d55fdf10",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1484.4280939882992,
+        "downward_overhang_area_mm2": 35.376985408674955,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            -0.0,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          26.5,
+          15.5,
+          2.7500009536743164
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        141.0,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        53.0,
+        31.0
+      ],
+      "placed_bounds_mm": [
+        141.0,
+        7,
+        194.0,
+        38.0
+      ]
+    },
+    {
+      "id": "P28",
+      "name": "tool-dock",
+      "object": "A3-P28-tool-dock",
+      "source": "A2-tool-dock-task",
+      "material": "PETG",
+      "dims": [
+        51.999996185302734,
+        48.0,
+        6.00000524520874
+      ],
+      "stl": "parts/P28-tool-dock.stl",
+      "stl_sha256": "6766198550112a128429f433193d767126088d53ad70c5b6a806115a1cc0cdf4",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 2165.5337189976362,
+        "downward_overhang_area_mm2": 60.294355535006616,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.9999999403953552,
+            6.181723932741079e-08
+          ],
+          [
+            0.9999999403953552,
+            3.422854177870249e-08,
+            -6.181723932741079e-08
+          ],
+          [
+            -6.181723932741079e-08,
+            6.181723932741079e-08,
+            -0.9999999403953552
+          ]
+        ],
+        "translation": [
+          25.999998092651367,
+          24.0,
+          3.00000262260437
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        7,
+        67.0
+      ],
+      "turn": true,
+      "footprint": [
+        48.0,
+        51.999996185302734
+      ],
+      "placed_bounds_mm": [
+        7,
+        67.0,
+        55.0,
+        118.99999618530273
+      ]
+    },
+    {
+      "id": "P29",
+      "name": "universal-blank-adapter",
+      "object": "A3-P29-universal-blank-adapter",
+      "source": "A2-universal-blank-adapter",
+      "material": "PETG",
+      "dims": [
+        48.0,
+        52.0,
+        6.0
+      ],
+      "stl": "parts/P29-universal-blank-adapter.stl",
+      "stl_sha256": "63fe0dcbcf0f15175e2fbe78bd6b74bcb303d4f64ca8a3197e1abc3d2656c8c0",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 2217.6391360062553,
+        "downward_overhang_area_mm2": 191.0291102831252,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": true,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          24.0,
+          26.0,
+          3.0
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        7,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        48.0,
+        52.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        7,
+        55.0,
+        59.0
+      ]
+    },
+    {
+      "id": "P30",
+      "name": "upper-U-body",
+      "object": "A3-P30-upper-U-body",
+      "source": "A2-upper-U-body-task",
+      "material": "PETG",
+      "dims": [
+        134.0,
+        70.0,
+        52.5
+      ],
+      "stl": "parts/P30-upper-U-body.stl",
+      "stl_sha256": "773d27ab21182524215b5da238126cd2061727c7decb8fe87117d538c1294f5a",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 3083.2448371711507,
+        "downward_overhang_area_mm2": 1215.2690056268511,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          93.5,
+          35.0,
+          3.5000014305114746
+        ]
+      },
+      "plate": 1,
+      "xy": [
+        7,
+        131.0
+      ],
+      "turn": false,
+      "footprint": [
+        134.0,
+        70.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        131.0,
+        141.0,
+        201.0
+      ]
+    },
+    {
+      "id": "P31",
+      "name": "wrist-case-retainer",
+      "object": "A3-P31-wrist-case-retainer",
+      "source": "A2-wrist-case-retainer-task",
+      "material": "PETG",
+      "dims": [
+        38.0,
+        42.0,
+        5.0
+      ],
+      "stl": "parts/P31-wrist-case-retainer.stl",
+      "stl_sha256": "040530a57d193b0ddf1b0a96c185fc0469646f8ec9934a036445536b6bb99166",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1562.1960601492901,
+        "downward_overhang_area_mm2": 75.29179043785916,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          19.0,
+          21.0,
+          2.5
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        141.0,
+        46.0
+      ],
+      "turn": true,
+      "footprint": [
+        42.0,
+        38.0
+      ],
+      "placed_bounds_mm": [
+        141.0,
+        46.0,
+        183.0,
+        84.0
+      ]
+    },
+    {
+      "id": "P32",
+      "name": "wrist-cheek--1",
+      "object": "A3-P32-wrist-cheek--1",
+      "source": "A2-wrist-cheek--1-task",
+      "material": "PETG",
+      "dims": [
+        32.0,
+        53.76185989379883,
+        5.000001907348633
+      ],
+      "stl": "parts/P32-wrist-cheek--1.stl",
+      "stl_sha256": "6d9dd67ce657d8561d06cd8e346037fd3f83993fa5f544ff4b43c8b168f1f636",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 1371.9286136790743,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            1.0
+          ],
+          [
+            -0.0,
+            -1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          16.0,
+          16.0,
+          2.500000476837158
+        ]
+      },
+      "plate": 3,
+      "xy": [
+        133.0,
+        178.25865173339844
+      ],
+      "turn": true,
+      "footprint": [
+        53.76185989379883,
+        32.0
+      ],
+      "placed_bounds_mm": [
+        133.0,
+        178.25865173339844,
+        186.76185989379883,
+        210.25865173339844
+      ]
+    },
+    {
+      "id": "P33",
+      "name": "wrist-cheek-1",
+      "object": "A3-P33-wrist-cheek-1",
+      "source": "A2-wrist-cheek-1-task",
+      "material": "PETG",
+      "dims": [
+        32.0,
+        53.76185989379883,
+        5.000001907348633
+      ],
+      "stl": "parts/P33-wrist-cheek-1.stl",
+      "stl_sha256": "c7fba95458a94dea2aec922189d183234c3ea9077f9f1da5b3ba367e3c81298f",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 1371.9285354909516,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          16.0,
+          37.76185989379883,
+          2.500000476837158
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        51.0,
+        126.99999618530273
+      ],
+      "turn": false,
+      "footprint": [
+        32.0,
+        53.76185989379883
+      ],
+      "placed_bounds_mm": [
+        51.0,
+        126.99999618530273,
+        83.0,
+        180.76185607910156
+      ]
+    },
+    {
+      "id": "P34",
+      "name": "wrist-cross-bridge",
+      "object": "A3-P34-wrist-cross-bridge",
+      "source": "A2-wrist-cross-bridge-task",
+      "material": "PETG",
+      "dims": [
+        10.0,
+        64.0,
+        9.0
+      ],
+      "stl": "parts/P34-wrist-cross-bridge.stl",
+      "stl_sha256": "12ea304060ab70e49475ba7419c473ab6a254ef5e58e3921afb28ef2ab331901",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 500.5634952794935,
+        "downward_overhang_area_mm2": 137.04268803849118,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            -0.0,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          5.0,
+          32.0,
+          4.5
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        7,
+        203.0
+      ],
+      "turn": true,
+      "footprint": [
+        64.0,
+        10.0
+      ],
+      "placed_bounds_mm": [
+        7,
+        203.0,
+        71.0,
+        213.0
+      ]
+    },
+    {
+      "id": "P35",
+      "name": "wrist-pitch-cassette",
+      "object": "A3-P35-wrist-pitch-cassette",
+      "source": "A2-wrist-pitch-cassette-task",
+      "material": "PETG",
+      "dims": [
+        53.79999923706055,
+        70.00000762939453,
+        46.0
+      ],
+      "stl": "parts/P35-wrist-pitch-cassette.stl",
+      "stl_sha256": "fa764741de1f836a056e56cd9b8bc609a7facd946e408e33d0d2ad8f43c0e40f",
+      "orientation": {
+        "local_up_axis": 1,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 220.65360136025447,
+        "downward_overhang_area_mm2": 1460.175048415511,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            3.422854177870249e-08,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          19.0,
+          47.000003814697266,
+          23.0
+        ]
+      },
+      "plate": 2,
+      "xy": [
+        123.00000762939453,
+        153.0
+      ],
+      "turn": true,
+      "footprint": [
+        70.00000762939453,
+        53.79999923706055
+      ],
+      "placed_bounds_mm": [
+        123.00000762939453,
+        153.0,
+        193.00001525878906,
+        206.79999923706055
+      ]
+    },
+    {
+      "id": "P36",
+      "name": "wrist-vented-cover",
+      "object": "A3-P36-wrist-vented-cover",
+      "source": "A2-wrist-vented-cover-task",
+      "material": "PETG",
+      "dims": [
+        30.946022033691406,
+        49.74956512451172,
+        3.0000009536743164
+      ],
+      "stl": "parts/P36-wrist-vented-cover.stl",
+      "stl_sha256": "41fbac32ad2784c980218b25754f3c92cf5dcd41ad7cf4999426fe3b9934c4f1",
+      "orientation": {
+        "local_up_axis": 0,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 1286.8309012930013,
+        "downward_overhang_area_mm2": 0,
+        "support_review": false,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            3.422854177870249e-08
+          ]
+        ],
+        "translation": [
+          -27.0,
+          26.8971004486084,
+          1.4999990463256836
+        ]
+      },
+      "plate": 4,
+      "xy": [
+        124.0,
+        92.0
+      ],
+      "turn": true,
+      "footprint": [
+        49.74956512451172,
+        30.946022033691406
+      ],
+      "placed_bounds_mm": [
+        124.0,
+        92.0,
+        173.74956512451172,
+        122.9460220336914
+      ]
+    },
+    {
+      "id": "P37",
+      "name": "yaw-bearing-pedestal",
+      "object": "A3-P37-yaw-bearing-pedestal",
+      "source": "A2-yaw-bearing-pedestal-task",
+      "material": "PETG",
+      "dims": [
+        76.0,
+        64.0,
+        33.0
+      ],
+      "stl": "parts/P37-yaw-bearing-pedestal.stl",
+      "stl_sha256": "b0e5c3ce9dce62aecb824b8581a6eef618ecbcc69ee9d529e594fa685bc3d689",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": 1,
+        "estimated_bed_contact_mm2": 3098.6138008302078,
+        "downward_overhang_area_mm2": 278.94760205526836,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation": [
+          38.0,
+          32.0,
+          16.5
+        ]
+      },
+      "plate": 1,
+      "xy": [
+        149.0,
+        131.0
+      ],
+      "turn": true,
+      "footprint": [
+        64.0,
+        76.0
+      ],
+      "placed_bounds_mm": [
+        149.0,
+        131.0,
+        213.0,
+        207.0
+      ]
+    },
+    {
+      "id": "P38",
+      "name": "yaw-rounded-skirt",
+      "object": "A3-P38-yaw-rounded-skirt",
+      "source": "A2-yaw-rounded-skirt-task",
+      "material": "PETG",
+      "dims": [
+        93.99999237060547,
+        95.99999237060547,
+        10.000009536743164
+      ],
+      "stl": "parts/P38-yaw-rounded-skirt.stl",
+      "stl_sha256": "7e390ebde6512bf6ffc4695d4871e87020cd67dcd489643a83348b51bb9842fe",
+      "orientation": {
+        "local_up_axis": 2,
+        "local_up_sign": -1,
+        "estimated_bed_contact_mm2": 522.0151942921802,
+        "downward_overhang_area_mm2": 908.097760657256,
+        "support_review": true,
+        "orientation_basis": "Six axis candidates: bed contact, low height, downward area. Fork broad bridge on bed; slicer support/strength review required."
+      },
+      "tool_library": false,
+      "local_to_print": {
+        "rotation": [
+          [
+            3.422854177870249e-08,
+            0.9999999403953552,
+            6.181723932741079e-08
+          ],
+          [
+            0.9999999403953552,
+            3.422854177870249e-08,
+            -6.181723932741079e-08
+          ],
+          [
+            -6.181723932741079e-08,
+            6.181723932741079e-08,
+            -0.9999999403953552
+          ]
+        ],
+        "translation": [
+          46.999996185302734,
+          47.999996185302734,
+          5.000004768371582
+        ]
+      },
+      "plate": 2,
+      "xy": [
+        7,
+        7
+      ],
+      "turn": false,
+      "footprint": [
+        93.99999237060547,
+        95.99999237060547
+      ],
+      "placed_bounds_mm": [
+        7,
+        7,
+        100.99999237060547,
+        102.99999237060547
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "material": "PETG",
+      "parts": [
+        "P02",
+        "P30",
+        "P37"
+      ],
+      "display_origin_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "material": "PETG",
+      "parts": [
+        "P38",
+        "P15",
+        "P14",
+        "P01",
+        "P35"
+      ],
+      "display_origin_m": [
+        0.25,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "material": "PETG",
+      "parts": [
+        "P07",
+        "P03",
+        "P04",
+        "P24",
+        "P25",
+        "P19",
+        "P11",
+        "P12",
+        "P20",
+        "P32"
+      ],
+      "display_origin_m": [
+        0.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "material": "PETG",
+      "parts": [
+        "P29",
+        "P28",
+        "P22",
+        "P33",
+        "P05",
+        "P06",
+        "P26",
+        "P27",
+        "P31",
+        "P36",
+        "P23",
+        "P13",
+        "P21",
+        "P34"
+      ],
+      "display_origin_m": [
+        0.0,
+        0.25,
+        0.0
+      ]
+    },
+    {
+      "material": "TPU",
+      "parts": [
+        "P08",
+        "P09",
+        "P10",
+        "P16",
+        "P17",
+        "P18"
+      ],
+      "display_origin_m": [
+        0.25,
+        0.25,
+        0.0
+      ]
+    }
+  ],
+  "limits": [
+    "Supports and process require slicer review; geometric packing has no printer profile or G-code.",
+    "Topology/wall screen is not physical load/thermal/fit release."
+  ]
+}

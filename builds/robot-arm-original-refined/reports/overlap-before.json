@@ -1,0 +1,80 @@
+{
+  "frame": 588,
+  "baseline_pair_count": 5,
+  "current_cross_subassembly_pairs": {
+    "A5-unit-018|A5-unit-019": {
+      "a": [
+        "A5-part-shoulder-cradle-floor"
+      ],
+      "b": [
+        "A5-part-shoulder-motor-mount--1"
+      ],
+      "hits": 68
+    },
+    "A5-unit-018|A5-unit-022": {
+      "a": [
+        "A5-part-shoulder-cradle-floor"
+      ],
+      "b": [
+        "A5-part-shoulder-motor-mount-1"
+      ],
+      "hits": 63
+    },
+    "A5-unit-025|A5-unit-037": {
+      "a": [
+        "A5-part-shoulder-servo",
+        "A5-part-shoulder-output--1",
+        "A5-part-shoulder-output-1"
+      ],
+      "b": [
+        "A5-part-shoulder-drive-flange--1"
+      ],
+      "hits": 448
+    },
+    "A5-unit-025|A5-unit-042": {
+      "a": [
+        "A5-part-shoulder-servo",
+        "A5-part-shoulder-output--1",
+        "A5-part-shoulder-output-1"
+      ],
+      "b": [
+        "A5-part-shoulder-drive-flange-1"
+      ],
+      "hits": 403
+    }
+  },
+  "new_intersection_pairs": {},
+  "projected_subassembly_boxes": {
+    "mount-right": [
+      0.4420354664325714,
+      0.22870725393295288,
+      0.500593900680542,
+      0.475871741771698
+    ],
+    "mount-left": [
+      0.3321859538555145,
+      0.26619336009025574,
+      0.3907443583011627,
+      0.5133578181266785
+    ],
+    "main": [
+      0.28344035148620605,
+      0.15052607655525208,
+      0.5493394732475281,
+      0.5689630508422852
+    ],
+    "fork": [
+      0.29703447222709656,
+      0.4071792662143707,
+      0.6792073249816895,
+      0.7640469074249268
+    ],
+    "carrier-left": [
+      0.244278684258461,
+      0.16132216155529022,
+      0.4131722152233124,
+      0.48366156220436096
+    ]
+  },
+  "limits": "Surface intersections and projected boxes are diagnostic, not a complete solid/collision test."
+}

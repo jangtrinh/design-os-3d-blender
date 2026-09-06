@@ -1,0 +1,1843 @@
+{
+  "status": "PASS",
+  "authority": {
+    "timeline": "/Users/jang/Products/Blender/builds/robot-arm-print-assembly/reports/assembly-timeline.json",
+    "detailed_dependency_order": "/Users/jang/Products/Blender/builds/robot-arm-assembly-guide/reports/mechanical-review/suggested-sequence.json",
+    "scope": "Grouped presentation order only; no insertion, access, fit, retention, wiring, or manufacturing approval."
+  },
+  "counts": {
+    "grouped_operations": 93,
+    "source_meshes_covered_once": 402,
+    "original_grouped_events": 67,
+    "detailed_physical_install_operations": 252
+  },
+  "identity_rules": {
+    "physical_fastener": "A matching A3-build *-head and *-thread-envelope pair is one screw and always moves in the same grouped operation.",
+    "large_servo_unit": "Shoulder/elbow actuator plus two actuator-visual outputs remain one purchased servo unit.",
+    "shaft_articulation": "Operational parenting does not establish detachable assembly ownership; yaw/wrist/roll/gripper adapter envelopes remain explicit interface placeholders.",
+    "wiring": "The 402-source set contains no wire geometry; the wiring operation is a dependency gate before covers, not a modeled installed item."
+  },
+  "groups": [
+    {
+      "index": 1,
+      "module": "base",
+      "title": "Place table anchor plate",
+      "operation": "install",
+      "flags": [
+        "anchor-unmodeled"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-table-anchor-plate"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 2,
+      "module": "base",
+      "title": "Place base cover",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-base-matte-cover"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 3,
+      "module": "base",
+      "title": "Place open rear electronics shell",
+      "operation": "install",
+      "flags": [
+        "shell-open",
+        "retention-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-base-electronics-shell"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 4,
+      "module": "base",
+      "title": "Place stationary yaw adapter",
+      "operation": "install",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-yaw-output--1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 5,
+      "module": "base",
+      "title": "Place yaw servo",
+      "operation": "install",
+      "flags": [
+        "purchased-unit"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-yaw-servo"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 6,
+      "module": "base",
+      "title": "Place yaw bearing pedestal",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-yaw-bearing-pedestal"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 7,
+      "module": "base",
+      "title": "Fasten yaw pedestal symmetrically",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-yaw-pedestal-(-27, -23)-head",
+        "A3-build-yaw-pedestal-(-27, -23)-thread-envelope",
+        "A3-build-yaw-pedestal-(-27, 23)-head",
+        "A3-build-yaw-pedestal-(-27, 23)-thread-envelope",
+        "A3-build-yaw-pedestal-(27, -23)-head",
+        "A3-build-yaw-pedestal-(27, -23)-thread-envelope",
+        "A3-build-yaw-pedestal-(27, 23)-head",
+        "A3-build-yaw-pedestal-(27, 23)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 8,
+      "module": "base",
+      "title": "Seat yaw bearing",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-yaw-61805-bearing"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 9,
+      "module": "base",
+      "title": "Place moving yaw adapter and turntable",
+      "operation": "install",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-yaw-output-1",
+        "A3-build-yaw-turntable"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 10,
+      "module": "base",
+      "title": "Fasten yaw horn symmetrically",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-yaw-horn-bolt-(7, 0)-head",
+        "A3-build-yaw-horn-bolt-(7, 0)-thread-envelope",
+        "A3-build-yaw-horn-bolt-(-7, 0)-head",
+        "A3-build-yaw-horn-bolt-(-7, 0)-thread-envelope",
+        "A3-build-yaw-horn-bolt-(0, 7)-head",
+        "A3-build-yaw-horn-bolt-(0, 7)-thread-envelope",
+        "A3-build-yaw-horn-bolt-(0, -7)-head",
+        "A3-build-yaw-horn-bolt-(0, -7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 11,
+      "module": "shoulder",
+      "title": "Place shoulder cassette floor",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-cradle-floor"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 12,
+      "module": "shoulder",
+      "title": "Place both shoulder motor-mount cheeks",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-parts"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-motor-mount--1",
+        "A3-build-shoulder-motor-mount-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 13,
+      "module": "shoulder",
+      "title": "Capture four shoulder mount-foot nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-mount-foot-nut-(-1, -11)",
+        "A3-build-shoulder-mount-foot-nut-(-1, 11)",
+        "A3-build-shoulder-mount-foot-nut-(1, -11)",
+        "A3-build-shoulder-mount-foot-nut-(1, 11)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 14,
+      "module": "shoulder",
+      "title": "Seat both prepared shoulder motor mounts",
+      "operation": "seat-subassemblies",
+      "flags": [
+        "seat-before-fasteners"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 15,
+      "module": "shoulder",
+      "title": "Place integral shoulder servo unit",
+      "operation": "install",
+      "flags": [
+        "purchased-unit",
+        "integral-actuator-visuals"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-servo",
+        "A3-build-shoulder-output--1",
+        "A3-build-shoulder-output-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 16,
+      "module": "shoulder",
+      "title": "Fasten shoulder servo case",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-case-mount-(-1, -8, -38)-head",
+        "A3-build-shoulder-case-mount-(-1, -8, -38)-thread-envelope",
+        "A3-build-shoulder-case-mount-(-1, -8, -6)-head",
+        "A3-build-shoulder-case-mount-(-1, -8, -6)-thread-envelope",
+        "A3-build-shoulder-case-mount-(-1, 8, -38)-head",
+        "A3-build-shoulder-case-mount-(-1, 8, -38)-thread-envelope",
+        "A3-build-shoulder-case-mount-(1, -8, -38)-head",
+        "A3-build-shoulder-case-mount-(1, -8, -38)-thread-envelope",
+        "A3-build-shoulder-case-mount-(1, -8, -6)-head",
+        "A3-build-shoulder-case-mount-(1, -8, -6)-thread-envelope",
+        "A3-build-shoulder-case-mount-(1, 8, -38)-head",
+        "A3-build-shoulder-case-mount-(1, 8, -38)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 17,
+      "module": "shoulder",
+      "title": "Fasten shoulder mounts to floor",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-mount-foot-(-1, -11)-head",
+        "A3-build-shoulder-mount-foot-(-1, -11)-thread-envelope",
+        "A3-build-shoulder-mount-foot-(-1, 11)-head",
+        "A3-build-shoulder-mount-foot-(-1, 11)-thread-envelope",
+        "A3-build-shoulder-mount-foot-(1, -11)-head",
+        "A3-build-shoulder-mount-foot-(1, -11)-thread-envelope",
+        "A3-build-shoulder-mount-foot-(1, 11)-head",
+        "A3-build-shoulder-mount-foot-(1, 11)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 18,
+      "module": "shoulder",
+      "title": "Place lower U-body",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-lower-U-body"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 19,
+      "module": "shoulder",
+      "title": "Place both shoulder drive flanges",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-parts"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-drive-flange--1",
+        "A3-build-shoulder-drive-flange-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 20,
+      "module": "shoulder",
+      "title": "Fasten both shoulder drive flanges",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-lower-flange-(-1, 0)-head",
+        "A3-build-lower-flange-(-1, 0)-thread-envelope",
+        "A3-build-lower-flange-(-1, 1)-head",
+        "A3-build-lower-flange-(-1, 1)-thread-envelope",
+        "A3-build-lower-flange-(-1, 2)-head",
+        "A3-build-lower-flange-(-1, 2)-thread-envelope",
+        "A3-build-lower-flange-(-1, 3)-head",
+        "A3-build-lower-flange-(-1, 3)-thread-envelope",
+        "A3-build-lower-flange-(1, 0)-head",
+        "A3-build-lower-flange-(1, 0)-thread-envelope",
+        "A3-build-lower-flange-(1, 1)-head",
+        "A3-build-lower-flange-(1, 1)-thread-envelope",
+        "A3-build-lower-flange-(1, 2)-head",
+        "A3-build-lower-flange-(1, 2)-thread-envelope",
+        "A3-build-lower-flange-(1, 3)-head",
+        "A3-build-lower-flange-(1, 3)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 21,
+      "module": "shoulder",
+      "title": "Capture four lower cassette nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts",
+        "before-enclosing-module"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-lower-cassette-nut-(-16, 63)",
+        "A3-build-lower-cassette-nut-(-16, 77)",
+        "A3-build-lower-cassette-nut-(16, 63)",
+        "A3-build-lower-cassette-nut-(16, 77)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 22,
+      "module": "shoulder",
+      "title": "Prepare left shoulder carrier and bearing",
+      "operation": "install",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-bearing-carrier--1",
+        "A3-build-shoulder-61806-bearing--1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 23,
+      "module": "shoulder",
+      "title": "Seat left shoulder carrier",
+      "operation": "seat-subassembly",
+      "flags": [
+        "seat-before-fasteners"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 24,
+      "module": "shoulder",
+      "title": "Fasten left shoulder carrier",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-carrier-foot-(-4, -40.5)-head",
+        "A3-build-shoulder-carrier-foot-(-4, -40.5)-thread-envelope",
+        "A3-build-shoulder-carrier-foot-(4, -40.5)-head",
+        "A3-build-shoulder-carrier-foot-(4, -40.5)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 25,
+      "module": "shoulder",
+      "title": "Seat prepared lower fork",
+      "operation": "seat-subassembly",
+      "flags": [
+        "dual-bearing-load-path"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 26,
+      "module": "shoulder",
+      "title": "Prepare right shoulder carrier and bearing",
+      "operation": "install",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-bearing-carrier-1",
+        "A3-build-shoulder-61806-bearing-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 27,
+      "module": "shoulder",
+      "title": "Seat right shoulder carrier",
+      "operation": "seat-subassembly",
+      "flags": [
+        "seat-before-fasteners"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 28,
+      "module": "shoulder",
+      "title": "Fasten right shoulder carrier",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-carrier-foot-(-4, 40.5)-head",
+        "A3-build-shoulder-carrier-foot-(-4, 40.5)-thread-envelope",
+        "A3-build-shoulder-carrier-foot-(4, 40.5)-head",
+        "A3-build-shoulder-carrier-foot-(4, 40.5)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 29,
+      "module": "shoulder",
+      "title": "Fasten both shoulder output circles",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners",
+        "after-dual-bearing-support"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-output-bolt-(-1, 0)-head",
+        "A3-build-shoulder-output-bolt-(-1, 0)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 1)-head",
+        "A3-build-shoulder-output-bolt-(-1, 1)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 2)-head",
+        "A3-build-shoulder-output-bolt-(-1, 2)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 3)-head",
+        "A3-build-shoulder-output-bolt-(-1, 3)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 4)-head",
+        "A3-build-shoulder-output-bolt-(-1, 4)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 5)-head",
+        "A3-build-shoulder-output-bolt-(-1, 5)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 6)-head",
+        "A3-build-shoulder-output-bolt-(-1, 6)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(-1, 7)-head",
+        "A3-build-shoulder-output-bolt-(-1, 7)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 0)-head",
+        "A3-build-shoulder-output-bolt-(1, 0)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 1)-head",
+        "A3-build-shoulder-output-bolt-(1, 1)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 2)-head",
+        "A3-build-shoulder-output-bolt-(1, 2)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 3)-head",
+        "A3-build-shoulder-output-bolt-(1, 3)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 4)-head",
+        "A3-build-shoulder-output-bolt-(1, 4)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 5)-head",
+        "A3-build-shoulder-output-bolt-(1, 5)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 6)-head",
+        "A3-build-shoulder-output-bolt-(1, 6)-thread-envelope",
+        "A3-build-shoulder-output-bolt-(1, 7)-head",
+        "A3-build-shoulder-output-bolt-(1, 7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 30,
+      "module": "shoulder",
+      "title": "Install both shoulder bearing caps and cap screws",
+      "operation": "install",
+      "flags": [
+        "structural-retainers",
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-flush-bearing-cap--1",
+        "A3-build-shoulder-bearing-cap-(-1, 0.7853981633974483)-head",
+        "A3-build-shoulder-bearing-cap-(-1, 0.7853981633974483)-thread-envelope",
+        "A3-build-shoulder-bearing-cap-(-1, 2.356194490192345)-head",
+        "A3-build-shoulder-bearing-cap-(-1, 2.356194490192345)-thread-envelope",
+        "A3-build-shoulder-bearing-cap-(-1, 3.9269908169872414)-head",
+        "A3-build-shoulder-bearing-cap-(-1, 3.9269908169872414)-thread-envelope",
+        "A3-build-shoulder-bearing-cap-(-1, 5.497787143782138)-head",
+        "A3-build-shoulder-bearing-cap-(-1, 5.497787143782138)-thread-envelope",
+        "A3-build-shoulder-flush-bearing-cap-1",
+        "A3-build-shoulder-bearing-cap-(1, 0.7853981633974483)-head",
+        "A3-build-shoulder-bearing-cap-(1, 0.7853981633974483)-thread-envelope",
+        "A3-build-shoulder-bearing-cap-(1, 2.356194490192345)-head",
+        "A3-build-shoulder-bearing-cap-(1, 2.356194490192345)-thread-envelope",
+        "A3-build-shoulder-bearing-cap-(1, 3.9269908169872414)-head",
+        "A3-build-shoulder-bearing-cap-(1, 3.9269908169872414)-thread-envelope",
+        "A3-build-shoulder-bearing-cap-(1, 5.497787143782138)-head",
+        "A3-build-shoulder-bearing-cap-(1, 5.497787143782138)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 31,
+      "module": "shoulder",
+      "title": "Seat complete shoulder module",
+      "operation": "seat-module",
+      "flags": [
+        "seat-before-interface"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-module"
+      ]
+    },
+    {
+      "index": 32,
+      "module": "shoulder",
+      "title": "Install floor interface bolts",
+      "operation": "install",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-shoulder-floor-(-16, -34)-head",
+        "A3-build-shoulder-floor-(-16, -34)-thread-envelope",
+        "A3-build-shoulder-floor-(-16, 34)-head",
+        "A3-build-shoulder-floor-(-16, 34)-thread-envelope",
+        "A3-build-shoulder-floor-(16, -34)-head",
+        "A3-build-shoulder-floor-(16, -34)-thread-envelope",
+        "A3-build-shoulder-floor-(16, 34)-head",
+        "A3-build-shoulder-floor-(16, 34)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 33,
+      "module": "elbow",
+      "title": "Place elbow cassette floor",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-elbow-cradle-floor"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 34,
+      "module": "elbow",
+      "title": "Place both elbow motor-mount cheeks",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-parts"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-motor-mount--1",
+        "A3-build-elbow-motor-mount-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 35,
+      "module": "elbow",
+      "title": "Capture four elbow mount-foot nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-mount-foot-nut-(-1, -11)",
+        "A3-build-elbow-mount-foot-nut-(-1, 11)",
+        "A3-build-elbow-mount-foot-nut-(1, -11)",
+        "A3-build-elbow-mount-foot-nut-(1, 11)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 36,
+      "module": "elbow",
+      "title": "Seat both prepared elbow motor mounts",
+      "operation": "seat-subassemblies",
+      "flags": [
+        "seat-before-fasteners"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 37,
+      "module": "elbow",
+      "title": "Place integral elbow servo unit",
+      "operation": "install",
+      "flags": [
+        "purchased-unit",
+        "integral-actuator-visuals"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-servo",
+        "A3-build-elbow-output--1",
+        "A3-build-elbow-output-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 38,
+      "module": "elbow",
+      "title": "Fasten elbow servo case",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-case-mount-(-1, -8, -38)-head",
+        "A3-build-elbow-case-mount-(-1, -8, -38)-thread-envelope",
+        "A3-build-elbow-case-mount-(-1, -8, -6)-head",
+        "A3-build-elbow-case-mount-(-1, -8, -6)-thread-envelope",
+        "A3-build-elbow-case-mount-(-1, 8, -38)-head",
+        "A3-build-elbow-case-mount-(-1, 8, -38)-thread-envelope",
+        "A3-build-elbow-case-mount-(1, -8, -38)-head",
+        "A3-build-elbow-case-mount-(1, -8, -38)-thread-envelope",
+        "A3-build-elbow-case-mount-(1, -8, -6)-head",
+        "A3-build-elbow-case-mount-(1, -8, -6)-thread-envelope",
+        "A3-build-elbow-case-mount-(1, 8, -38)-head",
+        "A3-build-elbow-case-mount-(1, 8, -38)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 39,
+      "module": "elbow",
+      "title": "Fasten elbow mounts to floor",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-mount-foot-(-1, -11)-head",
+        "A3-build-elbow-mount-foot-(-1, -11)-thread-envelope",
+        "A3-build-elbow-mount-foot-(-1, 11)-head",
+        "A3-build-elbow-mount-foot-(-1, 11)-thread-envelope",
+        "A3-build-elbow-mount-foot-(1, -11)-head",
+        "A3-build-elbow-mount-foot-(1, -11)-thread-envelope",
+        "A3-build-elbow-mount-foot-(1, 11)-head",
+        "A3-build-elbow-mount-foot-(1, 11)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 40,
+      "module": "elbow",
+      "title": "Place upper U-body",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-upper-U-body"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 41,
+      "module": "elbow",
+      "title": "Place both elbow drive flanges",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-parts"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-drive-flange--1",
+        "A3-build-elbow-drive-flange-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 42,
+      "module": "elbow",
+      "title": "Fasten both elbow drive flanges",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-upper-flange-(-1, 0)-head",
+        "A3-build-upper-flange-(-1, 0)-thread-envelope",
+        "A3-build-upper-flange-(-1, 1)-head",
+        "A3-build-upper-flange-(-1, 1)-thread-envelope",
+        "A3-build-upper-flange-(-1, 2)-head",
+        "A3-build-upper-flange-(-1, 2)-thread-envelope",
+        "A3-build-upper-flange-(-1, 3)-head",
+        "A3-build-upper-flange-(-1, 3)-thread-envelope",
+        "A3-build-upper-flange-(1, 0)-head",
+        "A3-build-upper-flange-(1, 0)-thread-envelope",
+        "A3-build-upper-flange-(1, 1)-head",
+        "A3-build-upper-flange-(1, 1)-thread-envelope",
+        "A3-build-upper-flange-(1, 2)-head",
+        "A3-build-upper-flange-(1, 2)-thread-envelope",
+        "A3-build-upper-flange-(1, 3)-head",
+        "A3-build-upper-flange-(1, 3)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 43,
+      "module": "elbow",
+      "title": "Capture four upper cassette nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts",
+        "before-enclosing-module"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-upper-cassette-nut-(-16, 89)",
+        "A3-build-upper-cassette-nut-(-16, 103)",
+        "A3-build-upper-cassette-nut-(16, 89)",
+        "A3-build-upper-cassette-nut-(16, 103)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 44,
+      "module": "elbow",
+      "title": "Prepare left elbow carrier and bearing",
+      "operation": "install",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-bearing-carrier--1",
+        "A3-build-elbow-61806-bearing--1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 45,
+      "module": "elbow",
+      "title": "Seat left elbow carrier",
+      "operation": "seat-subassembly",
+      "flags": [
+        "seat-before-fasteners"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 46,
+      "module": "elbow",
+      "title": "Fasten left elbow carrier",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-carrier-foot-(-4, -40.5)-head",
+        "A3-build-elbow-carrier-foot-(-4, -40.5)-thread-envelope",
+        "A3-build-elbow-carrier-foot-(4, -40.5)-head",
+        "A3-build-elbow-carrier-foot-(4, -40.5)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 47,
+      "module": "elbow",
+      "title": "Seat prepared upper fork",
+      "operation": "seat-subassembly",
+      "flags": [
+        "dual-bearing-load-path"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 48,
+      "module": "elbow",
+      "title": "Prepare right elbow carrier and bearing",
+      "operation": "install",
+      "flags": [
+        "preassembled-carrier",
+        "fit-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-bearing-carrier-1",
+        "A3-build-elbow-61806-bearing-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 49,
+      "module": "elbow",
+      "title": "Seat right elbow carrier",
+      "operation": "seat-subassembly",
+      "flags": [
+        "seat-before-fasteners"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-subassembly"
+      ]
+    },
+    {
+      "index": 50,
+      "module": "elbow",
+      "title": "Fasten right elbow carrier",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-carrier-foot-(-4, 40.5)-head",
+        "A3-build-elbow-carrier-foot-(-4, 40.5)-thread-envelope",
+        "A3-build-elbow-carrier-foot-(4, 40.5)-head",
+        "A3-build-elbow-carrier-foot-(4, 40.5)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 51,
+      "module": "elbow",
+      "title": "Fasten both elbow output circles",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners",
+        "after-dual-bearing-support"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-output-bolt-(-1, 0)-head",
+        "A3-build-elbow-output-bolt-(-1, 0)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 1)-head",
+        "A3-build-elbow-output-bolt-(-1, 1)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 2)-head",
+        "A3-build-elbow-output-bolt-(-1, 2)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 3)-head",
+        "A3-build-elbow-output-bolt-(-1, 3)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 4)-head",
+        "A3-build-elbow-output-bolt-(-1, 4)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 5)-head",
+        "A3-build-elbow-output-bolt-(-1, 5)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 6)-head",
+        "A3-build-elbow-output-bolt-(-1, 6)-thread-envelope",
+        "A3-build-elbow-output-bolt-(-1, 7)-head",
+        "A3-build-elbow-output-bolt-(-1, 7)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 0)-head",
+        "A3-build-elbow-output-bolt-(1, 0)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 1)-head",
+        "A3-build-elbow-output-bolt-(1, 1)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 2)-head",
+        "A3-build-elbow-output-bolt-(1, 2)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 3)-head",
+        "A3-build-elbow-output-bolt-(1, 3)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 4)-head",
+        "A3-build-elbow-output-bolt-(1, 4)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 5)-head",
+        "A3-build-elbow-output-bolt-(1, 5)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 6)-head",
+        "A3-build-elbow-output-bolt-(1, 6)-thread-envelope",
+        "A3-build-elbow-output-bolt-(1, 7)-head",
+        "A3-build-elbow-output-bolt-(1, 7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 52,
+      "module": "elbow",
+      "title": "Install both elbow bearing caps and cap screws",
+      "operation": "install",
+      "flags": [
+        "structural-retainers",
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-flush-bearing-cap--1",
+        "A3-build-elbow-bearing-cap-(-1, 0.7853981633974483)-head",
+        "A3-build-elbow-bearing-cap-(-1, 0.7853981633974483)-thread-envelope",
+        "A3-build-elbow-bearing-cap-(-1, 2.356194490192345)-head",
+        "A3-build-elbow-bearing-cap-(-1, 2.356194490192345)-thread-envelope",
+        "A3-build-elbow-bearing-cap-(-1, 3.9269908169872414)-head",
+        "A3-build-elbow-bearing-cap-(-1, 3.9269908169872414)-thread-envelope",
+        "A3-build-elbow-bearing-cap-(-1, 5.497787143782138)-head",
+        "A3-build-elbow-bearing-cap-(-1, 5.497787143782138)-thread-envelope",
+        "A3-build-elbow-flush-bearing-cap-1",
+        "A3-build-elbow-bearing-cap-(1, 0.7853981633974483)-head",
+        "A3-build-elbow-bearing-cap-(1, 0.7853981633974483)-thread-envelope",
+        "A3-build-elbow-bearing-cap-(1, 2.356194490192345)-head",
+        "A3-build-elbow-bearing-cap-(1, 2.356194490192345)-thread-envelope",
+        "A3-build-elbow-bearing-cap-(1, 3.9269908169872414)-head",
+        "A3-build-elbow-bearing-cap-(1, 3.9269908169872414)-thread-envelope",
+        "A3-build-elbow-bearing-cap-(1, 5.497787143782138)-head",
+        "A3-build-elbow-bearing-cap-(1, 5.497787143782138)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 53,
+      "module": "elbow",
+      "title": "Seat complete elbow module",
+      "operation": "seat-module",
+      "flags": [
+        "seat-before-interface"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-module"
+      ]
+    },
+    {
+      "index": 54,
+      "module": "elbow",
+      "title": "Install cassette interface bolts",
+      "operation": "install",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-elbow-cassette-(-16, -48)-head",
+        "A3-build-elbow-cassette-(-16, -48)-thread-envelope",
+        "A3-build-elbow-cassette-(-16, -34)-head",
+        "A3-build-elbow-cassette-(-16, -34)-thread-envelope",
+        "A3-build-elbow-cassette-(16, -48)-head",
+        "A3-build-elbow-cassette-(16, -48)-thread-envelope",
+        "A3-build-elbow-cassette-(16, -34)-head",
+        "A3-build-elbow-cassette-(16, -34)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 55,
+      "module": "wrist",
+      "title": "Place wrist pitch cassette",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-wrist-pitch-cassette"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 56,
+      "module": "wrist",
+      "title": "Capture four wrist cage nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts",
+        "before-case-retainer"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-cage-nut-(-15.8, -12)",
+        "A3-build-wrist-cage-nut-(-15.8, 12)",
+        "A3-build-wrist-cage-nut-(15.8, -12)",
+        "A3-build-wrist-cage-nut-(15.8, 12)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 57,
+      "module": "wrist",
+      "title": "Place wrist servo",
+      "operation": "install",
+      "flags": [
+        "purchased-unit"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-servo"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 58,
+      "module": "wrist",
+      "title": "Install wrist case retainer",
+      "operation": "install",
+      "flags": [
+        "structural-retainer"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-case-retainer"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 59,
+      "module": "wrist",
+      "title": "Fasten wrist servo cage",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-cage-(-15.8, -12)-head",
+        "A3-build-wrist-cage-(-15.8, -12)-thread-envelope",
+        "A3-build-wrist-cage-(-15.8, 12)-head",
+        "A3-build-wrist-cage-(-15.8, 12)-thread-envelope",
+        "A3-build-wrist-cage-(15.8, -12)-head",
+        "A3-build-wrist-cage-(15.8, -12)-thread-envelope",
+        "A3-build-wrist-cage-(15.8, 12)-head",
+        "A3-build-wrist-cage-(15.8, 12)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 60,
+      "module": "wrist",
+      "title": "Place left wrist adapter, hub, and cheek",
+      "operation": "install",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-output--1",
+        "A3-build-wrist-extension-hub--1",
+        "A3-build-wrist-cheek--1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 61,
+      "module": "wrist",
+      "title": "Fasten left wrist pivot circle",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-pivot-(-1, 7, 0)-head",
+        "A3-build-wrist-pivot-(-1, 7, 0)-thread-envelope",
+        "A3-build-wrist-pivot-(-1, -7, 0)-head",
+        "A3-build-wrist-pivot-(-1, -7, 0)-thread-envelope",
+        "A3-build-wrist-pivot-(-1, 0, 7)-head",
+        "A3-build-wrist-pivot-(-1, 0, 7)-thread-envelope",
+        "A3-build-wrist-pivot-(-1, 0, -7)-head",
+        "A3-build-wrist-pivot-(-1, 0, -7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 62,
+      "module": "wrist",
+      "title": "Place right wrist adapter, hub, and cheek",
+      "operation": "install",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-output-1",
+        "A3-build-wrist-extension-hub-1",
+        "A3-build-wrist-cheek-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 63,
+      "module": "wrist",
+      "title": "Fasten right wrist pivot circle",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-pivot-(1, 7, 0)-head",
+        "A3-build-wrist-pivot-(1, 7, 0)-thread-envelope",
+        "A3-build-wrist-pivot-(1, -7, 0)-head",
+        "A3-build-wrist-pivot-(1, -7, 0)-thread-envelope",
+        "A3-build-wrist-pivot-(1, 0, 7)-head",
+        "A3-build-wrist-pivot-(1, 0, 7)-thread-envelope",
+        "A3-build-wrist-pivot-(1, 0, -7)-head",
+        "A3-build-wrist-pivot-(1, 0, -7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 64,
+      "module": "wrist",
+      "title": "Place wrist cross bridge",
+      "operation": "install",
+      "flags": [
+        "retention-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-cross-bridge"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 65,
+      "module": "wrist",
+      "title": "Place roll motor cradle",
+      "operation": "install",
+      "flags": [
+        "retention-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-roll-motor-cradle"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 66,
+      "module": "wrist",
+      "title": "Place both roll adapter envelopes",
+      "operation": "install",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-roll-output--1",
+        "A3-build-roll-output-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 67,
+      "module": "wrist",
+      "title": "Place roll servo",
+      "operation": "install",
+      "flags": [
+        "purchased-unit"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-roll-servo"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 68,
+      "module": "wrist",
+      "title": "Place tool dock",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-tool-dock"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 69,
+      "module": "wrist",
+      "title": "Capture four tool-lock nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts",
+        "before-tool-interface"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-tool-lock-nut-(-17, -18)",
+        "A3-build-tool-lock-nut-(-17, 18)",
+        "A3-build-tool-lock-nut-(17, -18)",
+        "A3-build-tool-lock-nut-(17, 18)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 70,
+      "module": "wrist",
+      "title": "Seat two tool dowels",
+      "operation": "install",
+      "flags": [
+        "fit-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-tool-dowel--12",
+        "A3-build-tool-dowel-12"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 71,
+      "module": "wrist",
+      "title": "Fasten roll dock",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-roll-dock-bolt-(7, 0)-head",
+        "A3-build-roll-dock-bolt-(7, 0)-thread-envelope",
+        "A3-build-roll-dock-bolt-(-7, 0)-head",
+        "A3-build-roll-dock-bolt-(-7, 0)-thread-envelope",
+        "A3-build-roll-dock-bolt-(0, 7)-head",
+        "A3-build-roll-dock-bolt-(0, 7)-thread-envelope",
+        "A3-build-roll-dock-bolt-(0, -7)-head",
+        "A3-build-roll-dock-bolt-(0, -7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 72,
+      "module": "wrist",
+      "title": "Seat complete wrist module",
+      "operation": "seat-module",
+      "flags": [
+        "seat-before-interface"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-module"
+      ]
+    },
+    {
+      "index": 73,
+      "module": "wrist",
+      "title": "Install wrist cassette interface bolts",
+      "operation": "install",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-wrist-cassette-(-16, -48)-head",
+        "A3-build-wrist-cassette-(-16, -48)-thread-envelope",
+        "A3-build-wrist-cassette-(-16, -34)-head",
+        "A3-build-wrist-cassette-(-16, -34)-thread-envelope",
+        "A3-build-wrist-cassette-(16, -48)-head",
+        "A3-build-wrist-cassette-(16, -48)-thread-envelope",
+        "A3-build-wrist-cassette-(16, -34)-head",
+        "A3-build-wrist-cassette-(16, -34)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 74,
+      "module": "hand",
+      "title": "Place gripper tool plate",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-gripper-tool-plate"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 75,
+      "module": "hand",
+      "title": "Capture two tool-plate adapter nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts",
+        "before-cradle"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-hand-adapter-nut-8",
+        "A3-build-hand-adapter-nut-20"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 76,
+      "module": "hand",
+      "title": "Place hand servo cradle",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-hand-servo-cradle"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 77,
+      "module": "hand",
+      "title": "Capture jaw and case-clamp receiver nuts",
+      "operation": "install",
+      "flags": [
+        "capture-nuts",
+        "before-servo-and-retainer"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-fixed-jaw-nut-(21, 0)",
+        "A3-build-fixed-jaw-nut-(35, 0)",
+        "A3-build-fixed-jaw-nut-(28, 7)",
+        "A3-build-fixed-jaw-nut-(28, -7)",
+        "A3-build-hand-clamp-nut-(-15.25, -9)",
+        "A3-build-hand-clamp-nut-(-15.25, -16)",
+        "A3-build-hand-clamp-nut-(15.25, -12)",
+        "A3-build-hand-clamp-nut-(15.25, 12)"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 78,
+      "module": "hand",
+      "title": "Fasten cradle to tool plate",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-hand-adapter-bolt-8-head",
+        "A3-build-hand-adapter-bolt-8-thread-envelope",
+        "A3-build-hand-adapter-bolt-20-head",
+        "A3-build-hand-adapter-bolt-20-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 79,
+      "module": "hand",
+      "title": "Place both gripper adapter envelopes",
+      "operation": "install",
+      "flags": [
+        "adapter-interface-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-gripper-output--1",
+        "A3-build-gripper-output-1"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 80,
+      "module": "hand",
+      "title": "Place gripper servo",
+      "operation": "install",
+      "flags": [
+        "purchased-unit"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-gripper-servo"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 81,
+      "module": "hand",
+      "title": "Install hand case retainer",
+      "operation": "install",
+      "flags": [
+        "structural-retainer"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-hand-case-retainer"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 82,
+      "module": "hand",
+      "title": "Fasten hand case clamp",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-hand-case-clamp-(-15.25, -9)-head",
+        "A3-build-hand-case-clamp-(-15.25, -9)-thread-envelope",
+        "A3-build-hand-case-clamp-(-15.25, -16)-head",
+        "A3-build-hand-case-clamp-(-15.25, -16)-thread-envelope",
+        "A3-build-hand-case-clamp-(15.25, -12)-head",
+        "A3-build-hand-case-clamp-(15.25, -12)-thread-envelope",
+        "A3-build-hand-case-clamp-(15.25, 12)-head",
+        "A3-build-hand-case-clamp-(15.25, 12)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 83,
+      "module": "hand",
+      "title": "Place fixed jaw",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-fixed-jaw"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 84,
+      "module": "hand",
+      "title": "Fasten fixed jaw",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-fixed-jaw-bolt-(7, 0)-head",
+        "A3-build-fixed-jaw-bolt-(7, 0)-thread-envelope",
+        "A3-build-fixed-jaw-bolt-(-7, 0)-head",
+        "A3-build-fixed-jaw-bolt-(-7, 0)-thread-envelope",
+        "A3-build-fixed-jaw-bolt-(0, 7)-head",
+        "A3-build-fixed-jaw-bolt-(0, 7)-thread-envelope",
+        "A3-build-fixed-jaw-bolt-(0, -7)-head",
+        "A3-build-fixed-jaw-bolt-(0, -7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 85,
+      "module": "hand",
+      "title": "Place moving jaw",
+      "operation": "install",
+      "flags": [],
+      "note": "",
+      "names": [
+        "A3-build-moving-jaw"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 86,
+      "module": "hand",
+      "title": "Fasten moving jaw",
+      "operation": "install",
+      "flags": [
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-moving-jaw-bolt-(7, 0)-head",
+        "A3-build-moving-jaw-bolt-(7, 0)-thread-envelope",
+        "A3-build-moving-jaw-bolt-(-7, 0)-head",
+        "A3-build-moving-jaw-bolt-(-7, 0)-thread-envelope",
+        "A3-build-moving-jaw-bolt-(0, 7)-head",
+        "A3-build-moving-jaw-bolt-(0, 7)-thread-envelope",
+        "A3-build-moving-jaw-bolt-(0, -7)-head",
+        "A3-build-moving-jaw-bolt-(0, -7)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 87,
+      "module": "hand",
+      "title": "Install all six TPU grip pads",
+      "operation": "install",
+      "flags": [
+        "grouped-print-variants"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-fixed-TPU-pad-40",
+        "A3-build-fixed-TPU-pad-56",
+        "A3-build-fixed-TPU-pad-72",
+        "A3-build-moving-TPU-pad-40",
+        "A3-build-moving-TPU-pad-56",
+        "A3-build-moving-TPU-pad-72"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 88,
+      "module": "hand",
+      "title": "Seat complete hand module",
+      "operation": "seat-module",
+      "flags": [
+        "seat-before-interface"
+      ],
+      "note": "",
+      "names": [],
+      "source_operation_types": [
+        "seat-module"
+      ]
+    },
+    {
+      "index": 89,
+      "module": "hand",
+      "title": "Install four tool-retention bolts",
+      "operation": "install",
+      "flags": [
+        "late-interface",
+        "after-module-seat",
+        "grouped-symmetric-fasteners"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-tool-retention-(-17, -18)-head",
+        "A3-build-tool-retention-(-17, -18)-thread-envelope",
+        "A3-build-tool-retention-(-17, 18)-head",
+        "A3-build-tool-retention-(-17, 18)-thread-envelope",
+        "A3-build-tool-retention-(17, -18)-head",
+        "A3-build-tool-retention-(17, -18)-thread-envelope",
+        "A3-build-tool-retention-(17, 18)-head",
+        "A3-build-tool-retention-(17, 18)-thread-envelope"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 90,
+      "module": "electronics",
+      "title": "Install controller envelope and service connector",
+      "operation": "install",
+      "flags": [
+        "inside-open-shell",
+        "electronics-placeholder"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-TTL-RS485-controller-envelope",
+        "A3-build-service-connector"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 91,
+      "module": "electronics",
+      "title": "Route and verify all wiring before closure",
+      "operation": "unmodeled-gate",
+      "flags": [
+        "wiring-before-covers"
+      ],
+      "note": "No wire mesh or verified harness/BOM exists in the 402-source set.",
+      "names": [],
+      "source_operation_types": []
+    },
+    {
+      "index": 92,
+      "module": "finish",
+      "title": "Install exterior skirt, fascia, and wrist cover",
+      "operation": "install",
+      "flags": [
+        "final-covers",
+        "retention-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-yaw-rounded-skirt",
+        "A3-build-shoulder-diamond-fascia",
+        "A3-build-wrist-vented-cover"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    },
+    {
+      "index": 93,
+      "module": "finish",
+      "title": "Install electronics service lid last",
+      "operation": "install",
+      "flags": [
+        "final-cover",
+        "after-electronics-and-wiring",
+        "retention-unvalidated"
+      ],
+      "note": "",
+      "names": [
+        "A3-build-electronics-service-lid"
+      ],
+      "source_operation_types": [
+        "install"
+      ]
+    }
+  ],
+  "optional_appendix": [
+    {
+      "type": "install",
+      "names": [
+        "A3-src-universal-blank-adapter"
+      ],
+      "group": "finish",
+      "subassembly": "main",
+      "note": "Optional T48 head; not part of installed 402 meshes."
+    },
+    {
+      "type": "install",
+      "names": [
+        "A3-src-pen-clamp-12mm-adapter"
+      ],
+      "group": "finish",
+      "subassembly": "main",
+      "note": "Optional T48 pen head base; fit prototype."
+    },
+    {
+      "type": "install",
+      "names": [
+        "A3-src-pen-split-collet"
+      ],
+      "group": "finish",
+      "subassembly": "main",
+      "note": "Optional collet; its stated extra fasteners are not modeled in the 402-source set."
+    }
+  ],
+  "unresolved": [
+    "Actual adapter spline and retention hardware",
+    "Continuous physical insertion and tool access",
+    "Bearing fits and carrier retention",
+    "Cross-bridge, roll-cradle, electronics-shell, cover, and yaw-case retention",
+    "Harness, controller, supply, connector, strain-relief, electrical, and thermal design"
+  ]
+}

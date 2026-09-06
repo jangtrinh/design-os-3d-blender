@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scene": "A3-Step-assembly",
+  "artifact_sha256": "20e27bc6022251d1a07ff6cad86098f11aade295178e9e2af2adfc83b69495ba",
+  "frames": 1429,
+  "events": 67,
+  "objects": 402,
+  "mesh_objects": 402,
+  "final_timeline_matrix_error": 1.1920928955078125e-07,
+  "final_source_matrix_error": 0.0,
+  "fastener_pairs": 146,
+  "max_fastener_pair_motion_error_m": 0.0,
+  "capture_order_checks": 34,
+  "purchased_unit_motion_violations": []
+}

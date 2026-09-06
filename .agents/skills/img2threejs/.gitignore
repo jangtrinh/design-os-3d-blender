@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Scratch / generated review artifacts (keep committed demos in assets/)
+*.tmp
+
+# Local-only planning docs — never committed (feature work is committed, plans are not)
+docs/PLAN_*.md
+
+# OMC planning/team state — local orchestration artifacts, never part of a release
+.omc/
+.omo/
+.opencode/
+
+# Extracted Valve CS2 textures -- IP belongs to Valve, never committed.
+cs2_textures/
+
+# Runtime dependencies and generated browser bundles
+runtime/**/node_modules/
+runtime/**/dist/
+runtime/**/.vite/
+
+.cache/spec-search/
+# Demo GIFs/renders in assets/ stay local, but the README's logo must ship with the repo.
+# Note the trailing `*`: git cannot re-include a file whose parent directory is excluded,
+# so `assets/` + `!assets/logo.svg` would silently not work.
+assets/*
+!assets/logo.svg
+openspec/
+runtime/

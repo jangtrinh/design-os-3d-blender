@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "project": "M3 mounting bracket (gate example / positive fixture)",
+  "parts": [
+    {
+      "id": "bracket-m3",
+      "object": "bracket-m3",
+      "target_dims_mm": [
+        40.0,
+        20.0,
+        6.0
+      ],
+      "tol_mm": 0.2,
+      "material": "PETG",
+      "process": "FDM 0.4 mm nozzle, 0.2 mm layers",
+      "orientation_up": "+z",
+      "min_wall_mm": 2.0,
+      "max_overhang_deg": 45.0,
+      "expected_shells": 1,
+      "features": [
+        {
+          "id": "clear_a",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            13.0,
+            0.0,
+            0.0
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.1,
+          "fastener": {
+            "standard": "ISO 4762",
+            "size": "M3",
+            "series": "medium"
+          }
+        },
+        {
+          "id": "clear_b",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -13.0,
+            0.0,
+            0.0
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.1,
+          "fastener": {
+            "standard": "ISO 4762",
+            "size": "M3",
+            "series": "medium"
+          }
+        },
+        {
+          "id": "pilot",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "diameter_mm": 3.6,
+          "tol_mm": 0.1,
+          "fastener": {
+            "standard": "heatset",
+            "size": "M2.5"
+          }
+        }
+      ]
+    }
+  ],
+  "fasteners": [
+    {
+      "standard": "ISO 4762",
+      "size": "M3",
+      "length_mm": 12,
+      "grade": "12.9",
+      "qty": 2
+    }
+  ],
+  "load_cases": [
+    {
+      "id": "lc1",
+      "description": "20 N static pull on the M3 pair",
+      "status": "declared only, never evaluated by the gate"
+    }
+  ],
+  "required_checks": [
+    "non_manifold_edges",
+    "bbox_dims_mm",
+    "scale_applied",
+    "wall_thickness_screen",
+    "feature_pilot_diameter_mm"
+  ],
+  "physical_evidence": [
+    "print one part and measure the three bores with calipers",
+    "M3 screw pass-through trial in both clearance holes",
+    "heat-set insert installation and pull-out test (table depth for M3 is 7.0 mm; this 6.0 mm plate cannot reach it)"
+  ]
+}

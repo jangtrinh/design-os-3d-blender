@@ -1,0 +1,91 @@
+{
+  "status": "PASS_STL_CLOSED_EDGES_POSITIVE_VOLUME_AND_PLATE_BOUNDS",
+  "parts": 38,
+  "plates": [
+    {
+      "plate": 1,
+      "material": "PETG",
+      "parts": [
+        "P02",
+        "P30",
+        "P37"
+      ],
+      "file": "plates/plate-01-PETG.3mf",
+      "sha256": "512ee861f5224cfad2520b0e03c0c480a860e591d1fab76182ebc7c365ac7826",
+      "triangles": 29482
+    },
+    {
+      "plate": 2,
+      "material": "PETG",
+      "parts": [
+        "P01",
+        "P14",
+        "P15",
+        "P35",
+        "P38"
+      ],
+      "file": "plates/plate-02-PETG.3mf",
+      "sha256": "9985cf0f2d0a2c4485f40a84ed6ad5b0050a251461ceb32926941b78c5936306",
+      "triangles": 33408
+    },
+    {
+      "plate": 3,
+      "material": "PETG",
+      "parts": [
+        "P03",
+        "P04",
+        "P07",
+        "P11",
+        "P12",
+        "P19",
+        "P20",
+        "P24",
+        "P25",
+        "P32"
+      ],
+      "file": "plates/plate-03-PETG.3mf",
+      "sha256": "04c946d606cc82298de0fd8a4c2a13ca6535120d1b87210a30d49613f01cf81f",
+      "triangles": 58258
+    },
+    {
+      "plate": 4,
+      "material": "PETG",
+      "parts": [
+        "P05",
+        "P06",
+        "P13",
+        "P21",
+        "P22",
+        "P23",
+        "P26",
+        "P27",
+        "P28",
+        "P29",
+        "P31",
+        "P33",
+        "P34",
+        "P36"
+      ],
+      "file": "plates/plate-04-PETG.3mf",
+      "sha256": "fc2d5a8c8eb0dd345c4f9dd49acc300d6a29c37e1a040a368c3f69ad36cb1afa",
+      "triangles": 61402
+    },
+    {
+      "plate": 5,
+      "material": "TPU",
+      "parts": [
+        "P08",
+        "P09",
+        "P10",
+        "P16",
+        "P17",
+        "P18"
+      ],
+      "file": "plates/plate-05-TPU.3mf",
+      "sha256": "9e12c6f995da19d179e35df6948492ee909756aac01b412f02b82b7d4f516893",
+      "triangles": 1128
+    }
+  ],
+  "reference": "https://github.com/3MFConsortium/spec_core/blob/master/3MF%20Core%20Specification.md",
+  "limits": "Core geometry package, no printer profile, supports, extrusion paths or G-code; not a physical-fit or load release."
+}
