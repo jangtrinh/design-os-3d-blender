@@ -1,0 +1,5017 @@
+{
+  "schema_version": 1,
+  "inputs": {
+    "scene": "/Users/jang/Products/Blender/builds/watch-winder-capsule/watch-winder-capsule-print.blend",
+    "spec": "/Users/jang/Products/Blender/builds/watch-winder-capsule/spec.json",
+    "scene_sha256": "c8d660c8affe83693a3ba9d133d307027e0ff221d5f278f23f95ea4f413b0830",
+    "spec_sha256": "a62258990b3c8add791e3c42a338c00883e48fac7fdceebb8e8b815722b22404"
+  },
+  "checker": {
+    "version": "1.0.0",
+    "blender": "5.2.0 LTS"
+  },
+  "units": "mm",
+  "parts": [
+    {
+      "id": "shell",
+      "object": "WW_SHELL",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 120464.91347622454,
+        "surface_area_mm2": 97615.2203425914,
+        "triangle_estimate": 6100,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          139.9990692138672,
+          139.9990692138672,
+          113.92892074584961
+        ],
+        "bbox_deviation_mm": [
+          -0.0009307861328125,
+          -0.0009307861328125,
+          -7.925415039267136e-05
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 11868,
+        "wall_min_mm": 2.471403701400757,
+        "wall_p01_mm": 2.472499473190308,
+        "overhang_area_pct": 8.401729681330728,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {
+          "service_hatch": {
+            "measured_diameter_mm": 21.98956020673116,
+            "probes": {
+              "+1": {
+                "axial_mm": null,
+                "surface_mm": 149.65406799316406
+              },
+              "-1": {
+                "axial_mm": null,
+                "surface_mm": 147.785888671875
+              }
+            },
+            "ring_hits": 24,
+            "ring_min_r_mm": 10.99451732635498,
+            "ring_max_r_mm": 10.995018005371094,
+            "measured_keyed_flat_mm": null
+          }
+        }
+      },
+      "allowed": {
+        "target_dims_mm": [
+          140.0,
+          140.0,
+          113.929
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 2.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 120464.91347622454,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            139.9991,
+            139.9991,
+            113.9289
+          ],
+          "limit": {
+            "target": [
+              140.0,
+              140.0,
+              113.929
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0009, -0.0009, -0.0001] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 2.4714,
+            "p01_mm": 2.4725,
+            "samples": 11868
+          },
+          "limit": {
+            "min_wall_mm": 2.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 8.402,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "feature_service_hatch_bore_clear",
+          "status": "pass",
+          "value": {
+            "+1": {
+              "axial_mm": null,
+              "surface_mm": 149.65406799316406
+            },
+            "-1": {
+              "axial_mm": null,
+              "surface_mm": 147.785888671875
+            }
+          },
+          "limit": {
+            "expect": "no axial hit (through hole)"
+          },
+          "note": "a through hole must let the axial ray exit from both sides"
+        },
+        {
+          "name": "feature_service_hatch_material_around",
+          "status": "pass",
+          "value": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "limit": {
+            "expect": [
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          "note": "axial probes at radius 11.500 mm must find material on all four sides; a breakout reads as a missing wall"
+        },
+        {
+          "name": "feature_service_hatch_diameter_mm",
+          "status": "pass",
+          "value": 21.9896,
+          "limit": {
+            "target": 22.0,
+            "tol": 0.3
+          },
+          "note": "mean of 24 radial first-hit distances at center_mm; roundness span 0.0010 mm"
+        },
+        {
+          "name": "feature_usb_pocket_measured",
+          "status": "skip",
+          "value": "slot",
+          "limit": null,
+          "note": "v1 measures type 'hole' only"
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "shell.stl",
+            "sha256": "fbe292b58995bea5703aad1400d80f78560a6dea77afdd390c35238625bcec2a",
+            "triangles": 12370
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 120464.91306186,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            139.9991,
+            139.9991,
+            113.9289
+          ],
+          "limit": {
+            "target": [
+              140.0,
+              140.0,
+              113.929
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0009, -0.0009, -0.0001] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "rear_service_cover",
+      "object": "WW_REAR_SERVICE_COVER",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 870.6559006492216,
+        "surface_area_mm2": 861.6253510564566,
+        "triangle_estimate": 2016,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          21.384714126586914,
+          21.384714126586914,
+          3.2926483154296875
+        ],
+        "bbox_deviation_mm": [
+          -0.0002858734130875007,
+          -0.0002858734130875007,
+          -0.0003516845703126492
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 768,
+        "wall_min_mm": 2.4998918605804445,
+        "wall_p01_mm": 2.4998918605804445,
+        "overhang_area_pct": 38.9588354456187,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          21.385,
+          21.385,
+          3.293
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 2.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 870.6559006492216,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            21.3847,
+            21.3847,
+            3.2926
+          ],
+          "limit": {
+            "target": [
+              21.385,
+              21.385,
+              3.293
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0003, -0.0003, -0.0004] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 2.4999,
+            "p01_mm": 2.4999,
+            "samples": 768
+          },
+          "limit": {
+            "min_wall_mm": 2.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 38.959,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "rear_service_cover.stl",
+            "sha256": "89f095f278f120b0687394dc4c96fd15b9ab6192b87fe48cfe321aa435f11979",
+            "triangles": 3840
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 870.6559018465845,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            21.3847,
+            21.3847,
+            3.2926
+          ],
+          "limit": {
+            "target": [
+              21.385,
+              21.385,
+              3.293
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0003, -0.0003, -0.0004] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "rotor_cup",
+      "object": "WW_ROTOR_CUP",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 34363.33199146236,
+        "surface_area_mm2": 34866.62025260925,
+        "triangle_estimate": 480,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          78.0,
+          78.0,
+          54.0
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 576,
+        "wall_min_mm": 1.9989236427307129,
+        "wall_p01_mm": 1.9989243579864502,
+        "overhang_area_pct": 13.694907919067958,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          78.0,
+          78.0,
+          54.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.5,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 34363.33199146236,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            78.0,
+            78.0,
+            54.0
+          ],
+          "limit": {
+            "target": [
+              78.0,
+              78.0,
+              54.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 1.9989,
+            "p01_mm": 1.9989,
+            "samples": 576
+          },
+          "limit": {
+            "min_wall_mm": 1.5
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 13.695,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "rotor_cup.stl",
+            "sha256": "b1b44ecb608cef6fd41e583782c47b4ca5ac07491ed37b6b7f1e0d41300c3434",
+            "triangles": 768
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 34363.33199146219,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            78.0,
+            78.0,
+            54.0
+          ],
+          "limit": {
+            "target": [
+              78.0,
+              78.0,
+              54.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "inner_liner",
+      "object": "WW_INNER_LINER",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 6339.475636809769,
+        "surface_area_mm2": 11150.408780097961,
+        "triangle_estimate": 672,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          104.0,
+          104.0,
+          16.037776947021484
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          -0.0002230529785158808
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 960,
+        "wall_min_mm": 1.160584790802002,
+        "wall_p01_mm": 1.1605853868484497,
+        "overhang_area_pct": 4.033143017488865,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          104.0,
+          104.0,
+          16.038
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 6339.475636809769,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            104.0,
+            104.0,
+            16.0378
+          ],
+          "limit": {
+            "target": [
+              104.0,
+              104.0,
+              16.038
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0002] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 1.1606,
+            "p01_mm": 1.1606,
+            "samples": 960
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 4.033,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "inner_liner.stl",
+            "sha256": "8d014b4b05a27a38a57178db5149c03340ea19562072f9d450f6c8ef9eba9111",
+            "triangles": 1344
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 6339.475761313342,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            104.0,
+            104.0,
+            16.0378
+          ],
+          "limit": {
+            "target": [
+              104.0,
+              104.0,
+              16.038
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0002] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "front_rim",
+      "object": "WW_FRONT_RIM",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 4947.171392054907,
+        "surface_area_mm2": 5446.0205154418945,
+        "triangle_estimate": 480,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          112.0,
+          112.0,
+          5.700000762939453
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          7.629394529473643e-07
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 960,
+        "wall_min_mm": 2.061103923416138,
+        "wall_p01_mm": 2.0611051155090334,
+        "overhang_area_pct": 26.547373197100203,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          112.0,
+          112.0,
+          5.7
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 4947.171392054907,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            112.0,
+            112.0,
+            5.7
+          ],
+          "limit": {
+            "target": [
+              112.0,
+              112.0,
+              5.7
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 2.0611,
+            "p01_mm": 2.0611,
+            "samples": 960
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 26.547,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "front_rim.stl",
+            "sha256": "77d683caf37dc9d0c005bba361437e7543e08b6c197ae1e08374d752a1759a35",
+            "triangles": 960
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 4947.171362955831,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            112.0,
+            112.0,
+            5.7
+          ],
+          "limit": {
+            "target": [
+              112.0,
+              112.0,
+              5.7
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "guilloche",
+      "object": "WW_GUILLOCHE",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 6028.415519307612,
+        "surface_area_mm2": 7022.738514080644,
+        "triangle_estimate": 153600,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          96.0,
+          96.0,
+          2.1199893951416016
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          -1.0604858398544081e-05
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 0,
+        "wall_min_mm": null,
+        "wall_p01_mm": null,
+        "overhang_area_pct": 41.826756849758134,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          96.0,
+          96.0,
+          2.12
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": null,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 6028.415519307612,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            96.0,
+            96.0,
+            2.12
+          ],
+          "limit": {
+            "target": [
+              96.0,
+              96.0,
+              2.12
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "skip",
+          "value": {
+            "wall_ray_samples": 0,
+            "wall_min_mm": null,
+            "wall_p01_mm": null
+          },
+          "limit": null,
+          "note": "spec declares no min_wall_mm"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 41.827,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "guilloche.stl",
+            "sha256": "a9892b91f541563f9158ef654078b29037c05d465ea56e75848e14ad09b313da",
+            "triangles": 307200
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 6028.04373365609,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            96.0,
+            96.0,
+            2.12
+          ],
+          "limit": {
+            "target": [
+              96.0,
+              96.0,
+              2.12
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "knob_l",
+      "object": "WW_KNOB_L",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 2893.909291422607,
+        "surface_area_mm2": 1273.233682245016,
+        "triangle_estimate": 384,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          8.0,
+          22.0,
+          22.0
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 448,
+        "wall_min_mm": 7.999999864196777,
+        "wall_p01_mm": 8.000000341033935,
+        "overhang_area_pct": 9.79415247867013,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          8.0,
+          22.0,
+          22.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 2893.909291422607,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            8.0,
+            22.0,
+            22.0
+          ],
+          "limit": {
+            "target": [
+              8.0,
+              22.0,
+              22.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 8.0,
+            "p01_mm": 8.0,
+            "samples": 448
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 9.794,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "knob_l.stl",
+            "sha256": "a3a9c5f52f1cf63adb0fc6c645c9afb60b1711eed1b1f46de71a687a61d3dc5a",
+            "triangles": 640
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 2893.9092917562343,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            8.0,
+            22.0,
+            22.0
+          ],
+          "limit": {
+            "target": [
+              8.0,
+              22.0,
+              22.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "knurl_l",
+      "object": "WW_KNURL_L",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 146.73089000232744,
+        "surface_area_mm2": 838.573746882379,
+        "triangle_estimate": 4416,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          5.799995422363281,
+          21.92545986175537,
+          21.929850578308105
+        ],
+        "bbox_deviation_mm": [
+          -4.577636718572364e-06,
+          -0.0745401382446289,
+          -0.07014942169189453
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 0,
+        "wall_min_mm": null,
+        "wall_p01_mm": null,
+        "overhang_area_pct": 23.43815865307449,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          5.8,
+          22.0,
+          22.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": null,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 146.73089000232744,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            5.8,
+            21.9255,
+            21.9299
+          ],
+          "limit": {
+            "target": [
+              5.8,
+              22.0,
+              22.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0, -0.0745, -0.0701] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "skip",
+          "value": {
+            "wall_ray_samples": 0,
+            "wall_min_mm": null,
+            "wall_p01_mm": null
+          },
+          "limit": null,
+          "note": "spec declares no min_wall_mm"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 23.438,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "knurl_l.stl",
+            "sha256": "1e49bccde1415892dd10e596d55ec908ff3f76ff0dab7b169339f3cbc7982c2a",
+            "triangles": 8832
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 146.28511651498738,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            5.8,
+            21.9255,
+            21.9299
+          ],
+          "limit": {
+            "target": [
+              5.8,
+              22.0,
+              22.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0, -0.0745, -0.0701] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "knob_boss_l",
+      "object": "WW_KNOB_BOSS_L",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 2800.569945870204,
+        "surface_area_mm2": 1215.2849276065826,
+        "triangle_estimate": 240,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          12.0,
+          19.0,
+          19.0
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 384,
+        "wall_min_mm": 1.5000005794525146,
+        "wall_p01_mm": 1.5000006986618042,
+        "overhang_area_pct": 13.368171401337614,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          12.0,
+          19.0,
+          19.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 2800.569945870204,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            12.0,
+            19.0,
+            19.0
+          ],
+          "limit": {
+            "target": [
+              12.0,
+              19.0,
+              19.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 1.5,
+            "p01_mm": 1.5,
+            "samples": 384
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 13.368,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "knob_boss_l.stl",
+            "sha256": "55522246c773fddcb2fbd755eeb42fea4d9346821b179b26147dd0f51611c731",
+            "triangles": 384
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 2800.569945927857,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            12.0,
+            19.0,
+            19.0
+          ],
+          "limit": {
+            "target": [
+              12.0,
+              19.0,
+              19.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "cushion",
+      "object": "WW_CUSHION",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 91856.34006920292,
+        "surface_area_mm2": 11139.149049576372,
+        "triangle_estimate": 4738,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          44.948726654052734,
+          59.94872283935547,
+          37.94478416442871
+        ],
+        "bbox_deviation_mm": [
+          -0.051273345947265625,
+          -0.05127716064453125,
+          -0.05521583557128906
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 2976,
+        "wall_min_mm": 17.210436685180664,
+        "wall_p01_mm": 25.135434014892578,
+        "overhang_area_pct": 20.095496623083438,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {
+          "keyed_socket": {
+            "measured_diameter_mm": 6.387771487236023,
+            "probes": {
+              "+1": {
+                "axial_mm": 33.4743537902832,
+                "surface_mm": 33.47892379760742
+              },
+              "-1": {
+                "axial_mm": 78.44872283935547,
+                "surface_mm": 68.47893524169922
+              }
+            },
+            "ring_hits": 24,
+            "ring_min_r_mm": 2.2189836502075195,
+            "ring_max_r_mm": 3.1968679428100586,
+            "measured_keyed_flat_mm": 2.1999999757657918
+          }
+        }
+      },
+      "allowed": {
+        "target_dims_mm": [
+          45.0,
+          60.0,
+          38.0
+        ],
+        "tol_mm": 0.5,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 91856.34006920292,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            44.9487,
+            59.9487,
+            37.9448
+          ],
+          "limit": {
+            "target": [
+              45.0,
+              60.0,
+              38.0
+            ],
+            "tol": 0.5
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0513, -0.0513, -0.0552] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 17.2104,
+            "p01_mm": 25.1354,
+            "samples": 2976
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 20.095,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "feature_keyed_socket_depth_mm",
+          "status": "pass",
+          "value": 9.96978759765625,
+          "limit": {
+            "target": 10.0,
+            "tol": 0.3
+          },
+          "note": "measured from the entry surface to the first axial hit (the bore floor)"
+        },
+        {
+          "name": "feature_keyed_socket_material_around",
+          "status": "pass",
+          "value": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "limit": {
+            "expect": [
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          "note": "axial probes at radius 3.700 mm must find material on all four sides; a breakout reads as a missing wall"
+        },
+        {
+          "name": "feature_keyed_socket_diameter_mm",
+          "status": "pass",
+          "value": 6.3878,
+          "limit": {
+            "target": 6.4,
+            "tol": 0.3
+          },
+          "note": "keyed D-hole: mean of 16 round-part radial hits (of 24); span 0.0081 mm"
+        },
+        {
+          "name": "feature_keyed_socket_keyed_flat_mm",
+          "status": "pass",
+          "value": 2.2,
+          "limit": {
+            "target": 2.2,
+            "tol": 0.3
+          },
+          "note": "keyed D-hole: axis-to-flat distance, mean of 6 rays that land on the flat (r_i*cos(phi_i)); spread 0.0000 mm"
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "cushion.stl",
+            "sha256": "ace2b9331b6eb40f91cd7d3ccf3b49f431f380afaeccd1956517c54f14629b5a",
+            "triangles": 9544
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 91856.60314830662,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            44.9487,
+            59.9487,
+            37.9448
+          ],
+          "limit": {
+            "target": [
+              45.0,
+              60.0,
+              38.0
+            ],
+            "tol": 0.5
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0513, -0.0513, -0.0552] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "shaft",
+      "object": "WW_SHAFT",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 602.5340655693697,
+        "surface_area_mm2": 488.5326118469238,
+        "triangle_estimate": 35,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          5.0,
+          5.999649524688721,
+          24.0
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          -0.0003504753112792969,
+          0.0
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 92,
+        "wall_min_mm": 4.899924619293213,
+        "wall_p01_mm": 4.899924619293213,
+        "overhang_area_pct": 5.138979119132054,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          5.0,
+          6.0,
+          24.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 602.5340655693697,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            5.0,
+            5.9996,
+            24.0
+          ],
+          "limit": {
+            "target": [
+              5.0,
+              6.0,
+              24.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, -0.0004, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 4.8999,
+            "p01_mm": 4.8999,
+            "samples": 92
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 5.139,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "shaft.stl",
+            "sha256": "d55502036fccf9c09d8d9468507294f97c88097d02738b50f4847b7d15c9c1e3",
+            "triangles": 128
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 602.5340655693699,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            5.0,
+            5.9996,
+            24.0
+          ],
+          "limit": {
+            "target": [
+              5.0,
+              6.0,
+              24.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, -0.0004, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "leg_01",
+      "object": "WW_LEG_01",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 2788.588980874798,
+        "surface_area_mm2": 1306.1934702396393,
+        "triangle_estimate": 96,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          12.0,
+          12.0,
+          38.70172119140625
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          -0.000278808593748181
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 96,
+        "wall_min_mm": 8.678602082824707,
+        "wall_p01_mm": 8.678602082824707,
+        "overhang_area_pct": 8.60301569903639,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          12.0,
+          12.0,
+          38.702
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 2788.588980874798,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            12.0,
+            12.0,
+            38.7017
+          ],
+          "limit": {
+            "target": [
+              12.0,
+              12.0,
+              38.702
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0003] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 8.6786,
+            "p01_mm": 8.6786,
+            "samples": 96
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 8.603,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "leg_01.stl",
+            "sha256": "4efbf9559fa7522a9c226c69a19171da3f15c6f2695cc290557f3e9e7013b14e",
+            "triangles": 128
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 2788.5889780419066,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            12.0,
+            12.0,
+            38.7017
+          ],
+          "limit": {
+            "target": [
+              12.0,
+              12.0,
+              38.702
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0003] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "foot_01",
+      "object": "WW_FOOT_01",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 99.10588159934349,
+        "surface_area_mm2": 128.3290159702301,
+        "triangle_estimate": 96,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          7.0,
+          7.0,
+          3.0
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 96,
+        "wall_min_mm": 2.9999998641967776,
+        "wall_p01_mm": 2.9999998641967776,
+        "overhang_area_pct": 29.79661334707835,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          7.0,
+          7.0,
+          3.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 99.10588159934349,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            7.0,
+            7.0,
+            3.0
+          ],
+          "limit": {
+            "target": [
+              7.0,
+              7.0,
+              3.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 3.0,
+            "p01_mm": 3.0,
+            "samples": 96
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 29.797,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "foot_01.stl",
+            "sha256": "1863e09a112541f59bd9a66be233777438c559ed5375ae35afc141cba1b3db4a",
+            "triangles": 128
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 99.10588136448712,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            7.0,
+            7.0,
+            3.0
+          ],
+          "limit": {
+            "target": [
+              7.0,
+              7.0,
+              3.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "visor",
+      "object": "WW_VISOR",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 32631.007426302887,
+        "surface_area_mm2": 33308.951243430376,
+        "triangle_estimate": 4704,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          104.0,
+          104.0,
+          51.99999839067459
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          -1.6093254089355469e-06
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 9024,
+        "wall_min_mm": 1.997839315032959,
+        "wall_p01_mm": 1.9978575540542602,
+        "overhang_area_pct": 15.719757192390038,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          104.0,
+          104.0,
+          52.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.5,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 32631.007426302887,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            104.0,
+            104.0,
+            52.0
+          ],
+          "limit": {
+            "target": [
+              104.0,
+              104.0,
+              52.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 1.9978,
+            "p01_mm": 1.9979,
+            "samples": 9024
+          },
+          "limit": {
+            "min_wall_mm": 1.5
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 15.72,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "visor.stl",
+            "sha256": "fe786ca62e2fdebcb0a608230555a54d95128f229d63506a3dc7404126d68ec5",
+            "triangles": 9216
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 32631.00753931271,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            104.0,
+            104.0,
+            52.0
+          ],
+          "limit": {
+            "target": [
+              104.0,
+              104.0,
+              52.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, -0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "hinge_fixed",
+      "object": "WW_HINGE_FIXED",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 2,
+        "signed_volume_mm3": 468.000333841147,
+        "surface_area_mm2": 503.8100929260254,
+        "triangle_estimate": 36,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          21.600000381469727,
+          9.000003814697266,
+          9.000003814697266
+        ],
+        "bbox_deviation_mm": [
+          3.8146972514141453e-07,
+          3.814697265625e-06,
+          3.814697265625e-06
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 88,
+        "wall_min_mm": 2.9999991489410403,
+        "wall_p01_mm": 2.9999991489410403,
+        "overhang_area_pct": 10.32134864216345,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          21.6,
+          9.0,
+          9.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 2
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 2,
+          "limit": 2,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 468.000333841147,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            21.6,
+            9.0,
+            9.0
+          ],
+          "limit": {
+            "target": [
+              21.6,
+              9.0,
+              9.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 3.0,
+            "p01_mm": 3.0,
+            "samples": 88
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 10.321,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "hinge_fixed.stl",
+            "sha256": "3d83d6e99600b9c30eb9fdbb5778115580fa958a63c6bd7683b4b17b9decf84d",
+            "triangles": 120
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 2,
+          "limit": 2,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 468.0003338411471,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            21.6,
+            9.0,
+            9.0
+          ],
+          "limit": {
+            "target": [
+              21.6,
+              9.0,
+              9.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "hinge_moving",
+      "object": "WW_HINGE_MOVING",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 372.5704687737164,
+        "surface_area_mm2": 343.0390519499779,
+        "triangle_estimate": 113,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          14.999999046325684,
+          7.000000238418579,
+          5.000001430511475
+        ],
+        "bbox_deviation_mm": [
+          -9.5367431640625e-07,
+          2.384185791015625e-07,
+          1.430511474609375e-06
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 174,
+        "wall_min_mm": 2.9999996257781985,
+        "wall_p01_mm": 2.9999998641967776,
+        "overhang_area_pct": 24.599959781592236,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          15.0,
+          7.0,
+          5.0
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 372.5704687737164,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            15.0,
+            7.0,
+            5.0
+          ],
+          "limit": {
+            "target": [
+              15.0,
+              7.0,
+              5.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 3.0,
+            "p01_mm": 3.0,
+            "samples": 174
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 24.6,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "hinge_moving.stl",
+            "sha256": "3dc235d9a42bf285f3ca778bfd05116d9306dfdcfe639d6eba7655cf57ac8871",
+            "triangles": 196
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 372.5704687241054,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            15.0,
+            7.0,
+            5.0
+          ],
+          "limit": {
+            "target": [
+              15.0,
+              7.0,
+              5.0
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [-0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "finger_tab",
+      "object": "WW_FINGER_TAB",
+      "measured": {
+        "non_manifold_edges": 0,
+        "non_contiguous_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "zero_area_faces": 0,
+        "self_intersection_pairs": 0,
+        "shells": 1,
+        "signed_volume_mm3": 136.27257412826168,
+        "surface_area_mm2": 183.22473526000977,
+        "triangle_estimate": 36,
+        "sample_non_manifold_edges": [],
+        "sample_self_intersections": [],
+        "bbox_dims_mm": [
+          12.0,
+          5.0,
+          2.5000001788139343
+        ],
+        "bbox_deviation_mm": [
+          0.0,
+          0.0,
+          1.7881393432617188e-07
+        ],
+        "object_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "object_delta_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_system": "METRIC",
+        "scale_length": 1.0,
+        "wall_ray_samples": 88,
+        "wall_min_mm": 2.4999996257781985,
+        "wall_p01_mm": 2.4999996257781985,
+        "overhang_area_pct": 29.74979942751872,
+        "orientation_up": "+z",
+        "max_overhang_deg": 45.0,
+        "features": {}
+      },
+      "allowed": {
+        "target_dims_mm": [
+          12.0,
+          5.0,
+          2.5
+        ],
+        "tol_mm": 0.3,
+        "min_wall_mm": 1.0,
+        "expected_shells": 1
+      },
+      "checks": [
+        {
+          "name": "non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "signed_volume_positive",
+          "status": "pass",
+          "value": 136.27257412826168,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            12.0,
+            5.0,
+            2.5
+          ],
+          "limit": {
+            "target": [
+              12.0,
+              5.0,
+              2.5
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        },
+        {
+          "name": "scale_applied",
+          "status": "pass",
+          "value": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "delta_scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "limit": {
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "note": "object scale must be 1,1,1 (apply transforms) so local mesh data equals world geometry"
+        },
+        {
+          "name": "scene_unit_system",
+          "status": "pass",
+          "value": "METRIC",
+          "limit": "METRIC",
+          "note": "non-metric units make every mm number a guess"
+        },
+        {
+          "name": "scene_scale_length",
+          "status": "pass",
+          "value": 1.0,
+          "limit": 1.0,
+          "note": "1 Blender unit must be 1 metre; the gate converts with x1000"
+        },
+        {
+          "name": "wall_thickness_screen",
+          "status": "pass",
+          "value": {
+            "min_mm": 2.5,
+            "p01_mm": 2.5,
+            "samples": 88
+          },
+          "limit": {
+            "min_wall_mm": 1.0
+          },
+          "note": "SCREEN: centroid ray sampling of faces >= 0.3 mm^2, not an exhaustive thickness proof"
+        },
+        {
+          "name": "overhang_area_pct",
+          "status": "info",
+          "value": 29.75,
+          "limit": null,
+          "note": "SCREEN: share of surface area whose normal is within 45 deg of the build-down direction. Not a printability verdict. No max_overhang_area_pct declared, so informational only."
+        },
+        {
+          "name": "roundtrip_import",
+          "status": "pass",
+          "value": {
+            "file": "finger_tab.stl",
+            "sha256": "935246d06d51673424254bd23618634a1b4869df0cefac10ff5958e08b20eec5",
+            "triangles": 132
+          },
+          "limit": null,
+          "note": "written in mm, re-parsed by Blender's STL reader"
+        },
+        {
+          "name": "roundtrip_non_manifold_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges not shared by exactly two faces; the solid is not watertight"
+        },
+        {
+          "name": "roundtrip_non_contiguous_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "manifold edges whose two faces disagree on winding: inverted normals"
+        },
+        {
+          "name": "roundtrip_wire_edges",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "edges with no face"
+        },
+        {
+          "name": "roundtrip_loose_verts",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "vertices with no edge"
+        },
+        {
+          "name": "roundtrip_zero_area_faces",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "faces at or below 1e-08 mm^2"
+        },
+        {
+          "name": "roundtrip_self_intersection_pairs",
+          "status": "pass",
+          "value": 0,
+          "limit": 0,
+          "note": "non-adjacent triangle pairs whose bounds overlap (BVH); capped at 200"
+        },
+        {
+          "name": "roundtrip_shells",
+          "status": "pass",
+          "value": 1,
+          "limit": 1,
+          "note": "separate closed surfaces"
+        },
+        {
+          "name": "roundtrip_signed_volume_positive",
+          "status": "pass",
+          "value": 136.27257412826162,
+          "limit": {
+            "min_exclusive": 0.0
+          },
+          "note": "negative or zero volume means the surface is inverted or open"
+        },
+        {
+          "name": "roundtrip_bbox_dims_mm",
+          "status": "pass",
+          "value": [
+            12.0,
+            5.0,
+            2.5
+          ],
+          "limit": {
+            "target": [
+              12.0,
+              5.0,
+              2.5
+            ],
+            "tol": 0.3
+          },
+          "note": "world-space axis-aligned bounding box; deviation [0.0, 0.0, 0.0] mm"
+        }
+      ],
+      "status": "pass"
+    }
+  ],
+  "failed": [],
+  "required_checks_missing": [],
+  "exclusions": [
+    "load capacity: not evaluated (no FEA, no coupon test)",
+    "print success: not evaluated (no slicer run, no support/adhesion analysis)",
+    "assembly fit: not evaluated (no mating-part interference study)",
+    "thermal / creep behaviour: not evaluated",
+    "surface finish and printer-specific shrinkage: not evaluated",
+    "wall-thickness and overhang results are RAY SCREENS, not exhaustive proofs",
+    "declared load_case not evaluated: {'id': 'none-declared', 'description': 'tabletop product; no load case has been specified by the owner', 'status': 'declared only'}",
+    "physical evidence still owed: no part has been printed",
+    "physical evidence still owed: visor-in-rim fit trial (0.5 mm designed seal gap)",
+    "physical evidence still owed: cushion-in-cup fit trial (2.7 mm designed gap)",
+    "physical evidence still owed: keyed shaft/socket engagement trial (0.2 mm clearance)",
+    "physical evidence still owed: metal parts (legs, knobs, rim, hinge) are modelled as machined metal; a resin proxy print proves shape only"
+  ],
+  "coverage": {
+    "checked": [
+      "bbox_dims_mm",
+      "feature_keyed_socket_depth_mm",
+      "feature_keyed_socket_diameter_mm",
+      "feature_keyed_socket_keyed_flat_mm",
+      "feature_keyed_socket_material_around",
+      "feature_service_hatch_bore_clear",
+      "feature_service_hatch_diameter_mm",
+      "feature_service_hatch_material_around",
+      "loose_verts",
+      "non_contiguous_edges",
+      "non_manifold_edges",
+      "roundtrip_bbox_dims_mm",
+      "roundtrip_import",
+      "roundtrip_loose_verts",
+      "roundtrip_non_contiguous_edges",
+      "roundtrip_non_manifold_edges",
+      "roundtrip_self_intersection_pairs",
+      "roundtrip_shells",
+      "roundtrip_signed_volume_positive",
+      "roundtrip_wire_edges",
+      "roundtrip_zero_area_faces",
+      "scale_applied",
+      "scene_scale_length",
+      "scene_unit_system",
+      "self_intersection_pairs",
+      "shells",
+      "signed_volume_positive",
+      "wall_thickness_screen",
+      "wire_edges",
+      "zero_area_faces"
+    ],
+    "unchecked": [
+      "feature usb_pocket of type slot is not measured in v1",
+      "part cushion: overhang reported but not gated (no max_overhang_area_pct)",
+      "part finger_tab: no features declared, so no bore was measured",
+      "part finger_tab: overhang reported but not gated (no max_overhang_area_pct)",
+      "part foot_01: no features declared, so no bore was measured",
+      "part foot_01: overhang reported but not gated (no max_overhang_area_pct)",
+      "part front_rim: no features declared, so no bore was measured",
+      "part front_rim: overhang reported but not gated (no max_overhang_area_pct)",
+      "part guilloche: no features declared, so no bore was measured",
+      "part guilloche: no min_wall_mm declared",
+      "part guilloche: overhang reported but not gated (no max_overhang_area_pct)",
+      "part hinge_fixed: no features declared, so no bore was measured",
+      "part hinge_fixed: overhang reported but not gated (no max_overhang_area_pct)",
+      "part hinge_moving: no features declared, so no bore was measured",
+      "part hinge_moving: overhang reported but not gated (no max_overhang_area_pct)",
+      "part inner_liner: no features declared, so no bore was measured",
+      "part inner_liner: overhang reported but not gated (no max_overhang_area_pct)",
+      "part knob_boss_l: no features declared, so no bore was measured",
+      "part knob_boss_l: overhang reported but not gated (no max_overhang_area_pct)",
+      "part knob_l: no features declared, so no bore was measured",
+      "part knob_l: overhang reported but not gated (no max_overhang_area_pct)",
+      "part knurl_l: no features declared, so no bore was measured",
+      "part knurl_l: no min_wall_mm declared",
+      "part knurl_l: overhang reported but not gated (no max_overhang_area_pct)",
+      "part leg_01: no features declared, so no bore was measured",
+      "part leg_01: overhang reported but not gated (no max_overhang_area_pct)",
+      "part rear_service_cover: no features declared, so no bore was measured",
+      "part rear_service_cover: overhang reported but not gated (no max_overhang_area_pct)",
+      "part rotor_cup: no features declared, so no bore was measured",
+      "part rotor_cup: overhang reported but not gated (no max_overhang_area_pct)",
+      "part shaft: no features declared, so no bore was measured",
+      "part shaft: overhang reported but not gated (no max_overhang_area_pct)",
+      "part shell: overhang reported but not gated (no max_overhang_area_pct)",
+      "part visor: no features declared, so no bore was measured",
+      "part visor: overhang reported but not gated (no max_overhang_area_pct)"
+    ]
+  },
+  "duration_s": 2.59,
+  "timestamp": "2026-09-06T06:29:11Z"
+}

@@ -1,0 +1,551 @@
+{
+ "blend": "/Users/jang/Products/Blender/builds/watch-winder-capsule/watch-winder-capsule.blend",
+ "blend_sha256": "6494186ae2395583f8193f0fba7794ea32b313891f11d5fbf18fb9989d17d2b5",
+ "blender": "5.2.0 LTS",
+ "exclusions": [
+  "no continuous collision proof",
+  "no cable routing / retention / motor duty",
+  "walnut variant not rendered (owner: matte plastic only)",
+  "dispersion omitted (no Principled input)",
+  "support polygon is geometric only, not centre-of-mass"
+ ],
+ "geometry": {
+  "all_mesh_scale_unity": true,
+  "axis_elevation_deg": 50.0,
+  "cameras": {
+   "WW_CAM_HERO": [
+    85.0,
+    2.799999952316284
+   ],
+   "WW_CAM_OPEN": [
+    85.0,
+    2.799999952316284
+   ],
+   "WW_CAM_REAR": [
+    85.0,
+    2.799999952316284
+   ]
+  },
+  "cup_bore_mm": 37.0,
+  "cushion_max_radius_mm": 33.849,
+  "duplicate_suffix_objects": [],
+  "feet_bottom_z_mm": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "knob_mirror_error_mm": 0.0,
+  "materials_without_output_link": [],
+  "presets": [
+   "front",
+   "hero",
+   "hero-right",
+   "lid-half",
+   "macro-controls",
+   "macro-dial",
+   "macro-guilloche",
+   "macro-hinge",
+   "macro-knob",
+   "macro-usb",
+   "open",
+   "open-seated",
+   "profile",
+   "rear",
+   "rear-quarter",
+   "top"
+  ],
+  "role_counts": {
+   "control": 2,
+   "control_bezel": 2,
+   "cushion": 1,
+   "faceplate": 1,
+   "finger_tab": 1,
+   "foot": 3,
+   "front_rim": 1,
+   "hinge_fixed": 1,
+   "hinge_moving": 1,
+   "inner_liner": 1,
+   "knob": 2,
+   "knob_boss": 2,
+   "knurl": 2,
+   "led_diffuser": 1,
+   "led_emitter": 1,
+   "leg": 3,
+   "rotor_cup": 1,
+   "service_cover": 1,
+   "shaft": 1,
+   "shell": 1,
+   "usb_receptacle": 1,
+   "usb_recess": 1,
+   "visor": 1,
+   "watch": 1,
+   "watch_part": 13
+  },
+  "rotor_axis_vs_body_deg": 0.0,
+  "shell_material": "WW_MAT_GRAPHITE",
+  "shell_variant": "graphite",
+  "unit_scale_length": 1.0,
+  "unmaterialed_render_meshes": [],
+  "visor_axis_vs_body_deg": 0.0,
+  "visor_equator_radius_mm": 52.0,
+  "visor_nonmanifold_edges": 0,
+  "visor_thickness_mm": 2.0
+ },
+ "images": {
+  "front-graphite.png": {
+   "seconds": 231.62,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "c8009f93814e5a9a243a6256c8b5ca24514e57a0801ddd056117fc93a08d6435",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "hero-graphite-f8-inspection.png": {
+   "seconds": 23.52,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 8.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     1536,
+     1024
+    ],
+    "samples": 512,
+    "view_transform": "AgX"
+   },
+   "sha256": "039b4820a012073ca18362822c27f4bab419c5ba70d7fd66bc27259bee84c931",
+   "sha_matches_render_record": true,
+   "size": [
+    1536,
+    1024
+   ]
+  },
+  "hero-graphite.png": {
+   "seconds": 274.73,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "a7022da4b4d0873f82946926da79a9ecff3b16aa9b74e75705ba4c98ff5069ac",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "hero-right-graphite.png": {
+   "seconds": 206.53,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "bc17e9230eb0d5dca27672ba41e188c45f7d178a320a968e60c29634e8608108",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "lid-half-graphite.png": {
+   "seconds": 201.2,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "2d0dad198f8a7e867d567a8a2c6b132d10768249e1c31669ee8a6c59ba73c708",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "macro-controls-graphite.png": {
+   "seconds": 83.51,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "6e1c9f3e003d755b35e7df9923174de7bf7c8eb4f07e6f57657daa0241ccb7e6",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "macro-dial-graphite.png": {
+   "seconds": 243.76,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "0a28b8120e73c749c1672e3a02aa1bc96dc21eea1083e28f8717b29e406da1f5",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "macro-guilloche-graphite.png": {
+   "seconds": 222.48,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "280e786fc4c0edc847fec8c6e13a773443ea42b7290aebfdd682178f530827b5",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "macro-hinge-graphite.png": {
+   "seconds": 535.91,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "0fb6ca17e2f9da32e6de57cad5161db99ad15aacae1de9bfd1adc35a33a67470",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "macro-knob-graphite.png": {
+   "seconds": 802.98,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "CPU",
+    "fstop": 5.599999904632568,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "6ff66da04a7eb52e538d7f7f8daa3567c3e14f34359608ad903c27a25a7521c7",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "macro-usb-graphite.png": {
+   "seconds": 61.82,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "1d5cd15a6d601c9b07d5f36ae51130266a3490d070711c71c73449f7e9540318",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "open-graphite.png": {
+   "seconds": 193.79,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "81b0242d22fa6878b6825b6d770edb21eb36c97ddab73a6504c0d84e2cb9c699",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "open-seated-graphite.png": {
+   "seconds": 204.74,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "343bb4a2e4b890d01e088d3e36007b8fd7521df04b175200a26bcbc359e91c49",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "profile-graphite.png": {
+   "seconds": 118.72,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "2402ff221d28c68817ababd1797186cc02a14e27399026507a31d34f85794363",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "rear-graphite.png": {
+   "seconds": 105.98,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "4109ed08ec8b0f4b0955d1f88dc06c37eab725f7238d1706b09b807f71917ede",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "rear-quarter-graphite.png": {
+   "seconds": 104.85,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "9973218e7eb0305509714792356bd40540ef04d73f357c553973d37027aa4a9d",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  },
+  "top-graphite.png": {
+   "seconds": 265.12,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "7d13e617769b5e217e15c7f7cdb7f79bbffd003ac22192211fdaf2b31b20ffe6",
+   "sha_matches_render_record": true,
+   "size": [
+    3072,
+    2048
+   ]
+  }
+ },
+ "parameters_sha256": "44625bd5128228bb39205896265933fc655ab54be2131456134ea534a1d6c594",
+ "reference_sha256": "605db7906a14a835eebd7aadfd78cb1340f4c28272eea89c1bafcf9c71d6aef4",
+ "script_sha256": {
+  "compare-rebuild-inventories.py": "290359d1d0ee6234a10a1ae3b639dd359b308b13895ab89005b24f964f133dd6",
+  "pass-01-owned-scene-and-hierarchy.py": "fbca90b2157c20d4ab6a52e932cb849cfd01a9bf6c9f103b7f9ca61bfe45710a",
+  "pass-02-shell-visor-rim-blockout.py": "c7dd7dca77bb048f7caa10e9808d9c763b0e782389bd739d117bac7c4e1f756a",
+  "pass-03-rotor-cup-cushion-watch-blockout.py": "6fb49fcd8c0b86053655e4aba4105303165db84a84101d11e11ccfebc3049a53",
+  "pass-04-knobs-controls-usb-blockout.py": "e62e26832dd74802b522c6b06d80cd537dde6919bbfb8ec2b5e95650f3b415e8",
+  "pass-05-stand-legs-feet.py": "47db9581c962e99a5847d79e5d552281d259addf763f9eb0d47bf3b1a45812cf",
+  "pass-06-lid-sweep-and-rotor-poses.py": "dd54fba4583ca01fbc05ade1afab08e2152052ab8da9179be8149848ebfae342",
+  "pass-07-phase1-gate-and-clay-renders.py": "b31978c5848a7af590c808a55e9e3608c537bad2a7d75c398ae6b1c01b5e0ef4",
+  "pass-08-shell-booleans-usb-pocket-service-hatch.py": "08fce29a79619c532c9cd9ed9be54b8dc9bbc035d009290abb04a3a624fb8b82",
+  "pass-09-hinge-tab-knobs-controls-led.py": "e04aa5668c3c42b52dbb303ee336d3a71032577642c8f0a2e581972fcd4e1e79",
+  "pass-10-cushion-unit-keyed-shaft-socket.py": "0b410b7d5cd005839be9cf862470e9e56ceb2c29fb6371e022d70003e8b092ec",
+  "pass-11-phase2-gate-topology-poses-reflection.py": "f892285995e02c8b60c92df9ecb1a725a1039715383952f7de49fd4cd0ee52a3",
+  "pass-12-guilloche-relief.py": "05996886775498f0733e70dcdf6894071873b52d3c3675e9b0586f210477fd53",
+  "pass-13-knurl-knobs.py": "df328df5fd79e8b33f7c461f0609cfcc7432562d69d15dadcc27c14d3fc06b2d",
+  "pass-14-watch-dress-unbranded.py": "9937535cfea08ff6e3ae7f0dd45a2342bbcc16ab8c8243934f90755b0f9d67ad",
+  "pass-15-cushion-subd-cage.py": "ea32a5bdc8417009c588eb86c7da791977de9540e2acc1463174dd70cd48dd11",
+  "pass-16-materials-assign-verify.py": "0e5e545849eade150d29bc8cd9aba5649fd97e572111043aad614afb00fa4795",
+  "pass-17-phase3-gate-material-crops.py": "3df5dc1cf90ae68227c7d30ef7a7805d671546f137c0640d099db69392a3ea65",
+  "pass-18-studio-cameras-presets.py": "3f1395cbb176d0b17f3edf4e231145cde5a19490299b0fefd531d173da40ad21",
+  "pass-19-preview-and-review-renders.py": "8b4b14d1558e6386e770bc6e02b8cacc2f7ee14fc7946fd0d22cdc4d8fbb2856",
+  "pass-20-final-renders.py": "dda39b5d9a08450b0aa8f470ef37bf73755c38cff3234aadc3d3d148ed89915b",
+  "pass-21-acceptance-isolated-check.py": "a2c03652076d1c7f721065986e47e474933edc2f46c15eda46be23820aa53248",
+  "pass-22-rebuild-isolated.py": "6437d849e1b776ae89346cbc83d62d0c1f0fffd6924c2a1192b9bb2f896d6487",
+  "pass-23-more-state-cameras.py": "a456e9ff6435d90191cd5dfbb2959d3abb614948569dc70b973321080dfdcc84",
+  "pass-24-animation-keys.py": "d711dae91ca8419a2ec9e0282e21238ffec96c13af72f835788222653043ed29",
+  "pass-25-animatic-workbench.py": "08728ae0e55e055a0e914c54303a49cd13aaa120218a0959d13796133fece4e0",
+  "pass-26-film-render-frames.py": "ae8bd6b26a0b148cdd5c48242ac6aca4b2da366bd8646b33bea9a9675b3c0035",
+  "pass-28-detail-reel-keys.py": "3257f55bd4aa40982487774a74c48e03972ea154bac9c220686580dab04e965f",
+  "pass-29-print-prep-and-spec.py": "09cf5207672fc1c45995d0d8f5dfd5ebcc9ad3bf05d9d2a261f17f502a8c402b",
+  "ww_camera_solve.py": "d4421fa729e504d4397970ea287b837246eb64b091c22e418b1a97ab62c167b6",
+  "ww_lib.py": "188bcfce726c6e63ba2289ddbd04e7aa30d48c841a41382700fcb1412a440e5d",
+  "ww_materials.py": "10e0b7c3216ab02e514f291c6da21899c7cb7e5aa68d84ce128a7b2b9dd3ffc9",
+  "ww_mesh.py": "d525c978e0f30615a91cc037f2828193267a54eabb8618a07dae3d673651825b",
+  "ww_mesh_detail.py": "f8c214b24522f7df894ec43041f8095108a185abac02d8bdb591be3f504d82dd",
+  "ww_presets.py": "dfb19f733eb1092642c36862387944ba9f739f3f46be611b685323d2c26242ef",
+  "ww_render.py": "b9f875e46bd015ca937cdbcca47ba1b0956193025ec979a5a8d4b43b6543e1ca",
+  "ww_studio.py": "bfc23586585de2920d3bd9659788657b348862d682e657c3a2c5bd3e96e074eb"
+ },
+ "status": {
+  "geometry": "PASS",
+  "manufacture": "NOT_REQUESTED_NOT_VERIFIED",
+  "motion_samples": "PASS (sampled lid 0-100 deg / rotor 0-270 deg; digital geometry only)",
+  "visual_appearance": "PASS_with_noted_deviations (see README)"
+ }
+}

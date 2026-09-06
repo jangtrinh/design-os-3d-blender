@@ -1,0 +1,391 @@
+{
+ "assigned": {
+  "WW_CONTROL_01": "WW_MAT_METAL_POLISHED",
+  "WW_CONTROL_02": "WW_MAT_METAL_POLISHED",
+  "WW_CONTROL_BEZEL_01": "WW_MAT_METAL_TURNED",
+  "WW_CONTROL_BEZEL_02": "WW_MAT_METAL_TURNED",
+  "WW_CUSHION": "WW_MAT_LEATHER_CUSHION",
+  "WW_FINGER_TAB": "WW_MAT_METAL_POLISHED",
+  "WW_FOOT_01": "WW_MAT_RUBBER",
+  "WW_FOOT_02": "WW_MAT_RUBBER",
+  "WW_FOOT_03": "WW_MAT_RUBBER",
+  "WW_FRONT_RIM": "WW_MAT_METAL_TURNED",
+  "WW_GUILLOCHE": "WW_MAT_METAL_RADIAL",
+  "WW_HINGE_FIXED": "WW_MAT_METAL_POLISHED",
+  "WW_HINGE_MOVING": "WW_MAT_METAL_POLISHED",
+  "WW_INNER_LINER": "WW_MAT_INTERIOR",
+  "WW_KNOB_BOSS_L": "WW_MAT_METAL_TURNED",
+  "WW_KNOB_BOSS_R": "WW_MAT_METAL_TURNED",
+  "WW_KNOB_L": "WW_MAT_METAL_POLISHED",
+  "WW_KNOB_R": "WW_MAT_METAL_POLISHED",
+  "WW_KNURL_L": "WW_MAT_METAL_KNURL",
+  "WW_KNURL_R": "WW_MAT_METAL_KNURL",
+  "WW_LED_DIFFUSER": "WW_MAT_LED_DIFFUSER",
+  "WW_LED_EMITTER": "WW_MAT_LED_EMITTER",
+  "WW_LEG_01": "WW_MAT_METAL_BRUSHED_LEG",
+  "WW_LEG_02": "WW_MAT_METAL_BRUSHED_LEG",
+  "WW_LEG_03": "WW_MAT_METAL_BRUSHED_LEG",
+  "WW_REAR_SERVICE_COVER": "WW_MAT_GRAPHITE",
+  "WW_ROTOR_CUP": "WW_MAT_INTERIOR",
+  "WW_SHAFT": "WW_MAT_METAL_POLISHED",
+  "WW_SHELL": "WW_MAT_GRAPHITE",
+  "WW_USB_RECEPTACLE": "WW_MAT_METAL_POLISHED",
+  "WW_USB_RECESS": "WW_MAT_INTERIOR",
+  "WW_VISOR": "WW_MAT_ACRYLIC",
+  "WW_WATCH_BEZEL": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_CASE": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_CASEBACK": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_CROWN": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_CRYSTAL": "WW_MAT_CRYSTAL",
+  "WW_WATCH_DIAL": "WW_MAT_DIAL",
+  "WW_WATCH_HAND_CAP": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_HAND_HOUR": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_HAND_MINUTE": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_HAND_SECOND": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_LUGS": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_MARKERS": "WW_MAT_METAL_POLISHED",
+  "WW_WATCH_STRAP_12": "WW_MAT_LEATHER_STRAP",
+  "WW_WATCH_STRAP_6": "WW_MAT_LEATHER_STRAP"
+ },
+ "colour_management": {
+  "look": "AgX - Medium High Contrast",
+  "look_requested_ok": "AgX - Medium High Contrast",
+  "view_transform": "AgX"
+ },
+ "materials": {
+  "WW_MAT_ACRYLIC": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.491,
+   "Metallic": 0.0,
+   "Roughness": 0.02,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 1.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_CRYSTAL": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.52,
+   "Metallic": 0.0,
+   "Roughness": 0.0,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 1.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_DIAL": {
+   "Anisotropic": 0.8,
+   "Anisotropic Rotation": 0.25,
+   "Base Color": [
+    0.5841,
+    0.5841,
+    0.5972
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 0.85,
+   "Roughness": 0.3,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": true
+  },
+  "WW_MAT_GRAPHITE": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.0103,
+    0.0123,
+    0.0176
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 0.0,
+   "Roughness": 0.58,
+   "Specular IOR Level": 0.35,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": true,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_INTERIOR": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.007,
+    0.008,
+    0.0103
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 0.0,
+   "Roughness": 0.55,
+   "Specular IOR Level": 0.3,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_LEATHER_CUSHION": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.0052,
+    0.0052,
+    0.0052
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 0.0,
+   "Roughness": 0.65,
+   "Specular IOR Level": 0.4,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": true,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_LEATHER_STRAP": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.0052,
+    0.0052,
+    0.0052
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 0.0,
+   "Roughness": 0.65,
+   "Specular IOR Level": 0.4,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": true,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_LED_DIFFUSER": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.45,
+   "Metallic": 0.0,
+   "Roughness": 0.55,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 1.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_LED_EMITTER": {
+   "emission_color": [
+    0.6584,
+    0.8308,
+    1.0
+   ],
+   "emission_strength": 6.0,
+   "image_textures": [],
+   "output_linked": true
+  },
+  "WW_MAT_METAL_BRUSHED_LEG": {
+   "Anisotropic": 0.6,
+   "Anisotropic Rotation": 0.25,
+   "Base Color": [
+    0.6867,
+    0.6867,
+    0.6867
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 1.0,
+   "Roughness": 0.15,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": true
+  },
+  "WW_MAT_METAL_KNURL": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.6867,
+    0.6867,
+    0.6867
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 1.0,
+   "Roughness": 0.22,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_METAL_POLISHED": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.6867,
+    0.6867,
+    0.6867
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 1.0,
+   "Roughness": 0.12,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_METAL_RADIAL": {
+   "Anisotropic": 0.6,
+   "Anisotropic Rotation": 0.25,
+   "Base Color": [
+    0.6867,
+    0.6867,
+    0.6867
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 1.0,
+   "Roughness": 0.15,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": true
+  },
+  "WW_MAT_METAL_TURNED": {
+   "Anisotropic": 0.6,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.6867,
+    0.6867,
+    0.6867
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 1.0,
+   "Roughness": 0.15,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": true
+  },
+  "WW_MAT_RUBBER": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.0056,
+    0.0056,
+    0.0056
+   ],
+   "Coat Roughness": 0.03,
+   "Coat Weight": 0.0,
+   "IOR": 1.5,
+   "Metallic": 0.0,
+   "Roughness": 0.85,
+   "Specular IOR Level": 0.3,
+   "Transmission Weight": 0.0,
+   "base_color_linked": false,
+   "image_textures": [],
+   "normal_linked": false,
+   "output_linked": true,
+   "tangent_linked": false
+  },
+  "WW_MAT_WALNUT": {
+   "Anisotropic": 0.0,
+   "Anisotropic Rotation": 0.0,
+   "Base Color": [
+    0.8,
+    0.8,
+    0.8
+   ],
+   "Coat Roughness": 0.25,
+   "Coat Weight": 0.8,
+   "IOR": 1.5,
+   "Metallic": 0.0,
+   "Roughness": 0.38,
+   "Specular IOR Level": 0.5,
+   "Transmission Weight": 0.0,
+   "base_color_linked": true,
+   "image_textures": [],
+   "normal_linked": true,
+   "output_linked": true,
+   "tangent_linked": false
+  }
+ },
+ "notes": {
+  "acrylic_dispersion": "omitted: Principled BSDF in this runtime exposes no dispersion input; no substitute used",
+  "leather_specular": "brief 'specular 0.4' -> Principled 'Specular IOR Level' (4.x+ name of the specular level control)",
+  "led_temperature": "6500K descriptor is descriptive only; #D4EBFF is the visual start target",
+  "perforation": "decorative shader dots on the top face only; not functional ventilation"
+ },
+ "static_view_transforms": [
+  "NONE"
+ ]
+}

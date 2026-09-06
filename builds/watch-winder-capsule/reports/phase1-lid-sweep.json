@@ -1,0 +1,167 @@
+{
+ "apex_distance_test_mm": {
+  "-1": 117.583,
+  "1": 108.72
+ },
+ "evidence_class": "sampled digital geometry, 5 deg steps, every 3rd visor vertex vs obstacle KD-tree",
+ "obstacle_set": [
+  "WW_CONTROL_01",
+  "WW_CONTROL_02",
+  "WW_KNOB_L",
+  "WW_KNOB_R",
+  "WW_FRONT_RIM",
+  "WW_INNER_LINER",
+  "WW_LED_DIFFUSER"
+ ],
+ "open_sign_about_localX": -1,
+ "rotor_poses": [
+  {
+   "cushion_max_radius_mm": 34.338,
+   "deg": 0,
+   "inside": true
+  },
+  {
+   "cushion_max_radius_mm": 34.338,
+   "deg": 90,
+   "inside": true
+  },
+  {
+   "cushion_max_radius_mm": 34.338,
+   "deg": 180,
+   "inside": true
+  },
+  {
+   "cushion_max_radius_mm": 34.338,
+   "deg": 270,
+   "inside": true
+  }
+ ],
+ "sweep": [
+  {
+   "deg": 0,
+   "nearest_obstacle_mm": 0.526,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 68.871
+  },
+  {
+   "deg": 5,
+   "nearest_obstacle_mm": 0.613,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 69.215
+  },
+  {
+   "deg": 10,
+   "nearest_obstacle_mm": 0.769,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 69.583
+  },
+  {
+   "deg": 15,
+   "nearest_obstacle_mm": 0.96,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 69.97
+  },
+  {
+   "deg": 20,
+   "nearest_obstacle_mm": 1.167,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 70.375
+  },
+  {
+   "deg": 25,
+   "nearest_obstacle_mm": 1.383,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 70.793
+  },
+  {
+   "deg": 30,
+   "nearest_obstacle_mm": 1.602,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 71.221
+  },
+  {
+   "deg": 35,
+   "nearest_obstacle_mm": 1.822,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 71.655
+  },
+  {
+   "deg": 40,
+   "nearest_obstacle_mm": 2.03,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 72.093
+  },
+  {
+   "deg": 45,
+   "nearest_obstacle_mm": 2.153,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 72.531
+  },
+  {
+   "deg": 50,
+   "nearest_obstacle_mm": 2.282,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 72.841
+  },
+  {
+   "deg": 55,
+   "nearest_obstacle_mm": 2.413,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 73.098
+  },
+  {
+   "deg": 60,
+   "nearest_obstacle_mm": 2.547,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 73.348
+  },
+  {
+   "deg": 65,
+   "nearest_obstacle_mm": 2.681,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 73.589
+  },
+  {
+   "deg": 70,
+   "nearest_obstacle_mm": 2.815,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 73.82
+  },
+  {
+   "deg": 75,
+   "nearest_obstacle_mm": 2.947,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 74.039
+  },
+  {
+   "deg": 80,
+   "nearest_obstacle_mm": 3.078,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 74.244
+  },
+  {
+   "deg": 85,
+   "nearest_obstacle_mm": 3.205,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 74.435
+  },
+  {
+   "deg": 90,
+   "nearest_obstacle_mm": 3.33,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 74.609
+  },
+  {
+   "deg": 95,
+   "nearest_obstacle_mm": 3.45,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 74.765
+  },
+  {
+   "deg": 100,
+   "nearest_obstacle_mm": 3.529,
+   "shell_penetration_mm": 0.0,
+   "visor_min_radius_from_C_mm": 74.903
+  }
+ ]
+}

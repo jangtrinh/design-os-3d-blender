@@ -1,0 +1,278 @@
+{
+ "blend_sha256": "6494186ae2395583f8193f0fba7794ea32b313891f11d5fbf18fb9989d17d2b5",
+ "states": {
+  "front": {
+   "center": [
+    0.0,
+    -0.0025,
+    0.0915
+   ],
+   "distance_m": 0.828,
+   "fill_u": 0.463,
+   "fill_v": 0.88,
+   "fstop": 4.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.269,
+    0.269,
+    0.06,
+    0.06
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-front.png",
+   "seconds": 0.8,
+   "unit": "seated"
+  },
+  "hero-right": {
+   "center": [
+    0.0,
+    -0.0025,
+    0.0915
+   ],
+   "distance_m": 0.8755,
+   "fill_u": 0.562,
+   "fill_v": 0.88,
+   "fstop": 2.8,
+   "lid_deg": 0.0,
+   "margins": [
+    0.219,
+    0.219,
+    0.06,
+    0.06
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-hero-right.png",
+   "seconds": 0.79,
+   "unit": "seated"
+  },
+  "lid-half": {
+   "center": [
+    0.0,
+    0.0007,
+    0.1075
+   ],
+   "distance_m": 0.9846,
+   "fill_u": 0.501,
+   "fill_v": 0.881,
+   "fstop": 4.0,
+   "lid_deg": 50.0,
+   "margins": [
+    0.25,
+    0.25,
+    0.059,
+    0.059
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-lid-half.png",
+   "seconds": 0.81,
+   "unit": "seated"
+  },
+  "macro-controls": {
+   "center": [
+    0.0,
+    0.0363,
+    0.1455
+   ],
+   "distance_m": 0.1354,
+   "fill_u": 0.62,
+   "fill_v": 0.355,
+   "fstop": 11.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.19,
+    0.19,
+    0.323,
+    0.323
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-macro-controls.png",
+   "seconds": 0.71,
+   "unit": "seated"
+  },
+  "macro-dial": {
+   "center": [
+    0.0001,
+    -0.0071,
+    0.0945
+   ],
+   "distance_m": 0.4245,
+   "fill_u": 0.341,
+   "fill_v": 0.62,
+   "fstop": 4.0,
+   "lid_deg": 100.0,
+   "margins": [
+    0.329,
+    0.329,
+    0.19,
+    0.19
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-macro-dial.png",
+   "seconds": 0.82,
+   "unit": "seated"
+  },
+  "macro-guilloche": {
+   "center": [
+    0.0,
+    -0.0245,
+    0.1147
+   ],
+   "distance_m": 0.2297,
+   "fill_u": 1.27,
+   "fill_v": 1.856,
+   "fstop": 11.0,
+   "lid_deg": 100.0,
+   "margins": [
+    -0.205,
+    -0.065,
+    0.234,
+    -1.09
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-macro-guilloche.png",
+   "seconds": 0.77,
+   "unit": "seated"
+  },
+  "macro-hinge": {
+   "center": [
+    0.0,
+    0.0116,
+    0.1562
+   ],
+   "distance_m": 0.095,
+   "fill_u": 0.62,
+   "fill_v": 0.605,
+   "fstop": 11.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.19,
+    0.19,
+    0.197,
+    0.197
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-macro-hinge.png",
+   "seconds": 0.89,
+   "unit": "seated"
+  },
+  "macro-knob": {
+   "center": [
+    -0.07,
+    0.0,
+    0.086
+   ],
+   "distance_m": 0.1617,
+   "fill_u": 0.51,
+   "fill_v": 0.72,
+   "fstop": 4.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.245,
+    0.245,
+    0.14,
+    0.14
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-macro-knob.png",
+   "seconds": 0.74,
+   "unit": "seated"
+  },
+  "macro-usb": {
+   "center": [
+    -0.0,
+    0.0532,
+    0.0487
+   ],
+   "distance_m": 0.0775,
+   "fill_u": 0.495,
+   "fill_v": 0.55,
+   "fstop": 11.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.253,
+    0.253,
+    0.225,
+    0.225
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-macro-usb.png",
+   "seconds": 0.72,
+   "unit": "seated"
+  },
+  "open-seated": {
+   "center": [
+    0.0,
+    0.0084,
+    0.1318
+   ],
+   "distance_m": 1.1906,
+   "fill_u": 0.396,
+   "fill_v": 0.88,
+   "fstop": 4.0,
+   "lid_deg": 100.0,
+   "margins": [
+    0.302,
+    0.302,
+    0.06,
+    0.06
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-open-seated.png",
+   "seconds": 0.8,
+   "unit": "seated"
+  },
+  "profile": {
+   "center": [
+    0.0,
+    -0.0025,
+    0.0915
+   ],
+   "distance_m": 0.9097,
+   "fill_u": 0.564,
+   "fill_v": 0.877,
+   "fstop": 4.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.218,
+    0.218,
+    0.061,
+    0.061
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-profile.png",
+   "seconds": 0.77,
+   "unit": "seated"
+  },
+  "rear-quarter": {
+   "center": [
+    0.0,
+    -0.0025,
+    0.0915
+   ],
+   "distance_m": 0.8744,
+   "fill_u": 0.575,
+   "fill_v": 0.88,
+   "fstop": 4.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.212,
+    0.212,
+    0.06,
+    0.06
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-rear-quarter.png",
+   "seconds": 0.77,
+   "unit": "seated"
+  },
+  "top": {
+   "center": [
+    0.0,
+    -0.0025,
+    0.0915
+   ],
+   "distance_m": 0.748,
+   "fill_u": 0.595,
+   "fill_v": 0.877,
+   "fstop": 4.0,
+   "lid_deg": 0.0,
+   "margins": [
+    0.202,
+    0.202,
+    0.062,
+    0.062
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/states/preview-top.png",
+   "seconds": 0.88,
+   "unit": "seated"
+  }
+ }
+}

@@ -1,0 +1,219 @@
+{
+ "blend": "/Users/jang/Products/Blender/builds/watch-winder-capsule/watch-winder-capsule-anim.blend",
+ "blend_sha256": "63e7bc0b577cf6fea55c6f2158e8cd8748a2b9d40f7c193fad457b5bf29c5cc0",
+ "camera_closed": {
+  "center": [
+   0.0,
+   -0.0026,
+   0.0915
+  ],
+  "distance_m": 1.1359,
+  "fill_u": 0.437,
+  "fill_v": 0.8,
+  "margins": [
+   0.282,
+   0.282,
+   0.1,
+   0.1
+  ]
+ },
+ "camera_open": {
+  "center": [
+   0.0,
+   0.0045,
+   0.1318
+  ],
+  "distance_m": 1.497,
+  "fill_u": 0.331,
+  "fill_v": 0.84,
+  "margins": [
+   0.334,
+   0.334,
+   0.08,
+   0.08
+  ]
+ },
+ "fps": 24,
+ "frames": {
+  "close0": 85,
+  "close1": 121,
+  "insert0": 1,
+  "insert1": 73,
+  "orbit0": 241,
+  "orbit1": 385,
+  "spin0": 133,
+  "spin1": 229
+ },
+ "keys": {
+  "WW_CAM_VIDEO": [
+   [
+    "location",
+    0,
+    3
+   ],
+   [
+    "location",
+    1,
+    3
+   ],
+   [
+    "location",
+    2,
+    3
+   ],
+   [
+    "rotation_euler",
+    0,
+    3
+   ],
+   [
+    "rotation_euler",
+    1,
+    3
+   ],
+   [
+    "rotation_euler",
+    2,
+    3
+   ]
+  ],
+  "WW_CUSHION_UNIT": [
+   [
+    "location",
+    2,
+    2
+   ]
+  ],
+  "WW_LID_PIVOT": [
+   [
+    "rotation_euler",
+    0,
+    3
+   ]
+  ],
+  "WW_ORBIT_PIVOT": [
+   [
+    "rotation_euler",
+    2,
+    2
+   ]
+  ],
+  "WW_ROTOR_PIVOT": [
+   [
+    "rotation_euler",
+    2,
+    3
+   ]
+  ]
+ },
+ "margins": {
+  "1": [
+   0.334,
+   0.334,
+   0.08,
+   0.08
+  ],
+  "121": [
+   0.282,
+   0.282,
+   0.1,
+   0.1
+  ],
+  "313": [
+   0.299,
+   0.256,
+   0.113,
+   0.08
+  ]
+ },
+ "samples": {
+  "1": {
+   "cam_world": [
+    -0.7253,
+    -1.2547,
+    0.4915
+   ],
+   "lid_deg": -100.0,
+   "orbit_deg": 0.0,
+   "rotor_deg": 0.0,
+   "unit_z_mm": 70.0
+  },
+  "37": {
+   "cam_world": [
+    -0.7253,
+    -1.2547,
+    0.4915
+   ],
+   "lid_deg": -100.0,
+   "orbit_deg": 0.0,
+   "rotor_deg": 0.0,
+   "unit_z_mm": 35.0
+  },
+  "73": {
+   "cam_world": [
+    -0.7253,
+    -1.2547,
+    0.4915
+   ],
+   "lid_deg": -100.0,
+   "orbit_deg": 0.0,
+   "rotor_deg": 0.0,
+   "unit_z_mm": 0.0
+  },
+  "121": {
+   "cam_world": [
+    -0.5524,
+    -0.9573,
+    0.3626
+   ],
+   "lid_deg": 0.0,
+   "orbit_deg": 0.0,
+   "rotor_deg": 0.0,
+   "unit_z_mm": 0.0
+  },
+  "229": {
+   "cam_world": [
+    -0.5524,
+    -0.9573,
+    0.3626
+   ],
+   "lid_deg": 0.0,
+   "orbit_deg": 0.0,
+   "rotor_deg": 360.0,
+   "unit_z_mm": 0.0
+  },
+  "241": {
+   "cam_world": [
+    -0.5524,
+    -0.9573,
+    0.3626
+   ],
+   "lid_deg": 0.0,
+   "orbit_deg": 0.0,
+   "rotor_deg": 366.92,
+   "unit_z_mm": 0.0
+  },
+  "313": {
+   "cam_world": [
+    0.5524,
+    0.9521,
+    0.3626
+   ],
+   "lid_deg": 0.0,
+   "orbit_deg": 180.0,
+   "rotor_deg": 408.46,
+   "unit_z_mm": 0.0
+  },
+  "385": {
+   "cam_world": [
+    -0.5524,
+    -0.9573,
+    0.3626
+   ],
+   "lid_deg": 0.0,
+   "orbit_deg": 360.0,
+   "rotor_deg": 450.0,
+   "unit_z_mm": 0.0
+  }
+ }
+}

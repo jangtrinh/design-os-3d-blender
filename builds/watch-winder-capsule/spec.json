@@ -1,0 +1,364 @@
+{
+ "schema_version": 1,
+ "units": "mm",
+ "project": "watch-winder-capsule \u2014 production-gate AUDIT (spec derived from provisional design-parameters.json, owner 2026-09-06 13:15)",
+ "parts": [
+  {
+   "id": "shell",
+   "object": "WW_SHELL",
+   "target_dims_mm": [
+    140.0,
+    140.0,
+    113.929
+   ],
+   "tol_mm": 0.3,
+   "material": "PETG (matte)",
+   "process": "FDM 0.4 mm / 0.2 mm layers",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [
+    {
+     "id": "service_hatch",
+     "type": "hole",
+     "axis": [
+      -0.0,
+      -0.422618,
+      -0.906308
+     ],
+     "center_mm": [
+      0.0,
+      -29.034,
+      -62.263
+     ],
+     "diameter_mm": 22.0,
+     "tol_mm": 0.3
+    },
+    {
+     "id": "usb_pocket",
+     "type": "slot",
+     "axis": [
+      0.0,
+      0.258819,
+      -0.965926
+     ],
+     "center_mm": [
+      0.0,
+      17.859,
+      -66.649
+     ],
+     "diameter_mm": 7.0,
+     "tol_mm": 0.3
+    }
+   ],
+   "min_wall_mm": 2.0
+  },
+  {
+   "id": "rear_service_cover",
+   "object": "WW_REAR_SERVICE_COVER",
+   "target_dims_mm": [
+    21.385,
+    21.385,
+    3.293
+   ],
+   "tol_mm": 0.3,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 2.0
+  },
+  {
+   "id": "rotor_cup",
+   "object": "WW_ROTOR_CUP",
+   "target_dims_mm": [
+    78.0,
+    78.0,
+    54.0
+   ],
+   "tol_mm": 0.3,
+   "material": "ABS (satin black)",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.5
+  },
+  {
+   "id": "inner_liner",
+   "object": "WW_INNER_LINER",
+   "target_dims_mm": [
+    104.0,
+    104.0,
+    16.038
+   ],
+   "tol_mm": 0.3,
+   "material": "ABS",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "front_rim",
+   "object": "WW_FRONT_RIM",
+   "target_dims_mm": [
+    112.0,
+    112.0,
+    5.7
+   ],
+   "tol_mm": 0.3,
+   "material": "aluminium (turned) / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "guilloche",
+   "object": "WW_GUILLOCHE",
+   "target_dims_mm": [
+    96.0,
+    96.0,
+    2.12
+   ],
+   "tol_mm": 0.3,
+   "material": "brass (machined) / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": []
+  },
+  {
+   "id": "knob_l",
+   "object": "WW_KNOB_L",
+   "target_dims_mm": [
+    8.0,
+    22.0,
+    22.0
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "knurl_l",
+   "object": "WW_KNURL_L",
+   "target_dims_mm": [
+    5.8,
+    22.0,
+    22.0
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": []
+  },
+  {
+   "id": "knob_boss_l",
+   "object": "WW_KNOB_BOSS_L",
+   "target_dims_mm": [
+    12.0,
+    19.0,
+    19.0
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "cushion",
+   "object": "WW_CUSHION",
+   "target_dims_mm": [
+    45.0,
+    60.0,
+    38.0
+   ],
+   "tol_mm": 0.5,
+   "material": "TPU 85A / leather-wrapped foam",
+   "process": "FDM TPU",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [
+    {
+     "id": "keyed_socket",
+     "type": "hole",
+     "axis": "z",
+     "center_mm": [
+      0.0,
+      0.0,
+      -8.5
+     ],
+     "diameter_mm": 6.4,
+     "depth_mm": 10.0,
+     "tol_mm": 0.3,
+     "keyed_flat_mm": 2.2,
+     "keyed_flat_dir": "x"
+    }
+   ],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "shaft",
+   "object": "WW_SHAFT",
+   "target_dims_mm": [
+    5.0,
+    6.0,
+    24.0
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "leg_01",
+   "object": "WW_LEG_01",
+   "target_dims_mm": [
+    12.0,
+    12.0,
+    38.702
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless (turned) / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "foot_01",
+   "object": "WW_FOOT_01",
+   "target_dims_mm": [
+    7.0,
+    7.0,
+    3.0
+   ],
+   "tol_mm": 0.3,
+   "material": "rubber / TPU",
+   "process": "FDM TPU",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "visor",
+   "object": "WW_VISOR",
+   "target_dims_mm": [
+    104.0,
+    104.0,
+    52.0
+   ],
+   "tol_mm": 0.3,
+   "material": "PMMA (formed) / clear resin proxy",
+   "process": "SLA clear",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.5
+  },
+  {
+   "id": "hinge_fixed",
+   "object": "WW_HINGE_FIXED",
+   "target_dims_mm": [
+    21.6,
+    9.0,
+    9.0
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 2,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "hinge_moving",
+   "object": "WW_HINGE_MOVING",
+   "target_dims_mm": [
+    15.0,
+    7.0,
+    5.0
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  },
+  {
+   "id": "finger_tab",
+   "object": "WW_FINGER_TAB",
+   "target_dims_mm": [
+    12.0,
+    5.0,
+    2.5
+   ],
+   "tol_mm": 0.3,
+   "material": "stainless / resin proxy",
+   "process": "SLA proxy",
+   "orientation_up": "+z",
+   "max_overhang_deg": 45.0,
+   "expected_shells": 1,
+   "features": [],
+   "min_wall_mm": 1.0
+  }
+ ],
+ "fasteners": [],
+ "load_cases": [
+  {
+   "id": "none-declared",
+   "description": "tabletop product; no load case has been specified by the owner",
+   "status": "declared only"
+  }
+ ],
+ "required_checks": [
+  "non_manifold_edges",
+  "bbox_dims_mm",
+  "scale_applied",
+  "signed_volume_positive"
+ ],
+ "physical_evidence": [
+  "no part has been printed",
+  "visor-in-rim fit trial (0.5 mm designed seal gap)",
+  "cushion-in-cup fit trial (2.7 mm designed gap)",
+  "keyed shaft/socket engagement trial (0.2 mm clearance)",
+  "metal parts (legs, knobs, rim, hinge) are modelled as machined metal; a resin proxy print proves shape only"
+ ]
+}

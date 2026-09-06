@@ -1,0 +1,977 @@
+{
+ "blend": "/Users/jang/Products/Blender/builds/watch-winder-capsule/watch-winder-capsule-plates.blend",
+ "blend_sha256": "3bde51a9e89120fbb2906651371360928cdda86b22cee87231abf3ec04f530c5",
+ "checks": {
+  "instances": 24,
+  "max_abs_min_z_mm": 0.0,
+  "min_gap_mm": 6.0,
+  "min_signed_volume_mm3": 99.10659167407705,
+  "nonmanifold_edges": 0,
+  "overlaps": [],
+  "plates": 6,
+  "stl_roundtrip": {
+   "expected_bbox_mm": [
+    5.5,
+    5.5,
+    0.0,
+    212.425,
+    117.5,
+    38.702
+   ],
+   "imported_bbox_mm": [
+    5.5,
+    5.5,
+    0.0,
+    212.425,
+    117.5,
+    38.702
+   ],
+   "plate": "sla-proxy-01"
+  }
+ },
+ "measured": {
+  "cushion": {
+   "expected_height_mm": 38.0,
+   "oriented_bbox_mm": [
+    44.949,
+    59.949,
+    37.945
+   ],
+   "source_bbox_mm": [
+    44.949,
+    59.949,
+    37.945
+   ]
+  },
+  "finger_tab": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    12.0,
+    5.0,
+    2.5
+   ],
+   "source_bbox_mm": [
+    12.0,
+    5.0,
+    2.5
+   ]
+  },
+  "foot_01": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    7.0,
+    7.0,
+    3.0
+   ],
+   "source_bbox_mm": [
+    7.0,
+    7.0,
+    3.0
+   ]
+  },
+  "foot_02": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    7.0,
+    7.0,
+    3.0
+   ],
+   "source_bbox_mm": [
+    7.0,
+    7.0,
+    3.0
+   ]
+  },
+  "foot_03": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    7.0,
+    7.0,
+    3.0
+   ],
+   "source_bbox_mm": [
+    7.0,
+    7.0,
+    3.0
+   ]
+  },
+  "front_rim": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    112.0,
+    112.0,
+    5.7
+   ],
+   "source_bbox_mm": [
+    112.0,
+    112.0,
+    5.7
+   ]
+  },
+  "guilloche": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    96.0,
+    96.0,
+    2.12
+   ],
+   "source_bbox_mm": [
+    96.0,
+    96.0,
+    2.12
+   ]
+  },
+  "hinge_fixed": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    21.6,
+    9.0,
+    9.0
+   ],
+   "source_bbox_mm": [
+    21.6,
+    9.0,
+    9.0
+   ]
+  },
+  "hinge_moving": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    15.0,
+    7.0,
+    5.0
+   ],
+   "source_bbox_mm": [
+    15.0,
+    7.0,
+    5.0
+   ]
+  },
+  "inner_liner": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    104.0,
+    104.0,
+    16.038
+   ],
+   "source_bbox_mm": [
+    104.0,
+    104.0,
+    16.038
+   ]
+  },
+  "knob_boss_l": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    19.0,
+    19.0,
+    12.0
+   ],
+   "source_bbox_mm": [
+    12.0,
+    19.0,
+    19.0
+   ]
+  },
+  "knob_boss_r": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    19.0,
+    19.0,
+    12.0
+   ],
+   "source_bbox_mm": [
+    12.0,
+    19.0,
+    19.0
+   ]
+  },
+  "knob_l": {
+   "expected_height_mm": 8.0,
+   "oriented_bbox_mm": [
+    22.0,
+    22.0,
+    8.0
+   ],
+   "source_bbox_mm": [
+    8.0,
+    22.0,
+    22.0
+   ]
+  },
+  "knob_r": {
+   "expected_height_mm": 8.0,
+   "oriented_bbox_mm": [
+    22.0,
+    22.0,
+    8.0
+   ],
+   "source_bbox_mm": [
+    8.0,
+    22.0,
+    22.0
+   ]
+  },
+  "knurl_l": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    21.93,
+    21.925,
+    5.8
+   ],
+   "source_bbox_mm": [
+    5.8,
+    21.925,
+    21.93
+   ]
+  },
+  "knurl_r": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    21.93,
+    21.925,
+    5.8
+   ],
+   "source_bbox_mm": [
+    5.8,
+    21.925,
+    21.93
+   ]
+  },
+  "leg_01": {
+   "expected_height_mm": 38.7,
+   "oriented_bbox_mm": [
+    12.0,
+    12.0,
+    38.702
+   ],
+   "source_bbox_mm": [
+    12.0,
+    12.0,
+    38.702
+   ]
+  },
+  "leg_02": {
+   "expected_height_mm": 38.7,
+   "oriented_bbox_mm": [
+    12.0,
+    12.0,
+    38.702
+   ],
+   "source_bbox_mm": [
+    12.0,
+    12.0,
+    38.702
+   ]
+  },
+  "leg_03": {
+   "expected_height_mm": 38.7,
+   "oriented_bbox_mm": [
+    12.0,
+    12.0,
+    38.702
+   ],
+   "source_bbox_mm": [
+    12.0,
+    12.0,
+    38.702
+   ]
+  },
+  "rear_service_cover": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    21.385,
+    21.385,
+    3.293
+   ],
+   "source_bbox_mm": [
+    21.385,
+    21.385,
+    3.293
+   ]
+  },
+  "rotor_cup": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    78.0,
+    78.0,
+    54.0
+   ],
+   "source_bbox_mm": [
+    78.0,
+    78.0,
+    54.0
+   ]
+  },
+  "shaft": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    5.0,
+    6.0,
+    24.0
+   ],
+   "source_bbox_mm": [
+    5.0,
+    6.0,
+    24.0
+   ]
+  },
+  "shell": {
+   "expected_height_mm": 113.9,
+   "oriented_bbox_mm": [
+    139.999,
+    139.999,
+    113.929
+   ],
+   "source_bbox_mm": [
+    139.999,
+    139.999,
+    113.929
+   ]
+  },
+  "visor": {
+   "expected_height_mm": null,
+   "oriented_bbox_mm": [
+    104.0,
+    104.0,
+    52.0
+   ],
+   "source_bbox_mm": [
+    104.0,
+    104.0,
+    52.0
+   ]
+  }
+ },
+ "overview_preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-all-plates.png",
+ "plate_gap_mm": 60.0,
+ "plates": [
+  {
+   "bucket": "fdm-petg",
+   "id": "fdm-petg-01",
+   "margin_mm": 8.0,
+   "margin_reduced": false,
+   "margin_requested_mm": 8.0,
+   "material": "PETG (matte)",
+   "origin_mm": [
+    0.0,
+    0.0
+   ],
+   "parts": [
+    {
+     "bbox_mm": [
+      139.999,
+      139.999,
+      113.929
+     ],
+     "instance": "shell",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      8.0,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "X",
+       180.0
+      ]
+     ],
+     "source_object": "WW_SHELL",
+     "supports_note": "minimal, only under the hatch/USB bosses; rim-down needs a brim (PETG flat-plate warp)"
+    },
+    {
+     "bbox_mm": [
+      21.385,
+      21.385,
+      3.293
+     ],
+     "instance": "rear_service_cover",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      153.999,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_REAR_SERVICE_COVER",
+     "supports_note": "none"
+    }
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-fdm-petg-01.png",
+   "process": "FDM 0.4 mm / 0.2 mm layers",
+   "size_mm": [
+    256.0,
+    256.0
+   ],
+   "stl": "/Users/jang/Products/Blender/builds/watch-winder-capsule/plates/fdm-petg-01.stl",
+   "stl_sha256": "f26127c91de21512b38ad9058e50a8cbc7cdfd38223f50386fa8c11cb98c52df",
+   "utilisation_pct": 30.6
+  },
+  {
+   "bucket": "fdm-abs",
+   "id": "fdm-abs-01",
+   "margin_mm": 8.0,
+   "margin_reduced": false,
+   "margin_requested_mm": 8.0,
+   "material": "ABS (satin black)",
+   "origin_mm": [
+    316.0,
+    0.0
+   ],
+   "parts": [
+    {
+     "bbox_mm": [
+      104.0,
+      104.0,
+      16.038
+     ],
+     "instance": "inner_liner",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      8.0,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_INNER_LINER",
+     "supports_note": "none"
+    },
+    {
+     "bbox_mm": [
+      78.0,
+      78.0,
+      54.0
+     ],
+     "instance": "rotor_cup",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      118.0,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_ROTOR_CUP",
+     "supports_note": "light supports on interior undercuts only; mouth up so the 78 mm cavity traps none"
+    }
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-fdm-abs-01.png",
+   "process": "FDM (enclosure)",
+   "size_mm": [
+    256.0,
+    256.0
+   ],
+   "stl": "/Users/jang/Products/Blender/builds/watch-winder-capsule/plates/fdm-abs-01.stl",
+   "stl_sha256": "31666436537d4ca94623abad318d614d505e8243bfffbe4323faed565afb850f",
+   "utilisation_pct": 25.79
+  },
+  {
+   "bucket": "fdm-tpu",
+   "id": "fdm-tpu-01",
+   "margin_mm": 8.0,
+   "margin_reduced": false,
+   "margin_requested_mm": 8.0,
+   "material": "TPU 85A",
+   "origin_mm": [
+    632.0,
+    0.0
+   ],
+   "parts": [
+    {
+     "bbox_mm": [
+      44.949,
+      59.949,
+      37.945
+     ],
+     "instance": "cushion",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      8.0,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "X",
+       180.0
+      ]
+     ],
+     "source_object": "WW_CUSHION",
+     "supports_note": "none; keyed socket opens upward so nothing is trapped in the 6.4 mm bore"
+    },
+    {
+     "bbox_mm": [
+      7.0,
+      7.0,
+      3.0
+     ],
+     "instance": "foot_01",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      73.949,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_FOOT_01",
+     "supports_note": "none"
+    },
+    {
+     "bbox_mm": [
+      7.0,
+      7.0,
+      3.0
+     ],
+     "instance": "foot_02",
+     "mirrored": false,
+     "position_mm": [
+      21.0,
+      73.949,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_FOOT_01",
+     "supports_note": "none"
+    },
+    {
+     "bbox_mm": [
+      7.0,
+      7.0,
+      3.0
+     ],
+     "instance": "foot_03",
+     "mirrored": false,
+     "position_mm": [
+      34.0,
+      73.949,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_FOOT_01",
+     "supports_note": "none"
+    }
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-fdm-tpu-01.png",
+   "process": "FDM TPU",
+   "size_mm": [
+    256.0,
+    256.0
+   ],
+   "stl": "/Users/jang/Products/Blender/builds/watch-winder-capsule/plates/fdm-tpu-01.stl",
+   "stl_sha256": "688f34e52a17c9854b09bc27562600945b87b5e92f141fad715c0565077f44e5",
+   "utilisation_pct": 4.34
+  },
+  {
+   "bucket": "sla-proxy",
+   "id": "sla-proxy-01",
+   "margin_mm": 5.5,
+   "margin_reduced": true,
+   "margin_requested_mm": 8.0,
+   "material": "grey resin (proxy for machined metal)",
+   "origin_mm": [
+    0.0,
+    316.0
+   ],
+   "parts": [
+    {
+     "bbox_mm": [
+      112.0,
+      112.0,
+      5.7
+     ],
+     "instance": "front_rim",
+     "mirrored": false,
+     "position_mm": [
+      5.5,
+      5.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 12.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_FRONT_RIM",
+     "supports_note": "minimal edge supports; tilt breaks the flat plane against FEP suction"
+    },
+    {
+     "bbox_mm": [
+      22.0,
+      22.0,
+      8.0
+     ],
+     "instance": "knob_l",
+     "mirrored": false,
+     "position_mm": [
+      123.5,
+      5.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Y",
+       90.0
+      ]
+     ],
+     "source_object": "WW_KNOB_L",
+     "supports_note": "minor supports at the base"
+    },
+    {
+     "bbox_mm": [
+      22.0,
+      22.0,
+      8.0
+     ],
+     "instance": "knob_r",
+     "mirrored": true,
+     "position_mm": [
+      151.5,
+      5.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Y",
+       -90.0
+      ]
+     ],
+     "source_object": "WW_KNOB_L",
+     "supports_note": "minor supports at the base"
+    },
+    {
+     "bbox_mm": [
+      21.925,
+      21.93,
+      5.8
+     ],
+     "instance": "knurl_l",
+     "mirrored": false,
+     "position_mm": [
+      179.5,
+      5.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Y",
+       90.0
+      ],
+      [
+       "Z",
+       90.0
+      ]
+     ],
+     "source_object": "WW_KNURL_L",
+     "supports_note": "minor; knurl pitch resolves along print Z on a vertical axis"
+    },
+    {
+     "bbox_mm": [
+      21.925,
+      21.93,
+      5.8
+     ],
+     "instance": "knurl_r",
+     "mirrored": true,
+     "position_mm": [
+      123.5,
+      33.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Y",
+       -90.0
+      ],
+      [
+       "Z",
+       90.0
+      ]
+     ],
+     "source_object": "WW_KNURL_L",
+     "supports_note": "minor; knurl pitch resolves along print Z on a vertical axis"
+    },
+    {
+     "bbox_mm": [
+      21.6,
+      9.0,
+      9.0
+     ],
+     "instance": "hinge_fixed",
+     "mirrored": false,
+     "position_mm": [
+      123.5,
+      61.43,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_HINGE_FIXED",
+     "supports_note": "minimal; flat on the 21.6 mm axis supports both clevis lugs without bridging"
+    },
+    {
+     "bbox_mm": [
+      19.0,
+      19.0,
+      12.0
+     ],
+     "instance": "knob_boss_l",
+     "mirrored": false,
+     "position_mm": [
+      123.5,
+      76.43,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Y",
+       90.0
+      ]
+     ],
+     "source_object": "WW_KNOB_BOSS_L",
+     "supports_note": "minor"
+    },
+    {
+     "bbox_mm": [
+      19.0,
+      19.0,
+      12.0
+     ],
+     "instance": "knob_boss_r",
+     "mirrored": true,
+     "position_mm": [
+      151.425,
+      33.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Y",
+       -90.0
+      ]
+     ],
+     "source_object": "WW_KNOB_BOSS_L",
+     "supports_note": "minor"
+    },
+    {
+     "bbox_mm": [
+      7.0,
+      15.0,
+      5.0
+     ],
+     "instance": "hinge_moving",
+     "mirrored": false,
+     "position_mm": [
+      123.5,
+      101.43,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [
+      [
+       "Z",
+       90.0
+      ]
+     ],
+     "source_object": "WW_HINGE_MOVING",
+     "supports_note": "minimal"
+    },
+    {
+     "bbox_mm": [
+      12.0,
+      12.0,
+      38.702
+     ],
+     "instance": "leg_01",
+     "mirrored": false,
+     "position_mm": [
+      176.425,
+      33.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 7.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_LEG_01",
+     "supports_note": "base supports"
+    },
+    {
+     "bbox_mm": [
+      12.0,
+      12.0,
+      38.702
+     ],
+     "instance": "leg_02",
+     "mirrored": false,
+     "position_mm": [
+      194.425,
+      33.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 7.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_LEG_01",
+     "supports_note": "base supports"
+    },
+    {
+     "bbox_mm": [
+      12.0,
+      12.0,
+      38.702
+     ],
+     "instance": "leg_03",
+     "mirrored": false,
+     "position_mm": [
+      151.425,
+      58.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 7.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_LEG_01",
+     "supports_note": "base supports"
+    },
+    {
+     "bbox_mm": [
+      12.0,
+      5.0,
+      2.5
+     ],
+     "instance": "finger_tab",
+     "mirrored": false,
+     "position_mm": [
+      151.425,
+      76.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_FINGER_TAB",
+     "supports_note": "none"
+    },
+    {
+     "bbox_mm": [
+      5.0,
+      6.0,
+      24.0
+     ],
+     "instance": "shaft",
+     "mirrored": false,
+     "position_mm": [
+      207.425,
+      5.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 0.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_SHAFT",
+     "supports_note": "small tip supports at one end; vertical keeps the 1 mm D-flat faithful"
+    }
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-sla-proxy-01.png",
+   "process": "SLA proxy",
+   "size_mm": [
+    218.0,
+    123.0
+   ],
+   "stl": "/Users/jang/Products/Blender/builds/watch-winder-capsule/plates/sla-proxy-01.stl",
+   "stl_sha256": "1b5aa39d93a256c89c44110a697c50911fbd08783b430869718a0fb6a2c44c4d",
+   "utilisation_pct": 59.73
+  },
+  {
+   "bucket": "sla-proxy",
+   "id": "sla-proxy-02",
+   "margin_mm": 5.5,
+   "margin_reduced": true,
+   "margin_requested_mm": 8.0,
+   "material": "grey resin (proxy for machined metal)",
+   "origin_mm": [
+    278.0,
+    316.0
+   ],
+   "parts": [
+    {
+     "bbox_mm": [
+      96.0,
+      96.0,
+      2.12
+     ],
+     "instance": "guilloche",
+     "mirrored": false,
+     "position_mm": [
+      5.5,
+      5.5,
+      0.0
+     ],
+     "recommended_tilt_deg": 17.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_GUILLOCHE",
+     "supports_note": "minimal, edge-only; the 0.12 mm relief faces away from the supports"
+    }
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-sla-proxy-02.png",
+   "process": "SLA proxy",
+   "size_mm": [
+    218.0,
+    123.0
+   ],
+   "stl": "/Users/jang/Products/Blender/builds/watch-winder-capsule/plates/sla-proxy-02.stl",
+   "stl_sha256": "54dc3d53dacc40af03732fb639002f13e78b75189ad0d3b6a2b3c0095989be04",
+   "utilisation_pct": 34.37
+  },
+  {
+   "bucket": "sla-clear",
+   "id": "sla-clear-01",
+   "margin_mm": 8.0,
+   "margin_reduced": false,
+   "margin_requested_mm": 8.0,
+   "material": "clear resin (proxy for formed PMMA)",
+   "origin_mm": [
+    556.0,
+    316.0
+   ],
+   "parts": [
+    {
+     "bbox_mm": [
+      104.0,
+      104.0,
+      52.0
+     ],
+     "instance": "visor",
+     "mirrored": false,
+     "position_mm": [
+      8.0,
+      8.0,
+      0.0
+     ],
+     "recommended_tilt_deg": 25.0,
+     "rotation_applied_deg": [],
+     "source_object": "WW_VISOR",
+     "supports_note": "moderate edge supports away from the optical surface; drain holes at the tilted rim low point"
+    }
+   ],
+   "preview": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/preview-sla-clear-01.png",
+   "process": "SLA clear",
+   "size_mm": [
+    218.0,
+    123.0
+   ],
+   "stl": "/Users/jang/Products/Blender/builds/watch-winder-capsule/plates/sla-clear-01.stl",
+   "stl_sha256": "d10495e0d9d9659d4c48defd2f3f7e89f0c43de979f1673a5372c4e79c78759e",
+   "utilisation_pct": 40.34
+  }
+ ],
+ "source_blend_sha256": "c8d660c8affe83693a3ba9d133d307027e0ff221d5f278f23f95ea4f413b0830",
+ "spacing_mm": 6.0,
+ "stl_frame": "plate-local mm (origin at the plate corner); origin_mm is the plate's place in the WW_plates row",
+ "units": "mm"
+}

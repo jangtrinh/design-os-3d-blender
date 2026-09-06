@@ -1,0 +1,63 @@
+{
+ "device": {
+  "chosen": "GPU",
+  "devices": [
+   [
+    "Apple M4 Pro",
+    "CPU",
+    false
+   ],
+   [
+    "Apple M4 Pro (GPU - 16 cores)",
+    "METAL",
+    true
+   ]
+  ],
+  "timings_s": {
+   "CPU": 0.9,
+   "GPU": 0.64
+  }
+ },
+ "hero": {
+  "distance_m": 0.8755,
+  "fill_u": 0.562,
+  "fill_v": 0.88,
+  "focus_dial_m": 0.8592,
+  "knob_dial_depth_delta_mm": -19.6,
+  "margins": [
+   0.219,
+   0.219,
+   0.06,
+   0.06
+  ],
+  "nearest_knob_m": 0.8788
+ },
+ "open": {
+  "distance_m": 1.2188,
+  "fill_u": 0.52,
+  "fill_v": 0.88,
+  "focus_dial_m": 1.2403,
+  "knob_dial_depth_delta_mm": 34.2,
+  "margins": [
+   0.24,
+   0.24,
+   0.06,
+   0.06
+  ],
+  "nearest_knob_m": 1.2061
+ },
+ "rear": {
+  "distance_m": 0.846,
+  "fill_u": 0.456,
+  "fill_v": 0.88,
+  "focus_dial_m": 0.8592,
+  "knob_dial_depth_delta_mm": 15.0,
+  "margins": [
+   0.272,
+   0.272,
+   0.06,
+   0.06
+  ],
+  "nearest_knob_m": 0.8442
+ }
+}

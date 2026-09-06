@@ -1,0 +1,1067 @@
+{
+ "blend_sha256": "6494186ae2395583f8193f0fba7794ea32b313891f11d5fbf18fb9989d17d2b5",
+ "blender": "5.2.0 LTS",
+ "denoiser": "OPENIMAGEDENOISE",
+ "device": "GPU",
+ "lights": {
+  "WW_LIGHT_FILL": [
+   [
+    [
+     0.5999999046325684,
+     -0.06379619240760803,
+     0.7974522113800049,
+     0.800000011920929
+    ],
+    [
+     0.8000000715255737,
+     0.04784713685512543,
+     -0.5980890393257141,
+     -0.6000000238418579
+    ],
+    [
+     -3.0085764990417374e-09,
+     0.9968152046203613,
+     0.07974523305892944,
+     0.1860000044107437
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   20.0
+  ],
+  "WW_LIGHT_KEY": [
+   [
+    [
+     0.6246950626373291,
+     0.6362688541412354,
+     -0.45267874002456665,
+     -0.699999988079071
+    ],
+    [
+     -0.7808688282966614,
+     0.5090150833129883,
+     -0.36214300990104675,
+     -0.5600000023841858
+    ],
+    [
+     -3.337826726124149e-08,
+     0.5797116756439209,
+     0.814821720123291,
+     1.3459999561309814
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   50.0
+  ],
+  "WW_LIGHT_STRIP": [
+   [
+    [
+     -0.8574933409690857,
+     -0.25533992052078247,
+     0.4466626048088074,
+     0.44999998807907104
+    ],
+    [
+     0.5144959688186646,
+     -0.4255666434764862,
+     0.7444376349449158,
+     0.75
+    ],
+    [
+     6.068482605314784e-08,
+     0.8681562542915344,
+     0.4962916076183319,
+     0.5860000252723694
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   45.0
+  ]
+ },
+ "parameters_sha256": "44625bd5128228bb39205896265933fc655ab54be2131456134ea534a1d6c594",
+ "renders": {
+  "front-graphite.png": {
+   "camera": "WW_CAM_FRONT",
+   "camera_matrix": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     -5.2258504190660915e-09
+    ],
+    [
+     0.0,
+     0.17364808917045593,
+     -0.9848076701164246,
+     -0.8178678154945374
+    ],
+    [
+     0.0,
+     0.9848076701164246,
+     0.17364808917045593,
+     0.23602961003780365
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/front-graphite.png",
+   "seconds": 228.92,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "3b738891f08706b01ffe88238f174ba769359c15e9a77ead0eccecce27e43e1f",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5889,
+    "stdev": 0.2089
+   }
+  },
+  "hero-graphite-f8-inspection.png": {
+   "camera": "WW_CAM_HERO",
+   "camera_matrix": [
+    [
+     0.8660253286361694,
+     0.10395567864179611,
+     -0.48907387256622314,
+     -0.4289499819278717
+    ],
+    [
+     -0.5,
+     0.18005643784999847,
+     -0.8471006751060486,
+     -0.7445695400238037
+    ],
+    [
+     -2.8466656587511352e-08,
+     0.9781476259231567,
+     0.20791128277778625,
+     0.2699356973171234
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/hero-graphite-f8-inspection.png",
+   "seconds": 23.41,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 8.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     1536,
+     1024
+    ],
+    "samples": 512,
+    "view_transform": "AgX"
+   },
+   "sha256": "872c27ebeb044effdbe9a80b7f6900304bcb889a175369e66a0d7f3321b312fe",
+   "size": [
+    1536,
+    1024
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6025,
+    "stdev": 0.2495
+   }
+  },
+  "hero-graphite.png": {
+   "camera": "WW_CAM_HERO",
+   "camera_matrix": [
+    [
+     0.8660253286361694,
+     0.10395567864179611,
+     -0.48907387256622314,
+     -0.4289499819278717
+    ],
+    [
+     -0.5,
+     0.18005643784999847,
+     -0.8471006751060486,
+     -0.7445695400238037
+    ],
+    [
+     -2.8466656587511352e-08,
+     0.9781476259231567,
+     0.20791128277778625,
+     0.2699356973171234
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/hero-graphite.png",
+   "seconds": 246.86,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "4993df3552bfa0560def2cb4bc71fad1431e2eaa675afe1dabc04f22dc3c004f",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6066,
+    "stdev": 0.2472
+   }
+  },
+  "hero-right-graphite.png": {
+   "camera": "WW_CAM_HERO_RIGHT",
+   "camera_matrix": [
+    [
+     0.8660253286361694,
+     -0.10395567864179611,
+     0.48907387256622314,
+     0.4289500117301941
+    ],
+    [
+     0.5,
+     0.18005643784999847,
+     -0.8471006751060486,
+     -0.7445695400238037
+    ],
+    [
+     2.8466656587511352e-08,
+     0.9781476259231567,
+     0.20791128277778625,
+     0.2699356973171234
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/hero-right-graphite.png",
+   "seconds": 199.94,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "5606314b9262348d4f10171f6e5d79c5fe7948c17d36799011808aec1041e10f",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5699,
+    "stdev": 0.1881
+   }
+  },
+  "lid-half-graphite.png": {
+   "camera": "WW_CAM_LID_HALF",
+   "camera_matrix": [
+    [
+     0.8660253882408142,
+     0.10395567864179611,
+     -0.48907390236854553,
+     -0.48163026571273804
+    ],
+    [
+     -0.5000000596046448,
+     0.18005631864070892,
+     -0.8471007347106934,
+     -0.8347162008285522
+    ],
+    [
+     -8.702266285354199e-08,
+     0.9781476855278015,
+     0.2079111933708191,
+     0.3062629699707031
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/lid-half-graphite.png",
+   "seconds": 204.48,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "68b2a6efbf7b53049884aca4b7491a3449269a73c89013131fcbd92d1a4fc559",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6117,
+    "stdev": 0.2517
+   }
+  },
+  "macro-controls-graphite.png": {
+   "camera": "WW_CAM_MACRO_CONTROLS",
+   "camera_matrix": [
+    [
+     -0.9902685284614563,
+     -0.09312507510185242,
+     0.10342582315206528,
+     0.013905429281294346
+    ],
+    [
+     0.1391732394695282,
+     -0.6626189351081848,
+     0.7359126210212708,
+     0.1357591450214386
+    ],
+    [
+     -1.015513895197273e-09,
+     0.743145227432251,
+     0.6691305637359619,
+     0.2362487018108368
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/macro-controls-graphite.png",
+   "seconds": 83.71,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "d2adda9f6fa8a67d9b9944442ffcb0e8dfdc5fdad1f5361369493bc7e0e79cfd",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.4116,
+    "stdev": 0.1269
+   }
+  },
+  "macro-dial-graphite.png": {
+   "camera": "WW_CAM_MACRO_DIAL",
+   "camera_matrix": [
+    [
+     0.9659258127212524,
+     0.15934492647647858,
+     -0.20395232737064362,
+     -0.0854201465845108
+    ],
+    [
+     -0.2588191628456116,
+     0.594683051109314,
+     -0.7611600756645203,
+     -0.3299543857574463
+    ],
+    [
+     -6.3956018259148095e-09,
+     0.7880109548568726,
+     0.6156611442565918,
+     0.3565727472305298
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/macro-dial-graphite.png",
+   "seconds": 247.97,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "1e44e2162a71dc813197c28a3bac0403f6582ab17e560cca932383e30ef530e2",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5253,
+    "stdev": 0.296
+   }
+  },
+  "macro-guilloche-graphite.png": {
+   "camera": "WW_CAM_MACRO_GUILLOCHE",
+   "camera_matrix": [
+    [
+     0.9781476259231567,
+     0.15450845658779144,
+     -0.13912008702754974,
+     -0.031949419528245926
+    ],
+    [
+     -0.2079116702079773,
+     0.7269052863121033,
+     -0.6545085310935974,
+     -0.20215071737766266
+    ],
+    [
+     2.9473898877085958e-08,
+     0.6691306829452515,
+     0.7431447505950928,
+     0.25232869386672974
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/macro-guilloche-graphite.png",
+   "seconds": 224.05,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "8b700365bd161c995d16e0f98e6087a321a483b9f3acfe244cb73543c32a9a78",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.4299,
+    "stdev": 0.2844
+   }
+  },
+  "macro-hinge-graphite.png": {
+   "camera": "WW_CAM_MACRO_HINGE",
+   "camera_matrix": [
+    [
+     0.9063076972961426,
+     0.26018989086151123,
+     -0.33302778005599976,
+     -0.031479913741350174
+    ],
+    [
+     -0.4226183295249939,
+     0.5579786896705627,
+     -0.7141802906990051,
+     -0.05633833259344101
+    ],
+    [
+     -7.824502290532109e-08,
+     0.7880107760429382,
+     0.6156614422798157,
+     0.2146919071674347
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/macro-hinge-graphite.png",
+   "seconds": 516.22,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "d453606222bb16c2996554a5eadd1b30bb8c690408fab0b1cac23104bf9b1cc7",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.691,
+    "stdev": 0.2151
+   }
+  },
+  "macro-knob-graphite.png": {
+   "camera": "WW_CAM_MACRO_KNOB",
+   "camera_matrix": [
+    [
+     0.6156614422798157,
+     0.13683651387691498,
+     -0.7760390043258667,
+     -0.1960318237543106
+    ],
+    [
+     -0.7880107760429382,
+     0.10690849274396896,
+     -0.606308102607727,
+     -0.09757670015096664
+    ],
+    [
+     8.57210125104757e-08,
+     0.9848076701164246,
+     0.17364808917045593,
+     0.11314425617456436
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/macro-knob-graphite.png",
+   "seconds": 111.74,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "3fca783f71c5fb713c2fab36a665f7f978080cc712235b590cd2e93322402200",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.3677,
+    "stdev": 0.296
+   }
+  },
+  "macro-usb-graphite.png": {
+   "camera": "WW_CAM_MACRO_USB",
+   "camera_matrix": [
+    [
+     -1.0000004768371582,
+     -1.6512936440449266e-07,
+     1.3447177593661763e-07,
+     8.83256578987357e-09
+    ],
+    [
+     1.5099587358236022e-07,
+     -0.10452844202518463,
+     0.9945221543312073,
+     0.130356565117836
+    ],
+    [
+     -1.5016867394024302e-07,
+     0.9945221543312073,
+     0.10452844202518463,
+     0.05681709200143814
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/macro-usb-graphite.png",
+   "seconds": 59.46,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 11.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "729d8bede7a6d2f81ff7f6628b3d669505d5569803e02ce1b6db0efb0679a752",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.181,
+    "stdev": 0.0593
+   }
+  },
+  "open-graphite.png": {
+   "camera": "WW_CAM_OPEN",
+   "camera_matrix": [
+    [
+     0.9063078165054321,
+     0.11648949980735779,
+     -0.40624669194221497,
+     -0.45340535044670105
+    ],
+    [
+     -0.42261824011802673,
+     0.24981248378753662,
+     -0.8711988925933838,
+     -1.053257942199707
+    ],
+    [
+     -3.4381429259155993e-08,
+     0.961261510848999,
+     0.2756376266479492,
+     0.4599832594394684
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/open-graphite.png",
+   "seconds": 202.61,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "2b88f90dfa596f58f726d25ec9760927918d671428a24efcf72b676cccce9fc0",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6463,
+    "stdev": 0.2312
+   }
+  },
+  "open-seated-graphite.png": {
+   "camera": "WW_CAM_OPEN_SEATED",
+   "camera_matrix": [
+    [
+     0.9063078165054321,
+     0.15831562876701355,
+     -0.391844779253006,
+     -0.46333181858062744
+    ],
+    [
+     -0.42261824011802673,
+     0.3395087718963623,
+     -0.8403139710426331,
+     -0.9947381615638733
+    ],
+    [
+     -8.607317170117312e-08,
+     0.9271838665008545,
+     0.37460651993751526,
+     0.5753123164176941
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/open-seated-graphite.png",
+   "seconds": 204.52,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "3c9241e902978efcf30b81d172fb8a0216ae9447b7cd6b68067b7965bab8f65f",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.7303,
+    "stdev": 0.1781
+   }
+  },
+  "profile-graphite.png": {
+   "camera": "WW_CAM_PROFILE",
+   "camera_matrix": [
+    [
+     1.9470718370939721e-07,
+     -0.13917307555675507,
+     0.9902679324150085,
+     0.9018184542655945
+    ],
+    [
+     1.0,
+     1.0628608215768054e-08,
+     -1.951269013034107e-07,
+     -0.0019085691310465336
+    ],
+    [
+     1.663124749029521e-08,
+     0.9902678728103638,
+     0.13917309045791626,
+     0.2111968994140625
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/profile-graphite.png",
+   "seconds": 122.02,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "8aa82318dd8a763cd5e2c99d566307f567934a53c94365522db41f7ec1e13f97",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5457,
+    "stdev": 0.1764
+   }
+  },
+  "rear-graphite.png": {
+   "camera": "WW_CAM_REAR",
+   "camera_matrix": [
+    [
+     -1.000000238418579,
+     -1.690856663572049e-07,
+     1.2871629451183253e-07,
+     9.608424988982733e-08
+    ],
+    [
+     1.509958451606508e-07,
+     -0.1391730010509491,
+     0.9902681112289429,
+     0.8351850509643555
+    ],
+    [
+     -1.495263433071159e-07,
+     0.9902682304382324,
+     0.1391729861497879,
+     0.2093057632446289
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/rear-graphite.png",
+   "seconds": 111.23,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 2.799999952316284,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "1d992766e92521f8a10d19a2c64319961774db4fb4af2a9f729031e0b8dcb37e",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5652,
+    "stdev": 0.1661
+   }
+  },
+  "rear-quarter-graphite.png": {
+   "camera": "WW_CAM_REAR_QUARTER",
+   "camera_matrix": [
+    [
+     -0.8660258054733276,
+     -0.10395584255456924,
+     0.48907390236854553,
+     0.41847485303878784
+    ],
+    [
+     0.5000002980232239,
+     -0.18005682528018951,
+     0.8471007943153381,
+     0.7435443997383118
+    ],
+    [
+     2.0789585164493474e-08,
+     0.9781478643417358,
+     0.2079116851091385,
+     0.27298733592033386
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/rear-quarter-graphite.png",
+   "seconds": 111.78,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "9027b44f0cde26c3cd73b4b9c0e25320c2bef073f9370b7af3acfe3876724e39",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5934,
+    "stdev": 0.1614
+   }
+  },
+  "top-graphite.png": {
+   "camera": "WW_CAM_TOP",
+   "camera_matrix": [
+    [
+     0.9396925568580627,
+     0.29619815945625305,
+     -0.17101001739501953,
+     -0.12956273555755615
+    ],
+    [
+     -0.3420201241970062,
+     0.8137975335121155,
+     -0.46984630823135376,
+     -0.3583751916885376
+    ],
+    [
+     -7.143096070194588e-08,
+     0.4999999403953552,
+     0.8660253286361694,
+     0.7365337610244751
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/final/top-graphite.png",
+   "seconds": 271.91,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "GPU",
+    "fstop": 4.0,
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     3072,
+     2048
+    ],
+    "samples": 2048,
+    "view_transform": "AgX"
+   },
+   "sha256": "d1d2ab01eba20ad26e94c0ba279ad890c866b1b6b51605b921cfc5281a8b7e5b",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6605,
+    "stdev": 0.1806
+   }
+  }
+ }
+}

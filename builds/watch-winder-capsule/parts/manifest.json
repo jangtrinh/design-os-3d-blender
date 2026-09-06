@@ -1,0 +1,246 @@
+{
+  "units": "mm",
+  "generated_by": "scripts/production-gate.py",
+  "parts": [
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/shell.stl",
+      "triangles": 12370,
+      "sha256": "fbe292b58995bea5703aad1400d80f78560a6dea77afdd390c35238625bcec2a",
+      "id": "shell",
+      "object": "WW_SHELL",
+      "dims_mm": [
+        139.9991,
+        139.9991,
+        113.9289
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/rear_service_cover.stl",
+      "triangles": 3840,
+      "sha256": "89f095f278f120b0687394dc4c96fd15b9ab6192b87fe48cfe321aa435f11979",
+      "id": "rear_service_cover",
+      "object": "WW_REAR_SERVICE_COVER",
+      "dims_mm": [
+        21.3847,
+        21.3847,
+        3.2926
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/rotor_cup.stl",
+      "triangles": 768,
+      "sha256": "b1b44ecb608cef6fd41e583782c47b4ca5ac07491ed37b6b7f1e0d41300c3434",
+      "id": "rotor_cup",
+      "object": "WW_ROTOR_CUP",
+      "dims_mm": [
+        78.0,
+        78.0,
+        54.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/inner_liner.stl",
+      "triangles": 1344,
+      "sha256": "8d014b4b05a27a38a57178db5149c03340ea19562072f9d450f6c8ef9eba9111",
+      "id": "inner_liner",
+      "object": "WW_INNER_LINER",
+      "dims_mm": [
+        104.0,
+        104.0,
+        16.0378
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/front_rim.stl",
+      "triangles": 960,
+      "sha256": "77d683caf37dc9d0c005bba361437e7543e08b6c197ae1e08374d752a1759a35",
+      "id": "front_rim",
+      "object": "WW_FRONT_RIM",
+      "dims_mm": [
+        112.0,
+        112.0,
+        5.7
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/guilloche.stl",
+      "triangles": 307200,
+      "sha256": "a9892b91f541563f9158ef654078b29037c05d465ea56e75848e14ad09b313da",
+      "id": "guilloche",
+      "object": "WW_GUILLOCHE",
+      "dims_mm": [
+        96.0,
+        96.0,
+        2.12
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/knob_l.stl",
+      "triangles": 640,
+      "sha256": "a3a9c5f52f1cf63adb0fc6c645c9afb60b1711eed1b1f46de71a687a61d3dc5a",
+      "id": "knob_l",
+      "object": "WW_KNOB_L",
+      "dims_mm": [
+        8.0,
+        22.0,
+        22.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/knurl_l.stl",
+      "triangles": 8832,
+      "sha256": "1e49bccde1415892dd10e596d55ec908ff3f76ff0dab7b169339f3cbc7982c2a",
+      "id": "knurl_l",
+      "object": "WW_KNURL_L",
+      "dims_mm": [
+        5.8,
+        21.9255,
+        21.9299
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/knob_boss_l.stl",
+      "triangles": 384,
+      "sha256": "55522246c773fddcb2fbd755eeb42fea4d9346821b179b26147dd0f51611c731",
+      "id": "knob_boss_l",
+      "object": "WW_KNOB_BOSS_L",
+      "dims_mm": [
+        12.0,
+        19.0,
+        19.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/cushion.stl",
+      "triangles": 9544,
+      "sha256": "ace2b9331b6eb40f91cd7d3ccf3b49f431f380afaeccd1956517c54f14629b5a",
+      "id": "cushion",
+      "object": "WW_CUSHION",
+      "dims_mm": [
+        44.9487,
+        59.9487,
+        37.9448
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/shaft.stl",
+      "triangles": 128,
+      "sha256": "d55502036fccf9c09d8d9468507294f97c88097d02738b50f4847b7d15c9c1e3",
+      "id": "shaft",
+      "object": "WW_SHAFT",
+      "dims_mm": [
+        5.0,
+        5.9996,
+        24.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/leg_01.stl",
+      "triangles": 128,
+      "sha256": "4efbf9559fa7522a9c226c69a19171da3f15c6f2695cc290557f3e9e7013b14e",
+      "id": "leg_01",
+      "object": "WW_LEG_01",
+      "dims_mm": [
+        12.0,
+        12.0,
+        38.7017
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/foot_01.stl",
+      "triangles": 128,
+      "sha256": "1863e09a112541f59bd9a66be233777438c559ed5375ae35afc141cba1b3db4a",
+      "id": "foot_01",
+      "object": "WW_FOOT_01",
+      "dims_mm": [
+        7.0,
+        7.0,
+        3.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/visor.stl",
+      "triangles": 9216,
+      "sha256": "fe786ca62e2fdebcb0a608230555a54d95128f229d63506a3dc7404126d68ec5",
+      "id": "visor",
+      "object": "WW_VISOR",
+      "dims_mm": [
+        104.0,
+        104.0,
+        52.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/hinge_fixed.stl",
+      "triangles": 120,
+      "sha256": "3d83d6e99600b9c30eb9fdbb5778115580fa958a63c6bd7683b4b17b9decf84d",
+      "id": "hinge_fixed",
+      "object": "WW_HINGE_FIXED",
+      "dims_mm": [
+        21.6,
+        9.0,
+        9.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/hinge_moving.stl",
+      "triangles": 196,
+      "sha256": "3dc235d9a42bf285f3ca778bfd05116d9306dfdcfe639d6eba7655cf57ac8871",
+      "id": "hinge_moving",
+      "object": "WW_HINGE_MOVING",
+      "dims_mm": [
+        15.0,
+        7.0,
+        5.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/Users/jang/Products/Blender/builds/watch-winder-capsule/parts/finger_tab.stl",
+      "triangles": 132,
+      "sha256": "935246d06d51673424254bd23618634a1b4869df0cefac10ff5958e08b20eec5",
+      "id": "finger_tab",
+      "object": "WW_FINGER_TAB",
+      "dims_mm": [
+        12.0,
+        5.0,
+        2.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    }
+  ],
+  "status": "NOT_MANUFACTURING_APPROVED",
+  "prohibited_claim": "A watertight STL that matches its declared dimensions does not establish load capability, assembly fit, print success or heat endurance."
+}

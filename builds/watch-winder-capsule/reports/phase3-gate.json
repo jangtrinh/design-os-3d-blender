@@ -1,0 +1,173 @@
+{
+ "blend_sha256": "6494186ae2395583f8193f0fba7794ea32b313891f11d5fbf18fb9989d17d2b5",
+ "denoiser": "OPENIMAGEDENOISE",
+ "denoiser_items": [
+  "OPENIMAGEDENOISE"
+ ],
+ "devices": {
+  "compute_device_type": "METAL",
+  "devices": [
+   [
+    "Apple M4 Pro",
+    "CPU",
+    false
+   ],
+   [
+    "Apple M4 Pro (GPU - 16 cores)",
+    "METAL",
+    true
+   ]
+  ]
+ },
+ "parameters_sha256": "44625bd5128228bb39205896265933fc655ab54be2131456134ea534a1d6c594",
+ "renders": {
+  "guilloche-denoised": {
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-crop-guilloche-denoised.png",
+   "seconds": 7.01,
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6044,
+    "stdev": 0.3058
+   }
+  },
+  "guilloche-raw": {
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-crop-guilloche-raw.png",
+   "seconds": 6.55,
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5989,
+    "stdev": 0.3082
+   }
+  },
+  "knurl-denoised": {
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-crop-knurl-denoised.png",
+   "seconds": 4.26,
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5512,
+    "stdev": 0.1924
+   }
+  },
+  "knurl-raw": {
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-crop-knurl-raw.png",
+   "seconds": 3.9,
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5497,
+    "stdev": 0.1925
+   }
+  },
+  "leather-watch-denoised": {
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-crop-leather-watch-denoised.png",
+   "seconds": 10.39,
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5389,
+    "stdev": 0.3274
+   }
+  },
+  "leather-watch-raw": {
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-crop-leather-watch-raw.png",
+   "seconds": 10.04,
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5326,
+    "stdev": 0.3299
+   }
+  },
+  "preview-graphite": {
+   "camera_matrix": [
+    [
+     0.8480480909347534,
+     0.12819905579090118,
+     -0.514178454875946,
+     -0.38563379645347595
+    ],
+    [
+     -0.5299193263053894,
+     0.20516113936901093,
+     -0.8228574991226196,
+     -0.6171430945396423
+    ],
+    [
+     -1.19282802302223e-07,
+     0.970295786857605,
+     0.24192166328430176,
+     0.24744142591953278
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-preview-graphite.png",
+   "seconds": 3.28,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "CPU",
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     768,
+     512
+    ],
+    "samples": 64,
+    "view_transform": "AgX"
+   }
+  },
+  "preview-walnut": {
+   "camera_matrix": [
+    [
+     0.8480480909347534,
+     0.12819905579090118,
+     -0.514178454875946,
+     -0.38563379645347595
+    ],
+    [
+     -0.5299193263053894,
+     0.20516113936901093,
+     -0.8228574991226196,
+     -0.6171430945396423
+    ],
+    [
+     -1.19282802302223e-07,
+     0.970295786857605,
+     0.24192166328430176,
+     0.24744142591953278
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase3-preview-walnut.png",
+   "seconds": 3.43,
+   "settings": {
+    "adaptive": true,
+    "adaptive_threshold": 0.01,
+    "denoise": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "device": "CPU",
+    "look": "AgX - Medium High Contrast",
+    "res": [
+     768,
+     512
+    ],
+    "samples": 64,
+    "view_transform": "AgX"
+   }
+  }
+ }
+}

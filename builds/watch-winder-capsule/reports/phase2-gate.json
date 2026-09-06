@@ -1,0 +1,367 @@
+{
+ "axis_elevation_deg": 50.0,
+ "blend_sha256": "6494186ae2395583f8193f0fba7794ea32b313891f11d5fbf18fb9989d17d2b5",
+ "parameters_sha256": "44625bd5128228bb39205896265933fc655ab54be2131456134ea534a1d6c594",
+ "poses": {
+  "lid000": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-lid000.png",
+  "lid050": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-lid050.png",
+  "lid100": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-lid100.png",
+  "lifted": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-cushion-lifted.png",
+  "rotor000": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-rotor000.png",
+  "rotor090": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-rotor090.png",
+  "rotor180": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-rotor180.png",
+  "rotor270": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-pose-rotor270.png"
+ },
+ "strip_reflection": {
+  "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/phase2-strip-reflection.png",
+  "stats": {
+   "black": false,
+   "blown": false,
+   "mean": 0.23736863439059153,
+   "stdev": 0.07410302387873008
+  }
+ },
+ "topology": {
+  "WW_CONTROL_01": {
+   "doubles": 0,
+   "faces": 36,
+   "flipped": 0,
+   "ngons": 2,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 299.6,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_CONTROL_02": {
+   "doubles": 0,
+   "faces": 36,
+   "flipped": 0,
+   "ngons": 2,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 299.6,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_CONTROL_BEZEL_01": {
+   "doubles": 0,
+   "faces": 72,
+   "flipped": 0,
+   "ngons": 4,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 55.5,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_CONTROL_BEZEL_02": {
+   "doubles": 0,
+   "faces": 72,
+   "flipped": 0,
+   "ngons": 4,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 55.5,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_CUSHION": {
+   "doubles": 0,
+   "faces": 65,
+   "flipped": 0,
+   "ngons": 5,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 100136.6,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_FINGER_TAB": {
+   "doubles": 0,
+   "faces": 36,
+   "flipped": 0,
+   "ngons": 2,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 136.3,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_FOOT_01": {
+   "doubles": 0,
+   "faces": 96,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 99.1,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_FOOT_02": {
+   "doubles": 0,
+   "faces": 96,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 99.1,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_FOOT_03": {
+   "doubles": 0,
+   "faces": 96,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 99.1,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_FRONT_RIM": {
+   "doubles": 0,
+   "faces": 480,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 4947.2,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_GUILLOCHE": {
+   "doubles": 0,
+   "faces": 384,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 5870.6,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_HINGE_FIXED": {
+   "doubles": 0,
+   "faces": 36,
+   "flipped": 0,
+   "ngons": 4,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 468.0,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_HINGE_MOVING": {
+   "doubles": 0,
+   "faces": 114,
+   "flipped": 0,
+   "ngons": 2,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 469.6,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_INNER_LINER": {
+   "doubles": 0,
+   "faces": 672,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 6339.5,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_KNOB_BOSS_L": {
+   "doubles": 0,
+   "faces": 240,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 2800.6,
+   "tris": 96,
+   "zero_area": 0
+  },
+  "WW_KNOB_BOSS_R": {
+   "doubles": 0,
+   "faces": 240,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 2800.6,
+   "tris": 96,
+   "zero_area": 0
+  },
+  "WW_KNOB_L": {
+   "doubles": 0,
+   "faces": 256,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 3030.7,
+   "tris": 128,
+   "zero_area": 0
+  },
+  "WW_KNOB_R": {
+   "doubles": 0,
+   "faces": 256,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 3030.7,
+   "tris": 128,
+   "zero_area": 0
+  },
+  "WW_LED_DIFFUSER": {
+   "doubles": 0,
+   "faces": 384,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 941.8,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_LED_EMITTER": {
+   "doubles": 0,
+   "faces": 384,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 150.1,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_LEG_01": {
+   "doubles": 0,
+   "faces": 96,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 2788.6,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_LEG_02": {
+   "doubles": 0,
+   "faces": 96,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 2788.6,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_LEG_03": {
+   "doubles": 0,
+   "faces": 96,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 2420.6,
+   "tris": 64,
+   "zero_area": 0
+  },
+  "WW_REAR_SERVICE_COVER": {
+   "doubles": 0,
+   "faces": 2016,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 870.7,
+   "tris": 192,
+   "zero_area": 0
+  },
+  "WW_ROTOR_CUP": {
+   "doubles": 0,
+   "faces": 480,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 34363.3,
+   "tris": 192,
+   "zero_area": 0
+  },
+  "WW_SHAFT": {
+   "doubles": 0,
+   "faces": 35,
+   "flipped": 0,
+   "ngons": 2,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 602.5,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_SHELL": {
+   "doubles": 4,
+   "faces": 6100,
+   "flipped": 0,
+   "ngons": 148,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 120465.0,
+   "tris": 192,
+   "zero_area": 0
+  },
+  "WW_USB_RECEPTACLE": {
+   "doubles": 0,
+   "faces": 20,
+   "flipped": 0,
+   "ngons": 2,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 143.1,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_USB_RECESS": {
+   "doubles": 0,
+   "faces": 44,
+   "flipped": 0,
+   "ngons": 4,
+   "nonmanifold": 0,
+   "poles5plus": 0,
+   "signed_volume_mm3": 401.7,
+   "tris": 0,
+   "zero_area": 0
+  },
+  "WW_VISOR": {
+   "doubles": 0,
+   "faces": 4704,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 32631.0,
+   "tris": 192,
+   "zero_area": 0
+  },
+  "WW_WATCH": {
+   "doubles": 0,
+   "faces": 192,
+   "flipped": 0,
+   "ngons": 0,
+   "nonmanifold": 0,
+   "poles5plus": 2,
+   "signed_volume_mm3": 12546.2,
+   "tris": 128,
+   "zero_area": 0
+  }
+ }
+}

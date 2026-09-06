@@ -1,0 +1,618 @@
+{
+ "blender": "5.2.0 LTS",
+ "inventory": {
+  "WW_BODY_FRAME": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_ROOT",
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_CAM_CONCEPT": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_STUDIO",
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CAM_HERO": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CAM_OPEN": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CAM_ORTHO_FRONT": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CAM_ORTHO_SIDE": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CAM_ORTHO_TOP": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CAM_REAR": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "CAMERA",
+   "verts": null
+  },
+  "WW_CONTROL_01": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "control",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_CONTROL_02": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "control",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_CONTROL_BEZEL_01": {
+   "material": "WW_MAT_METAL_TURNED",
+   "modifiers": [
+    "BOOLEAN"
+   ],
+   "parent": "WW_BODY_FRAME",
+   "role": "control_bezel",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_CONTROL_BEZEL_02": {
+   "material": "WW_MAT_METAL_TURNED",
+   "modifiers": [
+    "BOOLEAN"
+   ],
+   "parent": "WW_BODY_FRAME",
+   "role": "control_bezel",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_CUSHION": {
+   "material": "WW_MAT_LEATHER_CUSHION",
+   "modifiers": [
+    "BEVEL",
+    "SUBSURF",
+    "BOOLEAN"
+   ],
+   "parent": "WW_CUSHION_UNIT",
+   "role": "cushion",
+   "type": "MESH",
+   "verts": 8
+  },
+  "WW_CUSHION_UNIT": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_ROTOR_PIVOT",
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_CUT_BEZEL_01": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "cutter",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_CUT_BEZEL_02": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "cutter",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_CUT_SERVICE_HATCH": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "cutter",
+   "type": "MESH",
+   "verts": 194
+  },
+  "WW_CUT_SOCKET": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_CUSHION_UNIT",
+   "role": "cutter",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_CUT_USB_POCKET": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "cutter",
+   "type": "MESH",
+   "verts": 40
+  },
+  "WW_FINGER_TAB": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_LID_PIVOT",
+   "role": "finger_tab",
+   "type": "MESH",
+   "verts": 68
+  },
+  "WW_FOOT_01": {
+   "material": "WW_MAT_RUBBER",
+   "modifiers": [],
+   "parent": "WW_STAND",
+   "role": "foot",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_FOOT_02": {
+   "material": "WW_MAT_RUBBER",
+   "modifiers": [],
+   "parent": "WW_STAND",
+   "role": "foot",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_FOOT_03": {
+   "material": "WW_MAT_RUBBER",
+   "modifiers": [],
+   "parent": "WW_STAND",
+   "role": "foot",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_FRONT_RIM": {
+   "material": "WW_MAT_METAL_TURNED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "front_rim",
+   "type": "MESH",
+   "verts": 480
+  },
+  "WW_GROUND": {
+   "material": "WW_MAT_STUDIO_GREY",
+   "modifiers": [],
+   "parent": "WW_STUDIO",
+   "role": "studio_ground",
+   "type": "MESH",
+   "verts": 48
+  },
+  "WW_GUILLOCHE": {
+   "material": "WW_MAT_METAL_RADIAL",
+   "modifiers": [],
+   "parent": "WW_ROTOR_PIVOT",
+   "role": "faceplate",
+   "type": "MESH",
+   "verts": 153600
+  },
+  "WW_HINGE_FIXED": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "hinge_fixed",
+   "type": "MESH",
+   "verts": 64
+  },
+  "WW_HINGE_MOVING": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_LID_PIVOT",
+   "role": "hinge_moving",
+   "type": "MESH",
+   "verts": 98
+  },
+  "WW_INNER_LINER": {
+   "material": "WW_MAT_INTERIOR",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "inner_liner",
+   "type": "MESH",
+   "verts": 672
+  },
+  "WW_INTERNAL_ENVELOPE": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "internal_envelope",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_KNOB_BOSS_L": {
+   "material": "WW_MAT_METAL_TURNED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "knob_boss",
+   "type": "MESH",
+   "verts": 194
+  },
+  "WW_KNOB_BOSS_R": {
+   "material": "WW_MAT_METAL_TURNED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "knob_boss",
+   "type": "MESH",
+   "verts": 194
+  },
+  "WW_KNOB_L": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "knob",
+   "type": "MESH",
+   "verts": 322
+  },
+  "WW_KNOB_R": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "knob",
+   "type": "MESH",
+   "verts": 322
+  },
+  "WW_KNURL_L": {
+   "material": "WW_MAT_METAL_KNURL",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "knurl",
+   "type": "MESH",
+   "verts": 4416
+  },
+  "WW_KNURL_R": {
+   "material": "WW_MAT_METAL_KNURL",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "knurl",
+   "type": "MESH",
+   "verts": 50784
+  },
+  "WW_LED_DIFFUSER": {
+   "material": "WW_MAT_LED_DIFFUSER",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "led_diffuser",
+   "type": "MESH",
+   "verts": 384
+  },
+  "WW_LED_EMITTER": {
+   "material": "WW_MAT_LED_EMITTER",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "led_emitter",
+   "type": "MESH",
+   "verts": 384
+  },
+  "WW_LEG_01": {
+   "material": "WW_MAT_METAL_BRUSHED_LEG",
+   "modifiers": [],
+   "parent": "WW_STAND",
+   "role": "leg",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_LEG_02": {
+   "material": "WW_MAT_METAL_BRUSHED_LEG",
+   "modifiers": [],
+   "parent": "WW_STAND",
+   "role": "leg",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_LEG_03": {
+   "material": "WW_MAT_METAL_BRUSHED_LEG",
+   "modifiers": [],
+   "parent": "WW_STAND",
+   "role": "leg",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_LID_PIVOT": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_LIGHT_FILL": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "LIGHT",
+   "verts": null
+  },
+  "WW_LIGHT_KEY": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "LIGHT",
+   "verts": null
+  },
+  "WW_LIGHT_STRIP": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "LIGHT",
+   "verts": null
+  },
+  "WW_REAR_SERVICE_COVER": {
+   "material": "WW_MAT_GRAPHITE",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "service_cover",
+   "type": "MESH",
+   "verts": 1922
+  },
+  "WW_ROOT": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_ROTOR_CUP": {
+   "material": "WW_MAT_INTERIOR",
+   "modifiers": [],
+   "parent": "WW_ROTOR_PIVOT",
+   "role": "rotor_cup",
+   "type": "MESH",
+   "verts": 386
+  },
+  "WW_ROTOR_PIVOT": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_SHAFT": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_ROTOR_PIVOT",
+   "role": "shaft",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_SHELL": {
+   "material": "WW_MAT_GRAPHITE",
+   "modifiers": [
+    "BOOLEAN",
+    "BOOLEAN"
+   ],
+   "parent": "WW_BODY_FRAME",
+   "role": "shell",
+   "type": "MESH",
+   "verts": 5954
+  },
+  "WW_STAND": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_ROOT",
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_STUDIO": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_TEST_STRIP": {
+   "material": null,
+   "modifiers": [],
+   "parent": null,
+   "role": "",
+   "type": "LIGHT",
+   "verts": null
+  },
+  "WW_USB_RECEPTACLE": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_BODY_FRAME",
+   "role": "usb_receptacle",
+   "type": "MESH",
+   "verts": 36
+  },
+  "WW_USB_RECESS": {
+   "material": "WW_MAT_INTERIOR",
+   "modifiers": [
+    "BOOLEAN"
+   ],
+   "parent": "WW_BODY_FRAME",
+   "role": "usb_recess",
+   "type": "MESH",
+   "verts": 40
+  },
+  "WW_VISOR": {
+   "material": "WW_MAT_ACRYLIC",
+   "modifiers": [],
+   "parent": "WW_LID_PIVOT",
+   "role": "visor",
+   "type": "MESH",
+   "verts": 4610
+  },
+  "WW_WATCH": {
+   "material": null,
+   "modifiers": [],
+   "parent": "WW_CUSHION_UNIT",
+   "role": "",
+   "type": "EMPTY",
+   "verts": null
+  },
+  "WW_WATCH_BEZEL": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 480
+  },
+  "WW_WATCH_CASE": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch",
+   "type": "MESH",
+   "verts": 576
+  },
+  "WW_WATCH_CASEBACK": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 130
+  },
+  "WW_WATCH_CROWN": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 194
+  },
+  "WW_WATCH_CRYSTAL": {
+   "material": "WW_MAT_CRYSTAL",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 1538
+  },
+  "WW_WATCH_DIAL": {
+   "material": "WW_MAT_DIAL",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 194
+  },
+  "WW_WATCH_HAND_CAP": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 66
+  },
+  "WW_WATCH_HAND_HOUR": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 24
+  },
+  "WW_WATCH_HAND_MINUTE": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 24
+  },
+  "WW_WATCH_HAND_SECOND": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 24
+  },
+  "WW_WATCH_LUGS": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 96
+  },
+  "WW_WATCH_MARKERS": {
+   "material": "WW_MAT_METAL_POLISHED",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 288
+  },
+  "WW_WATCH_STRAP_12": {
+   "material": "WW_MAT_LEATHER_STRAP",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 16
+  },
+  "WW_WATCH_STRAP_6": {
+   "material": "WW_MAT_LEATHER_STRAP",
+   "modifiers": [],
+   "parent": "WW_WATCH",
+   "role": "watch_part",
+   "type": "MESH",
+   "verts": 16
+  }
+ },
+ "object_count_WW": 72,
+ "passes": {
+  "pass-01-owned-scene-and-hierarchy.py": "pass-01-owned-scene-and-hierarchy",
+  "pass-02-shell-visor-rim-blockout.py": "pass-02-shell-visor-rim-blockout",
+  "pass-03-rotor-cup-cushion-watch-blockout.py": "pass-03-rotor-cup-cushion-watch-blockout",
+  "pass-04-knobs-controls-usb-blockout.py": "pass-04-knobs-controls-usb-blockout",
+  "pass-05-stand-legs-feet.py": "pass-05-stand-legs-feet",
+  "pass-06-lid-sweep-and-rotor-poses.py": "pass-06-lid-sweep-and-rotor-poses",
+  "pass-07-phase1-gate-and-clay-renders.py": "pass-07-phase1-gate-and-clay-renders",
+  "pass-08-shell-booleans-usb-pocket-service-hatch.py": "pass-08-shell-booleans-usb-pocket-service-hatch",
+  "pass-09-hinge-tab-knobs-controls-led.py": "pass-09-hinge-tab-knobs-controls-led",
+  "pass-10-cushion-unit-keyed-shaft-socket.py": "pass-10-cushion-unit-keyed-shaft-socket",
+  "pass-11-phase2-gate-topology-poses-reflection.py": "pass-11-phase2-gate-topology-poses-reflection",
+  "pass-12-guilloche-relief.py": "pass-12-guilloche-relief",
+  "pass-13-knurl-knobs.py": "pass-13-knurl-knobs",
+  "pass-14-watch-dress-unbranded.py": "pass-14-watch-dress-unbranded",
+  "pass-15-cushion-subd-cage.py": "pass-15-cushion-subd-cage",
+  "pass-16-materials-assign-verify.py": "pass-16-materials-assign-verify",
+  "pass-17-phase3-gate-material-crops.py": "pass-17-phase3-gate-material-crops",
+  "pass-18-studio-cameras-presets.py": "pass-18-studio-cameras-presets"
+ },
+ "scenes": [
+  "WW_capsule"
+ ]
+}

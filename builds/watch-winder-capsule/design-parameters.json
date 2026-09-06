@@ -1,0 +1,243 @@
+{
+ "_meta": {
+  "asset": "watch-winder-capsule",
+  "purpose": "Render/visualization asset. NOT spec.json, NOT a fabrication contract.",
+  "dimension_status": "provisional_visualization_default",
+  "units": "mm (converted once to metres in ww_lib.mm; scene scale_length = 1.0, 1 BU = 1 m)",
+  "world_frame": "Z up, front = world -Y, tabletop at Z = 0",
+  "product_frame_P": "origin C; rotate +40 deg about world X; localZ = rotor/opening axis at 50 deg elevation",
+  "created": "2026-09-06",
+  "reference_sha256": "605db7906a14a835eebd7aadfd78cb1340f4c28272eea89c1bafcf9c71d6aef4"
+ },
+ "axis": {
+  "tilt_about_world_x_deg": 40.0,
+  "rotor_axis_elevation_deg": 50.0,
+  "status": "provisional_visualization_default"
+ },
+ "shell": {
+  "outer_radius": 70.0,
+  "wall": 2.5,
+  "center_world": [
+   0.0,
+   0.0,
+   86.0
+  ],
+  "opening_radius": 52.0,
+  "opening_datum_w0": 46.861,
+  "status": "provisional_visualization_default",
+  "center_world_note": "phase-1 clay vs concept: sphere sat too high on long legs; 95 -> 86 mm keeps the concept's low stance (bottom gap 16 mm). provisional_visualization_default",
+  "rim_flat_r_out": 54.5,
+  "rim_flat_note": "flat rim r 52..54.5 at z 43.93; the inner cavity is truncated by a flat ceiling one wall (2.5 mm) below the rim (z 41.43, undercut ring to r 53.29) so the bore lip keeps >= 2.5 mm of wall (gate 2026-09-06). provisional_visualization_default",
+  "rim_flat_note": "gate audit 13:20: bore met the outer sphere in a knife edge (wall screen min 1.06 mm); opening now has a 2.5 mm flat rim (r 52..54.5) under the bezel"
+ },
+ "visor": {
+  "outer_radius": 52.0,
+  "thickness": 2.0,
+  "equator_localz": 46.861,
+  "rim_clearance": 0.5,
+  "hinge_setback": 3.0,
+  "hinge_axis": "localX at 12 o'clock",
+  "status": "provisional_visualization_default"
+ },
+ "front_rim": {
+  "r_in": 52.5,
+  "r_out": 56.0,
+  "z0": 43.9,
+  "z1": 47.2,
+  "status": "provisional_visualization_default",
+  "z0_note": "seated on the new flat rim (z 43.93)"
+ },
+ "led": {
+  "r_in": 49.0,
+  "r_out": 51.0,
+  "z0": 43.0,
+  "z1": 44.5,
+  "color_hex": "#D4EBFF",
+  "strength": 10.0,
+  "temperature_descriptor": "6500K descriptive only, not an exact equivalence",
+  "status": "provisional_visualization_default"
+ },
+ "inner": {
+  "cup_mouth_radius": 39.0,
+  "cup_mouth_localz": 28.0,
+  "cup_floor_localz": -24.0,
+  "cup_wall": 2.0,
+  "faceplate_r_in": 39.0,
+  "faceplate_r_out": 48.0,
+  "faceplate_localz": 29.0,
+  "faceplate_thickness": 2.0,
+  "status": "provisional_visualization_default"
+ },
+ "cushion": {
+  "size_x": 45.0,
+  "size_y": 60.0,
+  "depth": 38.0,
+  "center_localz": 9.0,
+  "corner_radius": 8.0,
+  "corner_radius_note": "8 mm chosen so the rounded corner (34.4 mm from axis) clears the 37 mm cup bore; sharp 45x60 corners (37.5 mm) would clash",
+  "socket_diameter": 6.0,
+  "socket_depth": 10.0,
+  "status": "provisional_visualization_default"
+ },
+ "shaft": {
+  "diameter": 6.0,
+  "keyed_flat_depth": 1.0,
+  "length": 14.0,
+  "status": "provisional_visualization_default"
+ },
+ "watch": {
+  "case_diameter": 40.0,
+  "case_height": 10.0,
+  "dial_time": "10:10",
+  "status": "provisional_visualization_default"
+ },
+ "knobs": {
+  "axis": "+-localX",
+  "body_diameter": 22.0,
+  "body_depth": 8.0,
+  "boss_diameter": 17.0,
+  "boss_inner_x": 60.0,
+  "boss_outer_x": 72.0,
+  "cap_edge_radius": 0.4,
+  "knurl_pitch": 1.0,
+  "knurl_relief": 0.15,
+  "local_y": 0.0,
+  "local_z": 0.0,
+  "status": "provisional_visualization_default"
+ },
+ "controls": {
+  "size": [
+   18.0,
+   7.0
+  ],
+  "height": 2.0,
+  "world_polar_from_z_deg": 32.0,
+  "world_azimuth_deg": [
+   -11.0,
+   11.0
+  ],
+  "azimuth_note": "azimuth measured from world +Y (rear) toward +X",
+  "status": "provisional_visualization_default"
+ },
+ "usb": {
+  "envelope": [
+   9.0,
+   3.5
+  ],
+  "recess": [
+   13.0,
+   7.0
+  ],
+  "recess_depth": 7.0,
+  "world_polar_from_z_deg": 125.0,
+  "world_azimuth_deg": 0.0,
+  "status": "provisional_visualization_default"
+ },
+ "stand": {
+  "feet_contact_world": [
+   [
+    -48.0,
+    -42.0,
+    0.0
+   ],
+   [
+    48.0,
+    -42.0,
+    0.0
+   ],
+   [
+    0.0,
+    55.0,
+    0.0
+   ]
+  ],
+  "leg_radius_at_shell": 6.0,
+  "leg_radius_at_foot": 3.5,
+  "foot_radius": 3.5,
+  "foot_height": 3.0,
+  "attach_radius": 66.0,
+  "status": "provisional_visualization_default",
+  "leg_note": "phase-1 delta: 5/3 -> 6/3.5 mm radii, concept legs read chunkier"
+ },
+ "studio": {
+  "lens_mm": 85.0,
+  "sensor_mm": 36.0,
+  "aspect": [
+   3,
+   2
+  ],
+  "fstop": 2.8,
+  "world_strength": 0.4,
+  "key_size_m": [
+   1.2,
+   0.8
+  ],
+  "status": "provisional_visualization_default",
+  "key_energy_w": 50.0,
+  "key_distance_m": 1.4,
+  "strip_size_m": [
+   0.12,
+   1.4
+  ],
+  "strip_energy_w": 45.0,
+  "fill_energy_w": 20.0,
+  "ground_hex": "#6E6E6E",
+  "hero": {
+   "azimuth_deg": -30,
+   "elevation_deg": 12,
+   "fill_target": 0.88
+  },
+  "rear": {
+   "azimuth_deg": 180,
+   "elevation_deg": 8
+  },
+  "open": {
+   "azimuth_deg": -25,
+   "elevation_deg": 16,
+   "lid_deg": 100,
+   "unit_world_mm": [
+    150,
+    -25,
+    0
+   ],
+   "unit_yaw_deg": -25
+  },
+  "tuning_note": "first 512px preview (key 100 W @1.1 m, ground #8A8A8A) rendered mean luminance 0.76 with a hot floor spot; reduced by test render"
+ },
+ "service_cover": {
+  "world_polar_from_z_deg": 165.0,
+  "world_azimuth_deg": 0.0,
+  "cap_radius": 11.0,
+  "seam_gap": 0.3,
+  "thickness": 2.5,
+  "note": "underside hatch; rear view stays clean like the concept; clears rear leg (polar 150 deg, +-4 deg) by ~2 deg",
+  "status": "provisional_visualization_default"
+ },
+ "hinge": {
+  "lug_half_span_x": 9.0,
+  "lug_thickness": 3.0,
+  "knuckle_radius": 2.5,
+  "pocket_depth": 2.0,
+  "status": "provisional_visualization_default"
+ },
+ "finger_tab": {
+  "size": [
+   12.0,
+   5.0
+  ],
+  "height": 2.5,
+  "status": "provisional_visualization_default"
+ },
+ "guilloche": {
+  "rays": 240,
+  "relief": 0.12,
+  "twist_rad": 0.18,
+  "flat_border": 0.8,
+  "status": "provisional_visualization_default",
+  "rays_note": "128 (start) read as coarse 2 mm ribs in the Cycles crop; 240 rays ~1.1 mm pitch matches the concept's fine sunburst"
+ },
+ "materials": {
+  "shell": "matte dark plastic #1A1D24, metallic 0, roughness 0.58, spec level 0.35 (owner 2026-09-06: 'nhua nham thoi la duoc'); metallic titanium retired; walnut kept as preset, not a deliverable",
+  "status": "owner_decision"
+ }
+}

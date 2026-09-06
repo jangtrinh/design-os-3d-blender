@@ -1,0 +1,156 @@
+{
+ "adaptive_threshold": 0.01,
+ "blend_sha256": "b77f30ff4821199dacd5132aa08df3b920ffd875090ad231838f9fe24fbfffdc",
+ "denoiser": "OPENIMAGEDENOISE",
+ "device": "GPU",
+ "renders": {
+  "fdm-abs-01": {
+   "margins": [
+    0.169,
+    0.169,
+    0.09,
+    0.09
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-fdm-abs-01.png",
+   "seconds": 35.0,
+   "sha256": "4c4fdc4229d77225f7cdbcc156565b9345d86937a1b610201697f995eb299b62",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.5987,
+    "stdev": 0.1868
+   }
+  },
+  "fdm-petg-01": {
+   "margins": [
+    0.201,
+    0.201,
+    0.09,
+    0.09
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-fdm-petg-01.png",
+   "seconds": 32.9,
+   "sha256": "76bda5b8abc032bbeb0976732f4340c6842d6538ee0c91310e7be6210b9e1954",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6543,
+    "stdev": 0.1891
+   }
+  },
+  "fdm-tpu-01": {
+   "margins": [
+    0.16,
+    0.16,
+    0.09,
+    0.09
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-fdm-tpu-01.png",
+   "seconds": 36.1,
+   "sha256": "1612375f4e51b5cf66cb2e9285f048dbc24f6f39e1815b13132d7ec6e6b59bb8",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6356,
+    "stdev": 0.1649
+   }
+  },
+  "overview": {
+   "margins": [
+    0.05,
+    0.05,
+    0.104,
+    0.104
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-overview.png",
+   "seconds": 31.0,
+   "sha256": "0504dece7e67af3260ed7fa9e42a87cf3cb55a977cba5b23a71108932ba2768f",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6949,
+    "stdev": 0.1517
+   }
+  },
+  "sla-clear-01": {
+   "margins": [
+    0.154,
+    0.154,
+    0.09,
+    0.09
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-sla-clear-01.png",
+   "seconds": 56.1,
+   "sha256": "936c8bcb663d305e53726921d8d7cfd36d9fc9d446a1105683d85e02bade9c79",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6507,
+    "stdev": 0.1609
+   }
+  },
+  "sla-proxy-01": {
+   "margins": [
+    0.141,
+    0.141,
+    0.09,
+    0.09
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-sla-proxy-01.png",
+   "seconds": 32.2,
+   "sha256": "e6deef8ff4afc4ca4a35f641cb64372b31c830ea6befbcab44183b8128440403",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6574,
+    "stdev": 0.164
+   }
+  },
+  "sla-proxy-02": {
+   "margins": [
+    0.101,
+    0.101,
+    0.09,
+    0.09
+   ],
+   "path": "/Users/jang/Products/Blender/builds/watch-winder-capsule/renders/plates/plate-sla-proxy-02.png",
+   "seconds": 39.1,
+   "sha256": "5d123dfd9df48021eaafe087e0465f7303e8c709b927913b13b6d76168d48fb8",
+   "size": [
+    3072,
+    2048
+   ],
+   "stats": {
+    "black": false,
+    "blown": false,
+    "mean": 0.6386,
+    "stdev": 0.1699
+   }
+  }
+ },
+ "samples": 1024
+}
