@@ -40,7 +40,7 @@ def _ring(tree, center, u, e1, e2):
     half a step so the ring is never symmetric with the mesh.
     """
     step = 2.0 * math.pi / RING_RAYS
-    out = []
+    out, angles = [], []
     for k in range(RING_RAYS):
         base = step * (k + 0.5)
         samples = []
@@ -54,7 +54,29 @@ def _ring(tree, center, u, e1, e2):
             out.append(sorted(samples)[1])
         elif samples:
             out.append(min(samples))
-    return out
+        else:
+            continue
+        angles.append(base)
+    return out, angles
+
+
+def _keyed_split(radii, angles, e1, e2, flat_dir, nominal_r, flat_mm, tol):
+    """Split ring rays of a D-hole into (round part radii, measured flat distances).
+
+    A ray at angle phi from the flat normal reaches the flat at flat/cos(phi) when
+    cos(phi) > flat/r, else it reaches the round wall at r. Rays within tol of that
+    boundary are ambiguous and ignored; the flat distance is r_i*cos(phi_i), which
+    is constant (= flat) for every ray that lands on the flat.
+    """
+    round_r, flats = [], []
+    for r, ang in zip(radii, angles):
+        d = e1 * math.cos(ang) + e2 * math.sin(ang)
+        cphi = d.dot(flat_dir)
+        if cphi > (flat_mm + tol) / nominal_r:
+            flats.append(r * cphi)
+        elif cphi < (flat_mm - tol) / nominal_r:
+            round_r.append(r)
+    return round_r, flats
 
 
 def _axial(tree, origin, direction):
@@ -124,24 +146,44 @@ def evaluate(bm, features, prefix="", part_dims_mm=None):
                             "four sides; a breakout reads as a missing wall"
                             % (nominal_r + margin)))
         # --- measured diameter --------------------------------------------
-        radii = _ring(tree, c, u, e1, e2)
+        radii, angles = _ring(tree, c, u, e1, e2)
+        flat_mm = feat.get("keyed_flat_mm")
+        flat_meas = None
         if len(radii) < RING_RAYS:
             checks.append(check(tag + "diameter_mm", "fail",
                                 {"hits": len(radii), "of": RING_RAYS}, None,
                                 "the radial ring at center_mm did not find a wall in "
                                 "every direction"))
             dia = None
-        else:
+        elif flat_mm is None:
             dia = 2.0 * sum(radii) / len(radii)
             checks.append(tol_check(tag + "diameter_mm", round(dia, 4),
                                     float(feat["diameter_mm"]), tol,
                                     "mean of %d radial first-hit distances at "
                                     "center_mm; roundness span %.4f mm"
                                     % (RING_RAYS, (max(radii) - min(radii)) * 2.0)))
+        else:
+            # D-hole: the round part sets the diameter, the flat is measured separately
+            fdir = meshprep.axis_vector(feat["keyed_flat_dir"])
+            fdir = (fdir - u * fdir.dot(u)).normalized()
+            round_r, flats = _keyed_split(radii, angles, e1, e2, fdir, nominal_r, float(flat_mm), tol)
+            dia = 2.0 * sum(round_r) / len(round_r) if round_r else None
+            checks.append(tol_check(tag + "diameter_mm", None if dia is None else round(dia, 4),
+                                    float(feat["diameter_mm"]), tol,
+                                    "keyed D-hole: mean of %d round-part radial hits (of %d); "
+                                    "span %.4f mm" % (len(round_r), RING_RAYS,
+                                                       ((max(round_r) - min(round_r)) * 2.0) if round_r else 0.0)))
+            flat_meas = sum(flats) / len(flats) if flats else None
+            checks.append(tol_check(tag + "keyed_flat_mm", None if flat_meas is None else round(flat_meas, 4),
+                                    float(flat_mm), tol,
+                                    "keyed D-hole: axis-to-flat distance, mean of %d rays that land on "
+                                    "the flat (r_i*cos(phi_i)); spread %.4f mm"
+                                    % (len(flats), (max(flats) - min(flats)) if flats else 0.0)))
         measured[fid] = {"measured_diameter_mm": dia, "probes": probes,
                          "ring_hits": len(radii),
                          "ring_min_r_mm": min(radii) if radii else None,
-                         "ring_max_r_mm": max(radii) if radii else None}
+                         "ring_max_r_mm": max(radii) if radii else None,
+                         "measured_keyed_flat_mm": flat_meas}
         # --- fastener table ------------------------------------------------
         fst = feat.get("fastener")
         if fst:

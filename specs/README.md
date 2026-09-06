@@ -94,6 +94,7 @@ re-measured, so an export bug cannot hide behind a passing in-scene check.
 | `overhang_area_pct` | **SCREEN.** The share of surface area facing within `max_overhang_deg` of build-down | Not a printability verdict — bridging, support generation and slicer settings are not modelled |
 | `feature_*_bore_clear` | The axial probe passes through a through hole, or reaches the floor of a blind one | That the hole is in the right place relative to anything else |
 | `feature_*_diameter_mm` | The modelled bore measures that diameter at `center_mm` (median-filtered radial rays, verified to 0.05 mm against known 3.4 and 5.0 mm bores) | Printed diameter — FDM holes come out undersize; nothing about roundness away from `center_mm` |
+| `feature_*_keyed_flat_mm` | For a D-hole (`keyed_flat_mm` + `keyed_flat_dir` declared): the axis-to-flat distance from the rays that land on the flat; the diameter check then uses the round part only | Orientation of the flat relative to the mating shaft |
 | `feature_*_depth_mm` | Depth from the entry surface to the first axial hit | Thread engagement or insert seating |
 | `feature_*_material_around` | Material exists on four sides just outside the bore | Adequate edge distance for a load |
 | `feature_*_fastener_table` | The **declared** diameter matches the published table value (`table_source` names it) | That the measured hole matches the table — that is the separate diameter check — or that the fastener fits |

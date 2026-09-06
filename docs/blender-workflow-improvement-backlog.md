@@ -26,7 +26,7 @@ Acceptance: success and injected failure both restore all touched settings using
 
 ## E3 — Bind gate results to their inputs
 
-**Status 2026-09-06: PARTIAL** — for printed parts, `scripts/production-gate.py` writes reports bound to `scene_sha256`+`spec_sha256`, with `failed[]`, `coverage.unchecked`, `exclusions`, exit 1 on any failed requirement (`tests/production-gate/`, 19 pass). Task/flexibility checkers in `builds/` are unchanged. Evidence: `impl-w3-production-gate.md`.
+**Status 2026-09-06: PARTIAL** — for printed parts, `scripts/production-gate.py` writes reports bound to `scene_sha256`+`spec_sha256`, with `failed[]`, `coverage.unchecked`, `exclusions`, exit 1 on any failed requirement (`tests/production-gate/`, 20 pass). Task/flexibility checkers in `builds/` are unchanged. Evidence: `impl-w3-production-gate.md`.
 
 Priority (historical): third. Owner: next evidence-contract task. Scope: task/flexibility checkers and a small common result validator; preserved build outputs must be copied to a candidate directory for tests.
 

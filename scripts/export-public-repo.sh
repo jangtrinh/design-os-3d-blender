@@ -8,7 +8,8 @@
 #   - skills, knowledge, docs, specs, scripts, tests: everything except caches
 #   - research/: markdown only (no tools/ checkouts, venvs or media)
 #   - img2threejs: vendored without .git/.cache (Apache-2.0 license file kept)
-#   - builds/: only the curated robot-arm demo + the catalog example scripts;
+#   - builds/: the curated robot-arm demo, the watch-winder-capsule render+print demo,
+#     and the catalog example scripts;
 #     never frames, draft videos, *.log, snapshots or zip kits
 #   - plans/: nothing except the knowledge pipeline receipt
 # Exit: 0 verified · 1 verification failed · 2 bad input.
@@ -41,6 +42,15 @@ cp "$P"/README.md "$P"/plan.md "$P"/parts-list.csv "$P"/assembly-steps.csv "$P"/
 "${RS[@]}" --delete --exclude '*.log' "$P/parts" "$P/plates" "$P/reports" "$P/scripts" "$DST/$P/"
 cp "$P"/video/arm-step-by-step.mp4 "$P"/video/assembly-animatic.mp4 "$DST/$P/video/"
 cp "$P"/renders/plates-overview0001.png "$P"/renders/plates-final0001.png "$P"/renders/assembly-1429-METAL.png "$P"/renders/assembly-0320-METAL.png "$DST/$P/renders/"
+# watch-winder-capsule (2026-09-06): render asset + gate-passed print plates, as the second
+# worked example. Public users get what reproduces the build: README, parameters, spec, the 5
+# small blends, scripts, reports, STL parts/plates, and three small JPEG sheets as proof of output.
+# Marketing media (stills, films, GIFs, step captures, concept image, pre-gate set) stays private.
+W=builds/watch-winder-capsule
+mkdir -p "$DST/$W/renders"
+cp "$W"/README.md "$W"/design-parameters.json "$W"/spec.json "$W"/*.blend "$DST/$W/"
+"${RS[@]}" --delete --exclude '*.log' "$W/scripts" "$W/reports" "$W/plates" "$W/parts" "$DST/$W/"
+cp "$W"/renders/final-states-contact-sheet.jpg "$W"/renders/final-macro-contact-sheet.jpg "$W"/renders/plates-contact-sheet.jpg "$DST/$W/renders/"
 # files the knowledge catalog cites as execution examples (must exist for `check`)
 python3 - "$SRC" "$DST" <<'PY'
 import json, os, shutil, sys

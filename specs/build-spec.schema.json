@@ -60,6 +60,8 @@
         "diameter_mm": {"type": "number", "exclusiveMinimum": 0, "description": "REQUIRED. Nominal diameter."},
         "depth_mm": {"type": "number", "exclusiveMinimum": 0, "description": "Optional. Present => blind feature, depth is measured. Absent => through feature, the axial ray must exit."},
         "tol_mm": {"type": "number", "exclusiveMinimum": 0, "description": "REQUIRED. Symmetric tolerance on the measured diameter (and depth if declared)."},
+        "keyed_flat_mm": {"type": "number", "exclusiveMinimum": 0, "description": "Optional. Present => D-shaped (keyed) hole: nominal axis-to-flat distance. The diameter is then measured on the round part only and the flat is measured as its own check. Requires keyed_flat_dir."},
+        "keyed_flat_dir": {"description": "Optional. Direction from the axis towards the flat ('x' | 'y' | 'z' or a 3-number direction, world). Required with keyed_flat_mm.", "anyOf": [{"type": "string", "enum": ["x", "y", "z"]}, {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}]},
         "fastener": {"$ref": "#/$defs/fastener"}
       }
     },

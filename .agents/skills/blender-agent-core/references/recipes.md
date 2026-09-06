@@ -42,6 +42,18 @@ Trigger: any part that will be printed, machined or assembled with real hardware
 4. Read `coverage.unchecked` and `exclusions`: a passing gate proves topology, dimensions, feature diameters, wall/overhang screens and STL round-trip. It does **not** prove load capacity, fit after shrinkage, thermal duty, retention or assembly access — those stay `physical_evidence` items and keep manufacture `BLOCKED` until supplied.
 5. Any geometry change re-runs the gate; an older report cannot be inherited (hash mismatch is rejected by design).
 
+## Spec from measurement
+
+Trigger: a `spec.json` is needed for parts that already exist as geometry (form gate, final gate). Write it from the **baked** meshes, never from the design parameters: the parameters are the intent, the bake is what the gate measures.
+
+1. Bake first: duplicate the printable parts into a separate `*-print.blend`, apply every modifier and transform (scale 1,1,1, identity), one object per spec `object`, name = spec `object`.
+2. Measure on the bake: world bbox → `target_dims_mm`; hole centres and axes from the actual bore (ring of first-hit radii), not from the parameter that generated it.
+3. Ring probes belong **1.3–1.5 mm inside** the surface along the hole axis. A probe placed on the surface plane returns 0/24 hits and the gate reports a bore that is not there (2026-09-06: one wasted gate run).
+4. Union solids that overlap (hinge shells, boss + wall) before measuring — `expected_shells` counts what the STL will contain, and two intersecting bodies are still 2 shells until they are joined.
+5. Relief textures (guilloché, knurl) whose faces are < 0.3 mm² fall below the wall-screen sampling floor: declare that part **without** `min_wall_mm` and let it appear in `coverage.unchecked`; do not widen the tolerance instead.
+6. A keyed hole declares `keyed_flat_mm` + `keyed_flat_dir`; never widen `tol_mm` so a D-profile passes a round-diameter check.
+7. Re-measure after any geometry change: a spec written for an older bake is as void as an older gate report.
+
 ## Articulated task
 
 Trigger: linked joints, tool swaps, grasping or task demonstrations. Load `40-animation/animation-fcurves.md`, `70-cad-precision-robotics/robotics-urdf-mechanisms.md` and their declared dependencies.

@@ -1224,7 +1224,8 @@
         "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md",
         "research/3d-printing-polymer-engineering/03-DFAM-GEOMETRIC-RULES-TOLERANCES.md",
         "research/3d-printing-polymer-engineering/04-FASTENERS-INSERTS-BEARINGS-INTEGRATION.md",
-        "research/3d-printing-polymer-engineering/05-THERMAL-WARPING-CHAMBER-ANNEALING.md"
+        "research/3d-printing-polymer-engineering/05-THERMAL-WARPING-CHAMBER-ANNEALING.md",
+        "knowledge/70-cad-precision-robotics/print-plate-layout.md"
       ],
       "concepts": [],
       "adapters": [

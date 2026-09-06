@@ -53,6 +53,7 @@ This INDEX is an on-demand lookup, not a session-start read. Use [blender-knowle
 | robotics URDF, kinematics, joint frames, inertia | `70-cad-precision-robotics/robotics-urdf-mechanisms.md` |
 | gears, involute teeth, planetary, cycloidal | `70-cad-precision-robotics/gears-transmission-modeling.md` |
 | polymer 3D printing, DFAM, tear-drop holes, infill | `70-cad-precision-robotics/polymer-3dprinting-cad.md` |
+| print plates, nesting/packing, part orientation, STL per plate | `70-cad-precision-robotics/print-plate-layout.md` |
 | bolts, counterbores, O-ring glands, bearings | `70-cad-precision-robotics/fasteners-seals-mechanics.md` |
 | wiring, industrial connectors (M12, RJ45, DB9), harness | `70-cad-precision-robotics/industrial-connectors-wire-harness.md` |
 

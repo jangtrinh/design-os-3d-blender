@@ -1,5 +1,6 @@
 """Shared harness: one generated fixture set for every gate test module."""
 import atexit
+import itertools
 import json
 import os
 import shutil
@@ -16,6 +17,7 @@ MAKER = os.path.join(ROOT, "tests", "production-gate", "make_fixtures.py")
 BLENDER = os.environ.get("BLENDER_BIN",
                          "/Applications/Blender.app/Contents/MacOS/Blender")
 _TMP = None
+_SEQ = itertools.count(1)
 
 
 def _cleanup():
@@ -45,7 +47,7 @@ def write_spec(spec, name):
 
 def run_gate(scene, spec_path, extra=(), report=None):
     root = tmp()
-    report = report or os.path.join(root, "report-%s.json" % scene)
+    report = report or os.path.join(root, "report-%s-%d.json" % (scene, next(_SEQ)))
     cmd = [sys.executable, GATE, "--scene", os.path.join(root, scene + ".blend"),
            "--spec", spec_path, "--report", report] + list(extra)
     proc = subprocess.run(cmd, capture_output=True, text=True, timeout=600)

@@ -4,11 +4,11 @@
     "asset-example": 23,
     "execution-source": 82,
     "imported-reference": 47,
-    "knowledge": 30,
+    "knowledge": 31,
     "research-synthesis": 66,
     "workflow": 17
   },
-  "dependency_edges": 89,
+  "dependency_edges": 92,
   "foundations": [
     "knowledge/00-foundations/blender-version-matrix.md",
     "knowledge/00-foundations/bpy-scripting-core.md",
@@ -27,28 +27,28 @@
           "text": "0. Routing by task"
         },
         {
-          "line": 24,
+          "line": 26,
           "text": "1. Knowledge routing (mandatory)"
         },
         {
-          "line": 27,
+          "line": 29,
           "text": "2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)"
         },
         {
-          "line": 37,
+          "line": 40,
           "text": "3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)"
         },
         {
-          "line": 52,
+          "line": 55,
           "text": "4. Execution modes (check in order)"
         },
         {
-          "line": 58,
+          "line": 61,
           "text": "5. Failure quick-map"
         }
       ],
       "kind": "workflow",
-      "lines": 67,
+      "lines": 70,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -57,7 +57,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/SKILL.md",
       "related": [],
-      "sha256": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
+      "sha256": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
       "tags": [],
       "title": "Blender Agent Core",
       "use": "read"
@@ -114,7 +114,7 @@
         }
       ],
       "kind": "workflow",
-      "lines": 22,
+      "lines": 24,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -123,7 +123,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/hard-rules.md",
       "related": [],
-      "sha256": "84ae5502ef5365b9c79281157cd4d970c22ff8c8e7c0a58ad6cdd993b2ff9d50",
+      "sha256": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
       "tags": [],
       "title": "Project operational rules",
       "use": "read"
@@ -145,27 +145,31 @@
         },
         {
           "line": 45,
-          "text": "Articulated task"
+          "text": "Spec from measurement"
         },
         {
           "line": 57,
+          "text": "Articulated task"
+        },
+        {
+          "line": 69,
           "text": "Assembly and exploded views"
         },
         {
-          "line": 61,
+          "line": 73,
           "text": "Mechanical evidence"
         },
         {
-          "line": 73,
+          "line": 85,
           "text": "Render delivery"
         },
         {
-          "line": 85,
+          "line": 97,
           "text": "Revision-bound acceptance"
         }
       ],
       "kind": "workflow",
-      "lines": 89,
+      "lines": 101,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -174,7 +178,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/recipes.md",
       "related": [],
-      "sha256": "3f45934cee4142548a7a303d177c2684e66a3ddc98462691418ebd6ccf482441",
+      "sha256": "0d6f342a291d86c558a140730ac62c53811dec551dd836771ade753691ff88c5",
       "tags": [],
       "title": "Blender operational recipes",
       "use": "read"
@@ -3354,7 +3358,7 @@
       "name": null,
       "path": ".project-agent.md",
       "related": [],
-      "sha256": "0b8699af27adf4e337cfa5b1bd6e9a45a8c58ed3dc8ce6bfe273f95cd7479418",
+      "sha256": "91060d35f74d3d2b6741ec7da60be6c82153e573a7b6c91f53ddb52f40946652",
       "tags": [],
       "title": "Project Agent — Blender AI Orchestration",
       "use": "read"
@@ -3375,29 +3379,29 @@
           "text": "Mandatory loop for every scene-building task"
         },
         {
-          "line": 31,
+          "line": 46,
           "text": "Failure map (from real records, not theory)"
         },
         {
-          "line": 42,
+          "line": 59,
           "text": "Visual feedback for the user (MANDATORY)"
         },
         {
-          "line": 45,
+          "line": 62,
           "text": "Delivery"
         },
         {
-          "line": 48,
+          "line": 67,
           "text": "Resource map"
         }
       ],
       "kind": "workflow",
-      "lines": 60,
+      "lines": 79,
       "loads_with": [],
       "name": null,
       "path": "AGENTS.md",
       "related": [],
-      "sha256": "526d321dd38ec6157d9aa79f43ba88310de7350aa0ff9a5ece6d0850cced974c",
+      "sha256": "57dd4e7ddef8be1561fcdadf10b60fa700a81b39de7b411a4123925aac23f353",
       "tags": [],
       "title": "AGENTS.md — Blender AI Orchestration (primary operational file)",
       "use": "read"
@@ -4082,7 +4086,7 @@
       "name": null,
       "path": "docs/blender-workflow-improvement-backlog.md",
       "related": [],
-      "sha256": "2d476276d36ef2ca967104031bbc77771ea617ee3f9f88f0d614347556d84692",
+      "sha256": "86b6ee934120adb11187d552ca6769995786d54b2a617c43d752917727fb0451",
       "tags": [],
       "title": "Blender workflow implementation backlog",
       "use": "read"
@@ -7780,6 +7784,76 @@
       "use": "read-verify"
     },
     {
+      "description": "Laying printable parts out on build plates — default beds, material/process buckets, spacing and margin, guillotine free-rectangle packing, per-part orientation, STL per plate.",
+      "headings": [
+        {
+          "line": 12,
+          "text": "Print-Plate Layout: Buckets, Packing and Orientation"
+        },
+        {
+          "line": 14,
+          "text": "1. Mental model"
+        },
+        {
+          "line": 28,
+          "text": "2. Decision first"
+        },
+        {
+          "line": 44,
+          "text": "3. Rules"
+        },
+        {
+          "line": 72,
+          "text": "4. Recipe: the packer that actually ran"
+        },
+        {
+          "line": 91,
+          "text": "Per-part orientation"
+        },
+        {
+          "line": 108,
+          "text": "5. Anti-patterns & Traps"
+        },
+        {
+          "line": 120,
+          "text": "6. Production edge cases"
+        },
+        {
+          "line": 132,
+          "text": "7. Verification & diagnostics"
+        },
+        {
+          "line": 153,
+          "text": "8. Sources & References"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 164,
+      "loads_with": [
+        "polymer-3dprinting-cad",
+        "3d-printing",
+        "export-interchange"
+      ],
+      "name": "print-plate-layout",
+      "path": "knowledge/70-cad-precision-robotics/print-plate-layout.md",
+      "related": [
+        "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md",
+        "knowledge/60-pipeline/3d-printing.md",
+        "knowledge/60-pipeline/export-interchange.md"
+      ],
+      "sha256": "eb9f48179c1eb0a88253a92d49b4c4bee479b58349026e37810687b237802a98",
+      "tags": [
+        "3d-printing",
+        "print-plates",
+        "nesting",
+        "packing",
+        "orientation",
+        "stl"
+      ],
+      "title": "Print-Plate Layout: Buckets, Packing and Orientation",
+      "use": "read-verify"
+    },
+    {
       "annotation": {
         "basis": "static scout; not runtime certification",
         "caution": "Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently.",
@@ -7891,73 +7965,73 @@
           "text": "Then route by task"
         },
         {
-          "line": 64,
+          "line": 65,
           "text": "Full catalogue"
         },
         {
-          "line": 66,
+          "line": 67,
           "text": "00 — Foundations"
         },
         {
-          "line": 75,
+          "line": 76,
           "text": "10 — Modeling"
         },
         {
-          "line": 83,
+          "line": 84,
           "text": "20 — Shading"
         },
         {
-          "line": 90,
+          "line": 91,
           "text": "30 — Lighting & Render"
         },
         {
-          "line": 98,
+          "line": 99,
           "text": "40 — Animation & Rigging"
         },
         {
-          "line": 106,
+          "line": 107,
           "text": "50 — Procedural"
         },
         {
-          "line": 113,
+          "line": 114,
           "text": "60 — Pipeline"
         },
         {
-          "line": 123,
+          "line": 124,
           "text": "70 — Precision CAD & Robotics"
         },
         {
-          "line": 136,
+          "line": 137,
           "text": "File anatomy"
         },
         {
-          "line": 155,
+          "line": 156,
           "text": "Conventions and trust level"
         },
         {
-          "line": 173,
+          "line": 174,
           "text": "KB → Skills"
         },
         {
-          "line": 177,
+          "line": 178,
           "text": "Deep Engineering Research Repositories"
         },
         {
-          "line": 193,
+          "line": 194,
           "text": "Python Agent Boilerplate Library (`scripts/boilerplates/`)"
         },
         {
-          "line": 197,
+          "line": 198,
           "text": "Maintain the knowledge pipeline"
         }
       ],
       "kind": "knowledge",
-      "lines": 199,
+      "lines": 200,
       "loads_with": [],
       "name": null,
       "path": "knowledge/INDEX.md",
       "related": [],
-      "sha256": "8e4c8bdddde49e22881e7595c36ac541ecad36c32eb3b3635d9077143ad6c2fa",
+      "sha256": "08b3e996afcde0d096d3d50aa3176be0d9b958e75e2228842fc9ee35c64c2f84",
       "tags": [],
       "title": "Blender Knowledge Foundation — INDEX",
       "use": "read-verify"
@@ -7966,12 +8040,12 @@
       "description": "",
       "headings": [],
       "kind": "workflow",
-      "lines": 2085,
+      "lines": 2086,
       "loads_with": [],
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "ad79e57decfc5e81b9bce8429c6812e1b6010571fd2de62840573684f7d6d5fc",
+      "sha256": "fad8013865e5b745cadb603b131db8a8f1aede7a906bb34501f7505e5f8be1ff",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -14283,60 +14357,80 @@
         },
         {
           "line": 11,
-          "text": "- builds/: only the curated robot-arm demo + the catalog example scripts;"
+          "text": "- builds/: the curated robot-arm demo, the watch-winder-capsule render+print demo,"
         },
         {
           "line": 12,
-          "text": "never frames, draft videos, *.log, snapshots or zip kits"
+          "text": "and the catalog example scripts;"
         },
         {
           "line": 13,
-          "text": "- plans/: nothing except the knowledge pipeline receipt"
+          "text": "never frames, draft videos, *.log, snapshots or zip kits"
         },
         {
           "line": 14,
+          "text": "- plans/: nothing except the knowledge pipeline receipt"
+        },
+        {
+          "line": 15,
           "text": "Exit: 0 verified · 1 verification failed · 2 bad input."
         },
         {
-          "line": 33,
+          "line": 34,
           "text": "--- curated demo builds ------------------------------------------------------"
         },
         {
-          "line": 44,
-          "text": "files the knowledge catalog cites as execution examples (must exist for `check`)"
+          "line": 45,
+          "text": "watch-winder-capsule (2026-09-06): render asset + gate-passed print plates, as the second"
         },
         {
-          "line": 53,
-          "text": "plans/ is internal history (journals, audit reports with quoted owner messages) and is"
+          "line": 46,
+          "text": "worked example. Public users get what reproduces the build: README, parameters, spec, the 5"
+        },
+        {
+          "line": 47,
+          "text": "small blends, scripts, reports, STL parts/plates, and three small JPEG sheets as proof of output."
+        },
+        {
+          "line": 48,
+          "text": "Marketing media (stills, films, GIFs, step captures, concept image, pre-gate set) stays private."
         },
         {
           "line": 54,
+          "text": "files the knowledge catalog cites as execution examples (must exist for `check`)"
+        },
+        {
+          "line": 63,
+          "text": "plans/ is internal history (journals, audit reports with quoted owner messages) and is"
+        },
+        {
+          "line": 64,
           "text": "not published; only the pipeline receipt the catalog tooling reads is carried over."
         },
         {
-          "line": 60,
+          "line": 70,
           "text": "--- verify standalone --------------------------------------------------------"
         },
         {
-          "line": 69,
+          "line": 79,
           "text": "Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in"
         },
         {
-          "line": 70,
+          "line": 80,
           "text": "shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt."
         },
         {
-          "line": 71,
+          "line": 81,
           "text": "Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies)."
         }
       ],
       "kind": "execution-source",
-      "lines": 76,
+      "lines": 86,
       "loads_with": [],
       "name": null,
       "path": "scripts/export-public-repo.sh",
       "related": [],
-      "sha256": "0f9630692a1f79afe00899355da5ccdd732c0db005d343fa9be98d0d7ea96b99",
+      "sha256": "d3297d6d99c2566c2de18a438cf40825226f6f76e0be182c928830517f72aae2",
       "tags": [],
       "title": "Export the curated public tree of this project into the design-os-3d-blender",
       "use": "inspect-adapt"
@@ -15188,12 +15282,12 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 63,
+      "lines": 65,
       "loads_with": [],
       "name": null,
       "path": "tests/production-gate/gate_harness.py",
       "related": [],
-      "sha256": "fc589dc3b16c74517798bc723765270c440454f1c7bacdd347161bbcd90eef92",
+      "sha256": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
       "tags": [],
       "title": "gate_harness.py",
       "use": "inspect-adapt"
@@ -15248,12 +15342,12 @@
     }
   },
   "schema": 1,
-  "source_digest": "9b771870abaa839045245d5a119ac9d3c942765a3b7c8e9b55f5d07399863eae",
+  "source_digest": "346dd72ebfbf8a4fe19deff6b31cd4cac196a28178bf0594e5ea857c15ff5624",
   "source_hashes": {
-    ".agents/skills/blender-agent-core/SKILL.md": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
+    ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
-    ".agents/skills/blender-agent-core/references/hard-rules.md": "84ae5502ef5365b9c79281157cd4d970c22ff8c8e7c0a58ad6cdd993b2ff9d50",
-    ".agents/skills/blender-agent-core/references/recipes.md": "3f45934cee4142548a7a303d177c2684e66a3ddc98462691418ebd6ccf482441",
+    ".agents/skills/blender-agent-core/references/hard-rules.md": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
+    ".agents/skills/blender-agent-core/references/recipes.md": "0d6f342a291d86c558a140730ac62c53811dec551dd836771ade753691ff88c5",
     ".agents/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
     ".agents/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
     ".agents/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
@@ -15305,10 +15399,10 @@
     ".agents/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".agents/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".claude/skills/blender-agent-core/SKILL.md": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
+    ".claude/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
-    ".claude/skills/blender-agent-core/references/hard-rules.md": "84ae5502ef5365b9c79281157cd4d970c22ff8c8e7c0a58ad6cdd993b2ff9d50",
-    ".claude/skills/blender-agent-core/references/recipes.md": "3f45934cee4142548a7a303d177c2684e66a3ddc98462691418ebd6ccf482441",
+    ".claude/skills/blender-agent-core/references/hard-rules.md": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
+    ".claude/skills/blender-agent-core/references/recipes.md": "0d6f342a291d86c558a140730ac62c53811dec551dd836771ade753691ff88c5",
     ".claude/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
     ".claude/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
     ".claude/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
@@ -15360,8 +15454,8 @@
     ".claude/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".claude/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".claude/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".project-agent.md": "0b8699af27adf4e337cfa5b1bd6e9a45a8c58ed3dc8ce6bfe273f95cd7479418",
-    "AGENTS.md": "526d321dd38ec6157d9aa79f43ba88310de7350aa0ff9a5ece6d0850cced974c",
+    ".project-agent.md": "91060d35f74d3d2b6741ec7da60be6c82153e573a7b6c91f53ddb52f40946652",
+    "AGENTS.md": "57dd4e7ddef8be1561fcdadf10b60fa700a81b39de7b411a4123925aac23f353",
     "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
     "builds/fpv-drone-native/build-native-drone.py": "db4adea049b37d50001c8becf3ddca136f4c88ab1d1a8e17ccb8eaa193be0ccf",
     "builds/fpv-drone-native/drone-mesh-library.py": "c95ff9d8c2ddcdae1af09f4ee7b38e61fcb01cb6ab28c51446ebfe30a2102516",
@@ -15384,7 +15478,7 @@
     "docs/antigravity-setup.md": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
     "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
     "docs/blender-knowledge-workflows.md": "568a0aabe87b38a9c6da2b9f7232cbce48cc95dc560760e9b6916c978be9929a",
-    "docs/blender-workflow-improvement-backlog.md": "2d476276d36ef2ca967104031bbc77771ea617ee3f9f88f0d614347556d84692",
+    "docs/blender-workflow-improvement-backlog.md": "86b6ee934120adb11187d552ca6769995786d54b2a617c43d752917727fb0451",
     "docs/system-architecture.md": "6ea9850bf213061440a25803099d16b5aa12193714f0d23700c20d49f4cb153a",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
     "knowledge/00-foundations/blender-version-matrix.md": "db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a",
@@ -15413,9 +15507,10 @@
     "knowledge/70-cad-precision-robotics/gears-transmission-modeling.md": "1975a92284d94b2b84cf09707c7594935f3bde34bf448b6624efb37a415dbe86",
     "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c",
     "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md": "eab55760bfe566860b330463a65a8802b1dd569354d05e85ce96e5af3febd69d",
+    "knowledge/70-cad-precision-robotics/print-plate-layout.md": "eb9f48179c1eb0a88253a92d49b4c4bee479b58349026e37810687b237802a98",
     "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
-    "knowledge/INDEX.md": "8e4c8bdddde49e22881e7595c36ac541ecad36c32eb3b3635d9077143ad6c2fa",
-    "knowledge/catalog-config.json": "ad79e57decfc5e81b9bce8429c6812e1b6010571fd2de62840573684f7d6d5fc",
+    "knowledge/INDEX.md": "08b3e996afcde0d096d3d50aa3176be0d9b958e75e2228842fc9ee35c64c2f84",
+    "knowledge/catalog-config.json": "fad8013865e5b745cadb603b131db8a8f1aede7a906bb34501f7505e5f8be1ff",
     "knowledge/generated-workflows.md": "95a85a054e71d9f82b1f091e1ff22f9a4cf7d5c05ea450cf1ec3202db1b78b79",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
@@ -15520,7 +15615,7 @@
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
-    "scripts/export-public-repo.sh": "0f9630692a1f79afe00899355da5ccdd732c0db005d343fa9be98d0d7ea96b99",
+    "scripts/export-public-repo.sh": "d3297d6d99c2566c2de18a438cf40825226f6f76e0be182c928830517f72aae2",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
@@ -15566,7 +15661,7 @@
     "tests/knowledge/test_catalog.py": "6df165cc7f13d34eee8a3c11a5d26b6bc2f4bbbbede041b8e8bdca7349959163",
     "tests/knowledge/test_evolution.py": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
     "tests/production-gate/fixture_specs.py": "2509d731aac8cc22946ae63bd69399d0dba2d3d1c8f6365091f22c100f29457d",
-    "tests/production-gate/gate_harness.py": "fc589dc3b16c74517798bc723765270c440454f1c7bacdd347161bbcd90eef92",
+    "tests/production-gate/gate_harness.py": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
     "tests/production-gate/make_fixtures.py": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
     "tests/production-gate/test_gate_contract.py": "5bf32b18dd9c0ad2d8102a2d39aae9392355f820938c309b8360b604fccd5cbe",
     "tests/production-gate/test_gate_predicates.py": "51a65586c3defae4d7ab94e99285c3a02277294a00a860660034be4f3154f09d"
@@ -16316,7 +16411,8 @@
         "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md",
         "research/3d-printing-polymer-engineering/03-DFAM-GEOMETRIC-RULES-TOLERANCES.md",
         "research/3d-printing-polymer-engineering/04-FASTENERS-INSERTS-BEARINGS-INTEGRATION.md",
-        "research/3d-printing-polymer-engineering/05-THERMAL-WARPING-CHAMBER-ANNEALING.md"
+        "research/3d-printing-polymer-engineering/05-THERMAL-WARPING-CHAMBER-ANNEALING.md",
+        "knowledge/70-cad-precision-robotics/print-plate-layout.md"
       ],
       "topics": {
         "advanced-deposition-process": {

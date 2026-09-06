@@ -1,6 +1,6 @@
 ---
 name: blender-agent-core
-description: Core discipline for ANY Blender/bpy work — contract-first, knowledge routing, execute-verify-refine loop with the AGENT_OK/AGENT_FAIL sentinel contract, numeric-first verification, production gate before delivery. Activate for every task that touches Blender, before any domain skill.
+description: Core discipline for ANY Blender/bpy work — contract-first, purpose-first (render-only / print / both), knowledge routing, execute-verify-refine loop with the AGENT_OK/AGENT_FAIL sentinel contract, numeric-first verification, Form gate before delivery media, production gate before delivery. Activate for every task that touches Blender, before any domain skill.
 ---
 
 # Blender Agent Core
@@ -10,6 +10,8 @@ This skill is a ROUTER + procedure. The deep knowledge lives in `knowledge/` —
 ## 0. Routing by task
 | Task | Also load |
 |---|---|
+| Task starts and the deliverable **purpose** is not stated | Ask once — render-only / 3D print / both, recommendation **both**; record `purpose:` in `state.md` (`AGENTS.md` loop 0b) |
+| Purpose `print`/`both`, phase 2 (form + interfaces) is complete | **Form gate** before any material/studio/**delivery-media** work: temporary bake → [spec from measurement](references/recipes.md#spec-from-measurement) → `production-gate.py` exit 0; **final gate** at delivery; waiver = `GATE WAIVED <time> "<owner words>"` in `state.md`. Verification imagery (ladder rungs 2–6, clay renders) is exempt |
 | Part will be printed/manufactured, needs exact dimensions/standards | [Production contract](references/recipes.md#production-contract) → `specs/README.md` |
 | Execute via MCP/headless, read errors | [Explicit execution context](references/recipes.md#explicit-execution-context) |
 | Reference image available | Skill `blender-image-to-3d` |
@@ -25,9 +27,10 @@ Read the [hard rules](references/hard-rules.md) every session (state explicitly 
 At the start of every Blender task, read the **3 foundation files** if they are not already in context: `knowledge/00-foundations/blender-version-matrix.md`, `bpy-scripting-core.md`, `agent-workflow-loop.md`. Then `python3 scripts/blender-knowledge.py list` → `route <workflow-id>` to obtain the reading pack (skill `blender-knowledge-workbench`); load only the part you need. `knowledge/INDEX.md` is an on-demand lookup, not a must-read. `loads_with` is a one-hop hint, not a recursive load (one hop ≈ 40–50k tokens).
 
 ## 2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)
-1. **Contract first** — spec.json for a production part; fidelity contract for a reference; missing numbers → `request-input`.
+1. **Contract first** — purpose first (render-only / print / both, default `both`), then spec.json for a production part; fidelity contract for a reference; missing numbers → `request-input`.
 2. **Decompose** — scene graph → one file per pass, ≤ ~80 lines, one purpose.
 3. **Assert every step** — a pass ends with `rt.emit_ok(step, **postconditions)`; the postcondition must FAIL if the step silently no-ops; operator return must be `{'FINISHED'}`.
+3b. **Form gate closes phase 2** (build phases: 1 blockout · 2 form + interfaces · 3 detail + materials · 4 studio + composition · 5 delivery) when purpose is `print`/`both` — temporary identity bake + spec from measurement + `production-gate.py` exit 0 before any material/studio work; **delivery** media only after PASS or an owner waiver (`GATE WAIVED <time> "<owner words>"`); final gate at delivery. Verification imagery stays mandatory and ungated but cheap (≤ 512 px / low-sample, ≤ ~2 min GPU per pass); costlier imagery is delivery media.
 4. **Non-destructive scaffold** — the lib's `scaffold()` reads first and writes only when factory-default or `force=True`; never reset the scene being worked on.
 5. **Screenshot with intent** — write down the expectation and what would falsify it BEFORE looking.
 6. **2 failures on the same step → change the CLASS of approach; 3 failures → `request-input`.**
