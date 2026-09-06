@@ -1,0 +1,555 @@
+{
+ "schema_version": 1,
+ "units": "mm",
+ "project": "M3 mounting bracket (gate example / positive fixture)",
+ "fasteners": [
+  {
+   "standard": "ISO 4762",
+   "size": "M3",
+   "length_mm": 12,
+   "grade": "12.9",
+   "qty": 2
+  }
+ ],
+ "load_cases": [],
+ "required_checks": [],
+ "physical_evidence": [
+  "fit trial",
+  "loaded thermal test",
+  "retention hardware"
+ ],
+ "parts": [
+  {
+   "id": "P02",
+   "object": "P02",
+   "target_dims_mm": [
+    174.0,
+    116.0,
+    9.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P30",
+   "object": "P30",
+   "target_dims_mm": [
+    134.0,
+    70.0,
+    52.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P37",
+   "object": "P37",
+   "target_dims_mm": [
+    76.0,
+    64.0,
+    33.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P01",
+   "object": "P01",
+   "target_dims_mm": [
+    63.0,
+    66.0,
+    28.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P14",
+   "object": "P14",
+   "target_dims_mm": [
+    90.0,
+    67.0,
+    47.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P15",
+   "object": "P15",
+   "target_dims_mm": [
+    108.0,
+    70.0,
+    52.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P35",
+   "object": "P35",
+   "target_dims_mm": [
+    53.8,
+    70.0,
+    46.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P38",
+   "object": "P38",
+   "target_dims_mm": [
+    94.0,
+    96.0,
+    10.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P03",
+   "object": "P03",
+   "target_dims_mm": [
+    58.0,
+    58.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P04",
+   "object": "P04",
+   "target_dims_mm": [
+    58.0,
+    58.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P07",
+   "object": "P07",
+   "target_dims_mm": [
+    66.0,
+    63.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P11",
+   "object": "P11",
+   "target_dims_mm": [
+    28.0,
+    97.259,
+    8.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P12",
+   "object": "P12",
+   "target_dims_mm": [
+    48.0,
+    52.0,
+    6.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P19",
+   "object": "P19",
+   "target_dims_mm": [
+    28.0,
+    97.259,
+    8.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P20",
+   "object": "P20",
+   "target_dims_mm": [
+    48.0,
+    52.0,
+    6.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P24",
+   "object": "P24",
+   "target_dims_mm": [
+    58.0,
+    58.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P25",
+   "object": "P25",
+   "target_dims_mm": [
+    58.0,
+    58.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P32",
+   "object": "P32",
+   "target_dims_mm": [
+    32.0,
+    53.762,
+    5.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P05",
+   "object": "P05",
+   "target_dims_mm": [
+    53.0,
+    31.0,
+    5.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P06",
+   "object": "P06",
+   "target_dims_mm": [
+    53.0,
+    31.0,
+    5.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P13",
+   "object": "P13",
+   "target_dims_mm": [
+    36.0,
+    39.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P21",
+   "object": "P21",
+   "target_dims_mm": [
+    26.0,
+    26.0,
+    26.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P22",
+   "object": "P22",
+   "target_dims_mm": [
+    54.0,
+    36.0,
+    9.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P23",
+   "object": "P23",
+   "target_dims_mm": [
+    26.0,
+    56.0,
+    2.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P26",
+   "object": "P26",
+   "target_dims_mm": [
+    53.0,
+    31.0,
+    5.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P27",
+   "object": "P27",
+   "target_dims_mm": [
+    53.0,
+    31.0,
+    5.5
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P28",
+   "object": "P28",
+   "target_dims_mm": [
+    52.0,
+    48.0,
+    6.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P29",
+   "object": "P29",
+   "target_dims_mm": [
+    48.0,
+    52.0,
+    6.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P31",
+   "object": "P31",
+   "target_dims_mm": [
+    38.0,
+    42.0,
+    5.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P33",
+   "object": "P33",
+   "target_dims_mm": [
+    32.0,
+    53.762,
+    5.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P34",
+   "object": "P34",
+   "target_dims_mm": [
+    10.0,
+    64.0,
+    9.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P36",
+   "object": "P36",
+   "target_dims_mm": [
+    30.946,
+    49.75,
+    3.0
+   ],
+   "tol_mm": 0.1,
+   "material": "PETG",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P08",
+   "object": "P08",
+   "target_dims_mm": [
+    10.0,
+    8.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "TPU",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P09",
+   "object": "P09",
+   "target_dims_mm": [
+    10.0,
+    8.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "TPU",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P10",
+   "object": "P10",
+   "target_dims_mm": [
+    10.0,
+    8.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "TPU",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P16",
+   "object": "P16",
+   "target_dims_mm": [
+    10.0,
+    8.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "TPU",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P17",
+   "object": "P17",
+   "target_dims_mm": [
+    10.0,
+    8.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "TPU",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  },
+  {
+   "id": "P18",
+   "object": "P18",
+   "target_dims_mm": [
+    10.0,
+    8.0,
+    4.0
+   ],
+   "tol_mm": 0.1,
+   "material": "TPU",
+   "process": "FDM",
+   "orientation_up": "+z",
+   "expected_shells": 1
+  }
+ ]
+}

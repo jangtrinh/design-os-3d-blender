@@ -1,0 +1,540 @@
+{
+  "units": "mm",
+  "generated_by": "scripts/production-gate.py",
+  "parts": [
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P02.stl",
+      "triangles": 6472,
+      "sha256": "1d5c9e4f8ccda5c7aa05ecb36a8b63b15a7c40b7ee5dde177960bd984b5226ad",
+      "id": "P02",
+      "object": "P02",
+      "dims_mm": [
+        174.0,
+        116.0,
+        9.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P30.stl",
+      "triangles": 15124,
+      "sha256": "13c1fa2eb8e1da12995374146b9a6b884fdc88aa7f28c001b0cdf5e0c5b557b9",
+      "id": "P30",
+      "object": "P30",
+      "dims_mm": [
+        134.0,
+        70.0,
+        52.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P37.stl",
+      "triangles": 7886,
+      "sha256": "7e3d5ac1c8e61ae759251ca4bd31fa55b22a2fc73e1eee483bd8d363105935e8",
+      "id": "P37",
+      "object": "P37",
+      "dims_mm": [
+        76.0,
+        64.0,
+        33.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P01.stl",
+      "triangles": 712,
+      "sha256": "1affa836efb8f4872deca97dcf022ee3fc3e890b442a0c56893753188e2b251d",
+      "id": "P01",
+      "object": "P01",
+      "dims_mm": [
+        63.0,
+        66.0,
+        28.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P14.stl",
+      "triangles": 8696,
+      "sha256": "293be2baf0fa56461e78633a00e2bf213ffd3e9712616af5f03d03af7bb6902f",
+      "id": "P14",
+      "object": "P14",
+      "dims_mm": [
+        90.0,
+        67.0,
+        47.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P15.stl",
+      "triangles": 15316,
+      "sha256": "02db12b9df26cefaea75060fd1c8f8846fa80ef0add99429784fc5e745c49fd2",
+      "id": "P15",
+      "object": "P15",
+      "dims_mm": [
+        108.0,
+        70.0,
+        52.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P35.stl",
+      "triangles": 8300,
+      "sha256": "ce009c16995bca94537c73aa6f5c1d70c273ed26cccb61f0348324e944a9cd97",
+      "id": "P35",
+      "object": "P35",
+      "dims_mm": [
+        53.8,
+        70.0,
+        46.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P38.stl",
+      "triangles": 384,
+      "sha256": "81bf0439673ebf1a3b6583eefdc42a28098d36a64cf6e13fa3b58fe3463635ea",
+      "id": "P38",
+      "object": "P38",
+      "dims_mm": [
+        94.0,
+        96.0,
+        10.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P03.stl",
+      "triangles": 5032,
+      "sha256": "425fdeb1a22501e89c978dc57e7e12c49ff80b06727e433995a2ada6e5bc774c",
+      "id": "P03",
+      "object": "P03",
+      "dims_mm": [
+        58.0,
+        58.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P04.stl",
+      "triangles": 5030,
+      "sha256": "c53f07a47e1d5e13c8407717e2ac96daae99ca1f8ee4d8fbf5b948b16362c418",
+      "id": "P04",
+      "object": "P04",
+      "dims_mm": [
+        58.0,
+        58.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P07.stl",
+      "triangles": 2220,
+      "sha256": "b12aed2202b8bc9b6a71871f8297004d54e56f65266bc8aaaeda5c11b51127ca",
+      "id": "P07",
+      "object": "P07",
+      "dims_mm": [
+        66.0,
+        63.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P11.stl",
+      "triangles": 8508,
+      "sha256": "51e5ade19a2adced2018b1da8b403e43d3056e766a48d0901370c14006745054",
+      "id": "P11",
+      "object": "P11",
+      "dims_mm": [
+        28.0,
+        97.2586,
+        8.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P12.stl",
+      "triangles": 6446,
+      "sha256": "3225c9f8f4f1df5544d6346f76d9d4c92e5ff055f589969c8c66e7dbbf52131e",
+      "id": "P12",
+      "object": "P12",
+      "dims_mm": [
+        48.0,
+        52.0,
+        6.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P19.stl",
+      "triangles": 8502,
+      "sha256": "32e13224097f1b0608369d4e3eb77e800a7e53c8821807b0ba23014b25bc8f7f",
+      "id": "P19",
+      "object": "P19",
+      "dims_mm": [
+        28.0,
+        97.2587,
+        8.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P20.stl",
+      "triangles": 6958,
+      "sha256": "5ae537ee518b85c6ec27aae74be20971d01721c1d31a08297d6263f992c23290",
+      "id": "P20",
+      "object": "P20",
+      "dims_mm": [
+        48.0,
+        52.0,
+        6.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P24.stl",
+      "triangles": 5032,
+      "sha256": "425fdeb1a22501e89c978dc57e7e12c49ff80b06727e433995a2ada6e5bc774c",
+      "id": "P24",
+      "object": "P24",
+      "dims_mm": [
+        58.0,
+        58.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P25.stl",
+      "triangles": 5030,
+      "sha256": "c53f07a47e1d5e13c8407717e2ac96daae99ca1f8ee4d8fbf5b948b16362c418",
+      "id": "P25",
+      "object": "P25",
+      "dims_mm": [
+        58.0,
+        58.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P32.stl",
+      "triangles": 5500,
+      "sha256": "a7790caedd03f09c6ff63512b47be27fc39290fffe3a879438a8cb4193d215c3",
+      "id": "P32",
+      "object": "P32",
+      "dims_mm": [
+        32.0,
+        53.7619,
+        5.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P05.stl",
+      "triangles": 5460,
+      "sha256": "58bd1a7731a7d3aad01fe4e781b2551928f6600de7425b5b8405ca83b00d7e4d",
+      "id": "P05",
+      "object": "P05",
+      "dims_mm": [
+        53.0,
+        31.0,
+        5.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P06.stl",
+      "triangles": 5460,
+      "sha256": "3ebb528710df10c18e9e14fff691f17f83e23919c95f105fbc0ee6f21f7cf11e",
+      "id": "P06",
+      "object": "P06",
+      "dims_mm": [
+        53.0,
+        31.0,
+        5.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P13.stl",
+      "triangles": 4176,
+      "sha256": "25c80a3e5ae49af8b2bb66fb05eb4ac7673192cddc9d8eb4172be75bb45f5c64",
+      "id": "P13",
+      "object": "P13",
+      "dims_mm": [
+        36.0,
+        39.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P21.stl",
+      "triangles": 4392,
+      "sha256": "965d20c4e04e51dd33c9531c15d0c4db4c6a000bd21f76ad8f271d4c8d342802",
+      "id": "P21",
+      "object": "P21",
+      "dims_mm": [
+        26.0,
+        26.0,
+        26.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P22.stl",
+      "triangles": 256,
+      "sha256": "61eaf6dd154e35d43f86b5be56b0f5e11cb8c1167a9ad0b718d21acff7d0c9f9",
+      "id": "P22",
+      "object": "P22",
+      "dims_mm": [
+        54.0,
+        36.0,
+        9.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P23.stl",
+      "triangles": 360,
+      "sha256": "d97f0b7b164ff2d01fdea661b05167c7c5c9c0b1299ff022ddd09ad530046750",
+      "id": "P23",
+      "object": "P23",
+      "dims_mm": [
+        26.0,
+        56.0,
+        2.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P26.stl",
+      "triangles": 5460,
+      "sha256": "58bd1a7731a7d3aad01fe4e781b2551928f6600de7425b5b8405ca83b00d7e4d",
+      "id": "P26",
+      "object": "P26",
+      "dims_mm": [
+        53.0,
+        31.0,
+        5.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P27.stl",
+      "triangles": 5460,
+      "sha256": "3ebb528710df10c18e9e14fff691f17f83e23919c95f105fbc0ee6f21f7cf11e",
+      "id": "P27",
+      "object": "P27",
+      "dims_mm": [
+        53.0,
+        31.0,
+        5.5
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P28.stl",
+      "triangles": 8560,
+      "sha256": "cceecc969394f9aec137c7a3c8d8fd4a8fc445681a5a738e8afea8f714e16a0e",
+      "id": "P28",
+      "object": "P28",
+      "dims_mm": [
+        52.0,
+        48.0,
+        6.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P29.stl",
+      "triangles": 7422,
+      "sha256": "e2eea4303d04b52ef666ebe3086fcf686c8f022c2691f84c6ab391a026fe36a4",
+      "id": "P29",
+      "object": "P29",
+      "dims_mm": [
+        48.0,
+        52.0,
+        6.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P31.stl",
+      "triangles": 6428,
+      "sha256": "3ee7712c6fae3e8da1de9f80bf8500340e14dde71468f9c5f4bf00ff0c6e2b2a",
+      "id": "P31",
+      "object": "P31",
+      "dims_mm": [
+        38.0,
+        42.0,
+        5.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P33.stl",
+      "triangles": 5486,
+      "sha256": "15f6d52b319439961187d6b85c0cecdb5ef7adb1bb1ae4bcd855f68a093a8e0a",
+      "id": "P33",
+      "object": "P33",
+      "dims_mm": [
+        32.0,
+        53.7619,
+        5.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P34.stl",
+      "triangles": 2066,
+      "sha256": "985665799206867457df3c00bd874c23536bf95fb8f0fee6bc8caa1d62ed3ea4",
+      "id": "P34",
+      "object": "P34",
+      "dims_mm": [
+        10.0,
+        64.0,
+        9.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P36.stl",
+      "triangles": 416,
+      "sha256": "67f3b94a5cf8b0f219d5a79c15fa8e77aa9ff98b023ccc8a65398aa64924b909",
+      "id": "P36",
+      "object": "P36",
+      "dims_mm": [
+        30.946,
+        49.7496,
+        3.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P08.stl",
+      "triangles": 188,
+      "sha256": "969727807b3a087a89294df87444bdc4c2806d77629183158eff7e04f12b65d9",
+      "id": "P08",
+      "object": "P08",
+      "dims_mm": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P09.stl",
+      "triangles": 188,
+      "sha256": "969727807b3a087a89294df87444bdc4c2806d77629183158eff7e04f12b65d9",
+      "id": "P09",
+      "object": "P09",
+      "dims_mm": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P10.stl",
+      "triangles": 188,
+      "sha256": "969727807b3a087a89294df87444bdc4c2806d77629183158eff7e04f12b65d9",
+      "id": "P10",
+      "object": "P10",
+      "dims_mm": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P16.stl",
+      "triangles": 188,
+      "sha256": "969727807b3a087a89294df87444bdc4c2806d77629183158eff7e04f12b65d9",
+      "id": "P16",
+      "object": "P16",
+      "dims_mm": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P17.stl",
+      "triangles": 188,
+      "sha256": "969727807b3a087a89294df87444bdc4c2806d77629183158eff7e04f12b65d9",
+      "id": "P17",
+      "object": "P17",
+      "dims_mm": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    },
+    {
+      "file": "/private/tmp/claude-501/-Users-jang-Products-Blender/770d4c04-83d4-40e0-b3f9-1fe468bcd0b0/scratchpad/gate-arm/exp/P18.stl",
+      "triangles": 188,
+      "sha256": "969727807b3a087a89294df87444bdc4c2806d77629183158eff7e04f12b65d9",
+      "id": "P18",
+      "object": "P18",
+      "dims_mm": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "units": "mm",
+      "status": "UNRELEASED_DIGITAL_CHECK_ONLY"
+    }
+  ],
+  "status": "NOT_MANUFACTURING_APPROVED",
+  "prohibited_claim": "A watertight STL that matches its declared dimensions does not establish load capability, assembly fit, print success or heat endurance."
+}
