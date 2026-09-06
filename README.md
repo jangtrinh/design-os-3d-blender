@@ -1,12 +1,33 @@
 # design-os-3d-blender
 
-![Robot arm assembly demo — 126 s film at 4× speed, every part modelled with bpy](docs/media/robot-arm-assembly-4x.gif)
+<p align="center">
+  <img src="docs/media/robot-arm-assembly-4x.gif" width="100%" alt="Robot arm assembly demo — the accepted 126 s film at 4× speed; every part modelled with bpy, no vendor assets">
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <img alt="Blender 5.2 LTS" src="https://img.shields.io/badge/Blender-5.2_LTS-EA7600?logo=blender&logoColor=white">
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
+  <img alt="Tests: 93 passing" src="https://img.shields.io/badge/tests-93_passing-brightgreen">
+  <img alt="Production gate: 38/38 parts pass" src="https://img.shields.io/badge/production_gate-38%2F38_parts_pass-brightgreen">
+  <a href="https://github.com/jangtrinh/design-os-3d-blender/releases"><img alt="Release" src="https://img.shields.io/github/v/release/jangtrinh/design-os-3d-blender?color=informational"></a>
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/jangtrinh/design-os-3d-blender">
+  <img alt="Platform: macOS | Linux" src="https://img.shields.io/badge/platform-macOS_%7C_Linux-lightgrey">
+  <img alt="Assets: 100% Blender-native" src="https://img.shields.io/badge/assets-100%25_Blender--native-8A2BE2">
+  <img alt="MCP: blender-mcp compatible" src="https://img.shields.io/badge/MCP-blender--mcp_compatible-0aa">
+  <img alt="Agents: Claude Code | Codex" src="https://img.shields.io/badge/agents-Claude_Code_%7C_Codex-000">
+</p>
+
+<p align="center"><b>Spec → build → verify → gate.</b> An agent operating system for Blender that ships parts you can print, not pictures you can post.</p>
+
+**Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [How this was built](#-how-this-was-built) · [Notes](#-notes) · [License](#-license)
+
 
 An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
 
 Everything here is Blender-native: no vendor mesh generation, no downloaded assets, no paid model calls.
 
-## What is inside
+## 🧭 What is inside
 
 | Layer | Path | Purpose |
 |---|---|---|
@@ -20,7 +41,7 @@ Everything here is Blender-native: no vendor mesh generation, no downloaded asse
 | Tests | `tests/execution`, `tests/production-gate`, `tests/knowledge` | 93 tests, all run against a real headless Blender |
 | Demo | `builds/robot-arm-*` | The robot-arm session: accepted assembly film, 38-part print kit, engineering reports — with their honest limits |
 
-## Proof: the robot arm is real geometry, not a picture
+## 🔬 Proof: the robot arm is real geometry, not a picture
 
 | | |
 |---|---|
@@ -42,7 +63,7 @@ GATE PASS | 38 part(s), 0 failing check(s) | scene=72ab501e47bf spec=d88bc836fb3
 
 Per part: `non_manifold_edges`, `non_contiguous_edges`, `wire_edges`, `loose_verts`, `zero_area_faces`, `self_intersection_pairs`, `shells`, `signed_volume_positive`, `bbox_dims_mm`, `scale_applied`, `scene_unit_system`, `scene_scale_length`, then STL round-trip repeats of the topology and dimension checks. Report, spec and the reproduction script: `builds/robot-arm-print-assembly/reports/gate-report-260906.json`, `gate-spec-260906.json`, `scripts/gate-import-parts.py`. The report's `exclusions` say what this does **not** prove: load capacity, print success, assembly fit, thermal/creep — those remain physical evidence, and the arm stays unreleased for manufacture.
 
-## Quick start
+## 🚀 Quick start
 
 Requirements: macOS/Linux, Blender 5.2.x, Python 3.10+ on the host (stdlib only). Optional interactive path: [blender-mcp](https://github.com/ahujasid/blender-mcp) addon connected in the Blender GUI.
 
@@ -76,7 +97,7 @@ python3 scripts/production-gate.py --scene builds/my-part/part.blend --spec buil
 
 Exit `0` = every declared check passed (digital evidence only); `1` = a requirement failed; `2` = spec/scene incomplete; `3` = execution error. `specs/README.md` lists exactly what each check proves and does **not** prove (load, fit after shrinkage, thermal duty stay physical evidence).
 
-## The loop agents follow
+## 🔁 The loop agents follow
 
 ```
 Contract → Plan (scene graph) → Code (pass files ≤ ~80 lines) → Critic → Execute → Verify → Verdict
@@ -87,7 +108,7 @@ Contract → Plan (scene graph) → Code (pass files ≤ ~80 lines) → Critic �
 - **Verdict is one of** `continue · refine-spec · refine-code · request-input · stop`. Two failures on the same step change the *class* of approach; three escalate.
 - **Success is the sentinel**, never "Code executed successfully".
 
-## Robot-arm demo (`builds/`)
+## 🤖 Robot-arm demo (`builds/`)
 
 - `robot-arm-original-refined/` — the accepted step-by-step assembly film (3,020 frames, Cycles), source `.blend`, clearance/overlap checks, decoded-frame review reports.
 - `robot-arm-print-assembly/` — 38 fit-prototype parts on 5 plates (PETG + TPU) as STL/3MF, parts list, assembly-step CSV, mesh audit and export checks.
@@ -95,17 +116,17 @@ Contract → Plan (scene graph) → Code (pass files ≤ ~80 lines) → Critic �
 
 Status is deliberately separated per domain: **media accepted · motion checked at sampled poses · fit prototypes exported · manufacture BLOCKED** (wrist torque margin, retention hardware, thermal duty and loaded trials remain open — see the build READMEs). The frame sequences and draft renders (several GB) are not shipped.
 
-## How this was built
+## 🛠️ How this was built
 
 The workflow was audited on 2026-09-05/06 by four independent read-only auditors, a web researcher, and the Codex agent that built the arm; findings and the resulting implementation program are in `plans/260905-2356-blender-workflow-audit/`. The single durable lesson: prose rules did not bind; only checks with a failing exit held, so every rule that could become code became code with a negative test, and the rest is labelled `MANUAL`.
 
-## Notes
+## 📝 Notes
 
 - `AGENTS.md`, `.project-agent.md` and the core skill are written in Vietnamese with English identifiers; the knowledge base and code are English.
 - `<ROOT>` in docs means the absolute path of this repository on your machine.
 - `.agents/skills/img2threejs` is a vendored copy of [img2threejs](https://github.com/img2threejs/img2threejs) (Apache-2.0, license included); only its portable review concepts are routed by the catalog.
 - `tests/blender/` are acceptance tests for drone builds that are not included in this repository.
 
-## License
+## 📄 License
 
 MIT — see `LICENSE`.
