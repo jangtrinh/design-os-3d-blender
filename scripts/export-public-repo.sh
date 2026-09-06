@@ -70,7 +70,7 @@ fi
 # shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt.
 # Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies).
 VN='[ăâđêôơưĂÂĐÊÔƠƯạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỵỷỹ]'
-if VNHITS="$(grep -rlP "$VN" . --include='*.md' --include='*.json' --include='*.py' --include='*.sh' --exclude-dir=.git --exclude-dir=img2threejs | grep -v 'scripts/knowledge-query.py\|scripts/export-public-repo.sh')"; then
+if VNHITS="$(LC_ALL=en_US.UTF-8 grep -rlE "$VN" . --include='*.md' --include='*.json' --include='*.py' --include='*.sh' --exclude-dir=.git --exclude-dir=img2threejs | grep -v 'scripts/knowledge-query.py\|scripts/export-public-repo.sh\|knowledge/catalog.json')"; then  # catalog.json quotes vendored img2threejs headings
   echo "export-public-repo: Vietnamese text remains in published files:" >&2; echo "$VNHITS" >&2; exit 1
 fi
 echo "export-public-repo: verified $(git -C "$DST" status --porcelain | wc -l | tr -d ' ') changed paths in $DST — review with 'git -C $DST status', then commit and push"

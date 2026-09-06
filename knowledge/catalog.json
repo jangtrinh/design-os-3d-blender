@@ -14336,7 +14336,7 @@
       "name": null,
       "path": "scripts/export-public-repo.sh",
       "related": [],
-      "sha256": "f5c976813d7ba31caf1f5094fe314917d96892a142ec2ba99cca57d030f7726f",
+      "sha256": "0f9630692a1f79afe00899355da5ccdd732c0db005d343fa9be98d0d7ea96b99",
       "tags": [],
       "title": "Export the curated public tree of this project into the design-os-3d-blender",
       "use": "inspect-adapt"
@@ -15248,7 +15248,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "92283a28f6513c30d2b2890803b1cda59a87bc2f48c1b561a937d64d47398e17",
+  "source_digest": "9b771870abaa839045245d5a119ac9d3c942765a3b7c8e9b55f5d07399863eae",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "0d15ab8d6785c73ffae10951e22407f404f896e503ef68a4d900d8e73a2d8acc",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -15520,7 +15520,7 @@
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
-    "scripts/export-public-repo.sh": "f5c976813d7ba31caf1f5094fe314917d96892a142ec2ba99cca57d030f7726f",
+    "scripts/export-public-repo.sh": "0f9630692a1f79afe00899355da5ccdd732c0db005d343fa9be98d0d7ea96b99",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
