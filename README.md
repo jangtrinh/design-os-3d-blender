@@ -1,6 +1,6 @@
 # design-os-3d-blender
 
-![Robot arm — Cycles render of the assembled model, built entirely with bpy](docs/media/robot-arm-hero-cycles.png)
+![Robot arm assembly demo — 126 s film at 4× speed, every part modelled with bpy](docs/media/robot-arm-assembly-4x.gif)
 
 An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
 
@@ -29,9 +29,9 @@ Everything here is Blender-native: no vendor mesh generation, no downloaded asse
 | ![Wireframe](docs/media/robot-arm-wireframe-cycles.png) | ![Print plates](docs/media/robot-arm-print-plates.png) |
 | Render tessellation of the 402 arm part meshes (114,723 polygons), Cycles Wireframe node — every edge you see is in the file | 38 fit-prototype parts arranged on five 220×220 mm plates (PETG + TPU), exported as STL/3MF |
 
-![Assembly film at 4× speed](docs/media/robot-arm-assembly-4x.gif)
+![Cycles hero render](docs/media/robot-arm-hero-cycles.png)
 
-*The accepted 126 s assembly film at 4× speed (full MP4 in `builds/robot-arm-original-refined/video/`).*
+*Cycles render of the assembled model at the final frame (1600×1200, 96 samples, Metal). The full-speed MP4 of the assembly film is in `builds/robot-arm-original-refined/video/`.*
 
 **Production gate run on the real print kit (2026-09-06).** The 38 exported STLs were re-imported into a metre-scaled scene and gated against a spec generated from `parts-list.csv` (target dimensions ± 0.1 mm, one shell per part, PETG/TPU):
 
