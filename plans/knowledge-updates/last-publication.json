@@ -1,8 +1,8 @@
 {
   "status": "published",
-  "plan_sha256": "0a96e0e6df95a0d37829e4236fa1cf80580483450fb345bd103d9bbc261642a7",
+  "plan_sha256": "747626d28785463e5a6648498b48f8424d5b5f7112c0afcd524a1658705061b4",
   "playbook_sha256": "7475156aff7a18f6251e27b47d1666e0e2bc05c4eec7f606eb4d76ca245a85ed",
-  "catalog_digest": "65942b77740676e4d10a2dd8eaaee32ccacbf90ed9b3cfb56a741f19494bf5cd",
+  "catalog_digest": "e1f28f1040b633f7ccee270bf33a7c416e6f2dabb1aa9a431176325c21cec249",
   "inputs": {
     ".agents/skills/blender-agent-core/SKILL.md": "a7ac94a427ce3b738abaa5127db1f18a75363f77af487c28347eb21ffb2398b8",
     ".claude/skills/blender-agent-core/SKILL.md": "a7ac94a427ce3b738abaa5127db1f18a75363f77af487c28347eb21ffb2398b8",
@@ -272,6 +272,7 @@
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
+    "scripts/export-public-repo.sh": "2fbea2fe11c27364184869cb066a2debee9df5ed3d631ab5e7687e62c7936291",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
