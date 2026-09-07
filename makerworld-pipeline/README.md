@@ -16,8 +16,8 @@ drives Bambu Studio or MakerWorld on your behalf.
   (set `BAMBU_REAL_3MF=<path>` to run the differential checks against a real
   Bambu Studio export)
 - Generate a format-faithful CI fixture:
-  `python3 makerworld-pipeline/tools/make_bambu_like_fixture.py`
-  (writes into `makerworld-pipeline/tests/fixtures/`)
+  `python3 makerworld-pipeline/tools/make_bambu_like_fixture.py --out <fixture>.3mf --stl <part>.stl [--stl <part2>.stl] [--plates N]`
+  (the committed fixtures under `makerworld-pipeline/tests/fixtures/` were made this way from `builds/watch-winder-capsule/parts/`)
 
 ## Docs
 
