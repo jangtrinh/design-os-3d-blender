@@ -48,6 +48,23 @@ def topology_only(dims, shells=1):
     return spec
 
 
+def bed(dims, volume=None, margin=None):
+    """A minimal spec (no holes/features) around a box of dims mm, plus
+    optional print_volume_mm / brim_margin_mm overrides, for bed-fit tests."""
+    spec = base()
+    part = spec["parts"][0]
+    part["target_dims_mm"] = list(dims)
+    part["tol_mm"] = 0.05
+    part.pop("features", None)
+    part.pop("min_wall_mm", None)
+    spec["required_checks"] = []
+    if volume is not None:
+        spec["print_volume_mm"] = list(volume)
+    if margin is not None:
+        spec["brim_margin_mm"] = margin
+    return spec
+
+
 def write(spec, path):
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(spec, fh, indent=2)

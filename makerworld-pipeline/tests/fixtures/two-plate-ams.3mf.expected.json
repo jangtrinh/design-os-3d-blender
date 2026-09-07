@@ -1,0 +1,41 @@
+{
+ "generator": "make_bambu_like_fixture.py",
+ "plates": {
+  "1": {
+   "bbox_mm": {
+    "max_x": 106.0,
+    "max_y": -6.000015000000005,
+    "max_z": 2.5,
+    "min_x": 94.0,
+    "min_y": -11.000015000000005,
+    "min_z": 0.0
+   },
+   "object_ids": [
+    "2"
+   ]
+  },
+  "2": {
+   "bbox_mm": {
+    "max_x": 410.8,
+    "max_y": 158.500019,
+    "max_z": 9.000003999999997,
+    "min_x": 389.2,
+    "min_y": 149.500015,
+    "min_z": 0.0
+   },
+   "object_ids": [
+    "4"
+   ]
+  }
+ },
+ "source_stls": [
+  {
+   "path": "builds/watch-winder-capsule/parts/finger_tab.stl",
+   "sha256": "935246d06d51673424254bd23618634a1b4869df0cefac10ff5958e08b20eec5"
+  },
+  {
+   "path": "builds/watch-winder-capsule/parts/hinge_fixed.stl",
+   "sha256": "3d83d6e99600b9c30eb9fdbb5778115580fa958a63c6bd7683b4b17b9decf84d"
+  }
+ ]
+}

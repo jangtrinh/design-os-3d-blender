@@ -76,6 +76,18 @@ Evidence: [four smoke runs and twelve diagnostics](../plans/260905-2337-arm-sess
 
 Rerun: `/Applications/Blender.app/Contents/MacOS/Blender --factory-startup --disable-autoexec -b --python-exit-code 23 -P plans/260905-2337-arm-session-retro/reports/new-knowledge-review/disposable/negative-checks.py`. This preserves current-defect evidence; do not merely flip its expectations and call the adapter fixed. Desired-behavior tests and an actual candidate visual check must accompany implementation; fit/IP/EMC/load/life require their own evidence.
 
+## E8 — Incorporate Astra Decision Rules & Discriminating Checks into Blender Design OS
+
+Priority: after E3/E6. Owner: workflow orchestration / runtime task.
+Scope: `AGENTS.md` (§Critic & §Failure map), `scripts/agent-verify-lib.py`, and integration with `es-astra-work`.
+
+Evidence: Auto-research and debate on 2026-09-07 confirmed that `es-astra-work` originates from Astra's recorded builder friction on the robot arm (`plans/260905-2356-blender-workflow-audit/reports/astra-06-builder-perspective.md`). Current test suite passes 65/65 (45 execution + 20 gate), but confidence is bounded at ~60% due to 3 empirical gaps: (1) no A/B benchmark coupon measuring pass-count reduction on complex booleans, (2) Backlog E6 dynamic transit collision open, (3) prompt context tax risk.
+
+Acceptance:
+1. **Critic & Failure Map update:** In `AGENTS.md`, insert conditional decision table: before boolean, assert `signed_volume > 0` and `non_manifold_edges == 0` on both operands; when boolean fails, run discriminating checks before code edit.
+2. **Hybrid Thin-Skill Anchor:** Integrate `es-astra-work` as a recovery router triggered only after 2 consecutive failed passes, avoiding context-bloat in normal sessions.
+3. **Empirical A/B Benchmark:** Deliver a reproducible negative test coupon (`coupons/broken_boolean.blend`) proving pass count reduction from >= 3 to <= 2 without violating `AGENTS.md` binding rules.
+
 ## Deferred or rejected
 
 No new Blender daemon, many-domain-skill split, forced generic-helper migration, universal CPU/Metal/sample preset, or global no-subtitle preference. Reconsider a new router only after a recorded retrieval-caused missed gate. Consider a cooperative lock only if multiple writers are actually required; manual single-writer ownership is not enforcement. No managed `es-*` skill was changed and no kit gap was established by this project-only evidence.

@@ -15,9 +15,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import bpy  # noqa: E402
 
-from production_gate import (dimensions, export_roundtrip, features_fasteners,  # noqa: E402
-                             meshprep, report, spec as spec_mod, topology,
-                             walls_overhang)
+from production_gate import (bed_fit, dimensions, export_roundtrip,  # noqa: E402
+                             features_fasteners, meshprep, report,
+                             spec as spec_mod, topology, walls_overhang)
 
 
 def parse_args(argv):
@@ -40,7 +40,7 @@ def sentinel(ok, exit_code, error=None, **post):
     print(("AGENT_OK " if ok else "AGENT_FAIL ") + json.dumps(payload, default=str))
 
 
-def gate_part(part, unchecked):
+def gate_part(part, spec, unchecked):
     obj = bpy.data.objects.get(part["object"])
     if obj is None or obj.type != "MESH":
         raise spec_mod.SpecError(
@@ -58,6 +58,9 @@ def gate_part(part, unchecked):
     checks += c
     measured.update(m)
     c, m = dimensions.unit_checks(bpy.context.scene)
+    checks += c
+    measured.update(m)
+    c, m = bed_fit.checks(bm, part, spec)
     checks += c
     measured.update(m)
     c, m = walls_overhang.wall_checks(bm, part.get("min_wall_mm"))
@@ -102,7 +105,7 @@ def main(argv):
         unchecked.extend("part %s: not selected by --parts" % s for s in skipped)
     keep = []
     for part in parts:
-        obj, bm, res = gate_part(part, unchecked)
+        obj, bm, res = gate_part(part, spec, unchecked)
         results.append(res)
         if args.export_dir:
             os.makedirs(args.export_dir, exist_ok=True)

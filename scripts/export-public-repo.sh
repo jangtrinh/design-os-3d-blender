@@ -12,6 +12,8 @@
 #     robot-arm-print-assembly) and watch-winder-capsule — plus the catalog example files;
 #     nothing else under builds/, and never frames, draft videos, *.log, snapshots or zip kits
 #   - plans/: nothing except the knowledge pipeline receipt
+#   - makerworld-pipeline/: validator, fixture generator, fixtures, docs, tests — never archive/
+#     (Vietnamese drafts kept for provenance only, 2026-09-07)
 # Exit: 0 verified · 1 verification failed · 2 bad input.
 set -euo pipefail
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -51,6 +53,8 @@ mkdir -p "$DST/$W/renders"
 cp "$W"/README.md "$W"/design-parameters.json "$W"/spec.json "$W"/*.blend "$DST/$W/"
 "${RS[@]}" --delete --exclude '*.log' "$W/scripts" "$W/reports" "$W/plates" "$W/parts" "$DST/$W/"
 cp "$W"/renders/final-states-contact-sheet.jpg "$W"/renders/final-macro-contact-sheet.jpg "$W"/renders/plates-contact-sheet.jpg "$DST/$W/renders/"
+# MakerWorld publishing leg (English docs + validator); archive/ holds the retired Vietnamese drafts.
+"${RS[@]}" --delete --exclude 'archive' makerworld-pipeline "$DST/"
 # files the knowledge catalog cites as execution examples (must exist for `check`)
 python3 - "$SRC" "$DST" <<'PY'
 import json, os, shutil, sys
@@ -72,7 +76,7 @@ find "$DST" -name '.DS_Store' -delete
 # --- verify standalone --------------------------------------------------------
 cd "$DST"
 python3 scripts/blender-knowledge.py check >/dev/null || { echo "export-public-repo: catalog check FAILED in $DST" >&2; exit 1; }
-for suite in tests/execution tests/production-gate tests/knowledge; do
+for suite in tests/execution tests/production-gate tests/knowledge makerworld-pipeline/tests; do
   python3 -m unittest discover -s "$suite" >/dev/null 2>&1 || { echo "export-public-repo: $suite FAILED in $DST" >&2; exit 1; }
 done
 if grep -rIlE 'sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH) PRIVATE' . --exclude-dir=.git >/dev/null; then

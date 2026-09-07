@@ -2,7 +2,7 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 22,
-    "execution-source": 90,
+    "execution-source": 91,
     "imported-reference": 47,
     "knowledge": 32,
     "research-synthesis": 72,
@@ -4085,16 +4085,20 @@
         },
         {
           "line": 79,
+          "text": "E8 — Incorporate Astra Decision Rules & Discriminating Checks into Blender Design OS"
+        },
+        {
+          "line": 91,
           "text": "Deferred or rejected"
         }
       ],
       "kind": "workflow",
-      "lines": 81,
+      "lines": 93,
       "loads_with": [],
       "name": null,
       "path": "docs/blender-workflow-improvement-backlog.md",
       "related": [],
-      "sha256": "c7a62322a57241c2ac751ae1cbd718c79fde4f274bed65a7b92a94b6e4638d6e",
+      "sha256": "28d32bf64e6dc8f7bcf39c2a13cd74b05db305410d0f1fa402d895a152c1dc6d",
       "tags": [],
       "title": "Blender workflow implementation backlog",
       "use": "read"
@@ -15204,68 +15208,80 @@
         },
         {
           "line": 15,
+          "text": "- makerworld-pipeline/: validator, fixture generator, fixtures, docs, tests — never archive/"
+        },
+        {
+          "line": 16,
+          "text": "(Vietnamese drafts kept for provenance only, 2026-09-07)"
+        },
+        {
+          "line": 17,
           "text": "Exit: 0 verified · 1 verification failed · 2 bad input."
         },
         {
-          "line": 34,
+          "line": 36,
           "text": "--- curated demo builds ------------------------------------------------------"
         },
         {
-          "line": 45,
+          "line": 47,
           "text": "watch-winder-capsule (2026-09-06): render asset + gate-passed print plates, as the second"
         },
         {
-          "line": 46,
+          "line": 48,
           "text": "worked example. Public users get what reproduces the build: README, parameters, spec, the 5"
         },
         {
-          "line": 47,
+          "line": 49,
           "text": "small blends, scripts, reports, STL parts/plates, and three small JPEG sheets as proof of output."
         },
         {
-          "line": 48,
+          "line": 50,
           "text": "Marketing media (stills, films, GIFs, step captures, concept image, pre-gate set) stays private."
         },
         {
-          "line": 54,
+          "line": 56,
+          "text": "MakerWorld publishing leg (English docs + validator); archive/ holds the retired Vietnamese drafts."
+        },
+        {
+          "line": 58,
           "text": "files the knowledge catalog cites as execution examples (must exist for `check`)"
         },
         {
-          "line": 63,
+          "line": 67,
           "text": "plans/ is internal history (journals, audit reports with quoted owner messages) and is"
         },
         {
-          "line": 64,
+          "line": 68,
           "text": "not published; only the pipeline receipt the catalog tooling reads is carried over."
         },
         {
-          "line": 68,
+          "line": 72,
           "text": "builds retired from the public export (2026-09-06 owner decision): remove stale copies."
         },
         {
-          "line": 72,
+          "line": 76,
           "text": "--- verify standalone --------------------------------------------------------"
         },
         {
-          "line": 81,
+          "line": 85,
           "text": "Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in"
         },
         {
-          "line": 82,
+          "line": 86,
           "text": "shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt."
         },
         {
-          "line": 83,
+          "line": 87,
           "text": "Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies)."
         }
       ],
       "kind": "execution-source",
-      "lines": 88,
+      "lines": 92,
       "loads_with": [],
       "name": null,
       "path": "scripts/export-public-repo.sh",
       "related": [],
-      "sha256": "bd030bc0fc3ce226e390717d97e3d55193a59c21aa4317ea62cfa71d24f2766c",
+      "sha256": "acb1ed3067de86750b74b371ef840ab40493c1014743af4388fb50e136b9fa38",
       "tags": [],
       "title": "Export the curated public tree of this project into the design-os-3d-blender",
       "use": "inspect-adapt"
@@ -16103,12 +16119,12 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 58,
+      "lines": 75,
       "loads_with": [],
       "name": null,
       "path": "tests/production-gate/fixture_specs.py",
       "related": [],
-      "sha256": "2509d731aac8cc22946ae63bd69399d0dba2d3d1c8f6365091f22c100f29457d",
+      "sha256": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
       "tags": [],
       "title": "fixture_specs.py",
       "use": "inspect-adapt"
@@ -16139,6 +16155,20 @@
       "sha256": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
       "tags": [],
       "title": "make_fixtures.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 140,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/production-gate/test_gate_bed_fit.py",
+      "related": [],
+      "sha256": "63b00968e4c664e61979342799fcc9a9530e79599250b0a6cc11a72745aded5d",
+      "tags": [],
+      "title": "test_gate_bed_fit.py",
       "use": "inspect-adapt"
     },
     {
@@ -16177,7 +16207,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "215b1926d1f9671492c0a45e1d4f7e7463dbba67ffa73e04250cba8947b3e232",
+  "source_digest": "38143798d8afaa63494420232d836789fbb07012b07d29d4b6c53b9b79074651",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -16312,7 +16342,7 @@
     "docs/antigravity-setup.md": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
     "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
-    "docs/blender-workflow-improvement-backlog.md": "c7a62322a57241c2ac751ae1cbd718c79fde4f274bed65a7b92a94b6e4638d6e",
+    "docs/blender-workflow-improvement-backlog.md": "28d32bf64e6dc8f7bcf39c2a13cd74b05db305410d0f1fa402d895a152c1dc6d",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
     "knowledge/00-foundations/blender-version-matrix.md": "db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a",
@@ -16464,7 +16494,7 @@
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
-    "scripts/export-public-repo.sh": "bd030bc0fc3ce226e390717d97e3d55193a59c21aa4317ea62cfa71d24f2766c",
+    "scripts/export-public-repo.sh": "acb1ed3067de86750b74b371ef840ab40493c1014743af4388fb50e136b9fa38",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
@@ -16509,9 +16539,10 @@
     "tests/execution/test_verify_lib.py": "482b16a38979d105b18e87014baedbb61e3fce2710dcb9d6bdeb2b15e0211f55",
     "tests/knowledge/test_catalog.py": "6df165cc7f13d34eee8a3c11a5d26b6bc2f4bbbbede041b8e8bdca7349959163",
     "tests/knowledge/test_evolution.py": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
-    "tests/production-gate/fixture_specs.py": "2509d731aac8cc22946ae63bd69399d0dba2d3d1c8f6365091f22c100f29457d",
+    "tests/production-gate/fixture_specs.py": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
     "tests/production-gate/gate_harness.py": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
     "tests/production-gate/make_fixtures.py": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
+    "tests/production-gate/test_gate_bed_fit.py": "63b00968e4c664e61979342799fcc9a9530e79599250b0a6cc11a72745aded5d",
     "tests/production-gate/test_gate_contract.py": "5bf32b18dd9c0ad2d8102a2d39aae9392355f820938c309b8360b604fccd5cbe",
     "tests/production-gate/test_gate_predicates.py": "51a65586c3defae4d7ab94e99285c3a02277294a00a860660034be4f3154f09d"
   },

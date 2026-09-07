@@ -28,7 +28,9 @@
     "physical_evidence": {
       "type": "array", "description": "DECLARED ONLY. Physical trials the owner still owes (print, fit, torque, heat). Copied into report.exclusions.",
       "items": {"type": "string"}
-    }
+    },
+    "print_volume_mm": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "exclusiveMinimum": 0}, "description": "Optional. Printer build volume X,Y,Z in mm, default [256, 256, 256] (X1C/P1S/A1 shared bed). Overridable per part with the same field name."},
+    "brim_margin_mm": {"type": "number", "minimum": 0, "description": "Optional. Material added around the footprint by a brim, subtracted from usable bed X/Y, default 5. Overridable per part with the same field name."}
   },
   "$defs": {
     "part": {
@@ -46,7 +48,9 @@
         "max_overhang_deg": {"type": "number", "description": "Optional (default 45). Angle from the build axis beyond which a face counts as an overhang."},
         "max_overhang_area_pct": {"type": "number", "description": "Optional. If present the overhang screen becomes a gate; if absent it is reported as info only."},
         "expected_shells": {"type": "integer", "minimum": 1, "description": "Optional (default 1). Number of separate closed surfaces the part must have."},
-        "features": {"type": "array", "items": {"$ref": "#/$defs/feature"}, "description": "Optional. Measured features. Anything not listed here is NOT measured."}
+        "features": {"type": "array", "items": {"$ref": "#/$defs/feature"}, "description": "Optional. Measured features. Anything not listed here is NOT measured."},
+        "print_volume_mm": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "exclusiveMinimum": 0}, "description": "Optional. Overrides the spec-level print_volume_mm for this part only; default [256, 256, 256] (X1C/P1S/A1 shared bed)."},
+        "brim_margin_mm": {"type": "number", "minimum": 0, "description": "Optional. Overrides the spec-level brim_margin_mm for this part only; default 5."}
       }
     },
     "feature": {

@@ -99,6 +99,10 @@ re-measured, so an export bug cannot hide behind a passing in-scene check.
 | `feature_*_material_around` | Material exists on four sides just outside the bore | Adequate edge distance for a load |
 | `feature_*_fastener_table` | The **declared** diameter matches the published table value (`table_source` names it) | That the measured hole matches the table — that is the separate diameter check — or that the fastener fits |
 | `roundtrip_*` | The exported STL re-imports as one object and re-measures identically | Slicer acceptance |
+| `bed_fit_footprint_mm` | **SCREEN.** Sorted footprint (plus brim margin) fits within usable bed X/Y: `min(footprint_xy) < min(bed_xy - 2*brim)` and `max(footprint_xy) < max(bed_xy - 2*brim)`. 90° in-plane rotation is allowed (slicer may swap X/Y) | That a diagonal or off-centre placement is possible; that the part will adhere; that supports will fit |
+| `bed_fit_height_mm` | **SCREEN.** Part height (Z axis) fits within bed Z dimension: `height < bed_z` | Print success, bridging, slicing behaviour, or support clearance |
+| `bed_fit_volume_source` | **INFO.** `print_volume_mm` resolved from part override, spec-level declaration, or default `[256, 256, 256]` (X1C/P1S/A1 shared bed) | — |
+| `bed_fit_a1_mini_compatible` | **INFO.** Part footprint (plus brim margin) and height also fit within A1 mini bed `[180, 180, 180]` mm. Informational only; **never fails the gate** | Actual A1 mini print success or compatibility with other machines |
 
 Tables in use: ISO 273 clearance holes, ISO 4762 socket-head cap screw heads,
 DIN 974-1 counterbores, and the CNC Kitchen / Ruthex heat-set insert table
