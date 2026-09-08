@@ -118,5 +118,3 @@ def report_path_is_safe(coverage_path, report_path):
         return True
     except (InputError, OSError):
         return False
-
-
