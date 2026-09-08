@@ -6,9 +6,7 @@
         "path": "reference.png",
         "sha256": "UNSET"
       },
-      "objects": [
-        "UNASSIGNED"
-      ],
+      "objects": [],
       "shot": "overview",
       "falsifier": "Reject missing primary silhouette features or occluded key controls. Replace with source-specific observations.",
       "critical": true

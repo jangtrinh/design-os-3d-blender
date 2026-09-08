@@ -1,7 +1,5 @@
 {
-  "settings": {
-    "status": "UNSET: freeze actual engine/samples/view settings"
-  },
+  "settings": {},
   "shots": [
     {
       "id": "overview",
