@@ -27,6 +27,8 @@ This invokes the existing headless runner with the pinned scene and render pass 
 
 A launch failure must remain a failure. Coverage success alone does not establish that a render completed; retain the renderer's own manifest and inspect its final images.
 
+Start from the [deliberately incomplete starter](../specs/hq-coverage-starter/README.md). It includes all three JSON files and must fail until real inputs and reviews replace the placeholders.
+
 ## Prepare the evidence
 
 1. Freeze the source, render pass, shot plan and feature requirements at stable paths. Each pin has `path` and `sha256`. Paths, including nested reference/report/proof paths, resolve relative to the coverage JSON's directory.

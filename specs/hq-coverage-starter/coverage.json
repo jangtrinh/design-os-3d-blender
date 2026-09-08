@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "mode": "preflight",
+  "purpose": "render-only",
+  "candidate": {
+    "path": "candidate.blend",
+    "sha256": "UNSET"
+  },
+  "render_script": {
+    "path": "render-pass.py",
+    "sha256": "UNSET"
+  },
+  "shot_plan": {
+    "path": "shot-plan.json",
+    "sha256": "UNSET"
+  },
+  "requirements": {
+    "path": "requirements.json",
+    "sha256": "UNSET"
+  },
+  "reviews": []
+}
