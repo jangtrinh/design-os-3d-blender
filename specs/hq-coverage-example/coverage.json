@@ -1,0 +1,11 @@
+{
+  "example_status": "INCOMPLETE: replace every UNSET path and SHA-256 pin with frozen evidence before invoking the gate.",
+  "version": 1,
+  "mode": "preflight",
+  "purpose": "render-only",
+  "candidate": {"path": "UNSET", "sha256": "UNSET"},
+  "render_script": {"path": "UNSET", "sha256": "UNSET"},
+  "shot_plan": {"path": "UNSET", "sha256": "UNSET"},
+  "requirements": {"path": "UNSET", "sha256": "UNSET"},
+  "reviews": []
+}
