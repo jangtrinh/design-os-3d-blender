@@ -11,10 +11,16 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from hq_coverage.core import InputError, report_path_is_safe, validate
 
 
-def write(path, report):
+def write_new_report(coverage_path, path, report):
+    """Create one immutable report only after rechecking the live destination."""
+    if not report_path_is_safe(coverage_path, path):
+        raise InputError('report path is no longer safe to write: %s' % path)
     try:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + '\n')
+        with path.open('x') as handle:
+            handle.write(json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + '\n')
+    except FileExistsError as exc:
+        raise InputError('report path already exists; choose a new path: %s' % path) from exc
     except (OSError, TypeError, ValueError) as exc:
         raise InputError('cannot write report %s: %s' % (path, exc)) from exc
 
@@ -53,36 +59,37 @@ def main(argv=None):
         try: existing = report_path.exists()
         except OSError: existing = True
         if not existing and report_path_is_safe(Path(args.coverage), report_path):
-            try: write(report_path, failure)
+            try: write_new_report(Path(args.coverage), report_path, failure)
             except InputError: pass
         print('AGENT_FAIL ' + json.dumps(failure, sort_keys=True)); return 2
     if args.launch and coverage['mode'] != 'preflight':
         report['status']='fail'; report['issues'].append({'code':'retrospective_launch_refused','message':'--launch requires coverage.mode preflight'})
     if report['status'] != 'pass':
-        try: write(report_path, report)
+        try: write_new_report(Path(args.coverage), report_path, report)
         except InputError as exc:
             print('AGENT_FAIL ' + json.dumps({'status':'invalid','error':str(exc)}, sort_keys=True)); return 2
         print('AGENT_FAIL ' + json.dumps({'status':'fail','issues':len(report['issues'])})); return 1
     if not args.launch:
-        try: write(report_path, report)
+        try: write_new_report(Path(args.coverage), report_path, report)
         except InputError as exc:
             print('AGENT_FAIL ' + json.dumps({'status':'invalid','error':str(exc)}, sort_keys=True)); return 2
         print('AGENT_OK ' + json.dumps({'status':'pass','launch':False})); return 0
     try:
         rechecked, coverage = validate(Path(args.coverage), report_path, refuse_existing=False)
         if coverage['mode'] != 'preflight' or rechecked['status'] != 'pass': raise InputError('bindings or preflight mode changed immediately before launch')
+        report = rechecked
         report['launch']={'attempted':True,'command':['bash',str(ROOT/'scripts/headless-run.sh'),'--blend',rechecked['candidate'],rechecked['render_script']]}
         returncode, sentinel = run_headless(report['launch']['command'])
         report['launch'].update({'returncode':returncode, 'sentinel':sentinel})
         if returncode or not sentinel or sentinel['kind'] != 'AGENT_OK':
             report['status']='launch_failed'
             report['issues'].append({'code':'launch_payload_not_confirmed','message':'headless runner must return zero and end with AGENT_OK'})
-            write(report_path, report)
+            write_new_report(Path(args.coverage), report_path, report)
             print('AGENT_FAIL ' + json.dumps({'status':'launch_failed','returncode':returncode})); return returncode or 1
-        write(report_path, report)
+        write_new_report(Path(args.coverage), report_path, report)
     except InputError as exc:
         report['status']='fail'; report['issues'].append({'code':'prelaunch_recheck_failed','message':str(exc)})
-        try: write(report_path, report)
+        try: write_new_report(Path(args.coverage), report_path, report)
         except InputError as write_exc:
             print('AGENT_FAIL ' + json.dumps({'status':'invalid','error':str(write_exc)}, sort_keys=True)); return 2
         print('AGENT_FAIL ' + json.dumps({'status':'launch_refused'})); return 1

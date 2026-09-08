@@ -62,12 +62,15 @@ def finite(value, label):
     return value
 
 
-def load_json(path, label):
+def load_json(path, label, cache=None):
     if not path.is_file():
         raise InputError('%s missing: %s' % (label, path))
     try:
-        return json.loads(path.read_text())
-    except (OSError, json.JSONDecodeError) as exc:
+        raw = path.read_bytes()
+        if cache is not None:
+            cache[path.resolve()] = hashlib.sha256(raw).hexdigest()
+        return json.loads(raw.decode('utf-8'))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise InputError('%s malformed JSON: %s' % (label, exc)) from exc
 
 
@@ -86,9 +89,9 @@ def pinned(base, value, label, cache, issues, paths):
     return path, actual
 
 
-def declared_paths(coverage_path, report_path):
+def declared_paths(coverage_path, report_path, coverage=None):
     """Return every path named by the receipt before any output is written."""
-    coverage = mapping(load_json(coverage_path, 'coverage'), 'coverage')
+    coverage = mapping(coverage if coverage is not None else load_json(coverage_path, 'coverage'), 'coverage')
     base, paths = coverage_path.parent, {coverage_path}
     for key in ('candidate', 'render_script', 'shot_plan', 'requirements'):
         paths.add(resolve(base, mapping(coverage.get(key), key).get('path'), key))

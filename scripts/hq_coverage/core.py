@@ -1,6 +1,6 @@
 """Validate declared shot coverage without judging visual similarity."""
 from .png import PngError, dimensions
-from .inputs import (InputError, canonical, coordinate, declared_paths, finite,
+from .inputs import (InputError, canonical, coordinate, declared_paths, digest, finite,
                      integer, load_json, mapping, pinned, report_path_is_safe, text)
 
 
@@ -33,25 +33,34 @@ def shot_plan(value):
     return result
 
 
+def stable_json(path, expected_hash, label, cache):
+    value = load_json(path, label, cache)
+    if digest(path, cache) != expected_hash:
+        raise InputError('%s changed while validating; retry with a frozen receipt' % label)
+    return value
+
+
 def validate(coverage_path, report_path, refuse_existing=True):
     coverage_path, report_path = coverage_path.resolve(), report_path.resolve()
     if refuse_existing and report_path.exists(): raise InputError('report path already exists; choose a new path to avoid clobbering: %s' % report_path)
-    coverage = mapping(load_json(coverage_path, 'coverage'), 'coverage')
-    declared_paths(coverage_path, report_path)
     base, cache, paths = coverage_path.parent, {}, {coverage_path}
+    coverage = mapping(load_json(coverage_path, 'coverage', cache), 'coverage')
+    declared_paths(coverage_path, report_path, coverage)
     if coverage.get('version') != 1: raise InputError('coverage.version must be 1')
     if coverage.get('mode') not in ('preflight','retrospective'): raise InputError('coverage.mode must be preflight or retrospective')
     if coverage.get('purpose') != 'render-only': raise InputError('coverage.purpose must be render-only')
     issues, warnings, results = [], [], []
-    candidate, _ = pinned(base, coverage.get('candidate'), 'candidate', cache, issues, paths)
-    render_script, _ = pinned(base, coverage.get('render_script'), 'render_script', cache, issues, paths)
-    plan_path, _ = pinned(base, coverage.get('shot_plan'), 'shot_plan', cache, issues, paths)
-    requirements_path, _ = pinned(base, coverage.get('requirements'), 'requirements', cache, issues, paths)
-    plan = shot_plan(load_json(plan_path, 'shot_plan'))
-    requirements = mapping(load_json(requirements_path, 'requirements'), 'requirements JSON')
+    coverage_hash = digest(coverage_path, cache)
+    candidate, candidate_hash = pinned(base, coverage.get('candidate'), 'candidate', cache, issues, paths)
+    render_script, render_script_hash = pinned(base, coverage.get('render_script'), 'render_script', cache, issues, paths)
+    plan_path, plan_hash = pinned(base, coverage.get('shot_plan'), 'shot_plan', cache, issues, paths)
+    requirements_path, requirements_hash = pinned(base, coverage.get('requirements'), 'requirements', cache, issues, paths)
+    plan = shot_plan(stable_json(plan_path, plan_hash, 'shot_plan', cache))
+    requirements = mapping(stable_json(requirements_path, requirements_hash, 'requirements JSON', cache), 'requirements JSON')
     features = requirements.get('features')
     if not isinstance(features, list) or not features: raise InputError('requirements.features must be a nonempty array')
     known = {}
+    references = []
     for index, feature in enumerate(features):
         feature = mapping(feature, 'requirements.features[%d]' % index)
         ident = text(feature.get('id'), 'feature.id')
@@ -61,7 +70,8 @@ def validate(coverage_path, report_path, refuse_existing=True):
         if feature.get('shot') not in plan: raise InputError('feature %s references unknown shot %s' % (ident, feature.get('shot')))
         text(feature.get('falsifier'), 'feature %s.falsifier' % ident)
         if not isinstance(feature.get('critical'), bool): raise InputError('feature %s.critical must be bool' % ident)
-        reference, _ = pinned(base, feature.get('reference'), 'feature %s.reference' % ident, cache, issues, paths)
+        reference, reference_hash = pinned(base, feature.get('reference'), 'feature %s.reference' % ident, cache, issues, paths)
+        references.append({'feature':ident, 'path':str(reference), 'sha256':reference_hash})
         known[ident] = feature | {'_reference_path': str(reference)}
     if not any(f['critical'] for f in known.values()): raise InputError('requirements needs at least one critical feature')
     reviews = coverage.get('reviews')
@@ -73,6 +83,7 @@ def validate(coverage_path, report_path, refuse_existing=True):
         if ident in by_feature: raise InputError('duplicate review for feature: %s' % ident)
         by_feature[ident] = review
     pins = {key: coverage[key]['sha256'] for key in ('candidate','render_script','shot_plan','requirements')}
+    proofs, review_reports = [], []
     for ident, feature in known.items():
         review = by_feature.get(ident)
         row = {'id': ident, 'critical': feature['critical'], 'reviewed': bool(review)}
@@ -83,8 +94,10 @@ def validate(coverage_path, report_path, refuse_existing=True):
         verdict = review.get('verdict')
         if verdict not in ('pass','fail','pending'): raise InputError('review %s verdict invalid' % ident)
         row['verdict'] = verdict
-        report, _ = pinned(base, review.get('report'), 'review %s.report' % ident, cache, issues, paths)
-        proof, _ = pinned(base, review.get('proof'), 'review %s.proof' % ident, cache, issues, paths)
+        report, report_hash = pinned(base, review.get('report'), 'review %s.report' % ident, cache, issues, paths)
+        proof, proof_hash = pinned(base, review.get('proof'), 'review %s.proof' % ident, cache, issues, paths)
+        review_reports.append({'feature':ident, 'path':str(report), 'sha256':report_hash})
+        proofs.append({'feature':ident, 'path':str(proof), 'sha256':proof_hash})
         binding = mapping(review.get('binding'), 'review %s.binding' % ident)
         for key, expected in pins.items():
             if binding.get(key + '_sha256') != expected:
@@ -108,6 +121,13 @@ def validate(coverage_path, report_path, refuse_existing=True):
         results.append(row)
     if report_path in paths: raise InputError('report path aliases an input/proof/reference path: %s' % report_path)
     status = 'pass' if not issues else 'fail'
+    provenance = {'coverage':{'path':str(coverage_path), 'sha256':coverage_hash},
+                  'inputs':{'candidate':{'path':str(candidate), 'sha256':candidate_hash},
+                            'render_script':{'path':str(render_script), 'sha256':render_script_hash},
+                            'shot_plan':{'path':str(plan_path), 'sha256':plan_hash},
+                            'requirements':{'path':str(requirements_path), 'sha256':requirements_hash}},
+                  'references':references, 'proofs':proofs, 'review_reports':review_reports}
     return {'version':1,'status':status,'mode':coverage['mode'],'purpose':coverage['purpose'],
             'coverage':str(coverage_path),'candidate':str(candidate),'render_script':str(render_script),
-            'issues':issues,'warnings':warnings,'features':results,'all_reviews_pass':all(r.get('verdict')=='pass' for r in results if r['reviewed'])}, coverage
+            'issues':issues,'warnings':warnings,'features':results,'provenance':provenance,
+            'all_reviews_pass':all(r.get('verdict')=='pass' for r in results if r['reviewed'])}, coverage
