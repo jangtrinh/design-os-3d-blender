@@ -8,7 +8,7 @@
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <img alt="Blender 5.2 LTS" src="https://img.shields.io/badge/Blender-5.2_LTS-EA7600?logo=blender&logoColor=white">
   <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
-  <img alt="Tests: 93 passing" src="https://img.shields.io/badge/tests-93_passing-brightgreen">
+  <img alt="Tests: core suites" src="https://img.shields.io/badge/tests-core_suites-brightgreen">
   <img alt="Production gate: 38/38 parts pass" src="https://img.shields.io/badge/production_gate-38%2F38_parts_pass-brightgreen">
   <a href="https://github.com/jangtrinh/design-os-3d-blender/releases"><img alt="Release" src="https://img.shields.io/github/v/release/jangtrinh/design-os-3d-blender?color=informational"></a>
   <img alt="Last commit" src="https://img.shields.io/github/last-commit/jangtrinh/design-os-3d-blender">
@@ -20,7 +20,7 @@
 
 <p align="center"><b>Spec → build → verify → gate.</b> An agent operating system for Blender that ships parts you can print, not pictures you can post.</p>
 
-**Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [Notes](#-notes) · [License](#-license)
+**Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [ORC workflow demo](#-orc-workflow-demo) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [Notes](#-notes) · [License](#-license)
 
 
 An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, Google Antigravity, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
@@ -38,7 +38,7 @@ Everything here is Blender-native: no vendor mesh generation, no downloaded asse
 | Verification | `scripts/agent-verify-lib.py` (+ `scripts/agent_verify/`) | Numeric "sense organs": framing, frame stats, state-restoring previews, isolated export re-import |
 | Production gate | `specs/build-spec.schema.json`, `scripts/production-gate.py` (+ `scripts/production_gate/`) | Spec → manifold/self-intersection/volume, dimensions ± tolerance, wall/overhang screens, hole diameters vs ISO 273 / ISO 4762 / heat-set tables, STL round-trip + sha256 manifest; report bound to scene+spec hashes |
 | Boilerplates | `scripts/boilerplates/` (30 modules) | CAD, gears, fasteners, O-rings, connectors, rigs, geometry nodes, render — each self-tests under the sentinel contract |
-| Tests | `tests/execution`, `tests/production-gate`, `tests/knowledge` | 93 tests, all run against a real headless Blender |
+| Tests | `tests/execution`, `tests/production-gate`, `tests/knowledge` | Execution-contract, production-gate, and knowledge-catalog suites |
 | MakerWorld leg | `makerworld-pipeline/` (validator `scripts/validate_bambu_3mf.py`, fixture generator `tools/`, docs) | Validates a Bambu Studio project 3MF (geometry through the production extension, per-plate bbox, bed fit, thumbnails, settings); sourced publishing constraints and a human publish checklist — printing and publishing stay manual by MakerWorld policy |
 | Agent runtimes | `AGENTS.md` (Codex, any AGENTS.md reader) · `CLAUDE.md` (Claude Code) · `.agents/rules`, `.agents/workflows`, `.agents/mcp_config.json` (Google Antigravity) | Same skills folder (`.agents/skills`) is read natively by Antigravity; setup in `docs/antigravity-setup.md` |
 | Worked examples | `builds/robot-arm-*`, `builds/watch-winder-capsule` | Two builds: the robot-arm session (accepted assembly film + 38-part print kit) and the watch-winder capsule (native render asset + gate-passed print plates) — each with its honest limits |
@@ -64,6 +64,23 @@ GATE PASS | 38 part(s), 0 failing check(s) | scene=72ab501e47bf spec=d88bc836fb3
 ```
 
 Per part: `non_manifold_edges`, `non_contiguous_edges`, `wire_edges`, `loose_verts`, `zero_area_faces`, `self_intersection_pairs`, `shells`, `signed_volume_positive`, `bbox_dims_mm`, `scale_applied`, `scene_unit_system`, `scene_scale_length`, then STL round-trip repeats of the topology and dimension checks. Report, spec and the reproduction script: `builds/robot-arm-print-assembly/reports/gate-report-260906.json`, `gate-spec-260906.json`, `scripts/gate-import-parts.py`. The report's `exclusions` say what this does **not** prove: load capacity, print success, assembly fit, thermal/creep — those remain physical evidence, and the arm stays unreleased for manufacture.
+
+## 🏭 ORC workflow demo
+
+The [ORC component workflow](docs/orc-component-workflow.md), [brief template](docs/orc-component-brief-template.md), and [Separator worked example](docs/orc-separator-worked-example.md) show how a reference-driven component moves from coverage and interface contracts to object-level evidence and bounded review.
+
+| | |
+|---|---|
+| ![Completed render-only Separator overview](docs/media/orc-demo-separator-overview.jpg) | ![Separator vapor nozzle and transmitter crop](docs/media/orc-demo-separator-vapor.jpg) |
+| Completed render-only Separator component: overview. | Completed render-only Separator component: a critical crop used to inspect the vapor nozzle, flange, and attached instrument. |
+
+<p align="center">
+  <img src="docs/media/orc-demo-bellows-pilot.jpg" width="50%" alt="Form-approved bellows family pilot">
+</p>
+
+*Form-approved reusable bellows-family pilot. Exchanger-train detail, a full plant, print readiness, and manufacturing qualification remain out of scope.*
+
+The three images are compressed derivatives of native Blender renders, not source references. [Provenance](docs/media/orc-demo-provenance.json) records the source and output hashes plus the evidence scope.
 
 ## 🚀 Quick start
 
