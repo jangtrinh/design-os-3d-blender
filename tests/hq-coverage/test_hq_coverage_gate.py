@@ -19,7 +19,6 @@ import hq_coverage.core as coverage_core
 spec = importlib.util.spec_from_file_location('hq_coverage_gate', ROOT / 'scripts/hq-coverage-gate.py')
 gate = importlib.util.module_from_spec(spec); spec.loader.exec_module(gate)
 
-
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def dump(path, value): path.write_text(json.dumps(value, indent=2)); return path
 def chunk(kind, data): return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
@@ -27,7 +26,6 @@ def png(path, width, height, corrupt=False, fill=b'\x00\x00\x00\xff'):
     raw=b''.join(b'\0'+fill*width for _ in range(height))
     data=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',width,height,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(raw))+chunk(b'IEND',b'')
     path.write_bytes(data[:-2] if corrupt else data); return path
-
 
 class CoverageFixture:
     def __init__(self, root):
