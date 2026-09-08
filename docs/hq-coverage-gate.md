@@ -12,7 +12,7 @@ python3 scripts/hq-coverage-gate.py \
   --report path/to/coverage-report.json
 ```
 
-Choose a new report path for every invocation; existing reports are preserved. Exit 0 means the declared critical coverage receipts pass. Exit 1 means incomplete or failed coverage. Exit 2 means invalid input. Read the structured report and final `AGENT_OK` / `AGENT_FAIL` line for the next action.
+Choose a new report path for every invocation; reports use exclusive creation and existing files are preserved. The report snapshots the coverage and validated input hashes; a launch records the final prelaunch validation. Exit 0 means the declared critical coverage receipts pass. Exit 1 means incomplete or failed coverage. Exit 2 means invalid input. Read the structured report and final `AGENT_OK` / `AGENT_FAIL` line for the next action.
 
 After the required owner authorization and any separate production gates, add `--launch`:
 
