@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "title": "Native product showcase",
+  "derivative": {
+    "gif": "docs/media/product-showcase.gif",
+    "gif_sha256": "7e6533c3153afa828ea55ecd7b00bdcfb46164cc27a83606d620af4afaecab5d",
+    "static_poster": "docs/media/product-showcase-poster.jpg",
+    "static_poster_sha256": "5e918b78214dd96feab926f7cfa14d6a86f59aad14ac119e670c0e8726dfbdae",
+    "canvas_px": [
+      960,
+      640
+    ],
+    "frame_count": 8,
+    "dwell_seconds_per_frame": 3,
+    "duration_seconds": 24,
+    "loop": "infinite",
+    "generator": "ffmpeg label frames + ImageMagick indexed GIF optimization"
+  },
+  "inputs": [
+    {
+      "label": "Robot arm assembly-film excerpt",
+      "source_project_path": "builds/robot-arm-original-refined/video/arm-step-by-step-refined.mp4#t=108.6",
+      "source_sha256": "2cbb5f0e994d4c45d548f1c3c0536c321f2b89f5f0b06bcf4c8c4d52ef5d9d8b",
+      "evidence_scope": "Native render; media decode and sampled visual review passed. Physical retention and fit remain unverified."
+    },
+    {
+      "label": "Robot arm final assembled frame",
+      "source_project_path": "builds/robot-arm-original-refined/video/arm-step-by-step-refined.mp4#t=125.6",
+      "source_sha256": "2cbb5f0e994d4c45d548f1c3c0536c321f2b89f5f0b06bcf4c8c4d52ef5d9d8b",
+      "evidence_scope": "Native render; media decode and sampled visual review passed. Physical retention and fit remain unverified."
+    },
+    {
+      "label": "Watch winder overview",
+      "source_project_path": "builds/watch-winder-capsule/renders/final/hero-graphite.png",
+      "source_sha256": "4993df3552bfa0560def2cb4bc71fad1431e2eaa675afe1dabc04f22dc3c004f",
+      "evidence_scope": "Native final still. Digital print gate passed; physical manufacture remains blocked."
+    },
+    {
+      "label": "Watch winder guilloche detail",
+      "source_project_path": "builds/watch-winder-capsule/renders/final/macro-guilloche-graphite.png",
+      "source_sha256": "8b700365bd161c995d16e0f98e6087a321a483b9f3acfe244cb73543c32a9a78",
+      "evidence_scope": "Native final still. Digital print gate passed; physical manufacture remains blocked."
+    },
+    {
+      "label": "Wellhead overview",
+      "source_project_path": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/01-overview.png",
+      "source_sha256": "3546fe8af670f1bb521f5511d5b90018a599220dfdca92e78fbea65799903ecf",
+      "evidence_scope": "Native HQ review media. Owner detail review remains pending."
+    },
+    {
+      "label": "Wellhead valve close-up",
+      "source_project_path": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/02-valve.png",
+      "source_sha256": "9f8e252132608359e1f9c899875abd7b40ef29630305e1e9319217f9b2160500",
+      "evidence_scope": "Native HQ review media. Owner detail review remains pending."
+    },
+    {
+      "label": "Separator overview",
+      "source_project_path": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/01-overview.png",
+      "source_sha256": "1fdff43f73991ad80f30aa45bb8ef7033bc23cf3da5527bfc598c11de4c13e6f",
+      "evidence_scope": "Native repaired HQ review media. Owner appearance review remains pending."
+    },
+    {
+      "label": "Separator transmitter close-up",
+      "source_project_path": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/06-transmitter.png",
+      "source_sha256": "d778259a891dd26bcd4d494a8573885da06b2aa8a8875e05bf53b2665da5ecc1",
+      "evidence_scope": "Native repaired HQ review media. Owner appearance review remains pending."
+    }
+  ],
+  "scope": "Public derivative of local Blender-native media only. It does not establish physical fit, manufacture, pressure, thermal, or performance claims."
+}
