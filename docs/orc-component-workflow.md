@@ -1,6 +1,6 @@
 # ORC component reconstruction workflow
 
-Use this manual workflow to reconstruct an ORC model component from reference imagery. It is decision and navigation guidance; source files, manifests, audits, and original images remain the authority for the current state. Use the [component brief template](orc-component-brief-template.md) for a build contract and the [worked Separator example](orc-separator-worked-example.md) for the evidence sequence.
+Use this manual workflow to reconstruct an ORC model component from reference imagery. It combines manual visual decisions with the explicit [HQ coverage gate](hq-coverage-gate.md); source files, manifests, audits, and original images remain the authority for the current state. Use the [component brief template](orc-component-brief-template.md) for a build contract and the [worked Separator example](orc-separator-worked-example.md) for the evidence sequence.
 
 ## Durable decisions
 
@@ -46,11 +46,11 @@ When the same defect survives two repairs, change the construction hypothesis. A
 
 ## Freeze, output-density proof, and revision
 
-Before review, keep the candidate at a unique path and record its source hash plus shot/settings manifest hash. The dispatch receipt identifies both path and hash. The reviewer examines only that revision; the controller compares the same hashes when receiving the result. Repairs create a new revision and name the objects, interfaces, shots, and evidence invalidated by the change. This is a manual integrity check, not an automatic gate or a new owner checkpoint.
+Before review, keep the candidate at a unique path and record its source hash plus shot/settings manifest hash. The dispatch receipt identifies both path and hash. The reviewer examines only that revision; the controller compares the same hashes when receiving the result. Repairs create a new revision and name the objects, interfaces, shots, and evidence invalidated by the change. The [HQ coverage command](hq-coverage-gate.md) checks the declared file and receipt bindings. Choosing sufficient coverage and judging visual likeness remain manual; this adds no new owner checkpoint.
 
-Use the template coverage table: `reference → object/interface → shot → native-density proof → falsifier → reviewer/verdict`. Before HQ, each critical row must have inspected proof at final output density. Changing source, camera, or resolution invalidates the affected proof.
+Use the template coverage table: `reference → object/interface → shot → native-density proof → falsifier → reviewer/verdict`. Before HQ, each critical row must have inspected proof at final output density. Export those rows to the coverage JSON and use `hq-coverage-gate.py --launch` for the guarded render-only route. Changing source, camera, or resolution invalidates the affected proof.
 
-Preview every risky region at output density before the full batch: contacts, metal highlights, lettering, dial marks, and terminal bores. Enlarging a small preview creates no new evidence. If an image shows striping or a shutter-like surface, use camera-ray diagnostics and an A/B crop to distinguish geometry from material before changing samples or shading.
+Check camera near clipping and record the proof region within the target frame. Compare hardware proportions by family as well as contact and containment. Preview every risky region at output density before the full batch: contacts, metal highlights, lettering, dial marks, and terminal bores. Enlarging a small preview creates no new evidence. If an image shows striping or a shutter-like surface, use camera-ray diagnostics and an A/B crop to distinguish geometry from material before changing samples or shading.
 
 The manifest records source/script hashes, camera/settings, and each image. Verify format, dimensions, bit depth, and hash, then inspect every original final image. Package integrity is not a visual review. Preserve pre-change media and record whether it belongs to an older source revision.
 
