@@ -1,7 +1,7 @@
 # design-os-3d-blender
 
 <p align="center">
-  <img src="docs/media/robot-arm-assembly-4x.gif" width="100%" alt="Robot arm assembly demo — the accepted 126 s film at 4× speed; every part modelled with bpy, no vendor assets">
+  <img src="docs/media/product-showcase.gif" width="100%" alt="Native product showcase: robot arm, watch-winder capsule, wellhead, and separator overview and detail renders">
 </p>
 
 <p align="center">
@@ -20,12 +20,16 @@
 
 <p align="center"><b>Spec → build → verify → gate.</b> An agent operating system for Blender that ships parts you can print, not pictures you can post.</p>
 
-**Contents:** [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [ORC workflow demo](#-orc-workflow-demo) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Robot-arm demo](#-robot-arm-demo-builds) · [Notes](#-notes) · [License](#-license)
+**Contents:** [Product tour](#-product-tour) · [What is inside](#-what-is-inside) · [Proof](#-proof-the-robot-arm-is-real-geometry-not-a-picture) · [ORC workflow demo](#-orc-workflow-demo) · [Quick start](#-quick-start) · [The loop](#-the-loop-agents-follow) · [Worked examples](#-worked-examples-builds) · [Notes](#-notes) · [License](#-license)
 
 
 An AI-agent operating system for **Blender 5.2 LTS**: skills, a verified knowledge base, an execution contract, and a production gate — built so an agent (Claude Code, Codex, Google Antigravity, or any MCP client) can model, rig, animate, render, and ship **3D-printable, dimension-correct parts** rather than pretty demos.
 
 Everything here is Blender-native: no vendor mesh generation, no downloaded assets, no paid model calls.
+
+## 🎞️ Product tour
+
+The 24-second loop pairs overview and detail frames from four native Blender builds: robot arm, watch-winder capsule, wellhead, and separator. Frame labels state the evidence scope; it is not a physical, manufacturing, pressure, thermal, or performance claim. [Static fallback poster](docs/media/product-showcase-poster.jpg) · [Source and output provenance](docs/media/product-showcase-provenance.json).
 
 ## 🧭 What is inside
 
@@ -56,6 +60,11 @@ Everything here is Blender-native: no vendor mesh generation, no downloaded asse
 
 *Cycles render of the assembled model at the final frame (1600×1200, 96 samples, Metal). The full-speed MP4 of the assembly film is in `builds/robot-arm-original-refined/video/`.*
 
+<details>
+  <summary>Assembly-film preview</summary>
+  <p align="center"><img src="docs/media/robot-arm-assembly-4x.gif" width="100%" alt="Robot arm assembly demo — the accepted 126 s film at 4× speed; every part modelled with bpy, no vendor assets"></p>
+</details>
+
 **Production gate run on the real print kit (2026-09-06).** The 38 exported STLs were re-imported into a metre-scaled scene and gated against a spec generated from `parts-list.csv` (target dimensions ± 0.1 mm, one shell per part, PETG/TPU):
 
 ```
@@ -68,6 +77,12 @@ Per part: `non_manifold_edges`, `non_contiguous_edges`, `wire_edges`, `loose_ver
 ## 🏭 ORC workflow demo
 
 The [ORC component workflow](docs/orc-component-workflow.md), [brief template](docs/orc-component-brief-template.md), and [Separator worked example](docs/orc-separator-worked-example.md) show how a reference-driven component moves from coverage and interface contracts to object-level evidence and bounded review.
+
+<p align="center">
+  <img src="docs/media/orc-components.gif" width="100%" alt="ORC component detail tour: wellhead, separator, bellows R2 reusable family pilot, and RTD PT instrument form study">
+</p>
+
+The 24-second component tour uses native review media and bounded family studies. Wellhead and separator owner appearance review remains pending; bellows R2 is a form-approved reusable pilot; the RTD/PT images are form studies, not a final exchanger-train claim. [Static fallback poster](docs/media/orc-components-poster.jpg) · [Source and output provenance](docs/media/orc-components-provenance.json).
 
 | | |
 |---|---|
