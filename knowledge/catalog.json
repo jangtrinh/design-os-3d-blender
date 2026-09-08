@@ -6,7 +6,7 @@
     "imported-reference": 47,
     "knowledge": 32,
     "research-synthesis": 72,
-    "workflow": 17
+    "workflow": 20
   },
   "dependency_edges": 96,
   "foundations": [
@@ -4101,6 +4101,223 @@
       "sha256": "28d32bf64e6dc8f7bcf39c2a13cd74b05db305410d0f1fa402d895a152c1dc6d",
       "tags": [],
       "title": "Blender workflow implementation backlog",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Visual component brief template"
+        },
+        {
+          "line": 5,
+          "text": "1. Outcome and non-claims"
+        },
+        {
+          "line": 12,
+          "text": "2. Evidence and authority"
+        },
+        {
+          "line": 23,
+          "text": "CAD or drawing evidence"
+        },
+        {
+          "line": 31,
+          "text": "3. Frames and camera separation"
+        },
+        {
+          "line": 40,
+          "text": "4. Fixed envelope"
+        },
+        {
+          "line": 48,
+          "text": "5. Primary-view inventory"
+        },
+        {
+          "line": 56,
+          "text": "6. Normalized landmarks"
+        },
+        {
+          "line": 64,
+          "text": "7. Silhouette and shape hierarchy"
+        },
+        {
+          "line": 74,
+          "text": "Critical"
+        },
+        {
+          "line": 78,
+          "text": "Important"
+        },
+        {
+          "line": 82,
+          "text": "Optional"
+        },
+        {
+          "line": 86,
+          "text": "8. Attachment graph and axes"
+        },
+        {
+          "line": 99,
+          "text": "9. Material intent"
+        },
+        {
+          "line": 107,
+          "text": "10. Reusable subassembly proposals"
+        },
+        {
+          "line": 113,
+          "text": "11. Incremental recipe and reuse contract"
+        },
+        {
+          "line": 134,
+          "text": "12. Exact falsifiers"
+        },
+        {
+          "line": 142,
+          "text": "13. Uncertainty ledger"
+        },
+        {
+          "line": 151,
+          "text": "14. Acceptance handoff"
+        },
+        {
+          "line": 163,
+          "text": "15. Complete close-up and output coverage"
+        },
+        {
+          "line": 173,
+          "text": "Frozen review input — manual check"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 187,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/orc-component-brief-template.md",
+      "related": [],
+      "sha256": "2662cf8e62b1d892202a218ffb22fb4235cb97d941b2f78472bc67195a9d9400",
+      "tags": [],
+      "title": "Visual component brief template",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "ORC component reconstruction workflow"
+        },
+        {
+          "line": 5,
+          "text": "Durable decisions"
+        },
+        {
+          "line": 13,
+          "text": "Five stages"
+        },
+        {
+          "line": 25,
+          "text": "Build a falsifiable brief"
+        },
+        {
+          "line": 31,
+          "text": "Reuse contract and interface ownership"
+        },
+        {
+          "line": 39,
+          "text": "Verify the right claim"
+        },
+        {
+          "line": 47,
+          "text": "Freeze, output-density proof, and revision"
+        },
+        {
+          "line": 59,
+          "text": "Role routing"
+        },
+        {
+          "line": 70,
+          "text": "Start the next component"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 78,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/orc-component-workflow.md",
+      "related": [],
+      "sha256": "1ad05a6da34bbc8367f678cbe36a4f51a22c42a401dc08ecd3418d355fe921d1",
+      "tags": [],
+      "title": "ORC component reconstruction workflow",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Worked example: ORC Separator evidence flow"
+        },
+        {
+          "line": 5,
+          "text": "Evidence boundary"
+        },
+        {
+          "line": 14,
+          "text": "1. Reconcile the reference before modelling"
+        },
+        {
+          "line": 23,
+          "text": "2. Assign ownership before dispatch"
+        },
+        {
+          "line": 34,
+          "text": "3. Build against named falsifiers"
+        },
+        {
+          "line": 40,
+          "text": "Filled interface and coverage examples"
+        },
+        {
+          "line": 63,
+          "text": "Owner checkpoint versus routine continuation"
+        },
+        {
+          "line": 67,
+          "text": "Bounded native worker prompt"
+        },
+        {
+          "line": 86,
+          "text": "4. Diagnose an output-only failure at the shared boundary"
+        },
+        {
+          "line": 99,
+          "text": "5. Spend render budget in the evidence order"
+        },
+        {
+          "line": 103,
+          "text": "6. Freeze a reviewable revision"
+        },
+        {
+          "line": 114,
+          "text": "7. Package and inspect independently"
+        },
+        {
+          "line": 127,
+          "text": "8. Close with narrow claims"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 131,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/orc-separator-worked-example.md",
+      "related": [],
+      "sha256": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
+      "tags": [],
+      "title": "Worked example: ORC Separator evidence flow",
       "use": "read"
     },
     {
@@ -16207,7 +16424,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "38143798d8afaa63494420232d836789fbb07012b07d29d4b6c53b9b79074651",
+  "source_digest": "86c7cd6ed9b5fd38fcee97bea998d4fbaaf34bd1a0fa1f22d656739a22651fde",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -16343,6 +16560,9 @@
     "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
     "docs/blender-workflow-improvement-backlog.md": "28d32bf64e6dc8f7bcf39c2a13cd74b05db305410d0f1fa402d895a152c1dc6d",
+    "docs/orc-component-brief-template.md": "2662cf8e62b1d892202a218ffb22fb4235cb97d941b2f78472bc67195a9d9400",
+    "docs/orc-component-workflow.md": "1ad05a6da34bbc8367f678cbe36a4f51a22c42a401dc08ecd3418d355fe921d1",
+    "docs/orc-separator-worked-example.md": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
     "knowledge/00-foundations/blender-version-matrix.md": "db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a",
