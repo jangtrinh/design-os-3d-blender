@@ -1,0 +1,20 @@
+{
+  "settings": {},
+  "shots": [
+    {
+      "id": "overview",
+      "size": [
+        2048,
+        2048
+      ],
+      "camera": {
+        "location": null,
+        "target": null,
+        "projection": "ORTHO",
+        "clip_start": null,
+        "clip_end": null
+      },
+      "visibility": []
+    }
+  ]
+}

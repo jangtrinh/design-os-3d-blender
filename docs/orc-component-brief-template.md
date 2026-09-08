@@ -1,6 +1,6 @@
 # Visual component brief template
 
-Use this template for one component and one declared primary view, supported by a bounded view set. Keep prior prompt history separate. This is a manual build input and review checklist, not an implemented gate. Apply the [ORC component workflow](orc-component-workflow.md).
+Use this template for one component and one declared primary view, supported by a bounded view set. Keep prior prompt history separate. This is a manual build input and visual-review checklist. Export the frozen coverage receipts to the [HQ coverage gate](hq-coverage-gate.md) for executable file/binding/dimension checks. Apply the [ORC component workflow](orc-component-workflow.md).
 
 ## 1. Outcome and non-claims
 
@@ -170,7 +170,7 @@ The reviewer inventories reference features before viewing the candidate. Includ
 
 Before HQ, every critical row requires inspected proof, not a planned filename. Cover visible terminal bores, hardware rims, both gauge endpoints, and small branch joins. Mark hidden or non-applicable features with a reason. Source, camera, or output-resolution changes renew affected proofs.
 
-### Frozen review input — manual check
+### Frozen review input — manual decisions and executable receipt checks
 
 - Immutable candidate path + source SHA; shot/settings manifest hash:
 - Assigned reviewer coverage and evidence paths:
@@ -178,6 +178,9 @@ Before HQ, every critical row requires inspected proof, not a planned filename. 
 - Changed objects/interfaces/shots and invalidated evidence after repair:
 - Required overview/close-up shots and authorized output scope:
 - Output-density regions: transitions, contact/coplanar risk, dial/text, metal highlight:
+- Per-family hardware pixel ratio and matched-camera comparison:
+- Near-clip check and proof region within the target frame:
+- Coverage JSON, pinned requirements/shot plan, gate report, guarded launch command:
 - Final source SHA; image/settings manifest; every delivered shot inspected:
 - Remaining defects and coverage not performed:
 - Separate acceptance scopes: prototype / whole form / final detail:

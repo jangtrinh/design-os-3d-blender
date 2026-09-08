@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 22,
-    "execution-source": 91,
+    "execution-source": 93,
     "imported-reference": 47,
     "knowledge": 32,
     "research-synthesis": 72,
-    "workflow": 20
+    "workflow": 21
   },
   "dependency_edges": 96,
   "foundations": [
@@ -4108,6 +4108,45 @@
       "headings": [
         {
           "line": 1,
+          "text": "Check reference coverage before HQ rendering"
+        },
+        {
+          "line": 7,
+          "text": "One guarded entry point"
+        },
+        {
+          "line": 32,
+          "text": "Prepare the evidence"
+        },
+        {
+          "line": 44,
+          "text": "Coverage JSON shape"
+        },
+        {
+          "line": 75,
+          "text": "What to review first"
+        },
+        {
+          "line": 81,
+          "text": "Evidence and efficiency"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 87,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/hq-coverage-gate.md",
+      "related": [],
+      "sha256": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
+      "tags": [],
+      "title": "Check reference coverage before HQ rendering",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
           "text": "Visual component brief template"
         },
         {
@@ -4188,16 +4227,16 @@
         },
         {
           "line": 173,
-          "text": "Frozen review input — manual check"
+          "text": "Frozen review input — manual decisions and executable receipt checks"
         }
       ],
       "kind": "workflow",
-      "lines": 187,
+      "lines": 190,
       "loads_with": [],
       "name": null,
       "path": "docs/orc-component-brief-template.md",
       "related": [],
-      "sha256": "2662cf8e62b1d892202a218ffb22fb4235cb97d941b2f78472bc67195a9d9400",
+      "sha256": "69e766a7713831da984341cd9ffed860b7629f08201d62f7983d770c9fdf85fd",
       "tags": [],
       "title": "Visual component brief template",
       "use": "read"
@@ -4248,7 +4287,7 @@
       "name": null,
       "path": "docs/orc-component-workflow.md",
       "related": [],
-      "sha256": "1ad05a6da34bbc8367f678cbe36a4f51a22c42a401dc08ecd3418d355fe921d1",
+      "sha256": "458a2dbe2b6d596853f09c9118750ea4aaed2590a2e84a058d2af0d39d3d28c4",
       "tags": [],
       "title": "ORC component reconstruction workflow",
       "use": "read"
@@ -15688,6 +15727,20 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
+      "lines": 100,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/hq-coverage-gate.py",
+      "related": [],
+      "sha256": "0a4310a9247a0b2fdd6674f64e50b560efb03407d481f8cd46e038864636e284",
+      "tags": [],
+      "title": "hq-coverage-gate.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
       "lines": 160,
       "loads_with": [],
       "name": null,
@@ -16308,6 +16361,20 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
+      "lines": 200,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/hq-coverage/test_hq_coverage_gate.py",
+      "related": [],
+      "sha256": "40c859250cb78c53d306006d354e351081b6d67eab44f889c5183a035526c75e",
+      "tags": [],
+      "title": "test_hq_coverage_gate.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
       "lines": 155,
       "loads_with": [],
       "name": null,
@@ -16424,7 +16491,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "86c7cd6ed9b5fd38fcee97bea998d4fbaaf34bd1a0fa1f22d656739a22651fde",
+  "source_digest": "acf6864bba27c62773a5c208ff0296491181757a3d4ae7577d6c728abe9c4029",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -16560,8 +16627,9 @@
     "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
     "docs/blender-workflow-improvement-backlog.md": "28d32bf64e6dc8f7bcf39c2a13cd74b05db305410d0f1fa402d895a152c1dc6d",
-    "docs/orc-component-brief-template.md": "2662cf8e62b1d892202a218ffb22fb4235cb97d941b2f78472bc67195a9d9400",
-    "docs/orc-component-workflow.md": "1ad05a6da34bbc8367f678cbe36a4f51a22c42a401dc08ecd3418d355fe921d1",
+    "docs/hq-coverage-gate.md": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
+    "docs/orc-component-brief-template.md": "69e766a7713831da984341cd9ffed860b7629f08201d62f7983d770c9fdf85fd",
+    "docs/orc-component-workflow.md": "458a2dbe2b6d596853f09c9118750ea4aaed2590a2e84a058d2af0d39d3d28c4",
     "docs/orc-separator-worked-example.md": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
@@ -16719,6 +16787,7 @@
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
     "scripts/headless-run.sh": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+    "scripts/hq-coverage-gate.py": "0a4310a9247a0b2fdd6674f64e50b560efb03407d481f8cd46e038864636e284",
     "scripts/knowledge-catalog.py": "a8d681934844d64ffdba619346391abb39df1340fdecf5425f2c0c164c41872c",
     "scripts/knowledge-pipeline.py": "ad863ad17b6d11e481fd5ccc44410d78d3e344cc74e41335e82a0469682e07ce",
     "scripts/knowledge-playbook.py": "8c1b7e8639dd1040fa0b1b178f1faf1dbdfeef9162838029577514aa5965ceb1",
@@ -16757,6 +16826,7 @@
     "tests/execution/test_headless_run.py": "6d88ed3a2a185d3c5e5f094792e5aeee6ef58c0dbbcdab3cc4ec5529debdf93a",
     "tests/execution/test_socket_client.py": "57f7ac3ca082f8f6d771c8e9596cbafcf43b7e6d13315ef3ecdefc22466dcd28",
     "tests/execution/test_verify_lib.py": "482b16a38979d105b18e87014baedbb61e3fce2710dcb9d6bdeb2b15e0211f55",
+    "tests/hq-coverage/test_hq_coverage_gate.py": "40c859250cb78c53d306006d354e351081b6d67eab44f889c5183a035526c75e",
     "tests/knowledge/test_catalog.py": "6df165cc7f13d34eee8a3c11a5d26b6bc2f4bbbbede041b8e8bdca7349959163",
     "tests/knowledge/test_evolution.py": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
     "tests/production-gate/fixture_specs.py": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
