@@ -1,0 +1,29 @@
+{
+  "images": [
+    {
+      "file": "orc-demo-separator-overview.jpg",
+      "output_sha256": "9e9001f76a4ff421a013e06921380b641681e6a54cac24d8a0f636b9e2ac50d9",
+      "source_artifact": "geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/01-overview.png",
+      "source_image_sha256": "1fdff43f73991ad80f30aa45bb8ef7033bc23cf3da5527bfc598c11de4c13e6f",
+      "source_scene_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+      "status": "completed render-only Separator component; not print or manufacturing evidence"
+    },
+    {
+      "file": "orc-demo-separator-vapor.jpg",
+      "output_sha256": "ac73ed05dceeeb6e1441ed287271dc90e8d37e7b1535b984004ae0fdd8daf327",
+      "source_artifact": "geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/03-vapor.png",
+      "source_image_sha256": "d1f7c1ba3e8b8b50283cc4024876f142d23c9fc42be12fa53c3681eaa50315f7",
+      "source_scene_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+      "status": "completed render-only Separator component; not print or manufacturing evidence"
+    },
+    {
+      "file": "orc-demo-bellows-pilot.jpg",
+      "output_sha256": "ea5d6ccc72dd72d7fac5eef8897a6c0f37685f7390340e748057e172a82c63f6",
+      "source_artifact": "geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-prototype/r2/review/hero.png",
+      "source_image_sha256": "e4c2dda6ebc075cd9e566bd6ad34679d10fe83d6fff8588c52f0060ca64960a6",
+      "source_scene_sha256": "5ec115f4a2f6e20b5cf1c90629e360c5457648e68b202008d4d9054d0071d475",
+      "status": "form-approved reusable bellows-family pilot; exchanger-train detail, full-plant, print, and manufacturing evidence remain out of scope"
+    }
+  ],
+  "status": "public compressed derivatives of native Blender renders; no raw reference images included"
+}
