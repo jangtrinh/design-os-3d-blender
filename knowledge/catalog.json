@@ -6,7 +6,7 @@
     "imported-reference": 47,
     "knowledge": 32,
     "research-synthesis": 72,
-    "workflow": 21
+    "workflow": 31
   },
   "dependency_edges": 96,
   "foundations": [
@@ -114,7 +114,7 @@
         }
       ],
       "kind": "workflow",
-      "lines": 24,
+      "lines": 29,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -123,7 +123,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/hard-rules.md",
       "related": [],
-      "sha256": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
+      "sha256": "423b3b22aea027c3ffa093955fc59f173c452c2434b8b602804fcc1624cdfbe5",
       "tags": [],
       "title": "Project operational rules",
       "use": "read"
@@ -141,35 +141,39 @@
         },
         {
           "line": 33,
+          "text": "Reference reconstruction and HQ review"
+        },
+        {
+          "line": 43,
           "text": "Production contract"
         },
         {
-          "line": 45,
+          "line": 55,
           "text": "Spec from measurement"
         },
         {
-          "line": 57,
+          "line": 67,
           "text": "Articulated task"
         },
         {
-          "line": 69,
+          "line": 79,
           "text": "Assembly and exploded views"
         },
         {
-          "line": 73,
+          "line": 83,
           "text": "Mechanical evidence"
         },
         {
-          "line": 85,
+          "line": 95,
           "text": "Render delivery"
         },
         {
-          "line": 97,
+          "line": 107,
           "text": "Revision-bound acceptance"
         }
       ],
       "kind": "workflow",
-      "lines": 101,
+      "lines": 111,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -178,7 +182,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/recipes.md",
       "related": [],
-      "sha256": "2f72fadf9c23526373cc239bef8eacfb91d0c4b89c994edb2f2fd3f357a40848",
+      "sha256": "7bcee43f8fb372864692143179e2f1d775431f2cc82e39eaeba523461a1bd3f5",
       "tags": [],
       "title": "Blender operational recipes",
       "use": "read"
@@ -195,32 +199,32 @@
           "text": "Phase -1 — Fidelity contract"
         },
         {
-          "line": 21,
+          "line": 25,
           "text": "Phase 0 — Native reconstruction mode"
         },
         {
-          "line": 32,
+          "line": 36,
           "text": "Phase 1 — Evidence specification"
         },
         {
-          "line": 39,
+          "line": 43,
           "text": "Phase 2 — Staged construction"
         },
         {
-          "line": 49,
+          "line": 55,
           "text": "Phase 2.5 — Offline retopology gate (frozen scaffold only)"
         },
         {
-          "line": 55,
+          "line": 61,
           "text": "Phase 3 — Verify every pass"
         },
         {
-          "line": 65,
+          "line": 75,
           "text": "Delivery gate"
         }
       ],
       "kind": "workflow",
-      "lines": 74,
+      "lines": 84,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -229,7 +233,7 @@
       "name": null,
       "path": ".agents/skills/blender-image-to-3d/SKILL.md",
       "related": [],
-      "sha256": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
+      "sha256": "4ec70016957057430a1191762e10350177a4654cbf82629374e187c9d31632d5",
       "tags": [],
       "title": "Image → 3D (v3 — Blender native)",
       "use": "read"
@@ -239,39 +243,35 @@
       "headings": [
         {
           "line": 1,
-          "text": "Review Rubric & Quantitative Gates (distilled from the img2threejs source, 260728)"
+          "text": "Reference reconstruction review rubric"
         },
         {
           "line": 3,
-          "text": "1. Suitability rubric (Step 0.1)"
+          "text": "1. Suitability"
         },
         {
-          "line": 10,
-          "text": "2. Complexity tier → targetMinDetails (quantitative spec gate)"
+          "line": 7,
+          "text": "2. Evidence inventory is a planning aid"
+        },
+        {
+          "line": 11,
+          "text": "3. Technique follows observed construction"
         },
         {
           "line": 21,
-          "text": "3. Detail taxonomy → Blender technique"
+          "text": "4. Manual review verdict"
         },
         {
-          "line": 37,
-          "text": "4. Vision review — how to score each pass"
+          "line": 31,
+          "text": "5. Root cause and verdict"
         },
         {
-          "line": 44,
-          "text": "5. Fidelity scale (report honestly)"
-        },
-        {
-          "line": 48,
-          "text": "6. Root cause: refine-spec vs refine-code"
-        },
-        {
-          "line": 55,
-          "text": "7. Confirmed traps (from their production log)"
+          "line": 35,
+          "text": "6. Traps to test"
         }
       ],
       "kind": "workflow",
-      "lines": 59,
+      "lines": 41,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -280,9 +280,9 @@
       "name": null,
       "path": ".agents/skills/blender-image-to-3d/references/review-rubric.md",
       "related": [],
-      "sha256": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
+      "sha256": "556eebe229242536bef3a38e309f0d2af36c3f309d48cd377d81541816ca9440",
       "tags": [],
-      "title": "Review Rubric & Quantitative Gates (distilled from the img2threejs source, 260728)",
+      "title": "Reference reconstruction review rubric",
       "use": "read"
     },
     {
@@ -3986,25 +3986,25 @@
           "text": "How to operate with less rework"
         },
         {
-          "line": 60,
+          "line": 66,
           "text": "Separate status per kind of evidence"
         },
         {
-          "line": 72,
+          "line": 78,
           "text": "Assembly, wiring and knowledge updates after Arm"
         },
         {
-          "line": 78,
+          "line": 84,
           "text": "Evidence and scope of the summary"
         }
       ],
       "kind": "workflow",
-      "lines": 82,
+      "lines": 88,
       "loads_with": [],
       "name": null,
       "path": "docs/blender-ai-workflow.md",
       "related": [],
-      "sha256": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
+      "sha256": "a3b1e40050ca497394cdf93f1a0e0060668a481f3ebd49d6837e959ff83dd0e0",
       "tags": [],
       "title": "AI Workflow for Working with Blender",
       "use": "read"
@@ -4108,6 +4108,278 @@
       "headings": [
         {
           "line": 1,
+          "text": "ORC exchanger train"
+        },
+        {
+          "line": 9,
+          "text": "Exchanger train overview"
+        },
+        {
+          "line": 13,
+          "text": "Exchanger train rear"
+        },
+        {
+          "line": 17,
+          "text": "Exchanger train bellows"
+        },
+        {
+          "line": 21,
+          "text": "Exchanger train dial"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 25,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/exchanger-train.md",
+      "related": [],
+      "sha256": "d2f35583e341b5090d6c342a1bdaa41c75da4bea499c3678e072a7b7a0f62fda",
+      "tags": [],
+      "title": "ORC exchanger train",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Reusable instrumentation"
+        },
+        {
+          "line": 9,
+          "text": "Pressure instrument mount"
+        },
+        {
+          "line": 13,
+          "text": "Temperature instrument mount"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 17,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/instruments.md",
+      "related": [],
+      "sha256": "79bdd0bb06bc63f84e734a0ae35f06c981f4b6d6beb19a5ec60e9335e0c3ac39",
+      "tags": [],
+      "title": "Reusable instrumentation",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Robot arm"
+        },
+        {
+          "line": 9,
+          "text": "Robot arm overview"
+        },
+        {
+          "line": 13,
+          "text": "Robot arm assembled view"
+        },
+        {
+          "line": 17,
+          "text": "Robot arm final view"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 21,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/robot-arm.md",
+      "related": [],
+      "sha256": "138bcdbb0d19052456bc7be816ea15ec98ca1e5cea070491b0c451fd9ad5c7aa",
+      "tags": [],
+      "title": "Robot arm",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Separator"
+        },
+        {
+          "line": 9,
+          "text": "Separator overview"
+        },
+        {
+          "line": 13,
+          "text": "Separator inlet"
+        },
+        {
+          "line": 17,
+          "text": "Separator vapor outlet"
+        },
+        {
+          "line": 21,
+          "text": "Separator transmitter"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 25,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/separator.md",
+      "related": [],
+      "sha256": "22e6bbe4ecc9938a17a9131a6255df3b484c26fd939107f5065fb7eb9e111ffd",
+      "tags": [],
+      "title": "Separator",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Three-stage exchanger"
+        },
+        {
+          "line": 9,
+          "text": "Three-stage exchanger overview"
+        },
+        {
+          "line": 13,
+          "text": "Three-stage exchanger front"
+        },
+        {
+          "line": 17,
+          "text": "Three-stage exchanger temperature transmitter"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 21,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/three-stage-exchanger.md",
+      "related": [],
+      "sha256": "584fa832780b635d40aaa082ecd415620157b2df920a14db034f84792ac25178",
+      "tags": [],
+      "title": "Three-stage exchanger",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Turbine generator"
+        },
+        {
+          "line": 9,
+          "text": "Turbine generator overview"
+        },
+        {
+          "line": 13,
+          "text": "Turbine process flanges"
+        },
+        {
+          "line": 17,
+          "text": "Turbine oil console"
+        },
+        {
+          "line": 21,
+          "text": "Turbine control cabinet"
+        },
+        {
+          "line": 25,
+          "text": "Turbine glazed hall"
+        },
+        {
+          "line": 29,
+          "text": "Turbine panel removed"
+        },
+        {
+          "line": 33,
+          "text": "Turbine pressure gauge"
+        },
+        {
+          "line": 37,
+          "text": "Turbine exhaust joint"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 41,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/turbine-generator.md",
+      "related": [],
+      "sha256": "88c6859a48bf844db8c6b2a46ecf435a61bc9af4d40b092aacdbe249f3bb9125",
+      "tags": [],
+      "title": "Turbine generator",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Watch winder"
+        },
+        {
+          "line": 9,
+          "text": "Watch winder overview"
+        },
+        {
+          "line": 13,
+          "text": "Watch winder dial"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 17,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/watch-winder.md",
+      "related": [],
+      "sha256": "01bf7ef3611e1efd9e52d08c55a3ec077b6c4548d4a28c378f9682d2b3ea0451",
+      "tags": [],
+      "title": "Watch winder",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Wellhead"
+        },
+        {
+          "line": 9,
+          "text": "Wellhead overview"
+        },
+        {
+          "line": 13,
+          "text": "Wellhead valve"
+        },
+        {
+          "line": 17,
+          "text": "Wellhead pressure gauge"
+        },
+        {
+          "line": 21,
+          "text": "Wellhead top connection"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 25,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/galleries/wellhead.md",
+      "related": [],
+      "sha256": "527d45bf296542c7a8a43788d59d0b521d3669b9ecefe70673e70e5da88c917e",
+      "tags": [],
+      "title": "Wellhead",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
           "text": "Check reference coverage before HQ rendering"
         },
         {
@@ -4147,6 +4419,25 @@
       "headings": [
         {
           "line": 1,
+          "text": "From reference image to reviewable component"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 13,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/journals/orc-component-reconstruction.md",
+      "related": [],
+      "sha256": "c1da71e4925251a63f3d57a72125237c90390a412d5b8bbf2697f64264bb0a93",
+      "tags": [],
+      "title": "From reference image to reviewable component",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
           "text": "Visual component brief template"
         },
         {
@@ -4163,80 +4454,92 @@
         },
         {
           "line": 31,
+          "text": "Mechanical specification and installation evidence"
+        },
+        {
+          "line": 39,
           "text": "3. Frames and camera separation"
         },
         {
-          "line": 40,
+          "line": 48,
           "text": "4. Fixed envelope"
         },
         {
-          "line": 48,
+          "line": 56,
+          "text": "Site scale and integration contract"
+        },
+        {
+          "line": 70,
           "text": "5. Primary-view inventory"
         },
         {
-          "line": 56,
+          "line": 78,
           "text": "6. Normalized landmarks"
         },
         {
-          "line": 64,
+          "line": 86,
           "text": "7. Silhouette and shape hierarchy"
         },
         {
-          "line": 74,
+          "line": 96,
           "text": "Critical"
         },
         {
-          "line": 78,
+          "line": 100,
           "text": "Important"
         },
         {
-          "line": 82,
+          "line": 104,
           "text": "Optional"
         },
         {
-          "line": 86,
+          "line": 108,
           "text": "8. Attachment graph and axes"
         },
         {
-          "line": 99,
+          "line": 121,
+          "text": "Instrument station map"
+        },
+        {
+          "line": 129,
           "text": "9. Material intent"
         },
         {
-          "line": 107,
+          "line": 137,
           "text": "10. Reusable subassembly proposals"
         },
         {
-          "line": 113,
+          "line": 143,
           "text": "11. Incremental recipe and reuse contract"
         },
         {
-          "line": 134,
+          "line": 164,
           "text": "12. Exact falsifiers"
         },
         {
-          "line": 142,
+          "line": 172,
           "text": "13. Uncertainty ledger"
         },
         {
-          "line": 151,
+          "line": 181,
           "text": "14. Acceptance handoff"
         },
         {
-          "line": 163,
+          "line": 193,
           "text": "15. Complete close-up and output coverage"
         },
         {
-          "line": 173,
+          "line": 203,
           "text": "Frozen review input — manual decisions and executable receipt checks"
         }
       ],
       "kind": "workflow",
-      "lines": 190,
+      "lines": 220,
       "loads_with": [],
       "name": null,
       "path": "docs/orc-component-brief-template.md",
       "related": [],
-      "sha256": "69e766a7713831da984341cd9ffed860b7629f08201d62f7983d770c9fdf85fd",
+      "sha256": "c5c56946b063550ad27115d8475040e6c7b730dee0ace4a04242cf15b4b32326",
       "tags": [],
       "title": "Visual component brief template",
       "use": "read"
@@ -4262,32 +4565,44 @@
         },
         {
           "line": 31,
-          "text": "Reuse contract and interface ownership"
+          "text": "Technical evidence before mechanical choices"
         },
         {
           "line": 39,
+          "text": "Site scale and inter-component integration"
+        },
+        {
+          "line": 45,
+          "text": "Reuse contract and interface ownership"
+        },
+        {
+          "line": 55,
+          "text": "Instrument stations precede instances"
+        },
+        {
+          "line": 67,
           "text": "Verify the right claim"
         },
         {
-          "line": 47,
+          "line": 79,
           "text": "Freeze, output-density proof, and revision"
         },
         {
-          "line": 59,
+          "line": 91,
           "text": "Role routing"
         },
         {
-          "line": 70,
+          "line": 102,
           "text": "Start the next component"
         }
       ],
       "kind": "workflow",
-      "lines": 78,
+      "lines": 111,
       "loads_with": [],
       "name": null,
       "path": "docs/orc-component-workflow.md",
       "related": [],
-      "sha256": "458a2dbe2b6d596853f09c9118750ea4aaed2590a2e84a058d2af0d39d3d28c4",
+      "sha256": "18bc17390437d634cc92b079b3b76bd7aa50c526feec5db6ea64834b9f9dbad4",
       "tags": [],
       "title": "ORC component reconstruction workflow",
       "use": "read"
@@ -4357,6 +4672,45 @@
       "sha256": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
       "tags": [],
       "title": "Worked example: ORC Separator evidence flow",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "ORC component reconstruction lessons"
+        },
+        {
+          "line": 5,
+          "text": "What the records support"
+        },
+        {
+          "line": 16,
+          "text": "The working method"
+        },
+        {
+          "line": 25,
+          "text": "Checks that answer different questions"
+        },
+        {
+          "line": 34,
+          "text": "Worked C05 cabinet case"
+        },
+        {
+          "line": 40,
+          "text": "Next-component checklist"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 48,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/orc-session-lessons.md",
+      "related": [],
+      "sha256": "403a2938c788cfe49af67641de9bd2601f0b6ec9853f74836732372f142738c1",
+      "tags": [],
+      "title": "ORC component reconstruction lessons",
       "use": "read"
     },
     {
@@ -16491,14 +16845,14 @@
     }
   },
   "schema": 1,
-  "source_digest": "acf6864bba27c62773a5c208ff0296491181757a3d4ae7577d6c728abe9c4029",
+  "source_digest": "1c42e36fb1a136a1764cdd6367457906179b33e51de49549f03b13987f2f0058",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
-    ".agents/skills/blender-agent-core/references/hard-rules.md": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
-    ".agents/skills/blender-agent-core/references/recipes.md": "2f72fadf9c23526373cc239bef8eacfb91d0c4b89c994edb2f2fd3f357a40848",
-    ".agents/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
-    ".agents/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
+    ".agents/skills/blender-agent-core/references/hard-rules.md": "423b3b22aea027c3ffa093955fc59f173c452c2434b8b602804fcc1624cdfbe5",
+    ".agents/skills/blender-agent-core/references/recipes.md": "7bcee43f8fb372864692143179e2f1d775431f2cc82e39eaeba523461a1bd3f5",
+    ".agents/skills/blender-image-to-3d/SKILL.md": "4ec70016957057430a1191762e10350177a4654cbf82629374e187c9d31632d5",
+    ".agents/skills/blender-image-to-3d/references/review-rubric.md": "556eebe229242536bef3a38e309f0d2af36c3f309d48cd377d81541816ca9440",
     ".agents/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
     ".agents/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "f9620eb64634b442d855b0532dab3e6c84321b646825931f479294051ad9350a",
     ".agents/skills/img2threejs/.github/pull_request_template.md": "9fd84ce46787230045427bb017dc5e78ede9383b315cf01b2c4192ab49c1ffb9",
@@ -16550,10 +16904,10 @@
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
     ".claude/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
-    ".claude/skills/blender-agent-core/references/hard-rules.md": "204506f39cd14776709ca99ae560e49c5c3e0930585a4f04d25d02d29e7372f2",
-    ".claude/skills/blender-agent-core/references/recipes.md": "2f72fadf9c23526373cc239bef8eacfb91d0c4b89c994edb2f2fd3f357a40848",
-    ".claude/skills/blender-image-to-3d/SKILL.md": "a9637e2f2769c72c7c778ef3917bd2e48eec9f86d35f6e69f576d88f0f3da9c4",
-    ".claude/skills/blender-image-to-3d/references/review-rubric.md": "d1b0ea225d6e61e3c9448642277f8f9e07f936f4ec1a1e52816e91a95aebf491",
+    ".claude/skills/blender-agent-core/references/hard-rules.md": "423b3b22aea027c3ffa093955fc59f173c452c2434b8b602804fcc1624cdfbe5",
+    ".claude/skills/blender-agent-core/references/recipes.md": "7bcee43f8fb372864692143179e2f1d775431f2cc82e39eaeba523461a1bd3f5",
+    ".claude/skills/blender-image-to-3d/SKILL.md": "4ec70016957057430a1191762e10350177a4654cbf82629374e187c9d31632d5",
+    ".claude/skills/blender-image-to-3d/references/review-rubric.md": "556eebe229242536bef3a38e309f0d2af36c3f309d48cd377d81541816ca9440",
     ".claude/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
     ".claude/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "f9620eb64634b442d855b0532dab3e6c84321b646825931f479294051ad9350a",
     ".claude/skills/img2threejs/.github/pull_request_template.md": "9fd84ce46787230045427bb017dc5e78ede9383b315cf01b2c4192ab49c1ffb9",
@@ -16624,13 +16978,23 @@
     "builds/watch-winder-capsule/scripts/pass-30-print-plates-layout.py": "cc60c2e8c62c32f91d9bfcecaa664e4ddf7af17f2bb7003de04bbe7ac322c95c",
     "builds/watch-winder-capsule/scripts/ww_mesh.py": "d525c978e0f30615a91cc037f2828193267a54eabb8618a07dae3d673651825b",
     "docs/antigravity-setup.md": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
-    "docs/blender-ai-workflow.md": "2ee1878fee2ec0564b90bfc374084dc49c5a45a4c26e2630ce19a32de91e71cf",
+    "docs/blender-ai-workflow.md": "a3b1e40050ca497394cdf93f1a0e0060668a481f3ebd49d6837e959ff83dd0e0",
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
     "docs/blender-workflow-improvement-backlog.md": "28d32bf64e6dc8f7bcf39c2a13cd74b05db305410d0f1fa402d895a152c1dc6d",
+    "docs/galleries/exchanger-train.md": "d2f35583e341b5090d6c342a1bdaa41c75da4bea499c3678e072a7b7a0f62fda",
+    "docs/galleries/instruments.md": "79bdd0bb06bc63f84e734a0ae35f06c981f4b6d6beb19a5ec60e9335e0c3ac39",
+    "docs/galleries/robot-arm.md": "138bcdbb0d19052456bc7be816ea15ec98ca1e5cea070491b0c451fd9ad5c7aa",
+    "docs/galleries/separator.md": "22e6bbe4ecc9938a17a9131a6255df3b484c26fd939107f5065fb7eb9e111ffd",
+    "docs/galleries/three-stage-exchanger.md": "584fa832780b635d40aaa082ecd415620157b2df920a14db034f84792ac25178",
+    "docs/galleries/turbine-generator.md": "88c6859a48bf844db8c6b2a46ecf435a61bc9af4d40b092aacdbe249f3bb9125",
+    "docs/galleries/watch-winder.md": "01bf7ef3611e1efd9e52d08c55a3ec077b6c4548d4a28c378f9682d2b3ea0451",
+    "docs/galleries/wellhead.md": "527d45bf296542c7a8a43788d59d0b521d3669b9ecefe70673e70e5da88c917e",
     "docs/hq-coverage-gate.md": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
-    "docs/orc-component-brief-template.md": "69e766a7713831da984341cd9ffed860b7629f08201d62f7983d770c9fdf85fd",
-    "docs/orc-component-workflow.md": "458a2dbe2b6d596853f09c9118750ea4aaed2590a2e84a058d2af0d39d3d28c4",
+    "docs/journals/orc-component-reconstruction.md": "c1da71e4925251a63f3d57a72125237c90390a412d5b8bbf2697f64264bb0a93",
+    "docs/orc-component-brief-template.md": "c5c56946b063550ad27115d8475040e6c7b730dee0ace4a04242cf15b4b32326",
+    "docs/orc-component-workflow.md": "18bc17390437d634cc92b079b3b76bd7aa50c526feec5db6ea64834b9f9dbad4",
     "docs/orc-separator-worked-example.md": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
+    "docs/orc-session-lessons.md": "403a2938c788cfe49af67641de9bd2601f0b6ec9853f74836732372f142738c1",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
     "knowledge/00-foundations/blender-version-matrix.md": "db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a",

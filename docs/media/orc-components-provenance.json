@@ -1,69 +1,122 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "title": "ORC components and reusable families",
   "derivative": {
     "gif": "docs/media/orc-components.gif",
-    "gif_sha256": "d273b6ef66fbd93a07b51a823a7b8e5551eb829f4ab8e1e33917125602175140",
+    "gif_sha256": "9d538270a20d4275757273566ad517d0dd1d31b4686af9436eb44a7432d478b2",
     "static_poster": "docs/media/orc-components-poster.jpg",
-    "static_poster_sha256": "a1867b5bb2ccc1b8326fde2d58e2826e5d999ac04fcfc0ef75b4b12a39ab581c",
+    "static_poster_sha256": "bc47a6f4c91609a812dfcf5ac2a9ead504b5dc76666ba5193626ceac99ddf9a1",
     "canvas_px": [
       960,
       640
     ],
-    "frame_count": 8,
+    "frame_count": 10,
     "dwell_seconds_per_frame": 3,
-    "duration_seconds": 24,
+    "duration_seconds": 30,
     "loop": "infinite",
-    "generator": "ffmpeg label frames + ImageMagick indexed GIF optimization"
+    "generator": "ffmpeg native-frame extraction where required plus ImageMagick text-free image composition and indexed GIF optimization",
+    "gif_bytes": 1115011
   },
   "inputs": [
     {
-      "label": "Wellhead overview",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/01-overview.png",
+      "title": "Wellhead overview",
+      "source_id": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/01-overview.png",
       "source_sha256": "3546fe8af670f1bb521f5511d5b90018a599220dfdca92e78fbea65799903ecf",
-      "evidence_scope": "Native HQ review media. Owner detail review remains pending."
+      "source_blend_sha256": "0b358ee603abf90d97f1d5d3ce2973b8165fe76285863ca9c7f861544410c931",
+      "evidence_scope": "HQ review media complete; owner detail acceptance remains pending.",
+      "topic": "ORC component",
+      "component": "C01 wellhead",
+      "order": 1
     },
     {
-      "label": "Wellhead valve close-up",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/02-valve.png",
-      "source_sha256": "9f8e252132608359e1f9c899875abd7b40ef29630305e1e9319217f9b2160500",
-      "evidence_scope": "Native HQ review media. Owner detail review remains pending."
-    },
-    {
-      "label": "Separator overview",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/01-overview.png",
+      "title": "Separator overview",
+      "source_id": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/01-overview.png",
       "source_sha256": "1fdff43f73991ad80f30aa45bb8ef7033bc23cf3da5527bfc598c11de4c13e6f",
-      "evidence_scope": "Native repaired HQ review media. Owner appearance review remains pending."
+      "source_blend_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+      "evidence_scope": "Repaired HQ review media complete; owner appearance review remains pending.",
+      "topic": "ORC component",
+      "component": "C02 separator",
+      "order": 2
     },
     {
-      "label": "Separator transmitter close-up",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/06-transmitter.png",
-      "source_sha256": "d778259a891dd26bcd4d494a8573885da06b2aa8a8875e05bf53b2665da5ecc1",
-      "evidence_scope": "Native repaired HQ review media. Owner appearance review remains pending."
+      "title": "Exchanger train overview",
+      "source_id": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/r7/renders/hq/01-overview.png",
+      "source_sha256": "ea260488a7aa2985b52088fe159513c90fe67dfc206f2a673afde3e76c0c6d9f",
+      "source_blend_sha256": "e1ed4a24e2d2db330dff575178a1432ac987f7521ba99a4377c82d3d83b96fbe",
+      "evidence_scope": "R7 HQ media complete; owner appearance review remains pending.",
+      "topic": "ORC component",
+      "component": "C03 exchanger train",
+      "order": 3
     },
     {
-      "label": "Bellows R2 hero",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-prototype/r2/review/hero.png",
-      "source_sha256": "e4c2dda6ebc075cd9e566bd6ad34679d10fe83d6fff8588c52f0060ca64960a6",
-      "evidence_scope": "Owner form-approved reusable family pilot; not a completed exchanger train or manufacturing evidence."
+      "title": "Three-stage exchanger overview",
+      "source_id": "builds/geothermal-orc-plant-model/components/04-orc-exchanger-train-3stage/astra-build/instrumented-r2/hero.png",
+      "source_sha256": "0c62a455c582e2bc65255d533886b2f6325140cf04051cbba0f291cbb77b37ea",
+      "source_blend_sha256": "1e1e64d8eaeac959402b855f6d8da32109c5ea8d57c87417049c0ccbf05ebcd5",
+      "evidence_scope": "Verification media only; HQ is not started and owner detail acceptance remains pending.",
+      "topic": "ORC component",
+      "component": "C04 three-stage exchanger",
+      "order": 4
     },
     {
-      "label": "Bellows R2 corrugation detail",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-prototype/r2/review/corrugation.png",
-      "source_sha256": "650324fd674e0ee5bb0440e12bcc6b25ddcc44c793b53eff8f4082d9ec7a2a89",
-      "evidence_scope": "Owner form-approved reusable family pilot; not a completed exchanger train or manufacturing evidence."
+      "title": "Turbine generator overview",
+      "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/hero.png",
+      "source_sha256": "38a9184c9947df766e3d7b3d2c49293cc014d20769a6d58c7c62a9a191d98704",
+      "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+      "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+      "topic": "ORC component",
+      "component": "C05 turbine generator",
+      "order": 5
     },
     {
-      "label": "RTD/PT instrument family pair",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/instrument-pilot-r3/pair.png",
-      "source_sha256": "1b1911b0e58f03550854374532a1198e96d419627e9a9fb88a5135f9c42c1f8e",
-      "evidence_scope": "Render-only form study; not a final exchanger-train claim."
+      "title": "Wellhead valve",
+      "source_id": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/02-valve.png",
+      "source_sha256": "9f8e252132608359e1f9c899875abd7b40ef29630305e1e9319217f9b2160500",
+      "source_blend_sha256": "0b358ee603abf90d97f1d5d3ce2973b8165fe76285863ca9c7f861544410c931",
+      "evidence_scope": "HQ review media complete; owner detail acceptance remains pending.",
+      "topic": "ORC component",
+      "component": "C01 wellhead",
+      "order": 6
     },
     {
-      "label": "RTD/PT instrument family RTD study",
-      "source_project_path": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/instrument-pilot-r3/rtd.png",
-      "source_sha256": "11b16cb40d8397b8fd98da9f7183f5287f00651695784099a1a6e96090a2757d",
-      "evidence_scope": "Render-only form study; not a final exchanger-train claim."
+      "title": "Separator vapor outlet",
+      "source_id": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/03-vapor.png",
+      "source_sha256": "d1f7c1ba3e8b8b50283cc4024876f142d23c9fc42be12fa53c3681eaa50315f7",
+      "source_blend_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+      "evidence_scope": "Repaired HQ review media complete; owner appearance review remains pending.",
+      "topic": "ORC component",
+      "component": "C02 separator",
+      "order": 7
+    },
+    {
+      "title": "Exchanger train bellows",
+      "source_id": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/r7/renders/hq/08-bellows.png",
+      "source_sha256": "4a822bdcff39b3336826449ac379eddea9f5d90ee45b4a654efaa36d321b63b3",
+      "source_blend_sha256": "e1ed4a24e2d2db330dff575178a1432ac987f7521ba99a4377c82d3d83b96fbe",
+      "evidence_scope": "R7 HQ media complete; owner appearance review remains pending.",
+      "topic": "ORC component",
+      "component": "C03 exchanger train",
+      "order": 8
+    },
+    {
+      "title": "Three-stage exchanger temperature transmitter",
+      "source_id": "builds/geothermal-orc-plant-model/components/04-orc-exchanger-train-3stage/astra-build/instrumented-r2/temperature-macro.png",
+      "source_sha256": "8f1aef41a1407be357305e137defb657dc6419e01a0e98794150bc1926708a24",
+      "source_blend_sha256": "1e1e64d8eaeac959402b855f6d8da32109c5ea8d57c87417049c0ccbf05ebcd5",
+      "evidence_scope": "Verification media only; HQ is not started and owner detail acceptance remains pending.",
+      "topic": "ORC component",
+      "component": "C04 three-stage exchanger",
+      "order": 9
+    },
+    {
+      "title": "Turbine control cabinet",
+      "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/cabinet.png",
+      "source_sha256": "d754d1f3bef7519c83c4b8c91c73965166ff75ad03d1469766ee79f60be93f0e",
+      "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+      "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+      "topic": "ORC component",
+      "component": "C05 turbine generator",
+      "order": 10
     }
   ],
   "scope": "Public derivative of local Blender-native media only. It does not establish physical fit, manufacture, pressure, thermal, or performance claims."

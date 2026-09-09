@@ -18,7 +18,7 @@ Use this template for one component and one declared primary view, supported by 
 | Detail tile |  |  | local shape/material only |  |
 
 - Image inspection tool used:
-- Authority rule: primary visible evidence wins. Never merge counts across views.
+- Authority rule: primary view governs appearance; applicable technical documentation governs mechanical function, routing and installation. Never merge visual counts across views or treat visual count as the required instrument count.
 
 ### CAD or drawing evidence
 
@@ -27,6 +27,14 @@ Use this template for one component and one declared primary view, supported by 
 |  |  |  |  |  |
 
 CAD is reference-only; no retrieved mesh enters a native build. If no useful CAD is found, record the search boundary and the missing fact that actually blocks work.
+
+### Mechanical specification and installation evidence
+
+| Mechanical question | Official document / actual revision / page or section | Applicable service / conditions | Documented rule | Modeling decision / unresolved selection |
+|---|---|---|---|---|
+|  |  |  |  |  |
+
+Read these documents before reasoning from the image about function. Distinguish a requirement from an optional manufacturer example. Project-specific P&ID/GA and selected-equipment documents govern when supplied; otherwise label the proposed layout illustrative and retain unknown operating conditions. Record any visual conflict and a concrete resolution before changing accepted topology.
 
 ## 3. Frames and camera separation
 
@@ -44,6 +52,20 @@ CAD is reference-only; no retrieved mesh enters a native build. If no useful CAD
 | X |  |  |  |
 | Y |  |  |  |
 | Z |  |  |  |
+
+### Site scale and integration contract
+
+- Declared site scale and shared model units:
+- Shared site axes/origin and camera convention:
+- Physical envelope source, units, and exact match / analogue / proxy status:
+- Tabletop/display envelope and visible protrusions or service allowance:
+- No independent or anisotropic component scaling:
+
+| External port | Elevation / position | Axis and orientation | Interface role | Counterpart / whole-site check |
+|---|---|---|---|---|
+|  |  |  |  |  |
+
+An illustrative site envelope supports composition and interface review only. It does not select equipment, capacity, rating, duty, or manufacturer identity. Recheck all modules together after placement: footprint, port alignment, route continuity, protrusion/access separation, and camera visibility.
 
 ## 5. Primary-view inventory
 
@@ -96,6 +118,14 @@ Separate material highlights from confirmed grooves or steps. Unseen cross-secti
 
 Declare intentional overlaps. For hollow pipe–flange joints, assign each inner-wall interval to one part. A clear centreline ray does not prove the surrounding walls are free of overlap. Record both endpoints.
 
+### Instrument station map
+
+| Station ID / measurement purpose | Technical source / section | Circuit and inlet/outlet role / host | Verified host port and adapter | Family and local mount port | Reading orientation / access | Fact / design choice / unknown |
+|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |
+
+Do not inherit proxy coordinates as a station. Separate head geometry from its process adapter; a geometric mount port proves no process rating. Align each instance to the documented connection scheme; use one mounting rule per repeated station type. Trace both process circuits before placement. Unknown as-built ownership remains UNKNOWN; a document-based proposed circuit must be labeled a design choice. Record conditional thermal protection, probe immersion and service clearance without inventing operating values.
+
 ## 9. Material intent
 
 | Part group | Colour/value family | Finish | Shape cue it must reveal |
@@ -118,7 +148,7 @@ Choose the highest-risk identity subcomponent first. The controller builds a new
 - Local axes, pivot, dimensions, and port/interface transforms:
 - Supported parameters and invariant geometry/materials:
 - Nominal and second intended-scale checks plus attachment check:
-- Local or shared constructor; concrete second consumer before promotion:
+- Local or shared constructor; concrete second consumer or explicit owner library request, with qualification status:
 - Regression proof: observed failure, supported range, command or evidence, expected result. Re-run after instancing or changing supported parameters.
 
 | Pass | Scope | Comparison target | Exact pass/fail observation |
