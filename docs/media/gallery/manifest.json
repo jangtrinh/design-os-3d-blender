@@ -1,0 +1,481 @@
+{
+  "schema_version": 1,
+  "groups": [
+    {
+      "id": "robot-arm",
+      "title": "Robot arm",
+      "status": "Native render media; physical fit and manufacture are not verified.",
+      "images": [
+        {
+          "path": "docs/media/gallery/robot-arm/robot-arm-overview.jpg",
+          "title": "Robot arm overview",
+          "source_id": "docs/media/robot-arm-hero-cycles.png",
+          "source_sha256": "1969acd42abb58f4602e3787d09415673b01ff88308af62d80e0a3a87530cdba",
+          "sha256": "82046b0efcc052878d29067259cd86eaea7a49a15ed907e8c0c41de8624e67fb",
+          "width": 1400,
+          "height": 1050,
+          "source_blend_sha256": null,
+          "evidence_scope": "Native render media; physical fit and manufacture are not verified.",
+          "topic": "product showcase",
+          "component": "robot arm",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/robot-arm/robot-arm-motion-108-6.jpg",
+          "title": "Robot arm assembled view",
+          "source_id": "builds/robot-arm-original-refined/video/arm-step-by-step-refined.mp4#t=108.6",
+          "source_sha256": "2cbb5f0e994d4c45d548f1c3c0536c321f2b89f5f0b06bcf4c8c4d52ef5d9d8b",
+          "sha256": "404f9f9e14b9b685747d462c40f41fa83cb39de5e1eca1c26135a15c4fe410a0",
+          "width": 960,
+          "height": 720,
+          "source_blend_sha256": null,
+          "evidence_scope": "Native render media; physical fit and manufacture are not verified.",
+          "topic": "product showcase",
+          "component": "robot arm",
+          "order": 2
+        },
+        {
+          "path": "docs/media/gallery/robot-arm/robot-arm-motion-125-6.jpg",
+          "title": "Robot arm final view",
+          "source_id": "builds/robot-arm-original-refined/video/arm-step-by-step-refined.mp4#t=125.6",
+          "source_sha256": "2cbb5f0e994d4c45d548f1c3c0536c321f2b89f5f0b06bcf4c8c4d52ef5d9d8b",
+          "sha256": "64ce34159843c43a056fe73c2e89aceb8807e08777a134669d5aa7c71ced7feb",
+          "width": 960,
+          "height": 720,
+          "source_blend_sha256": null,
+          "evidence_scope": "Native render media; physical fit and manufacture are not verified.",
+          "topic": "product showcase",
+          "component": "robot arm",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "watch-winder",
+      "title": "Watch winder",
+      "status": "Native final render; physical manufacture remains blocked.",
+      "images": [
+        {
+          "path": "docs/media/gallery/watch-winder/watch-winder-overview.jpg",
+          "title": "Watch winder overview",
+          "source_id": "builds/watch-winder-capsule/renders/final/hero-graphite.png",
+          "source_sha256": "4993df3552bfa0560def2cb4bc71fad1431e2eaa675afe1dabc04f22dc3c004f",
+          "sha256": "d1aaa4868911d9f49c031f2ab74c7ee9762ee1d60d1d06a1de43654919caa0b0",
+          "width": 1400,
+          "height": 933,
+          "source_blend_sha256": null,
+          "evidence_scope": "Native final render; physical manufacture remains blocked.",
+          "topic": "product showcase",
+          "component": "watch winder",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/watch-winder/watch-winder-dial.jpg",
+          "title": "Watch winder dial",
+          "source_id": "builds/watch-winder-capsule/renders/final/macro-dial-graphite.png",
+          "source_sha256": "1e44e2162a71dc813197c28a3bac0403f6582ab17e560cca932383e30ef530e2",
+          "sha256": "ba11bc90a3fe39cd296c70a1ea0402a9f2a001b1bbc00f851a61b6c9597be666",
+          "width": 1400,
+          "height": 933,
+          "source_blend_sha256": null,
+          "evidence_scope": "Native final render; physical manufacture remains blocked.",
+          "topic": "product showcase",
+          "component": "watch winder",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "wellhead",
+      "title": "Wellhead",
+      "status": "HQ review media complete; owner detail acceptance remains pending.",
+      "images": [
+        {
+          "path": "docs/media/gallery/wellhead/wellhead-overview.jpg",
+          "title": "Wellhead overview",
+          "source_id": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/01-overview.png",
+          "source_sha256": "3546fe8af670f1bb521f5511d5b90018a599220dfdca92e78fbea65799903ecf",
+          "sha256": "4e71ffffb9245dd6316d3c169a2210886b8a187c7b237f525b4db50fd1aa04bd",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "0b358ee603abf90d97f1d5d3ce2973b8165fe76285863ca9c7f861544410c931",
+          "evidence_scope": "HQ review media complete; owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C01 wellhead",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/wellhead/wellhead-valve.jpg",
+          "title": "Wellhead valve",
+          "source_id": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/02-valve.png",
+          "source_sha256": "9f8e252132608359e1f9c899875abd7b40ef29630305e1e9319217f9b2160500",
+          "sha256": "7955d9c61dd98e648c468241e3efe5d2ed5a7dab8b8ef75b4706aeb4f85a424f",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "0b358ee603abf90d97f1d5d3ce2973b8165fe76285863ca9c7f861544410c931",
+          "evidence_scope": "HQ review media complete; owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C01 wellhead",
+          "order": 2
+        },
+        {
+          "path": "docs/media/gallery/wellhead/wellhead-pressure-gauge.jpg",
+          "title": "Wellhead pressure gauge",
+          "source_id": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/03-pressure-gauge.png",
+          "source_sha256": "97eff0fdd0268a9886c8d03ed15be347f333fdfa3785633731add2c4d1b78faa",
+          "sha256": "e80b62e0d8cc93863eb1a47fd62a7bc82b15c3f6e1bb6397605e654428fd4cb5",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "0b358ee603abf90d97f1d5d3ce2973b8165fe76285863ca9c7f861544410c931",
+          "evidence_scope": "HQ review media complete; owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C01 wellhead",
+          "order": 3
+        },
+        {
+          "path": "docs/media/gallery/wellhead/wellhead-top-connection.jpg",
+          "title": "Wellhead top connection",
+          "source_id": "builds/geothermal-orc-plant-model/components/01-wellhead/astra-assembly/renders/hq-review/04-top-connection.png",
+          "source_sha256": "dc1e0de7dabd7759b7f7ed929c33ab2d333be84fab5f3e95724868632fc48968",
+          "sha256": "554e971e60084edc3acc35bb3018d146256085a1d7d3c4ed9df922edb89f0bed",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "0b358ee603abf90d97f1d5d3ce2973b8165fe76285863ca9c7f861544410c931",
+          "evidence_scope": "HQ review media complete; owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C01 wellhead",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "separator",
+      "title": "Separator",
+      "status": "Repaired HQ review media complete; owner appearance review remains pending.",
+      "images": [
+        {
+          "path": "docs/media/gallery/separator/separator-overview.jpg",
+          "title": "Separator overview",
+          "source_id": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/01-overview.png",
+          "source_sha256": "1fdff43f73991ad80f30aa45bb8ef7033bc23cf3da5527bfc598c11de4c13e6f",
+          "sha256": "5a2aca9535b2ce99609d9e2e6e97089ffe6a67696237daa2c675ee9e904651ea",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+          "evidence_scope": "Repaired HQ review media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C02 separator",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/separator/separator-inlet.jpg",
+          "title": "Separator inlet",
+          "source_id": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/02-inlet.png",
+          "source_sha256": "4c3e1dcaa8dac24937b0e141aa876917308e906f94e8aba05c624c28109d776e",
+          "sha256": "6b7037af464c3bf7d1d731f88459d6730fbdcd1ccf0d815285c5befeba962103",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+          "evidence_scope": "Repaired HQ review media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C02 separator",
+          "order": 2
+        },
+        {
+          "path": "docs/media/gallery/separator/separator-vapor-outlet.jpg",
+          "title": "Separator vapor outlet",
+          "source_id": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/03-vapor.png",
+          "source_sha256": "d1f7c1ba3e8b8b50283cc4024876f142d23c9fc42be12fa53c3681eaa50315f7",
+          "sha256": "68781f2f551a66b2c55a215941dca66c61fba66f6d8591ac961eb74b440d80ab",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+          "evidence_scope": "Repaired HQ review media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C02 separator",
+          "order": 3
+        },
+        {
+          "path": "docs/media/gallery/separator/separator-transmitter.jpg",
+          "title": "Separator transmitter",
+          "source_id": "builds/geothermal-orc-plant-model/components/02-separator/astra-detail/vapor-repair/renders/hq/06-transmitter.png",
+          "source_sha256": "d778259a891dd26bcd4d494a8573885da06b2aa8a8875e05bf53b2665da5ecc1",
+          "sha256": "a55efc331a4e682ba363dfff4781412b3f312b67079355569635ff9547fc2d76",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "2c6a509f8548206822392e2a78de4f7addb1282adc49624ecc41ebc13d840a6e",
+          "evidence_scope": "Repaired HQ review media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C02 separator",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "exchanger-train",
+      "title": "ORC exchanger train",
+      "status": "R7 HQ media complete; owner appearance review remains pending.",
+      "images": [
+        {
+          "path": "docs/media/gallery/exchanger-train/exchanger-train-overview.jpg",
+          "title": "Exchanger train overview",
+          "source_id": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/r7/renders/hq/01-overview.png",
+          "source_sha256": "ea260488a7aa2985b52088fe159513c90fe67dfc206f2a673afde3e76c0c6d9f",
+          "sha256": "58a6da2dcc350fc158a2c6cfd5953d3030224e6508f6efaf88c91c35298a015b",
+          "width": 1400,
+          "height": 984,
+          "source_blend_sha256": "e1ed4a24e2d2db330dff575178a1432ac987f7521ba99a4377c82d3d83b96fbe",
+          "evidence_scope": "R7 HQ media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C03 exchanger train",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/exchanger-train/exchanger-train-rear.jpg",
+          "title": "Exchanger train rear",
+          "source_id": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/r7/renders/hq/02-rear.png",
+          "source_sha256": "60f250555f34987bbca6f26f382373ac94cca778c676d0863c0303c9ec9ddee6",
+          "sha256": "7ee638b184f5a8f67d1a8502d464320cdeb7519a577f8a5ffdf01be9b9a431ae",
+          "width": 1400,
+          "height": 875,
+          "source_blend_sha256": "e1ed4a24e2d2db330dff575178a1432ac987f7521ba99a4377c82d3d83b96fbe",
+          "evidence_scope": "R7 HQ media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C03 exchanger train",
+          "order": 2
+        },
+        {
+          "path": "docs/media/gallery/exchanger-train/exchanger-train-bellows.jpg",
+          "title": "Exchanger train bellows",
+          "source_id": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/r7/renders/hq/08-bellows.png",
+          "source_sha256": "4a822bdcff39b3336826449ac379eddea9f5d90ee45b4a654efaa36d321b63b3",
+          "sha256": "0d3f29b05a322258fe6d92e3555bc1e42c7819f39e934daf2d45264b1789b257",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "e1ed4a24e2d2db330dff575178a1432ac987f7521ba99a4377c82d3d83b96fbe",
+          "evidence_scope": "R7 HQ media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C03 exchanger train",
+          "order": 3
+        },
+        {
+          "path": "docs/media/gallery/exchanger-train/exchanger-train-dial.jpg",
+          "title": "Exchanger train dial",
+          "source_id": "builds/geothermal-orc-plant-model/components/03-orc-exchanger-train/astra-detail/r7/renders/hq/10-dial.png",
+          "source_sha256": "921bcac420da6ea8239b5c204e27c56f8efddc48b858e66d047328f93a32f6fb",
+          "sha256": "1890177fbba5baee4e0bc6a8e07d026dcc92f44cb83cbf8b565393c03358d669",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "e1ed4a24e2d2db330dff575178a1432ac987f7521ba99a4377c82d3d83b96fbe",
+          "evidence_scope": "R7 HQ media complete; owner appearance review remains pending.",
+          "topic": "ORC component",
+          "component": "C03 exchanger train",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "three-stage-exchanger",
+      "title": "Three-stage exchanger",
+      "status": "Verification media only; HQ is not started and owner detail acceptance remains pending.",
+      "images": [
+        {
+          "path": "docs/media/gallery/three-stage-exchanger/three-stage-exchanger-overview.jpg",
+          "title": "Three-stage exchanger overview",
+          "source_id": "builds/geothermal-orc-plant-model/components/04-orc-exchanger-train-3stage/astra-build/instrumented-r2/hero.png",
+          "source_sha256": "0c62a455c582e2bc65255d533886b2f6325140cf04051cbba0f291cbb77b37ea",
+          "sha256": "827aafca2805252b13071a24d3a9747af3abb16d0d44311acc85b7c581ee2195",
+          "width": 1000,
+          "height": 750,
+          "source_blend_sha256": "1e1e64d8eaeac959402b855f6d8da32109c5ea8d57c87417049c0ccbf05ebcd5",
+          "evidence_scope": "Verification media only; HQ is not started and owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C04 three-stage exchanger",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/three-stage-exchanger/three-stage-exchanger-front.jpg",
+          "title": "Three-stage exchanger front",
+          "source_id": "builds/geothermal-orc-plant-model/components/04-orc-exchanger-train-3stage/astra-build/instrumented-r2/front.png",
+          "source_sha256": "d5cf3c2c330bdc0e279bf743f0cb5d37a5a8eccb04dbcbe58b031a534d07ae50",
+          "sha256": "57c6b9c673b2aafb8eadbc61fa8d1a085ce34f03ecb283bad3575510eb162ea5",
+          "width": 1000,
+          "height": 750,
+          "source_blend_sha256": "1e1e64d8eaeac959402b855f6d8da32109c5ea8d57c87417049c0ccbf05ebcd5",
+          "evidence_scope": "Verification media only; HQ is not started and owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C04 three-stage exchanger",
+          "order": 2
+        },
+        {
+          "path": "docs/media/gallery/three-stage-exchanger/three-stage-exchanger-temperature.jpg",
+          "title": "Three-stage exchanger temperature transmitter",
+          "source_id": "builds/geothermal-orc-plant-model/components/04-orc-exchanger-train-3stage/astra-build/instrumented-r2/temperature-macro.png",
+          "source_sha256": "8f1aef41a1407be357305e137defb657dc6419e01a0e98794150bc1926708a24",
+          "sha256": "b15f14eb1dbfe01fb3161a7538532e99b3a9303d62a2cd713b7b4132fc0d4f84",
+          "width": 1000,
+          "height": 750,
+          "source_blend_sha256": "1e1e64d8eaeac959402b855f6d8da32109c5ea8d57c87417049c0ccbf05ebcd5",
+          "evidence_scope": "Verification media only; HQ is not started and owner detail acceptance remains pending.",
+          "topic": "ORC component",
+          "component": "C04 three-stage exchanger",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "turbine-generator",
+      "title": "Turbine generator",
+      "status": "HQ review media complete after cabinet correction; render-only evidence.",
+      "images": [
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-hero.jpg",
+          "title": "Turbine generator overview",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/hero.png",
+          "source_sha256": "38a9184c9947df766e3d7b3d2c49293cc014d20769a6d58c7c62a9a191d98704",
+          "sha256": "a574acab71703b995afb510ec907c73cbffe159de8d8632d17d623e61998c4c1",
+          "width": 1400,
+          "height": 991,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-process.jpg",
+          "title": "Turbine process flanges",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/process.png",
+          "source_sha256": "37f0e7d8f186f76675e8c017ad105102a910552d10da4c4dfba5a67084094a11",
+          "sha256": "f0a85cee3c55516051cd62ce55624a1b98e28dbec88a7b7170db00015ac5efb7",
+          "width": 1400,
+          "height": 991,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 2
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-oil.jpg",
+          "title": "Turbine oil console",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/oil.png",
+          "source_sha256": "961719c952c913950ccc3a42981c400db0dc0debb82814353710fedbbd35825d",
+          "sha256": "274441370f9a4bb7bdc1909e7828c24b50f5055bf3c3d665ae717ee8080ac277",
+          "width": 1400,
+          "height": 991,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 3
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-cabinet.jpg",
+          "title": "Turbine control cabinet",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/cabinet.png",
+          "source_sha256": "d754d1f3bef7519c83c4b8c91c73965166ff75ad03d1469766ee79f60be93f0e",
+          "sha256": "6c053155d9140077160fbbd32dd321134a5fa640d0f3313334bead1c1be82cfb",
+          "width": 991,
+          "height": 1400,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 4
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-hall.jpg",
+          "title": "Turbine glazed hall",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/hall.png",
+          "source_sha256": "a7587fad8464969d254506f9c6f323f989f67de27b806af91ae204c53500e75a",
+          "sha256": "28d93a154829974026782fd592a84c723cd524aceae70e501abd1ae150c363e9",
+          "width": 1400,
+          "height": 991,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 5
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-panel-removed.jpg",
+          "title": "Turbine panel removed",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/panel_removed.png",
+          "source_sha256": "4406fcc60163f9a418b843b757c9f02145640a71da5725561ac2bea4042e7360",
+          "sha256": "d5c8b78326fcb2cb4bd0d26c76ac2687fe1d05aeeef457b7a76c9dac4d4331ae",
+          "width": 1400,
+          "height": 991,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 6
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-gauge.jpg",
+          "title": "Turbine pressure gauge",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/gauge.png",
+          "source_sha256": "bd9200ec83c8248c53c172614d8d063ff8de498fa83f8efe97e653c1a6b72090",
+          "sha256": "42625cae7502084638fd957cad99f41ca51061929127de0995abfeacdcb75592",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 7
+        },
+        {
+          "path": "docs/media/gallery/turbine-generator/turbine-generator-joint.jpg",
+          "title": "Turbine exhaust joint",
+          "source_id": "builds/geothermal-orc-plant-model/components/05-turbine-generator-hall/astra-detail/cabinet-r3/hq-v1/joint.png",
+          "source_sha256": "1c012441f294c37e5b2aa7ef77f3d7722615f3d188e0cec81d8b5aa97dd1cd39",
+          "sha256": "643794d2430bfcad59186b6c80ef224f31fe4d3b5e9d0a2d1ee570245509de5f",
+          "width": 1400,
+          "height": 1400,
+          "source_blend_sha256": "ab471cddfd6cdbb65feb62ec4f226d40bb193223bd2b119243bafcddc0105a03",
+          "evidence_scope": "HQ review media complete after cabinet correction; render-only evidence.",
+          "topic": "ORC component",
+          "component": "C05 turbine generator",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "title": "Reusable instrumentation",
+      "status": "Render-only illustrative reuse study; no vendor, process-interface, or manufacturing claim.",
+      "images": [
+        {
+          "path": "docs/media/gallery/instruments/pressure-mount.jpg",
+          "title": "Pressure instrument mount",
+          "source_id": "builds/geothermal-orc-plant-model/reusable-components/instrumentation/mount-r2/pressure-threequarter.png",
+          "source_sha256": "20be5db7b6f212e4513e713b9d7dc4dcb082b5db74711f7051f28deb38d3de86",
+          "sha256": "a28912a4460a46c8eb1bae62750a691cd4ed1488c5fcb9e581376a68da3e9575",
+          "width": 800,
+          "height": 800,
+          "source_blend_sha256": "652d79047788a622a48b8052ab36e4417f5df6c6d5e3ef152cc526d128e3bb4e",
+          "evidence_scope": "Render-only illustrative reuse study; no vendor, process-interface, or manufacturing claim.",
+          "topic": "reusable family",
+          "component": "instrumentation pressure mount",
+          "order": 1
+        },
+        {
+          "path": "docs/media/gallery/instruments/temperature-mount.jpg",
+          "title": "Temperature instrument mount",
+          "source_id": "builds/geothermal-orc-plant-model/reusable-components/instrumentation/mount-r2/temperature-threequarter.png",
+          "source_sha256": "8f1071579e91c2194dc0642ac3ca501ca801addc3bd79b1162a189d68505171f",
+          "sha256": "b28e7f1f1e73eca8de17228196399e12fa491c4e6daa2c6482f68dbfa4402e8a",
+          "width": 800,
+          "height": 800,
+          "source_blend_sha256": "d7d702f999fa3d9ac6253b1deca3b603e422e7999d8b414e38b933dc0c0465ce",
+          "evidence_scope": "Render-only illustrative reuse study; no vendor, process-interface, or manufacturing claim.",
+          "topic": "reusable family",
+          "component": "instrumentation temperature mount",
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

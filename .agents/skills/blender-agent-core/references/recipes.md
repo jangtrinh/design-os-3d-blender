@@ -30,6 +30,16 @@ For isolated read/verification or fault probes use a fresh headless process with
 
 Brackets are placeholders. Put options before the action they affect. Auto-execution policy must match the trusted asset's driver needs; do not silently disable required behavior or enable untrusted startup scripts. `scripts/headless-run.sh` now supplies `--factory-startup --disable-autoexec --python-exit-code 3` and derives its exit from the last-line sentinel `AGENT_OK`/`AGENT_FAIL`; still verify the sentinel JSON, report identity and assertions together — exit code alone is not a gate. Use an external bounded supervisor only for its own disposable process; no killing the live GUI because it seems slow.
 
+## Reference reconstruction and HQ review
+
+Trigger: a reference-led component with industrial or mechanical detail. Read `docs/orc-component-workflow.md`, its brief template, and `blender-image-to-3d` before construction.
+
+1. Choose the primary visual authority for count/facing/placement/silhouette; use close-ups for local profile. For functional routing, station, tap, or connection choices, read applicable drawings or official documents first and record applicability. Image/CAD evidence can support appearance or construction vocabulary; it does not select equipment, ratings, or hidden dimensions.
+2. The controller builds the first native prototype of each new geometry family. A reusable profile, instrument, or hardware family needs explicit axes, pivot, mount port, supported range, local regression proof, and a second real consumer before promotion.
+3. Before final output, manually inspect every named critical feature and supplied view at comparable apparent scale. Construction-layer review is mandatory for close hardware. A feature inventory, topology check, or mesh count is only a heuristic.
+4. Freeze candidate and settings hashes, proof regions and final media hashes. A source/camera/resolution change invalidates affected proofs; retain prior media as prior-revision evidence.
+5. Use `python3 scripts/hq-coverage-gate.py ... --launch` only when taking that guarded route. It checks declared receipt bindings before its own runner; direct Blender, MCP, or direct headless launch does not pass through it. This distinction is a reporting requirement, not a claim that every render is intercepted.
+
 ## Production contract
 
 Trigger: any part that will be printed, machined or assembled with real hardware. Load `60-pipeline/3d-printing.md`, `70-cad-precision-robotics/cad-precision-modeling.md`, `fasteners-seals-mechanics.md`, `polymer-3dprinting-cad.md`; read `specs/README.md`.

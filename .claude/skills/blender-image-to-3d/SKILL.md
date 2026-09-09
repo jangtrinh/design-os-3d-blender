@@ -16,6 +16,10 @@ Record before construction:
 3. Treatment of unseen surfaces: mirrored/plausible inference or more references required.
 4. Production constraints: editability, topology, materials, dimensions, and output views.
 
+For a mechanical or industrial reference, designate one primary view for visible count, facing, placement, and silhouette; use close-ups for local section and construction. Before choosing functional routing, ports, instrument stations, or connection anatomy, read the applicable project drawings or official installation/technical documents. Record whether each rule is a fact, a design choice, or unknown. CAD can support a profile or architecture only when its match and units are recorded; it never establishes identity, dimensions, selection, or compliance by itself.
+
+For a multi-component site, declare one common scale and shared units/axes. Record sourced physical envelopes separately from display envelopes, protrusions and service allowance; mark proxy/analogue dimensions provisional. Name external ports with their elevation, orientation and role, and verify the modules together before final integration. An illustrative scale does not establish equipment selection or capacity.
+
 Do not promise exact hidden geometry from insufficient evidence. Visible reference fidelity has priority.
 
 ## Phase 0 — Native reconstruction mode
@@ -46,6 +50,8 @@ If references cannot constrain the requested fidelity, stop at the contract and 
 
 Use data API/bmesh first. Render and file-save operators are allowed where necessary. Keep components separate when editability or animation requires it.
 
+For a new geometry family, the controller first proves the identity-risk prototype at the target apparent scale. Promote a constructor only after its explicit axes, pivot, ports, accepted parameter range, and regression proof have passed for a second real consumer. Treat an instrument body and its process adapter as separate contracts; a camera-visible head is not placement evidence.
+
 ### Phase 2.5 — Offline retopology gate (frozen scaffold only)
 
 QRemeshify 1.1.0 may be used only when the user selected an already-local scaffold. First create a manifold bounded input with `scripts/prepare-qremeshify-input.py`; then run `scripts/run-qremeshify.py`. The wrapper must pass pinned-library hashes, macOS quarantine approval, a 1k–100k triangle input budget, and a hard wall timeout. For highly fragmented or fused scan/generated scaffolds, start without sharp guidance; dense boundary features can crash the native field stage.
@@ -61,6 +67,10 @@ scripts/make-comparison-sheet.sh <reference> <render> <sheet>
 ```
 
 Choose one verdict: `continue`, `refine-spec`, `refine-code`, `request-input`, or `stop`. Two repeats of the same visible failure require changing the modeling approach, not another parameter tweak.
+
+For every declared critical feature, review the primary and supporting views manually at a comparable apparent scale. Name the feature, expected construction layers, source/object/interface, proof shot, and falsifier. A numeric count, clean topology, or an unreadable distant object is not a visual pass. Check risky bores, coplanar joins, fastener families, lettering, dial marks, and specular edges at the final output density before the full batch. Preserve source, camera/settings, and media hashes; a changed source, camera, or resolution invalidates affected proof.
+
+The HQ coverage checker can validate declared receipt bindings with or without `--launch`. Its guarded `--launch` route validates first and then controls only its child render. Direct Blender, MCP, and headless renders bypass that launch guard; record the route accurately and do not imply a universal pre-HQ interception.
 
 ## Delivery gate
 

@@ -1,6 +1,6 @@
 # AI Workflow for Working with Blender
 
-In force since 2026-09-05; updated 2026-09-06 after the audit (`plans/260905-2356-blender-workflow-audit/`): the primary operational file is `AGENTS.md`, success is decided by the `AGENT_OK`/`AGENT_FAIL` sentinel, E1/E2 are implemented, production gate for 3D-printed parts. Keep the two execution/fidelity routers and add the [knowledge workbench](blender-knowledge-workflows.md) to connect the KB, research and the portable concepts that have been scouted. There is no benchmark proving that more skills or a different MCP are needed. This is the process as documented; the helpers that need fixing are recorded separately in the [backlog](blender-workflow-improvement-backlog.md).
+In force since 2026-09-05; the primary operational file is `AGENTS.md`, success is decided by the `AGENT_OK`/`AGENT_FAIL` sentinel, and the production gate applies to 3D-printed parts. This is documented process guidance, not a benchmark for a model, MCP, cost, or quality claim. The [backlog](blender-workflow-improvement-backlog.md) records known automation gaps.
 
 ## Starting a new session
 
@@ -47,6 +47,12 @@ The domain rows are **specialised recipes**, not newly installed skills. In-dept
 
 ## How to operate with less rework
 
+For geothermal ORC components, use the [reference reconstruction workflow](orc-component-workflow.md), [brief template](orc-component-brief-template.md), and [session lessons](orc-session-lessons.md). Primary 3/4 evidence controls visible count, placement, facing, and silhouette; close-ups govern local construction. Read applicable technical documents before deciding mechanical function, routing, station placement, taps, or connection anatomy. A CAD analogue can support a profile vocabulary, never an unverified identity, dimension, rating, or compliance claim.
+
+**Prototype before reuse; inspect the installed result.** The controller builds the first native family prototype. Promotion needs axes, pivot, mount ports, supported range, regression proof, and a second real consumer. Verify interfaces by endpoint position, tangent, and bore together. After instancing, reopen the assembly to check actual hosts, contact, visibility/access, clearance, and environment counts.
+
+**Review named construction at native output density.** A clean source audit or a feature count supports only its predicate. Review every critical feature and supplied view manually; for close industrial hardware, name the layers that make it read as assembled. Freeze candidate/settings/media hashes and retain old media when a revision changes. `hq-coverage-gate.py --launch` protects its guarded route only; direct Blender, MCP, and direct headless launches bypass it and must be reported as such.
+
 **Live for adjusting, headless for batch.** Use MCP when it is available and the connection works; the socket client is an existing fallback route, not a reason to create another daemon. Read the state before running a pass. Split off a headless process for fault-test/render; do not let two agents edit one GUI. Ownership is currently a manual convention, with no enforced lock.
 
 **Ask early about the parameters that change the architecture.** For a robot: payload, reach, hold time, actuator/drawing and permission to increase the size. For video: what the viewer needs to see through the action. Lighting choices or previews can be done up front so the user can look at them; do not add a routine approval round.
@@ -73,10 +79,10 @@ Every report needs source identity, checker/config, frame range, exclusions, res
 
 Assembly is its own class of motion: the [recipe](../.agents/skills/blender-agent-core/references/assembly-sequences.md) requires checking the waiting state, the insertion path and the final contact, instead of only checking the completed pose. Assemble from the inside outwards following the dependencies; keep the receiver in frame and the camera still while mating. A repeated failure at the shoulder/elbow must be checked at the same mechanism layer.
 
-A new source goes through scan → read/code review → counter-check scenarios → hash-tagged topic/caution → prepare/review/publish → forward route. A self-test recording PASS does not prove that the parameters actually produce geometry, and does not prove units or fit. The RES-CAD-ROB-13 sources and the wiring/collision boilerplate were checked separately; the figures 120mm, 0.20mm³ and the pinout example must not be promoted by themselves into a general standard. The [full-session summary](../plans/260905-2337-arm-session-retro/plan.md) links the journal, the evidence and the pipeline results.
+A new source goes through scan → read/code review → counter-check scenarios → hash-tagged topic/caution → prepare/review/publish → forward route. A self-test recording PASS does not prove that the parameters actually produce geometry, and does not prove units or fit. Historical incident reports remain outside this public checkout; do not turn their example figures into general standards.
 
 ## Evidence and scope of the summary
 
-[Cost-measuring retro](../plans/reports/retro-260905-1946-blender-workflow.md), [five-perspective debate](../plans/blender-workflow-retro/debate.md), [research and sources](../plans/blender-workflow-retro/research.md), [fault probes](../plans/blender-workflow-retro/reports/runtime-contract-probes.json). The conclusion about the chosen way of packaging this is a recommendation that has been challenged; its effectiveness on the next project still has to be measured.
+The process is a challenged recommendation, not a measured guarantee. Its effectiveness must be demonstrated by the current artifact, evidence, and check.
 
 One lesson kept: **every claim must come with an artifact and a check that can genuinely falsify it**.
