@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "scope": "Human-inspected manufacturer/eval-board screenshot evidence for the E02 RGB polarity correction. No vendor PDF is stored in the repository.",
+  "candidate": {
+    "manufacturer": "Everlight",
+    "mpn": "19-237A/BHR6GHC-A01/2T",
+    "datasheet_url": "https://www.everlight.com/wp-content/uploads/2021/02/19-237A-BHR6GHC-A01-2T.pdf",
+    "revision": "DSE-0008938 Rev.3, 30-May-2013",
+    "inspected_screenshots": [
+      {
+        "pdf_page": 9,
+        "conversation_capture_ref": "turn380598view0",
+        "observed": "Polarity drawing: pin 3 is common positive/anode; pin 1 red cathode, pin 2 green cathode, pin 4 blue cathode; package 1.6x1.6x0.35 mm."
+      },
+      {
+        "pdf_page": 4,
+        "conversation_capture_ref": "turn380598view1",
+        "observed": "Electro-optical table at IF=20mA: Vf max BH=3.8V, R6=2.4V, GH=3.8V; note states forward-voltage tolerance ±0.1V."
+      }
+    ]
+  },
+  "driver_reference": {
+    "manufacturer": "Lumissil Microsystems",
+    "part": "IS31FL3741A",
+    "eval_guide_url": "https://www.lumissil.com/assets/pdf/core/IS31FL3741A_EB.pdf",
+    "revision": "Rev. D, 01/22/2025",
+    "inspected_screenshots": [
+      {
+        "pdf_page": 4,
+        "conversation_capture_ref": "turn520564view0",
+        "observed": "Figure 4 FxLED 9x13 schematic shows SW rows sourcing RGB package common nodes and CS color lines sinking the individual LED cathodes."
+      },
+      {
+        "pdf_page": 5,
+        "conversation_capture_ref": "turn520564view1",
+        "observed": "EVB BOM lists 117 Everlight A01-family RGB LEDs; the BOM text reads 9-237/R6GHBHC-A01/2T. This supports A01/common-anode architecture but is not used as exact SKU authority."
+      }
+    ]
+  },
+  "driver_datasheet": {
+    "url": "https://www.lumissil.com/assets/pdf/core/IS31FL3741A_DS.pdf",
+    "revision": "Rev. D, 11/06/2024",
+    "observed": [
+      "CS1..CS39 are specified as current-sink pins for the LED matrix.",
+      "SW1..SW9 are specified as source/switch pins for the LED matrix.",
+      "VHR maximum test points are 600mV at ISINK=38mA and 750mV at ISWITCH=800mA; E02 does not reuse those full-current drops as though they were measured at the 3.45mA/channel operating point."
+    ]
+  },
+  "limits": [
+    "Conversation capture refs are execution-session references, not portable repository assets; durable authority remains the official URLs, exact page numbers and source revisions above.",
+    "This evidence verifies datasheet polarity/pin/current-table interpretation only. It is not ECAD footprint, routed-board, optical-output or physical-bench evidence."
+  ]
+}

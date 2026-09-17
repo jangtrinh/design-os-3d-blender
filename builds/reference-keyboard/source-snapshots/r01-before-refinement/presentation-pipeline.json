@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "pipeline_id": "reference-keyboard-presentation",
+  "steps": [
+    {
+      "id": "presentation",
+      "script": "builds/reference-keyboard/pass-04-presentation.py",
+      "inputs": [
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/runs/geometry-r03/steps/gate/attempt-0001/gate-report.json",
+        "builds/reference-keyboard/runs/geometry-r03/steps/geometry/attempt-0001/model.blend",
+        "builds/reference-keyboard/scripts/details.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/motion.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/studio.py",
+        "builds/reference-keyboard/spec.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_animation.py",
+        "scripts/boilerplates/bp_core.py"
+      ],
+      "depends_on": [],
+      "artifact_inputs": [],
+      "outputs": [
+        "keyboard.blend",
+        "hero.png",
+        "top.png",
+        "exploded.png",
+        "views.json",
+        "rgb-gradient.png",
+        "motion-contract.json",
+        "motion-report.json",
+        "provenance.json"
+      ],
+      "required_postconditions": [
+        "meshes",
+        "legends",
+        "sampled_frames",
+        "drivers",
+        "views"
+      ],
+      "timeout_seconds": 240
+    }
+  ]
+}

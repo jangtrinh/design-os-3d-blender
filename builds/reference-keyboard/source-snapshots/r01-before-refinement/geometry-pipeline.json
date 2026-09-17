@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "pipeline_id": "reference-keyboard-geometry",
+  "steps": [
+    {
+      "id": "geometry",
+      "script": "builds/reference-keyboard/pass-02-geometry.py",
+      "depends_on": [],
+      "inputs": [
+        "builds/reference-keyboard/dimensions-contract.json",
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/scripts/controls.py",
+        "builds/reference-keyboard/scripts/mechanics.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/switches.py",
+        "builds/reference-keyboard/spec.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/boilerplates/bp_geonodes.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py",
+        "specs/build-spec.schema.json"
+      ],
+      "artifact_inputs": [],
+      "outputs": [
+        "model.blend",
+        "geometry.json",
+        "source-inputs.json",
+        "source-evidence.json",
+        "contract.json"
+      ],
+      "required_postconditions": [
+        "keys",
+        "knobs",
+        "mesh_objects",
+        "gn_width_change_m"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "id": "gate",
+      "script": "builds/reference-keyboard/pass-03-gate.py",
+      "depends_on": [
+        "geometry"
+      ],
+      "inputs": [
+        "builds/reference-keyboard/dimensions-contract.json",
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/scripts/controls.py",
+        "builds/reference-keyboard/scripts/mechanics.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/switches.py",
+        "builds/reference-keyboard/spec.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/boilerplates/bp_geonodes.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py",
+        "specs/build-spec.schema.json"
+      ],
+      "artifact_inputs": [
+        "geometry:model.blend"
+      ],
+      "outputs": [
+        "gate-report.json",
+        "stl/manifest.json",
+        "stl/RK_BASE.stl",
+        "stl/RK_DIFFUSER.stl",
+        "stl/RK_MAIN_PLATE.stl",
+        "stl/RK_KEY_00.stl",
+        "stl/RK_KEY_41.stl",
+        "stl/RK_KNOB_1.stl",
+        "stl/RK_FOOT_0.stl"
+      ],
+      "required_postconditions": [
+        "part_families",
+        "failed_parts",
+        "stl_files"
+      ],
+      "timeout_seconds": 240
+    }
+  ]
+}

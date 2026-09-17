@@ -1,0 +1,35 @@
+{
+  "revision": "C1-fit-characterization",
+  "purpose": "both",
+  "units": "mm",
+  "release": "UNTESTED_PROCESS_SPECIMENS",
+  "keycap_spans_mm": [3.96, 4.04, 4.12],
+  "keycap_arm_offsets_mm": [-0.04, 0.0, 0.04],
+  "male_cross_nominal_mm": {"span": 4.0, "horizontal_arm": 1.10, "vertical_arm": 1.28},
+  "male_cross_limits_mm": {"span": [3.90, 4.05], "horizontal_arm": [1.06, 1.14], "vertical_arm": [1.24, 1.32]},
+  "receiver_depth_mm": 3.2,
+  "keycap_boss_diameter_mm": 6.4,
+  "keycap_envelope_mm": [16.2, 16.2, 9.5],
+  "d_gauges": [
+    {"id": "D01", "diameter_mm": 6.10, "flat_offset_mm": 1.60},
+    {"id": "D02", "diameter_mm": 6.20, "flat_offset_mm": 1.65},
+    {"id": "D03", "diameter_mm": 6.30, "flat_offset_mm": 1.70}
+  ],
+  "d_gauge_outer_mm": 14.0,
+  "d_gauge_height_mm": 8.0,
+  "guide_ids_mm": [2.10, 2.20, 2.30],
+  "guide_outer_mm": 4.4,
+  "guide_flange_mm": 6.0,
+  "guide_height_mm": 7.9,
+  "pin_diameter_mm": 2.0,
+  "pin_length_mm": 10.0,
+  "grid_pitch_mm": 24,
+  "process": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+  "preconditions": [
+    "Measure the actual selected switch surrounding dust/actuator geometry before attempting to insert an OD6.4 boss. The custom B cover opening is not a factory compatibility drawing.",
+    "Some specimens intentionally have interference against the manufacturer tolerance range. Start with dimensional inspection and do not force a specimen onto hardware.",
+    "Record measured, not nominal, specimen dimensions and instrument uncertainty. Do not silently choose the largest clearance as a retained production fit.",
+    "D gauges are open-ended process gauges, not axially retained knobs. The mechanical revision supplies a separate set-screw retention candidate.",
+    "Printed pin/sleeve pairs do not establish the behavior of machined POM-C or a steel production pin. Test the intended material pair."
+  ]
+}

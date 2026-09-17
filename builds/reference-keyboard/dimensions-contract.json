@@ -1,0 +1,197 @@
+{
+  "units": "mm",
+  "parameters": {
+    "width_mm": {
+      "value": 284,
+      "unit": "mm",
+      "min": 284,
+      "max": 284
+    },
+    "depth_mm": {
+      "value": 92,
+      "unit": "mm",
+      "min": 92,
+      "max": 92
+    },
+    "height_mm": {
+      "value": 32,
+      "unit": "mm",
+      "min": 32,
+      "max": 32
+    },
+    "key_top_mm": {
+      "value": 14.0,
+      "unit": "mm",
+      "min": 14.0,
+      "max": 14.0
+    },
+    "key_height_mm": {
+      "value": 9.5,
+      "unit": "mm",
+      "min": 9.5,
+      "max": 9.5
+    },
+    "switch_width_mm": {
+      "value": 15.6,
+      "unit": "mm",
+      "min": 15.6,
+      "max": 15.6
+    },
+    "switch_height_mm": {
+      "value": 11.0,
+      "unit": "mm",
+      "min": 11.0,
+      "max": 11.0
+    },
+    "knob_diameter_mm": {
+      "value": 16,
+      "unit": "mm",
+      "min": 16,
+      "max": 16
+    },
+    "knob_height_mm": {
+      "value": 18,
+      "unit": "mm",
+      "min": 18,
+      "max": 18
+    }
+  },
+  "frames": {
+    "base": {
+      "parent": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "unit": "mm",
+      "axes": {
+        "x": [
+          1,
+          0,
+          0
+        ],
+        "y": [
+          0,
+          1,
+          0
+        ],
+        "z": [
+          0,
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "datums": {
+    "ground": {
+      "frame": "base",
+      "position": [
+        0,
+        0,
+        -2
+      ],
+      "unit": "mm"
+    },
+    "plate": {
+      "frame": "base",
+      "position": [
+        0,
+        0,
+        13.6
+      ],
+      "unit": "mm"
+    }
+  },
+  "ports": {
+    "usb": {
+      "frame": "base",
+      "kind": "unqualified-USB-C-visual-envelope",
+      "roles": [
+        "visual"
+      ]
+    }
+  },
+  "roles": {
+    "visual": [
+      "RK_BASE",
+      "RK_DIFFUSER",
+      "RK_PCB",
+      "RK_MAIN_PLATE",
+      "RK_KEY_00",
+      "RK_KEY_01",
+      "RK_KEY_02",
+      "RK_KEY_03",
+      "RK_KEY_04",
+      "RK_KEY_05",
+      "RK_KEY_06",
+      "RK_KEY_07",
+      "RK_KEY_08",
+      "RK_KEY_09",
+      "RK_KEY_10",
+      "RK_KEY_11",
+      "RK_KEY_12",
+      "RK_KEY_13",
+      "RK_KEY_14",
+      "RK_KEY_15",
+      "RK_KEY_16",
+      "RK_KEY_17",
+      "RK_KEY_18",
+      "RK_KEY_19",
+      "RK_KEY_20",
+      "RK_KEY_21",
+      "RK_KEY_22",
+      "RK_KEY_23",
+      "RK_KEY_24",
+      "RK_KEY_25",
+      "RK_KEY_26",
+      "RK_KEY_27",
+      "RK_KEY_28",
+      "RK_KEY_29",
+      "RK_KEY_30",
+      "RK_KEY_31",
+      "RK_KEY_32",
+      "RK_KEY_33",
+      "RK_KEY_34",
+      "RK_KEY_35",
+      "RK_KEY_36",
+      "RK_KEY_37",
+      "RK_KEY_38",
+      "RK_KEY_39",
+      "RK_KEY_40",
+      "RK_KEY_41",
+      "RK_KEY_42",
+      "RK_KEY_43",
+      "RK_KEY_44",
+      "RK_KEY_45",
+      "RK_KEY_46",
+      "RK_KEY_47",
+      "RK_KEY_48",
+      "RK_KEY_49",
+      "RK_KEY_50",
+      "RK_KEY_51",
+      "RK_KEY_52",
+      "RK_KEY_53",
+      "RK_KEY_54",
+      "RK_KEY_55",
+      "RK_KEY_56",
+      "RK_KEY_57",
+      "RK_KNOB_1",
+      "RK_KNOB_2",
+      "RK_KNOB_3",
+      "RK_KNOB_4",
+      "RK_KNOB_5"
+    ],
+    "physical": [
+      "RK_BASE",
+      "RK_DIFFUSER",
+      "RK_MAIN_PLATE"
+    ],
+    "collision": [
+      "RK_BASE",
+      "RK_DIFFUSER",
+      "RK_MAIN_PLATE"
+    ]
+  }
+}

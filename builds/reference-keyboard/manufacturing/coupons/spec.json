@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "project": "C1-fit-characterization",
+  "print_volume_mm": [
+    150,
+    150,
+    50
+  ],
+  "brim_margin_mm": 3,
+  "parts": [
+    {
+      "id": "K01",
+      "object": "K01",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K02",
+      "object": "K02",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K03",
+      "object": "K03",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K04",
+      "object": "K04",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K05",
+      "object": "K05",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K06",
+      "object": "K06",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K07",
+      "object": "K07",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K08",
+      "object": "K08",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "K09",
+      "object": "K09",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "D01",
+      "object": "D01",
+      "target_dims_mm": [
+        14,
+        14,
+        8
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 2.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "D02",
+      "object": "D02",
+      "target_dims_mm": [
+        14,
+        14,
+        8
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 2.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "D03",
+      "object": "D03",
+      "target_dims_mm": [
+        14,
+        14,
+        8
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 2.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "G01",
+      "object": "G01",
+      "target_dims_mm": [
+        6,
+        6,
+        7.9
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 0.95,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "G02",
+      "object": "G02",
+      "target_dims_mm": [
+        6,
+        6,
+        7.9
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 0.95,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "G03",
+      "object": "G03",
+      "target_dims_mm": [
+        6,
+        6,
+        7.9
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 0.95,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    },
+    {
+      "id": "P01",
+      "object": "P01",
+      "target_dims_mm": [
+        8,
+        8,
+        12
+      ],
+      "tol_mm": 0.03,
+      "min_wall_mm": 0.95,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "material": "Characterization set. Candidate PA12 powder-bed process for caps; machined POM-C guides and aluminum D gauges. Material, machine, lot and postprocessing must be recorded before any physical fit claim.",
+      "process": "Dimensional characterization; not released production settings"
+    }
+  ],
+  "required_checks": [
+    "non_manifold_edges",
+    "non_contiguous_edges",
+    "zero_area_faces",
+    "bbox_dims_mm",
+    "signed_volume_positive",
+    "scale_applied",
+    "wall_thickness_screen"
+  ],
+  "physical_evidence": [
+    "Measure the actual selected switch surrounding dust/actuator geometry before attempting to insert an OD6.4 boss. The custom B cover opening is not a factory compatibility drawing.",
+    "Some specimens intentionally have interference against the manufacturer tolerance range. Start with dimensional inspection and do not force a specimen onto hardware.",
+    "Record measured, not nominal, specimen dimensions and instrument uncertainty. Do not silently choose the largest clearance as a retained production fit.",
+    "D gauges are open-ended process gauges, not axially retained knobs. The mechanical revision supplies a separate set-screw retention candidate.",
+    "Printed pin/sleeve pairs do not establish the behavior of machined POM-C or a steel production pin. Test the intended material pair."
+  ],
+  "load_cases": [
+    {
+      "description": "Unloaded dimensional and subsequent controlled retention/slide specimens; no demonstrated load capacity"
+    }
+  ]
+}

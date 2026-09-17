@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "artifact": "CK-001 manufacturing mechanics C02",
+  "status": "manufacture-blocked",
+  "source_scene": {
+    "path": "builds/reference-keyboard/runs/geometry-B03/steps/geometry/attempt-0001/model.blend",
+    "sha256": "e4c54bb1eca1a592787b88af4ee25dbbe50dab91837a95bc47aa87e99909aec8",
+    "immutable": true
+  },
+  "design_scope": {
+    "installed_keys": 58,
+    "knobs": 5,
+    "remove_structural_epoxy_joints": 30,
+    "encoder_risers": 20,
+    "daughterboard_clamps": 10,
+    "positive_knob_retention_screws": 5
+  },
+  "manufacturer_sources": [
+    {
+      "id": "gateron-ks33-red-rev2",
+      "manufacturer": "Gateron",
+      "url": "https://gateron.com/u_file/2311/10/file/GATERONKS-33LowProfile20RedSwitchBlackBottomHousing-KS-33H10B050NN-Y24.pdf",
+      "local_copy": "builds/reference-keyboard/references/manufacturers-B/Gateron-KS33-Red-Rev2.pdf",
+      "local_sha256": "cbbb1548e110009b2cfccdad1a72b6f4b4de9db3233a5ff98ee20695f4846fa7",
+      "pages": [1],
+      "facts": {
+        "total_travel_mm": {"nominal": 3.0, "tolerance": 0.2, "worst_case_max": 3.2},
+        "male_cross_span_mm": {"nominal": 4.0, "plus": 0.05, "minus": 0.10},
+        "male_cross_bar_a_mm": {"nominal": 1.10, "tolerance": 0.04},
+        "male_cross_bar_b_mm": {"nominal": 1.28, "tolerance": 0.04},
+        "stem_outer_diameter_mm": {"nominal": 5.70, "tolerance": 0.05}
+      },
+      "limit": "The manufacturer drawing does not establish a full dust-wall/top-housing opening that proves clearance for the CK-001 6.4 mm boss."
+    },
+    {
+      "id": "bourns-pec11r",
+      "manufacturer": "Bourns",
+      "url": "https://www.bourns.com/docs/product-datasheets/pec11r.pdf",
+      "pages": [1, 2, 3],
+      "facts": {
+        "shaft_diameter_mm": {"nominal": 6.0, "tolerance": 0.1},
+        "shaft_length_code_15_mm": 15.0,
+        "terminal_code_1": "PC Pin Vertical / Side Facing 7 mm",
+        "detent_code_2": "24 detents",
+        "shaft_style_F": "metal flatted shaft",
+        "switch_code_N": "no switch",
+        "pulse_code_0024": "24 pulses per revolution",
+        "selected_configuration": "PEC11R-1215F-N0024",
+        "manufacturer_mounting_torque_max_kgf_cm": 10.2,
+        "manufacturer_mounting_torque_note": "Encoder bushing/nut limit only; not a torque qualification for the CK-001 carrier, brass risers or base."
+      },
+      "mutable_url_warning": "The live PDF URL has served different revision bytes in this work session. Freeze procurement PDF bytes, SHA-256 and revision before BOM release."
+    },
+    {
+      "id": "bourns-pcn-pec11r-part-existence",
+      "manufacturer": "Bourns",
+      "url": "https://www.bourns.com/docs/technical-documents/product-change-notifications/Bourns_SC2214_PEC_PTR_Pkg_PCN.pdf",
+      "pages": [2],
+      "facts": {"related_list_examples": "PCN lists PEC11R family part numbers including N0012 and other N0024 variants"},
+      "limit": "The PCN does not visibly establish exact PEC11R-1215F-N0024. The datasheet ordering grammar supports that configuration code; procurement must confirm active exact SKU, revision and lifecycle before purchase."
+    },
+    {
+      "id": "nbk-snzcxs-m1.6-5",
+      "manufacturer": "NBK / Nabeya Bi-tech Kaisha",
+      "url": "https://www.nbk1560.com/en/products/specialscrew/nedzicom/miniaturescrew/SNZCXS/SNZCXS-M1.6/SNZCXS-M1.6-5/",
+      "facts": {"thread": "M1.6x0.35", "length_mm": 5.0, "head_diameter_mm": 2.4, "head_height_mm": 0.5, "socket": "hexalobular No.4", "manufacturer_max_screw_torque_Nm": 0.1, "material": "SUSXM7, SUS304-equivalent"},
+      "use": "C02: 19 standard carrier top screws"
+    },
+    {
+      "id": "nbk-snzcxs-m1.6-4",
+      "manufacturer": "NBK / Nabeya Bi-tech Kaisha",
+      "url": "https://www.nbk1560.com/en/products/specialscrew/nedzicom/miniaturescrew/SNZCXS/SNZCXS-M1.6/SNZCXS-M1.6-4/",
+      "facts": {"thread": "M1.6x0.35", "length_mm": 4.0, "head_diameter_mm": 2.4, "head_height_mm": 0.5, "socket": "hexalobular No.4", "manufacturer_max_screw_torque_Nm": 0.1, "material": "SUSXM7, SUS304-equivalent"},
+      "use": "C02: 30 underside screws plus 1 recessed critical carrier top screw at RK_ENCODER_RISER_1_2"
+    },
+    {
+      "id": "nbk-snzcxs-m1.6-3",
+      "manufacturer": "NBK / Nabeya Bi-tech Kaisha",
+      "url": "https://www.nbk1560.com/en/products/specialscrew/nedzicom/miniaturescrew/SNZCXS/SNZCXS-M1.6/SNZCXS-M1.6-3/",
+      "facts": {"thread": "M1.6x0.35", "length_mm": 3.0, "head_diameter_mm": 2.4, "head_height_mm": 0.5, "material": "SUSXM7, SUS304-equivalent"},
+      "use": "10 daughterboard-to-clamp screws"
+    },
+    {
+      "id": "nbk-snzfs-m1.6-5",
+      "manufacturer": "NBK / Nabeya Bi-tech Kaisha",
+      "url": "https://www.nbk1560.com/en/products/specialscrew/nedzicom/miniaturescrew/SNZFS/SNZFS-M1.6/SNZFS-M1.6-5/",
+      "facts": {"thread": "M1.6x0.35", "length_mm": 5.0, "head_diameter_mm": 2.3, "head_height_mm": 0.5, "drive": "cross recessed No.0", "material": "SUSXM7, SUS304-equivalent"},
+      "use": "C01 only; superseded for all 30 lower joints by SNZCXS-M1.6-4 in C02",
+      "limit": "Retained as C01 provenance only; not a C02 BOM item."
+    },
+    {
+      "id": "nbk-snts-m2-6-fp",
+      "manufacturer": "NBK / Nabeya Bi-tech Kaisha",
+      "url": "https://www.nbk1560.com/en/products/specialscrew/nedzicom/miniaturescrew/SNTS-FP/SNTS-M2-FP/",
+      "facts": {"thread": "M2x0.4", "length_mm": 6.0, "hex_socket_mm": 0.9, "point": "flat", "manufacturer_max_screw_torque_Nm": 0.2, "material": "SUSXM7, SUS304-equivalent"},
+      "use": "5 radial knob retention screws"
+    },
+    {
+      "id": "guhring-tap-drill-table",
+      "manufacturer": "Guhring",
+      "url": "https://guhring.com/media/catalogs/lgbkp3ieki4.pdf",
+      "pages": [2],
+      "facts": {
+        "M1.6x0.35_cut_tap_drill_mm": {"55_percent": 1.35, "65_percent": 1.30, "75_percent": 1.25},
+        "M2x0.4_cut_tap_drill_mm": {"65_percent": 1.65, "75_percent": 1.60}
+      },
+      "use": "C02 retains M1.6 pilot at 1.30 mm and M2 pilot at 1.65 mm as machining intent; actual thread class and tap process require first-article inspection."
+    },
+    {
+      "id": "gct-usb4105",
+      "manufacturer": "GCT",
+      "url": "https://gct.co/connector/usb4105",
+      "drawing_url": "https://gct.co/files/drawings/usb4105.pdf",
+      "pages": [1],
+      "candidate_part": "USB4105-GF-A-120",
+      "facts": {"type": "USB 2.0 Type-C receptacle, SMT top mount, horizontal/side entry", "body_length_mm": 7.35, "recommended_pcb_layout_tolerance_mm": 0.05, "stake_suffix_120_mm": 1.20},
+      "limit": "Future electrical closure source only. C02 does not claim schematic, CC, ESD, power-routing, footprint or powered-function qualification."
+    }
+  ],
+  "geometry_requirements": {
+    "base_floor_z_mm": [0.0, 2.0],
+    "encoder_riser": {
+      "outer_diameter_mm": 2.5,
+      "z_mm": [2.0, 10.6],
+      "tap_drill_diameter_mm": 1.30,
+      "lower_blind_zone_z_mm": [2.0, 5.0],
+      "upper_blind_zone_z_mm": [6.6, 10.6],
+      "solid_thread_tip_gap_mm": 1.6,
+      "pre_tap_pilot_radial_wall_mm": 0.60,
+      "analytical_M1p6_major_thread_radial_wall_mm": 0.45,
+      "top_screw_head_to_knob_nominal_radial_gap_mm": 0.234
+    },
+    "encoder_lower_screw": {
+      "part": "SNZCXS-M1.6-4",
+      "qty": 30,
+      "shaft_major_diameter_mm": 1.6,
+      "base_clearance_hole_diameter_mm": 1.8,
+      "head_diameter_mm": 2.4,
+      "head_height_mm": 0.5,
+      "counterbore_clearance_diameter_mm": 2.5,
+      "counterbore_depth_mm": 0.5,
+      "head_z_mm": [0.0, 0.5],
+      "shaft_z_mm": [0.5, 4.5],
+      "post_engagement_mm": 2.5,
+      "lower_pilot_tip_reserve_mm": 0.5,
+      "head_radial_clearance_mm": 0.05,
+      "flush_underside_required": true,
+      "seat_geometry": "cylindrical counterbore; no countersink angle required or inferred"
+    },
+    "encoder_top_screw": {
+      "part": "SNZCXS-M1.6-5",
+      "qty": 19,
+      "shaft_z_mm": [6.6, 11.6],
+      "head_z_mm": [11.6, 12.1],
+      "post_engagement_mm": 4.0,
+      "opposed_lower_tip_gap_mm": 2.1,
+      "carrier_through_mm": 1.0
+    },
+    "critical_encoder_top_screw": {
+      "part": "SNZCXS-M1.6-4",
+      "qty": 1,
+      "riser": "RK_ENCODER_RISER_1_2",
+      "relocated_center_mm": [-134.2, 35.2],
+      "shaft_z_mm": [7.1, 11.1],
+      "head_z_mm": [11.1, 11.6],
+      "post_engagement_mm": 3.5,
+      "opposed_tip_gap_mm": 2.6,
+      "carrier_head_counterbore_diameter_mm": 2.5,
+      "carrier_head_counterbore_depth_mm": 0.5,
+      "head_radial_clearance_mm": 0.05,
+      "counterbore_to_outer_edge_ligament_mm": 0.35,
+      "head_top_to_knob_bottom_axial_gap_mm": 0.4
+    },
+    "encoder_carrier_1_corner_relief": {
+      "m3_axis_mm": [-136.0, 40.0],
+      "relief_diameter_mm": 5.8,
+      "existing_spacer_outer_diameter_mm": 5.4,
+      "radial_clearance_mm": 0.2,
+      "relocated_critical_post_to_m3_center_mm": 5.126,
+      "critical_counterbore_to_relief_ligament_mm": 0.976,
+      "critical_through_hole_to_carrier_outer_edge_ligament_mm": 0.70,
+      "critical_post_to_encoder_body_clearance_mm": 0.70,
+      "source_overlap_removed": "B03 exact probes found carrier1/spacer2 3.470605 mm3 and riser1_2/base 3.847613 mm3; C01 established and C02 must retain numerical-zero intersections."
+    },
+    "critical_corner_packaging": {
+      "encoder_post_center_mm": [-134.2, 35.2],
+      "nearest_chassis_M3_center_mm": [-136.0, 40.0],
+      "center_distance_mm": 5.126,
+      "lower_head_clearance_to_M3_bore_surface_ligament_mm": 2.226,
+      "lower_counterbore_to_M3_bore_surface_ligament_mm": 2.176,
+      "machined_aluminum_digital_design_floor_mm": 0.65,
+      "rule": "must remain positive in the digital model; strength and machining robustness require physical first article"
+    },
+    "daughterboard_clamp": {
+      "count": 10,
+      "size_mm": [3.0, 3.0, 8.0],
+      "z_mm": [2.0, 10.0],
+      "center_offset_from_encoder_mm": [5.0, -10.5],
+      "second_center_offset_x_mm": -5.0,
+      "board_contact_plane_offset_y_mm": -9.0,
+      "board_screw_axis_z_mm": 8.0,
+      "board_clearance_hole_diameter_mm": 1.8,
+      "block_tap_drill_diameter_mm": 1.30,
+      "board_screw_part": "SNZCXS-M1.6-3",
+      "nominal_encoder_body_to_screw_head_gap_mm": 0.8,
+      "electrical_keepout_status": "manual hypothesis only; copper/netlist unavailable"
+    },
+    "knob_set_screw": {
+      "part": "SNTS-M2-6-FP",
+      "count": 5,
+      "axis": "+Y toward PEC11R shaft flat",
+      "world_z_mm": 23.0,
+      "tap_drill_diameter_mm": 1.65,
+      "major_diameter_mm": 2.0,
+      "length_mm": 6.0,
+      "outer_socket_end_offset_y_mm": 7.5,
+      "flat_tip_offset_y_mm": 1.5,
+      "shaft_flat_offset_y_mm": 1.5,
+      "knob_receiver_flat_offset_y_mm": 1.65,
+      "outer_radial_recess_mm": 0.5,
+      "construction": "actual radial pilot plus explicit M2 flat-point screw envelope; thread overlap is intentional analytical contact"
+    },
+    "switch_keycap": {
+      "current_digital_travel_verified_mm": 3.0,
+      "required_worst_case_travel_scope_mm": 3.2,
+      "keycap_boss_diameter_mm": 6.4,
+      "manufacturer_stem_outer_diameter_mm": {"min": 5.65, "max": 5.75},
+      "manufacturer_dust_wall_clearance": "unknown",
+      "retention_tolerance_evidence": "physical coupon required; digital female-cross clearance does not prove pull-off force"
+    }
+  },
+  "digital_falsifiers": [
+    "Any old RK_ENCODER_BOND_* object or old RK_ENCODER_BOARD_SUPPORT_* adhesive tab remains in C02.",
+    "Any M1.6 underside head protrudes below z=0 or intersects the existing M3 bottom-head envelope.",
+    "Any standard opposed encoder screw-tip gap falls below 2.1 mm or the critical recessed joint falls below 2.6 mm nominal gap.",
+    "Any carrier top-screw head intersects a knob envelope.",
+    "Any encoder carrier or riser intersects RK_BASE or any of the four chassis spacers.",
+    "Any daughterboard clamp or screw visibly disconnects from the base/board or intersects encoder terminal/pad proxy geometry.",
+    "Any knob set-screw tip misses the +Y PEC11R shaft flat or extends outside the knob barrel.",
+    "Changed representative manufactured parts are non-manifold, inverted or fail STL re-open checks."
+  ],
+  "bench_requirements": [
+    {
+      "id": "encoder-post-strip-torque",
+      "type": "CK-001 project requirement, not an external standard",
+      "status": "not-run",
+      "procedure": "Build material/process-matched riser coupons and determine minimum strip/pull-out torque across the sample lot before setting assembly torque.",
+      "acceptance_rule": "Assembly torque must be derived from observed strip data with an owner-approved safety margin and must not exceed the applicable screw manufacturer's limit. No numeric assembly torque is released by C02."
+    },
+    {
+      "id": "knob-axial-and-torsional-retention",
+      "type": "CK-001 project screening requirement, not an external standard",
+      "status": "not-run",
+      "procedure": "On physical PEC11R shaft/knob/set-screw assemblies record applied set-screw torque, then perform 10 N axial pull for 10 s and 0.05 N m torsional hold for 10 s.",
+      "acceptance_rule": "No release until owner accepts measured slip/damage data; initial screening target is no visible damage and no more than 0.2 mm axial or 2 degree rotational slip."
+    },
+    {
+      "id": "daughterboard-clamp-retention",
+      "type": "CK-001 project screening requirement, not an external standard",
+      "status": "not-run",
+      "procedure": "Apply 5 N in each principal direction for 10 s to each material/process-matched daughterboard clamp assembly while monitoring board movement and fastener damage.",
+      "acceptance_rule": "Initial screening target: no visible damage and no more than 0.2 mm permanent board shift; electrical continuity must be tested separately."
+    },
+    {
+      "id": "keycap-retention-and-3.2mm-bottom-out",
+      "type": "CK-001 project screening requirement, not an external standard",
+      "status": "not-run",
+      "procedure": "Measure real KS-33 housing opening and keycap boss, record insertion/removal force, and cycle cap insertion/removal 50 times. Measure each real switch's actual bottom-out and verify no premature cap/housing contact within the manufacturer's 2.8..3.2 mm total-travel range. Separately use a 3.2 mm mechanical tolerance gauge with the switch removed to prove fixture/cap clearance; do not force a factory actuator beyond its own hard stop.",
+      "acceptance_rule": "No manufacture release until sampled physical dimensions and real-switch bottom-out measurements support positive clearance and the owner accepts retention-force distribution; 5 N axial pull for 10 s is an initial screening target only."
+    },
+    {
+      "id": "material-process-first-article",
+      "type": "CK-001 project requirement, not an external standard",
+      "status": "not-run",
+      "procedure": "Machine/print first articles using the selected production-intent materials and record bore, cylindrical counterbore, post OD, thread quality, surface condition and assembly fit.",
+      "acceptance_rule": "Digital topology or nominal CAD dimensions cannot substitute for first-article measurement."
+    }
+  ],
+  "electrical_release": {
+    "status": "blocked",
+    "open_items": ["schematic", "netlist", "ERC", "PCB DRC", "selected USB-C footprint integration", "CC resistors / USB role", "ESD protection", "power/current budget", "RGB thermal budget", "powered USB and key-matrix bench test"],
+    "candidate_usb_source": "GCT USB4105 family is recorded for a later electrical closure; C02 does not modify the electrical design."
+  },
+  "adjacent_open_retention": {
+    "acrylic_top_z_mm": 12.0,
+    "plate_bottom_z_mm": 13.6,
+    "axial_gap_mm": 1.6,
+    "chassis_spacer_outer_diameter_mm": 5.4,
+    "acrylic_spacer_clearance_diameter_mm": 5.8,
+    "nominal_radial_clearance_mm": 0.2,
+    "status": "open",
+    "limit": "Current digital geometry does not by itself prove acrylic axial preload/captive retention or tolerance robustness; C02 does not add parts for this adjacent issue."
+  },
+  "prior_c01_execution_evidence": {
+    "current_attempt": "builds/reference-keyboard/manufacturing/runs/mechanics-C01/attempt-0004",
+    "scene_sha256": "859eecd0f783db6ddbd25a5a8f13163ec18b45a6058e0da0bca9f35a962541e9",
+    "inspect": {
+      "path": "builds/reference-keyboard/manufacturing/runs/mechanics-C01/attempt-0004/inspect.json",
+      "sha256": "0e844aaa7018d7838f1146e27a15a82addd9e65829d903e65e291763d7124126",
+      "status": "pass",
+      "checks": 37,
+      "manufacture": "BLOCKED"
+    },
+    "production_gate": {
+      "path": "builds/reference-keyboard/manufacturing/runs/mechanics-C01/attempt-0004/gate-report.json",
+      "sha256": "4ec279d1c6d64bbbb04950e099a2eebe4521f9669b853f5f031fdfc20ce6b4c6",
+      "status": "pass",
+      "failed": [],
+      "required_checks_missing": [],
+      "wall_screen_min_mm": {
+        "RK_BASE": 1.995703,
+        "RK_ENCODER_RISER_1_2": 0.599780,
+        "RK_DB_CLAMP_1_L": 0.850001,
+        "RK_ENCODER_CARRIER_1": 0.711038,
+        "RK_KNOB_1": 1.200001
+      }
+    },
+    "stl_manifest": {
+      "path": "builds/reference-keyboard/manufacturing/runs/mechanics-C01/attempt-0004/stl/manifest.json",
+      "sha256": "dfcef5957bfb63c954ab2b815ca00dbc968e48122fb3c588410b4bb8fe090e20",
+      "roundtrip": "pass"
+    },
+    "limits": [
+      "Digital PASS does not qualify tapped-thread strength, assembly torque, retention force, fatigue, actual material/process capability, electrical behavior or thermal behavior.",
+      "Manufacture stays BLOCKED until not-run bench requirements are replaced by traceable physical measurements and owner acceptance."
+    ]
+  },
+  "digital_execution_evidence": {
+    "revision": "mechanics-C02",
+    "current_attempt": "builds/reference-keyboard/manufacturing/runs/mechanics-C02/attempt-0001",
+    "requirements_sha256_at_build": "c20b75553adb91f9ca638146861952ea33cc164732194ebd2a596f115c4bb6a6",
+    "spec_sha256_at_build": "7220e757270caacc474a81d02251ce544014244ca0433099fc1a3874df48a50b",
+    "scene_sha256": "a7dca9ebb36973f107d0d358f483f325e9a51b8d472daba468bb9cda80f45ad8",
+    "inspect": {
+      "path": "builds/reference-keyboard/manufacturing/runs/mechanics-C02/attempt-0001/inspect.json",
+      "sha256": "67199d77b7cd8824da4e67b095019dc6aaa80153dbaf24b2c98cec1fe6fdc6b5",
+      "status": "pass",
+      "checks": 46,
+      "manufacture": "BLOCKED",
+      "lower_joint_measurements_mm": {
+        "minimum_counterbore_to_head_radial_clearance": 0.049993,
+        "maximum_counterbore_radius_error": 0.000007,
+        "minimum_post_engagement": 2.500000,
+        "minimum_pilot_tip_reserve": 0.500000,
+        "minimum_standard_opposed_tip_gap": 2.100000,
+        "critical_opposed_tip_gap": 2.600000,
+        "minimum_counterbore_to_M3_bore_ligament": 2.176400,
+        "minimum_head_to_M3_bottom_screw_clearance": 1.226400
+      },
+      "maximum_lower_vs_M3_bottom_screw_intersection_mm3": 0.0,
+      "adjacent_open_retention_measured_mm": {
+        "acrylic_to_plate_axial_gap": 1.600000,
+        "acrylic_to_spacer_radial_clearance": 0.199997
+      }
+    },
+    "production_gate": {
+      "path": "builds/reference-keyboard/manufacturing/runs/mechanics-C02/attempt-0001/gate-report.json",
+      "sha256": "387757711740246472cd5bb098a8234e7f094088cc51cca29c7f6582a531cebb",
+      "status": "pass",
+      "failed": [],
+      "required_checks_missing": []
+    },
+    "stl_manifest": {
+      "path": "builds/reference-keyboard/manufacturing/runs/mechanics-C02/attempt-0001/stl/manifest.json",
+      "sha256": "e3834e1e0b4ddb7adcb376c133cd845e778f42d53cb5be3d5ac3de37e6bd2212",
+      "roundtrip": "pass"
+    },
+    "functional_geometry_equivalence": {
+      "scope": "236 mesh objects: RK_KEY_*, RK_SWITCH_*, RK_STEM_*, RK_GUIDE_SLEEVE_* and RK_MAIN_PLATE, including world transforms",
+      "c01_sha256": "4ac49936ea316152e2e23318282fba0626427612fbd67f917b99b8b91f46e123",
+      "c02_sha256": "4ac49936ea316152e2e23318282fba0626427612fbd67f917b99b8b91f46e123",
+      "identical": true,
+      "use_limit": "May support dependency-scoped reuse of C01 key-travel evidence only when that evidence depends exclusively on this identical object set; does not transfer base/fastener/manufacturing evidence."
+    },
+    "limits": [
+      "C02 digital PASS removes the lower-seat angle inference; it does not qualify tapped-thread strength, assembly torque, retention force, fatigue, material/process capability, acrylic preload/captive retention, electrical behavior or thermal behavior.",
+      "Manufacture stays BLOCKED until not-run bench requirements and open electrical/retention items are replaced by traceable physical measurements and owner acceptance."
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "scope": "Revision-B electrical design authority after RGB polarity correction: logical connectivity, exact selected components, GPIO ownership, power limits and firmware hardware contract. No ECAD/ERC/PCB/DRC/fabrication claim.",
+  "release_state": "NOT_READY",
+  "build_binding": {
+    "layout": {"path": "builds/reference-keyboard/layout.json", "sha256": "e5fdef446f3c5eef4b5e4f2e9467c585290421cebdc0e663e0a349d12a9ad6d6"},
+    "interfaces": {"path": "builds/reference-keyboard/interfaces.json", "sha256": "7509c9941b05ef3d9eaa4f48b4b893639bcfb9163beb34a0b1e3e1dbd548aa24"},
+    "mesh_inventory": {"path": "builds/reference-keyboard/runs/verification-B03/steps/inspect/attempt-0001/mesh-inventory.json", "sha256": "2d949bab09c5f1d4acaec14b247d2c883fe7bc74e6c17c4fb906c55c0701a0fa"},
+    "observed_counts": {"keys": 58, "encoders": 5, "key_rgb": 58, "perimeter_rgb": 49, "rgb_total": 107}
+  },
+  "controller": {
+    "mcu": "RP2040",
+    "package": "QFN-56 7x7 mm",
+    "flash": "W25Q128JVSIQ",
+    "crystal": "ABM8-272-T3 12 MHz",
+    "regulator": "TLV75533PDBVR",
+    "gpio_count": 30,
+    "gpio_spare_count": 0,
+    "usb_data_pins": ["USB_DP", "USB_DM"],
+    "debug_pins": ["SWDIO", "SWCLK"],
+    "qspi_pins": ["QSPI_SS", "QSPI_SCLK", "QSPI_SD0", "QSPI_SD1", "QSPI_SD2", "QSPI_SD3"]
+  },
+  "pin_ownership": {
+    "matrix_rows": ["GP0", "GP1", "GP2", "GP3", "GP4", "GP5"],
+    "matrix_cols": ["GP6", "GP7", "GP8", "GP9", "GP10", "GP11", "GP12", "GP13", "GP14", "GP15"],
+    "encoders": {
+      "ENC1": ["GP16", "GP17"],
+      "ENC2": ["GP20", "GP21"],
+      "ENC3": ["GP22", "GP23"],
+      "ENC4": ["GP24", "GP25"],
+      "ENC5": ["GP26", "GP27"]
+    },
+    "i2c1": {"sda": "GP18", "scl": "GP19"},
+    "rgb_shutdown": "GP28",
+    "power_fault": "GP29"
+  },
+  "logical_architecture": {
+    "key_matrix": "6x10, 58 populated cells, COL2ROW per-key diode",
+    "encoders": "5 direct quadrature A/B pairs; no encoder push switches",
+    "rgb": "one IS31FL3741A, 107 Everlight 19-237A/BHR6GHC-A01/2T common-anode RGB packages; SW1..SW9 source common-anode pin 3 and CS1..CS39 sink R/G/B cathodes pins 1/2/4; 13 RGB slots per SW scan line, powered by the existing TPS61023 RGB_5V1 boost rail",
+    "usb": "USB 2.0 device-only Type-C receptacle, two Rd resistors, data ESD, dedicated RP2040 USB PHY",
+    "power": "VBUS -> TPS2553DBVR-1 latch-off current limiter -> SYS_5V; SYS_5V -> TLV75533PDBVR -> 3V3; SYS_5V -> always-enabled TPS61023DRLR -> RGB_5V1; IS31FL3741A SDB has 100 kOhm pull-down so LEDs remain hardware-off until GP28 enables them. Keeping the boost rail present avoids 3V3 I2C pull-ups back-powering an unpowered RGB driver.",
+    "illustrative_status_leds": "NOT_POPULATED_E02: the three RK_STATUS_* Blender meshes have no electrical ownership in E02 and consume no GPIO. Add only through a later netlist revision."
+  },
+  "physical_interface_limits": {
+    "gateron_switch_footprint": "BLOCKED_ORIENTATION_VERIFICATION: manufacturer drawing chosen, but source-view orientation and exact board footprint have not been frozen in ECAD against a physical switch.",
+    "pec11r_footprint": "BLOCKED_ECAD: exact terminal configuration 1 selected, but the current Blender daughterboard pin proxies are illustrative and must not be used as the PCB footprint.",
+    "usb_footprint": "BLOCKED_ECAD: USB4105-GF-A-120 selected; manufacturer land pattern must be instantiated and checked in ECAD.",
+    "rgb_led_footprint": "BLOCKED_ECAD: exact Everlight 19-237A/BHR6GHC-A01/2T polarity and pins are source-bound in E02, but the manufacturer land pattern and orientation have not yet been instantiated in ECAD.",
+    "board_fit": "BLOCKED_LAYOUT_DRC: controller area exists inside the 284x92 envelope, but component placement, holes, keepouts and routed-board clearance are not yet checked."
+  },
+  "supersedes": "CK-001-E01; E01 selected common-cathode 19-237B/R6GHBHC-C01/2T and its host reports did not contain a driver/LED polarity compatibility predicate. Byte snapshots are under manufacturing/electrical/history/E01-before-polarity-fix."
+}

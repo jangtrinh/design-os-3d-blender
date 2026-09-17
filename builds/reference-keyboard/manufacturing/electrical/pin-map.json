@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "mcu": "RP2040",
+  "gpio_spares": 0,
+  "pins": [
+    {
+      "pin": "GP0",
+      "owner": "MATRIX_ROW_0",
+      "runtime_mode": "scan output-low or inactive high-impedance",
+      "boot_requirement": "do not actively drive before matrix initialization"
+    },
+    {
+      "pin": "GP1",
+      "owner": "MATRIX_ROW_1",
+      "runtime_mode": "scan output-low or inactive high-impedance",
+      "boot_requirement": "do not actively drive before matrix initialization"
+    },
+    {
+      "pin": "GP2",
+      "owner": "MATRIX_ROW_2",
+      "runtime_mode": "scan output-low or inactive high-impedance",
+      "boot_requirement": "do not actively drive before matrix initialization"
+    },
+    {
+      "pin": "GP3",
+      "owner": "MATRIX_ROW_3",
+      "runtime_mode": "scan output-low or inactive high-impedance",
+      "boot_requirement": "do not actively drive before matrix initialization"
+    },
+    {
+      "pin": "GP4",
+      "owner": "MATRIX_ROW_4",
+      "runtime_mode": "scan output-low or inactive high-impedance",
+      "boot_requirement": "do not actively drive before matrix initialization"
+    },
+    {
+      "pin": "GP5",
+      "owner": "MATRIX_ROW_5",
+      "runtime_mode": "scan output-low or inactive high-impedance",
+      "boot_requirement": "do not actively drive before matrix initialization"
+    },
+    {
+      "pin": "GP6",
+      "owner": "MATRIX_COL_0",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP7",
+      "owner": "MATRIX_COL_1",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP8",
+      "owner": "MATRIX_COL_2",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP9",
+      "owner": "MATRIX_COL_3",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP10",
+      "owner": "MATRIX_COL_4",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP11",
+      "owner": "MATRIX_COL_5",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP12",
+      "owner": "MATRIX_COL_6",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP13",
+      "owner": "MATRIX_COL_7",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP14",
+      "owner": "MATRIX_COL_8",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP15",
+      "owner": "MATRIX_COL_9",
+      "runtime_mode": "digital input with pull-up",
+      "boot_requirement": "input/high-impedance acceptable"
+    },
+    {
+      "pin": "GP16",
+      "owner": "ENC1.A",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP17",
+      "owner": "ENC1.B",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP18",
+      "owner": "I2C1_SDA",
+      "runtime_mode": "I2C open-drain alternate function",
+      "boot_requirement": "external 4.7k pull-up to 3V3"
+    },
+    {
+      "pin": "GP19",
+      "owner": "I2C1_SCL",
+      "runtime_mode": "I2C open-drain alternate function",
+      "boot_requirement": "external 4.7k pull-up to 3V3"
+    },
+    {
+      "pin": "GP20",
+      "owner": "ENC2.A",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP21",
+      "owner": "ENC2.B",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP22",
+      "owner": "ENC3.A",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP23",
+      "owner": "ENC3.B",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP24",
+      "owner": "ENC4.A",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP25",
+      "owner": "ENC4.B",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP26",
+      "owner": "ENC5.A",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP27",
+      "owner": "ENC5.B",
+      "runtime_mode": "filtered digital input",
+      "boot_requirement": "input/high-impedance; external 10k pull-up to 3V3"
+    },
+    {
+      "pin": "GP28",
+      "owner": "RGB_SDB",
+      "runtime_mode": "digital output; high enables IS31FL3741A",
+      "boot_requirement": "100k hardware pull-down keeps LEDs disabled until firmware explicitly drives high"
+    },
+    {
+      "pin": "GP29",
+      "owner": "POWER_FAULT_N",
+      "runtime_mode": "digital input",
+      "boot_requirement": "external 10k pull-up to 3V3; TPS2553-1 open-drain fault source"
+    }
+  ],
+  "dedicated_non_gpio": {
+    "usb": [
+      "USB_DP",
+      "USB_DM"
+    ],
+    "debug": [
+      "SWDIO",
+      "SWCLK"
+    ],
+    "flash": [
+      "QSPI_SS",
+      "QSPI_SCLK",
+      "QSPI_SD0",
+      "QSPI_SD1",
+      "QSPI_SD2",
+      "QSPI_SD3"
+    ]
+  }
+}

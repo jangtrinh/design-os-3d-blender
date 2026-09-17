@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E01",
+  "currency": null,
+  "procurement_status": "NOT_ORDERED",
+  "items": [
+    {
+      "refs": "U1",
+      "qty": 1,
+      "mpn": "RP2040",
+      "manufacturer": "Raspberry Pi",
+      "role": "USB MCU, matrix/encoder/I2C control",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "U2",
+      "qty": 1,
+      "mpn": "W25Q128JVSIQ",
+      "manufacturer": "Winbond",
+      "role": "128-Mbit QSPI flash",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "U3",
+      "qty": 1,
+      "mpn": "TLV75533PDBVR",
+      "manufacturer": "Texas Instruments",
+      "role": "SYS_5V to 3.3 V ceramic-stable LDO",
+      "source": "ti-tlv755p",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "U4",
+      "qty": 1,
+      "mpn": "TPS2553DBVR-1",
+      "manufacturer": "Texas Instruments",
+      "role": "latch-off input current limiter",
+      "source": "ti-tps2553-1",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "U5",
+      "qty": 1,
+      "mpn": "IS31FL3741A-QFLS4-TR",
+      "manufacturer": "Lumissil",
+      "role": "39x9 RGB matrix driver",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "U6",
+      "qty": 1,
+      "mpn": "USBLC6-2SC6",
+      "manufacturer": "STMicroelectronics",
+      "role": "USB2 D+/D-/VBUS ESD",
+      "source": "st-usblc6-2sc6",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "U7",
+      "qty": 1,
+      "mpn": "TPS61023DRLR",
+      "manufacturer": "Texas Instruments",
+      "role": "SYS_5V to RGB_5V1 synchronous boost",
+      "source": "ti-tps61023",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "L1",
+      "qty": 1,
+      "mpn": "XEL4030-102MEC",
+      "manufacturer": "Coilcraft",
+      "role": "1 uH RGB boost inductor",
+      "source": "coilcraft-xel4030-102",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "J1",
+      "qty": 1,
+      "mpn": "USB4105-GF-A-120",
+      "manufacturer": "GCT",
+      "role": "USB 2.0 Type-C receptacle",
+      "source": "gct-usb4105",
+      "status": "FOOTPRINT_ECAD_PENDING"
+    },
+    {
+      "refs": "Y1",
+      "qty": 1,
+      "mpn": "ABM8-272-T3",
+      "manufacturer": "Abracon",
+      "role": "12 MHz RP2040 crystal",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "SW00-SW57",
+      "qty": 58,
+      "mpn": "KS-33H10B050NN-Y24",
+      "manufacturer": "Gateron",
+      "role": "key switches",
+      "source": "gateron-ks33-red-v2",
+      "status": "FOOTPRINT_ORIENTATION_PENDING"
+    },
+    {
+      "refs": "D00-D57",
+      "qty": 58,
+      "mpn": "BAS316,115",
+      "manufacturer": "Nexperia",
+      "role": "per-key matrix diodes",
+      "source": "nexperia-bas316",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "ENC1-ENC5",
+      "qty": 5,
+      "mpn": "PEC11R-1215F-N0024",
+      "manufacturer": "Bourns",
+      "role": "24-detent/24-PPR quadrature encoders, no switch",
+      "source": "bourns-pec11r-rev-11-23",
+      "status": "FOOTPRINT_ECAD_PENDING"
+    },
+    {
+      "refs": "LED000-LED106",
+      "qty": 107,
+      "mpn": "19-237B/R6GHBHC-C01/2T",
+      "manufacturer": "Everlight",
+      "role": "common-cathode RGB LEDs",
+      "source": "everlight-19-237b-c01",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RCC1,RCC2",
+      "qty": 2,
+      "mpn": "5.1k 1%",
+      "manufacturer": "GENERIC",
+      "role": "USB-C Rd",
+      "source": "microchip-usbc-device-guidance",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RUSB1,RUSB2",
+      "qty": 2,
+      "mpn": "27R 1%",
+      "manufacturer": "GENERIC",
+      "role": "USB D+/D- source termination",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RILIM",
+      "qty": 1,
+      "mpn": "66.5k 1%",
+      "manufacturer": "GENERIC",
+      "role": "TPS2553-1 400 mA nominal current-limit setting",
+      "source": "ti-tps2553-1-design",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RFAULT",
+      "qty": 1,
+      "mpn": "10k 1%",
+      "manufacturer": "GENERIC",
+      "role": "FAULT pull-up to 3V3",
+      "source": "ti-tps2553-1",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RI2C1,RI2C2",
+      "qty": 2,
+      "mpn": "4.7k 1%",
+      "manufacturer": "GENERIC",
+      "role": "I2C pull-ups to 3V3",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RSDB",
+      "qty": 1,
+      "mpn": "100k 1%",
+      "manufacturer": "GENERIC",
+      "role": "RGB SDB default-off pull-down",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RISET",
+      "qty": 1,
+      "mpn": "120k 1%",
+      "manufacturer": "GENERIC",
+      "role": "RGB hardware peak-current limit",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RBOOST_TOP",
+      "qty": 1,
+      "mpn": "750k 1%",
+      "manufacturer": "GENERIC",
+      "role": "TPS61023 feedback top resistor",
+      "source": "ti-tps61023",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RBOOST_BOTTOM",
+      "qty": 1,
+      "mpn": "100k 1%",
+      "manufacturer": "GENERIC",
+      "role": "TPS61023 feedback bottom resistor",
+      "source": "ti-tps61023",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RLED_R01-RLED_R13",
+      "qty": 13,
+      "mpn": "51R 1%",
+      "manufacturer": "GENERIC",
+      "role": "red CS-line series resistors",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RLED_GB01-RLED_GB26",
+      "qty": 26,
+      "mpn": "20R 1%",
+      "manufacturer": "GENERIC",
+      "role": "green/blue CS-line series resistors",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RENC_PU01-RENC_PU10",
+      "qty": 10,
+      "mpn": "10k 1%",
+      "manufacturer": "GENERIC",
+      "role": "encoder A/B pull-ups to 3V3",
+      "source": "bourns-pec11r-rev-11-23",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RENC_SER01-RENC_SER10",
+      "qty": 10,
+      "mpn": "10k 1%",
+      "manufacturer": "GENERIC",
+      "role": "encoder A/B series filters",
+      "source": "bourns-pec11r-rev-11-23",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CENC01-CENC10",
+      "qty": 10,
+      "mpn": "10nF X7R",
+      "manufacturer": "GENERIC",
+      "role": "encoder A/B filter capacitors",
+      "source": "bourns-pec11r-rev-11-23",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CX1,CX2",
+      "qty": 2,
+      "mpn": "15pF C0G",
+      "manufacturer": "GENERIC",
+      "role": "crystal load capacitors",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RX1",
+      "qty": 1,
+      "mpn": "1k 1%",
+      "manufacturer": "GENERIC",
+      "role": "crystal damping resistor",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "RBOOT",
+      "qty": 1,
+      "mpn": "1k 1%",
+      "manufacturer": "GENERIC",
+      "role": "BOOTSEL/QSPI_SS protection resistor",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "C3V3_IN,C3V3_OUT",
+      "qty": 2,
+      "mpn": "4.7uF X5R/X7R 10V",
+      "manufacturer": "GENERIC",
+      "role": "TLV75533P input/output capacitors; >=1uF effective required",
+      "source": "ti-tlv755p",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CBOOST_IN",
+      "qty": 1,
+      "mpn": "10uF X5R/X7R 10V",
+      "manufacturer": "GENERIC",
+      "role": "TPS61023 input capacitor",
+      "source": "ti-tps61023",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CBOOST_OUT1,CBOOST_OUT2",
+      "qty": 2,
+      "mpn": "22uF X5R/X7R 10V",
+      "manufacturer": "GENERIC",
+      "role": "TPS61023 output capacitors; verify >=10uF combined effective at bias",
+      "source": "ti-tps61023",
+      "status": "DIELECTRIC_DERATING_ECAD_PENDING"
+    },
+    {
+      "refs": "CVREG_IN,CVREG_OUT",
+      "qty": 2,
+      "mpn": "1uF X5R",
+      "manufacturer": "GENERIC",
+      "role": "RP2040 internal regulator capacitors",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CU1_01-CU1_08",
+      "qty": 8,
+      "mpn": "100nF X7R",
+      "manufacturer": "GENERIC",
+      "role": "RP2040 supply decoupling allocation",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "PLACEMENT_ECAD_PENDING"
+    },
+    {
+      "refs": "CU2",
+      "qty": 1,
+      "mpn": "100nF X7R",
+      "manufacturer": "GENERIC",
+      "role": "QSPI flash decoupling",
+      "source": "raspberry-pi-rp2040-hardware-design-r2",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CU5_1-CU5_3",
+      "qty": 3,
+      "mpn": "1uF X5R",
+      "manufacturer": "GENERIC",
+      "role": "IS31FL3741A AVCC/PVCC local bulk",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    },
+    {
+      "refs": "CU5_4-CU5_6",
+      "qty": 3,
+      "mpn": "100nF X7R",
+      "manufacturer": "GENERIC",
+      "role": "IS31FL3741A AVCC/PVCC decoupling",
+      "source": "lumissil-is31fl3741a-rev-d",
+      "status": "DESIGN_SELECTED"
+    }
+  ]
+}

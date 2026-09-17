@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "project": "CK-001 reference reconstruction, digital geometry screening",
+  "print_volume_mm": [
+    320,
+    200,
+    100
+  ],
+  "brim_margin_mm": 5,
+  "parts": [
+    {
+      "id": "RK_BASE",
+      "object": "RK_BASE",
+      "target_dims_mm": [
+        284,
+        92,
+        4
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.2,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [
+        {
+          "id": "mount0",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -136,
+            -40,
+            1
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount1",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            136,
+            -40,
+            1
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount2",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -136,
+            40,
+            1
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount3",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            136,
+            40,
+            1
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        }
+      ],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_DIFFUSER",
+      "object": "RK_DIFFUSER",
+      "target_dims_mm": [
+        284,
+        92,
+        8
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.2,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [
+        {
+          "id": "mount0",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -136,
+            -40,
+            8
+          ],
+          "diameter_mm": 5.8,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount1",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            136,
+            -40,
+            8
+          ],
+          "diameter_mm": 5.8,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount2",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -136,
+            40,
+            8
+          ],
+          "diameter_mm": 5.8,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount3",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            136,
+            40,
+            8
+          ],
+          "diameter_mm": 5.8,
+          "tol_mm": 0.05
+        }
+      ],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_MAIN_PLATE",
+      "object": "RK_MAIN_PLATE",
+      "target_dims_mm": [
+        284,
+        92,
+        1.5
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.2,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [
+        {
+          "id": "mount0",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -136,
+            -40,
+            14.3
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount1",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            136,
+            -40,
+            14.3
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount2",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            -136,
+            40,
+            14.3
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        },
+        {
+          "id": "mount3",
+          "type": "hole",
+          "axis": "z",
+          "center_mm": [
+            136,
+            40,
+            14.3
+          ],
+          "diameter_mm": 3.4,
+          "tol_mm": 0.05
+        }
+      ],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_KEY_00",
+      "object": "RK_KEY_00",
+      "target_dims_mm": [
+        16.2,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_KEY_41",
+      "object": "RK_KEY_41",
+      "target_dims_mm": [
+        35,
+        16.2,
+        9.5
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_KNOB_1",
+      "object": "RK_KNOB_1",
+      "target_dims_mm": [
+        16,
+        16,
+        18
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.1,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_FOOT_0",
+      "object": "RK_FOOT_0",
+      "target_dims_mm": [
+        14,
+        5,
+        2
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.2,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    },
+    {
+      "id": "RK_GUIDE_SLEEVE_0",
+      "object": "RK_GUIDE_SLEEVE_0",
+      "target_dims_mm": [
+        6,
+        6,
+        7.9
+      ],
+      "tol_mm": 0.05,
+      "min_wall_mm": 1.0,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "Prototype geometry only; actual material/process remains unqualified",
+      "process": "Digital geometry and mesh export screening, no machine selected"
+    }
+  ],
+  "required_checks": [
+    "non_manifold_edges",
+    "non_contiguous_edges",
+    "zero_area_faces",
+    "bbox_dims_mm",
+    "signed_volume_positive",
+    "scale_applied",
+    "wall_thickness_screen"
+  ],
+  "load_cases": [
+    {
+      "description": "Representative keyboard housing/controls; no physical load contract qualified"
+    }
+  ],
+  "physical_evidence": [
+    "The 320x200x100 envelope is a required prototype workspace, not a verified available printer.",
+    "Confirm exact switches, keycap retention and shaft D-flat before machining/printing functional controls.",
+    "Confirm PCB/electrical isolation, standoffs, screw engagement and physical assembly.",
+    "No material, load, thermal, optical, electrical or device-function qualification."
+  ]
+}

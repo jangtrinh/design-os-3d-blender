@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E01",
+  "status": "PASS_HOST_C_LOGIC",
+  "compiler": "/usr/bin/gcc",
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "compile_flags": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "compile_stderr": "",
+  "test_stdout": "CK001_LOGIC_PASS gray_cw=1 gray_ccw=-1 matrix=58",
+  "sources": {
+    "logic_c": {
+      "path": "firmware/ck001_logic.c",
+      "sha256": "67c63fc1989fb57662c206addff8b4d9994028d11c455967ed88a2300da215a3"
+    },
+    "test_c": {
+      "path": "firmware/test_logic.c",
+      "sha256": "e8b7919ac1d059be99be72e989983a0b59a75f026aa78def120aab0cf84a859b"
+    }
+  },
+  "scope": [
+    "quadrature Gray decoding including bounce and invalid transition",
+    "58-key logical matrix indexing"
+  ],
+  "limits": [
+    "Host C logic only; not an RP2040/QMK target build, USB stack test, GPIO timing test or hardware bench test."
+  ]
+}

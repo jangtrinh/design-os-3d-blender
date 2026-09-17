@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "pipeline_id": "reference-keyboard-layout",
+  "steps": [
+    {
+      "id": "layout",
+      "script": "builds/reference-keyboard/pass-01-layout.py",
+      "depends_on": [],
+      "inputs": [
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/studio.py",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py"
+      ],
+      "artifact_inputs": [],
+      "outputs": [
+        "hero.png",
+        "top.png",
+        "views.json",
+        "layout-measurements.json",
+        "layout.blend"
+      ],
+      "required_postconditions": [
+        "keys",
+        "knobs",
+        "width_mm",
+        "depth_mm"
+      ],
+      "timeout_seconds": 120
+    }
+  ]
+}

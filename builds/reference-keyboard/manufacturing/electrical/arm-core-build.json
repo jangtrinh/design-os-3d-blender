@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E01",
+  "status": "PASS_ARMV6M_CORE_OBJECT",
+  "compiler": "/usr/bin/clang",
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "command": [
+    "/usr/bin/clang",
+    "--target=arm-none-eabi",
+    "-mcpu=cortex-m0plus",
+    "-mthumb",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-c",
+    "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/manufacturing/electrical/firmware/ck001_logic.c",
+    "-o",
+    "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/manufacturing/electrical/firmware/ck001_logic-armv6m.o"
+  ],
+  "source": {
+    "path": "firmware/ck001_logic.c",
+    "sha256": "67c63fc1989fb57662c206addff8b4d9994028d11c455967ed88a2300da215a3"
+  },
+  "object": {
+    "path": "firmware/ck001_logic-armv6m.o",
+    "sha256": "4afe34f1a9645d7e552b72a65f08f5f7c6444b3cdf5c7201065f4dfc5726d6e3",
+    "file_type": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/manufacturing/electrical/firmware/ck001_logic-armv6m.o: ELF 32-bit LSB relocatable, ARM, EABI5 version 1 (SYSV), not stripped"
+  },
+  "limits": [
+    "Relocatable Cortex-M0+ control-core object only; no RP2040 SDK/QMK link, USB firmware, startup code, UF2, timing or hardware execution proof."
+  ]
+}

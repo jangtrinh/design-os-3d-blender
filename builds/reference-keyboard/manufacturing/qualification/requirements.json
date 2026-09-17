@@ -1,0 +1,32 @@
+{
+  "revision": "C1-pilot-screening-requirements",
+  "scope": "CK-001 prototype and pilot screening. Project-selected targets, not external certification or a production reliability demonstration.",
+  "condition_note": "Do not force a factory switch past its own hard stop. Confirm its measured stroke is inside the manufacturer's 2.8..3.2 mm range; inspect clearance at that actual stop. A separate unloaded geometry fixture covers the 3.2 mm design envelope.",
+  "metrics": [
+    {"id":"switch_housing_clearance","unit":"mm","min":0.10,"max":null,"samples":5,"group":"switch retention","description":"Minimum physical boss-to-housing clearance after measuring the selected factory switch, including its unmodeled dust structure.","conditions":{}},
+    {"id":"switch_actual_travel","unit":"mm","min":2.8,"max":3.2,"samples":5,"group":"switch retention","description":"Actual full stroke to the factory stop with no premature contact introduced by the cap.","conditions":{}},
+    {"id":"keycap_install_force","unit":"N","min":0.1,"max":25,"samples":5,"group":"switch retention","description":"Peak controlled installation force for the selected receiver/material; stop if interference or damage is seen.","conditions":{}},
+    {"id":"keycap_pull_initial","unit":"N","min":5,"max":25,"samples":5,"group":"switch retention","description":"Initial axial pull-off force. This project window balances retention with service removal; it is not a Gateron specification.","conditions":{}},
+    {"id":"keycap_pull_after_service","unit":"N","min":5,"max":25,"samples":5,"group":"switch retention","description":"Pull-off force on the same five specimens after repeated installation/removal.","conditions":{"service_cycles":{"min":50}}},
+    {"id":"knob_axial_slip","unit":"mm","min":0,"max":0.2,"samples":5,"group":"knob retention","description":"Permanent axial slip under the specified pull with the actual set screw, shaft and knob.","conditions":{"load_N":{"min":10,"max":10.5},"hold_s":{"min":10}}},
+    {"id":"knob_rotation_slip","unit":"deg","min":0,"max":2,"samples":5,"group":"knob retention","description":"Relative shaft/knob rotation under a torsional hold.","conditions":{"torque_Nm":{"min":0.05,"max":0.055},"hold_s":{"min":10}}},
+    {"id":"post_strip_margin","unit":"ratio","min":3,"max":null,"samples":5,"group":"thread strength","description":"Destructively measured first joint-failure torque divided by the proposed assembly torque. Identify thread stripping, screw fracture, base pull-through or post fracture explicitly. This is the limiting joint strength, not necessarily thread strip strength. Attach torque curves; the frozen configuration sets the screw manufacturer's maximum.","conditions":{}},
+    {"id":"carrier_permanent_shift","unit":"mm","min":0,"max":0.2,"samples":5,"group":"thread strength","description":"Permanent carrier shift after axial loading through the mounted encoder; inspect the countersunk base and posts for damage.","conditions":{"load_N":{"min":10,"max":10.5},"hold_s":{"min":10}}},
+    {"id":"daughterboard_permanent_shift","unit":"mm","min":0,"max":0.2,"samples":5,"group":"board support","description":"Largest permanent movement after loads in each principal direction. Record all directions in the raw report.","conditions":{"load_N":{"min":5,"max":5.5},"hold_s":{"min":10}}},
+    {"id":"guide_return_failures","unit":"count","min":0,"max":0,"samples":3,"group":"guide wear","description":"Incomplete returns or sticking in full-stroke guide cycles, including offset spacebar presses.","conditions":{"actuation_cycles":{"min":10000}}},
+    {"id":"guide_side_play","unit":"mm","min":0,"max":0.25,"samples":3,"group":"guide wear","description":"Maximum lateral free play after the guide screening cycles, using intended material and pin finish.","conditions":{"actuation_cycles":{"min":10000}}},
+    {"id":"usb_pre_enumeration_current","unit":"mA","min":0,"max":100,"samples":3,"group":"electrical power","description":"Maximum input current including startup before successful enumeration, across cable orientations and the input-voltage range.","conditions":{}},
+    {"id":"usb_configured_current","unit":"mA","min":0,"max":500,"samples":3,"group":"electrical power","description":"Maximum configured input current with the supported all-white RGB pattern, all controls scanned and worst intended voltage/temperature.","conditions":{}},
+    {"id":"external_surface_temperature","unit":"degC","min":0,"max":48,"samples":3,"group":"thermal","description":"Hottest touchable surface after full-load thermal settling. Internal component junction limits require separate engineering checks.","conditions":{"ambient_degC":{"min":24,"max":26},"soak_minutes":{"min":60}}},
+    {"id":"control_event_errors","unit":"count","min":0,"max":0,"samples":3,"group":"functional board","description":"Missing, duplicate or ghost key events and encoder steps in a logged test covering all 58 keys and all five encoders, both directions.","conditions":{"key_positions":{"min":58,"max":58},"encoders":{"min":5,"max":5},"events_per_control":{"min":100}}}
+  ],
+  "same_sample_cohorts": [["keycap_install_force","keycap_pull_initial","keycap_pull_after_service"],["knob_axial_slip","knob_rotation_slip"],["guide_return_failures","guide_side_play"]],
+  "digital_release_prerequisites": ["mechanical_geometry","maximum_travel_geometry","factory_switch_interface","electrical_pin_net_check","schematic_erc","pcb_drc","target_firmware_build","physical_assembly_process"],
+  "limitations": [
+    "The listed sample counts screen a pilot build; they do not prove mass-production yield or long-term field reliability.",
+    "File hashes and a physical-origin declaration do not authenticate a laboratory or an operator. Raw records and calibration certificates must be independently reviewable.",
+    "Passing these metrics cannot compensate for an incomplete factory interface, schematic, routed PCB or target firmware.",
+    "The 100/500 mA targets do not establish USB compliance, inrush, suspend/resume or signal-integrity certification. These remain explicit board-validation work.",
+    "No measured value exists until an actual specimen and test are recorded. Empty forms are not passed tests."
+  ]
+}

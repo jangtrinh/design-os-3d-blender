@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "mcu": "RP2040",
+  "qmk_board": "GENERIC_RP_RP2040",
+  "bootloader": "rp2040",
+  "flash_boot_stage": "RP2040_FLASH_GENERIC_03H",
+  "matrix": {
+    "rows": [
+      "GP0",
+      "GP1",
+      "GP2",
+      "GP3",
+      "GP4",
+      "GP5"
+    ],
+    "cols": [
+      "GP6",
+      "GP7",
+      "GP8",
+      "GP9",
+      "GP10",
+      "GP11",
+      "GP12",
+      "GP13",
+      "GP14",
+      "GP15"
+    ],
+    "diode_direction": "COL2ROW",
+    "keys": [
+      {
+        "id": "RK_KEY_00",
+        "matrix": [
+          0,
+          0
+        ]
+      },
+      {
+        "id": "RK_KEY_01",
+        "matrix": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "RK_KEY_02",
+        "matrix": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": "RK_KEY_03",
+        "matrix": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": "RK_KEY_04",
+        "matrix": [
+          0,
+          4
+        ]
+      },
+      {
+        "id": "RK_KEY_05",
+        "matrix": [
+          0,
+          5
+        ]
+      },
+      {
+        "id": "RK_KEY_06",
+        "matrix": [
+          0,
+          6
+        ]
+      },
+      {
+        "id": "RK_KEY_07",
+        "matrix": [
+          0,
+          7
+        ]
+      },
+      {
+        "id": "RK_KEY_08",
+        "matrix": [
+          0,
+          8
+        ]
+      },
+      {
+        "id": "RK_KEY_09",
+        "matrix": [
+          0,
+          9
+        ]
+      },
+      {
+        "id": "RK_KEY_10",
+        "matrix": [
+          1,
+          0
+        ]
+      },
+      {
+        "id": "RK_KEY_11",
+        "matrix": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "RK_KEY_12",
+        "matrix": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "RK_KEY_13",
+        "matrix": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "RK_KEY_14",
+        "matrix": [
+          1,
+          4
+        ]
+      },
+      {
+        "id": "RK_KEY_15",
+        "matrix": [
+          1,
+          5
+        ]
+      },
+      {
+        "id": "RK_KEY_16",
+        "matrix": [
+          1,
+          6
+        ]
+      },
+      {
+        "id": "RK_KEY_17",
+        "matrix": [
+          1,
+          7
+        ]
+      },
+      {
+        "id": "RK_KEY_18",
+        "matrix": [
+          1,
+          8
+        ]
+      },
+      {
+        "id": "RK_KEY_19",
+        "matrix": [
+          1,
+          9
+        ]
+      },
+      {
+        "id": "RK_KEY_20",
+        "matrix": [
+          2,
+          0
+        ]
+      },
+      {
+        "id": "RK_KEY_21",
+        "matrix": [
+          2,
+          1
+        ]
+      },
+      {
+        "id": "RK_KEY_22",
+        "matrix": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "RK_KEY_23",
+        "matrix": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "RK_KEY_24",
+        "matrix": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "RK_KEY_25",
+        "matrix": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "RK_KEY_26",
+        "matrix": [
+          2,
+          6
+        ]
+      },
+      {
+        "id": "RK_KEY_27",
+        "matrix": [
+          2,
+          7
+        ]
+      },
+      {
+        "id": "RK_KEY_28",
+        "matrix": [
+          2,
+          8
+        ]
+      },
+      {
+        "id": "RK_KEY_29",
+        "matrix": [
+          2,
+          9
+        ]
+      },
+      {
+        "id": "RK_KEY_30",
+        "matrix": [
+          3,
+          0
+        ]
+      },
+      {
+        "id": "RK_KEY_31",
+        "matrix": [
+          3,
+          1
+        ]
+      },
+      {
+        "id": "RK_KEY_32",
+        "matrix": [
+          3,
+          2
+        ]
+      },
+      {
+        "id": "RK_KEY_33",
+        "matrix": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "RK_KEY_34",
+        "matrix": [
+          3,
+          4
+        ]
+      },
+      {
+        "id": "RK_KEY_35",
+        "matrix": [
+          3,
+          5
+        ]
+      },
+      {
+        "id": "RK_KEY_36",
+        "matrix": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "RK_KEY_37",
+        "matrix": [
+          3,
+          7
+        ]
+      },
+      {
+        "id": "RK_KEY_38",
+        "matrix": [
+          3,
+          8
+        ]
+      },
+      {
+        "id": "RK_KEY_39",
+        "matrix": [
+          3,
+          9
+        ]
+      },
+      {
+        "id": "RK_KEY_40",
+        "matrix": [
+          4,
+          0
+        ]
+      },
+      {
+        "id": "RK_KEY_41",
+        "matrix": [
+          4,
+          1
+        ]
+      },
+      {
+        "id": "RK_KEY_42",
+        "matrix": [
+          4,
+          2
+        ]
+      },
+      {
+        "id": "RK_KEY_43",
+        "matrix": [
+          4,
+          3
+        ]
+      },
+      {
+        "id": "RK_KEY_44",
+        "matrix": [
+          4,
+          4
+        ]
+      },
+      {
+        "id": "RK_KEY_45",
+        "matrix": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "RK_KEY_46",
+        "matrix": [
+          4,
+          6
+        ]
+      },
+      {
+        "id": "RK_KEY_47",
+        "matrix": [
+          4,
+          7
+        ]
+      },
+      {
+        "id": "RK_KEY_48",
+        "matrix": [
+          4,
+          8
+        ]
+      },
+      {
+        "id": "RK_KEY_49",
+        "matrix": [
+          4,
+          9
+        ]
+      },
+      {
+        "id": "RK_KEY_50",
+        "matrix": [
+          5,
+          0
+        ]
+      },
+      {
+        "id": "RK_KEY_51",
+        "matrix": [
+          5,
+          1
+        ]
+      },
+      {
+        "id": "RK_KEY_52",
+        "matrix": [
+          5,
+          2
+        ]
+      },
+      {
+        "id": "RK_KEY_53",
+        "matrix": [
+          5,
+          3
+        ]
+      },
+      {
+        "id": "RK_KEY_54",
+        "matrix": [
+          5,
+          4
+        ]
+      },
+      {
+        "id": "RK_KEY_55",
+        "matrix": [
+          5,
+          5
+        ]
+      },
+      {
+        "id": "RK_KEY_56",
+        "matrix": [
+          5,
+          6
+        ]
+      },
+      {
+        "id": "RK_KEY_57",
+        "matrix": [
+          5,
+          7
+        ]
+      }
+    ]
+  },
+  "encoders": [
+    {
+      "id": "ENC1",
+      "a_pin": "GP16",
+      "b_pin": "GP17",
+      "gray_edges_per_detent": 4
+    },
+    {
+      "id": "ENC2",
+      "a_pin": "GP20",
+      "b_pin": "GP21",
+      "gray_edges_per_detent": 4
+    },
+    {
+      "id": "ENC3",
+      "a_pin": "GP22",
+      "b_pin": "GP23",
+      "gray_edges_per_detent": 4
+    },
+    {
+      "id": "ENC4",
+      "a_pin": "GP24",
+      "b_pin": "GP25",
+      "gray_edges_per_detent": 4
+    },
+    {
+      "id": "ENC5",
+      "a_pin": "GP26",
+      "b_pin": "GP27",
+      "gray_edges_per_detent": 4
+    }
+  ],
+  "i2c": {
+    "driver": "I2CD1",
+    "sda": "GP18",
+    "scl": "GP19",
+    "frequency_hz": 400000
+  },
+  "rgb": {
+    "driver": "is31fl3741",
+    "address": "0x30",
+    "sdb_pin": "GP28",
+    "pwm_hz": 29000,
+    "global_current_default": 128,
+    "software_max_brightness": 128,
+    "led_count": 107,
+    "led_mpn": "19-237A/BHR6GHC-A01/2T",
+    "led_polarity": "common_anode"
+  },
+  "power_fault_pin": "GP29",
+  "usb": {
+    "max_power_descriptor_mA": 500,
+    "wait_for_enumeration": true,
+    "vid": null,
+    "pid": null,
+    "release_blocker": "Reserve/assign a product USB VID/PID before product firmware release."
+  },
+  "default_encoder_actions": {
+    "ENC1": [
+      "KC_VOLD",
+      "KC_VOLU"
+    ],
+    "ENC2": [
+      "KC_PGDN",
+      "KC_PGUP"
+    ],
+    "ENC3": [
+      "RGB_SAD",
+      "RGB_SAI"
+    ],
+    "ENC4": [
+      "RGB_HUD",
+      "RGB_HUI"
+    ],
+    "ENC5": [
+      "RGB_VAD",
+      "RGB_VAI"
+    ]
+  }
+}

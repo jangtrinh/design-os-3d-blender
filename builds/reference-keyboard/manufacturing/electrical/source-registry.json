@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "captured_date": "2026-09-17",
+  "policy": "Primary manufacturer sources and current QMK documentation only; URLs are design inputs, not fabrication certificates.",
+  "sources": [
+    {
+      "id": "raspberry-pi-rp2040-hardware-design-r2",
+      "authority": "Raspberry Pi Ltd",
+      "url": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf",
+      "revision": "Release 2, build 20/08/2026",
+      "use": [
+        "RP2040 QFN-56 minimal circuit",
+        "W25Q128JVS 128-Mbit QSPI flash reference",
+        "ABM8-272-T3 12 MHz crystal with 15 pF loads and 1 kOhm damping",
+        "USB D+/D- 27 Ohm source termination and 90 Ohm differential-routing target"
+      ]
+    },
+    {
+      "id": "raspberry-pi-rp2040-product-docs",
+      "authority": "Raspberry Pi Ltd",
+      "url": "https://www.raspberrypi.com/documentation/microcontrollers/microcontroller-chips.html",
+      "use": ["RP2040 has 30 user GPIOs", "USB controller/PHY", "unique USB PID programme exists for third-party RP2040 products"]
+    },
+    {
+      "id": "qmk-rp2040",
+      "authority": "QMK",
+      "url": "https://docs.qmk.fm/platformdev_rp2040",
+      "use": ["GENERIC_RP_RP2040 board", "I2C pin override", "RP2040_FLASH_GENERIC_03H boot stage option"]
+    },
+    {
+      "id": "qmk-matrix-config",
+      "authority": "QMK",
+      "url": "https://docs.qmk.fm/config_options",
+      "use": ["COL2ROW means diode cathode/black mark faces row"]
+    },
+    {
+      "id": "qmk-is31fl3741",
+      "authority": "QMK",
+      "url": "https://docs.qmk.fm/drivers/is31fl3741",
+      "use": ["IS31FL3741 RGB driver support", "0x30 GND address", "SDB GPIO", "29 kHz mode", "global-current control"]
+    },
+    {
+      "id": "bourns-pec11r-rev-11-23",
+      "authority": "Bourns",
+      "url": "https://www.bourns.com/docs/Product-Datasheets/pec11R.pdf",
+      "revision": "11/23",
+      "use": [
+        "PEC11R-1215F-N0024 ordering code: terminal config 1, 24 detents, 15 mm flatted shaft, no push switch, 24 PPR",
+        "2-bit quadrature, 2 ms max bounce at 15 RPM, 60 RPM max",
+        "manufacturer suggested A/B filter: 10 kOhm pull-up, 10 kOhm series, 10 nF to common"
+      ]
+    },
+    {
+      "id": "gateron-ks33-red-v2",
+      "authority": "Gateron",
+      "url": "https://gateron.com/u_file/2311/10/file/GATERONKS-33LowProfile20RedSwitchBlackBottomHousing-KS-33H10B050NN-Y24.pdf",
+      "use": [
+        "KS-33H10B050NN-Y24 low-profile red switch, 10 mA 12 VDC rating",
+        "3-pin mechanical drawing and source PCB-hole geometry; orientation must be verified before ECAD footprint release"
+      ]
+    },
+    {
+      "id": "lumissil-is31fl3741a-rev-d",
+      "authority": "Lumissil Microsystems",
+      "url": "https://www.lumissil.com/assets/pdf/core/IS31FL3741A_DS.pdf",
+      "revision": "Rev. D, 11/06/2024",
+      "use": [
+        "IS31FL3741A-QFLS4-TR QFN-60",
+        "39x9 matrix, up to 117 RGBs, 2.7-5.5 V",
+        "CS1..CS39 are LED-matrix current-sink pins and SW1..SW9 are source/switch pins",
+        "RGB 13x9 reference network with 51 Ohm red and 20 Ohm green/blue CS resistors",
+        "3.3 V I2C pull-ups valid at 5 V VCC because VIH minimum is at most 2.4 V",
+        "ISET current formula and 1/10.125 scan duty",
+        "SDB shutdown and I2C address 0x30 when ADDR=GND"
+      ]
+    },
+    {
+      "id": "lumissil-is31fl3741a-eval-rev-d-2025",
+      "authority": "Lumissil Microsystems",
+      "url": "https://www.lumissil.com/assets/pdf/core/IS31FL3741A_EB.pdf",
+      "revision": "Rev. D, 01/22/2025",
+      "use": [
+        "Figure 4 FxLED 9x13 application schematic shows SW rows sourcing the shared positive side of RGB packages and CS lines sinking individual colors",
+        "evaluation-board BOM specifies an Everlight A01-family RGB part for the 117-package array",
+        "BOM typography reads 9-237/R6GHBHC-A01/2T; E02 does not treat that string as an exact manufacturer SKU authority and instead selects the exact Everlight part with its own datasheet"
+      ]
+    },
+    {
+      "id": "everlight-19-237a-a01",
+      "authority": "Everlight",
+      "url": "https://www.everlight.com/wp-content/uploads/2021/02/19-237A-BHR6GHC-A01-2T.pdf",
+      "revision": "DSE-0008938 Rev.3, 30-May-2013",
+      "use": [
+        "exact selected SKU 19-237A/BHR6GHC-A01/2T, 1.6x1.6x0.35 mm RGB",
+        "common-anode topology: pin 3 common anode; cathodes pin 1 red, pin 2 green, pin 4 blue",
+        "electro-optical table at IF=20 mA: maximum Vf red 2.4 V, green 3.8 V, blue 3.8 V",
+        "datasheet states forward-voltage tolerance ±0.1 V; E02 headroom screen therefore uses 2.5/3.9/3.9 V design bounds"
+      ]
+    },
+    {
+      "id": "gct-usb4105",
+      "authority": "GCT",
+      "url": "https://gct.co/connector/usb4105",
+      "use": ["USB4105-GF-A-120 USB 2.0 Type-C horizontal receptacle, 16 contacts"]
+    },
+    {
+      "id": "microchip-usbc-device-guidance",
+      "authority": "Microchip",
+      "url": "https://onlinedocs.microchip.com/oxy/GUID-D5B5915F-6907-409C-A6D9-F79690ACDCA3-en-US-1/GUID-DF5089B4-807B-4599-AA3C-562EFC29DA63.html",
+      "use": ["USB-C sink CC1 and CC2 each 5.1 kOhm to ground", "SBU1/SBU2 unconnected", "USB4105-GF-A example", "ESD protection recommended"]
+    },
+    {
+      "id": "st-usblc6-2sc6",
+      "authority": "STMicroelectronics",
+      "url": "https://www.st.com/en/protections-and-emi-filters/usblc6-2.html",
+      "use": ["USBLC6-2SC6 active USB2 ESD part, 2 data lines plus VBUS, 3.5 pF maximum line capacitance"]
+    },
+    {
+      "id": "ti-tps2553-1",
+      "authority": "Texas Instruments",
+      "url": "https://www.ti.com/product/TPS2553-1",
+      "use": ["TPS2553-1 latch-off adjustable USB power switch, active-high, reverse blocking, open-drain FAULT"]
+    },
+    {
+      "id": "ti-tps2553-1-design",
+      "authority": "Texas Instruments",
+      "url": "https://www.ti.com/document-viewer/TPS2553-1/datasheet/application_and_implementation",
+      "use": ["66.5 kOhm 1% RILIM table entry gives 351.2 mA minimum, 396.7 mA nominal, 448.7 mA maximum current limit", "bus-powered functions power-up current requirement discussed as <100 mA"]
+    },
+    {
+      "id": "nexperia-bas316",
+      "authority": "Nexperia",
+      "url": "https://www.nexperia.com/product/BAS316",
+      "use": ["BAS316 high-speed switching diode, SOD323, trr <=4 ns"]
+    },
+    {
+      "id": "ti-tlv755p",
+      "authority": "Texas Instruments",
+      "url": "https://www.ti.com/product/TLV755P/part-details/TLV75533PDBVR",
+      "use": ["TLV75533PDBVR 3.3 V SOT-23-5 LDO", "1.45-5.5 V input", "238 mV maximum dropout at 500 mA", "stable with 1 uF ceramic output capacitor"]
+    },
+    {
+      "id": "ti-tps61023",
+      "authority": "Texas Instruments",
+      "url": "https://www.ti.com/product/TPS61023",
+      "revision": "datasheet Rev. B",
+      "use": ["TPS61023DRLR synchronous boost", "0.5-5.5 V input and 2.2-5.5 V output", "580/595/610 mV PWM FB reference min/typ/max", "1 uH recommended inductor class", "10 uF input typical; 4-1000 uF effective X5R/X7R output range", "pass-through when VIN exceeds regulated VOUT"]
+    },
+    {
+      "id": "coilcraft-xel4030-102",
+      "authority": "Coilcraft",
+      "url": "https://www.coilcraft.com/en-us/products/power/high-voltage-inductors/xel/xel4030/xel4030-102/",
+      "use": ["XEL4030-102MEC 1.0 uH ±20%, 9.0 A saturation current, 9.8 mOhm max DCR"]
+    },
+    {
+      "id": "winbond-w25q128jv",
+      "authority": "Winbond",
+      "url": "https://www.winbond.com/hq/support/documentation/downloadV2022.jsp?__locale=en&xmlPath=/support/resources/.content/item/DA00-W25Q128JV.html&level=1",
+      "use": ["W25Q128JV series serial NOR source for RP2040 external flash selection"]
+    }
+  ]
+}

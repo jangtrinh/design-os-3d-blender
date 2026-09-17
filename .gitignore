@@ -18,3 +18,20 @@ plans/knowledge-updates/publish.lock
 plans/knowledge-updates/candidate*.json
 .brv/
 .codex/
+
+# Read-only upstream research snapshots; no external assets are checked out.
+research/tools/upstream-260917/
+
+# Worked builds: publish sources, contracts and scripts; keep run artifacts local.
+# Run directories hold >100 MB evidence files; delivery packages are published under docs/reviews/.
+builds/*/runs/
+builds/*/manufacturing/runs/
+builds/*/delivery/
+builds/*/*.zip
+# Manufacturer datasheets are cited by URL + SHA-256 in source-registry.json, not redistributed.
+builds/reference-keyboard/references/**/*.pdf
+# Superseded sample build, kept local.
+builds/desk-node-120/
+# Session plans and reports are internal history; only the knowledge receipt is tracked.
+plans/*
+!plans/knowledge-updates/

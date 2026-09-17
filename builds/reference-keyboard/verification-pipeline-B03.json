@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "pipeline_id": "reference-keyboard-verification",
+  "steps": [
+    {
+      "id": "inspect",
+      "script": "builds/reference-keyboard/pass-05-inspect.py",
+      "inputs": [
+        "builds/reference-keyboard/dimensions-contract-B.json",
+        "builds/reference-keyboard/interfaces.json",
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/runs/presentation-B03/steps/presentation/attempt-0001/keyboard.blend",
+        "builds/reference-keyboard/scripts/export_compare.py",
+        "builds/reference-keyboard/scripts/inspect_fit.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/verify_layout.py",
+        "builds/reference-keyboard/spec-B.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py",
+        "specs/build-spec.schema.json"
+      ],
+      "depends_on": [],
+      "artifact_inputs": [],
+      "outputs": [
+        "mesh-inventory.json",
+        "fit-report.json",
+        "layout-checks.json"
+      ],
+      "required_postconditions": [
+        "meshes",
+        "layout_checks",
+        "switch_cells",
+        "sampled_key_travels",
+        "collision_pairs"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "id": "final-gate",
+      "script": "builds/reference-keyboard/pass-08-final-gate.py",
+      "inputs": [
+        "builds/reference-keyboard/dimensions-contract-B.json",
+        "builds/reference-keyboard/interfaces.json",
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/runs/presentation-B03/steps/presentation/attempt-0001/keyboard.blend",
+        "builds/reference-keyboard/scripts/export_compare.py",
+        "builds/reference-keyboard/scripts/inspect_fit.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/verify_layout.py",
+        "builds/reference-keyboard/spec-B.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py",
+        "specs/build-spec.schema.json"
+      ],
+      "depends_on": [
+        "inspect"
+      ],
+      "artifact_inputs": [],
+      "outputs": [
+        "final-gate.json",
+        "stl/manifest.json",
+        "stl/RK_BASE.stl",
+        "stl/RK_DIFFUSER.stl",
+        "stl/RK_MAIN_PLATE.stl",
+        "stl/RK_KEY_00.stl",
+        "stl/RK_KEY_41.stl",
+        "stl/RK_KNOB_1.stl",
+        "stl/RK_FOOT_0.stl",
+        "stl/RK_GUIDE_SLEEVE_0.stl"
+      ],
+      "required_postconditions": [
+        "families",
+        "failed_parts",
+        "stl_files"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "id": "export",
+      "script": "builds/reference-keyboard/pass-06-export.py",
+      "inputs": [
+        "builds/reference-keyboard/dimensions-contract-B.json",
+        "builds/reference-keyboard/interfaces.json",
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/runs/presentation-B03/steps/presentation/attempt-0001/keyboard.blend",
+        "builds/reference-keyboard/scripts/export_compare.py",
+        "builds/reference-keyboard/scripts/inspect_fit.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/verify_layout.py",
+        "builds/reference-keyboard/spec-B.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py",
+        "specs/build-spec.schema.json"
+      ],
+      "depends_on": [
+        "final-gate"
+      ],
+      "artifact_inputs": [],
+      "outputs": [
+        "keyboard.glb",
+        "source-surfaces.json",
+        "export-settings.json",
+        "export-evidence.json"
+      ],
+      "required_postconditions": [
+        "meshes",
+        "source_frames",
+        "animations",
+        "glb_bytes",
+        "embedded_images"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "id": "reopen",
+      "script": "builds/reference-keyboard/pass-07-reopen.py",
+      "inputs": [
+        "builds/reference-keyboard/dimensions-contract-B.json",
+        "builds/reference-keyboard/interfaces.json",
+        "builds/reference-keyboard/layout.json",
+        "builds/reference-keyboard/runs/presentation-B03/steps/presentation/attempt-0001/keyboard.blend",
+        "builds/reference-keyboard/scripts/export_compare.py",
+        "builds/reference-keyboard/scripts/inspect_fit.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/verify_layout.py",
+        "builds/reference-keyboard/spec-B.json",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py",
+        "specs/build-spec.schema.json"
+      ],
+      "depends_on": [
+        "export"
+      ],
+      "artifact_inputs": [
+        "export:keyboard.glb",
+        "export:source-surfaces.json"
+      ],
+      "outputs": [
+        "glb-roundtrip.json"
+      ],
+      "required_postconditions": [
+        "frames",
+        "mesh_names",
+        "max_sample_surface_error_mm"
+      ],
+      "timeout_seconds": 240
+    }
+  ]
+}

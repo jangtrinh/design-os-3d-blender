@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "url": "https://www.bourns.com/docs/Product-Datasheets/pec11R.pdf",
+      "status": "unavailable",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "path": "builds/reference-keyboard/references/manufacturers-B/Gateron-KS33-Red-Rev2.pdf",
+      "url": "https://cdn.shopify.com/s/files/1/0565/8070/2297/files/SPEC-KS-33H10B050NN-Y24_Rev-2_KS-33_Red_Switch.pdf?v=1679714207",
+      "sha256": "cbbb1548e110009b2cfccdad1a72b6f4b4de9db3233a5ff98ee20695f4846fa7",
+      "bytes": 2809172,
+      "retrieved": "2026-09-17",
+      "status": "retrieved"
+    }
+  ],
+  "scope": "Primary manufacturer documents, not original owner image references"
+}

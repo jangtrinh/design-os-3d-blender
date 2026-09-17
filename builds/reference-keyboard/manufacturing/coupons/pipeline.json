@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "pipeline_id": "C1-fit-characterization",
+  "steps": [
+    {
+      "id": "build",
+      "script": "builds/reference-keyboard/manufacturing/coupons/build.py",
+      "inputs": [
+        "builds/reference-keyboard/manufacturing/coupons/contract.json",
+        "builds/reference-keyboard/manufacturing/coupons/shapes.py",
+        "builds/reference-keyboard/manufacturing/coupons/spec.json",
+        "builds/reference-keyboard/manufacturing/coupons/specimens.json",
+        "builds/reference-keyboard/scripts/controls.py",
+        "builds/reference-keyboard/scripts/fullhd.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/studio.py",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py"
+      ],
+      "depends_on": [],
+      "artifact_inputs": [],
+      "outputs": [
+        "specimens.blend",
+        "measurements.json"
+      ],
+      "required_postconditions": [
+        "specimens",
+        "measured_interfaces"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "gate",
+      "script": "builds/reference-keyboard/manufacturing/coupons/gate.py",
+      "inputs": [
+        "builds/reference-keyboard/manufacturing/coupons/contract.json",
+        "builds/reference-keyboard/manufacturing/coupons/shapes.py",
+        "builds/reference-keyboard/manufacturing/coupons/spec.json",
+        "builds/reference-keyboard/manufacturing/coupons/specimens.json",
+        "builds/reference-keyboard/scripts/controls.py",
+        "builds/reference-keyboard/scripts/fullhd.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/studio.py",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py"
+      ],
+      "depends_on": [
+        "build"
+      ],
+      "artifact_inputs": [
+        "build:specimens.blend"
+      ],
+      "outputs": [
+        "gate-report.json",
+        "stl/manifest.json",
+        "stl/K01.stl",
+        "stl/K02.stl",
+        "stl/K03.stl",
+        "stl/K04.stl",
+        "stl/K05.stl",
+        "stl/K06.stl",
+        "stl/K07.stl",
+        "stl/K08.stl",
+        "stl/K09.stl",
+        "stl/D01.stl",
+        "stl/D02.stl",
+        "stl/D03.stl",
+        "stl/G01.stl",
+        "stl/G02.stl",
+        "stl/G03.stl",
+        "stl/P01.stl"
+      ],
+      "required_postconditions": [
+        "families",
+        "failures",
+        "reimported_stl"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "id": "view",
+      "script": "builds/reference-keyboard/manufacturing/coupons/view.py",
+      "inputs": [
+        "builds/reference-keyboard/manufacturing/coupons/contract.json",
+        "builds/reference-keyboard/manufacturing/coupons/shapes.py",
+        "builds/reference-keyboard/manufacturing/coupons/spec.json",
+        "builds/reference-keyboard/manufacturing/coupons/specimens.json",
+        "builds/reference-keyboard/scripts/controls.py",
+        "builds/reference-keyboard/scripts/fullhd.py",
+        "builds/reference-keyboard/scripts/meshkit.py",
+        "builds/reference-keyboard/scripts/project.py",
+        "builds/reference-keyboard/scripts/studio.py",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/production_gate/__init__.py",
+        "scripts/production_gate/bed_fit.py",
+        "scripts/production_gate/dimensions.py",
+        "scripts/production_gate/export_roundtrip.py",
+        "scripts/production_gate/fastener_tables.py",
+        "scripts/production_gate/features_fasteners.py",
+        "scripts/production_gate/meshprep.py",
+        "scripts/production_gate/report.py",
+        "scripts/production_gate/run_in_blender.py",
+        "scripts/production_gate/spec.py",
+        "scripts/production_gate/topology.py",
+        "scripts/production_gate/walls_overhang.py"
+      ],
+      "depends_on": [
+        "build",
+        "gate"
+      ],
+      "artifact_inputs": [
+        "build:specimens.blend",
+        "gate:gate-report.json"
+      ],
+      "outputs": [
+        "specimen-set-FullHD.png",
+        "view.json"
+      ],
+      "required_postconditions": [
+        "specimens",
+        "width",
+        "height"
+      ],
+      "timeout_seconds": 180
+    }
+  ]
+}

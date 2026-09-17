@@ -1,0 +1,2271 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E01",
+  "authority": "DESIGN_AUTHORITY_LOGICAL_NOT_ECAD",
+  "matrix": {
+    "rows": 6,
+    "cols": 10,
+    "row_pins": [
+      "GP0",
+      "GP1",
+      "GP2",
+      "GP3",
+      "GP4",
+      "GP5"
+    ],
+    "col_pins": [
+      "GP6",
+      "GP7",
+      "GP8",
+      "GP9",
+      "GP10",
+      "GP11",
+      "GP12",
+      "GP13",
+      "GP14",
+      "GP15"
+    ],
+    "diode_direction": "COL2ROW",
+    "diode_cathode": "ROW",
+    "keys": [
+      {
+        "id": "RK_KEY_00",
+        "label": "esc",
+        "xy_mm": [
+          -104.0,
+          16.0
+        ],
+        "matrix": [
+          0,
+          0
+        ],
+        "switch": "SW00",
+        "diode": "D00",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_01",
+        "label": "Q",
+        "xy_mm": [
+          -85.2,
+          16.0
+        ],
+        "matrix": [
+          0,
+          1
+        ],
+        "switch": "SW01",
+        "diode": "D01",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_02",
+        "label": "W",
+        "xy_mm": [
+          -66.4,
+          16.0
+        ],
+        "matrix": [
+          0,
+          2
+        ],
+        "switch": "SW02",
+        "diode": "D02",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_03",
+        "label": "E",
+        "xy_mm": [
+          -47.6,
+          16.0
+        ],
+        "matrix": [
+          0,
+          3
+        ],
+        "switch": "SW03",
+        "diode": "D03",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_04",
+        "label": "R",
+        "xy_mm": [
+          -28.8,
+          16.0
+        ],
+        "matrix": [
+          0,
+          4
+        ],
+        "switch": "SW04",
+        "diode": "D04",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_05",
+        "label": "T",
+        "xy_mm": [
+          -10.0,
+          16.0
+        ],
+        "matrix": [
+          0,
+          5
+        ],
+        "switch": "SW05",
+        "diode": "D05",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_06",
+        "label": "Y",
+        "xy_mm": [
+          8.8,
+          16.0
+        ],
+        "matrix": [
+          0,
+          6
+        ],
+        "switch": "SW06",
+        "diode": "D06",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_07",
+        "label": "U",
+        "xy_mm": [
+          27.6,
+          16.0
+        ],
+        "matrix": [
+          0,
+          7
+        ],
+        "switch": "SW07",
+        "diode": "D07",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_08",
+        "label": "I",
+        "xy_mm": [
+          46.4,
+          16.0
+        ],
+        "matrix": [
+          0,
+          8
+        ],
+        "switch": "SW08",
+        "diode": "D08",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_09",
+        "label": "O",
+        "xy_mm": [
+          65.2,
+          16.0
+        ],
+        "matrix": [
+          0,
+          9
+        ],
+        "switch": "SW09",
+        "diode": "D09",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_10",
+        "label": "P",
+        "xy_mm": [
+          84.0,
+          16.0
+        ],
+        "matrix": [
+          1,
+          0
+        ],
+        "switch": "SW10",
+        "diode": "D10",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_11",
+        "label": "bck",
+        "xy_mm": [
+          102.8,
+          16.0
+        ],
+        "matrix": [
+          1,
+          1
+        ],
+        "switch": "SW11",
+        "diode": "D11",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_12",
+        "label": "tab",
+        "xy_mm": [
+          -104.0,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          2
+        ],
+        "switch": "SW12",
+        "diode": "D12",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_13",
+        "label": "A",
+        "xy_mm": [
+          -85.2,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          3
+        ],
+        "switch": "SW13",
+        "diode": "D13",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_14",
+        "label": "S",
+        "xy_mm": [
+          -66.4,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          4
+        ],
+        "switch": "SW14",
+        "diode": "D14",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_15",
+        "label": "D",
+        "xy_mm": [
+          -47.6,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          5
+        ],
+        "switch": "SW15",
+        "diode": "D15",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_16",
+        "label": "F",
+        "xy_mm": [
+          -28.8,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          6
+        ],
+        "switch": "SW16",
+        "diode": "D16",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_17",
+        "label": "G",
+        "xy_mm": [
+          -10.0,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          7
+        ],
+        "switch": "SW17",
+        "diode": "D17",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_18",
+        "label": "H",
+        "xy_mm": [
+          8.8,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          8
+        ],
+        "switch": "SW18",
+        "diode": "D18",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_19",
+        "label": "J",
+        "xy_mm": [
+          27.6,
+          -1.0
+        ],
+        "matrix": [
+          1,
+          9
+        ],
+        "switch": "SW19",
+        "diode": "D19",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_20",
+        "label": "K",
+        "xy_mm": [
+          46.4,
+          -1.0
+        ],
+        "matrix": [
+          2,
+          0
+        ],
+        "switch": "SW20",
+        "diode": "D20",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_21",
+        "label": "L",
+        "xy_mm": [
+          65.2,
+          -1.0
+        ],
+        "matrix": [
+          2,
+          1
+        ],
+        "switch": "SW21",
+        "diode": "D21",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_22",
+        "label": ";",
+        "xy_mm": [
+          84.0,
+          -1.0
+        ],
+        "matrix": [
+          2,
+          2
+        ],
+        "switch": "SW22",
+        "diode": "D22",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_23",
+        "label": "'",
+        "xy_mm": [
+          102.8,
+          -1.0
+        ],
+        "matrix": [
+          2,
+          3
+        ],
+        "switch": "SW23",
+        "diode": "D23",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_24",
+        "label": "shift",
+        "xy_mm": [
+          -104.0,
+          -18.0
+        ],
+        "matrix": [
+          2,
+          4
+        ],
+        "switch": "SW24",
+        "diode": "D24",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_25",
+        "label": "Z",
+        "xy_mm": [
+          -85.2,
+          -18.0
+        ],
+        "matrix": [
+          2,
+          5
+        ],
+        "switch": "SW25",
+        "diode": "D25",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_26",
+        "label": "X",
+        "xy_mm": [
+          -66.4,
+          -18.0
+        ],
+        "matrix": [
+          2,
+          6
+        ],
+        "switch": "SW26",
+        "diode": "D26",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_27",
+        "label": "C",
+        "xy_mm": [
+          -47.6,
+          -18.0
+        ],
+        "matrix": [
+          2,
+          7
+        ],
+        "switch": "SW27",
+        "diode": "D27",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_28",
+        "label": "V",
+        "xy_mm": [
+          -28.8,
+          -18.0
+        ],
+        "matrix": [
+          2,
+          8
+        ],
+        "switch": "SW28",
+        "diode": "D28",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_29",
+        "label": "B",
+        "xy_mm": [
+          -10.0,
+          -18.0
+        ],
+        "matrix": [
+          2,
+          9
+        ],
+        "switch": "SW29",
+        "diode": "D29",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_30",
+        "label": "N",
+        "xy_mm": [
+          8.8,
+          -18.0
+        ],
+        "matrix": [
+          3,
+          0
+        ],
+        "switch": "SW30",
+        "diode": "D30",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_31",
+        "label": "M",
+        "xy_mm": [
+          27.6,
+          -18.0
+        ],
+        "matrix": [
+          3,
+          1
+        ],
+        "switch": "SW31",
+        "diode": "D31",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_32",
+        "label": ",",
+        "xy_mm": [
+          46.4,
+          -18.0
+        ],
+        "matrix": [
+          3,
+          2
+        ],
+        "switch": "SW32",
+        "diode": "D32",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_33",
+        "label": ".",
+        "xy_mm": [
+          65.2,
+          -18.0
+        ],
+        "matrix": [
+          3,
+          3
+        ],
+        "switch": "SW33",
+        "diode": "D33",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_34",
+        "label": "/",
+        "xy_mm": [
+          84.0,
+          -18.0
+        ],
+        "matrix": [
+          3,
+          4
+        ],
+        "switch": "SW34",
+        "diode": "D34",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_35",
+        "label": "enter",
+        "xy_mm": [
+          102.8,
+          -18.0
+        ],
+        "matrix": [
+          3,
+          5
+        ],
+        "switch": "SW35",
+        "diode": "D35",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_36",
+        "label": "ctrl",
+        "xy_mm": [
+          -104.0,
+          -35.0
+        ],
+        "matrix": [
+          3,
+          6
+        ],
+        "switch": "SW36",
+        "diode": "D36",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_37",
+        "label": "alt",
+        "xy_mm": [
+          -85.2,
+          -35.0
+        ],
+        "matrix": [
+          3,
+          7
+        ],
+        "switch": "SW37",
+        "diode": "D37",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_38",
+        "label": "cmd",
+        "xy_mm": [
+          -66.4,
+          -35.0
+        ],
+        "matrix": [
+          3,
+          8
+        ],
+        "switch": "SW38",
+        "diode": "D38",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_39",
+        "label": "dot",
+        "xy_mm": [
+          -47.6,
+          -35.0
+        ],
+        "matrix": [
+          3,
+          9
+        ],
+        "switch": "SW39",
+        "diode": "D39",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_40",
+        "label": "dot",
+        "xy_mm": [
+          -28.8,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          0
+        ],
+        "switch": "SW40",
+        "diode": "D40",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_41",
+        "label": "space",
+        "xy_mm": [
+          -0.6,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          1
+        ],
+        "switch": "SW41",
+        "diode": "D41",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_42",
+        "label": "dot",
+        "xy_mm": [
+          27.6,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          2
+        ],
+        "switch": "SW42",
+        "diode": "D42",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_43",
+        "label": "fn",
+        "xy_mm": [
+          46.4,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          3
+        ],
+        "switch": "SW43",
+        "diode": "D43",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_44",
+        "label": "left",
+        "xy_mm": [
+          65.2,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          4
+        ],
+        "switch": "SW44",
+        "diode": "D44",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_45",
+        "label": "down",
+        "xy_mm": [
+          84.0,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          5
+        ],
+        "switch": "SW45",
+        "diode": "D45",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_46",
+        "label": "right",
+        "xy_mm": [
+          102.8,
+          -35.0
+        ],
+        "matrix": [
+          4,
+          6
+        ],
+        "switch": "SW46",
+        "diode": "D46",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_47",
+        "label": "dot",
+        "xy_mm": [
+          -20.0,
+          35
+        ],
+        "matrix": [
+          4,
+          7
+        ],
+        "switch": "SW47",
+        "diode": "D47",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_48",
+        "label": "dot",
+        "xy_mm": [
+          -2.6,
+          35
+        ],
+        "matrix": [
+          4,
+          8
+        ],
+        "switch": "SW48",
+        "diode": "D48",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_49",
+        "label": "dot",
+        "xy_mm": [
+          14.8,
+          35
+        ],
+        "matrix": [
+          4,
+          9
+        ],
+        "switch": "SW49",
+        "diode": "D49",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_50",
+        "label": "dot",
+        "xy_mm": [
+          32.2,
+          35
+        ],
+        "matrix": [
+          5,
+          0
+        ],
+        "switch": "SW50",
+        "diode": "D50",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_51",
+        "label": "dot",
+        "xy_mm": [
+          49.6,
+          35
+        ],
+        "matrix": [
+          5,
+          1
+        ],
+        "switch": "SW51",
+        "diode": "D51",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_52",
+        "label": "dot",
+        "xy_mm": [
+          67.0,
+          35
+        ],
+        "matrix": [
+          5,
+          2
+        ],
+        "switch": "SW52",
+        "diode": "D52",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_53",
+        "label": "dot",
+        "xy_mm": [
+          84.4,
+          35
+        ],
+        "matrix": [
+          5,
+          3
+        ],
+        "switch": "SW53",
+        "diode": "D53",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_54",
+        "label": "dot",
+        "xy_mm": [
+          101.8,
+          35
+        ],
+        "matrix": [
+          5,
+          4
+        ],
+        "switch": "SW54",
+        "diode": "D54",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_55",
+        "label": "dot",
+        "xy_mm": [
+          119.2,
+          35
+        ],
+        "matrix": [
+          5,
+          5
+        ],
+        "switch": "SW55",
+        "diode": "D55",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_56",
+        "label": "dot",
+        "xy_mm": [
+          -126,
+          10
+        ],
+        "matrix": [
+          5,
+          6
+        ],
+        "switch": "SW56",
+        "diode": "D56",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      },
+      {
+        "id": "RK_KEY_57",
+        "label": "dot",
+        "xy_mm": [
+          -126,
+          -9
+        ],
+        "matrix": [
+          5,
+          7
+        ],
+        "switch": "SW57",
+        "diode": "D57",
+        "topology": "COL -> switch -> diode anode; diode cathode -> ROW"
+      }
+    ],
+    "unused_cells": [
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ]
+    ]
+  },
+  "encoders": [
+    {
+      "id": "ENC1",
+      "mpn": "PEC11R-1215F-N0024",
+      "a_pin": "GP16",
+      "b_pin": "GP17",
+      "common": "GND",
+      "filter": {
+        "pullup_ohm": 10000,
+        "pullup_rail": "3V3",
+        "series_ohm": 10000,
+        "cap_to_ground_nF": 10
+      },
+      "detents": 24,
+      "ppr": 24,
+      "push_switch": false
+    },
+    {
+      "id": "ENC2",
+      "mpn": "PEC11R-1215F-N0024",
+      "a_pin": "GP20",
+      "b_pin": "GP21",
+      "common": "GND",
+      "filter": {
+        "pullup_ohm": 10000,
+        "pullup_rail": "3V3",
+        "series_ohm": 10000,
+        "cap_to_ground_nF": 10
+      },
+      "detents": 24,
+      "ppr": 24,
+      "push_switch": false
+    },
+    {
+      "id": "ENC3",
+      "mpn": "PEC11R-1215F-N0024",
+      "a_pin": "GP22",
+      "b_pin": "GP23",
+      "common": "GND",
+      "filter": {
+        "pullup_ohm": 10000,
+        "pullup_rail": "3V3",
+        "series_ohm": 10000,
+        "cap_to_ground_nF": 10
+      },
+      "detents": 24,
+      "ppr": 24,
+      "push_switch": false
+    },
+    {
+      "id": "ENC4",
+      "mpn": "PEC11R-1215F-N0024",
+      "a_pin": "GP24",
+      "b_pin": "GP25",
+      "common": "GND",
+      "filter": {
+        "pullup_ohm": 10000,
+        "pullup_rail": "3V3",
+        "series_ohm": 10000,
+        "cap_to_ground_nF": 10
+      },
+      "detents": 24,
+      "ppr": 24,
+      "push_switch": false
+    },
+    {
+      "id": "ENC5",
+      "mpn": "PEC11R-1215F-N0024",
+      "a_pin": "GP26",
+      "b_pin": "GP27",
+      "common": "GND",
+      "filter": {
+        "pullup_ohm": 10000,
+        "pullup_rail": "3V3",
+        "series_ohm": 10000,
+        "cap_to_ground_nF": 10
+      },
+      "detents": 24,
+      "ppr": 24,
+      "push_switch": false
+    }
+  ],
+  "usb": {
+    "connector": "USB4105-GF-A-120",
+    "device_mode_only": true,
+    "cc1": {
+      "rd_ohm": 5100,
+      "tolerance_percent": 1,
+      "to": "GND"
+    },
+    "cc2": {
+      "rd_ohm": 5100,
+      "tolerance_percent": 1,
+      "to": "GND"
+    },
+    "sbu1": "NC",
+    "sbu2": "NC",
+    "esd": "USBLC6-2SC6",
+    "data_plus": {
+      "connector_pins": [
+        "A6",
+        "B6"
+      ],
+      "esd_channel": 1,
+      "series_ohm": 27,
+      "mcu_pin": "USB_DP"
+    },
+    "data_minus": {
+      "connector_pins": [
+        "A7",
+        "B7"
+      ],
+      "esd_channel": 2,
+      "series_ohm": 27,
+      "mcu_pin": "USB_DM"
+    },
+    "shield": {
+      "net": "USB_SHIELD",
+      "pcb_emc_connection": "ECAD_BENCH_PENDING"
+    }
+  },
+  "i2c": {
+    "bus": "I2C1",
+    "sda": "GP18",
+    "scl": "GP19",
+    "pullup_rail": "3V3",
+    "pullup_ohm": 4700,
+    "frequency_hz": 400000,
+    "devices": [
+      {
+        "ref": "U5",
+        "address_7bit": "0x30",
+        "addr_pin": "GND"
+      }
+    ]
+  },
+  "rgb": {
+    "driver": "IS31FL3741A-QFLS4-TR",
+    "supply": "RGB_5V1",
+    "sdb_pin": "GP28",
+    "sdb_pulldown_ohm": 100000,
+    "riset_ohm": 120000,
+    "led_mpn": "19-237B/R6GHBHC-C01/2T",
+    "led_topology": "common cathode to SWx",
+    "led_count": 107,
+    "mapping": [
+      {
+        "id": "LED000",
+        "source": "key",
+        "source_index": 0,
+        "sw": 1,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED001",
+        "source": "key",
+        "source_index": 1,
+        "sw": 1,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED002",
+        "source": "key",
+        "source_index": 2,
+        "sw": 1,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED003",
+        "source": "key",
+        "source_index": 3,
+        "sw": 1,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED004",
+        "source": "key",
+        "source_index": 4,
+        "sw": 1,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED005",
+        "source": "key",
+        "source_index": 5,
+        "sw": 1,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED006",
+        "source": "key",
+        "source_index": 6,
+        "sw": 1,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED007",
+        "source": "key",
+        "source_index": 7,
+        "sw": 1,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED008",
+        "source": "key",
+        "source_index": 8,
+        "sw": 1,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED009",
+        "source": "key",
+        "source_index": 9,
+        "sw": 1,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED010",
+        "source": "key",
+        "source_index": 10,
+        "sw": 1,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED011",
+        "source": "key",
+        "source_index": 11,
+        "sw": 1,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED012",
+        "source": "key",
+        "source_index": 12,
+        "sw": 1,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED013",
+        "source": "key",
+        "source_index": 13,
+        "sw": 2,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED014",
+        "source": "key",
+        "source_index": 14,
+        "sw": 2,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED015",
+        "source": "key",
+        "source_index": 15,
+        "sw": 2,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED016",
+        "source": "key",
+        "source_index": 16,
+        "sw": 2,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED017",
+        "source": "key",
+        "source_index": 17,
+        "sw": 2,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED018",
+        "source": "key",
+        "source_index": 18,
+        "sw": 2,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED019",
+        "source": "key",
+        "source_index": 19,
+        "sw": 2,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED020",
+        "source": "key",
+        "source_index": 20,
+        "sw": 2,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED021",
+        "source": "key",
+        "source_index": 21,
+        "sw": 2,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED022",
+        "source": "key",
+        "source_index": 22,
+        "sw": 2,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED023",
+        "source": "key",
+        "source_index": 23,
+        "sw": 2,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED024",
+        "source": "key",
+        "source_index": 24,
+        "sw": 2,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED025",
+        "source": "key",
+        "source_index": 25,
+        "sw": 2,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED026",
+        "source": "key",
+        "source_index": 26,
+        "sw": 3,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED027",
+        "source": "key",
+        "source_index": 27,
+        "sw": 3,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED028",
+        "source": "key",
+        "source_index": 28,
+        "sw": 3,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED029",
+        "source": "key",
+        "source_index": 29,
+        "sw": 3,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED030",
+        "source": "key",
+        "source_index": 30,
+        "sw": 3,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED031",
+        "source": "key",
+        "source_index": 31,
+        "sw": 3,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED032",
+        "source": "key",
+        "source_index": 32,
+        "sw": 3,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED033",
+        "source": "key",
+        "source_index": 33,
+        "sw": 3,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED034",
+        "source": "key",
+        "source_index": 34,
+        "sw": 3,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED035",
+        "source": "key",
+        "source_index": 35,
+        "sw": 3,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED036",
+        "source": "key",
+        "source_index": 36,
+        "sw": 3,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED037",
+        "source": "key",
+        "source_index": 37,
+        "sw": 3,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED038",
+        "source": "key",
+        "source_index": 38,
+        "sw": 3,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED039",
+        "source": "key",
+        "source_index": 39,
+        "sw": 4,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED040",
+        "source": "key",
+        "source_index": 40,
+        "sw": 4,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED041",
+        "source": "key",
+        "source_index": 41,
+        "sw": 4,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED042",
+        "source": "key",
+        "source_index": 42,
+        "sw": 4,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED043",
+        "source": "key",
+        "source_index": 43,
+        "sw": 4,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED044",
+        "source": "key",
+        "source_index": 44,
+        "sw": 4,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED045",
+        "source": "key",
+        "source_index": 45,
+        "sw": 4,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED046",
+        "source": "key",
+        "source_index": 46,
+        "sw": 4,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED047",
+        "source": "key",
+        "source_index": 47,
+        "sw": 4,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED048",
+        "source": "key",
+        "source_index": 48,
+        "sw": 4,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED049",
+        "source": "key",
+        "source_index": 49,
+        "sw": 4,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED050",
+        "source": "key",
+        "source_index": 50,
+        "sw": 4,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED051",
+        "source": "key",
+        "source_index": 51,
+        "sw": 4,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED052",
+        "source": "key",
+        "source_index": 52,
+        "sw": 5,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED053",
+        "source": "key",
+        "source_index": 53,
+        "sw": 5,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED054",
+        "source": "key",
+        "source_index": 54,
+        "sw": 5,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED055",
+        "source": "key",
+        "source_index": 55,
+        "sw": 5,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED056",
+        "source": "key",
+        "source_index": 56,
+        "sw": 5,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED057",
+        "source": "key",
+        "source_index": 57,
+        "sw": 5,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED058",
+        "source": "perimeter",
+        "source_index": 0,
+        "sw": 5,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED059",
+        "source": "perimeter",
+        "source_index": 1,
+        "sw": 5,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED060",
+        "source": "perimeter",
+        "source_index": 2,
+        "sw": 5,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED061",
+        "source": "perimeter",
+        "source_index": 3,
+        "sw": 5,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED062",
+        "source": "perimeter",
+        "source_index": 4,
+        "sw": 5,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED063",
+        "source": "perimeter",
+        "source_index": 5,
+        "sw": 5,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED064",
+        "source": "perimeter",
+        "source_index": 6,
+        "sw": 5,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED065",
+        "source": "perimeter",
+        "source_index": 7,
+        "sw": 6,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED066",
+        "source": "perimeter",
+        "source_index": 8,
+        "sw": 6,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED067",
+        "source": "perimeter",
+        "source_index": 9,
+        "sw": 6,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED068",
+        "source": "perimeter",
+        "source_index": 10,
+        "sw": 6,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED069",
+        "source": "perimeter",
+        "source_index": 11,
+        "sw": 6,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED070",
+        "source": "perimeter",
+        "source_index": 12,
+        "sw": 6,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED071",
+        "source": "perimeter",
+        "source_index": 13,
+        "sw": 6,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED072",
+        "source": "perimeter",
+        "source_index": 14,
+        "sw": 6,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED073",
+        "source": "perimeter",
+        "source_index": 15,
+        "sw": 6,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED074",
+        "source": "perimeter",
+        "source_index": 16,
+        "sw": 6,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED075",
+        "source": "perimeter",
+        "source_index": 17,
+        "sw": 6,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED076",
+        "source": "perimeter",
+        "source_index": 18,
+        "sw": 6,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED077",
+        "source": "perimeter",
+        "source_index": 19,
+        "sw": 6,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED078",
+        "source": "perimeter",
+        "source_index": 20,
+        "sw": 7,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED079",
+        "source": "perimeter",
+        "source_index": 21,
+        "sw": 7,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED080",
+        "source": "perimeter",
+        "source_index": 22,
+        "sw": 7,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED081",
+        "source": "perimeter",
+        "source_index": 23,
+        "sw": 7,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED082",
+        "source": "perimeter",
+        "source_index": 24,
+        "sw": 7,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED083",
+        "source": "perimeter",
+        "source_index": 25,
+        "sw": 7,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED084",
+        "source": "perimeter",
+        "source_index": 26,
+        "sw": 7,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED085",
+        "source": "perimeter",
+        "source_index": 27,
+        "sw": 7,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED086",
+        "source": "perimeter",
+        "source_index": 28,
+        "sw": 7,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED087",
+        "source": "perimeter",
+        "source_index": 29,
+        "sw": 7,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED088",
+        "source": "perimeter",
+        "source_index": 30,
+        "sw": 7,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED089",
+        "source": "perimeter",
+        "source_index": 31,
+        "sw": 7,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED090",
+        "source": "perimeter",
+        "source_index": 32,
+        "sw": 7,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED091",
+        "source": "perimeter",
+        "source_index": 33,
+        "sw": 8,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED092",
+        "source": "perimeter",
+        "source_index": 34,
+        "sw": 8,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED093",
+        "source": "perimeter",
+        "source_index": 35,
+        "sw": 8,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      },
+      {
+        "id": "LED094",
+        "source": "perimeter",
+        "source_index": 36,
+        "sw": 8,
+        "cs": {
+          "r": 10,
+          "g": 11,
+          "b": 12
+        }
+      },
+      {
+        "id": "LED095",
+        "source": "perimeter",
+        "source_index": 37,
+        "sw": 8,
+        "cs": {
+          "r": 13,
+          "g": 14,
+          "b": 15
+        }
+      },
+      {
+        "id": "LED096",
+        "source": "perimeter",
+        "source_index": 38,
+        "sw": 8,
+        "cs": {
+          "r": 16,
+          "g": 17,
+          "b": 18
+        }
+      },
+      {
+        "id": "LED097",
+        "source": "perimeter",
+        "source_index": 39,
+        "sw": 8,
+        "cs": {
+          "r": 19,
+          "g": 20,
+          "b": 21
+        }
+      },
+      {
+        "id": "LED098",
+        "source": "perimeter",
+        "source_index": 40,
+        "sw": 8,
+        "cs": {
+          "r": 22,
+          "g": 23,
+          "b": 24
+        }
+      },
+      {
+        "id": "LED099",
+        "source": "perimeter",
+        "source_index": 41,
+        "sw": 8,
+        "cs": {
+          "r": 25,
+          "g": 26,
+          "b": 27
+        }
+      },
+      {
+        "id": "LED100",
+        "source": "perimeter",
+        "source_index": 42,
+        "sw": 8,
+        "cs": {
+          "r": 28,
+          "g": 29,
+          "b": 30
+        }
+      },
+      {
+        "id": "LED101",
+        "source": "perimeter",
+        "source_index": 43,
+        "sw": 8,
+        "cs": {
+          "r": 31,
+          "g": 32,
+          "b": 33
+        }
+      },
+      {
+        "id": "LED102",
+        "source": "perimeter",
+        "source_index": 44,
+        "sw": 8,
+        "cs": {
+          "r": 34,
+          "g": 35,
+          "b": 36
+        }
+      },
+      {
+        "id": "LED103",
+        "source": "perimeter",
+        "source_index": 45,
+        "sw": 8,
+        "cs": {
+          "r": 37,
+          "g": 38,
+          "b": 39
+        }
+      },
+      {
+        "id": "LED104",
+        "source": "perimeter",
+        "source_index": 46,
+        "sw": 9,
+        "cs": {
+          "r": 1,
+          "g": 2,
+          "b": 3
+        }
+      },
+      {
+        "id": "LED105",
+        "source": "perimeter",
+        "source_index": 47,
+        "sw": 9,
+        "cs": {
+          "r": 4,
+          "g": 5,
+          "b": 6
+        }
+      },
+      {
+        "id": "LED106",
+        "source": "perimeter",
+        "source_index": 48,
+        "sw": 9,
+        "cs": {
+          "r": 7,
+          "g": 8,
+          "b": 9
+        }
+      }
+    ]
+  },
+  "power": {
+    "input": "VBUS_RAW",
+    "switch": "TPS2553DBVR-1",
+    "output": "SYS_5V",
+    "rilim_ohm": 66500,
+    "fault_pin": "GP29",
+    "fault_pullup": "3V3",
+    "regulator": "TLV75533PDBVR",
+    "logic_rail": "3V3",
+    "rgb_boost": {
+      "device": "TPS61023DRLR",
+      "input": "SYS_5V",
+      "output": "RGB_5V1",
+      "enable": "SYS_5V",
+      "fb_top_ohm": 750000,
+      "fb_bottom_ohm": 100000,
+      "inductor": "XEL4030-102MEC",
+      "input_cap_uF": 10,
+      "output_caps_uF": [
+        22,
+        22
+      ]
+    },
+    "rp2040_core_rail": "1V1",
+    "direct_power_shorts_allowed": []
+  },
+  "controller": {
+    "mcu": "RP2040",
+    "flash": "W25Q128JVSIQ",
+    "crystal_hz": 12000000,
+    "qspi": "dedicated RP2040 pins",
+    "swd": "dedicated RP2040 pins"
+  }
+}

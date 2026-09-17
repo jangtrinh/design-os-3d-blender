@@ -4,13 +4,13 @@
 
 Blender-native modeling, reusable components and evidence-based delivery. This repository contains agent skills, engineering reading packs, execution tools, verification gates and worked builds for Blender 5.2 LTS.
 
-[Image galleries](#image-galleries) · [Reconstruction workflow](docs/orc-component-workflow.md) · [Session lessons](docs/orc-session-lessons.md) · [Quick start](#quick-start) · [Tools and skills](#tools-and-skills)
+[Live site](https://jangtrinh.github.io/design-os-3d-blender/) · [Image galleries](#image-galleries) · [Reconstruction workflow](docs/orc-component-workflow.md) · [Session lessons](docs/orc-session-lessons.md) · [Quick start](#quick-start) · [Tools and skills](#tools-and-skills)
 
 The opening GIF shows complete-component overviews of the robot arm, watch winder and five ORC components. Images contain no added captions or banners. Names, development status and evidence limits live in the surrounding documentation. [Media provenance](docs/media/gallery/manifest.json).
 
 ## Image galleries
 
-Each gallery separates overall views from the component's available detail views. ORC images are derivatives of native renders; their source models are not included in this public checkout. Robot-arm and watch-winder worked builds are included under `builds/`.
+Each gallery separates overall views from the component's available detail views. ORC images are derivatives of native renders; their source models are not included in this public checkout. Robot-arm, watch-winder and CK-001 keyboard worked builds are included under `builds/`.
 
 ### Geothermal ORC components
 
@@ -32,6 +32,7 @@ The current plant layout uses an illustrative 1:15 scale. Catalogue dimensions a
 |---|---|---|
 | Robot arm | [Assembly and completed model](docs/galleries/robot-arm.md) | [Native assembly build](builds/robot-arm-original-refined/README.md) and [38-part fit prototype](builds/robot-arm-print-assembly/README.md). |
 | Watch-winder capsule | [Overview and surface details](docs/galleries/watch-winder.md) | [Parameters, native scenes, scripts and print-kit evidence](builds/watch-winder-capsule/README.md). |
+| CK-001 reference keyboard | [Revision B review: 3D viewer, Full HD stills and film](https://jangtrinh.github.io/design-os-3d-blender/reviews/ck-001/r02/) · [package files](docs/reviews/ck-001/r02/README.md) | [Contracts, pass scripts, manufacturing studies and tests](builds/reference-keyboard/README.md). Run directories and the delivery archive stay local. |
 
 ### Reusable parts
 
@@ -58,11 +59,19 @@ The [HQ coverage gate](docs/hq-coverage-gate.md) validates receipts on its expli
 | Image reconstruction skill | [.agents/skills/blender-image-to-3d](.agents/skills/blender-image-to-3d/SKILL.md) | Reference contracts, staged modeling and construction-aware visual review. |
 | Knowledge workbench | [.agents/skills/blender-knowledge-workbench](.agents/skills/blender-knowledge-workbench/SKILL.md) | Bounded reading packs and reviewed source routing. |
 | Execution contract | `scripts/agent_runtime.py`, `scripts/headless-run.sh` | Structured `AGENT_OK` / `AGENT_FAIL` results and reliable process exit handling. |
+| Native pass pipeline | `scripts/native-pipeline.py` | Declared step dependencies, durable attempt journals and hash-checked resumption; execution status stays separate from acceptance. |
+| Target-bound criticism | `scripts/native-review.py` | Revision-bound target/candidate/proof packets and complete attributed feature findings; actual visual review remains required. |
+| Parameter and source contracts | `scripts/boilerplates/bp_parametric_contract.py` | Explicit mm/m length parameters, local frame/datum/port declarations and source/export byte receipts. |
 | Verification | `scripts/agent-verify-lib.py`, `scripts/production-gate.py` | Scene checks, isolated previews, spec-bound digital geometry/export evidence. |
 | HQ coverage | `scripts/hq-coverage-gate.py` | Source-bound proof receipts before an explicitly guarded render launch. |
 | MakerWorld | [Publishing leg](makerworld-pipeline/README.md) | Bambu project validation and documented publishing constraints. |
 
 The `.claude/skills` directories mirror the local skill sources. Antigravity setup is documented in [the setup guide](docs/antigravity-setup.md). Vendored [img2threejs](.agents/skills/img2threejs/README.md) retains its Apache-2.0 license; production reconstruction uses native Blender geometry.
+
+[Native agent iteration](docs/upstream-agent-integration.md) documents the reviewed
+Meshy, Dream-loop and Text-to-CAD mechanisms, their local implementations and a
+controlled Blender coupon that distinguishes correct dimensions from missing visual
+detail. The upstream hosted-generation, B-rep and device stacks are not installed.
 
 ## Quick start
 
@@ -75,6 +84,17 @@ python3 scripts/blender-knowledge.py list
 python3 -m unittest discover -s tests/execution
 python3 -m unittest discover -s tests/production-gate
 python3 -m unittest discover -s tests/hq-coverage
+python3 -m unittest discover -s tests/native-pipeline
+python3 -m unittest discover -s tests/native-review
+python3 -m unittest tests/boilerplates/test_parametric_contract.py
+```
+
+The animation, geometry-nodes and evaluated-mesh contract tests import `bpy`, so they run inside Blender and end with `AGENT_OK`:
+
+```bash
+for t in animation geonodes evaluated_mesh; do
+  bash scripts/headless-run.sh "tests/boilerplates/test_${t}_contract.py"
+done
 ```
 
 Execute a Blender pass in an isolated process:
@@ -111,6 +131,7 @@ See [specification and gate behavior](specs/README.md). A digital gate does not 
 |---|---|---|
 | Robot arm | Native assembly film, sampled motion checks, exported fit prototypes and a 38-part digital gate report. | Loaded operation, hardware retention, thermal duty and physical assembly qualification. |
 | Watch winder | Native stills, sampled motion checks, digital print-kit checks and fit visualization. | Actual printing, physical fit and manufacturing qualification. |
+| CK-001 keyboard | Reference-bound 58-key digital prototype: modeled receivers, guides and D couplings, sampled key travel, form/final gates on eight part families, GLB round-trip of 781 meshes, native Full HD media. | Switch retention, tolerance extremes, electronics and firmware, process trials and bench/load/thermal qualification. |
 | ORC components | Reference-driven component development, reusable parts and revision-specific image/geometry checks. | Selected equipment, complete plant integration, process duty and fabrication qualification. |
 
 The worked-build READMEs contain detailed receipts and exclusions. The knowledge catalogue also includes small execution examples; the full private ORC development history and source reference images are not shipped.

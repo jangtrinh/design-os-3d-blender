@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "project": "CK-001 manufacturing mechanics C02 — cylindrical-seat DFM correction; digital prototype geometry only; physical qualification pending",
+  "print_volume_mm": [320, 200, 100],
+  "brim_margin_mm": 5,
+  "parts": [
+    {
+      "id": "RK_BASE",
+      "object": "RK_BASE",
+      "target_dims_mm": [284, 92, 4],
+      "tol_mm": 0.05,
+      "min_wall_mm": 0.65,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [
+        {"id": "encoder_lower_hole_corner", "type": "hole", "axis": "z", "center_mm": [-134.2, 35.2, 1], "diameter_mm": 1.8, "tol_mm": 0.05},
+        {"id": "daughter_clamp_lower_hole_corner", "type": "hole", "axis": "z", "center_mm": [-131, 21.5, 1], "diameter_mm": 1.8, "tol_mm": 0.05}
+      ],
+      "material": "6061-T6 aluminum target for prototype base; alloy/process properties not physically qualified",
+      "process": "CNC-machined prototype target; D2.5 x 0.5 cylindrical lower-head counterbores and edge ligaments require first-article inspection"
+    },
+    {
+      "id": "RK_ENCODER_RISER_1_2",
+      "object": "RK_ENCODER_RISER_1_2",
+      "target_dims_mm": [2.5, 2.5, 8.6],
+      "tol_mm": 0.05,
+      "min_wall_mm": 0.55,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "brass target; grade/process and tapped-thread strength not physically qualified",
+      "process": "turned/drilled/tapped prototype post; dual blind M1.6 zones"
+    },
+    {
+      "id": "RK_DB_CLAMP_1_L",
+      "object": "RK_DB_CLAMP_1_L",
+      "target_dims_mm": [3, 3, 8],
+      "tol_mm": 0.05,
+      "min_wall_mm": 0.65,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "brass target; grade/process and tapped-thread strength not physically qualified",
+      "process": "machined/drilled/tapped prototype clamp block"
+    },
+    {
+      "id": "RK_ENCODER_CARRIER_1",
+      "object": "RK_ENCODER_CARRIER_1",
+      "target_dims_mm": [19.6, 15, 1],
+      "tol_mm": 0.05,
+      "min_wall_mm": 0.30,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "6061-T6 aluminum target; corner relief and critical recessed-head ligament require first-article inspection",
+      "process": "machined carrier with one relocated M1.6 hole, D5.8 corner spacer relief and D2.5x0.5 critical head counterbore"
+    },
+    {
+      "id": "RK_KNOB_1",
+      "object": "RK_KNOB_1",
+      "target_dims_mm": [16, 16, 18],
+      "tol_mm": 0.05,
+      "min_wall_mm": 0.60,
+      "expected_shells": 1,
+      "orientation_up": "+z",
+      "features": [],
+      "material": "aluminum target; alloy/process and tapped-thread strength not physically qualified",
+      "process": "machined prototype knob with radial M2 tap-drill and flat-point set screw"
+    }
+  ],
+  "fasteners": [
+    {"standard": "NBK SNZCXS", "size": "M1.6x0.35", "length_mm": 4, "grade": "SUSXM7/SUS304-equivalent; manufacturer part SNZCXS-M1.6-4; lower cylindrical-head fastener", "qty": 30},
+    {"standard": "NBK SNZCXS", "size": "M1.6x0.35", "length_mm": 5, "grade": "SUSXM7/SUS304-equivalent; manufacturer part SNZCXS-M1.6-5", "qty": 19},
+    {"standard": "NBK SNZCXS", "size": "M1.6x0.35", "length_mm": 4, "grade": "SUSXM7/SUS304-equivalent; manufacturer part SNZCXS-M1.6-4", "qty": 1},
+    {"standard": "NBK SNZCXS", "size": "M1.6x0.35", "length_mm": 3, "grade": "SUSXM7/SUS304-equivalent; manufacturer part SNZCXS-M1.6-3", "qty": 10},
+    {"standard": "NBK SNTS-FP", "size": "M2x0.4", "length_mm": 6, "grade": "SUSXM7/SUS304-equivalent; manufacturer part SNTS-M2-6-FP", "qty": 5}
+  ],
+  "required_checks": [
+    "non_manifold_edges",
+    "non_contiguous_edges",
+    "zero_area_faces",
+    "bbox_dims_mm",
+    "signed_volume_positive",
+    "scale_applied",
+    "wall_thickness_screen"
+  ],
+  "load_cases": [
+    {"description": "CK-001 project retention/torque/board-support screening only; no external standard or physical result is asserted"},
+    {"description": "Worst-case KS-33 travel geometry scope is 3.2 mm from manufacturer total-travel tolerance; physical switch/cap interference remains unmeasured"}
+  ],
+  "physical_evidence": [
+    "Manufacture status remains BLOCKED until actual fastener strip/pull/torque coupons establish assembly torque for the custom brass posts and clamp blocks.",
+    "NBK published screw maximum torque is a screw limit, not a qualified torque for CK-001 posts, carrier, base, knob or board.",
+    "Measure real KS-33 top-housing/dust-wall opening and representative stem/keycap retention; the manufacturer drawing does not prove clearance for the CK-001 6.4 mm boss.",
+    "Measure each real KS-33 actual bottom-out within its manufacturer 2.8..3.2 mm range without overdriving the actuator; use a separate 3.2 mm mechanical gauge with the switch removed for worst-case fixture clearance.",
+    "Electrical schematic/netlist/ERC/DRC, USB-C footprint integration, CC/ESD/power routing, RGB current/thermal budget and powered bench tests remain open.",
+    "Material/process release requires actual alloy/polymer selection, first-article dimensions, thread quality and process coupons; digital topology is not strength or fatigue evidence."
+  ]
+}

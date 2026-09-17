@@ -1,0 +1,198 @@
+[
+  {
+    "id": "K01",
+    "kind": "keycap",
+    "span_mm": 3.96,
+    "horizontal_arm_mm": 1.06,
+    "vertical_arm_mm": 1.24,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K02",
+    "kind": "keycap",
+    "span_mm": 3.96,
+    "horizontal_arm_mm": 1.1,
+    "vertical_arm_mm": 1.28,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K03",
+    "kind": "keycap",
+    "span_mm": 3.96,
+    "horizontal_arm_mm": 1.14,
+    "vertical_arm_mm": 1.32,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K04",
+    "kind": "keycap",
+    "span_mm": 4.04,
+    "horizontal_arm_mm": 1.06,
+    "vertical_arm_mm": 1.24,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K05",
+    "kind": "keycap",
+    "span_mm": 4.04,
+    "horizontal_arm_mm": 1.1,
+    "vertical_arm_mm": 1.28,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K06",
+    "kind": "keycap",
+    "span_mm": 4.04,
+    "horizontal_arm_mm": 1.14,
+    "vertical_arm_mm": 1.32,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K07",
+    "kind": "keycap",
+    "span_mm": 4.12,
+    "horizontal_arm_mm": 1.06,
+    "vertical_arm_mm": 1.24,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K08",
+    "kind": "keycap",
+    "span_mm": 4.12,
+    "horizontal_arm_mm": 1.1,
+    "vertical_arm_mm": 1.28,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "K09",
+    "kind": "keycap",
+    "span_mm": 4.12,
+    "horizontal_arm_mm": 1.14,
+    "vertical_arm_mm": 1.32,
+    "dims_mm": [
+      16.2,
+      16.2,
+      9.5
+    ],
+    "wall_mm": 1.0
+  },
+  {
+    "id": "D01",
+    "diameter_mm": 6.1,
+    "flat_offset_mm": 1.6,
+    "kind": "D-gauge",
+    "dims_mm": [
+      14,
+      14,
+      8
+    ],
+    "wall_mm": 2.0
+  },
+  {
+    "id": "D02",
+    "diameter_mm": 6.2,
+    "flat_offset_mm": 1.65,
+    "kind": "D-gauge",
+    "dims_mm": [
+      14,
+      14,
+      8
+    ],
+    "wall_mm": 2.0
+  },
+  {
+    "id": "D03",
+    "diameter_mm": 6.3,
+    "flat_offset_mm": 1.7,
+    "kind": "D-gauge",
+    "dims_mm": [
+      14,
+      14,
+      8
+    ],
+    "wall_mm": 2.0
+  },
+  {
+    "id": "G01",
+    "kind": "guide",
+    "diameter_mm": 2.1,
+    "dims_mm": [
+      6,
+      6,
+      7.9
+    ],
+    "wall_mm": 0.95
+  },
+  {
+    "id": "G02",
+    "kind": "guide",
+    "diameter_mm": 2.2,
+    "dims_mm": [
+      6,
+      6,
+      7.9
+    ],
+    "wall_mm": 0.95
+  },
+  {
+    "id": "G03",
+    "kind": "guide",
+    "diameter_mm": 2.3,
+    "dims_mm": [
+      6,
+      6,
+      7.9
+    ],
+    "wall_mm": 0.95
+  },
+  {
+    "id": "P01",
+    "kind": "pin",
+    "dims_mm": [
+      8,
+      8,
+      12
+    ],
+    "wall_mm": 0.95
+  }
+]
