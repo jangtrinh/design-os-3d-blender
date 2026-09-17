@@ -2,13 +2,13 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 22,
-    "execution-source": 93,
+    "execution-source": 143,
     "imported-reference": 47,
-    "knowledge": 32,
-    "research-synthesis": 72,
-    "workflow": 31
+    "knowledge": 34,
+    "research-synthesis": 76,
+    "workflow": 40
   },
-  "dependency_edges": 96,
+  "dependency_edges": 101,
   "foundations": [
     "knowledge/00-foundations/blender-version-matrix.md",
     "knowledge/00-foundations/bpy-scripting-core.md",
@@ -27,28 +27,28 @@
           "text": "0. Routing by task"
         },
         {
-          "line": 26,
+          "line": 28,
           "text": "1. Knowledge routing (mandatory)"
         },
         {
-          "line": 29,
+          "line": 31,
           "text": "2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)"
         },
         {
-          "line": 40,
+          "line": 42,
           "text": "3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)"
         },
         {
-          "line": 55,
+          "line": 57,
           "text": "4. Execution modes (check in order)"
         },
         {
-          "line": 61,
+          "line": 63,
           "text": "5. Failure quick-map"
         }
       ],
       "kind": "workflow",
-      "lines": 70,
+      "lines": 72,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -57,7 +57,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/SKILL.md",
       "related": [],
-      "sha256": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
+      "sha256": "22e92553d33a84fdade75ce337810ede47430a7b7cc8a4906fabc0dc1df6ebd1",
       "tags": [],
       "title": "Blender Agent Core",
       "use": "read"
@@ -224,7 +224,7 @@
         }
       ],
       "kind": "workflow",
-      "lines": 84,
+      "lines": 94,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -233,7 +233,7 @@
       "name": null,
       "path": ".agents/skills/blender-image-to-3d/SKILL.md",
       "related": [],
-      "sha256": "4ec70016957057430a1191762e10350177a4654cbf82629374e187c9d31632d5",
+      "sha256": "d5c3956b64ef6a278de57536222278b98bfa27c1e2782d717bde91c8e98a7fde",
       "tags": [],
       "title": "Image → 3D (v3 — Blender native)",
       "use": "read"
@@ -306,7 +306,7 @@
         }
       ],
       "kind": "workflow",
-      "lines": 32,
+      "lines": 53,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -315,7 +315,7 @@
       "name": null,
       "path": ".agents/skills/blender-knowledge-workbench/SKILL.md",
       "related": [],
-      "sha256": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
+      "sha256": "70b842cd082f156bccefcf8dda738a233fbd61723cff6c51f2c0bdbfa2da448f",
       "tags": [],
       "title": "Blender Knowledge Workbench",
       "use": "read"
@@ -3350,15 +3350,19 @@
         {
           "line": 26,
           "text": "Layout"
+        },
+        {
+          "line": 38,
+          "text": "localhost_port"
         }
       ],
       "kind": "workflow",
-      "lines": 36,
+      "lines": 42,
       "loads_with": [],
       "name": null,
       "path": ".project-agent.md",
       "related": [],
-      "sha256": "91060d35f74d3d2b6741ec7da60be6c82153e573a7b6c91f53ddb52f40946652",
+      "sha256": "02f5b8cc0579f4a38f9a60c8065cfa4002602f7c86a3c5eaa77dfda1c1d3ec38",
       "tags": [],
       "title": "Project Agent — Blender AI Orchestration",
       "use": "read"
@@ -4718,6 +4722,296 @@
       "headings": [
         {
           "line": 1,
+          "text": "CK-001 revision B | native Blender delivery"
+        },
+        {
+          "line": 8,
+          "text": "Declared digital result"
+        },
+        {
+          "line": 30,
+          "text": "Manufacture status: BLOCKED"
+        },
+        {
+          "line": 43,
+          "text": "Evidence layout"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 50,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/ck-001/r02/README.md",
+      "related": [],
+      "sha256": "fbb40d58d956af86fa260f703fc9041d311a91fd3658ee6b3a8c1e6a74a7bf4d",
+      "tags": [],
+      "title": "CK-001 revision B | native Blender delivery",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "CK-001 revision-B final engineering review"
+        },
+        {
+          "line": 10,
+          "text": "Verdict"
+        },
+        {
+          "line": 24,
+          "text": "Evidence identity"
+        },
+        {
+          "line": 40,
+          "text": "Material improvements over the earlier r01 digital asset"
+        },
+        {
+          "line": 74,
+          "text": "What the eight-family gates prove — and what they do not"
+        },
+        {
+          "line": 98,
+          "text": "Full-layout interface evidence"
+        },
+        {
+          "line": 130,
+          "text": "Export and reopen evidence"
+        },
+        {
+          "line": 158,
+          "text": "Evidence still missing for physical release"
+        },
+        {
+          "line": 177,
+          "text": "Media/readiness boundary"
+        },
+        {
+          "line": 190,
+          "text": "Engineering disposition"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 197,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/ck-001/r02/design/design-notes.md",
+      "related": [],
+      "sha256": "e292c0c804c293de439a2a913d0b899532858b4bd3edf8fc20e74c582ee9a7a6",
+      "tags": [],
+      "title": "CK-001 revision-B final engineering review",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Original reference inputs"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 3,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/ck-001/r02/reference/ORIGINAL-INPUTS.md",
+      "related": [],
+      "sha256": "f439f194e22eed7d70b9fbd0ed526b4dc385e296facd89bf8e537fe850724734",
+      "tags": [],
+      "title": "Original reference inputs",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "CK-001 revision-B final engineering review"
+        },
+        {
+          "line": 10,
+          "text": "Verdict"
+        },
+        {
+          "line": 24,
+          "text": "Evidence identity"
+        },
+        {
+          "line": 40,
+          "text": "Material improvements over the earlier r01 digital asset"
+        },
+        {
+          "line": 74,
+          "text": "What the eight-family gates prove — and what they do not"
+        },
+        {
+          "line": 98,
+          "text": "Full-layout interface evidence"
+        },
+        {
+          "line": 130,
+          "text": "Export and reopen evidence"
+        },
+        {
+          "line": 158,
+          "text": "Evidence still missing for physical release"
+        },
+        {
+          "line": 177,
+          "text": "Media/readiness boundary"
+        },
+        {
+          "line": 190,
+          "text": "Engineering disposition"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 197,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/ck-001/r02/reports/final-engineering-review.md",
+      "related": [],
+      "sha256": "e292c0c804c293de439a2a913d0b899532858b4bd3edf8fc20e74c582ee9a7a6",
+      "tags": [],
+      "title": "CK-001 revision-B final engineering review",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "CK-001 revision B — independent visual review"
+        },
+        {
+          "line": 5,
+          "text": "Evidence binding"
+        },
+        {
+          "line": 21,
+          "text": "B02 image hashes"
+        },
+        {
+          "line": 32,
+          "text": "Reference-file provenance review"
+        },
+        {
+          "line": 45,
+          "text": "B02 visual findings — historical verification evidence"
+        },
+        {
+          "line": 47,
+          "text": "Overall form and layout"
+        },
+        {
+          "line": 55,
+          "text": "Knobs and encoder presentation"
+        },
+        {
+          "line": 61,
+          "text": "Keycap and switch presentation"
+        },
+        {
+          "line": 67,
+          "text": "Stack, PCB, support and RGB"
+        },
+        {
+          "line": 75,
+          "text": "Underside"
+        },
+        {
+          "line": 81,
+          "text": "Specific observable defects / remaining visual gaps"
+        },
+        {
+          "line": 90,
+          "text": "Full-HD review contract"
+        },
+        {
+          "line": 108,
+          "text": "Full-HD B01 attempt-0001 — historical partial review"
+        },
+        {
+          "line": 127,
+          "text": "Current Full-HD B02 — locked 11-view review"
+        },
+        {
+          "line": 145,
+          "text": "Feature-level comparison to the owner targets"
+        },
+        {
+          "line": 157,
+          "text": "Current Full-HD B02 motion review"
+        },
+        {
+          "line": 172,
+          "text": "Claims boundary"
+        },
+        {
+          "line": 178,
+          "text": "Current verdict"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 180,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/ck-001/r02/reports/final-visual-review.md",
+      "related": [],
+      "sha256": "2b0c1767b1487b5e0c3fb88d5522370b7499590b07670fe6cecb6683fc3ee406",
+      "tags": [],
+      "title": "CK-001 revision B — independent visual review",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "CK-001 revision-B package code review"
+        },
+        {
+          "line": 9,
+          "text": "CLI"
+        },
+        {
+          "line": 28,
+          "text": "Input/schema assumptions"
+        },
+        {
+          "line": 45,
+          "text": "Binding and acceptance checks"
+        },
+        {
+          "line": 81,
+          "text": "Package contents"
+        },
+        {
+          "line": 99,
+          "text": "Manufacturing boundary"
+        },
+        {
+          "line": 108,
+          "text": "Validation performed on the code"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 124,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/ck-001/r02/reports/package-review.md",
+      "related": [],
+      "sha256": "adaff823ef5657d68047f8ceadc5c4e6f1159361da7a9fc9e504eb460033b671",
+      "tags": [],
+      "title": "CK-001 revision-B package code review",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
           "text": "Blender AI Orchestration Foundation"
         },
         {
@@ -4758,6 +5052,49 @@
       "sha256": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
       "tags": [],
       "title": "Blender AI Orchestration Foundation",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Native integration of Meshy, Dream-loop and Text-to-CAD patterns"
+        },
+        {
+          "line": 7,
+          "text": "Source map"
+        },
+        {
+          "line": 23,
+          "text": "How the layers work together"
+        },
+        {
+          "line": 55,
+          "text": "Native calibration sample"
+        },
+        {
+          "line": 107,
+          "text": "Reusing the APIs"
+        },
+        {
+          "line": 129,
+          "text": "Skill entry points and research maintenance"
+        },
+        {
+          "line": 143,
+          "text": "What this integration does not import"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 153,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/upstream-agent-integration.md",
+      "related": [],
+      "sha256": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc",
+      "tags": [],
+      "title": "Native integration of Meshy, Dream-loop and Text-to-CAD patterns",
       "use": "read"
     },
     {
@@ -4804,36 +5141,36 @@
           "text": "4.3 Is it actually in frame? (cheapest possible framing check)"
         },
         {
-          "line": 151,
+          "line": 156,
           "text": "4.4 Is the render non-empty? (catch black/blank frames without looking)"
         },
         {
-          "line": 159,
+          "line": 164,
           "text": "4.5 Checkpointing"
         },
         {
-          "line": 165,
+          "line": 170,
           "text": "4.6 Re-import verification for exports"
         },
         {
-          "line": 172,
+          "line": 177,
           "text": "5. Failure modes"
         },
         {
-          "line": 187,
+          "line": 192,
           "text": "6. Parameter defaults by use case"
         },
         {
-          "line": 198,
+          "line": 203,
           "text": "7. Verification checklist"
         },
         {
-          "line": 213,
+          "line": 218,
           "text": "8. Sources"
         }
       ],
       "kind": "knowledge",
-      "lines": 225,
+      "lines": 230,
       "loads_with": [
         "bpy-scripting-core",
         "blender-version-matrix",
@@ -4846,7 +5183,7 @@
         "knowledge/00-foundations/blender-version-matrix.md",
         "knowledge/60-pipeline/product-viz-and-shots.md"
       ],
-      "sha256": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
+      "sha256": "087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3",
       "tags": [
         "workflow",
         "verification",
@@ -5115,31 +5452,95 @@
       "use": "read-verify"
     },
     {
+      "description": "Evaluated geometry lifetime, assigned Action slots, explicit GN modifier inputs, and numerical failure controls for reusable AI scripts.",
+      "headings": [
+        {
+          "line": 11,
+          "text": "Native API contracts and worked sample"
+        },
+        {
+          "line": 17,
+          "text": "1. Borrow evaluated geometry in a bounded scope"
+        },
+        {
+          "line": 30,
+          "text": "Only independent numbers/vectors may outlive the block."
+        },
+        {
+          "line": 51,
+          "text": "2. Screen camera depth before requesting a render"
+        },
+        {
+          "line": 72,
+          "text": "3. Own an Action slot and the exact keyed frames"
+        },
+        {
+          "line": 97,
+          "text": "4. Bind a Geometry Nodes parameter to its interface"
+        },
+        {
+          "line": 117,
+          "text": "5. Execute the complete sample and discriminating tests"
+        },
+        {
+          "line": 139,
+          "text": "6. Reload declared helper dependencies in a live session"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 168,
+      "loads_with": [
+        "bpy-scripting-core",
+        "blender-version-matrix",
+        "agent-workflow-loop"
+      ],
+      "name": "native-api-contracts",
+      "path": "knowledge/00-foundations/native-api-contracts.md",
+      "related": [
+        "knowledge/00-foundations/bpy-scripting-core.md",
+        "knowledge/00-foundations/blender-version-matrix.md",
+        "knowledge/00-foundations/agent-workflow-loop.md"
+      ],
+      "sha256": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+      "tags": [
+        "python",
+        "depsgraph",
+        "mesh",
+        "animation",
+        "action-slots",
+        "geometry-nodes",
+        "camera",
+        "testing"
+      ],
+      "title": "Native API contracts and worked sample",
+      "use": "read-verify"
+    },
+    {
       "annotation": {
-        "basis": "Controller re-read expanded registry; static module audits linked in catalog. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
-        "caution": "Registry claims verified, operator-free and standards-compliant behavior not established by actual modules. Static audits found missing bearing bores, sag, gear root/helical features, X-joint limits and physical thin-film optics; examples often test counts only. Bibliography is not certification; read module-specific cautions.",
+        "basis": "Controller review 2026-09-17 removed unsupported library-wide compatibility and standards claims; selected native API contracts are separately tested.",
+        "caution": "Registry membership and bibliography do not qualify modules. Unrelated bearing bores, sag, gear features, joint limits and optical/physical behavior retain their module-specific cautions. Selected 5.2 API tests do not establish all-platform or manufacturing compliance.",
         "effects": "Examples can clear all objects, replace node groups, bake modifiers and change mesh data.",
-        "reviewed_sha256": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
+        "reviewed_sha256": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
         "runtime": "Documentation with bpy snippets"
       },
       "annotation_revision": "matched",
-      "description": "Production-grade Python boilerplate library for Blender 5.2+ AI agents; the module registry is generated from disk, not hand-maintained. 100% academic & industrial standards citations.",
+      "description": "Inspectable Python boilerplate library for Blender AI agents; registry generated from disk, with per-module API contracts and explicit qualification limits.",
       "headings": [
         {
           "line": 12,
           "text": "Python Agent Boilerplates for Blender 5.2 LTS (Complete Catalogue)"
         },
         {
-          "line": 23,
+          "line": 29,
           "text": "1. Boilerplate Registry (generated — do not hand-edit)"
         },
         {
-          "line": 75,
+          "line": 81,
           "text": "2. Standards & Academic Citation Matrix"
         }
       ],
       "kind": "knowledge",
-      "lines": 96,
+      "lines": 102,
       "loads_with": [
         "bpy-scripting-core",
         "blender-version-matrix",
@@ -5152,7 +5553,7 @@
         "knowledge/00-foundations/blender-version-matrix.md",
         "knowledge/00-foundations/agent-workflow-loop.md"
       ],
-      "sha256": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
+      "sha256": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
       "tags": [
         "python",
         "bpy",
@@ -7715,6 +8116,63 @@
       "use": "read-verify"
     },
     {
+      "description": "Local task lifecycle, target-bound independent criticism and source-parameter contracts adapted from three reviewed upstream agent repositories.",
+      "headings": [
+        {
+          "line": 11,
+          "text": "Native agent iteration: source, execution, judgment and revision"
+        },
+        {
+          "line": 18,
+          "text": "1. Convert a request into a verifiable native contract"
+        },
+        {
+          "line": 37,
+          "text": "2. Run a declared pass pipeline with durable evidence"
+        },
+        {
+          "line": 58,
+          "text": "3. Prepare the visual target and critic packet"
+        },
+        {
+          "line": 88,
+          "text": "4. Give the critic an evidence-focused assignment"
+        },
+        {
+          "line": 114,
+          "text": "5. Correct the right cause and detect stalls"
+        },
+        {
+          "line": 132,
+          "text": "6. Delivery and ongoing research"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 145,
+      "loads_with": [
+        "native-api-contracts",
+        "agent-workflow-loop"
+      ],
+      "name": "native-agent-iteration",
+      "path": "knowledge/60-pipeline/native-agent-iteration.md",
+      "related": [
+        "knowledge/00-foundations/native-api-contracts.md",
+        "knowledge/00-foundations/agent-workflow-loop.md"
+      ],
+      "sha256": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b",
+      "tags": [
+        "orchestration",
+        "workflow",
+        "critique",
+        "provenance",
+        "parameters",
+        "recovery",
+        "native"
+      ],
+      "title": "Native agent iteration: source, execution, judgment and revision",
+      "use": "read-verify"
+    },
+    {
       "description": "Poly/draw-call budgets, LODs, atlasing, high-to-low baking, instancing, simplify, and what actually costs time in Cycles.",
       "headings": [
         {
@@ -8783,12 +9241,12 @@
       "description": "",
       "headings": [],
       "kind": "workflow",
-      "lines": 2385,
+      "lines": 2731,
       "loads_with": [],
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "27e16ed87957735312727297e3a480a93e7cdc355c3795abe30006491acf17d2",
+      "sha256": "241a2e0472341a9e739fb08269675b2942a9855c8a9089a0feaf9f2f7c7066c7",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -8822,344 +9280,380 @@
         },
         {
           "line": 38,
-          "text": "Topic: python-adapter-review"
+          "text": "Topic: upstream-agent-patterns"
         },
         {
-          "line": 64,
-          "text": "native-product-visualization"
-        },
-        {
-          "line": 68,
-          "text": "Base reading"
-        },
-        {
-          "line": 77,
-          "text": "Steps"
-        },
-        {
-          "line": 84,
-          "text": "Gates"
-        },
-        {
-          "line": 90,
-          "text": "Limitations"
+          "line": 66,
+          "text": "Topic: target-bound-review"
         },
         {
           "line": 95,
-          "text": "Topic: opaque-micro-surfaces"
+          "text": "Topic: api-contract-research"
         },
         {
-          "line": 122,
-          "text": "Topic: subsurface-optics"
+          "line": 121,
+          "text": "Topic: evaluated-mesh-contract"
         },
         {
-          "line": 143,
-          "text": "Topic: thin-film-optics"
+          "line": 150,
+          "text": "Topic: helper-dependency-reload"
         },
         {
-          "line": 166,
-          "text": "Topic: fiber-fabric-surfaces"
+          "line": 178,
+          "text": "Topic: python-adapter-review"
         },
         {
-          "line": 187,
-          "text": "native-animation-rigging"
+          "line": 204,
+          "text": "native-product-visualization"
         },
         {
-          "line": 191,
+          "line": 208,
           "text": "Base reading"
-        },
-        {
-          "line": 202,
-          "text": "Steps"
-        },
-        {
-          "line": 209,
-          "text": "Gates"
         },
         {
           "line": 217,
+          "text": "Steps"
+        },
+        {
+          "line": 224,
+          "text": "Gates"
+        },
+        {
+          "line": 230,
           "text": "Limitations"
         },
         {
-          "line": 223,
+          "line": 235,
+          "text": "Topic: opaque-micro-surfaces"
+        },
+        {
+          "line": 262,
+          "text": "Topic: subsurface-optics"
+        },
+        {
+          "line": 283,
+          "text": "Topic: thin-film-optics"
+        },
+        {
+          "line": 306,
+          "text": "Topic: fiber-fabric-surfaces"
+        },
+        {
+          "line": 327,
+          "text": "native-animation-rigging"
+        },
+        {
+          "line": 331,
+          "text": "Base reading"
+        },
+        {
+          "line": 342,
+          "text": "Steps"
+        },
+        {
+          "line": 349,
+          "text": "Gates"
+        },
+        {
+          "line": 357,
+          "text": "Limitations"
+        },
+        {
+          "line": 363,
           "text": "Topic: rig-spaces-ik-mechanisms"
         },
         {
-          "line": 255,
+          "line": 395,
           "text": "Topic: skinning-modular-rigs"
         },
         {
-          "line": 279,
+          "line": 419,
           "text": "Topic: animation-curves-drivers"
         },
         {
-          "line": 301,
+          "line": 443,
           "text": "Topic: robot-joint-frame-adapter"
         },
         {
-          "line": 323,
+          "line": 465,
           "text": "Topic: assembly-collision-staging"
         },
         {
-          "line": 352,
+          "line": 494,
           "text": "polymer-functional-print"
         },
         {
-          "line": 356,
+          "line": 498,
           "text": "Base reading"
-        },
-        {
-          "line": 366,
-          "text": "Steps"
-        },
-        {
-          "line": 373,
-          "text": "Gates"
-        },
-        {
-          "line": 380,
-          "text": "Limitations"
-        },
-        {
-          "line": 386,
-          "text": "Topic: advanced-deposition-process"
-        },
-        {
-          "line": 410,
-          "text": "Topic: polymer-selection"
-        },
-        {
-          "line": 429,
-          "text": "Topic: print-boss-cutouts"
-        },
-        {
-          "line": 453,
-          "text": "Topic: plate-nesting-screen"
-        },
-        {
-          "line": 478,
-          "text": "precision-assembly-metrology"
-        },
-        {
-          "line": 482,
-          "text": "Base reading"
-        },
-        {
-          "line": 490,
-          "text": "Steps"
-        },
-        {
-          "line": 497,
-          "text": "Gates"
-        },
-        {
-          "line": 503,
-          "text": "Limitations"
         },
         {
           "line": 508,
+          "text": "Steps"
+        },
+        {
+          "line": 515,
+          "text": "Gates"
+        },
+        {
+          "line": 522,
+          "text": "Limitations"
+        },
+        {
+          "line": 528,
+          "text": "Topic: advanced-deposition-process"
+        },
+        {
+          "line": 552,
+          "text": "Topic: polymer-selection"
+        },
+        {
+          "line": 571,
+          "text": "Topic: print-boss-cutouts"
+        },
+        {
+          "line": 595,
+          "text": "Topic: plate-nesting-screen"
+        },
+        {
+          "line": 620,
+          "text": "precision-assembly-metrology"
+        },
+        {
+          "line": 624,
+          "text": "Base reading"
+        },
+        {
+          "line": 632,
+          "text": "Steps"
+        },
+        {
+          "line": 639,
+          "text": "Gates"
+        },
+        {
+          "line": 645,
+          "text": "Limitations"
+        },
+        {
+          "line": 650,
+          "text": "Topic: parametric-source-contract"
+        },
+        {
+          "line": 678,
           "text": "Topic: compliant-tendon-motion"
         },
         {
-          "line": 538,
+          "line": 708,
           "text": "Topic: precision-material-tessellation"
         },
         {
-          "line": 563,
+          "line": 733,
           "text": "Topic: hardware-interface-geometry"
         },
         {
-          "line": 591,
+          "line": 761,
           "text": "Topic: industrial-connector-panel-packaging"
         },
         {
-          "line": 622,
+          "line": 792,
           "text": "Topic: enclosure-sealing-emc-harness"
         },
         {
-          "line": 649,
+          "line": 819,
           "text": "mechanisms-transmissions"
         },
         {
-          "line": 653,
+          "line": 823,
           "text": "Base reading"
         },
         {
-          "line": 663,
+          "line": 833,
           "text": "Steps"
         },
         {
-          "line": 670,
+          "line": 840,
           "text": "Gates"
         },
         {
-          "line": 677,
+          "line": 847,
           "text": "Limitations"
         },
         {
-          "line": 683,
+          "line": 853,
           "text": "Topic: contact-wear-sealing"
         },
         {
-          "line": 709,
+          "line": 879,
           "text": "Topic: cycloid-profile-kinematics"
         },
         {
-          "line": 733,
+          "line": 903,
           "text": "Topic: actuator-duty-thermal"
         },
         {
-          "line": 753,
+          "line": 923,
           "text": "Topic: parametric-gear-profile"
         },
         {
-          "line": 774,
+          "line": 944,
           "text": "robotics-links-simulation"
         },
         {
-          "line": 778,
+          "line": 948,
           "text": "Base reading"
         },
         {
-          "line": 788,
+          "line": 958,
           "text": "Steps"
-        },
-        {
-          "line": 795,
-          "text": "Gates"
-        },
-        {
-          "line": 802,
-          "text": "Limitations"
-        },
-        {
-          "line": 808,
-          "text": "Topic: dynamic-harness-routing"
-        },
-        {
-          "line": 837,
-          "text": "render-export-delivery"
-        },
-        {
-          "line": 841,
-          "text": "Base reading"
-        },
-        {
-          "line": 850,
-          "text": "Steps"
-        },
-        {
-          "line": 857,
-          "text": "Gates"
-        },
-        {
-          "line": 864,
-          "text": "Limitations"
-        },
-        {
-          "line": 870,
-          "text": "Topic: renderer-diagnostics"
-        },
-        {
-          "line": 896,
-          "text": "Topic: participating-media"
-        },
-        {
-          "line": 917,
-          "text": "Topic: color-denoise-delivery"
-        },
-        {
-          "line": 941,
-          "text": "Topic: framing-export-contract"
         },
         {
           "line": 965,
+          "text": "Gates"
+        },
+        {
+          "line": 972,
+          "text": "Limitations"
+        },
+        {
+          "line": 978,
+          "text": "Topic: dynamic-harness-routing"
+        },
+        {
+          "line": 1007,
+          "text": "render-export-delivery"
+        },
+        {
+          "line": 1011,
+          "text": "Base reading"
+        },
+        {
+          "line": 1020,
+          "text": "Steps"
+        },
+        {
+          "line": 1027,
+          "text": "Gates"
+        },
+        {
+          "line": 1034,
+          "text": "Limitations"
+        },
+        {
+          "line": 1040,
+          "text": "Topic: native-task-lifecycle"
+        },
+        {
+          "line": 1069,
+          "text": "Topic: evaluated-camera-screen"
+        },
+        {
+          "line": 1094,
+          "text": "Topic: renderer-diagnostics"
+        },
+        {
+          "line": 1120,
+          "text": "Topic: participating-media"
+        },
+        {
+          "line": 1141,
+          "text": "Topic: color-denoise-delivery"
+        },
+        {
+          "line": 1165,
+          "text": "Topic: framing-export-contract"
+        },
+        {
+          "line": 1189,
           "text": "native-procedural-simulation"
         },
         {
-          "line": 969,
+          "line": 1193,
           "text": "Base reading"
         },
         {
-          "line": 979,
+          "line": 1203,
           "text": "Steps"
         },
         {
-          "line": 986,
+          "line": 1210,
           "text": "Gates"
         },
         {
-          "line": 993,
+          "line": 1217,
           "text": "Limitations"
         },
         {
-          "line": 998,
+          "line": 1222,
+          "text": "Topic: modifier-input-contract"
+        },
+        {
+          "line": 1250,
           "text": "Topic: fields-parametric-solids"
         },
         {
-          "line": 1028,
+          "line": 1280,
           "text": "Topic: simulation-repeat-budgets"
         },
         {
-          "line": 1055,
+          "line": 1307,
           "text": "Topic: sdf-feature-preservation"
         },
         {
-          "line": 1077,
+          "line": 1329,
           "text": "Topic: graded-lattice-reinforcement"
         },
         {
-          "line": 1099,
+          "line": 1351,
           "text": "Topic: procedural-component-adapters"
         },
         {
-          "line": 1123,
+          "line": 1375,
           "text": "native-character-creature"
         },
         {
-          "line": 1127,
+          "line": 1379,
           "text": "Base reading"
         },
         {
-          "line": 1139,
+          "line": 1391,
           "text": "Steps"
         },
         {
-          "line": 1147,
+          "line": 1399,
           "text": "Gates"
         },
         {
-          "line": 1155,
+          "line": 1407,
           "text": "Limitations"
         },
         {
-          "line": 1163,
+          "line": 1415,
           "text": "Topic: character-proportion-anatomy"
         },
         {
-          "line": 1194,
+          "line": 1446,
           "text": "Topic: animation-topology-facial-loops"
         },
         {
-          "line": 1219,
+          "line": 1471,
           "text": "Topic: facs-blendshape-targets"
         },
         {
-          "line": 1246,
+          "line": 1498,
           "text": "Topic: hair-curves-grooming-shading"
         },
         {
-          "line": 1277,
+          "line": 1529,
           "text": "Topic: character-rig-locomotion"
         }
       ],
       "kind": "knowledge",
-      "lines": 1305,
+      "lines": 1557,
       "loads_with": [],
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "be10d2517d0d9ae01b9124984f975139742dc0b6411ecf22f04155e40c03cae3",
+      "sha256": "2b3afa43a05157d6631bc5208be33d89862b313825940d0ee338dcaf092ee840",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -9214,6 +9708,41 @@
       "tags": [],
       "title": "AI 3D Generation — Decision Synthesis",
       "use": "archive-only"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Research: turn Blender API findings into reusable contracts"
+        },
+        {
+          "line": 7,
+          "text": "Evidence and source access"
+        },
+        {
+          "line": 29,
+          "text": "Findings, actions and falsifiers"
+        },
+        {
+          "line": 45,
+          "text": "Reusable research loop"
+        },
+        {
+          "line": 68,
+          "text": "Boundaries and follow-on research"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 84,
+      "loads_with": [],
+      "name": null,
+      "path": "research/260917-blender-api-contracts.md",
+      "related": [],
+      "sha256": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
+      "tags": [],
+      "title": "Research: turn Blender API findings into reusable contracts",
+      "use": "read-verify"
     },
     {
       "annotation": {
@@ -14720,6 +15249,319 @@
       "description": "",
       "headings": [
         {
+          "line": 1,
+          "text": "Dream-loop: source analysis and native adaptation"
+        },
+        {
+          "line": 9,
+          "text": "What the repository actually contains"
+        },
+        {
+          "line": 24,
+          "text": "Mechanisms and evidence"
+        },
+        {
+          "line": 38,
+          "text": "What changes when applied to design-os-3d-blender"
+        },
+        {
+          "line": 82,
+          "text": "Explicit exclusions"
+        },
+        {
+          "line": 97,
+          "text": "Static limitations discovered in the executable helpers"
+        },
+        {
+          "line": 108,
+          "text": "Native deliverables and falsifiers"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 120,
+      "loads_with": [],
+      "name": null,
+      "path": "research/upstream-agent-patterns/dream-loop.md",
+      "related": [],
+      "sha256": "55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07",
+      "tags": [],
+      "title": "Dream-loop: source analysis and native adaptation",
+      "use": "read-verify"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Meshy 3D Agent — pinned source audit for native Blender orchestration"
+        },
+        {
+          "line": 13,
+          "text": "License and attribution"
+        },
+        {
+          "line": 17,
+          "text": "What the upstream actually implements"
+        },
+        {
+          "line": 19,
+          "text": "1. A thin task runner around an asynchronous service"
+        },
+        {
+          "line": 27,
+          "text": "2. Polling is resumable by task ID, but timeout is an unknown outcome"
+        },
+        {
+          "line": 35,
+          "text": "3. Retry policy is documented but not enforced by the runner"
+        },
+        {
+          "line": 43,
+          "text": "4. Delete exists upstream, cancellation orchestration does not"
+        },
+        {
+          "line": 49,
+          "text": "Task lineage, history and output handling"
+        },
+        {
+          "line": 51,
+          "text": "Good pattern: project-scoped lineage"
+        },
+        {
+          "line": 59,
+          "text": "Weak pattern: history is late, mutable and not crash-safe"
+        },
+        {
+          "line": 69,
+          "text": "Skill packaging and drift control"
+        },
+        {
+          "line": 71,
+          "text": "Strong idea: canonical sources plus generated copies"
+        },
+        {
+          "line": 79,
+          "text": "Defect: README claims generated-copy CI enforcement that the workflow does not run"
+        },
+        {
+          "line": 87,
+          "text": "Printing and coordinate boundaries"
+        },
+        {
+          "line": 97,
+          "text": "Described vs enforced vs tested"
+        },
+        {
+          "line": 115,
+          "text": "Adopt / adapt / exclude matrix for design-os-3d-blender"
+        },
+        {
+          "line": 132,
+          "text": "Candidate local APIs derived from the audit"
+        },
+        {
+          "line": 137,
+          "text": "manifest.py"
+        },
+        {
+          "line": 139,
+          "text": "normalized step:"
+        },
+        {
+          "line": 140,
+          "text": "{id, script, depends_on, inputs, artifact_inputs, outputs,"
+        },
+        {
+          "line": 141,
+          "text": "required_postconditions, timeout_seconds}"
+        },
+        {
+          "line": 144,
+          "text": "journal.py"
+        },
+        {
+          "line": 157,
+          "text": "durable state exists before subprocess launch"
+        },
+        {
+          "line": 165,
+          "text": "runner.py"
+        },
+        {
+          "line": 197,
+          "text": "Discriminating tests worth implementing"
+        },
+        {
+          "line": 214,
+          "text": "Source paths inspected"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 232,
+      "loads_with": [],
+      "name": null,
+      "path": "research/upstream-agent-patterns/meshy.md",
+      "related": [],
+      "sha256": "0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33",
+      "tags": [],
+      "title": "Meshy 3D Agent — pinned source audit for native Blender orchestration",
+      "use": "read-verify"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Upstream audit: `earthtojake/text-to-cad`"
+        },
+        {
+          "line": 10,
+          "text": "Research method and evidence boundary"
+        },
+        {
+          "line": 27,
+          "text": "What the repository actually is"
+        },
+        {
+          "line": 45,
+          "text": "All 11 skills: scope and boundary lessons"
+        },
+        {
+          "line": 71,
+          "text": "Model contract: parameters are explicit, execution entry is deliberately narrow"
+        },
+        {
+          "line": 82,
+          "text": "Design-os adaptation"
+        },
+        {
+          "line": 94,
+          "text": "Units, frames and placed geometry"
+        },
+        {
+          "line": 107,
+          "text": "Design-os adaptation"
+        },
+        {
+          "line": 111,
+          "text": "Source identity: explicit inputs, content hashes, no timestamp trust"
+        },
+        {
+          "line": 121,
+          "text": "Design-os adaptation"
+        },
+        {
+          "line": 127,
+          "text": "Import isolation and stale-cache defense: useful lesson, excluded implementation"
+        },
+        {
+          "line": 145,
+          "text": "Design-os decision"
+        },
+        {
+          "line": 149,
+          "text": "Artifact identity is independent from source identity"
+        },
+        {
+          "line": 166,
+          "text": "Exact saved bytes beat in-memory assumptions"
+        },
+        {
+          "line": 174,
+          "text": "Sidecars: declaration binding is separate from provenance"
+        },
+        {
+          "line": 183,
+          "text": "Design-os decision"
+        },
+        {
+          "line": 187,
+          "text": "Result tree is not a parametric feature tree"
+        },
+        {
+          "line": 197,
+          "text": "Design-os decision"
+        },
+        {
+          "line": 201,
+          "text": "Publish race: useful evidence principle, no concurrency subsystem adopted"
+        },
+        {
+          "line": 209,
+          "text": "DfAM: keep manufacturing predicates separate and honest"
+        },
+        {
+          "line": 220,
+          "text": "Design-os decision"
+        },
+        {
+          "line": 224,
+          "text": "URDF, SRDF and SDF: separation worth preserving"
+        },
+        {
+          "line": 244,
+          "text": "Design-os adaptation"
+        },
+        {
+          "line": 248,
+          "text": "Device handoff: request is not result"
+        },
+        {
+          "line": 263,
+          "text": "Design-os decision"
+        },
+        {
+          "line": 267,
+          "text": "Native implementation added to design-os"
+        },
+        {
+          "line": 283,
+          "text": "Normalized contract shape"
+        },
+        {
+          "line": 307,
+          "text": "Local validation"
+        },
+        {
+          "line": 331,
+          "text": "Adopt / adapt / exclude"
+        },
+        {
+          "line": 333,
+          "text": "Adopt as design principles"
+        },
+        {
+          "line": 344,
+          "text": "Adapt to Blender-native implementation"
+        },
+        {
+          "line": 352,
+          "text": "Explicitly exclude from this integration"
+        },
+        {
+          "line": 364,
+          "text": "Relationship to the existing production gate"
+        },
+        {
+          "line": 379,
+          "text": "Remaining limitations and next useful tests"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 393,
+      "loads_with": [],
+      "name": null,
+      "path": "research/upstream-agent-patterns/text-to-cad.md",
+      "related": [],
+      "sha256": "77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec",
+      "tags": [],
+      "title": "Upstream audit: `earthtojake/text-to-cad`",
+      "use": "read-verify"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
           "line": 18,
           "text": "Blender leaves everything after `--` in sys.argv for scripts to consume."
         }
@@ -14737,24 +15579,45 @@
     },
     {
       "annotation": {
-        "basis": "Rewritten as facade over scripts/agent_verify/ and tested 2026-09-06 (tests/execution/test_verify_lib.py)",
-        "caution": "Numeric helpers return data — the caller defines the failing predicate. checkpoint() writes under AGENT_CHECKPOINT_DIR or <repo>/output/checkpoints.",
+        "basis": "Controller review 2026-09-17; execution regression 48 tests including real Blender dependency reload fixture and existing verifier tests.",
+        "caution": "Loading may remove owned generated bytecode caches and reimport declared local dependencies. Callers must use the returned module; old external references are not rewritten. Numeric predicates do not prove visibility, physical fit or manufacture. checkpoint() writes under AGENT_CHECKPOINT_DIR or the repo output/checkpoints directory.",
         "effects": "Read-only helpers; preview_render restores every touched setting in finally; verify_export runs in a disposable subprocess; scaffold writes only factory-default settings unless force=True.",
-        "reviewed_sha256": "00ce1ce41cf9b73f96f866a7aceb10ccc0f5c3cd8875f87ec87c3dcdb1533323",
+        "reviewed_sha256": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
         "runtime": "bpy"
       },
       "annotation_revision": "matched",
       "description": "",
-      "headings": [],
+      "headings": [
+        {
+          "line": 103,
+          "text": "Python's timestamp-based bytecode cache can remain valid when a source file is"
+        },
+        {
+          "line": 104,
+          "text": "edited twice within one second without changing size. Remove only bytecode for"
+        },
+        {
+          "line": 105,
+          "text": "the dependencies this facade explicitly owns before importing them again."
+        },
+        {
+          "line": 116,
+          "text": "Re-execution owns only this repository's verification package and its direct"
+        },
+        {
+          "line": 117,
+          "text": "evaluated-mesh helper. Do not purge unrelated modules with similar names."
+        }
+      ],
       "kind": "execution-source",
-      "lines": 70,
+      "lines": 132,
       "loads_with": [],
       "name": null,
       "path": "scripts/agent-verify-lib.py",
       "related": [],
-      "sha256": "00ce1ce41cf9b73f96f866a7aceb10ccc0f5c3cd8875f87ec87c3dcdb1533323",
+      "sha256": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
       "tags": [],
-      "title": "agent-verify-lib.py",
+      "title": "Python's timestamp-based bytecode cache can remain valid when a source file is",
       "use": "inspect-adapt"
     },
     {
@@ -14770,14 +15633,107 @@
         }
       ],
       "kind": "execution-source",
-      "lines": 200,
+      "lines": 238,
       "loads_with": [],
       "name": null,
       "path": "scripts/agent_runtime.py",
       "related": [],
-      "sha256": "ce18bdad4cd3a5f66a65fb8e78b3b9ccfc810424c2c1a84840828c4ab587ab4a",
+      "sha256": "c7e85e03adef537002e0b3d071aa117537f78447ea587352bc146b40e43a5438",
       "tags": [],
       "title": "Bookkeeping so run_file can tell a real emit_ok from a printed forgery, and",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 24,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/agent_verify/__init__.py",
+      "related": [],
+      "sha256": "57599acaef138ea7a9571f98658b133964a6c98e69bcf21bfdc39f35a59d3a06",
+      "tags": [],
+      "title": "__init__.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 77,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/agent_verify/export_check.py",
+      "related": [],
+      "sha256": "9448d064d27b71b9d7b85af08156c38978bb97a5ef0149d464a9254cbd65a306",
+      "tags": [],
+      "title": "export_check.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 105,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/agent_verify/inspect_scene.py",
+      "related": [],
+      "sha256": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
+      "tags": [],
+      "title": "inspect_scene.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 46,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/agent_verify/paths.py",
+      "related": [],
+      "sha256": "fc364c10a2cd7da5e7da8f11205a2a12dae19928afc24039ad3c71fb75979dee",
+      "tags": [],
+      "title": "paths.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 55,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/agent_verify/preview.py",
+      "related": [],
+      "sha256": "c732f799d344f413ef079b33d39decef29ed042b75c7151f18d1038b48f831d6",
+      "tags": [],
+      "title": "preview.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 9,
+          "text": "Blender 5.2.0 factory-startup values. A setting still holding its factory"
+        },
+        {
+          "line": 10,
+          "text": "default is treated as \"unset\"; anything else is the user's/build's choice."
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 65,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/agent_verify/session.py",
+      "related": [],
+      "sha256": "2da68c49638a851e68356d95993b9bef304d8d8a7a80848164a9bc6e9ce6389e",
+      "tags": [],
+      "title": "Blender 5.2.0 factory-startup values. A setting still holding its factory",
       "use": "inspect-adapt"
     },
     {
@@ -14818,22 +15774,22 @@
     },
     {
       "annotation": {
-        "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
-        "caution": "Indexed assignment is not general RNA array/path handling. Matching curves across all action slots/preexisting keys may be edited. Turntable has no Cycles loop; driver setup clears state.",
+        "basis": "Controller review 2026-09-17; five native Blender 5.2.0 contracts verify distinct-slot isolation, indexed values, reruns and evaluated driver response.",
+        "caution": "Edits stay in the assigned slot and requested frames; objects deliberately sharing one slot still share animation. Whole-value assignment expects direct Object attributes. Unrelated keys may affect motion. Turntable has no infinite Cycles loop; driver setup replaces state on the exact requested channel. NLA/layered motion is not qualified.",
         "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
-        "reviewed_sha256": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd",
+        "reviewed_sha256": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
         "runtime": "bpy; inspect/adapt only"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 137,
+      "lines": 203,
       "loads_with": [],
       "name": null,
       "path": "scripts/boilerplates/bp_animation.py",
       "related": [],
-      "sha256": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd",
+      "sha256": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
       "tags": [],
       "title": "bp_animation.py",
       "use": "inspect-adapt"
@@ -14893,44 +15849,44 @@
     },
     {
       "annotation": {
-        "basis": "Full static source and AST review by boilerplate scout; no runtime certification. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
-        "caution": "clean_scene deletes global objects; mode errors swallowed; named data removal can affect other users. Evaluated mesh cleanup handle is lost; substring socket resolution is ambiguous.",
+        "basis": "Controller and independent source review 2026-09-17; eight native evaluated-mesh/camera contracts and selected module self-test pass on Blender 5.2.0 fbe6228777e7.",
+        "caution": "Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous.",
         "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
-        "reviewed_sha256": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
+        "reviewed_sha256": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
         "runtime": "bpy; inspect/adapt only"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 169,
+      "lines": 186,
       "loads_with": [],
       "name": null,
       "path": "scripts/boilerplates/bp_core.py",
       "related": [],
-      "sha256": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
+      "sha256": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
       "tags": [],
       "title": "bp_core.py",
       "use": "inspect-adapt"
     },
     {
       "annotation": {
-        "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
-        "caution": "Named node group deletion is global. Missing node group returns silently; input fallback unverified. Self-test checks nonempty geometry, not parameter behavior.",
+        "basis": "Controller review 2026-09-17; nine real Blender 5.2.0 contracts verify Float/Vector input binding, changed dimensions, invalid values and ownership collisions.",
+        "caution": "Requires Blender 5.2 modifier RNA; no legacy ID-property fallback. Direct Float/Vector VALUE binding is tested; other RNA value kinds and attribute/layer modes are not qualified. Group creation refuses any name collision; modifier reuse requires the exact same tree. connect() is a separate socket resolver and retains its own ambiguity limits.",
         "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
-        "reviewed_sha256": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+        "reviewed_sha256": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
         "runtime": "bpy; inspect/adapt only"
       },
       "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 187,
+      "lines": 388,
       "loads_with": [],
       "name": null,
       "path": "scripts/boilerplates/bp_geonodes.py",
       "related": [],
-      "sha256": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+      "sha256": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
       "tags": [],
       "title": "bp_geonodes.py",
       "use": "inspect-adapt"
@@ -14955,6 +15911,28 @@
       "sha256": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
       "tags": [],
       "title": "bp_materials_pbr.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Controller source review 2026-09-17; eight host contract tests for SI normalization, frames/roles/name collisions and evidence identity.",
+        "caution": "Length scalars in mm/m only; rigid local frame validation does not compose world transforms. Datums/ports/visual-collision-physical labels do not prove mating or object behavior. Explicit source files only; export suffix/hash is not format validation or manufacturing proof.",
+        "effects": "Normalizes caller-owned data into a new dictionary and reads declared files for source/export byte receipts; no Blender geometry mutation.",
+        "reviewed_sha256": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
+        "runtime": "Python standard library only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 217,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/bp_parametric_contract.py",
+      "related": [],
+      "sha256": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
+      "tags": [],
+      "title": "bp_parametric_contract.py",
       "use": "inspect-adapt"
     },
     {
@@ -16095,12 +17073,68 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 160,
+      "lines": 1,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/hq_coverage/__init__.py",
+      "related": [],
+      "sha256": "bfbb15696445e3b07f50be8559ddb10aed83526114bfd49dea2131706c2e2e7a",
+      "tags": [],
+      "title": "__init__.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 133,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/hq_coverage/core.py",
+      "related": [],
+      "sha256": "4044cee0768e615f4695939f1e2677396607a1e91a0561bef1f06b88a3f6edb4",
+      "tags": [],
+      "title": "core.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 123,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/hq_coverage/inputs.py",
+      "related": [],
+      "sha256": "683e55becd49816d41070ea54dc62399b7417f5c9b2932addd3df66203a5dc17",
+      "tags": [],
+      "title": "inputs.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 67,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/hq_coverage/png.py",
+      "related": [],
+      "sha256": "5c70abf7a7d1224714a20d8a5aee0397ed6610a2f53aa64f373d248791db054f",
+      "tags": [],
+      "title": "png.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 159,
       "loads_with": [],
       "name": null,
       "path": "scripts/knowledge-catalog.py",
       "related": [],
-      "sha256": "a8d681934844d64ffdba619346391abb39df1340fdecf5425f2c0c164c41872c",
+      "sha256": "688f29e3e73a9b508e5433e9596b8c146cb53efdbcfb9a09eddeba3c33752c60",
       "tags": [],
       "title": "knowledge-catalog.py",
       "use": "inspect-adapt"
@@ -16201,6 +17235,162 @@
       "use": "inspect-adapt"
     },
     {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 64,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native-pipeline.py",
+      "related": [],
+      "sha256": "ac067360dd934128cda76028acd16e52447579e62ef0e9636698e3f55f3030db",
+      "tags": [],
+      "title": "native-pipeline.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Controller and independent code review 2026-09-17; 18 review contracts including actual Blender partial-output preservation.",
+        "caution": "Validates declared evidence bindings and complete attributed findings only. Reviewer independence and capture provenance are declared, not authenticated; actual visual inspection remains required. Print/both manufacture stays BLOCKED.",
+        "effects": "Reads root-bound target/candidate/PNG/numeric/critic files and writes new packet, incomplete template or assessment files without overwriting existing outputs.",
+        "reviewed_sha256": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
+        "runtime": "Host Python; no network, model service or automatic visual inference"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 62,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native-review.py",
+      "related": [],
+      "sha256": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
+      "tags": [],
+      "title": "native-review.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 14,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_pipeline/__init__.py",
+      "related": [],
+      "sha256": "5fc1135978f87fd98aa10a7f4571cf5054e25f440d0a66ced84a544a50660e41",
+      "tags": [],
+      "title": "__init__.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 224,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_pipeline/journal.py",
+      "related": [],
+      "sha256": "2da7908428fadcff6311677f5d36bb5b7582512c941a96cc1b3617bdc0b5bdbd",
+      "tags": [],
+      "title": "journal.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 216,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_pipeline/manifest.py",
+      "related": [],
+      "sha256": "182a206b3dc370f04b0d9707fc0fa25f8a6dc81aa22c11ffe9ffc93f6a2103df",
+      "tags": [],
+      "title": "manifest.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Controller source/caller review 2026-09-17 and 26 native-pipeline tests, including actual Blender artifact and forged-print controls; scoped execution evidence.",
+        "caution": "Executed means declared finite numeric postconditions and artifact hashes, not visual/geometry/manufacture approval. Arbitrary Python payloads are not sandboxed. Explicit inputs declare helper dependencies; unknown/failed/running states are not replayed. Windows is not qualified by this POSIX runner.",
+        "effects": "Creates journal/attempt directories, launches declared Python payloads in disposable Blender processes, writes logs and hashes declared outputs. Resume only reuses unchanged executed work and starts untouched pending steps.",
+        "reviewed_sha256": "fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694",
+        "runtime": "Host Python with POSIX locks/process groups, invoking local Blender through headless-run.sh"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 680,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_pipeline/runner.py",
+      "related": [],
+      "sha256": "fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694",
+      "tags": [],
+      "title": "runner.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 1,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_review/__init__.py",
+      "related": [],
+      "sha256": "c732634050a819fb7568e37a84102a38902633899910fb786e9cff4eef1e5a7c",
+      "tags": [],
+      "title": "__init__.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 65,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_review/decision.py",
+      "related": [],
+      "sha256": "19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df",
+      "tags": [],
+      "title": "decision.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 134,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_review/evidence.py",
+      "related": [],
+      "sha256": "90fef1da272eb4adf7092f47b7085c03582f5b8495f27a84d74ee31243d31b12",
+      "tags": [],
+      "title": "evidence.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 101,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/native_review/packets.py",
+      "related": [],
+      "sha256": "7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed",
+      "tags": [],
+      "title": "packets.py",
+      "use": "inspect-adapt"
+    },
+    {
       "annotation": {
         "basis": "static scout; not runtime certification",
         "caution": "Selected-local scaffold only; preflight manifold/budget; destructive on working data.",
@@ -16234,6 +17424,208 @@
       "sha256": "8ff74e8990bd1948e0897878790d1d84c75e6e83f864e88bb20bb43c105f82e5",
       "tags": [],
       "title": "production-gate.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 7,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/__init__.py",
+      "related": [],
+      "sha256": "8488d793799e4b6167c4714878ccc84ca7b012b791bffdfb040a64676f260e48",
+      "tags": [],
+      "title": "__init__.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 14,
+          "text": "X1C / P1S / A1 share this bed; the largest common Bambu bed (controller"
+        },
+        {
+          "line": 15,
+          "text": "ruling 2026-09-07: existing builds must not newly fail the gate)."
+        },
+        {
+          "line": 18,
+          "text": "A1 mini's smaller bed; informational compatibility check only."
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 75,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/bed_fit.py",
+      "related": [],
+      "sha256": "20e6dff82ec9d319be61498941e5f6ecdc69c32e2307cf44a7a013287fa0cebb",
+      "tags": [],
+      "title": "X1C / P1S / A1 share this bed; the largest common Bambu bed (controller",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 55,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/dimensions.py",
+      "related": [],
+      "sha256": "a3cedf54de7accca3ee65428cf47ff9ffc41811e52712a3330b1f67733c43a2a",
+      "tags": [],
+      "title": "dimensions.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 83,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/export_roundtrip.py",
+      "related": [],
+      "sha256": "b4183f34747fc7f1d54af1ab00ac13454390f54f41d326e5b924e09a8878e92c",
+      "tags": [],
+      "title": "export_roundtrip.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 8,
+          "text": "ISO 273:1979 clearance holes for bolts and screws. (close, medium, coarse)"
+        },
+        {
+          "line": 16,
+          "text": "ISO 4762 socket head cap screws: head diameter dk(max), head height k(max)."
+        },
+        {
+          "line": 24,
+          "text": "Counterbore diameter for ISO 4762 heads."
+        },
+        {
+          "line": 30,
+          "text": "Heat-set brass insert bosses. Promoted verbatim from"
+        },
+        {
+          "line": 31,
+          "text": "scripts/verify-3dprint-tolerances.py HEATSET_SPECS (CNC Kitchen / Ruthex)."
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 72,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/fastener_tables.py",
+      "related": [],
+      "sha256": "6b533860dc236d0d79b4481e1c546c194f7eeedd7d60abdaeb825c78a3041d29",
+      "tags": [],
+      "title": "ISO 273:1979 clearance holes for bolts and screws. (close, medium, coarse)",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 245,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/features_fasteners.py",
+      "related": [],
+      "sha256": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
+      "tags": [],
+      "title": "features_fasteners.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 84,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/meshprep.py",
+      "related": [],
+      "sha256": "c75f0725a7222557c079bed0527583af440760c9d44708c95d735f6740e042a4",
+      "tags": [],
+      "title": "meshprep.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 90,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/report.py",
+      "related": [],
+      "sha256": "bc6634d495bf76b637840a23296668f6674cc8231b1abb5ab2b6ff10a8abbefd",
+      "tags": [],
+      "title": "report.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 149,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/run_in_blender.py",
+      "related": [],
+      "sha256": "186a9e86f48a8f507860cf54c628e71cb2b02006be8fc67c5c2c0a2add1e8002",
+      "tags": [],
+      "title": "run_in_blender.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 141,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/spec.py",
+      "related": [],
+      "sha256": "0eb9a678de71fc9ca41f92e6ede6f4ad99b22406cd502cabd08d3324136e2a56",
+      "tags": [],
+      "title": "spec.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 93,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/topology.py",
+      "related": [],
+      "sha256": "8c3b638fc3599f41f6b67b71039d400dc1b88c16d4fd24baa0c2c354888843a4",
+      "tags": [],
+      "title": "topology.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 90,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/walls_overhang.py",
+      "related": [],
+      "sha256": "a43f28a6c8b48e67bc734bff759b5a359b79357ff9f6acd2b4d17d5bfccb7afa",
+      "tags": [],
+      "title": "walls_overhang.py",
       "use": "inspect-adapt"
     },
     {
@@ -16303,6 +17695,70 @@
       "use": "inspect-adapt"
     },
     {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 64,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/samples/native-api-contract.py",
+      "related": [],
+      "sha256": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29",
+      "tags": [],
+      "title": "native-api-contract.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 23,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/samples/native-iteration-build.py",
+      "related": [],
+      "sha256": "2c3ba670461300c5fa744c609b0bc6964598d71e208d29390512cf5c9093f57d",
+      "tags": [],
+      "title": "native-iteration-build.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 74,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/samples/native-iteration-review.py",
+      "related": [],
+      "sha256": "cc2d2ffabd62ef185bc791f9ea4e54077d0f87dab3188b26ae468d4c6dbcf289",
+      "tags": [],
+      "title": "native-iteration-review.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Controller source and actual 256px Blender image review 2026-09-17; controlled missing-collar and complete variants with equal height.",
+        "caution": "Controlled calibration fixture, not autonomous learning or a general reconstruction benchmark. Do not run in a live GUI/product scene. Checks overall height and units, deliberately not every feature; actual critic must inspect the pictures. Manufacture NOT_REQUESTED.",
+        "effects": "Clears the disposable scene, constructs native visual parts, saves a scene and low-resolution verification PNG, writes normalized contracts and measured byte-bound receipts.",
+        "reviewed_sha256": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
+        "runtime": "bpy/bmesh, fresh factory-startup background process only"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 117,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/samples/native_iteration_coupon.py",
+      "related": [],
+      "sha256": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
+      "tags": [],
+      "title": "native_iteration_coupon.py",
+      "use": "inspect-adapt"
+    },
+    {
       "annotation": {
         "basis": "static scout; not runtime certification | re-read 2026-09-06: output default now derived from repo root (AGENT_REPO_ROOT / script location), no hardcoded user path",
         "caution": "Scene-specific framing/GPU assumption; no restoration.",
@@ -16350,6 +17806,34 @@
       "tags": [],
       "title": "CNC Kitchen / Ruthex Standard Boss Database (dimensions in mm)",
       "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "workflow",
+      "lines": 18,
+      "loads_with": [],
+      "name": null,
+      "path": "specs/examples/native-iteration-parameters.json",
+      "related": [],
+      "sha256": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
+      "tags": [],
+      "title": "native-iteration-parameters.json",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "workflow",
+      "lines": 67,
+      "loads_with": [],
+      "name": null,
+      "path": "specs/examples/native-iteration-pipeline.json",
+      "related": [],
+      "sha256": "d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4",
+      "tags": [],
+      "title": "native-iteration-pipeline.json",
+      "use": "read"
     },
     {
       "description": "",
@@ -16419,6 +17903,62 @@
       "sha256": "e9a7f18bc6c3e02427c1ba0e987574f397deb94a4a43339cd1546f161c8e2d27",
       "tags": [],
       "title": "rodin-optimized-presentation-test.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 253,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/boilerplates/test_animation_contract.py",
+      "related": [],
+      "sha256": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0",
+      "tags": [],
+      "title": "test_animation_contract.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 184,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/boilerplates/test_evaluated_mesh_contract.py",
+      "related": [],
+      "sha256": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
+      "tags": [],
+      "title": "test_evaluated_mesh_contract.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 289,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/boilerplates/test_geonodes_contract.py",
+      "related": [],
+      "sha256": "88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30",
+      "tags": [],
+      "title": "test_geonodes_contract.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 140,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/boilerplates/test_parametric_contract.py",
+      "related": [],
+      "sha256": "7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4",
+      "tags": [],
+      "title": "test_parametric_contract.py",
       "use": "inspect-adapt"
     },
     {
@@ -16626,6 +18166,20 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
+      "lines": 117,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/execution/fixtures/verify-lib/reload_dependencies.py",
+      "related": [],
+      "sha256": "992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4",
+      "tags": [],
+      "title": "reload_dependencies.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
       "lines": 21,
       "loads_with": [],
       "name": null,
@@ -16654,12 +18208,12 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 187,
+      "lines": 239,
       "loads_with": [],
       "name": null,
       "path": "tests/execution/test_agent_runtime.py",
       "related": [],
-      "sha256": "1d80c4abd91bd800519cb895ed30b30ae5bc1dc26421c28b50de808fc5f3be73",
+      "sha256": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e",
       "tags": [],
       "title": "test_agent_runtime.py",
       "use": "inspect-adapt"
@@ -16729,12 +18283,12 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 155,
+      "lines": 180,
       "loads_with": [],
       "name": null,
       "path": "tests/knowledge/test_catalog.py",
       "related": [],
-      "sha256": "6df165cc7f13d34eee8a3c11a5d26b6bc2f4bbbbede041b8e8bdca7349959163",
+      "sha256": "1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824",
       "tags": [],
       "title": "test_catalog.py",
       "use": "inspect-adapt"
@@ -16751,6 +18305,104 @@
       "sha256": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
       "tags": [],
       "title": "test_evolution.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 20,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-pipeline/fixtures/forged_artifact.py",
+      "related": [],
+      "sha256": "701d35dc56ec8c1a256ba27980a9278388ffd3c7d534f7568c9f7f141ddb991a",
+      "tags": [],
+      "title": "forged_artifact.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 26,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-pipeline/fixtures/valid_artifact.py",
+      "related": [],
+      "sha256": "4fdd69443f5e51797523036ad1a36abf7b1e4a34b8b566a01547aa569a98808f",
+      "tags": [],
+      "title": "valid_artifact.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 77,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-pipeline/test_journal.py",
+      "related": [],
+      "sha256": "ffb78a6040fc4a6624fcec8130c2f50c1f48a6435f954c271f996230ac2bd6c2",
+      "tags": [],
+      "title": "test_journal.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 115,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-pipeline/test_manifest.py",
+      "related": [],
+      "sha256": "dc6da28b3ddbe149fca203ae248223e4a04fcd98ef899569d4a749e6a7236696",
+      "tags": [],
+      "title": "test_manifest.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 493,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-pipeline/test_runner.py",
+      "related": [],
+      "sha256": "6e26453da366dd5615d9b92d0b094fa253b89619d00cbbd9708915753aeb9423",
+      "tags": [],
+      "title": "test_runner.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 29,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-review/fixtures/coupon_collision.py",
+      "related": [],
+      "sha256": "d42af17dc2a4d5e2a5a8b8853588f7fdf361b80fe634519abec1b6090effdab2",
+      "tags": [],
+      "title": "coupon_collision.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 216,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/native-review/test_native_review.py",
+      "related": [],
+      "sha256": "b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338",
+      "tags": [],
+      "title": "test_native_review.py",
       "use": "inspect-adapt"
     },
     {
@@ -16836,6 +18488,20 @@
       "tags": [],
       "title": "test_gate_predicates.py",
       "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 93,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/production-gate/test_large_span_features.py",
+      "related": [],
+      "sha256": "01774639f20a361bcabcb6b7ff44656383b90fbfb5b886506a39119714895712",
+      "tags": [],
+      "title": "test_large_span_features.py",
+      "use": "inspect-adapt"
     }
   ],
   "routing_exclusions": {
@@ -16845,15 +18511,15 @@
     }
   },
   "schema": 1,
-  "source_digest": "1c42e36fb1a136a1764cdd6367457906179b33e51de49549f03b13987f2f0058",
+  "source_digest": "108cda39f9766a18c582f6e08e812f2183706f0b435ba94cf27653b1a2429f8e",
   "source_hashes": {
-    ".agents/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
+    ".agents/skills/blender-agent-core/SKILL.md": "22e92553d33a84fdade75ce337810ede47430a7b7cc8a4906fabc0dc1df6ebd1",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".agents/skills/blender-agent-core/references/hard-rules.md": "423b3b22aea027c3ffa093955fc59f173c452c2434b8b602804fcc1624cdfbe5",
     ".agents/skills/blender-agent-core/references/recipes.md": "7bcee43f8fb372864692143179e2f1d775431f2cc82e39eaeba523461a1bd3f5",
-    ".agents/skills/blender-image-to-3d/SKILL.md": "4ec70016957057430a1191762e10350177a4654cbf82629374e187c9d31632d5",
+    ".agents/skills/blender-image-to-3d/SKILL.md": "d5c3956b64ef6a278de57536222278b98bfa27c1e2782d717bde91c8e98a7fde",
     ".agents/skills/blender-image-to-3d/references/review-rubric.md": "556eebe229242536bef3a38e309f0d2af36c3f309d48cd377d81541816ca9440",
-    ".agents/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
+    ".agents/skills/blender-knowledge-workbench/SKILL.md": "70b842cd082f156bccefcf8dda738a233fbd61723cff6c51f2c0bdbfa2da448f",
     ".agents/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "f9620eb64634b442d855b0532dab3e6c84321b646825931f479294051ad9350a",
     ".agents/skills/img2threejs/.github/pull_request_template.md": "9fd84ce46787230045427bb017dc5e78ede9383b315cf01b2c4192ab49c1ffb9",
     ".agents/skills/img2threejs/CHANGELOG.md": "e7a4900ea49f6c717d6bf6acd5cba4e6f02357276b7a484ebba9f8704399b375",
@@ -16902,13 +18568,13 @@
     ".agents/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".agents/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".claude/skills/blender-agent-core/SKILL.md": "238f6ef880600e47ccea4891d97dffc5b29301cbd2da508225c861a0e07833bf",
+    ".claude/skills/blender-agent-core/SKILL.md": "22e92553d33a84fdade75ce337810ede47430a7b7cc8a4906fabc0dc1df6ebd1",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".claude/skills/blender-agent-core/references/hard-rules.md": "423b3b22aea027c3ffa093955fc59f173c452c2434b8b602804fcc1624cdfbe5",
     ".claude/skills/blender-agent-core/references/recipes.md": "7bcee43f8fb372864692143179e2f1d775431f2cc82e39eaeba523461a1bd3f5",
-    ".claude/skills/blender-image-to-3d/SKILL.md": "4ec70016957057430a1191762e10350177a4654cbf82629374e187c9d31632d5",
+    ".claude/skills/blender-image-to-3d/SKILL.md": "d5c3956b64ef6a278de57536222278b98bfa27c1e2782d717bde91c8e98a7fde",
     ".claude/skills/blender-image-to-3d/references/review-rubric.md": "556eebe229242536bef3a38e309f0d2af36c3f309d48cd377d81541816ca9440",
-    ".claude/skills/blender-knowledge-workbench/SKILL.md": "19ebcc50587887a3b64cf7b8e893c9f94590764bd165e674f2b38727dcba403a",
+    ".claude/skills/blender-knowledge-workbench/SKILL.md": "70b842cd082f156bccefcf8dda738a233fbd61723cff6c51f2c0bdbfa2da448f",
     ".claude/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "f9620eb64634b442d855b0532dab3e6c84321b646825931f479294051ad9350a",
     ".claude/skills/img2threejs/.github/pull_request_template.md": "9fd84ce46787230045427bb017dc5e78ede9383b315cf01b2c4192ab49c1ffb9",
     ".claude/skills/img2threejs/CHANGELOG.md": "e7a4900ea49f6c717d6bf6acd5cba4e6f02357276b7a484ebba9f8704399b375",
@@ -16957,7 +18623,7 @@
     ".claude/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".claude/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".claude/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".project-agent.md": "91060d35f74d3d2b6741ec7da60be6c82153e573a7b6c91f53ddb52f40946652",
+    ".project-agent.md": "02f5b8cc0579f4a38f9a60c8065cfa4002602f7c86a3c5eaa77dfda1c1d3ec38",
     "AGENTS.md": "57dd4e7ddef8be1561fcdadf10b60fa700a81b39de7b411a4123925aac23f353",
     "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
     "builds/robot-arm-original-refined/README.md": "a78ac89a4b9f59320d60ffab5ef94cf77a37b688ab69287cc6c103c16e2b07a9",
@@ -16995,11 +18661,19 @@
     "docs/orc-component-workflow.md": "18bc17390437d634cc92b079b3b76bd7aa50c526feec5db6ea64834b9f9dbad4",
     "docs/orc-separator-worked-example.md": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
     "docs/orc-session-lessons.md": "403a2938c788cfe49af67641de9bd2601f0b6ec9853f74836732372f142738c1",
+    "docs/reviews/ck-001/r02/README.md": "fbb40d58d956af86fa260f703fc9041d311a91fd3658ee6b3a8c1e6a74a7bf4d",
+    "docs/reviews/ck-001/r02/design/design-notes.md": "e292c0c804c293de439a2a913d0b899532858b4bd3edf8fc20e74c582ee9a7a6",
+    "docs/reviews/ck-001/r02/reference/ORIGINAL-INPUTS.md": "f439f194e22eed7d70b9fbd0ed526b4dc385e296facd89bf8e537fe850724734",
+    "docs/reviews/ck-001/r02/reports/final-engineering-review.md": "e292c0c804c293de439a2a913d0b899532858b4bd3edf8fc20e74c582ee9a7a6",
+    "docs/reviews/ck-001/r02/reports/final-visual-review.md": "2b0c1767b1487b5e0c3fb88d5522370b7499590b07670fe6cecb6683fc3ee406",
+    "docs/reviews/ck-001/r02/reports/package-review.md": "adaff823ef5657d68047f8ceadc5c4e6f1159361da7a9fc9e504eb460033b671",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
-    "knowledge/00-foundations/agent-workflow-loop.md": "cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6",
+    "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc",
+    "knowledge/00-foundations/agent-workflow-loop.md": "087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3",
     "knowledge/00-foundations/blender-version-matrix.md": "db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a",
     "knowledge/00-foundations/bpy-scripting-core.md": "8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c",
-    "knowledge/00-foundations/python-agent-boilerplates.md": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
+    "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+    "knowledge/00-foundations/python-agent-boilerplates.md": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
     "knowledge/10-modeling/modeling-topology.md": "1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608",
     "knowledge/10-modeling/modifiers.md": "88f4e06ffc4d5b9f74db1d00f2c0a95cee35cbe28a8248ab12b19dbf8f6a1ff1",
     "knowledge/10-modeling/uv-unwrapping.md": "059472e174c3f72ac21f14cc2cd463229d8e7184190143df82d3c089d62aad2d",
@@ -17016,6 +18690,7 @@
     "knowledge/50-procedural/simulation-physics.md": "eeb6afd6ebdb67b9743da7945d30891d46756145c4cfb4d99d780d33fe0abc00",
     "knowledge/60-pipeline/3d-printing.md": "4bce69b0a198c8406475bf230fe66a35cbad19752bba22aa8ce24ad66e6d0eda",
     "knowledge/60-pipeline/export-interchange.md": "54a6aba3dcdb747009017f27b30d874ac5453f4d137d4ec6186b036c37d23c0c",
+    "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b",
     "knowledge/60-pipeline/optimization-realtime.md": "96e8ccd766fb94b47a9a3e0c8d7bb432d30106ed8933b9bdc9ba20b14f82ebc6",
     "knowledge/60-pipeline/product-viz-and-shots.md": "0ae55d706fd7496ee8bf802784938a97cbb5e4383939b27c09d47e1f48a85f35",
     "knowledge/60-pipeline/scene-organization.md": "7ca6183bbf3160eb85aae0c7d2843c3fe8ca4c0ad5eccf80f56a3890aa8ca10a",
@@ -17027,9 +18702,10 @@
     "knowledge/70-cad-precision-robotics/print-plate-layout.md": "eb9f48179c1eb0a88253a92d49b4c4bee479b58349026e37810687b237802a98",
     "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
     "knowledge/INDEX.md": "84ab0e6bb9cd3b3b338e0ff209751b488d97d9a8b3d6dd8e1ae29359c9409102",
-    "knowledge/catalog-config.json": "27e16ed87957735312727297e3a480a93e7cdc355c3795abe30006491acf17d2",
-    "knowledge/generated-workflows.md": "be10d2517d0d9ae01b9124984f975139742dc0b6411ecf22f04155e40c03cae3",
+    "knowledge/catalog-config.json": "241a2e0472341a9e739fb08269675b2942a9855c8a9089a0feaf9f2f7c7066c7",
+    "knowledge/generated-workflows.md": "2b3afa43a05157d6631bc5208be33d89862b313825940d0ee338dcaf092ee840",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
+    "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
     "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md": "619fc507661f1e78eb7e0d9c5b8f0d0f539f482c963f31669c76596cd5753dfc",
     "research/3d-printing-polymer-engineering/03-DFAM-GEOMETRIC-RULES-TOLERANCES.md": "9aca2284a2661c892c72c3eb4f85c4a27eac057999825766bb2557c2bbf31cd8",
@@ -17101,17 +18777,27 @@
     "research/robotics-precision-cad/12-INDUSTRIAL-WIRING-CONNECTORS-HARNESS-ROUTING.md": "6ac53feff1fdfe7a1f10cb7e12875c130f24ecfb966357f6c80a6ca74754ed04",
     "research/robotics-precision-cad/13-ROBOT-ARM-PIPELINE-LESSONS-LEARNED.md": "22e2d4f0635550f1cedf9017c707e0bc116723cdac98b4c9ff7b08ebb29efb76",
     "research/rodin.md": "77a305957e747a8eeac44f6b3ebe0af26a2a631c26e26440c08e50a0076781b6",
+    "research/upstream-agent-patterns/dream-loop.md": "55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07",
+    "research/upstream-agent-patterns/meshy.md": "0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33",
+    "research/upstream-agent-patterns/text-to-cad.md": "77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec",
     "scripts/agent-run-headless.py": "8041ad495304916862613139a44453d99b08c848d6ffbd3742fe267c8f687b65",
-    "scripts/agent-verify-lib.py": "00ce1ce41cf9b73f96f866a7aceb10ccc0f5c3cd8875f87ec87c3dcdb1533323",
-    "scripts/agent_runtime.py": "ce18bdad4cd3a5f66a65fb8e78b3b9ccfc810424c2c1a84840828c4ab587ab4a",
+    "scripts/agent-verify-lib.py": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
+    "scripts/agent_runtime.py": "c7e85e03adef537002e0b3d071aa117537f78447ea587352bc146b40e43a5438",
+    "scripts/agent_verify/__init__.py": "57599acaef138ea7a9571f98658b133964a6c98e69bcf21bfdc39f35a59d3a06",
+    "scripts/agent_verify/export_check.py": "9448d064d27b71b9d7b85af08156c38978bb97a5ef0149d464a9254cbd65a306",
+    "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
+    "scripts/agent_verify/paths.py": "fc364c10a2cd7da5e7da8f11205a2a12dae19928afc24039ad3c71fb75979dee",
+    "scripts/agent_verify/preview.py": "c732f799d344f413ef079b33d39decef29ed042b75c7151f18d1038b48f831d6",
+    "scripts/agent_verify/session.py": "2da68c49638a851e68356d95993b9bef304d8d8a7a80848164a9bc6e9ce6389e",
     "scripts/blender-knowledge.py": "d205743b482f396425460633306ee0eccceb0d40ce7c87e47a3d74f404e348f4",
     "scripts/blender-socket-client.py": "a3e6658a996c04746a79785199c89237058423c342078e36155e6478b961b1ee",
-    "scripts/boilerplates/bp_animation.py": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd",
+    "scripts/boilerplates/bp_animation.py": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
     "scripts/boilerplates/bp_bmesh_cad.py": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086",
     "scripts/boilerplates/bp_cad_robotics.py": "f4cefba47a6540da6fd19de46eb9cee9998c3065d9f974a2dcde69498435b566",
-    "scripts/boilerplates/bp_core.py": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
-    "scripts/boilerplates/bp_geonodes.py": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+    "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
+    "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
     "scripts/boilerplates/bp_materials_pbr.py": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
+    "scripts/boilerplates/bp_parametric_contract.py": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
     "scripts/boilerplates/bp_physics.py": "310830e00597192f942742ea24a580ba26f1a04e65bf75c8a632fc523201ccea",
     "scripts/boilerplates/bp_render_camera.py": "a0462c9844057b058c04e855b47d26c21be2513adb242a74288e9b9ae20e90e2",
     "scripts/boilerplates/bp_rigging.py": "6978e0ef90b15f73881915785706c2e9f2a7fcd07c4c5974037a8f25efc46090",
@@ -17152,24 +18838,60 @@
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
     "scripts/headless-run.sh": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
     "scripts/hq-coverage-gate.py": "0a4310a9247a0b2fdd6674f64e50b560efb03407d481f8cd46e038864636e284",
-    "scripts/knowledge-catalog.py": "a8d681934844d64ffdba619346391abb39df1340fdecf5425f2c0c164c41872c",
+    "scripts/hq_coverage/__init__.py": "bfbb15696445e3b07f50be8559ddb10aed83526114bfd49dea2131706c2e2e7a",
+    "scripts/hq_coverage/core.py": "4044cee0768e615f4695939f1e2677396607a1e91a0561bef1f06b88a3f6edb4",
+    "scripts/hq_coverage/inputs.py": "683e55becd49816d41070ea54dc62399b7417f5c9b2932addd3df66203a5dc17",
+    "scripts/hq_coverage/png.py": "5c70abf7a7d1224714a20d8a5aee0397ed6610a2f53aa64f373d248791db054f",
+    "scripts/knowledge-catalog.py": "688f29e3e73a9b508e5433e9596b8c146cb53efdbcfb9a09eddeba3c33752c60",
     "scripts/knowledge-pipeline.py": "ad863ad17b6d11e481fd5ccc44410d78d3e344cc74e41335e82a0469682e07ce",
     "scripts/knowledge-playbook.py": "8c1b7e8639dd1040fa0b1b178f1faf1dbdfeef9162838029577514aa5965ceb1",
     "scripts/knowledge-query.py": "490813458b55643b9c06421380a1ec2de127a43276a65a888d859b87923fd1b1",
     "scripts/knowledge-topics.py": "ba916f6f9e97e3b0039301af128b69a93b47b7e4896db8f3ef526e529fd61ba3",
     "scripts/make-comparison-sheet.sh": "e724f6b38d4a65deae9484cf67846d23dac81a09140c2c0baa3f78bed658e80c",
+    "scripts/native-pipeline.py": "ac067360dd934128cda76028acd16e52447579e62ef0e9636698e3f55f3030db",
+    "scripts/native-review.py": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
+    "scripts/native_pipeline/__init__.py": "5fc1135978f87fd98aa10a7f4571cf5054e25f440d0a66ced84a544a50660e41",
+    "scripts/native_pipeline/journal.py": "2da7908428fadcff6311677f5d36bb5b7582512c941a96cc1b3617bdc0b5bdbd",
+    "scripts/native_pipeline/manifest.py": "182a206b3dc370f04b0d9707fc0fa25f8a6dc81aa22c11ffe9ffc93f6a2103df",
+    "scripts/native_pipeline/runner.py": "fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694",
+    "scripts/native_review/__init__.py": "c732634050a819fb7568e37a84102a38902633899910fb786e9cff4eef1e5a7c",
+    "scripts/native_review/decision.py": "19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df",
+    "scripts/native_review/evidence.py": "90fef1da272eb4adf7092f47b7085c03582f5b8495f27a84d74ee31243d31b12",
+    "scripts/native_review/packets.py": "7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed",
     "scripts/prepare-qremeshify-input.py": "80ef45db24f36c2c86d70109308c9a0b394829e9a54e92be125a4562252326c7",
     "scripts/production-gate.py": "8ff74e8990bd1948e0897878790d1d84c75e6e83f864e88bb20bb43c105f82e5",
+    "scripts/production_gate/__init__.py": "8488d793799e4b6167c4714878ccc84ca7b012b791bffdfb040a64676f260e48",
+    "scripts/production_gate/bed_fit.py": "20e6dff82ec9d319be61498941e5f6ecdc69c32e2307cf44a7a013287fa0cebb",
+    "scripts/production_gate/dimensions.py": "a3cedf54de7accca3ee65428cf47ff9ffc41811e52712a3330b1f67733c43a2a",
+    "scripts/production_gate/export_roundtrip.py": "b4183f34747fc7f1d54af1ab00ac13454390f54f41d326e5b924e09a8878e92c",
+    "scripts/production_gate/fastener_tables.py": "6b533860dc236d0d79b4481e1c546c194f7eeedd7d60abdaeb825c78a3041d29",
+    "scripts/production_gate/features_fasteners.py": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
+    "scripts/production_gate/meshprep.py": "c75f0725a7222557c079bed0527583af440760c9d44708c95d735f6740e042a4",
+    "scripts/production_gate/report.py": "bc6634d495bf76b637840a23296668f6674cc8231b1abb5ab2b6ff10a8abbefd",
+    "scripts/production_gate/run_in_blender.py": "186a9e86f48a8f507860cf54c628e71cb2b02006be8fc67c5c2c0a2add1e8002",
+    "scripts/production_gate/spec.py": "0eb9a678de71fc9ca41f92e6ede6f4ad99b22406cd502cabd08d3324136e2a56",
+    "scripts/production_gate/topology.py": "8c3b638fc3599f41f6b67b71039d400dc1b88c16d4fd24baa0c2c354888843a4",
+    "scripts/production_gate/walls_overhang.py": "a43f28a6c8b48e67bc734bff759b5a359b79357ff9f6acd2b4d17d5bfccb7afa",
     "scripts/qremeshify-headless-adapter.py": "0f52f3c4128ac38cad74d94e99a3273833c9e2215b86a7599cf5a69970f09454",
     "scripts/render-qremeshify-candidate.py": "4dba52ccc917dfb494193d1c91a22d9501869bf74c6ea76f75e3b770baefa923",
     "scripts/run-qremeshify.py": "ebaa502081eab5448e3d7897991d6ca254727c7a33bfc0587cc5fceca6da10bb",
+    "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29",
+    "scripts/samples/native-iteration-build.py": "2c3ba670461300c5fa744c609b0bc6964598d71e208d29390512cf5c9093f57d",
+    "scripts/samples/native-iteration-review.py": "cc2d2ffabd62ef185bc791f9ea4e54077d0f87dab3188b26ae468d4c6dbcf289",
+    "scripts/samples/native_iteration_coupon.py": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
     "scripts/turntable-preview.py": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
     "scripts/verify-3dprint-tolerances.py": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
+    "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
+    "specs/examples/native-iteration-pipeline.json": "d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4",
     "tests/blender/native-drone-geometry-test.py": "37293fbbc288c363bb9f1ff1096adbcfdb985e54d14c2ff9454d077d47a52c8f",
     "tests/blender/native-drone-presentation-test.py": "207856982f5f296fb98b271d9758ee9ca765acd372d35da3dd3f163142905e22",
     "tests/blender/qremeshify-candidate-test.py": "66db8979f102c6dfc719e4065525e6e4733a7318264b1d70f160ed5fa2466f38",
     "tests/blender/rodin-optimized-geometry-test.py": "12e62782df11ecf116a51d867da51634226f9d5a391f5cdaa17c25b5d2859f74",
     "tests/blender/rodin-optimized-presentation-test.py": "e9a7f18bc6c3e02427c1ba0e987574f397deb94a4a43339cd1546f161c8e2d27",
+    "tests/boilerplates/test_animation_contract.py": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0",
+    "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
+    "tests/boilerplates/test_geonodes_contract.py": "88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30",
+    "tests/boilerplates/test_parametric_contract.py": "7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4",
     "tests/execution/fixtures/fake_addon_socket_server.py": "809d9433304c7cd2e29b3a12e53fe2781bf35cdb6f7829f133f228bba2813092",
     "tests/execution/fixtures/fixture-agent-runtime-checks.py": "a2b37f2d56a8bd910a9cde6293425a4a85b0f3c23846c716993b57c301e55d5f",
     "tests/execution/fixtures/payload-argv-echo.py": "3aec4ae280598771453bdd4a1399b5db9ab96eac997a873166a6d9d216c927b3",
@@ -17184,21 +18906,30 @@
     "tests/execution/fixtures/verify-lib/export-checks.py": "5bd29f4c1670d04355dc650e6c9d427f3dde029d6ee3973cd55d3ea5a35d660c",
     "tests/execution/fixtures/verify-lib/preview-failure.py": "c7e65c5469f9cc1e15151a2c37bdf0363c19b8b66f90695e12628718746e5cbe",
     "tests/execution/fixtures/verify-lib/preview-success.py": "60cdc608f9fd7d7269502539564e7ec91d4b1734ce1285e572dcd9e808e99266",
+    "tests/execution/fixtures/verify-lib/reload_dependencies.py": "992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4",
     "tests/execution/fixtures/verify-lib/scaffold-checks.py": "7b81fd8417fdadb6aa3e435f13f82ad98bb0d31a2cc40bbe99fe77dba6c2539e",
     "tests/execution/fixtures/verify-lib/state-snapshot.py": "0ab23a48f952c2b27e9f29b9c028cd48ae8dec588add3f6f9bef7008cff09591",
-    "tests/execution/test_agent_runtime.py": "1d80c4abd91bd800519cb895ed30b30ae5bc1dc26421c28b50de808fc5f3be73",
+    "tests/execution/test_agent_runtime.py": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e",
     "tests/execution/test_headless_run.py": "6d88ed3a2a185d3c5e5f094792e5aeee6ef58c0dbbcdab3cc4ec5529debdf93a",
     "tests/execution/test_socket_client.py": "57f7ac3ca082f8f6d771c8e9596cbafcf43b7e6d13315ef3ecdefc22466dcd28",
     "tests/execution/test_verify_lib.py": "482b16a38979d105b18e87014baedbb61e3fce2710dcb9d6bdeb2b15e0211f55",
     "tests/hq-coverage/test_hq_coverage_gate.py": "40c859250cb78c53d306006d354e351081b6d67eab44f889c5183a035526c75e",
-    "tests/knowledge/test_catalog.py": "6df165cc7f13d34eee8a3c11a5d26b6bc2f4bbbbede041b8e8bdca7349959163",
+    "tests/knowledge/test_catalog.py": "1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824",
     "tests/knowledge/test_evolution.py": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
+    "tests/native-pipeline/fixtures/forged_artifact.py": "701d35dc56ec8c1a256ba27980a9278388ffd3c7d534f7568c9f7f141ddb991a",
+    "tests/native-pipeline/fixtures/valid_artifact.py": "4fdd69443f5e51797523036ad1a36abf7b1e4a34b8b566a01547aa569a98808f",
+    "tests/native-pipeline/test_journal.py": "ffb78a6040fc4a6624fcec8130c2f50c1f48a6435f954c271f996230ac2bd6c2",
+    "tests/native-pipeline/test_manifest.py": "dc6da28b3ddbe149fca203ae248223e4a04fcd98ef899569d4a749e6a7236696",
+    "tests/native-pipeline/test_runner.py": "6e26453da366dd5615d9b92d0b094fa253b89619d00cbbd9708915753aeb9423",
+    "tests/native-review/fixtures/coupon_collision.py": "d42af17dc2a4d5e2a5a8b8853588f7fdf361b80fe634519abec1b6090effdab2",
+    "tests/native-review/test_native_review.py": "b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338",
     "tests/production-gate/fixture_specs.py": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
     "tests/production-gate/gate_harness.py": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
     "tests/production-gate/make_fixtures.py": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
     "tests/production-gate/test_gate_bed_fit.py": "63b00968e4c664e61979342799fcc9a9530e79599250b0a6cc11a72745aded5d",
     "tests/production-gate/test_gate_contract.py": "5bf32b18dd9c0ad2d8102a2d39aae9392355f820938c309b8360b604fccd5cbe",
-    "tests/production-gate/test_gate_predicates.py": "51a65586c3defae4d7ab94e99285c3a02277294a00a860660034be4f3154f09d"
+    "tests/production-gate/test_gate_predicates.py": "51a65586c3defae4d7ab94e99285c3a02277294a00a860660034be4f3154f09d",
+    "tests/production-gate/test_large_span_features.py": "01774639f20a361bcabcb6b7ff44656383b90fbfb5b886506a39119714895712"
   },
   "warnings": [
     "Imported mirror drift (preserved): .agents/skills/img2threejs/SKILL.md"
@@ -17389,18 +19120,22 @@
             "Check the loop endpoint/seam and review playback; a single midpoint pass does not prove the whole cycle."
           ],
           "limitations": [
-            "The current helper can alter multiple action slots and wipe driver state; do not run it directly on animation in use.",
-            "The existing self-test checks only one midpoint; it does not certify the loop or natural motion."
+            "The helper isolates distinct slots and requested frames. Deliberately shared slots remain shared; driver replacement owns the exact target channel.",
+            "Five native contracts do not qualify NLA, layered animation, infinite looping, export or natural motion."
           ],
           "review": {
-            "by": "boilerplate scout full static read; controller curation",
+            "by": "Controller re-review 2026-09-17; five Blender 5.2 contracts are scoped runtime evidence, not whole-motion certification.",
             "kind": "static-routing-review",
             "source_hashes": {
-              "scripts/boilerplates/bp_animation.py": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd"
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/boilerplates/bp_animation.py": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
+              "tests/boilerplates/test_animation_contract.py": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0"
             }
           },
           "sources": [
-            "scripts/boilerplates/bp_animation.py"
+            "scripts/boilerplates/bp_animation.py",
+            "tests/boilerplates/test_animation_contract.py",
+            "knowledge/00-foundations/native-api-contracts.md"
           ],
           "steps": [
             "Identify the object/action/slot and the RNA paths you may edit; leave pre-existing animation outside the scope untouched.",
@@ -17767,6 +19502,110 @@
         "knowledge/10-modeling/uv-unwrapping.md"
       ],
       "topics": {
+        "api-contract-research": {
+          "gates": [
+            "The negative control must distinguish wrong behavior from a plausible successful assignment.",
+            "Changed or removed nested implementation files must invalidate the catalog without executing indexed code.",
+            "Publication requires current source hashes, no unrouted active knowledge and a reviewed candidate; inspect an actual route afterward."
+          ],
+          "limitations": [
+            "A source locator or search excerpt is not a fetched documentation snapshot; record inaccessible sources and runtime-only evidence.",
+            "Catalog freshness and reviewed routing do not certify Blender behavior, physics, manufacturing or live Python reload."
+          ],
+          "review": {
+            "by": "Controller curation 2026-09-17; source/caller review and 30 knowledge tests.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
+              "scripts/knowledge-catalog.py": "688f29e3e73a9b508e5433e9596b8c146cb53efdbcfb9a09eddeba3c33752c60",
+              "scripts/knowledge-pipeline.py": "ad863ad17b6d11e481fd5ccc44410d78d3e344cc74e41335e82a0469682e07ce",
+              "tests/knowledge/test_catalog.py": "1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824"
+            }
+          },
+          "sources": [
+            "research/260917-blender-api-contracts.md",
+            "scripts/knowledge-catalog.py",
+            "scripts/knowledge-pipeline.py",
+            "tests/knowledge/test_catalog.py"
+          ],
+          "steps": [
+            "Choose one actual helper/caller and a behavior with a falsifier; record the exact Blender runtime and data ownership.",
+            "Record primary-source access honestly, build a native positive and negative control, and fix the reusable implementation.",
+            "Review the source and tests, curate bounded topics and cautions, then prepare, inspect and publish the exact knowledge digest."
+          ],
+          "when": "When researching or improving an existing Blender helper, workflow, technique or sample."
+        },
+        "evaluated-mesh-contract": {
+          "gates": [
+            "The exact evaluated allocation owner must be cleared on success and consumer failure.",
+            "Array geometry and constrained transforms must affect bounds while original mesh/modifiers remain unchanged.",
+            "Empty geometry must not produce plausible bounds; repeated reads must not grow persistent data."
+          ],
+          "limitations": [
+            "The default graph uses active-view-layer viewport settings; instances, children and render parity require a separate strategy.",
+            "Do not retain mesh RNA, change frames, re-evaluate or nest a borrow of the same object within its scope.",
+            "Eight runtime controls do not establish wall thickness, fit, printability or load capacity."
+          ],
+          "review": {
+            "by": "Controller and independent review 2026-09-17; Blender 5.2.0 evaluated-mesh controls and integrated sample.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
+              "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
+              "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29",
+              "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4"
+            }
+          },
+          "sources": [
+            "knowledge/00-foundations/native-api-contracts.md",
+            "scripts/boilerplates/bp_core.py",
+            "scripts/agent_verify/inspect_scene.py",
+            "tests/boilerplates/test_evaluated_mesh_contract.py",
+            "scripts/samples/native-api-contract.py"
+          ],
+          "steps": [
+            "Declare graph/view-layer/frame/units and whether instances, children or render-only modifiers matter.",
+            "Borrow evaluated owner and mesh with evaluated_mesh(); copy independent numbers before leaving the context.",
+            "Measure evaluated vertices with the evaluated world matrix and assert the expected geometry response."
+          ],
+          "when": "When measuring modifier output or evaluated transforms, or borrowing temporary Blender meshes."
+        },
+        "helper-dependency-reload": {
+          "gates": [
+            "An unchanged facade must bind fresh behavior after an existing declared dependency changes, including rapid same-size edits.",
+            "Missing dependencies must raise; unrelated foreign modules must remain untouched and exact required-name collisions must fail closed."
+          ],
+          "limitations": [
+            "Explicit manifests do not discover all transitive imports or a newly added file until a declared/source change triggers reexecution.",
+            "Old external function references and module state are not migrated; callers must use the newly returned module.",
+            "The verifier removes only owned generated bytecode caches; an unwritable cache may fail the load."
+          ],
+          "review": {
+            "by": "Controller review 2026-09-17; 16 runtime tests including the actual Blender facade/dependency fixture, included in the 48 execution regressions.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/agent-verify-lib.py": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
+              "scripts/agent_runtime.py": "c7e85e03adef537002e0b3d071aa117537f78447ea587352bc146b40e43a5438",
+              "tests/execution/fixtures/verify-lib/reload_dependencies.py": "992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4",
+              "tests/execution/test_agent_runtime.py": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e"
+            }
+          },
+          "sources": [
+            "scripts/agent_runtime.py",
+            "scripts/agent-verify-lib.py",
+            "tests/execution/test_agent_runtime.py",
+            "tests/execution/fixtures/verify-lib/reload_dependencies.py",
+            "knowledge/00-foundations/native-api-contracts.md"
+          ],
+          "steps": [
+            "Use the current runtime; upgrade an already-imported old runtime before a pass or start a fresh Blender process.",
+            "Declare absolute dependency files and use the module returned by load_lib(); the verifier owns reload of its declared local modules.",
+            "Treat missing dependencies or foreign required-module collisions as failures; inspect cache-write permissions when reload fails."
+          ],
+          "when": "When a long-lived MCP process may be using stale helper code after dependency edits."
+        },
         "python-adapter-review": {
           "gates": [
             "Check the API/runtime and assertions against task behavior, not against a verified header.",
@@ -17780,8 +19619,8 @@
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
             "kind": "static-routing-review",
             "source_hashes": {
-              "knowledge/00-foundations/python-agent-boilerplates.md": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
-              "scripts/boilerplates/bp_core.py": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
+              "knowledge/00-foundations/python-agent-boilerplates.md": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
+              "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
               "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f"
             }
           },
@@ -17795,6 +19634,78 @@
             "Declare input/scene ownership, units, effects, and output; create a separate candidate."
           ],
           "when": "When reusing a bpy boilerplate library instead of writing a new helper."
+        },
+        "target-bound-review": {
+          "gates": [
+            "Changed target/candidate/proof/numeric bytes must reject old acceptance; critic must cover every feature and required view.",
+            "Unknown findings, missing measurements, incomplete template and same-author review cannot pass.",
+            "A numeric failure blocks visual acceptance; a bounded review pass does not qualify manufacture."
+          ],
+          "limitations": [
+            "This code does not recognize images or authenticate critic identity. Actual independent vision review remains a controller responsibility.",
+            "Declared capture fields are validated, but the renderer/controller must establish correspondence to the actual image.",
+            "The coupon uses controlled variants and a single view; it does not establish general multi-view reconstruction or automated correction quality."
+          ],
+          "review": {
+            "by": "Controller/independent review 2026-09-17; 18 contract tests, with actual native capture evidence handled separately.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b",
+              "scripts/native-review.py": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
+              "scripts/native_review/decision.py": "19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df",
+              "scripts/native_review/packets.py": "7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed",
+              "tests/native-review/test_native_review.py": "b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338"
+            }
+          },
+          "sources": [
+            "scripts/native-review.py",
+            "scripts/native_review/packets.py",
+            "scripts/native_review/decision.py",
+            "tests/native-review/test_native_review.py",
+            "knowledge/60-pipeline/native-agent-iteration.md"
+          ],
+          "steps": [
+            "Freeze target revision, feature expectations/falsifiers, camera/frame context, candidate source pins and actual PNG/numeric evidence.",
+            "Ask a separate reviewer to inspect the contracted views and record concrete PASS/FAIL/UNKNOWN findings without builder explanations.",
+            "Assess current bindings and complete findings; change approach on a repeated gap and retain unresolved evidence at the round budget."
+          ],
+          "when": "When a reference-led model needs independent feature criticism across bounded iterations."
+        },
+        "upstream-agent-patterns": {
+          "gates": [
+            "Source revisions and license attribution remain explicit; no unsupported upstream retry, CI or quality claim becomes a local guarantee.",
+            "Native asset policy, print gates and physical-evidence requirements remain separate from upstream instructions.",
+            "Execution state and byte hashes cannot substitute for a feature-level visual, geometric or physical predicate."
+          ],
+          "limitations": [
+            "Upstream tests were inspected as source; they were not executed. Local tests qualify only the stated native adaptations.",
+            "Hosted generation, vendor assets, B-rep kernels, robot format exporters and hardware/slicer integrations are not imported.",
+            "The upstream CAD result tree is not parametric feature history; independent local implementations retain source attribution."
+          ],
+          "review": {
+            "by": "Controller and two source reviewers, 2026-09-17; pinned source audit and separately tested native adaptations.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc",
+              "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b",
+              "research/upstream-agent-patterns/dream-loop.md": "55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07",
+              "research/upstream-agent-patterns/meshy.md": "0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33",
+              "research/upstream-agent-patterns/text-to-cad.md": "77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec"
+            }
+          },
+          "sources": [
+            "research/upstream-agent-patterns/meshy.md",
+            "research/upstream-agent-patterns/dream-loop.md",
+            "research/upstream-agent-patterns/text-to-cad.md",
+            "knowledge/60-pipeline/native-agent-iteration.md",
+            "docs/upstream-agent-integration.md"
+          ],
+          "steps": [
+            "Choose the relevant pinned mechanism and read its actual source-evidence boundary; distinguish prose, implemented checks and tests.",
+            "Use local task lifecycle, target-bound criticism and explicit source/parameter evidence through the existing three skills.",
+            "Define a falsifier and run the native test or coupon before adopting the mechanism for a real product."
+          ],
+          "when": "When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechanisms to Blender-native work."
         }
       }
     },
@@ -17846,7 +19757,7 @@
               "research/blender-geometry-nodes-procedural/01-FIELDS-ARCHITECTURE-EVALUATION-MODEL.md": "e067dbda62c98c67b8de34cb27377d9106a61e166d5c788fbd29f8566ce2dc99",
               "research/blender-geometry-nodes-procedural/02-PROCEDURAL-HARD-SURFACE-CAD-MODELING.md": "1fa9d830e42ba72055c9affa9ff59b3acf2537d9d1721681d7e6e61af9d552f3",
               "scripts/boilerplates/bp_bmesh_cad.py": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086",
-              "scripts/boilerplates/bp_geonodes.py": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+              "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
               "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d"
             }
           },
@@ -17887,6 +19798,40 @@
             "Lock cell size/local wall/boundary/load paths and fiber directions."
           ],
           "when": "When a lattice or reinforcement targets a specific mass/stiffness goal."
+        },
+        "modifier-input-contract": {
+          "gates": [
+            "Changing cylinder inputs must change measured dimensions from 0.05 x 0.05 x 0.08 m to 0.10 x 0.10 x 0.12 m in the test fixture.",
+            "Ambiguous/missing names, invalid types/ranges and non-finite values must fail without changing the tested input.",
+            "Live and zero-user same-name groups must survive creation collisions; modifier reruns must not create .001 duplicates."
+          ],
+          "limitations": [
+            "The implemented binding requires Blender 5.2+; directly tested value classes are Float scalar and Vector only.",
+            "Attribute/layer bindings, simulation zones and other RNA value classes are not qualified by these tests.",
+            "Evaluated dimensions establish parameter response, not topology, printability, fit or strength."
+          ],
+          "review": {
+            "by": "Controller review 2026-09-17; nine native Geometry Nodes controls and the integrated sample on Blender 5.2.0.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
+              "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29",
+              "tests/boilerplates/test_geonodes_contract.py": "88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30"
+            }
+          },
+          "sources": [
+            "knowledge/00-foundations/native-api-contracts.md",
+            "scripts/boilerplates/bp_geonodes.py",
+            "tests/boilerplates/test_geonodes_contract.py",
+            "scripts/samples/native-api-contract.py"
+          ],
+          "steps": [
+            "Keep actual interface socket identifiers; allow display names only when unique and exact.",
+            "Validate the runtime RNA VALUE input and authored numeric range before mutation; reject missing or unsupported bindings.",
+            "Update evaluation and measure changed geometry; reuse a modifier only for the exact same name/type/tree binding."
+          ],
+          "when": "When assigning Geometry Nodes modifier inputs from Python and proving the parameters affect evaluated geometry."
         },
         "procedural-component-adapters": {
           "gates": [
@@ -18416,6 +20361,40 @@
           ],
           "when": "When building connectors, panel cutouts, terminals, and service clearance in a control enclosure."
         },
+        "parametric-source-contract": {
+          "gates": [
+            "mm/m equivalent inputs must normalize consistently; reject nonfinite values, ranges, canonical-name collisions and invalid role shapes.",
+            "Reject unknown/cyclic frames, nonorthogonal or left-handed bases and unresolved datum/port references.",
+            "Changed source or contract bytes must invalidate the corresponding receipt; paths remain root-bound and unaliased."
+          ],
+          "limitations": [
+            "Length scalars only; local frames are not composed into world transforms. Role names and semantic ports do not prove physical interfaces.",
+            "No automatic import closure, B-rep or STEP capability is added. Export hash and suffix are not format verification.",
+            "The existing production gate and physical evidence are still required for their respective print/fit/load predicates."
+          ],
+          "review": {
+            "by": "Controller and CAD-source reviewer 2026-09-17; eight host contract tests and a separate native geometry consumer.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b",
+              "scripts/boilerplates/bp_parametric_contract.py": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
+              "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
+              "tests/boilerplates/test_parametric_contract.py": "7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4"
+            }
+          },
+          "sources": [
+            "scripts/boilerplates/bp_parametric_contract.py",
+            "tests/boilerplates/test_parametric_contract.py",
+            "specs/examples/native-iteration-parameters.json",
+            "knowledge/60-pipeline/native-agent-iteration.md"
+          ],
+          "steps": [
+            "Declare finite literal length values, units and ranges; normalize to metres before native geometry mutation.",
+            "Validate right-handed local frames, parent graph, datum/port references and separate semantic role labels.",
+            "Bind explicitly declared source files and exact exported bytes; use actual Blender geometry/export checks for semantic acceptance."
+          ],
+          "when": "When native component code needs explicit length parameters, frames, datums, semantic ports or declared source/export evidence."
+        },
         "precision-material-tessellation": {
           "gates": [
             "Distinguish radial from diametral error, the units, and the exported mesh.",
@@ -18509,6 +20488,38 @@
           ],
           "when": "When highlight/output colors or temporal noise need diagnosis."
         },
+        "evaluated-camera-screen": {
+          "gates": [
+            "A centered object outside near/far clipping must fail in_frame even when in_image is true.",
+            "The screen must respond to modifier output and camera shift; unsupported cameras and empty geometry must fail explicitly."
+          ],
+          "limitations": [
+            "Full-frame numeric screening does not test occlusion, render visibility, transparency, render borders or panoramic cameras.",
+            "Children, un-realized instances and render-only modifier parity are outside this object-level screen."
+          ],
+          "review": {
+            "by": "Controller and independent review 2026-09-17; shared evaluated-mesh/camera tests and measured sample.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
+              "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29",
+              "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4"
+            }
+          },
+          "sources": [
+            "knowledge/00-foundations/native-api-contracts.md",
+            "scripts/agent_verify/inspect_scene.py",
+            "tests/boilerplates/test_evaluated_mesh_contract.py",
+            "scripts/samples/native-api-contract.py"
+          ],
+          "steps": [
+            "Use the active scene's evaluated camera and geometry, with declared near/far clipping and view-layer scope.",
+            "Assert in_frame and inspect in_image, in_front and within_clip to diagnose a failure.",
+            "Proceed through the core visual verification ladder for actual appearance and visibility."
+          ],
+          "when": "When screening whether evaluated mesh geometry fits a perspective or orthographic camera before rendering."
+        },
         "framing-export-contract": {
           "gates": [
             "Project the evaluated bounds through the camera, check both X/Y and near/far clipping at every required pose; review the rendered image.",
@@ -18535,6 +20546,42 @@
             "Adapt framing for both FOV axes; export with the units and properties the contract requires."
           ],
           "when": "When auto-framing the camera or exporting GLB/STL through an adapter."
+        },
+        "native-task-lifecycle": {
+          "gates": [
+            "Unknown/failed/running attempts must launch zero replacement processes on resume; changed run identity must block even when step IDs change.",
+            "Missing outputs, false/absent numerical postconditions and source/input drift cannot produce executed acceptance.",
+            "Runtime/factory bypass flags cannot be inherited; caller outputs cannot overwrite reserved process logs."
+          ],
+          "limitations": [
+            "Executed means only observed declared execution postconditions and byte receipts; independent geometry, visual, motion and manufacture gates remain separate.",
+            "The runner is not a Python sandbox and does not infer transitive imports. It uses POSIX locks/process groups and is not Windows-qualified.",
+            "Blender binary bytes are pinned at start/resume; the small runtime/script/input files are rechecked after each child."
+          ],
+          "review": {
+            "by": "Controller and runtime-worker review 2026-09-17; 26 tests including actual Blender execution and timeout/drift controls.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "scripts/native-pipeline.py": "ac067360dd934128cda76028acd16e52447579e62ef0e9636698e3f55f3030db",
+              "scripts/native_pipeline/journal.py": "2da7908428fadcff6311677f5d36bb5b7582512c941a96cc1b3617bdc0b5bdbd",
+              "scripts/native_pipeline/manifest.py": "182a206b3dc370f04b0d9707fc0fa25f8a6dc81aa22c11ffe9ffc93f6a2103df",
+              "scripts/native_pipeline/runner.py": "fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694",
+              "specs/examples/native-iteration-pipeline.json": "d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4"
+            }
+          },
+          "sources": [
+            "scripts/native-pipeline.py",
+            "scripts/native_pipeline/runner.py",
+            "scripts/native_pipeline/manifest.py",
+            "scripts/native_pipeline/journal.py",
+            "specs/examples/native-iteration-pipeline.json"
+          ],
+          "steps": [
+            "Check a bounded topologically ordered manifest with explicit scripts, source inputs, artifact inputs, outputs and numerical postconditions.",
+            "Persist the attempt before launching the existing headless runtime; collect logs and exact output hashes in its unique directory.",
+            "Resume only hash-matching executed work and untouched pending steps; inspect unresolved work before deliberate new-run recovery."
+          ],
+          "when": "When a series of native Blender passes needs a durable journal, explicit artifact dependencies and safe resumption."
         },
         "participating-media": {
           "gates": [

@@ -6,8 +6,9 @@ Target: Blender 5.2 LTS (macOS / Linux / Windows).
 """
 
 from __future__ import annotations
+from contextlib import contextmanager
 import bpy
-from typing import Optional, Any, List, Tuple
+from typing import Iterator, Optional, Any, List, Tuple
 
 
 def clean_scene(keep_camera_and_lights: bool = False) -> None:
@@ -82,15 +83,32 @@ def create_mesh_object(name: str, collection: Optional[bpy.types.Collection] = N
     return obj, mesh
 
 
-def get_evaluated_mesh(obj: bpy.types.Object, depsgraph: Optional[bpy.types.Depsgraph] = None) -> bpy.types.Mesh:
+@contextmanager
+def evaluated_mesh(
+    obj: bpy.types.Object,
+    depsgraph: Optional[bpy.types.Depsgraph] = None,
+) -> Iterator[Tuple[bpy.types.Object, bpy.types.Mesh]]:
+    """Borrow ``(evaluated_object, temporary_mesh)`` inside a ``with`` block.
+
+    The evaluated object owns the allocation and clears it even when the caller
+    raises. Copy numbers/vectors before leaving the block; do not retain mesh RNA
+    references, mutate the scene, change frames or re-evaluate the graph inside it.
+    The default graph uses the active view layer's viewport modifier settings.
+    Instances are not realized by this helper. For a persistent mesh, explicitly
+    use bpy.data.meshes.new_from_object and manage that data-block separately.
+
+    Replaces the unsafe get_evaluated_mesh() bare-mesh return: its owner was lost
+    and its documented obj.to_mesh_clear() targeted the original object.
     """
-    Extracts the evaluated mesh (post-modifiers/geometry nodes) via depsgraph
-    without destructive operator application. Must be freed with obj.to_mesh_clear().
-    """
-    if depsgraph is None:
-        depsgraph = bpy.context.evaluated_depsgraph_get()
-    eval_obj = obj.evaluated_get(depsgraph)
-    return eval_obj.to_mesh(preserve_all_data_layers=True, depsgraph=depsgraph)
+    graph = depsgraph or bpy.context.evaluated_depsgraph_get()
+    owner = obj.evaluated_get(graph)
+    try:
+        mesh = owner.to_mesh(preserve_all_data_layers=True, depsgraph=graph)
+        if mesh is None:
+            raise TypeError(f"{obj.name!r} cannot be evaluated as a mesh")
+        yield owner, mesh
+    finally:
+        owner.to_mesh_clear()
 
 
 def safe_get_socket(node: bpy.types.Node, identifier_or_name: str | int, is_output: bool = False) -> Optional[bpy.types.NodeSocket]:
@@ -159,9 +177,8 @@ if __name__ == '__main__':
     assert col.name in scene_children, f"{col.name} not linked to the scene collection"
     assert obj.name in col.objects, f"{obj.name} not linked to {col.name}"
     assert obj.data is mesh, "object is not using the mesh it was created with"
-    evaluated = get_evaluated_mesh(obj)
-    n_verts = len(evaluated.vertices)
-    obj.to_mesh_clear()
+    with evaluated_mesh(obj) as (_, evaluated):
+        n_verts = len(evaluated.vertices)
     assert n_verts == len(mesh.vertices) == 0, f"evaluated verts {n_verts}, source {len(mesh.vertices)}"
     assert safe_get_socket(bpy.data.materials.new("probe").node_tree.nodes.new(
         'ShaderNodeBsdfPrincipled'), "Base Color") is not None, "socket lookup failed"

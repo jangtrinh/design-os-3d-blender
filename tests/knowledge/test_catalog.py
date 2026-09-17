@@ -75,6 +75,31 @@ class CatalogContract(unittest.TestCase):
         row = next(x for x in archive if x['path'] == 'research/rodin.md')
         self.assertEqual(row['use'], 'archive-only')
 
+    def test_nested_runtime_changes_invalidate_catalog_without_importing(self):
+        name = 'scripts/agent_verify/inspect_scene.py'
+        self.write(name, 'raise RuntimeError("inventory must never import code")\n')
+        api.build(self.root)
+        catalog = api.checked_catalog(self.root)
+        self.assertIn(name, catalog['source_hashes'])
+        self.write(name, '# Changed implementation under an unchanged facade\n')
+        with self.assertRaisesRegex(ValueError, 'stale'):
+            api.checked_catalog(self.root)
+        api.build(self.root)
+        (self.root / name).unlink()
+        with self.assertRaisesRegex(ValueError, 'stale'):
+            api.checked_catalog(self.root)
+
+    def test_nested_scripts_exclude_generated_and_environment_code(self):
+        excluded = ('__pycache__', '.cache', '.venv', 'node_modules', '.git')
+        for folder in excluded:
+            self.write(f'scripts/{folder}/not-a-source.py', 'invalid python\n')
+        self.write('scripts/helpers/launch.sh', '#!/bin/sh\nexit 0\n')
+        catalog = api.make_catalog(self.root)
+        paths = catalog['source_hashes']
+        self.assertIn('scripts/helpers/launch.sh', paths)
+        for folder in excluded:
+            self.assertNotIn(f'scripts/{folder}/not-a-source.py', paths)
+
     def test_mixed_legacy_generation_guides_are_archive_only(self):
         for name in ('oss-tooling.md', 'how-image-to-3d-works.md'):
             self.write('research/' + name, '# Pipeline\nUse rented generation service\n')

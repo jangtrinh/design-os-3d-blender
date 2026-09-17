@@ -27,10 +27,14 @@ def out_dir(env_var, *parts):
 
 
 def lib_sha(extra=None):
-    """8-hex fingerprint of the package sources (+ the facade when known)."""
+    """8-hex fingerprint of package + evaluated-mesh helper + optional facade.
+
+    Diagnostic fingerprint only, not a transitive module reload mechanism.
+    """
     h = hashlib.sha256()
     files = sorted(os.path.join(_HERE, f) for f in os.listdir(_HERE)
                    if f.endswith(".py"))
+    files.append(os.path.join(_HERE, os.pardir, "boilerplates", "bp_core.py"))
     if extra and os.path.isfile(extra):
         files.append(extra)
     for f in files:

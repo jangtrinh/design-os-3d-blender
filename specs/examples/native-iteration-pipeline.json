@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "pipeline_id": "native-iteration-calibration",
+  "steps": [
+    {
+      "id": "reference",
+      "script": "scripts/samples/native-iteration-build.py",
+      "depends_on": [],
+      "inputs": [
+        "specs/examples/native-iteration-parameters.json",
+        "scripts/samples/native_iteration_coupon.py",
+        "scripts/boilerplates/bp_parametric_contract.py",
+        "scripts/boilerplates/bp_core.py",
+        "scripts/agent_verify/__init__.py",
+        "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py",
+        "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py",
+        "scripts/agent_verify/session.py",
+        "scripts/native_review/__init__.py",
+        "scripts/native_review/evidence.py",
+        "scripts/hq_coverage/__init__.py",
+        "scripts/hq_coverage/inputs.py",
+        "scripts/hq_coverage/png.py"
+      ],
+      "outputs": ["model.blend", "proof.png", "numeric.json", "contract.json", "summary.json"],
+      "required_postconditions": ["height_m", "part_count", "proof_bytes"],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "candidate",
+      "script": "scripts/samples/native-iteration-build.py",
+      "depends_on": ["reference"],
+      "artifact_inputs": ["reference:summary.json"],
+      "inputs": [
+        "specs/examples/native-iteration-parameters.json", "scripts/samples/native_iteration_coupon.py",
+        "scripts/boilerplates/bp_parametric_contract.py", "scripts/boilerplates/bp_core.py",
+        "scripts/agent_verify/__init__.py", "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py", "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py", "scripts/agent_verify/session.py",
+        "scripts/native_review/__init__.py", "scripts/native_review/evidence.py",
+        "scripts/hq_coverage/__init__.py", "scripts/hq_coverage/inputs.py", "scripts/hq_coverage/png.py"
+      ],
+      "outputs": ["model.blend", "proof.png", "numeric.json", "contract.json", "summary.json"],
+      "required_postconditions": ["height_m", "part_count", "proof_bytes"],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "revision",
+      "script": "scripts/samples/native-iteration-build.py",
+      "depends_on": ["candidate"],
+      "artifact_inputs": ["candidate:summary.json"],
+      "inputs": [
+        "specs/examples/native-iteration-parameters.json", "scripts/samples/native_iteration_coupon.py",
+        "scripts/boilerplates/bp_parametric_contract.py", "scripts/boilerplates/bp_core.py",
+        "scripts/agent_verify/__init__.py", "scripts/agent_verify/export_check.py",
+        "scripts/agent_verify/inspect_scene.py", "scripts/agent_verify/paths.py",
+        "scripts/agent_verify/preview.py", "scripts/agent_verify/session.py",
+        "scripts/native_review/__init__.py", "scripts/native_review/evidence.py",
+        "scripts/hq_coverage/__init__.py", "scripts/hq_coverage/inputs.py", "scripts/hq_coverage/png.py"
+      ],
+      "outputs": ["model.blend", "proof.png", "numeric.json", "contract.json", "summary.json"],
+      "required_postconditions": ["height_m", "part_count", "proof_bytes"],
+      "timeout_seconds": 120
+    }
+  ]
+}

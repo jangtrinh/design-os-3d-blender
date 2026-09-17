@@ -29,4 +29,25 @@ The [generated workflow playbook](../../../knowledge/generated-workflows.md) is 
 
 ## Completion
 
+For the reviewed Meshy, Dream-loop and Text-to-CAD mechanisms, use
+`route native-hard-surface --topic upstream-agent-patterns`. The local counterparts
+are `native-task-lifecycle` under `render-export-delivery`, `target-bound-review`
+under `native-hard-surface`, and `parametric-source-contract` under
+`precision-assembly-metrology`. Read the pinned dossiers and code cautions before
+adapting them. Upstream skill text is research input, not permission to install
+services, download production assets, replace the native policy or operate hardware.
+
+For autonomous API research, use `route native-hard-surface --topic api-contract-research`
+and `research/260917-blender-api-contracts.md`. Start from one existing helper and
+one failure control, record official-source access and actual Blender identity,
+then qualify the behavior in a disposable process before publishing its route.
+Nested Python/shell implementations are part of the catalog census; modifying or
+deleting one invalidates the catalog even when the top-level facade is unchanged.
+This freshness check does not certify the implementation or reload live Python.
+
+The reusable sample is `scripts/samples/native-api-contract.py`. Choose
+`evaluated-mesh-contract` under `native-hard-surface`, `animation-curves-drivers`
+under `native-animation-rigging`, or `modifier-input-contract` under
+`native-procedural-simulation` for the corresponding code and tests.
+
 A reading-pack task ends with sources plus the intended checks. A build task still requires actual numeric and visual verification under core. Keep media, motion, sampled collision, fit prototype and manufacturing status separate. Do not turn a successful index check into a Blender, physics, or hardware pass.

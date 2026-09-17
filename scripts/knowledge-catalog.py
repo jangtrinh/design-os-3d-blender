@@ -56,15 +56,14 @@ def source_paths(root, config):
     paths = {CONFIG, *config['examples']}
     for base, pattern in [('knowledge', '*.md'), ('research', '*.md'),
                           ('.agents/skills', '*.md'), ('.agents/skills', '*.jsonl'),
-                          ('docs', '*.md'), ('tests', '*.py'), ('scripts/boilerplates', '*.py')]:
+                          ('docs', '*.md'), ('tests', '*.py'),
+                          ('scripts', '*.py'), ('scripts', '*.sh')]:
         for p in (root / base).rglob(pattern):
             rel = p.relative_to(root)
             if any(x in rel.parts for x in ('.git', '__pycache__', '.cache', 'node_modules', '.venv')):
                 continue
             if rel.parts[:2] == ('research', 'tools'): continue
             paths.add(rel.as_posix())
-    for pattern in ('*.py', '*.sh'):
-        paths.update(p.relative_to(root).as_posix() for p in (root / 'scripts').glob(pattern))
     paths.update(p for p in ('.project-agent.md', 'AGENTS.md', 'CLAUDE.md') if (root / p).is_file())
     return sorted(paths)
 

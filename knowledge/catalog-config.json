@@ -1,6 +1,8 @@
 {
   "version": 1,
   "examples": [
+    "specs/examples/native-iteration-parameters.json",
+    "specs/examples/native-iteration-pipeline.json",
     "builds/robot-arm-print-assembly/README.md",
     "builds/robot-arm-original-refined/README.md",
     "builds/robot-arm-print-assembly/plan.md",
@@ -33,6 +35,34 @@
     "knowledge/00-foundations/agent-workflow-loop.md"
   ],
   "annotations": {
+    "scripts/native_pipeline/runner.py": {
+      "reviewed_sha256": "fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694",
+      "basis": "Controller source/caller review 2026-09-17 and 26 native-pipeline tests, including actual Blender artifact and forged-print controls; scoped execution evidence.",
+      "runtime": "Host Python with POSIX locks/process groups, invoking local Blender through headless-run.sh",
+      "effects": "Creates journal/attempt directories, launches declared Python payloads in disposable Blender processes, writes logs and hashes declared outputs. Resume only reuses unchanged executed work and starts untouched pending steps.",
+      "caution": "Executed means declared finite numeric postconditions and artifact hashes, not visual/geometry/manufacture approval. Arbitrary Python payloads are not sandboxed. Explicit inputs declare helper dependencies; unknown/failed/running states are not replayed. Windows is not qualified by this POSIX runner."
+    },
+    "scripts/native-review.py": {
+      "reviewed_sha256": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
+      "basis": "Controller and independent code review 2026-09-17; 18 review contracts including actual Blender partial-output preservation.",
+      "runtime": "Host Python; no network, model service or automatic visual inference",
+      "effects": "Reads root-bound target/candidate/PNG/numeric/critic files and writes new packet, incomplete template or assessment files without overwriting existing outputs.",
+      "caution": "Validates declared evidence bindings and complete attributed findings only. Reviewer independence and capture provenance are declared, not authenticated; actual visual inspection remains required. Print/both manufacture stays BLOCKED."
+    },
+    "scripts/boilerplates/bp_parametric_contract.py": {
+      "reviewed_sha256": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
+      "basis": "Controller source review 2026-09-17; eight host contract tests for SI normalization, frames/roles/name collisions and evidence identity.",
+      "runtime": "Python standard library only",
+      "effects": "Normalizes caller-owned data into a new dictionary and reads declared files for source/export byte receipts; no Blender geometry mutation.",
+      "caution": "Length scalars in mm/m only; rigid local frame validation does not compose world transforms. Datums/ports/visual-collision-physical labels do not prove mating or object behavior. Explicit source files only; export suffix/hash is not format validation or manufacturing proof."
+    },
+    "scripts/samples/native_iteration_coupon.py": {
+      "reviewed_sha256": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
+      "basis": "Controller source and actual 256px Blender image review 2026-09-17; controlled missing-collar and complete variants with equal height.",
+      "runtime": "bpy/bmesh, fresh factory-startup background process only",
+      "effects": "Clears the disposable scene, constructs native visual parts, saves a scene and low-resolution verification PNG, writes normalized contracts and measured byte-bound receipts.",
+      "caution": "Controlled calibration fixture, not autonomous learning or a general reconstruction benchmark. Do not run in a live GUI/product scene. Checks overall height and units, deliberately not every feature; actual critic must inspect the pictures. Manufacture NOT_REQUESTED."
+    },
     "scripts/headless-run.sh": {
       "reviewed_sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
       "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py)",
@@ -48,11 +78,11 @@
       "caution": "EOF/error-status/truncation fixed; exit 0/1/2/3 by sentinel. Timeout after send = unknown outcome; do not retry mutation blindly."
     },
     "scripts/agent-verify-lib.py": {
-      "reviewed_sha256": "00ce1ce41cf9b73f96f866a7aceb10ccc0f5c3cd8875f87ec87c3dcdb1533323",
-      "basis": "Rewritten as facade over scripts/agent_verify/ and tested 2026-09-06 (tests/execution/test_verify_lib.py)",
+      "reviewed_sha256": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
+      "basis": "Controller review 2026-09-17; execution regression 48 tests including real Blender dependency reload fixture and existing verifier tests.",
       "runtime": "bpy",
       "effects": "Read-only helpers; preview_render restores every touched setting in finally; verify_export runs in a disposable subprocess; scaffold writes only factory-default settings unless force=True.",
-      "caution": "Numeric helpers return data — the caller defines the failing predicate. checkpoint() writes under AGENT_CHECKPOINT_DIR or <repo>/output/checkpoints."
+      "caution": "Loading may remove owned generated bytecode caches and reimport declared local dependencies. Callers must use the returned module; old external references are not rewritten. Numeric predicates do not prove visibility, physical fit or manufacture. checkpoint() writes under AGENT_CHECKPOINT_DIR or the repo output/checkpoints directory."
     },
     "scripts/turntable-preview.py": {
       "reviewed_sha256": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
@@ -531,18 +561,18 @@
       "caution": "main deletes all objects; fixed profile sampling, incomplete drive/housing and no ratio/contact/manifold checks. Raw count/success text is not acceptance."
     },
     "knowledge/00-foundations/python-agent-boilerplates.md": {
-      "reviewed_sha256": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
-      "basis": "Controller re-read expanded registry; static module audits linked in catalog. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "reviewed_sha256": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
+      "basis": "Controller review 2026-09-17 removed unsupported library-wide compatibility and standards claims; selected native API contracts are separately tested.",
       "runtime": "Documentation with bpy snippets",
       "effects": "Examples can clear all objects, replace node groups, bake modifiers and change mesh data.",
-      "caution": "Registry claims verified, operator-free and standards-compliant behavior not established by actual modules. Static audits found missing bearing bores, sag, gear root/helical features, X-joint limits and physical thin-film optics; examples often test counts only. Bibliography is not certification; read module-specific cautions."
+      "caution": "Registry membership and bibliography do not qualify modules. Unrelated bearing bores, sag, gear features, joint limits and optical/physical behavior retain their module-specific cautions. Selected 5.2 API tests do not establish all-platform or manufacturing compliance."
     },
     "scripts/boilerplates/bp_core.py": {
-      "reviewed_sha256": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
-      "basis": "Full static source and AST review by boilerplate scout; no runtime certification. | re-read 2026-09-06 after audit edits (asserts added / registry generated / socket idnames corrected)",
+      "reviewed_sha256": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
+      "basis": "Controller and independent source review 2026-09-17; eight native evaluated-mesh/camera contracts and selected module self-test pass on Blender 5.2.0 fbe6228777e7.",
       "runtime": "bpy; inspect/adapt only",
       "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
-      "caution": "clean_scene deletes global objects; mode errors swallowed; named data removal can affect other users. Evaluated mesh cleanup handle is lost; substring socket resolution is ambiguous."
+      "caution": "Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous."
     },
     "scripts/boilerplates/bp_bmesh_cad.py": {
       "reviewed_sha256": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086",
@@ -552,11 +582,11 @@
       "caution": "Named global data deletion and modifier baking replace mesh/clear stack. Manifold flags do not prove winding, self-intersection, dimensions or clearance."
     },
     "scripts/boilerplates/bp_geonodes.py": {
-      "reviewed_sha256": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
-      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "reviewed_sha256": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
+      "basis": "Controller review 2026-09-17; nine real Blender 5.2.0 contracts verify Float/Vector input binding, changed dimensions, invalid values and ownership collisions.",
       "runtime": "bpy; inspect/adapt only",
       "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
-      "caution": "Named node group deletion is global. Missing node group returns silently; input fallback unverified. Self-test checks nonempty geometry, not parameter behavior."
+      "caution": "Requires Blender 5.2 modifier RNA; no legacy ID-property fallback. Direct Float/Vector VALUE binding is tested; other RNA value kinds and attribute/layer modes are not qualified. Group creation refuses any name collision; modifier reuse requires the exact same tree. connect() is a separate socket resolver and retains its own ambiguity limits."
     },
     "scripts/boilerplates/bp_rigging.py": {
       "reviewed_sha256": "6978e0ef90b15f73881915785706c2e9f2a7fcd07c4c5974037a8f25efc46090",
@@ -566,11 +596,11 @@
       "caution": "calculate_deterministic_roll always returns 0.0. Operator context is not restored, missing parents ignored, control bones remain deforming. No IK calibration."
     },
     "scripts/boilerplates/bp_animation.py": {
-      "reviewed_sha256": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd",
-      "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
+      "reviewed_sha256": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
+      "basis": "Controller review 2026-09-17; five native Blender 5.2.0 contracts verify distinct-slot isolation, indexed values, reruns and evaluated driver response.",
       "runtime": "bpy; inspect/adapt only",
       "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
-      "caution": "Indexed assignment is not general RNA array/path handling. Matching curves across all action slots/preexisting keys may be edited. Turntable has no Cycles loop; driver setup clears state."
+      "caution": "Edits stay in the assigned slot and requested frames; objects deliberately sharing one slot still share animation. Whole-value assignment expects direct Object attributes. Unrelated keys may affect motion. Turntable has no infinite Cycles loop; driver setup replaces state on the exact requested channel. NLA/layered motion is not qualified."
     },
     "scripts/boilerplates/bp_materials_pbr.py": {
       "reviewed_sha256": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
@@ -952,6 +982,182 @@
         "ww_mesh.py returns raw vertex/face data in metres; the caller owns winding, unit conversion and scene ownership."
       ],
       "topics": {
+        "upstream-agent-patterns": {
+          "when": "When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechanisms to Blender-native work.",
+          "sources": [
+            "research/upstream-agent-patterns/meshy.md",
+            "research/upstream-agent-patterns/dream-loop.md",
+            "research/upstream-agent-patterns/text-to-cad.md",
+            "knowledge/60-pipeline/native-agent-iteration.md",
+            "docs/upstream-agent-integration.md"
+          ],
+          "steps": [
+            "Choose the relevant pinned mechanism and read its actual source-evidence boundary; distinguish prose, implemented checks and tests.",
+            "Use local task lifecycle, target-bound criticism and explicit source/parameter evidence through the existing three skills.",
+            "Define a falsifier and run the native test or coupon before adopting the mechanism for a real product."
+          ],
+          "gates": [
+            "Source revisions and license attribution remain explicit; no unsupported upstream retry, CI or quality claim becomes a local guarantee.",
+            "Native asset policy, print gates and physical-evidence requirements remain separate from upstream instructions.",
+            "Execution state and byte hashes cannot substitute for a feature-level visual, geometric or physical predicate."
+          ],
+          "limitations": [
+            "Upstream tests were inspected as source; they were not executed. Local tests qualify only the stated native adaptations.",
+            "Hosted generation, vendor assets, B-rep kernels, robot format exporters and hardware/slicer integrations are not imported.",
+            "The upstream CAD result tree is not parametric feature history; independent local implementations retain source attribution."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and two source reviewers, 2026-09-17; pinned source audit and separately tested native adaptations.",
+            "source_hashes": {
+              "research/upstream-agent-patterns/meshy.md": "0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33",
+              "research/upstream-agent-patterns/dream-loop.md": "55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07",
+              "research/upstream-agent-patterns/text-to-cad.md": "77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec",
+              "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b",
+              "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc"
+            }
+          }
+        },
+        "target-bound-review": {
+          "when": "When a reference-led model needs independent feature criticism across bounded iterations.",
+          "sources": [
+            "scripts/native-review.py",
+            "scripts/native_review/packets.py",
+            "scripts/native_review/decision.py",
+            "tests/native-review/test_native_review.py",
+            "knowledge/60-pipeline/native-agent-iteration.md"
+          ],
+          "steps": [
+            "Freeze target revision, feature expectations/falsifiers, camera/frame context, candidate source pins and actual PNG/numeric evidence.",
+            "Ask a separate reviewer to inspect the contracted views and record concrete PASS/FAIL/UNKNOWN findings without builder explanations.",
+            "Assess current bindings and complete findings; change approach on a repeated gap and retain unresolved evidence at the round budget."
+          ],
+          "gates": [
+            "Changed target/candidate/proof/numeric bytes must reject old acceptance; critic must cover every feature and required view.",
+            "Unknown findings, missing measurements, incomplete template and same-author review cannot pass.",
+            "A numeric failure blocks visual acceptance; a bounded review pass does not qualify manufacture."
+          ],
+          "limitations": [
+            "This code does not recognize images or authenticate critic identity. Actual independent vision review remains a controller responsibility.",
+            "Declared capture fields are validated, but the renderer/controller must establish correspondence to the actual image.",
+            "The coupon uses controlled variants and a single view; it does not establish general multi-view reconstruction or automated correction quality."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller/independent review 2026-09-17; 18 contract tests, with actual native capture evidence handled separately.",
+            "source_hashes": {
+              "scripts/native-review.py": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
+              "scripts/native_review/packets.py": "7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed",
+              "scripts/native_review/decision.py": "19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df",
+              "tests/native-review/test_native_review.py": "b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338",
+              "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b"
+            }
+          }
+        },
+        "api-contract-research": {
+          "when": "When researching or improving an existing Blender helper, workflow, technique or sample.",
+          "sources": [
+            "research/260917-blender-api-contracts.md",
+            "scripts/knowledge-catalog.py",
+            "scripts/knowledge-pipeline.py",
+            "tests/knowledge/test_catalog.py"
+          ],
+          "steps": [
+            "Choose one actual helper/caller and a behavior with a falsifier; record the exact Blender runtime and data ownership.",
+            "Record primary-source access honestly, build a native positive and negative control, and fix the reusable implementation.",
+            "Review the source and tests, curate bounded topics and cautions, then prepare, inspect and publish the exact knowledge digest."
+          ],
+          "gates": [
+            "The negative control must distinguish wrong behavior from a plausible successful assignment.",
+            "Changed or removed nested implementation files must invalidate the catalog without executing indexed code.",
+            "Publication requires current source hashes, no unrouted active knowledge and a reviewed candidate; inspect an actual route afterward."
+          ],
+          "limitations": [
+            "A source locator or search excerpt is not a fetched documentation snapshot; record inaccessible sources and runtime-only evidence.",
+            "Catalog freshness and reviewed routing do not certify Blender behavior, physics, manufacturing or live Python reload."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller curation 2026-09-17; source/caller review and 30 knowledge tests.",
+            "source_hashes": {
+              "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
+              "scripts/knowledge-catalog.py": "688f29e3e73a9b508e5433e9596b8c146cb53efdbcfb9a09eddeba3c33752c60",
+              "scripts/knowledge-pipeline.py": "ad863ad17b6d11e481fd5ccc44410d78d3e344cc74e41335e82a0469682e07ce",
+              "tests/knowledge/test_catalog.py": "1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824"
+            }
+          }
+        },
+        "evaluated-mesh-contract": {
+          "when": "When measuring modifier output or evaluated transforms, or borrowing temporary Blender meshes.",
+          "sources": [
+            "knowledge/00-foundations/native-api-contracts.md",
+            "scripts/boilerplates/bp_core.py",
+            "scripts/agent_verify/inspect_scene.py",
+            "tests/boilerplates/test_evaluated_mesh_contract.py",
+            "scripts/samples/native-api-contract.py"
+          ],
+          "steps": [
+            "Declare graph/view-layer/frame/units and whether instances, children or render-only modifiers matter.",
+            "Borrow evaluated owner and mesh with evaluated_mesh(); copy independent numbers before leaving the context.",
+            "Measure evaluated vertices with the evaluated world matrix and assert the expected geometry response."
+          ],
+          "gates": [
+            "The exact evaluated allocation owner must be cleared on success and consumer failure.",
+            "Array geometry and constrained transforms must affect bounds while original mesh/modifiers remain unchanged.",
+            "Empty geometry must not produce plausible bounds; repeated reads must not grow persistent data."
+          ],
+          "limitations": [
+            "The default graph uses active-view-layer viewport settings; instances, children and render parity require a separate strategy.",
+            "Do not retain mesh RNA, change frames, re-evaluate or nest a borrow of the same object within its scope.",
+            "Eight runtime controls do not establish wall thickness, fit, printability or load capacity."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and independent review 2026-09-17; Blender 5.2.0 evaluated-mesh controls and integrated sample.",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
+              "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
+              "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
+              "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29"
+            }
+          }
+        },
+        "helper-dependency-reload": {
+          "when": "When a long-lived MCP process may be using stale helper code after dependency edits.",
+          "sources": [
+            "scripts/agent_runtime.py",
+            "scripts/agent-verify-lib.py",
+            "tests/execution/test_agent_runtime.py",
+            "tests/execution/fixtures/verify-lib/reload_dependencies.py",
+            "knowledge/00-foundations/native-api-contracts.md"
+          ],
+          "steps": [
+            "Use the current runtime; upgrade an already-imported old runtime before a pass or start a fresh Blender process.",
+            "Declare absolute dependency files and use the module returned by load_lib(); the verifier owns reload of its declared local modules.",
+            "Treat missing dependencies or foreign required-module collisions as failures; inspect cache-write permissions when reload fails."
+          ],
+          "gates": [
+            "An unchanged facade must bind fresh behavior after an existing declared dependency changes, including rapid same-size edits.",
+            "Missing dependencies must raise; unrelated foreign modules must remain untouched and exact required-name collisions must fail closed."
+          ],
+          "limitations": [
+            "Explicit manifests do not discover all transitive imports or a newly added file until a declared/source change triggers reexecution.",
+            "Old external function references and module state are not migrated; callers must use the newly returned module.",
+            "The verifier removes only owned generated bytecode caches; an unwritable cache may fail the load."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller review 2026-09-17; 16 runtime tests including the actual Blender facade/dependency fixture, included in the 48 execution regressions.",
+            "source_hashes": {
+              "scripts/agent_runtime.py": "c7e85e03adef537002e0b3d071aa117537f78447ea587352bc146b40e43a5438",
+              "scripts/agent-verify-lib.py": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
+              "tests/execution/test_agent_runtime.py": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e",
+              "tests/execution/fixtures/verify-lib/reload_dependencies.py": "992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4",
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8"
+            }
+          }
+        },
         "python-adapter-review": {
           "when": "When reusing a bpy boilerplate library instead of writing a new helper.",
           "sources": [
@@ -975,8 +1181,8 @@
             "kind": "static-routing-review",
             "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
             "source_hashes": {
-              "knowledge/00-foundations/python-agent-boilerplates.md": "17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685",
-              "scripts/boilerplates/bp_core.py": "24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd",
+              "knowledge/00-foundations/python-agent-boilerplates.md": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
+              "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
               "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f"
             }
           }
@@ -1228,7 +1434,9 @@
         "animation-curves-drivers": {
           "when": "When keyframes, a driver, or a turntable must be created from a Python helper.",
           "sources": [
-            "scripts/boilerplates/bp_animation.py"
+            "scripts/boilerplates/bp_animation.py",
+            "tests/boilerplates/test_animation_contract.py",
+            "knowledge/00-foundations/native-api-contracts.md"
           ],
           "steps": [
             "Identify the object/action/slot and the RNA paths you may edit; leave pre-existing animation outside the scope untouched.",
@@ -1239,14 +1447,16 @@
             "Check the loop endpoint/seam and review playback; a single midpoint pass does not prove the whole cycle."
           ],
           "limitations": [
-            "The current helper can alter multiple action slots and wipe driver state; do not run it directly on animation in use.",
-            "The existing self-test checks only one midpoint; it does not certify the loop or natural motion."
+            "The helper isolates distinct slots and requested frames. Deliberately shared slots remain shared; driver replacement owns the exact target channel.",
+            "Five native contracts do not qualify NLA, layered animation, infinite looping, export or natural motion."
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "boilerplate scout full static read; controller curation",
+            "by": "Controller re-review 2026-09-17; five Blender 5.2 contracts are scoped runtime evidence, not whole-motion certification.",
             "source_hashes": {
-              "scripts/boilerplates/bp_animation.py": "55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd"
+              "scripts/boilerplates/bp_animation.py": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
+              "tests/boilerplates/test_animation_contract.py": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0",
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8"
             }
           }
         },
@@ -1485,6 +1695,40 @@
         "The inertia helper does not apply object scale/scene scale; do not use its numbers directly when the transform is not identity."
       ],
       "topics": {
+        "parametric-source-contract": {
+          "when": "When native component code needs explicit length parameters, frames, datums, semantic ports or declared source/export evidence.",
+          "sources": [
+            "scripts/boilerplates/bp_parametric_contract.py",
+            "tests/boilerplates/test_parametric_contract.py",
+            "specs/examples/native-iteration-parameters.json",
+            "knowledge/60-pipeline/native-agent-iteration.md"
+          ],
+          "steps": [
+            "Declare finite literal length values, units and ranges; normalize to metres before native geometry mutation.",
+            "Validate right-handed local frames, parent graph, datum/port references and separate semantic role labels.",
+            "Bind explicitly declared source files and exact exported bytes; use actual Blender geometry/export checks for semantic acceptance."
+          ],
+          "gates": [
+            "mm/m equivalent inputs must normalize consistently; reject nonfinite values, ranges, canonical-name collisions and invalid role shapes.",
+            "Reject unknown/cyclic frames, nonorthogonal or left-handed bases and unresolved datum/port references.",
+            "Changed source or contract bytes must invalidate the corresponding receipt; paths remain root-bound and unaliased."
+          ],
+          "limitations": [
+            "Length scalars only; local frames are not composed into world transforms. Role names and semantic ports do not prove physical interfaces.",
+            "No automatic import closure, B-rep or STEP capability is added. Export hash and suffix are not format verification.",
+            "The existing production gate and physical evidence are still required for their respective print/fit/load predicates."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and CAD-source reviewer 2026-09-17; eight host contract tests and a separate native geometry consumer.",
+            "source_hashes": {
+              "scripts/boilerplates/bp_parametric_contract.py": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
+              "tests/boilerplates/test_parametric_contract.py": "7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4",
+              "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
+              "knowledge/60-pipeline/native-agent-iteration.md": "d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b"
+            }
+          }
+        },
         "compliant-tendon-motion": {
           "when": "When a flexure, a cable-driven hand, or remote actuation is required.",
           "sources": [
@@ -1890,6 +2134,74 @@
         "Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog."
       ],
       "topics": {
+        "native-task-lifecycle": {
+          "when": "When a series of native Blender passes needs a durable journal, explicit artifact dependencies and safe resumption.",
+          "sources": [
+            "scripts/native-pipeline.py",
+            "scripts/native_pipeline/runner.py",
+            "scripts/native_pipeline/manifest.py",
+            "scripts/native_pipeline/journal.py",
+            "specs/examples/native-iteration-pipeline.json"
+          ],
+          "steps": [
+            "Check a bounded topologically ordered manifest with explicit scripts, source inputs, artifact inputs, outputs and numerical postconditions.",
+            "Persist the attempt before launching the existing headless runtime; collect logs and exact output hashes in its unique directory.",
+            "Resume only hash-matching executed work and untouched pending steps; inspect unresolved work before deliberate new-run recovery."
+          ],
+          "gates": [
+            "Unknown/failed/running attempts must launch zero replacement processes on resume; changed run identity must block even when step IDs change.",
+            "Missing outputs, false/absent numerical postconditions and source/input drift cannot produce executed acceptance.",
+            "Runtime/factory bypass flags cannot be inherited; caller outputs cannot overwrite reserved process logs."
+          ],
+          "limitations": [
+            "Executed means only observed declared execution postconditions and byte receipts; independent geometry, visual, motion and manufacture gates remain separate.",
+            "The runner is not a Python sandbox and does not infer transitive imports. It uses POSIX locks/process groups and is not Windows-qualified.",
+            "Blender binary bytes are pinned at start/resume; the small runtime/script/input files are rechecked after each child."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and runtime-worker review 2026-09-17; 26 tests including actual Blender execution and timeout/drift controls.",
+            "source_hashes": {
+              "scripts/native-pipeline.py": "ac067360dd934128cda76028acd16e52447579e62ef0e9636698e3f55f3030db",
+              "scripts/native_pipeline/runner.py": "fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694",
+              "scripts/native_pipeline/manifest.py": "182a206b3dc370f04b0d9707fc0fa25f8a6dc81aa22c11ffe9ffc93f6a2103df",
+              "scripts/native_pipeline/journal.py": "2da7908428fadcff6311677f5d36bb5b7582512c941a96cc1b3617bdc0b5bdbd",
+              "specs/examples/native-iteration-pipeline.json": "d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4"
+            }
+          }
+        },
+        "evaluated-camera-screen": {
+          "when": "When screening whether evaluated mesh geometry fits a perspective or orthographic camera before rendering.",
+          "sources": [
+            "knowledge/00-foundations/native-api-contracts.md",
+            "scripts/agent_verify/inspect_scene.py",
+            "tests/boilerplates/test_evaluated_mesh_contract.py",
+            "scripts/samples/native-api-contract.py"
+          ],
+          "steps": [
+            "Use the active scene's evaluated camera and geometry, with declared near/far clipping and view-layer scope.",
+            "Assert in_frame and inspect in_image, in_front and within_clip to diagnose a failure.",
+            "Proceed through the core visual verification ladder for actual appearance and visibility."
+          ],
+          "gates": [
+            "A centered object outside near/far clipping must fail in_frame even when in_image is true.",
+            "The screen must respond to modifier output and camera shift; unsupported cameras and empty geometry must fail explicitly."
+          ],
+          "limitations": [
+            "Full-frame numeric screening does not test occlusion, render visibility, transparency, render borders or panoramic cameras.",
+            "Children, un-realized instances and render-only modifier parity are outside this object-level screen."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and independent review 2026-09-17; shared evaluated-mesh/camera tests and measured sample.",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
+              "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
+              "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29"
+            }
+          }
+        },
         "renderer-diagnostics": {
           "when": "When CPU/Metal measurement, sampling, or a renderer-limit comparison is needed.",
           "sources": [
@@ -2031,6 +2343,40 @@
         "The physics cache and the node API depend on the runtime; do not recall the version from memory."
       ],
       "topics": {
+        "modifier-input-contract": {
+          "when": "When assigning Geometry Nodes modifier inputs from Python and proving the parameters affect evaluated geometry.",
+          "sources": [
+            "knowledge/00-foundations/native-api-contracts.md",
+            "scripts/boilerplates/bp_geonodes.py",
+            "tests/boilerplates/test_geonodes_contract.py",
+            "scripts/samples/native-api-contract.py"
+          ],
+          "steps": [
+            "Keep actual interface socket identifiers; allow display names only when unique and exact.",
+            "Validate the runtime RNA VALUE input and authored numeric range before mutation; reject missing or unsupported bindings.",
+            "Update evaluation and measure changed geometry; reuse a modifier only for the exact same name/type/tree binding."
+          ],
+          "gates": [
+            "Changing cylinder inputs must change measured dimensions from 0.05 x 0.05 x 0.08 m to 0.10 x 0.10 x 0.12 m in the test fixture.",
+            "Ambiguous/missing names, invalid types/ranges and non-finite values must fail without changing the tested input.",
+            "Live and zero-user same-name groups must survive creation collisions; modifier reruns must not create .001 duplicates."
+          ],
+          "limitations": [
+            "The implemented binding requires Blender 5.2+; directly tested value classes are Float scalar and Vector only.",
+            "Attribute/layer bindings, simulation zones and other RNA value classes are not qualified by these tests.",
+            "Evaluated dimensions establish parameter response, not topology, printability, fit or strength."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller review 2026-09-17; nine native Geometry Nodes controls and the integrated sample on Blender 5.2.0.",
+            "source_hashes": {
+              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
+              "tests/boilerplates/test_geonodes_contract.py": "88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30",
+              "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29"
+            }
+          }
+        },
         "fields-parametric-solids": {
           "when": "When field domains, attributes, or parametric mechanical shapes are the goal.",
           "sources": [
@@ -2059,7 +2405,7 @@
               "research/blender-geometry-nodes-procedural/01-FIELDS-ARCHITECTURE-EVALUATION-MODEL.md": "e067dbda62c98c67b8de34cb27377d9106a61e166d5c788fbd29f8566ce2dc99",
               "research/blender-geometry-nodes-procedural/02-PROCEDURAL-HARD-SURFACE-CAD-MODELING.md": "1fa9d830e42ba72055c9affa9ff59b3acf2537d9d1721681d7e6e61af9d552f3",
               "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
-              "scripts/boilerplates/bp_geonodes.py": "769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021",
+              "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
               "scripts/boilerplates/bp_bmesh_cad.py": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086"
             }
           }

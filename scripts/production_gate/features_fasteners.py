@@ -19,6 +19,7 @@ from .report import check, tol_check
 
 RING_RAYS = 24
 MAX_RAY_MM = 200.0
+AXIAL_APPROACH_MM = 10.0
 
 
 def _basis(u):
@@ -79,16 +80,31 @@ def _keyed_split(radii, angles, e1, e2, flat_dir, nominal_r, flat_mm, tol):
     return round_r, flats
 
 
-def _axial(tree, origin, direction):
-    hit, _n, _i, dist = tree.ray_cast(origin, direction, MAX_RAY_MM)
+def _axial(tree, origin, direction, max_dist):
+    hit, _n, _i, dist = tree.ray_cast(origin, direction, max_dist)
     return None if hit is None else dist
+
+
+def _axial_probe_range(bm, center, axis):
+    """Return axis-relative mesh limits and a ray length that crosses the part.
+
+    The old probe placed its origin using the largest XYZ bbox span, then capped
+    every axial ray at 200 mm. A 284 mm-wide, 4 mm-thick plate with a Z-axis hole
+    therefore started ~294 mm away from the plate and could never reach it. Use
+    the actual projection along the feature axis and an explicit approach margin.
+    """
+    projected = [(v.co - center).dot(axis) for v in bm.verts]
+    if not projected:
+        raise ValueError("cannot probe an empty mesh")
+    lo, hi = min(projected), max(projected)
+    ray_length = (hi - lo) + 2.0 * AXIAL_APPROACH_MM
+    return lo, hi, ray_length
 
 
 def evaluate(bm, features, prefix="", part_dims_mm=None):
     from mathutils import Vector
     tri = meshprep.triangulated(bm)
     tree = meshprep.bvh(tri)
-    span = max(meshprep.bbox_mm(bm)) + 10.0
     checks, measured, unchecked = [], {}, []
     for idx, feat in enumerate(features or []):
         fid = feat.get("id") or "f%d" % idx
@@ -105,15 +121,18 @@ def evaluate(bm, features, prefix="", part_dims_mm=None):
         nominal_r = float(feat["diameter_mm"]) / 2.0
         tol = float(feat["tol_mm"])
         margin = max(tol, 0.5)
+        axis_lo, axis_hi, axial_ray = _axial_probe_range(bm, c, u)
 
         # --- bore clear / depth -------------------------------------------
         entry = None
         probes = {}
         for sign in (1.0, -1.0):
-            origin = c + u * (span * sign)
+            axis_edge = axis_hi if sign > 0.0 else axis_lo
+            origin = c + u * (axis_edge + AXIAL_APPROACH_MM * sign)
             direction = -u * sign
-            t_axis = _axial(tree, origin, direction)
-            t_surf = _axial(tree, origin + e1 * (nominal_r + margin), direction)
+            t_axis = _axial(tree, origin, direction, axial_ray)
+            t_surf = _axial(tree, origin + e1 * (nominal_r + margin), direction,
+                            axial_ray)
             probes["%+d" % int(sign)] = {"axial_mm": t_axis, "surface_mm": t_surf}
             if t_surf is not None and (t_axis is None or t_axis > t_surf + 1e-3):
                 entry = (sign, t_axis, t_surf)
@@ -139,7 +158,8 @@ def evaluate(bm, features, prefix="", part_dims_mm=None):
         for k in range(4):
             ang = math.pi / 2.0 * k
             off = (e1 * math.cos(ang) + e2 * math.sin(ang)) * (nominal_r + margin)
-            around.append(_axial(tree, c + off + u * span, -u) is not None)
+            origin = c + off + u * (axis_hi + AXIAL_APPROACH_MM)
+            around.append(_axial(tree, origin, -u, axial_ray) is not None)
         checks.append(check(tag + "material_around", "pass" if all(around) else "fail",
                             around, {"expect": [True] * 4},
                             "axial probes at radius %.3f mm must find material on all "
@@ -183,7 +203,11 @@ def evaluate(bm, features, prefix="", part_dims_mm=None):
                          "ring_hits": len(radii),
                          "ring_min_r_mm": min(radii) if radii else None,
                          "ring_max_r_mm": max(radii) if radii else None,
-                         "measured_keyed_flat_mm": flat_meas}
+                         "measured_keyed_flat_mm": flat_meas,
+                         "axial_probe": {"projected_min_mm": axis_lo,
+                                         "projected_max_mm": axis_hi,
+                                         "approach_mm": AXIAL_APPROACH_MM,
+                                         "ray_length_mm": axial_ray}}
         # --- fastener table ------------------------------------------------
         fst = feat.get("fastener")
         if fst:

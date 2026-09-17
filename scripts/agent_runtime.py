@@ -152,13 +152,48 @@ def run_file(path, argv=None):
     return _finish(emit_ok(step), EXIT_OK)
 
 
+def _dependency_snapshot(module):
+    """Hash an optional explicit helper dependency manifest.
+
+    Helpers opt in by setting ``__agent_dependency_files__`` to an iterable of
+    absolute file paths. This is intentionally explicit: load_lib does not try to
+    infer Python's transitive import graph.
+    """
+    declared = getattr(module, "__agent_dependency_files__", None)
+    if declared is None:
+        return {}
+    if isinstance(declared, (str, bytes, os.PathLike)):
+        raise TypeError("__agent_dependency_files__ must be an iterable of absolute file paths")
+
+    normalized = []
+    for item in declared:
+        path = os.fspath(item)
+        if not os.path.isabs(path):
+            raise ValueError("agent dependency path must be absolute: %s" % path)
+        path = os.path.abspath(path)
+        if not os.path.exists(path):
+            raise FileNotFoundError(path)
+        if not os.path.isfile(path):
+            raise IsADirectoryError(path)
+        normalized.append(path)
+
+    module.__agent_dependency_files__ = tuple(normalized)
+    snapshot = {}
+    for path in normalized:
+        with open(path, "rb") as handle:
+            snapshot[path] = hashlib.sha256(handle.read()).hexdigest()
+    return snapshot
+
+
 def load_lib(path):
     """Exec a helper file into a module cached in sys.modules, keyed by sha256.
 
     The cache survives across MCP `execute_code` calls (sys.modules lives in the
-    Blender process) but re-executes the moment the file's content changes, so
-    editing a helper never leaves a stale copy running. Accepts filenames that
-    are not valid module names (e.g. `agent-verify-lib.py`).
+    Blender process). Plain helpers re-execute when their own file changes. A
+    helper can additionally declare ``__agent_dependency_files__``; its cached
+    module is reused only while those exact files still exist and hash identically.
+    This is explicit dependency invalidation, not generic transitive import reload.
+    Accepts filenames that are not valid module names (e.g. `agent-verify-lib.py`).
     """
     abspath = os.path.abspath(str(path))
     with open(abspath, "rb") as handle:
@@ -171,12 +206,15 @@ def load_lib(path):
     if (cached is not None
             and getattr(cached, "__agent_lib_sha256__", None) == digest
             and getattr(cached, "__file__", None) == abspath):
-        return cached
+        current_dependencies = _dependency_snapshot(cached)
+        if current_dependencies == getattr(cached, "__agent_dependency_sha256__", {}):
+            return cached
 
     module = types.ModuleType(key)
     module.__file__ = abspath
     module.__agent_lib_sha256__ = digest
     exec(compile(raw.decode("utf-8"), abspath, "exec"), module.__dict__)
+    module.__agent_dependency_sha256__ = _dependency_snapshot(module)
     sys.modules[key] = module  # only cache a module that executed cleanly
     return module
 

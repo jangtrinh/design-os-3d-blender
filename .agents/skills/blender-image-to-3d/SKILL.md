@@ -74,6 +74,16 @@ The HQ coverage checker can validate declared receipt bindings with or without `
 
 ## Delivery gate
 
+For repeated reference refinement, use the target-bound critic packet in
+`knowledge/60-pipeline/native-agent-iteration.md`. Freeze the target/reference,
+candidate sources and actual proof captures; ask a separate reviewer for one
+PASS/FAIL/UNKNOWN observation and actionable correction per contracted feature.
+`scripts/native-review.py` checks the declared evidence bindings and missing
+findings. It does not judge images itself or authenticate reviewer independence.
+A repeated failed feature calls for a different approach; changing the target
+starts a new contract revision. The controlled native coupon illustrates a missing
+detail that passes overall dimensions; it is not a general reconstruction benchmark.
+
 - Deterministic rebuild succeeds twice with stable counts.
 - Critical components, transforms, topology, materials, camera framing, and render settings pass automated tests.
 - Hero and secondary reference sheets are inspected at output resolution.

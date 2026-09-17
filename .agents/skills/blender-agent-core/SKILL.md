@@ -20,6 +20,8 @@ This skill is a ROUTER + procedure. The deep knowledge lives in `knowledge/` —
 | Load-bearing, duty, working mechanism | [Mechanical evidence](references/recipes.md#mechanical-evidence) |
 | Batch render, video, export | [Render delivery](references/recipes.md#render-delivery) |
 | Turntable / product shot | `scripts/turntable-preview.py` + `knowledge/60-pipeline/product-viz-and-shots.md` |
+| Python API research, evaluated geometry, Action slots or Geometry Nodes inputs | `knowledge/00-foundations/native-api-contracts.md`; route the relevant contract topic through `blender-knowledge-workbench` |
+| Multi-pass native work needs resumable evidence, explicit parameters or independent criticism | `knowledge/60-pipeline/native-agent-iteration.md`; use `scripts/native-pipeline.py` for declared execution and `scripts/native-review.py` for revision-bound review |
 
 Read the [hard rules](references/hard-rules.md) every session (state explicitly which are ENFORCED vs MANUAL). Deliver results per [revision-bound acceptance](references/recipes.md#revision-bound-acceptance).
 
@@ -42,8 +44,8 @@ At the start of every Blender task, read the **3 foundation files** if they are 
 import sys; sys.path.insert(0, "<ROOT>/scripts")
 import agent_runtime as rt; lib = rt.load_lib("<ROOT>/scripts/agent-verify-lib.py")
 ```
-1. Numbers: `assert_exists`, `tri_count`, `world_bbox`, `has_material`, fcurve keys — plus the postconditions in `AGENT_OK`.
-2. `framing(obj)` → `preview_render(engine="EEVEE"|"CYCLES")` (≈0.1–0.2 s at 128–256px on a small scene, restores state) → `frame_stats()` (stdev < 0.01 = flat frame, needs diagnosis).
+1. Numbers: `assert_exists`, `tri_count`, `world_bbox`, `has_material`, fcurve keys — plus the postconditions in `AGENT_OK`. Bounds use evaluated mesh vertices and transforms; active-view-layer settings, children and instances need an explicit scope. Borrow temporary meshes with `evaluated_mesh()` and copy independent data before leaving its context.
+2. Assert `framing(obj)['in_frame']` (image bounds plus front/near/far depth) → `preview_render(engine="EEVEE"|"CYCLES")` (≈0.1–0.2 s at 128–256px on a small scene, restores state) → `frame_stats()` (stdev < 0.01 = flat frame, needs diagnosis). The numeric screen does not prove occlusion, render visibility or render-border coverage.
 3. Viewport screenshot (MCP) — composition, "does it look like it".
 4. Low-sample Cycles preview — real material/lighting.
 5. Comparison sheet (`scripts/make-comparison-sheet.sh`) — when a reference image exists.

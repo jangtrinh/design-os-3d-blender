@@ -12,7 +12,7 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608`
 - `knowledge/10-modeling/modifiers.md` — read-verify; SHA256 `88f4e06ffc4d5b9f74db1d00f2c0a95cee35cbe28a8248ab12b19dbf8f6a1ff1`
 
@@ -35,14 +35,154 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 - Images do not determine occluded faces precisely.
 - ww_mesh.py returns raw vertex/face data in metres; the caller owns winding, unit conversion and scene ownership.
 
+### Topic: upstream-agent-patterns
+
+When: When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechanisms to Blender-native work.
+
+- `research/upstream-agent-patterns/meshy.md` — read-verify; SHA256 `0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33`
+- `research/upstream-agent-patterns/dream-loop.md` — read-verify; SHA256 `55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07`
+- `research/upstream-agent-patterns/text-to-cad.md` — read-verify; SHA256 `77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b`
+- `docs/upstream-agent-integration.md` — read; SHA256 `e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc`
+
+**Steps**
+
+- Choose the relevant pinned mechanism and read its actual source-evidence boundary; distinguish prose, implemented checks and tests.
+- Use local task lifecycle, target-bound criticism and explicit source/parameter evidence through the existing three skills.
+- Define a falsifier and run the native test or coupon before adopting the mechanism for a real product.
+
+**Gates**
+
+- Source revisions and license attribution remain explicit; no unsupported upstream retry, CI or quality claim becomes a local guarantee.
+- Native asset policy, print gates and physical-evidence requirements remain separate from upstream instructions.
+- Execution state and byte hashes cannot substitute for a feature-level visual, geometric or physical predicate.
+
+**Limitations**
+
+- Upstream tests were inspected as source; they were not executed. Local tests qualify only the stated native adaptations.
+- Hosted generation, vendor assets, B-rep kernels, robot format exporters and hardware/slicer integrations are not imported.
+- The upstream CAD result tree is not parametric feature history; independent local implementations retain source attribution.
+
+### Topic: target-bound-review
+
+When: When a reference-led model needs independent feature criticism across bounded iterations.
+
+- `scripts/native-review.py` — inspect-adapt; SHA256 `45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917`
+  Caution: Validates declared evidence bindings and complete attributed findings only. Reviewer independence and capture provenance are declared, not authenticated; actual visual inspection remains required. Print/both manufacture stays BLOCKED.
+- `scripts/native_review/packets.py` — inspect-adapt; SHA256 `7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed`
+- `scripts/native_review/decision.py` — inspect-adapt; SHA256 `19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df`
+- `tests/native-review/test_native_review.py` — inspect-adapt; SHA256 `b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b`
+
+**Steps**
+
+- Freeze target revision, feature expectations/falsifiers, camera/frame context, candidate source pins and actual PNG/numeric evidence.
+- Ask a separate reviewer to inspect the contracted views and record concrete PASS/FAIL/UNKNOWN findings without builder explanations.
+- Assess current bindings and complete findings; change approach on a repeated gap and retain unresolved evidence at the round budget.
+
+**Gates**
+
+- Changed target/candidate/proof/numeric bytes must reject old acceptance; critic must cover every feature and required view.
+- Unknown findings, missing measurements, incomplete template and same-author review cannot pass.
+- A numeric failure blocks visual acceptance; a bounded review pass does not qualify manufacture.
+
+**Limitations**
+
+- This code does not recognize images or authenticate critic identity. Actual independent vision review remains a controller responsibility.
+- Declared capture fields are validated, but the renderer/controller must establish correspondence to the actual image.
+- The coupon uses controlled variants and a single view; it does not establish general multi-view reconstruction or automated correction quality.
+
+### Topic: api-contract-research
+
+When: When researching or improving an existing Blender helper, workflow, technique or sample.
+
+- `research/260917-blender-api-contracts.md` — read-verify; SHA256 `be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde`
+- `scripts/knowledge-catalog.py` — inspect-adapt; SHA256 `688f29e3e73a9b508e5433e9596b8c146cb53efdbcfb9a09eddeba3c33752c60`
+- `scripts/knowledge-pipeline.py` — inspect-adapt; SHA256 `ad863ad17b6d11e481fd5ccc44410d78d3e344cc74e41335e82a0469682e07ce`
+- `tests/knowledge/test_catalog.py` — inspect-adapt; SHA256 `1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824`
+
+**Steps**
+
+- Choose one actual helper/caller and a behavior with a falsifier; record the exact Blender runtime and data ownership.
+- Record primary-source access honestly, build a native positive and negative control, and fix the reusable implementation.
+- Review the source and tests, curate bounded topics and cautions, then prepare, inspect and publish the exact knowledge digest.
+
+**Gates**
+
+- The negative control must distinguish wrong behavior from a plausible successful assignment.
+- Changed or removed nested implementation files must invalidate the catalog without executing indexed code.
+- Publication requires current source hashes, no unrouted active knowledge and a reviewed candidate; inspect an actual route afterward.
+
+**Limitations**
+
+- A source locator or search excerpt is not a fetched documentation snapshot; record inaccessible sources and runtime-only evidence.
+- Catalog freshness and reviewed routing do not certify Blender behavior, physics, manufacturing or live Python reload.
+
+### Topic: evaluated-mesh-contract
+
+When: When measuring modifier output or evaluated transforms, or borrowing temporary Blender meshes.
+
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `scripts/boilerplates/bp_core.py` — inspect-adapt; SHA256 `7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d`
+  Caution: Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous.
+- `scripts/agent_verify/inspect_scene.py` — inspect-adapt; SHA256 `49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5`
+- `tests/boilerplates/test_evaluated_mesh_contract.py` — inspect-adapt; SHA256 `ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4`
+- `scripts/samples/native-api-contract.py` — inspect-adapt; SHA256 `45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29`
+
+**Steps**
+
+- Declare graph/view-layer/frame/units and whether instances, children or render-only modifiers matter.
+- Borrow evaluated owner and mesh with evaluated_mesh(); copy independent numbers before leaving the context.
+- Measure evaluated vertices with the evaluated world matrix and assert the expected geometry response.
+
+**Gates**
+
+- The exact evaluated allocation owner must be cleared on success and consumer failure.
+- Array geometry and constrained transforms must affect bounds while original mesh/modifiers remain unchanged.
+- Empty geometry must not produce plausible bounds; repeated reads must not grow persistent data.
+
+**Limitations**
+
+- The default graph uses active-view-layer viewport settings; instances, children and render parity require a separate strategy.
+- Do not retain mesh RNA, change frames, re-evaluate or nest a borrow of the same object within its scope.
+- Eight runtime controls do not establish wall thickness, fit, printability or load capacity.
+
+### Topic: helper-dependency-reload
+
+When: When a long-lived MCP process may be using stale helper code after dependency edits.
+
+- `scripts/agent_runtime.py` — inspect-adapt; SHA256 `c7e85e03adef537002e0b3d071aa117537f78447ea587352bc146b40e43a5438`
+- `scripts/agent-verify-lib.py` — inspect-adapt; SHA256 `9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64`
+  Caution: Loading may remove owned generated bytecode caches and reimport declared local dependencies. Callers must use the returned module; old external references are not rewritten. Numeric predicates do not prove visibility, physical fit or manufacture. checkpoint() writes under AGENT_CHECKPOINT_DIR or the repo output/checkpoints directory.
+- `tests/execution/test_agent_runtime.py` — inspect-adapt; SHA256 `6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e`
+- `tests/execution/fixtures/verify-lib/reload_dependencies.py` — inspect-adapt; SHA256 `992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+
+**Steps**
+
+- Use the current runtime; upgrade an already-imported old runtime before a pass or start a fresh Blender process.
+- Declare absolute dependency files and use the module returned by load_lib(); the verifier owns reload of its declared local modules.
+- Treat missing dependencies or foreign required-module collisions as failures; inspect cache-write permissions when reload fails.
+
+**Gates**
+
+- An unchanged facade must bind fresh behavior after an existing declared dependency changes, including rapid same-size edits.
+- Missing dependencies must raise; unrelated foreign modules must remain untouched and exact required-name collisions must fail closed.
+
+**Limitations**
+
+- Explicit manifests do not discover all transitive imports or a newly added file until a declared/source change triggers reexecution.
+- Old external function references and module state are not migrated; callers must use the newly returned module.
+- The verifier removes only owned generated bytecode caches; an unwritable cache may fail the load.
+
 ### Topic: python-adapter-review
 
 When: When reusing a bpy boilerplate library instead of writing a new helper.
 
-- `knowledge/00-foundations/python-agent-boilerplates.md` — read-verify; SHA256 `17ab56b12a636bbddab1c0bb4c0f954db77ef04e0f856b1b3449a91be4a17685`
-  Caution: Registry claims verified, operator-free and standards-compliant behavior not established by actual modules. Static audits found missing bearing bores, sag, gear root/helical features, X-joint limits and physical thin-film optics; examples often test counts only. Bibliography is not certification; read module-specific cautions.
-- `scripts/boilerplates/bp_core.py` — inspect-adapt; SHA256 `24716d4a714d7dceb25b7e039a51a3ab3ff69b5328ac21118f07ffb8390ca9fd`
-  Caution: clean_scene deletes global objects; mode errors swallowed; named data removal can affect other users. Evaluated mesh cleanup handle is lost; substring socket resolution is ambiguous.
+- `knowledge/00-foundations/python-agent-boilerplates.md` — read-verify; SHA256 `0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0`
+  Caution: Registry membership and bibliography do not qualify modules. Unrelated bearing bores, sag, gear features, joint limits and optical/physical behavior retain their module-specific cautions. Selected 5.2 API tests do not establish all-platform or manufacturing compliance.
+- `scripts/boilerplates/bp_core.py` — inspect-adapt; SHA256 `7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d`
+  Caution: Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous.
 - `scripts/boilerplates/run_all_boilerplate_tests.py` — inspect-adapt; SHA256 `bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f`
   Caution: PASS = last-line AGENT_OK from the sentinel shim, not a magic string. --list prints the generated registry. A module PASS proves it runs and asserts its own postconditions, not standards-correct constants.
 
@@ -69,7 +209,7 @@ Matte plastic materials, studio setup, camera, and polished product imagery.
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `e455cc41465700c56266f5d9652adae920972e941644b27085b2982ab3fa8705`
 - `knowledge/30-lighting-render/lighting.md` — read-verify; SHA256 `f2b8db7610f1793524b248c9442b0f1a6951dfe5015faa35d35168eadedd894f`
 - `knowledge/60-pipeline/product-viz-and-shots.md` — read-verify; SHA256 `0ae55d706fd7496ee8bf802784938a97cbb5e4383939b27c09d47e1f48a85f35`
@@ -192,7 +332,7 @@ Joints, hand, natural pick/place, range of motion, and explode/reassemble.
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
 - `knowledge/40-animation/animation-fcurves.md` — read-verify; SHA256 `1d0bc0a7456fb7dc092737f0d8f92b4aecc6d954061ace4fc6e07b9feaa9df81`
 - `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e`
@@ -280,8 +420,10 @@ When: When meshes deform, limbs twist, or an installed and selected Rigify is us
 
 When: When keyframes, a driver, or a turntable must be created from a Python helper.
 
-- `scripts/boilerplates/bp_animation.py` — inspect-adapt; SHA256 `55df506beb0fa0584968ce053e0a1f8c2915c14d19236b6c369aae5c4c1915cd`
-  Caution: Indexed assignment is not general RNA array/path handling. Matching curves across all action slots/preexisting keys may be edited. Turntable has no Cycles loop; driver setup clears state.
+- `scripts/boilerplates/bp_animation.py` — inspect-adapt; SHA256 `0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5`
+  Caution: Edits stay in the assigned slot and requested frames; objects deliberately sharing one slot still share animation. Whole-value assignment expects direct Object attributes. Unrelated keys may affect motion. Turntable has no infinite Cycles loop; driver setup replaces state on the exact requested channel. NLA/layered motion is not qualified.
+- `tests/boilerplates/test_animation_contract.py` — inspect-adapt; SHA256 `e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
 
 **Steps**
 
@@ -295,8 +437,8 @@ When: When keyframes, a driver, or a turntable must be created from a Python hel
 
 **Limitations**
 
-- The current helper can alter multiple action slots and wipe driver state; do not run it directly on animation in use.
-- The existing self-test checks only one midpoint; it does not certify the loop or natural motion.
+- The helper isolates distinct slots and requested frames. Deliberately shared slots remain shared; driver replacement owns the exact target channel.
+- Five native contracts do not qualify NLA, layered animation, infinite looping, export or natural motion.
 
 ### Topic: robot-joint-frame-adapter
 
@@ -357,7 +499,7 @@ FDM plastic printing, fit, inserts, assembly/disassembly, durability, and materi
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/60-pipeline/3d-printing.md` — read-verify; SHA256 `4bce69b0a198c8406475bf230fe66a35cbad19752bba22aa8ce24ad66e6d0eda`
 - `knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md` — read-verify; SHA256 `eab55760bfe566860b330463a65a8802b1dd569354d05e85ce96e5af3febd69d`
   Caution: Static audit: bottom semicircle spans90deg; chamfer example creates cylinder; wall test is bbox. Verify actual geometry before reuse.
@@ -483,7 +625,7 @@ Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/70-cad-precision-robotics/cad-precision-modeling.md` — read-verify; SHA256 `bc171eb925df0f536a5745c294496268eb8a31464c2044439d2a688051fc51f6`
 - `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `870ac87843291f7991ff38c0d804fff817d743fac5e123b2c4ad667da68dfaa0`
 
@@ -504,6 +646,34 @@ Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 
 - A Blender mesh does not by itself provide B-rep/GD&T or a tolerance solver.
 - The inertia helper does not apply object scale/scene scale; do not use its numbers directly when the transform is not identity.
+
+### Topic: parametric-source-contract
+
+When: When native component code needs explicit length parameters, frames, datums, semantic ports or declared source/export evidence.
+
+- `scripts/boilerplates/bp_parametric_contract.py` — inspect-adapt; SHA256 `a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898`
+  Caution: Length scalars in mm/m only; rigid local frame validation does not compose world transforms. Datums/ports/visual-collision-physical labels do not prove mating or object behavior. Explicit source files only; export suffix/hash is not format validation or manufacturing proof.
+- `tests/boilerplates/test_parametric_contract.py` — inspect-adapt; SHA256 `7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4`
+- `specs/examples/native-iteration-parameters.json` — read; SHA256 `e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b`
+
+**Steps**
+
+- Declare finite literal length values, units and ranges; normalize to metres before native geometry mutation.
+- Validate right-handed local frames, parent graph, datum/port references and separate semantic role labels.
+- Bind explicitly declared source files and exact exported bytes; use actual Blender geometry/export checks for semantic acceptance.
+
+**Gates**
+
+- mm/m equivalent inputs must normalize consistently; reject nonfinite values, ranges, canonical-name collisions and invalid role shapes.
+- Reject unknown/cyclic frames, nonorthogonal or left-handed bases and unresolved datum/port references.
+- Changed source or contract bytes must invalidate the corresponding receipt; paths remain root-bound and unaliased.
+
+**Limitations**
+
+- Length scalars only; local frames are not composed into world transforms. Role names and semantic ports do not prove physical interfaces.
+- No automatic import closure, B-rep or STEP capability is added. Export hash and suffix are not format verification.
+- The existing production gate and physical evidence are still required for their respective print/fit/load predicates.
 
 ### Topic: compliant-tendon-motion
 
@@ -654,7 +824,7 @@ Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/70-cad-precision-robotics/gears-transmission-modeling.md` — read-verify; SHA256 `1975a92284d94b2b84cf09707c7594935f3bde34bf448b6624efb37a415dbe86`
   Caution: Static audit: root radius and tolerance arguments unused; root fillets not constructed.
 - `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `870ac87843291f7991ff38c0d804fff817d743fac5e123b2c4ad667da68dfaa0`
@@ -779,7 +949,7 @@ Robot links, URDF, coordinate frames, collision, and inertia.
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e`
   Caution: Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently.
 - `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
@@ -842,7 +1012,7 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `a241aa51cbfffb4bd67aca186e5605e158049a88e2fac1d569de308fa44d8dfb`
 - `knowledge/30-lighting-render/compositing-output.md` — read-verify; SHA256 `ce19c33464e1ea8ef58cc5c686406eb3d227272c4cc1feb98a4c361e1c42f2ab`
 - `knowledge/60-pipeline/export-interchange.md` — read-verify; SHA256 `54a6aba3dcdb747009017f27b30d874ac5453f4d137d4ec6186b036c37d23c0c`
@@ -866,6 +1036,60 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 - The headless wrapper does not yet exit explicitly on a Python error; use the explicit CLI form from the core recipe.
 - The video example hardcodes this build ffmpeg paths, 24 fps and frame identity, and leaves visual review PENDING; adapt the contract to the task.
 - Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog.
+
+### Topic: native-task-lifecycle
+
+When: When a series of native Blender passes needs a durable journal, explicit artifact dependencies and safe resumption.
+
+- `scripts/native-pipeline.py` — inspect-adapt; SHA256 `ac067360dd934128cda76028acd16e52447579e62ef0e9636698e3f55f3030db`
+- `scripts/native_pipeline/runner.py` — inspect-adapt; SHA256 `fc89b0103e4a3954312497b10b1fff15af4e84552695729f49338157d450a694`
+  Caution: Executed means declared finite numeric postconditions and artifact hashes, not visual/geometry/manufacture approval. Arbitrary Python payloads are not sandboxed. Explicit inputs declare helper dependencies; unknown/failed/running states are not replayed. Windows is not qualified by this POSIX runner.
+- `scripts/native_pipeline/manifest.py` — inspect-adapt; SHA256 `182a206b3dc370f04b0d9707fc0fa25f8a6dc81aa22c11ffe9ffc93f6a2103df`
+- `scripts/native_pipeline/journal.py` — inspect-adapt; SHA256 `2da7908428fadcff6311677f5d36bb5b7582512c941a96cc1b3617bdc0b5bdbd`
+- `specs/examples/native-iteration-pipeline.json` — read; SHA256 `d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4`
+
+**Steps**
+
+- Check a bounded topologically ordered manifest with explicit scripts, source inputs, artifact inputs, outputs and numerical postconditions.
+- Persist the attempt before launching the existing headless runtime; collect logs and exact output hashes in its unique directory.
+- Resume only hash-matching executed work and untouched pending steps; inspect unresolved work before deliberate new-run recovery.
+
+**Gates**
+
+- Unknown/failed/running attempts must launch zero replacement processes on resume; changed run identity must block even when step IDs change.
+- Missing outputs, false/absent numerical postconditions and source/input drift cannot produce executed acceptance.
+- Runtime/factory bypass flags cannot be inherited; caller outputs cannot overwrite reserved process logs.
+
+**Limitations**
+
+- Executed means only observed declared execution postconditions and byte receipts; independent geometry, visual, motion and manufacture gates remain separate.
+- The runner is not a Python sandbox and does not infer transitive imports. It uses POSIX locks/process groups and is not Windows-qualified.
+- Blender binary bytes are pinned at start/resume; the small runtime/script/input files are rechecked after each child.
+
+### Topic: evaluated-camera-screen
+
+When: When screening whether evaluated mesh geometry fits a perspective or orthographic camera before rendering.
+
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `scripts/agent_verify/inspect_scene.py` — inspect-adapt; SHA256 `49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5`
+- `tests/boilerplates/test_evaluated_mesh_contract.py` — inspect-adapt; SHA256 `ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4`
+- `scripts/samples/native-api-contract.py` — inspect-adapt; SHA256 `45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29`
+
+**Steps**
+
+- Use the active scene's evaluated camera and geometry, with declared near/far clipping and view-layer scope.
+- Assert in_frame and inspect in_image, in_front and within_clip to diagnose a failure.
+- Proceed through the core visual verification ladder for actual appearance and visibility.
+
+**Gates**
+
+- A centered object outside near/far clipping must fail in_frame even when in_image is true.
+- The screen must respond to modifier output and camera shift; unsupported cameras and empty geometry must fail explicitly.
+
+**Limitations**
+
+- Full-frame numeric screening does not test occlusion, render visibility, transparency, render borders or panoramic cameras.
+- Children, un-realized instances and render-only modifier parity are outside this object-level screen.
 
 ### Topic: renderer-diagnostics
 
@@ -970,7 +1194,7 @@ Geometry Nodes, patterns, instances, and simulation/caches using Blender-native 
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/50-procedural/geometry-nodes.md` — read-verify; SHA256 `4e4dc95e1d559e39c4446d62b3a2b9ea6abbd85e35e461b25b15a2abf6c981a6`
   Caution: Vertex-count growth does not verify pure instancing, and fixed-topology simulation need not change vertex count. Check instance counts/transforms or expected simulation state; require topology growth only if the task specifies it.
 - `knowledge/50-procedural/simulation-physics.md` — read-verify; SHA256 `eeb6afd6ebdb67b9743da7945d30891d46756145c4cfb4d99d780d33fe0abc00`
@@ -995,6 +1219,34 @@ Geometry Nodes, patterns, instances, and simulation/caches using Blender-native 
 - A simulation mesh does not by itself prove real material or real hardware.
 - The physics cache and the node API depend on the runtime; do not recall the version from memory.
 
+### Topic: modifier-input-contract
+
+When: When assigning Geometry Nodes modifier inputs from Python and proving the parameters affect evaluated geometry.
+
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `scripts/boilerplates/bp_geonodes.py` — inspect-adapt; SHA256 `53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e`
+  Caution: Requires Blender 5.2 modifier RNA; no legacy ID-property fallback. Direct Float/Vector VALUE binding is tested; other RNA value kinds and attribute/layer modes are not qualified. Group creation refuses any name collision; modifier reuse requires the exact same tree. connect() is a separate socket resolver and retains its own ambiguity limits.
+- `tests/boilerplates/test_geonodes_contract.py` — inspect-adapt; SHA256 `88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30`
+- `scripts/samples/native-api-contract.py` — inspect-adapt; SHA256 `45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29`
+
+**Steps**
+
+- Keep actual interface socket identifiers; allow display names only when unique and exact.
+- Validate the runtime RNA VALUE input and authored numeric range before mutation; reject missing or unsupported bindings.
+- Update evaluation and measure changed geometry; reuse a modifier only for the exact same name/type/tree binding.
+
+**Gates**
+
+- Changing cylinder inputs must change measured dimensions from 0.05 x 0.05 x 0.08 m to 0.10 x 0.10 x 0.12 m in the test fixture.
+- Ambiguous/missing names, invalid types/ranges and non-finite values must fail without changing the tested input.
+- Live and zero-user same-name groups must survive creation collisions; modifier reruns must not create .001 duplicates.
+
+**Limitations**
+
+- The implemented binding requires Blender 5.2+; directly tested value classes are Float scalar and Vector only.
+- Attribute/layer bindings, simulation zones and other RNA value classes are not qualified by these tests.
+- Evaluated dimensions establish parameter response, not topology, printability, fit or strength.
+
 ### Topic: fields-parametric-solids
 
 When: When field domains, attributes, or parametric mechanical shapes are the goal.
@@ -1005,8 +1257,8 @@ When: When field domains, attributes, or parametric mechanical shapes are the go
   Caution: Pipe snippet lacks interior bore; Boolean index-remap/solver and unconditional robustness claims need runtime inspection.
 - `scripts/generate-procedural-geonodes.py` — inspect-adapt; SHA256 `294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d`
   Caution: main deletes all objects. Graph omits advertised four mounting holes/stress_zone; fixed cutter/boss do not cover input range. Attribute existence alone is not validation.
-- `scripts/boilerplates/bp_geonodes.py` — inspect-adapt; SHA256 `769758b062e335afca97b87d871a6c4e5f78f8b67f2647669e28327eb8bf1021`
-  Caution: Named node group deletion is global. Missing node group returns silently; input fallback unverified. Self-test checks nonempty geometry, not parameter behavior.
+- `scripts/boilerplates/bp_geonodes.py` — inspect-adapt; SHA256 `53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e`
+  Caution: Requires Blender 5.2 modifier RNA; no legacy ID-property fallback. Direct Float/Vector VALUE binding is tested; other RNA value kinds and attribute/layer modes are not qualified. Group creation refuses any name collision; modifier reuse requires the exact same tree. connect() is a separate socket resolver and retains its own ambiguity limits.
 - `scripts/boilerplates/bp_bmesh_cad.py` — inspect-adapt; SHA256 `c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086`
   Caution: Named global data deletion and modifier baking replace mesh/clear stack. Manifold flags do not prove winding, self-intersection, dimensions or clearance.
 
@@ -1128,7 +1380,7 @@ Build a humanoid or creature that must deform: proportions, animation topology, 
 
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `cc947502cc80a8c7b4e59d47462cc8a601636696b61bf1ab9bf3fa38310996a6`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/15-character-creature/character-creature-modeling.md` — read-verify; SHA256 `a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d`
   Caution: Anatomy/proportion tables and the SSS radius and scale values are artistic or literature figures, not standards - the ones the audit could not confirm are marked UNVERIFIED inline. The 52 ARKit targets are Apple's spec, not FACS AUs and not ISO/IEC 14496-2.
 - `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608`

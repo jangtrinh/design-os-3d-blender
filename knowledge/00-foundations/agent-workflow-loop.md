@@ -121,9 +121,9 @@ changes the live scene and says so.
 |---|---|---|
 | `assert_exists(name)` | object present, returns it | read-only |
 | `tri_count(obj)` | evaluated (modifier-applied) triangle count | read-only |
-| `world_bbox(obj)` | world-space min/max corners | read-only |
+| `world_bbox(obj)` | bounds of evaluated mesh vertices with evaluated world transform | read-only |
 | `has_material(obj, must_have_nodes=True)` | material assigned and wired | read-only |
-| `framing(obj, cam=None, scene=None)` | `in_frame` / `in_front` / `fill_u` / `fill_v` | read-only |
+| `framing(obj, cam=None, scene=None)` | `in_frame` including depth; `in_image` / `in_front` / `within_clip` / `fill_u` / `fill_v` | read-only |
 | `frame_stats(path)` | `mean` / `stdev` / `black` / `blown` of a rendered PNG | read-only |
 | `preview_render(path=None, res=256, samples=16, engine="EEVEE")` | cheap render gate; default path `$AGENT_PREVIEW_DIR` else `<repo>/output/previews/` | restoring |
 | `verify_export(path, expect_objects, expect_min_tris)` | re-import check in a fresh `--factory-startup -b` process | isolated |
@@ -146,7 +146,12 @@ Target `fill_u`/`fill_v` around 0.7–0.85 for a hero product shot, with
 `in_front` true. This one function removes the most common reason an agent
 wastes a render: the subject is behind the camera, out of frame, or 1000× the
 intended size, so the render is technically perfect and useless. It costs no
-render at all.
+render at all. Assert `framing(obj)['in_frame']`: it now includes near/far clip
+range as well as positive depth and image bounds. `in_image` is XY-only. The
+screen measures evaluated mesh vertices in the active scene and supports
+perspective/orthographic cameras; it does not check occlusion, render borders,
+un-realized instances, children or visibility flags. Read
+[native API contracts](native-api-contracts.md) before adapting this screen.
 
 ### 4.4 Is the render non-empty? (catch black/blank frames without looking)
 

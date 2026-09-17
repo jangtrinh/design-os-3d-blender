@@ -1,0 +1,18 @@
+{
+  "units": "mm",
+  "parameters": {
+    "height": {"value": 80, "unit": "mm", "min": 40, "max": 120},
+    "radius": {"value": 16, "unit": "mm", "min": 8, "max": 24},
+    "collar_radius": {"value": 28, "unit": "mm", "min": 25, "max": 32},
+    "base_radius": {"value": 36, "unit": "mm", "min": 33, "max": 45}
+  },
+  "frames": {
+    "base": {
+      "parent": null, "origin": [0, 0, 0], "unit": "mm",
+      "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]}
+    }
+  },
+  "datums": {"top": {"frame": "base", "position": [0, 0, 86], "unit": "mm"}},
+  "ports": {"mount": {"frame": "base", "kind": "mount", "roles": ["visual"]}},
+  "roles": {"visual": ["base", "body", "lower_collar", "upper_collar"]}
+}

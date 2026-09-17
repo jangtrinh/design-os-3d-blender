@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.join(REPO, "scripts"))
 import agent_runtime as rt  # noqa: E402
 
 FIXTURES = os.path.join(REPO, "tests", "execution", "fixtures")
+VERIFY_FIXTURES = os.path.join(FIXTURES, "verify-lib")
 HEADLESS = os.path.join(REPO, "scripts", "headless-run.sh")
 
 
@@ -164,6 +165,39 @@ class LoadLibTest(unittest.TestCase):
         path = write(self.tmp, "agent-verify-like.py", "def framing():\n    return 'ok'\n")
         self.assertEqual(rt.load_lib(path).framing(), "ok")
 
+    def test_declared_dependency_change_reexecutes_unchanged_helper(self):
+        dependency = write(self.tmp, "dependency.txt", "one\n")
+        path = write(
+            self.tmp,
+            "dependency-helper.py",
+            "__agent_dependency_files__ = (%r,)\n"
+            "with open(__agent_dependency_files__[0], encoding='utf-8') as handle:\n"
+            "    VALUE = handle.read().strip()\n" % dependency,
+        )
+        first = rt.load_lib(path)
+        self.assertEqual(first.VALUE, "one")
+        self.assertIs(rt.load_lib(path), first)
+        self.assertEqual(first.__agent_dependency_files__, (os.path.abspath(dependency),))
+        self.assertEqual(set(first.__agent_dependency_sha256__), {os.path.abspath(dependency)})
+
+        write(self.tmp, "dependency.txt", "two\n")
+        second = rt.load_lib(path)
+        self.assertIsNot(second, first)
+        self.assertEqual(second.VALUE, "two")
+
+    def test_missing_declared_dependency_fails_closed(self):
+        dependency = write(self.tmp, "required.txt", "present\n")
+        path = write(
+            self.tmp,
+            "missing-dependency-helper.py",
+            "__agent_dependency_files__ = (%r,)\nVALUE = 1\n" % dependency,
+        )
+        cached = rt.load_lib(path)
+        os.unlink(dependency)
+        with self.assertRaises(FileNotFoundError):
+            rt.load_lib(path)
+        self.assertIs(sys.modules[cached.__name__], cached)
+
 
 class InsideBlenderTest(unittest.TestCase):
     """The same guarantees, proven in a real headless Blender process."""
@@ -181,6 +215,24 @@ class InsideBlenderTest(unittest.TestCase):
         self.assertTrue(obj["postconditions"]["is_background"])
         self.assertTrue(obj["postconditions"]["reloaded_on_change"])
         self.assertTrue(obj["postconditions"]["cached_when_unchanged"])
+
+    def test_dependency_reload_and_verify_facade_inside_blender(self):
+        with tempfile.TemporaryDirectory(prefix="agent-blender-deps-") as tmp:
+            proc = subprocess.run(
+                ["bash", HEADLESS, os.path.join(VERIFY_FIXTURES, "reload_dependencies.py"),
+                 "--", tmp],
+                capture_output=True, text=True, timeout=180,
+            )
+        tag, obj = rt.parse_sentinel(proc.stdout)
+        self.assertEqual(tag, rt.SENTINEL_OK, msg=proc.stdout[-3000:] + proc.stderr[-2000:])
+        self.assertEqual(proc.returncode, 0)
+        post = obj["postconditions"]
+        self.assertTrue(post["cached_when_unchanged"])
+        self.assertTrue(post["dependency_reloaded"])
+        self.assertTrue(post["bound_dependency_refreshed"])
+        self.assertTrue(post["missing_dependency_failed_closed"])
+        self.assertTrue(post["foreign_module_preserved"])
+        self.assertTrue(post["foreign_collision_failed_closed"])
 
 
 if __name__ == "__main__":

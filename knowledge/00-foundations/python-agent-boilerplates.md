@@ -2,9 +2,9 @@
 name: python-agent-boilerplates
 domain: foundations
 blender_target: "5.2 LTS"
-compat: "4.5 LTS+"
+compat: "Per-module; contract results apply to the stated runtime"
 audience: ai-agent-bpy
-description: Production-grade Python boilerplate library for Blender 5.2+ AI agents; the module registry is generated from disk, not hand-maintained. 100% academic & industrial standards citations.
+description: Inspectable Python boilerplate library for Blender AI agents; registry generated from disk, with per-module API contracts and explicit qualification limits.
 loads_with: [bpy-scripting-core, blender-version-matrix, agent-workflow-loop]
 tags: [python, bpy, boilerplate, bmesh, geometry-nodes, pbr-materials, rigging, animation, rendering, physics, cad, dfam, robotics]
 ---
@@ -13,10 +13,16 @@ tags: [python, bpy, boilerplate, bmesh, geometry-nodes, pbr-materials, rigging, 
 
 A copy-pasteable library of modular Python boilerplates for autonomous AI agents executing `bpy` scripts headlessly (`--background`). **The module count and list are not written by hand here** — they are generated from disk (see §1), because three hand-maintained lists in this repo previously disagreed with each other (30 on disk vs 26 here vs 17 in `INDEX.md`).
 
-All patterns strictly enforce:
-1. **Latest Blender Version Standard:** Written and tested against **Blender 5.2.0 LTS** (Apple Silicon / Linux / Windows). Uses `NodeTreeInterface`, `armature.collections`, and OpenPBR socket layouts. No deprecated `use_nodes`, no removed `Action.fcurves`, no `node_tree.inputs.new()`.
-2. **Data-API First:** Zero reliance on fragile, context-dependent `bpy.ops` operators.
-3. **100% Authoritative Citations:** Every formula, geometric dimension, standard tolerance, and API layout cites primary industrial standards (ISO, DIN, ASME, ASTM, AGMA, SAE) and peer-reviewed literature (SIGGRAPH, IEEE, ASME).
+The project targets Blender 5.2.0 LTS and prefers data APIs. A module's presence
+in this registry does not certify its API compatibility, platform coverage or
+engineering standards. Read its current catalog caution and run the relevant
+contract on the intended interpreter. Operators and destructive helpers still
+require caller-owned scope. Bibliographic entries below are provenance leads;
+their editions and applicability require claim-specific verification.
+
+For evaluated mesh lifetime, assigned Action slots, Geometry Nodes binding and
+camera-depth screening, start with [native API contracts](native-api-contracts.md)
+and the executed evidence in `plans/260917-blender-auto-research/reports/`.
 
 ---
 
