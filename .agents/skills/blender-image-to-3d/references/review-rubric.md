@@ -39,3 +39,20 @@ Use `refine-spec` when evidence, a critical feature, a construction hypothesis, 
 - Do not infer construction from a product name. Record what the source actually shows and what a technical document actually requires.
 - Do not repair a surprising measurement until the measurement itself has been tested. Tiny far-from-origin meshes need local-centroid float64 signed-volume arithmetic.
 - Receipt validation can run without `--launch`; `--launch` guards only its child render. Direct Blender, MCP, or direct headless output bypasses that launch guard and must be reported as such.
+
+## 7. Output-density and source-authority checks
+
+Do not use a generated secondary blueprint or underside as measured hidden geometry.
+Classify primary photo, owner dimension, derivative visualization and technical
+drawing explicitly, including unresolved conflicts. Actual local bytes need their
+own hash; filename, retrieval URL and a visual resemblance are different evidence.
+
+Before a final batch, inspect the risky close-up at the final aspect and apparent
+scale. Record normals-versus-silhouette defects separately. Require actual pixel
+dimensions and decoded-frame review for new media. Keep the old media pinned to
+its old scene after a model revision. A native-render request must use the saved
+Blender model, not a separately generated concept.
+
+The critic evaluates the locked criteria, retains residual deltas and leaves
+unseen critical details UNKNOWN. A passed interface close-up proves inspectability
+of the modeled prototype; it cannot authenticate factory internals or retention.

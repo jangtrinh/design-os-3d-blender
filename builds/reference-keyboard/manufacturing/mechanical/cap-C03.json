@@ -1,0 +1,38 @@
+{
+  "revision": "C03-cap-full-stroke-clearance",
+  "units": "mm",
+  "source_scene": "builds/reference-keyboard/manufacturing/runs/mechanics-C02/attempt-0001/model.blend",
+  "source_sha256": "a7dca9ebb36973f107d0d358f483f325e9a51b8d472daba468bb9cda80f45ad8",
+  "key_family": "57 shared 1U keycaps; retain existing guided wide key",
+  "visible_skirt_bottom": 5.0,
+  "total_height": 9.5,
+  "top_dimensions": [14.0, 14.0],
+  "body_dimensions": [16.2, 16.2, 9.5],
+  "minimum_wall_screen": 1.0,
+  "receiver": {"span": 4.12, "horizontal_arm": 1.22, "vertical_arm": 1.40, "depth": 3.2, "boss_diameter": 6.4},
+  "travel_samples": [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.2],
+  "acrylic_retention": {
+    "count": 4,
+    "centers_xy": [[-136,-40],[136,-40],[-136,40],[136,40]],
+    "outer_diameter": 8.8,
+    "inner_diameter": 5.8,
+    "bottom_z": 12.0,
+    "top_z": 13.6,
+    "material_target": "machined aluminum prototype collar; alloy and bearing/preload must be qualified",
+    "contact_basis": "Actual C02 mesh rays find six of 24 angular samples on the surviving z12 acrylic shoulder at each axis. Inner rebates are lower. Contact is sector-supported, not uniform bearing.",
+    "physical_status": "FIRST_ARTICLE_SHIM_PRELOAD_CREEP_AND_THERMAL_TESTS_REQUIRED"
+  },
+  "diagnostic": "manufacturing/runs/travel-diagnostic-C01/diagnostic.json reproduced old 4.5 mm skirt interference at 3.2 mm; temporary 4.8/5.0/5.2 variants cleared the modeled cover. This contract chooses 5.0 mm before construction.",
+  "acceptance": [
+    "All 58 saved keycaps must clear their cover, flange and plate at every listed travel sample.",
+    "Existing stem insertion and receiver dimensions must remain unchanged; all guides must clear.",
+    "A deliberately excessive 6.0 mm travel must still be rejected by the collision predicate.",
+    "The full current representative family set must pass topology, wall screening and STL re-import."
+  ],
+  "limits": [
+    "The cover is a custom modeled carrier, not a manufacturer-authenticated factory housing.",
+    "No commercial switch modification is authorized. Physical samples must be checked at their own measured stop.",
+    "Clearance is not physical insertion/retention, material strength or manufacturing approval.",
+    "Existing Full HD imagery remains bound to Revision B and does not portray C03."
+  ]
+}

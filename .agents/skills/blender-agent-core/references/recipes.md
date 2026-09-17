@@ -52,17 +52,34 @@ Trigger: any part that will be printed, machined or assembled with real hardware
 4. Read `coverage.unchecked` and `exclusions`: a passing gate proves topology, dimensions, feature diameters, wall/overhang screens and STL round-trip. It does **not** prove load capacity, fit after shrinkage, thermal duty, retention or assembly access — those stay `physical_evidence` items and keep manufacture `BLOCKED` until supplied.
 5. Any geometry change re-runs the gate; an older report cannot be inherited (hash mismatch is rejected by design).
 
+Production completeness is a **manual caller requirement** in addition to generic
+schema validity. The schema permits partial diagnostic specs with no minimum wall;
+the report's `required_checks` coverage is a union across parts. For every
+applicable production part, author a positive `min_wall_mm`, include
+`wall_thickness_screen` in required checks, and confirm that particular part has
+an actual passing wall result rather than `skip` or absent coverage. Do the same
+for each required feature and requested export. Do not infer complete production
+coverage from exit 0, or remove requirements to create it.
+
+A stage waiver remains a recorded exception. It does not make print/both
+manufacture `NOT_REQUESTED`; unverified manufacture stays `BLOCKED` unless the
+owner explicitly removes manufacturing from the task's purpose.
+
 ## Spec from measurement
 
-Trigger: a `spec.json` is needed for parts that already exist as geometry (form gate, final gate). Write it from the **baked** meshes, never from the design parameters: the parameters are the intent, the bake is what the gate measures.
+Trigger: existing geometry needs measurement or an input contract. Keep the
+authored design target separate from what the bake measures. With an existing
+spec, compare against it; never redefine failed targets from the output. Without
+one, record observations as provisional reverse-engineering inputs and obtain the
+missing design requirements before claiming correctness or manufacturing fit.
 
 1. Bake first: duplicate the printable parts into a separate `*-print.blend`, apply every modifier and transform (scale 1,1,1, identity), one object per spec `object`, name = spec `object`.
-2. Measure on the bake: world bbox → `target_dims_mm`; hole centres and axes from the actual bore (ring of first-hit radii), not from the parameter that generated it.
+2. Measure world bounds, bore centres/axes/radii and feature depth on the bake into a measurement receipt. `target_dims_mm` and its tolerances come from the independent contract. An observed dimension adopted as a provisional input must retain that provenance and cannot prove fidelity to an unknown original.
 3. Ring probes belong **1.3–1.5 mm inside** the surface along the hole axis. A probe placed on the surface plane returns 0/24 hits and the gate reports a bore that is not there (2026-09-06: one wasted gate run).
 4. Union solids that overlap (hinge shells, boss + wall) before measuring — `expected_shells` counts what the STL will contain, and two intersecting bodies are still 2 shells until they are joined.
-5. Relief textures (guilloché, knurl) whose faces are < 0.3 mm² fall below the wall-screen sampling floor: declare that part **without** `min_wall_mm` and let it appear in `coverage.unchecked`; do not widen the tolerance instead.
+5. Inspect sampling coverage. Checker 1.0.2 uses the normal 0.3 mm² threshold whenever eligible triangles exist; only an empty eligible set enables the all-positive-face fallback. Empty/degenerate geometry still fails. Mixed large/small faces can still hide thin regions: add a targeted check. Never remove `min_wall_mm` or widen tolerance merely to pass this screen.
 6. A keyed hole declares `keyed_flat_mm` + `keyed_flat_dir`; never widen `tol_mm` so a D-profile passes a round-diameter check.
-7. Re-measure after any geometry change: a spec written for an older bake is as void as an older gate report.
+7. Re-measure and invalidate affected reports after geometry changes. Preserve valid authored requirements; revise them only for a documented design change, not to match a failed result.
 
 ## Articulated task
 
@@ -106,6 +123,18 @@ Arm examples: [renderer](../../../../builds/robot-arm-print-assembly/scripts/ren
 
 ## Revision-bound acceptance
 
-A future generic report should carry `artifact identity`, `scene`, `checker/config identity`, `frame coverage`, `exclusions`, `observed result`, `review evidence`, and independent `media / motion / fit / manufacture` statuses. This is a proposed contract; no common schema validator is installed yet.
+Reports carry artifact identity, scene, checker/config, coverage, exclusions,
+observed result, review evidence and separate media/motion/fit/manufacture status.
+Native pipeline/review tools and the CK-001 package/qualification consumers enforce
+their own declared schemas. They are not a universal cross-domain release checker.
 
 Negative review example: media PASS + sampled-surface PASS + changed geometry + unresolved torque must remain manufacture BLOCKED. Reject inherited geometry-dependent approvals from the earlier revision. For current reports without identity fields, compare saved source/timing and explicitly disclose the weaker provenance; never fabricate missing hashes.
+
+## Product and manufacturing follow-through
+
+Use `docs/product-workflow-template.md` to turn a request into stage exits and a
+closure ledger. Route uncertain measurements through
+`knowledge/60-pipeline/geometry-diagnostic-workflow.md`; route physical, electrical
+and process blockers through `knowledge/60-pipeline/manufacturing-evidence-workflow.md`.
+Final-resolution rendering/export uses `knowledge/60-pipeline/native-render-delivery.md`.
+These procedures consolidate actual CK-001 failures and retain each test's scope.

@@ -4,7 +4,17 @@ In force since 2026-09-05; the primary operational file is `AGENTS.md`, success 
 
 ## Starting a new session
 
-Read `.project-agent.md`, the BRV manifest and the latest related nodes; then load `blender-agent-core`. State clearly the file/scene being worked on, the single controller, the main output, the acceptance criteria and the unresolved requirements. Do not take the GUI state from an old checkpoint as the current state.
+For a product build, use the [product workflow contract](product-workflow-template.md)
+and [CK-001 session retrospective](ck-001-session-retrospective.md). The optional
+routes cover geometry diagnosis, native render delivery and manufacturing evidence.
+They preserve the separate meaning of execution, digital prototype, engineering
+candidate and physical pilot results.
+
+Read `.project-agent.md`, `CONTEXT.md`, and any available task-specific BRV context;
+then load `blender-agent-core`. Identify the actual file/scene, controller, main
+output, acceptance criteria and unresolved requirements. BRV is local context and
+is not required to exist in a public checkout. Do not take GUI state from an old
+checkpoint as the current state.
 
 ```mermaid
 flowchart LR

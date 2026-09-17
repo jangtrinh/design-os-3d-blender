@@ -29,6 +29,22 @@ The [generated workflow playbook](../../../knowledge/generated-workflows.md) is 
 
 ## Completion
 
+For a session retrospective, start with
+`route native-hard-surface --topic session-retrospective`. Follow the incident to
+its actual source/report, not the last summary or a worker's claim alone. Record
+incident → cause → reusable action → falsifier → implementation/test → scope →
+route. Reuse a current skill, remove contradictory old instructions, and add only
+conditional reading. The CK-001 consolidation is in
+`docs/ck-001-session-retrospective.md`; the next-project outline is
+`docs/product-workflow-template.md`.
+
+New diagnostic routes are `geometry-diagnostics` and `manufacturing-evidence` under
+`precision-assembly-metrology`, and `native-render-delivery` under
+`render-export-delivery`. Treat artifact-specific examples as inspect/adapt:
+local build scripts may require unshipped model files and host guards. Before Git
+publication, check the staged tracked tree, excluded outputs, real CLI routes and
+mirror/source hashes. A current catalog on the author's machine is insufficient.
+
 For the reviewed Meshy, Dream-loop and Text-to-CAD mechanisms, use
 `route native-hard-surface --topic upstream-agent-patterns`. The local counterparts
 are `native-task-lifecycle` under `render-export-delivery`, `target-bound-review`

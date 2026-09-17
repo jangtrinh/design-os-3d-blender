@@ -11,7 +11,7 @@ This skill is a ROUTER + procedure. The deep knowledge lives in `knowledge/` —
 | Task | Also load |
 |---|---|
 | Task starts and the deliverable **purpose** is not stated | Ask once — render-only / 3D print / both, recommendation **both**; record `purpose:` in `state.md` (`AGENTS.md` loop 0b) |
-| Purpose `print`/`both`, phase 2 (form + interfaces) is complete | **Form gate** before any material/studio/**delivery-media** work: temporary bake → [spec from measurement](references/recipes.md#spec-from-measurement) → `production-gate.py` exit 0; **final gate** at delivery; waiver = `GATE WAIVED <time> "<owner words>"` in `state.md`. Verification imagery (ladder rungs 2–6, clay renders) is exempt |
+| Purpose `print`/`both`, phase 2 (form + interfaces) is complete | **Form gate**: temporary bake → compare with independent authored spec → `production-gate.py` exit 0; **final gate** at delivery. Existing unknown shapes use [measurement provenance](references/recipes.md#spec-from-measurement), not self-derived acceptance. Verification imagery stays available |
 | Part will be printed/manufactured, needs exact dimensions/standards | [Production contract](references/recipes.md#production-contract) → `specs/README.md` |
 | Execute via MCP/headless, read errors | [Explicit execution context](references/recipes.md#explicit-execution-context) |
 | Reference image available | Skill `blender-image-to-3d` |
@@ -22,6 +22,10 @@ This skill is a ROUTER + procedure. The deep knowledge lives in `knowledge/` —
 | Turntable / product shot | `scripts/turntable-preview.py` + `knowledge/60-pipeline/product-viz-and-shots.md` |
 | Python API research, evaluated geometry, Action slots or Geometry Nodes inputs | `knowledge/00-foundations/native-api-contracts.md`; route the relevant contract topic through `blender-knowledge-workbench` |
 | Multi-pass native work needs resumable evidence, explicit parameters or independent criticism | `knowledge/60-pipeline/native-agent-iteration.md`; use `scripts/native-pipeline.py` for declared execution and `scripts/native-review.py` for revision-bound review |
+| Start a production-grade product or conduct a session retro | `docs/product-workflow-template.md`; `native-hard-surface --topic session-retrospective` |
+| Surprising bore/wall/collision/export result or a tolerance-extreme failure | `knowledge/60-pipeline/geometry-diagnostic-workflow.md`; `precision-assembly-metrology --topic geometry-diagnostics` |
+| Native Full HD, social media or new media after a model revision | `knowledge/60-pipeline/native-render-delivery.md`; `render-export-delivery --topic native-render-delivery` |
+| Retention, material/process, electronics or physical manufacturing blocker | `knowledge/60-pipeline/manufacturing-evidence-workflow.md`; `precision-assembly-metrology --topic manufacturing-evidence` |
 
 Read the [hard rules](references/hard-rules.md) every session (state explicitly which are ENFORCED vs MANUAL). Deliver results per [revision-bound acceptance](references/recipes.md#revision-bound-acceptance).
 
@@ -32,12 +36,25 @@ At the start of every Blender task, read the **3 foundation files** if they are 
 1. **Contract first** — purpose first (render-only / print / both, default `both`), then spec.json for a production part; fidelity contract for a reference; missing numbers → `request-input`.
 2. **Decompose** — scene graph → one file per pass, ≤ ~80 lines, one purpose.
 3. **Assert every step** — a pass ends with `rt.emit_ok(step, **postconditions)`; the postcondition must FAIL if the step silently no-ops; operator return must be `{'FINISHED'}`.
-3b. **Form gate closes phase 2** (build phases: 1 blockout · 2 form + interfaces · 3 detail + materials · 4 studio + composition · 5 delivery) when purpose is `print`/`both` — temporary identity bake + spec from measurement + `production-gate.py` exit 0 before any material/studio work; **delivery** media only after PASS or an owner waiver (`GATE WAIVED <time> "<owner words>"`); final gate at delivery. Verification imagery stays mandatory and ungated but cheap (≤ 512 px / low-sample, ≤ ~2 min GPU per pass); costlier imagery is delivery media.
+3b. **Form gate closes phase 2** when purpose is `print`/`both`: measure a temporary bake against the authored spec. Keep required dimensions/tolerances independent of output. Delivery media needs PASS or an owner waiver; final gate applies at delivery. Verification imagery stays mandatory, available and cheap (≤512 px / low-sample, roughly ≤2 minutes per pass).
 4. **Non-destructive scaffold** — the lib's `scaffold()` reads first and writes only when factory-default or `force=True`; never reset the scene being worked on.
 5. **Screenshot with intent** — write down the expectation and what would falsify it BEFORE looking.
 6. **2 failures on the same step → change the CLASS of approach; 3 failures → `request-input`.**
 7. **Checkpoint** (`checkpoint(tag)`) before every destructive op (boolean, apply, join).
 8. **Know the handoff boundary** — fine weight painting, facial rig, art direction: flag early.
+
+After a saved artifact and a failed wrapper/journal result, inspect both before any
+retry. Correct a metadata/dependency failure without rebuilding valid geometry.
+Required pipeline postconditions are finite numbers; hashes belong in receipts.
+Check maximal tolerance stroke and a failing control, not only nominal endpoints.
+Keep actual component selection, logic/ECAD, firmware and physical qualification
+as separate closure rows. A successful pilot-record check cannot authenticate a lab.
+
+The generic production schema also supports partial diagnostics: missing minimum
+wall can be skipped, and required-check coverage is aggregated across parts.
+For print/both completion, manually confirm every applicable part declares its
+wall limit and actually passes its required wall/features/export checks. A stage
+waiver does not remove the physical manufacturing scope or turn it into a pass.
 
 ## 3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)
 ```python

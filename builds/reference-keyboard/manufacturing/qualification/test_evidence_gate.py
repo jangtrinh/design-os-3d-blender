@@ -143,6 +143,20 @@ class EvidenceTests(unittest.TestCase):
             records.write_text(json.dumps({'origin':'changed-synthetic','observations':[]}))
             with self.assertRaises(ValueError):gate.validate_assessment(root,assessment)
 
+    def test_temperature_zero_minimum_is_not_dropped(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);raw=root/'SYNTHETIC.txt';raw.write_text('UNIT TEST ONLY')
+            pin=gate.file_pin(root,raw)
+            criterion={'id':'temperature','unit':'degC','min':0,'max':48,'conditions':{}}
+            instrument={'unit':'degC','range_min':-50,'range_max':100,
+                        'valid_from':'2020-01-01','valid_until':'2099-01-01','calibration_record':pin}
+            row={'sample_serial':'TEST','material_lot':'TEST','hardware_mpn':'TEST','operator':'TEST',
+                 'measured_at':'2026-01-01T00:00:00Z','instrument_id':'I','configuration_id':'TEST',
+                 'unit':'degC','value':-.1,'uncertainty':.05,'damage_observed':False,'raw_record':pin}
+            self.assertTrue(gate.check_observation(root,row,criterion,{'I':instrument},snapshot_config(pin,'temperature')))
+            row['value']=25
+            self.assertFalse(gate.check_observation(root,row,criterion,{'I':instrument},snapshot_config(pin,'temperature')))
+
 
 if __name__=='__main__':
     unittest.main()

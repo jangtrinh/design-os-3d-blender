@@ -53,10 +53,12 @@ an upper screw limit, not an assembly setting or a prediction of the knob thread
 strip torque. The set-screw tip should contact the shaft flat, not the round surface.
 
 Destructively characterize spare post/thread specimens before choosing assembly
-torque. The minimum observed strip torque must exceed the chosen setting by the
-project margin. Inspect floor pull-through, counterseat deformation and the small
-corner ligament as separate failure modes. Repeat on the intended alloy, tap class
-and surface finish; a brass-pilot CAD hole is not an actual female thread.
+torque. Record the first limiting joint failure, which may be thread strip, screw
+fracture, floor pull-through or post fracture. Its uncertainty-adjusted torque
+margin must exceed the proposed assembly setting by the project criterion. This
+is a joint failure margin; do not label an earlier screw fracture as a measured
+thread strip torque. Repeat on the intended alloy, tap class and surface finish;
+a brass-pilot CAD hole is not an actual female thread.
 
 ## Guides, board supports and the assembled product
 
@@ -108,3 +110,31 @@ an acceptance boundary. Synthetic unit-test values are never bench measurements.
 An evidence-complete result applies only to the declared pilot scope. Regulatory
 assessment, production process control and reliability objectives are separate
 engineering decisions; no certificate or supplier approval is generated here.
+
+## Frozen configurations and instrumented test conditions
+
+Before collecting release evidence, create a new snapshot with a timezone-aware
+`frozen_at`, explicit `design_inputs` roles and per-specimen `test_configurations`.
+Each configuration names its supported metrics, exact hardware MPN, pinned process
+record and applicable manufacturer screw torque limit. Each observation references
+that `configuration_id` and must postdate the freeze. PA12, POM-C, aluminum and
+brass specimens must not be combined under an unspecified global process string.
+
+Each required condition is a measurement object with `value`, `uncertainty`,
+`instrument_id` and pinned `raw_record`. Forces, torque, elapsed time, temperature
+and cycle/event counts need their own appropriate calibrated/logged evidence.
+Installation, initial removal and post-service removal use the same five specimens
+in that temporal order; axial and torsional knob tests likewise retain specimen,
+hardware, material-lot and process identity.
+
+The legacy metric ID `post_strip_margin` is retained for file compatibility, but
+its derivation now uses `joint_failure_torque_Nm`, `failure_uncertainty_Nm`,
+`assembly_torque_Nm` and `assembly_uncertainty_Nm`. The assembly torque plus its
+uncertainty must not exceed the selected screw limit in the frozen configuration.
+
+An assessment records the snapshot, bench records, raw/calibration/process pins
+and assessment time. Call `validate_assessment()` before relying on a previously
+written report; it re-hashes the evidence and recomputes the predicates. Digital
+prerequisites must bind the same source hashes and carry explicit acceptance
+fields. These checks still cannot authenticate measurement honesty, a laboratory
+or unobserved operating conditions; independent engineering review remains needed.

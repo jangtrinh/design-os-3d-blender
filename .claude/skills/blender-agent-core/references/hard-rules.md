@@ -26,4 +26,19 @@ These supplement the existing loop; API knowledge remains in `knowledge/`. Read 
 | HQ reference coverage | The coverage command validates only declared receipt bindings. `--launch` guards its own render-only route; direct Blender, MCP and direct headless calls bypass it. State the actual launch route and retain source/settings/media hashes. | ENFORCED within `hq-coverage-gate.py --launch`; otherwise MANUAL | 2026-09-08 coverage gate and 2026-09-09 C05 direct launch |
 | Surprising geometry measurement | Validate the checker before changing geometry. For small evaluated meshes far from origin, translate vertices to a local centroid and use float64 scalar arithmetic for signed volume; rerun the corrected checker on the unchanged source. | MANUAL; task-specific audit | 2026-09-09 C05 false negative volumes |
 
-Status 2026-09-06 (audit program `plans/260905-2356-blender-workflow-audit/`): **E1 implemented** (`agent_runtime.py`, `headless-run.sh`, socket client, 43 tests), **E2 implemented** (`agent_verify/` package, 7 tests), **E3 partial** — `production-gate.py` binds reports to scene+spec hashes for printed parts (19 tests); task/flexibility checkers in `builds/` still print status without failing exit. **E4, E5, E6, E7 open.** New binding rule: part production needs `spec.json` before detailing and a passing gate before delivery (`recipes.md#production-contract`). Existing task checks may satisfy a predicate better than a generic helper; record the checker actually run.
+Historical status, 2026-09-06: E1/E2 implemented, E3 partial; E4–E7 then open.
+See the [current backlog](../../../../docs/blender-workflow-improvement-backlog.md)
+for the 2026-09-17 update. Native pipeline/review and CK-001 qualification/packaging
+now enforce their declared routes, not every historical checker or physical claim.
+
+| Session-proven trigger | Required action | Enforcement scope |
+|---|---|---|
+| Output disagrees with authored dimensions | Preserve target and measured values separately; identify the wrong contract/code/checker | MANUAL source/requirement judgment; spec-bound gate checks declared targets |
+| Fine triangles yield zero wall samples | Keep minimum wall and segmentation; test primary coverage, bounded fallback and bad/empty controls | `walls_overhang.py` 1.0.2 sampling selection and regression |
+| Saved model exists but pipeline metadata fails | Read source/receipt; retain journal and verify existing output without duplicate mutation | Runner preserves attempt state; recovery choice is MANUAL |
+| Nominal fit passes | Include source-tolerance extremes and intentional mismatch/overtravel controls | Task-specific tests; extrema selection and coverage remain MANUAL |
+| New native-render request or changed aspect | Render actual model; preflight final crop/surface, image size and decoded video | Task media code plus MANUAL visual review |
+| Physical or electrical release claim | Distinguish geometry, logic, ERC/DRC, target build and calibrated pilot records | CK-001 schema checks are scoped; engineering/lab truth remains independent |
+
+One current entrypoint: `docs/product-workflow-template.md`. Deeper diagnosis and
+manufacturing/media procedures are routed through the existing skills.

@@ -82,11 +82,26 @@
       "switch": {"current_mA": 800.0, "max_drop_V": 0.75}
     },
     "headroom_screen_method": "For a bounded design screen only, derive equivalent maximum resistances from Lumissil VHR maximum test points and scale them to E02 conservative sink current and aggregate SW current. The datasheet does not guarantee linear VHR scaling at these lower currents; routed-board voltage/ripple and physical LED Vf still require measurement.",
+    "guaranteed_headroom": "NOT_ESTABLISHED",
+    "low_current_engineering_estimate": {
+      "sink_drop_V": 0.05455,
+      "switch_drop_V": 0.12631,
+      "green_blue_series_drop_V": 0.06909,
+      "margin_at_min_calculated_rail_V": 0.69391,
+      "status": "POSITIVE_ESTIMATE_NOT_A_MANUFACTURER_GUARANTEE"
+    },
+    "pessimistic_full_rated_drop_screen": {
+      "sink_drop_V": 0.6,
+      "switch_drop_V": 0.75,
+      "green_blue_series_drop_V": 0.06909,
+      "margin_at_min_calculated_rail_V": -0.47523,
+      "status": "NEGATIVE_IF_FULL_RATED_VHR_MAXIMA_ARE_APPLIED_DIRECTLY_OUTSIDE_THEIR_TEST_CURRENTS"
+    },
     "current_scaled_sink_drop_V": 0.05455,
     "current_scaled_switch_drop_V": 0.12631,
     "green_blue_series_drop_V": 0.06909,
     "green_blue_path_margin_at_min_calculated_rail_V": 0.69391,
-    "green_blue_headroom_status": "POSITIVE_SCREENING_MARGIN_UNDER_DECLARED_CURRENT_SCALED_VHR_ASSUMPTION_BENCH_REQUIRED",
+    "green_blue_headroom_status": "GUARANTEED_HEADROOM_NOT_ESTABLISHED_LOW_CURRENT_ESTIMATE_POSITIVE_FULL_RATED_PESSIMISTIC_SCREEN_NEGATIVE_BENCH_REQUIRED",
     "sdb_default": "100 kOhm pulldown; GP28 must drive high only after firmware permits RGB",
     "status": "CALCULATED_NOT_MEASURED"
   },

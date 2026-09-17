@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "frozen_at": "2026-09-17T21:19:15+07:00",
+  "reason": "Final E02 truth guard: RGB polarity remains corrected to exact Everlight A01 common-anode part, while manufacturer-guaranteed path headroom is explicitly NOT_ESTABLISHED at the E02 operating currents.",
+  "supersedes_freeze": {
+    "path": "builds/reference-keyboard/manufacturing/electrical/freeze-E02.json",
+    "sha256": "1e64001e8659991796084deea9418ff60d9159fb6ba17767d7f42ad2898cc742",
+    "reason": "Earlier E02 freeze predated the explicit guaranteed-headroom truth guard and seventh negative control."
+  },
+  "authoritative_files": {
+    "authority.json": "56473a93755ef9b0fc55e8fa31f592efc7b61894fa6defb0ffa9c5ca1ea14dad",
+    "logical-netlist.json": "69e75cb407617b51c3caf3ca079db90bf38d512f3ba7b84d6e1c5a8e045a3edf",
+    "firmware-config.json": "130464bc9707e0d62465b996ee3017b0edc4d4ec66bfecb729b69f2049e5b865",
+    "bom.json": "25d6b35e68fc19790bc595a1049471b80535f811188e1a58bb46b096148613bc",
+    "power-budget.json": "6d64892e363517b46256802db905f29acc13cfdabceba2aa4d9009e9d3ceea2c",
+    "source-registry.json": "4d96f85727e6bbaca28b8793a3abd9467f4bb0f308d2072c64a30ea1328656b6",
+    "status.json": "9fb0e3223de71198bb6b3fe0c4208fe68080c805eb18a2757009ebe28d44639e",
+    "E02-led-source-evidence.json": "d4e7d1d3a11543ad250edaa2c48eaa03d685b87ea0096b8bff8748b21a28bc9b",
+    "pin-map.json": "b80fbf14538f637979e14ce91c8d3fe2d8aadf9afcb3b80beb198e80b81a15c3",
+    "logical-schematic.svg": "4c6c78a3286ad11deed8cf6a4753636cbaeaf06dcdffbd0c21b40d068506b41f",
+    "firmware/qmk/info.json": "006671bf17b73d0cf2e11411a46288cbaea0718b312830c4cdc5e2edab949d46",
+    "generate_design.py": "08f685f1ab9e85e88b9e7bb9cbaab7a873af1a1f1b0749301b31550f8789588b",
+    "verify.py": "ceef5f0b84da76861e34447e281a487131994fdce85b92df3e25a6a3c4db8731",
+    "negative_controls.py": "9e2813c11ec263d1ab71a5253c81f4f03c275ccf12ddd8255555bc3a50a66f8c",
+    "verification-E02-final.json": "2fa9b833cc9579332d361c6c364e365a17e6dad012b55f2f791d1ed22db047c2",
+    "negative-controls-E02-final.json": "2beef0fe98fae516c7a3f7c33de9d0df2cb738b03cdb8353f7a3a1dc92c87f74"
+  },
+  "truth_report": {
+    "path": "plans/260917-keyboard-manufacturing/reports/electrical.md",
+    "sha256": "75b74b37b8d1bfbb68cef49e26e1e4b77fefa93e004e7cf23c98ae6444b9cd06"
+  },
+  "qualification_review": {
+    "path": "plans/260917-keyboard-manufacturing/reports/qualification-review.md",
+    "sha256": "dceb16edd37f973cb1d6d22d989282bf48d5e3d254dc7b30d9413005971f305a",
+    "status": "FROZEN_UNCHANGED"
+  },
+  "validation": {
+    "logical": "PASS_LOGICAL_HOST_VERIFICATION_E02",
+    "logical_checks": 37,
+    "negative": "PASS_NEGATIVE_CONTROLS_E02",
+    "negative_controls": 7,
+    "polarity_regression_control": "PASS_REJECTED_OLD_COMMON_CATHODE_C01",
+    "false_headroom_guarantee_control": "PASS_REJECTED_GUARANTEED_POSITIVE",
+    "arm_control_core": "NOT_RERUN_UNCHANGED_FROM_E01"
+  },
+  "headroom_truth": {
+    "guaranteed_headroom": "NOT_ESTABLISHED",
+    "low_current_engineering_estimate_margin_V": 0.69391,
+    "pessimistic_full_rated_drop_screen_margin_V": -0.47523,
+    "interpretation": "The Lumissil datasheet does not provide a maximum VHR bound at the E02 operating currents. The positive current-scaled estimate and negative full-rated-drop screen are source/math consistency evidence only, not a compliance or guaranteed-headroom claim."
+  },
+  "code_return_inspection": {
+    "return_53_found_in_owned_electrical_sources": false,
+    "firmware_test_logic_main_return": 0,
+    "note": "No Everlight pass/fail conclusion is derived from a nonexistent return-53 path."
+  },
+  "e01_snapshot": {
+    "path": "builds/reference-keyboard/manufacturing/electrical/history/E01-before-polarity-fix",
+    "selected_byte_hashes": {
+      "authority.json": "5594393785aa5a3ef95ab772773c1861f63a481df21a6e516e612869b5ee39a3",
+      "bom.json": "90b5ee6ca02347a649927fc263294c6b89b22ba881cc2b18f677ca0ad2022d35",
+      "logical-netlist.json": "53e1d81dbba14928c5bddf842df014295d69d0abbd7c168c17f40697798a19aa",
+      "power-budget.json": "9435f0b83a4886b2aba1fb90da582cc2188ac7e6fdea190398f1baf74e88c41b",
+      "source-registry.json": "154ddf776df6dd3b4d0d8f9892555df811034b289ad1602a9b6d03ba89059836",
+      "status.json": "502147f710b5752f8563d3e9c0a977bb689517ff06327dd74e4293ee0a273c56",
+      "verification.json": "b8b0d97474cd959fada622e2ffb12564281e234e381ce63bf2a3db9734b8e62e",
+      "negative-controls.json": "5df6ed37ba1a2874c8dec2411a2a2e3786d381cf26e20e5b5a8d685592249260",
+      "electrical.md": "3c6927e74759adce24fbb50fbf6dc5514389e22b14bdb8c6fc9c101fb41efe81"
+    }
+  },
+  "artifact_scope_after_freeze": {
+    "electrical_revision": "E02",
+    "gpio_contract": "30/30 RP2040 GPIO ownership unchanged",
+    "matrix": "6x10 with 58 populated keys unchanged",
+    "encoders": "5 direct PEC11R quadrature pairs unchanged",
+    "rgb": "107 exact Everlight 19-237A/BHR6GHC-A01/2T logical positions; common-anode polarity corrected",
+    "mechanical_C03_effect": "No declared change to electrical layout/count/GPIO equivalence; no B render inheritance is asserted by this electrical freeze.",
+    "status_leds": "3 modeled RK_STATUS_* indicators remain unwired visual meshes with no GPIO ownership"
+  },
+  "remaining_release_blocks": [
+    "Guaranteed RGB path headroom is not established; measure actual A01 Vf, driver path drop, RGB_5V1 regulation/ripple and temperature on routed hardware.",
+    "Exact A01 footprint/orientation must be instantiated in ECAD and checked by ERC/DRC once KiCad is available.",
+    "QMK native RGB channel integration/target build remains open.",
+    "USB power, thermal behavior and the complete physical electrical bench remain open.",
+    "The three modeled RK_STATUS_* indicators remain unwired visual meshes with no E02 GPIO ownership."
+  ]
+}

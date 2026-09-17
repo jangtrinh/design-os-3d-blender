@@ -143,3 +143,19 @@ commit-pinned provenance and the distinction between upstream documentation,
 source-level checks, upstream mocked tests, local native tests and physical evidence.
 The durable lesson is to keep source identity, execution state and acceptance
 evidence separate until the actual declared predicates join them.
+
+## 7. Product-scale use and recovery after partial success
+
+The [CK-001 retrospective](../../docs/ck-001-session-retrospective.md) and
+[new-product template](../../docs/product-workflow-template.md) extend the coupon
+into a real assembly without claiming a general autonomous-repair benchmark.
+Required pipeline fields are finite numerical observations; keep SHA strings and
+status labels in metadata. If the native process saved a valid model but a wrapper
+or postcondition declaration failed, inspect the model/receipt identity and preserve
+the failed attempt. Verify that existing artifact through a new explicit route
+instead of reconstructing it merely to get a successful journal entry.
+
+Route surprising measurements through `geometry-diagnostic-workflow`, final media
+through `native-render-delivery`, and physical/electrical closure through
+`manufacturing-evidence-workflow`. These documents are conditional reading; they
+do not make their case-specific specimen values, source roles or scripts universal.

@@ -10,7 +10,7 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608`
@@ -35,6 +35,31 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 - Images do not determine occluded faces precisely.
 - ww_mesh.py returns raw vertex/face data in metres; the caller owns winding, unit conversion and scene ownership.
 
+### Topic: session-retrospective
+
+When: When starting a serious product project or converting a completed session into reusable workflow and skills.
+
+- `docs/ck-001-session-retrospective.md` — read; SHA256 `9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17`
+- `docs/product-workflow-template.md` — read; SHA256 `c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
+- `CONTEXT.md` — read; SHA256 `52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833`
+
+**Steps**
+
+- Trace incidents to actual source and reports, including work already merged; classify code/spec/checker/environment or missing evidence.
+- Record cause, reusable action, falsifier, implementation/test and scope; keep authored requirements independent of measurements.
+- Reuse the three skills and bounded topics; remove obsolete advice, review/publish exact hashes and check the staged tracked tree before Git publication.
+
+**Gates**
+
+- A failed target must not be replaced with the observed output; missing physical or critical visual evidence remains unresolved.
+- Actual CLI routes, mirrors and source hashes must work in a checkout without local ignored runs or reports.
+
+**Limitations**
+
+- Controller procedure, not an autonomous-repair benchmark or universal release validator.
+- Worked constants and host-bound artifact scripts are not portable hardware presets; historical claims retain their original scope.
+
 ### Topic: upstream-agent-patterns
 
 When: When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechanisms to Blender-native work.
@@ -42,7 +67,7 @@ When: When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechani
 - `research/upstream-agent-patterns/meshy.md` — read-verify; SHA256 `0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33`
 - `research/upstream-agent-patterns/dream-loop.md` — read-verify; SHA256 `55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07`
 - `research/upstream-agent-patterns/text-to-cad.md` — read-verify; SHA256 `77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
 - `docs/upstream-agent-integration.md` — read; SHA256 `e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc`
 
 **Steps**
@@ -72,7 +97,7 @@ When: When a reference-led model needs independent feature criticism across boun
 - `scripts/native_review/packets.py` — inspect-adapt; SHA256 `7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed`
 - `scripts/native_review/decision.py` — inspect-adapt; SHA256 `19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df`
 - `tests/native-review/test_native_review.py` — inspect-adapt; SHA256 `b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
 
 **Steps**
 
@@ -207,7 +232,7 @@ Matte plastic materials, studio setup, camera, and polished product imagery.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `e455cc41465700c56266f5d9652adae920972e941644b27085b2982ab3fa8705`
@@ -330,7 +355,7 @@ Joints, hand, natural pick/place, range of motion, and explode/reassemble.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
@@ -497,7 +522,7 @@ FDM plastic printing, fit, inserts, assembly/disassembly, durability, and materi
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/60-pipeline/3d-printing.md` — read-verify; SHA256 `4bce69b0a198c8406475bf230fe66a35cbad19752bba22aa8ce24ad66e6d0eda`
@@ -623,7 +648,7 @@ Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/70-cad-precision-robotics/cad-precision-modeling.md` — read-verify; SHA256 `bc171eb925df0f536a5745c294496268eb8a31464c2044439d2a688051fc51f6`
@@ -647,6 +672,65 @@ Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 - A Blender mesh does not by itself provide B-rep/GD&T or a tolerance solver.
 - The inertia helper does not apply object scale/scene scale; do not use its numbers directly when the transform is not identity.
 
+### Topic: geometry-diagnostics
+
+When: When a bore, wall, collision, tolerance-extreme or export result is surprising and code/spec/checker causes must be distinguished.
+
+- `knowledge/60-pipeline/geometry-diagnostic-workflow.md` — read-verify; SHA256 `a6417c48d8fd4320917c31a8c37360b5b918f424fd573614ba2a35c877113ff3`
+- `scripts/production_gate/walls_overhang.py` — inspect-adapt; SHA256 `5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54`
+  Caution: Fallback samples positive-area triangles only when no nondegenerate triangle meets 0.3 mm2. Mixed-size faces can still hide unsampled thin regions. Rays and overhang percentages do not prove exhaustive thickness, printability, preload or physical strength.
+- `scripts/production_gate/features_fasteners.py` — inspect-adapt; SHA256 `dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad`
+- `tests/production-gate/test_small_surface_walls.py` — inspect-adapt; SHA256 `f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3`
+- `builds/reference-keyboard/scripts/export_compare.py` — inspect-adapt; SHA256 `906a0cbfb1a196c469c0f38bc45bd3ef5c2ce978e7dc87b35ddcb913b24be6cf`
+
+**Steps**
+
+- Freeze source/spec/checker identity and choose a predicate matching evaluated bounds, axis rays, surface/solid contact or export correspondence.
+- Use positive and wrong-result controls; inspect coverage and numerical precision before changing the part.
+- Fix only the root cause, retain failed evidence and rerun the affected check on the actual saved artifact without weakening requirements.
+
+**Gates**
+
+- Filled bores, thin walls, empty/degenerate meshes and deliberate overtravel must be rejected by their applicable controls.
+- Fine-face fallback activates only for an empty primary eligible set; minimum wall and geometry density remain unchanged.
+- Tolerance extrema and sampling scope must match the claim; export vertex splitting alone is not geometry loss.
+
+**Limitations**
+
+- Centroid/ring/surface samples are not exhaustive thickness, continuous collision or Hausdorff proof.
+- The production mesh preparer uses the input object matrix; use a verified identity bake for constrained parts rather than infer evaluated-transform parity.
+- Thread pilots and nominal support contact do not establish final thread strength, preload, bearing or factory fit.
+
+### Topic: manufacturing-evidence
+
+When: When advancing a digital assembly to an engineering candidate and collecting physical pilot evidence for retention, process, electronics or bench claims.
+
+- `knowledge/60-pipeline/manufacturing-evidence-workflow.md` — read-verify; SHA256 `20028e1a959135c553a0d170689a0c1310c0a01bf6853220160aaf5616b6d7a3`
+- `builds/reference-keyboard/manufacturing/qualification/evidence_gate.py` — inspect-adapt; SHA256 `6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa`
+  Caution: Task-specific pilot checker, not a certification system. Source roles/assertions and physical-origin labels are caller-supplied; hashes do not authenticate a laboratory or establish adequacy of the criteria. Local C03 snapshots/run artifacts are not shipped.
+- `builds/reference-keyboard/manufacturing/qualification/record_checks.py` — inspect-adapt; SHA256 `1a38c0f322117df386b9c873eec096649faceb641af93efccd2f50e2803bf992`
+- `builds/reference-keyboard/manufacturing/qualification/evidence_io.py` — inspect-adapt; SHA256 `8000a8da7b3da47f732d3f7f7184449310bb83e28c70d2ac9c9d174bc5830393`
+- `builds/reference-keyboard/manufacturing/qualification/test_evidence_gate.py` — inspect-adapt; SHA256 `cc33a8003f3412ccdcb86e7f07bfed3f3ebfe7a74856ed7719307c2b7e5b5d24`
+
+**Steps**
+
+- Define sourced dimensional/interface requirements, exact component/process choices and a geometry/electrical/physical closure ledger.
+- Verify retention construction, polarity/pin mapping and bounded electrical calculations; distinguish logic, ERC/DRC, target build and hardware.
+- Select material/process using identified specimens; freeze configurations and collect calibrated values, uncertainty, conditions, raw records and paired histories.
+- Replay pinned evidence before reuse and retain missing prerequisites; hand off only the declared pilot scope.
+
+**Gates**
+
+- Empty, synthetic, stale, wrong-unit, mismatched-cohort or out-of-interval records cannot complete the pilot assessment.
+- Digital reports must match source roles and explicit result assertions; a hash alone is insufficient.
+- Unproven headroom, retention, strength, factory fit or firmware remain open even when geometry and visual criteria pass.
+
+**Limitations**
+
+- Record validation does not authenticate a laboratory or guarantee adequate caller-authored requirements and source assertions.
+- Case forces, sample counts, dimensions, power assumptions and host-bound snapshots are examples, not standards.
+- This workflow generates no physical observation, ECAD result, linked firmware or manufacturing certificate.
+
 ### Topic: parametric-source-contract
 
 When: When native component code needs explicit length parameters, frames, datums, semantic ports or declared source/export evidence.
@@ -655,7 +739,7 @@ When: When native component code needs explicit length parameters, frames, datum
   Caution: Length scalars in mm/m only; rigid local frame validation does not compose world transforms. Datums/ports/visual-collision-physical labels do not prove mating or object behavior. Explicit source files only; export suffix/hash is not format validation or manufacturing proof.
 - `tests/boilerplates/test_parametric_contract.py` — inspect-adapt; SHA256 `7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4`
 - `specs/examples/native-iteration-parameters.json` — read; SHA256 `e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `d1b3a3e4e270064af0a2cc13b6c76cac49a687ccdbb23d083b41545e014c934b`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
 
 **Steps**
 
@@ -822,7 +906,7 @@ Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/70-cad-precision-robotics/gears-transmission-modeling.md` — read-verify; SHA256 `1975a92284d94b2b84cf09707c7594935f3bde34bf448b6624efb37a415dbe86`
@@ -947,7 +1031,7 @@ Robot links, URDF, coordinate frames, collision, and inertia.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e`
@@ -1010,7 +1094,7 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `a241aa51cbfffb4bd67aca186e5605e158049a88e2fac1d569de308fa44d8dfb`
@@ -1033,9 +1117,38 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 
 ### Limitations
 
-- The headless wrapper does not yet exit explicitly on a Python error; use the explicit CLI form from the core recipe.
+- The headless wrapper enforces Python/sentinel failure exits; direct or legacy launch paths must declare whether they use that wrapper and inspect the actual result.
 - The video example hardcodes this build ffmpeg paths, 24 fps and frame identity, and leaves visual review PENDING; adapt the contract to the task.
-- Do not resume on the basis that a file exists; stale-evidence enforcement E1–E5 is still backlog.
+- Do not resume merely because files exist. Native pipeline reuse checks declared attempt/input/output hashes; generic partial-frame recovery and cross-domain release completeness remain separate work.
+
+### Topic: native-render-delivery
+
+When: When rendering the saved model at requested resolution, changing aspect, delivering GLB/video or refreshing media after geometry changes.
+
+- `knowledge/60-pipeline/native-render-delivery.md` — read-verify; SHA256 `9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171`
+- `builds/reference-keyboard/scripts/fullhd.py` — inspect-adapt; SHA256 `d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a`
+  Caution: Inspect/adapt only: names, views and 96-frame choreography are specific to the local B scene. Not a generic renderer, no automatic visual judgment or physical evidence. Prior B media cannot qualify later C03 geometry.
+- `builds/reference-keyboard/scripts/package_delivery.py` — inspect-adapt; SHA256 `3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852`
+- `builds/reference-keyboard/scripts/prepare_reference_review.py` — inspect-adapt; SHA256 `aea46f665a503f9a68475af8bc9ec96de7dac2cf4c3fe4ee1dd74ec3d59818b5`
+- `docs/product-workflow-template.md` — read; SHA256 `c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69`
+
+**Steps**
+
+- Freeze actual scene, geometry/shading/camera/settings and gates; separate original references from generated concepts.
+- Preflight all shots at final aspect/apparent scale and inspect risky normals, slots, legends and translucent surfaces before batching.
+- Export only the product, reimport bytes, validate image headers and fully decoded video, then inspect actual views and motion.
+- Bind review/package to the exact revision, rehash copied files and check archive membership; retain old media under its original identity.
+
+**Gates**
+
+- Wrong actual pixels, crop, foreign objects, missing frames or mismatched source pins prevent media completion.
+- Generated concepts and upscaled screenshots cannot substitute for a requested native render of the model.
+- Candidate/still/media/manufacture decisions stay separate; missing critical evidence remains unknown.
+
+**Limitations**
+
+- CK-001 media/package sources are case-specific and require local artifacts, reviewed runtime and scoped authorization.
+- Decoded frames and sampled export poses do not certify all temporal/material fidelity or physical operation; visual judgment remains manual.
 
 ### Topic: native-task-lifecycle
 
@@ -1192,7 +1305,7 @@ Geometry Nodes, patterns, instances, and simulation/caches using Blender-native 
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/50-procedural/geometry-nodes.md` — read-verify; SHA256 `4e4dc95e1d559e39c4446d62b3a2b9ea6abbd85e35e461b25b15a2abf6c981a6`
@@ -1378,7 +1491,7 @@ Build a humanoid or creature that must deform: proportions, animation topology, 
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `db2d39bd3435f787a22a3fb8684415ecc51c87033e5e07d23aafb850eb81f96a`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
 - `knowledge/15-character-creature/character-creature-modeling.md` — read-verify; SHA256 `a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d`

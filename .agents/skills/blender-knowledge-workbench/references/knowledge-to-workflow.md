@@ -48,3 +48,22 @@ Playbook and catalog are separate writes. If interrupted after the playbook writ
 Check the intended topics through `route --topic`, not just the generator's exit code. Unknown topics and stale topic review hashes must fail. Inspect source cautions and required reading size. Record snapshot identity, test results, unresolved source claims and next execution gates. Use the generated playbook as selective reading; do not dump the entire document into model context.
 
 No daemon/watch/scheduler is installed. This pipeline runs on request. Promotion means curated task routing; actual Blender builds still need core numeric/visual verification and engineering work still needs physical evidence where relevant.
+
+## 6. Session retro and Git publication
+
+Use the actual source, discriminating tests and revision-bound reports to classify
+each incident. A worker handoff is a lead to verify. Promote the reusable decision
+and falsifier, not every product constant or a blanket "production-grade" label.
+Remove obsolete instructions when replacing a method. Keep the three existing
+skill entrypoints and their mirrors aligned; use conditional topics for depth.
+
+Read Git status, current branch and remote before changing anything. Reconcile
+work already merged during the session and preserve unrelated dirty files. Stage
+source/contracts/tests and curated docs explicitly. Keep large run directories,
+delivery archives, local snapshots and secrets out of the source commit.
+
+After publication and staging, export the tracked index to an isolated checkout
+and run the catalog check and intended routes there. Missing ignored examples or
+links are publication defects, not successful local validation. Commit/push only
+with the owner's authorization, follow the repo's review/branch policy, and report
+the actual commit/PR/remote result. A push failure is not a published result.

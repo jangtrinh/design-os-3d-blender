@@ -11,10 +11,11 @@ size, unprintable, or missing a hole. Media that "looks right" is not acceptance
 
 ## Read this first: what a PASS is, and is not
 
-A green gate is **digital evidence about geometry**. It is not manufacturing
-approval. Concretely, a pass proves the modelled solid is watertight, is the
-declared size in millimetres, has the declared bores at the declared diameters,
-survives an STL round trip, and clears two coarse printability screens.
+A green gate is **digital evidence about the checks actually run**. It is not
+manufacturing approval. Topology and declared dimensions are checked; unlisted
+features are not. Wall and overhang settings can be omitted for partial diagnostic
+work, and STL roundtrip runs only when `--export-dir` is supplied. Read the per-part
+results and coverage before claiming any of those outcomes.
 
 It proves **nothing** about:
 
@@ -48,8 +49,17 @@ gate did not make it.
 6. Put the trials you still owe in `physical_evidence`, and any load case in
    `load_cases`. The gate never evaluates them; it copies them into
    `exclusions[]` so the gap stays visible in the record.
-7. Name the checks you consider non-negotiable in `required_checks`. If such a
-   check never runs, the gate fails rather than passing quietly.
+7. Name non-negotiable checks in `required_checks`. If a name never runs anywhere,
+   the gate fails. This field is aggregated across parts; it does not require that
+   every part ran that check. The controller must inspect per-part completeness.
+
+The generic schema intentionally supports partial diagnostics and does not require
+`min_wall_mm`. For the project's print/both completion procedure, every applicable
+production part must nevertheless have an independently authored positive wall
+limit and an actual passing `wall_thickness_screen` result. The same per-part
+review applies to required features and exports. Removing a requirement to bypass
+a failure is not an acceptable diagnostic or release procedure. A waiver for a
+stage remains visible and does not remove physical manufacturing requirements.
 
 The field-by-field contract is `specs/build-spec.schema.json`; it is the single
 source of truth and `scripts/production_gate/spec.py` validates against it.
@@ -90,7 +100,7 @@ re-measured, so an export bug cannot hide behind a passing in-scene check.
 | `bbox_dims_mm` | The world-space bounding box matches the declared size within tolerance | That interior geometry is right — a bounding box is three numbers |
 | `scale_applied` | Object scale is 1,1,1, so local mesh data equals world geometry | Nothing else; but without it, correct world dimensions can hide a mesh that exports wrong |
 | `scene_unit_system`, `scene_scale_length` | Millimetres in the report mean millimetres | — |
-| `wall_thickness_screen` | **SCREEN.** Sampled face centroids found no material thinner than `min_wall_mm` | Not an exhaustive minimum-thickness proof: regions with no sampled centroid, or faces below 0.3 mm², are invisible to it |
+| `wall_thickness_screen` | **SCREEN.** Opposing-normal rays from sampled centroids meet the declared wall limit | Not exhaustive: primary selection uses faces at least 0.3 mm²; only an empty primary set enables the all-positive-face fallback in 1.0.2. Mixed-size faces can leave thin regions unsampled |
 | `overhang_area_pct` | **SCREEN.** The share of surface area facing within `max_overhang_deg` of build-down | Not a printability verdict — bridging, support generation and slicer settings are not modelled |
 | `feature_*_bore_clear` | The axial probe passes through a through hole, or reaches the floor of a blind one | That the hole is in the right place relative to anything else |
 | `feature_*_diameter_mm` | The modelled bore measures that diameter at `center_mm` (median-filtered radial rays, verified to 0.05 mm against known 3.4 and 5.0 mm bores) | Printed diameter — FDM holes come out undersize; nothing about roundness away from `center_mm` |

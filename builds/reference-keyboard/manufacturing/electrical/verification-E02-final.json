@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "status": "PASS_LOGICAL_HOST_VERIFICATION_E02",
+  "checks": [
+    {
+      "id": "identity",
+      "status": "pass",
+      "evidence": "design_id CK-001-E02"
+    },
+    {
+      "id": "binding_layout",
+      "status": "pass",
+      "evidence": "builds/reference-keyboard/layout.json"
+    },
+    {
+      "id": "binding_interfaces",
+      "status": "pass",
+      "evidence": "builds/reference-keyboard/interfaces.json"
+    },
+    {
+      "id": "binding_mesh_inventory",
+      "status": "pass",
+      "evidence": "builds/reference-keyboard/runs/verification-B03/steps/inspect/attempt-0001/mesh-inventory.json"
+    },
+    {
+      "id": "source_counts",
+      "status": "pass",
+      "evidence": {
+        "keys": 58,
+        "encoders": 5,
+        "key_rgb": 58,
+        "perimeter_rgb": 49,
+        "rgb_total": 107
+      }
+    },
+    {
+      "id": "matrix_shape",
+      "status": "pass",
+      "evidence": [
+        6,
+        10,
+        58
+      ]
+    },
+    {
+      "id": "matrix_cells_unique",
+      "status": "pass",
+      "evidence": 58
+    },
+    {
+      "id": "matrix_sparse_cells",
+      "status": "pass",
+      "evidence": [
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ]
+    },
+    {
+      "id": "diodes",
+      "status": "pass",
+      "evidence": "58 unique BAS316 logical diodes COL2ROW"
+    },
+    {
+      "id": "key_binding",
+      "status": "pass",
+      "evidence": "58 current-B keys; firmware matrix map identical"
+    },
+    {
+      "id": "gpio_ownership",
+      "status": "pass",
+      "evidence": [
+        [
+          "GP0",
+          "row0"
+        ],
+        [
+          "GP1",
+          "row1"
+        ],
+        [
+          "GP2",
+          "row2"
+        ],
+        [
+          "GP3",
+          "row3"
+        ],
+        [
+          "GP4",
+          "row4"
+        ],
+        [
+          "GP5",
+          "row5"
+        ],
+        [
+          "GP6",
+          "col0"
+        ],
+        [
+          "GP7",
+          "col1"
+        ],
+        [
+          "GP8",
+          "col2"
+        ],
+        [
+          "GP9",
+          "col3"
+        ],
+        [
+          "GP10",
+          "col4"
+        ],
+        [
+          "GP11",
+          "col5"
+        ],
+        [
+          "GP12",
+          "col6"
+        ],
+        [
+          "GP13",
+          "col7"
+        ],
+        [
+          "GP14",
+          "col8"
+        ],
+        [
+          "GP15",
+          "col9"
+        ],
+        [
+          "GP16",
+          "ENC1.A"
+        ],
+        [
+          "GP17",
+          "ENC1.B"
+        ],
+        [
+          "GP20",
+          "ENC2.A"
+        ],
+        [
+          "GP21",
+          "ENC2.B"
+        ],
+        [
+          "GP22",
+          "ENC3.A"
+        ],
+        [
+          "GP23",
+          "ENC3.B"
+        ],
+        [
+          "GP24",
+          "ENC4.A"
+        ],
+        [
+          "GP25",
+          "ENC4.B"
+        ],
+        [
+          "GP26",
+          "ENC5.A"
+        ],
+        [
+          "GP27",
+          "ENC5.B"
+        ],
+        [
+          "GP18",
+          "i2c.sda"
+        ],
+        [
+          "GP19",
+          "i2c.scl"
+        ],
+        [
+          "GP28",
+          "rgb.sdb"
+        ],
+        [
+          "GP29",
+          "power.fault"
+        ]
+      ]
+    },
+    {
+      "id": "gpio_modes",
+      "status": "pass",
+      "evidence": "30 explicit runtime/boot I/O contracts; GP28 hardware-off, GP29 fault input"
+    },
+    {
+      "id": "encoders",
+      "status": "pass",
+      "evidence": "5 direct quadrature encoders, no push switches"
+    },
+    {
+      "id": "encoder_filters",
+      "status": "pass",
+      "evidence": "10k pull-up + 10k series + 10nF per A/B"
+    },
+    {
+      "id": "usb_cc",
+      "status": "pass",
+      "evidence": "two independent 5.1k Rd; SBU NC"
+    },
+    {
+      "id": "usb_data",
+      "status": "pass",
+      "evidence": "USB2 ESD + 27R source termination"
+    },
+    {
+      "id": "i2c",
+      "status": "pass",
+      "evidence": "3V3 I2C1; U5 address 0x30"
+    },
+    {
+      "id": "rgb_mapping",
+      "status": "pass",
+      "evidence": "107 RGB / 321 unique channels"
+    },
+    {
+      "id": "rgb_led_polarity",
+      "status": "pass",
+      "evidence": "exact Everlight A01 common-anode part; SW sources pin3; CS sinks R/G/B cathodes pins1/2/4"
+    },
+    {
+      "id": "rgb_hardware",
+      "status": "pass",
+      "evidence": "120k RISET; RGB_5V1; SDB 100k default-off"
+    },
+    {
+      "id": "rgb_led_bom",
+      "status": "pass",
+      "evidence": {
+        "refs": "LED000-LED106",
+        "qty": 107,
+        "mpn": "19-237A/BHR6GHC-A01/2T",
+        "manufacturer": "Everlight",
+        "role": "common-anode RGB LEDs; pin 3 common anode, pins 1/2/4 red/green/blue cathodes",
+        "source": "everlight-19-237a-a01",
+        "status": "DESIGN_SELECTED"
+      }
+    },
+    {
+      "id": "rgb_primary_sources",
+      "status": "pass",
+      "evidence": "Everlight exact A01 datasheet + Lumissil Rev.D eval-board reference"
+    },
+    {
+      "id": "rgb_screenshot_evidence",
+      "status": "pass",
+      "evidence": "actual PDF screenshots inspected for Everlight polarity/Vf and Lumissil array/BOM"
+    },
+    {
+      "id": "rgb_current_math",
+      "status": "pass",
+      "evidence": {
+        "nominal_mA": 3.16678,
+        "conservative_mA": 3.45467
+      }
+    },
+    {
+      "id": "logic_regulator",
+      "status": "pass",
+      "evidence": "TLV75533PDBVR, ceramic-stable LDO"
+    },
+    {
+      "id": "rgb_boost",
+      "status": "pass",
+      "evidence": {
+        "min": 4.84386,
+        "nominal": 5.0575,
+        "max": 5.27742
+      }
+    },
+    {
+      "id": "rgb_boost_voltage_math",
+      "status": "pass",
+      "evidence": {
+        "min": 4.84386,
+        "nominal": 5.0575,
+        "max": 5.27743
+      }
+    },
+    {
+      "id": "rgb_led_vf_source_bound",
+      "status": "pass",
+      "evidence": "A01 datasheet Vf maxima at 20mA plus stated \u00b10.1V tolerance"
+    },
+    {
+      "id": "rgb_headroom_source_math_consistency",
+      "status": "pass",
+      "evidence": {
+        "guaranteed_headroom": "NOT_ESTABLISHED",
+        "design_vf_V": 3.9,
+        "low_current_estimate_margin_V": 0.69391,
+        "pessimistic_full_rated_drop_margin_V": -0.47523
+      }
+    },
+    {
+      "id": "power_budget_math",
+      "status": "pass",
+      "evidence": {
+        "total_vbus_mA": 302.16,
+        "sys5_V": 4.32432
+      }
+    },
+    {
+      "id": "boost_inductor_margin",
+      "status": "pass",
+      "evidence": {
+        "calculated_peak_A": 0.78,
+        "isat_A": 9.0
+      }
+    },
+    {
+      "id": "power_limit",
+      "status": "pass",
+      "evidence": {
+        "limit": {
+          "min": 351.2,
+          "nominal": 396.7,
+          "max": 448.7
+        },
+        "budget_mA": 302.1602
+      }
+    },
+    {
+      "id": "bom_sources",
+      "status": "pass",
+      "evidence": "39 BOM lines have registered sources"
+    },
+    {
+      "id": "firmware_binding",
+      "status": "pass",
+      "evidence": "firmware pins/counts match; VID/PID intentionally unassigned"
+    },
+    {
+      "id": "qmk_scaffold",
+      "status": "pass",
+      "evidence": "QMK scaffold mirrors 58-key pin/RGB contract"
+    },
+    {
+      "id": "derived_schematic",
+      "status": "pass",
+      "evidence": "derived SVG is explicitly non-ERC and shows matrix/RGB architecture"
+    },
+    {
+      "id": "release_blockers",
+      "status": "pass",
+      "evidence": "ERC/DRC/bench/manufacture remain blocked"
+    }
+  ],
+  "supersedes": {
+    "design_id": "CK-001-E01",
+    "reason": "historical host verification did not assert LED common-anode compatibility with the IS31FL3741A SW/current-sink matrix"
+  },
+  "limits": [
+    "Headroom PASS is a source-bound screening calculation with an explicitly declared current-scaled VHR assumption; it is not measured LED/driver path evidence.",
+    "Not ERC/DRC, routed PCB, USB-IF certification, firmware target build or physical bench evidence."
+  ]
+}

@@ -144,14 +144,22 @@ def validate(documents=None):
     switch_drop = (vhr["switch"]["max_drop_V"] / (vhr["switch"]["current_mA"] / 1000)) * (line_current_mA / 1000)
     series_drop = rgb_power["sink_series_ohm"]["green"] * conservative / 1000
     gb_margin = vout_min - (rgb_power["led_vf_design_bound_V"]["green"] + series_drop + sink_drop + switch_drop)
-    check("rgb_green_blue_headroom", gb_margin > .5 and
+    full_rated_margin = vout_min - (rgb_power["led_vf_design_bound_V"]["green"] + series_drop +
+                                    vhr["sink"]["max_drop_V"] + vhr["switch"]["max_drop_V"])
+    low_estimate = rgb_power["low_current_engineering_estimate"]
+    pessimistic = rgb_power["pessimistic_full_rated_drop_screen"]
+    check("rgb_headroom_source_math_consistency", rgb_power["guaranteed_headroom"] == "NOT_ESTABLISHED" and
+          gb_margin > .5 and full_rated_margin < 0 and
           abs(rgb_power["current_scaled_sink_drop_V"]-sink_drop) < 2e-5 and
           abs(rgb_power["current_scaled_switch_drop_V"]-switch_drop) < 2e-5 and
           abs(rgb_power["green_blue_series_drop_V"]-series_drop) < 2e-5 and
           abs(rgb_power["green_blue_path_margin_at_min_calculated_rail_V"]-gb_margin) < 2e-5 and
-          "ASSUMPTION_BENCH_REQUIRED" in rgb_power["green_blue_headroom_status"],
-          {"design_vf_V":rgb_power["led_vf_design_bound_V"]["green"],"sink_drop_V":round(sink_drop,5),
-           "switch_drop_V":round(switch_drop,5),"series_drop_V":round(series_drop,5),"margin_V":round(gb_margin,5)})
+          abs(low_estimate["margin_at_min_calculated_rail_V"]-gb_margin) < 2e-5 and
+          abs(pessimistic["margin_at_min_calculated_rail_V"]-full_rated_margin) < 2e-5 and
+          "NOT_ESTABLISHED" in rgb_power["green_blue_headroom_status"],
+          {"guaranteed_headroom":"NOT_ESTABLISHED","design_vf_V":rgb_power["led_vf_design_bound_V"]["green"],
+           "low_current_estimate_margin_V":round(gb_margin,5),
+           "pessimistic_full_rated_drop_margin_V":round(full_rated_margin,5)})
     vbus_min = power["usb"]["vbus_stress_min_at_receptacle_V"]
     efficiency = pboost["efficiency_budget_assumption"]
     line_current = conservative * power["rgb_driver"]["max_active_sink_channels_per_scan_line"]

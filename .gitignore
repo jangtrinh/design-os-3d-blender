@@ -26,6 +26,10 @@ research/tools/upstream-260917/
 # Run directories hold >100 MB evidence files; delivery packages are published under docs/reviews/.
 builds/*/runs/
 builds/*/manufacturing/runs/
+builds/*/manufacturing/delivery/
+builds/*/manufacturing/*.zip
+# Generated pilot snapshots reference local, unshipped model and instrument files.
+builds/*/manufacturing/qualification/C[0-9]*/
 builds/*/delivery/
 builds/*/*.zip
 # Manufacturer datasheets are cited by URL + SHA-256 in source-registry.json, not redistributed.

@@ -47,6 +47,13 @@
       "VHR maximum test points are 600mV at ISINK=38mA and 750mV at ISWITCH=800mA; E02 does not reuse those full-current drops as though they were measured at the 3.45mA/channel operating point."
     ]
   },
+  "headroom_interpretation": {
+    "guaranteed_headroom": "NOT_ESTABLISHED",
+    "reason": "The manufacturer VHR maxima are specified at 38mA sink and 800mA switch test points, not as maximum drops at the E02 operating currents. Current-scaled VHR is an engineering estimate only.",
+    "low_current_engineering_estimate_margin_V": 0.69391,
+    "pessimistic_full_rated_drop_screen_margin_V": -0.47523,
+    "interpretation": "The positive estimate and negative pessimistic screen bracket uncertainty; neither is a manufacturer guarantee at the E02 operating point. Physical routed-board measurement remains required."
+  },
   "limits": [
     "Conversation capture refs are execution-session references, not portable repository assets; durable authority remains the official URLs, exact page numbers and source revisions above.",
     "This evidence verifies datasheet polarity/pin/current-table interpretation only. It is not ECAD footprint, routed-board, optical-output or physical-bench evidence."

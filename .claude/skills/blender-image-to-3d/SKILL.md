@@ -22,6 +22,13 @@ For a multi-component site, declare one common scale and shared units/axes. Reco
 
 Do not promise exact hidden geometry from insufficient evidence. Visible reference fidelity has priority.
 
+Pin local reference bytes with source roles before comparison. An original photo,
+an owner-supplied dimension, a generated blueprint/360 sheet and a manufacturer
+drawing have different authority. Preserve conflicts and label local adaptations;
+later generated views cannot authenticate unseen switch, shaft or PCB geometry.
+When only inline images are visible, disclose missing byte provenance and obtain
+the real file rather than inventing a local path or hash.
+
 ## Phase 0 — Native reconstruction mode
 
 | Evidence | Native mode | Required gate |
@@ -72,6 +79,13 @@ For every declared critical feature, review the primary and supporting views man
 
 The HQ coverage checker can validate declared receipt bindings with or without `--launch`. Its guarded `--launch` route validates first and then controls only its child render. Direct Blender, MCP, and headless renders bypass that launch guard; record the route accurately and do not imply a universal pre-HQ interception.
 
+For Full HD/social delivery, load `knowledge/60-pipeline/native-render-delivery.md`.
+Render the actual saved model. Preflight every shot at final aspect, check curved
+metal surfaces and legends at delivery density, and inspect original images plus
+decoded animation. A concept-generation image, thumbnail or enlarged screenshot
+does not qualify a native Blender render. Changes to normals/materials still
+invalidate affected shading and media proofs even when vertices are unchanged.
+
 ## Delivery gate
 
 For repeated reference refinement, use the target-bound critic packet in
@@ -83,6 +97,12 @@ findings. It does not judge images itself or authenticate reviewer independence.
 A repeated failed feature calls for a different approach; changing the target
 starts a new contract revision. The controlled native coupon illustrates a missing
 detail that passes overall dimensions; it is not a general reconstruction benchmark.
+
+Separate contracted feature acceptance from exact likeness. Retain omitted legends,
+camera differences, RGB tuning and inferred underside details as visible deltas.
+Missing critical evidence remains UNKNOWN; never weaken the rubric after seeing a
+failed candidate. A completed still review does not approve unreviewed motion or
+the physical/electrical design.
 
 - Deterministic rebuild succeeds twice with stable counts.
 - Critical components, transforms, topology, materials, camera framing, and render settings pass automated tests.

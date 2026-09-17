@@ -31,6 +31,8 @@ def main():
         rejected("rgb_common_cathode_regression", lambda d: d["logical-netlist"]["rgb"].update(
             led_mpn="19-237B/R6GHBHC-C01/2T", led_topology="common cathode to SWx",
             led_pins={"common_cathode":4,"anodes":{"red":2,"green":1,"blue":3}})),
+        rejected("rgb_false_guaranteed_headroom", lambda d: d["power-budget"]["rgb_driver"].update(
+            guaranteed_headroom="GUARANTEED_POSITIVE")),
     ]
     out = {"schema_version":1,"design_id":"CK-001-E02","status":"PASS_NEGATIVE_CONTROLS_E02","controls":rows,
            "supersedes":{"design_id":"CK-001-E01","reason":"adds explicit common-cathode regression falsifier"}}

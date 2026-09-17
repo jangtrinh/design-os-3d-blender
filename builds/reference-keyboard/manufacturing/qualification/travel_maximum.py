@@ -1,5 +1,6 @@
 """Inspect maximum source-tolerance travel on the actual saved candidate, without mutation."""
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -7,16 +8,25 @@ HERE=Path(__file__).resolve().parent
 BUILD=HERE.parents[1]
 sys.path[:0]=[str(BUILD/'scripts'),str(BUILD.parents[1]/'scripts')]
 import bpy
-from project import sha
+from project import sha, output_context
 import inspect_fit as fit
 from agent_runtime import emit_ok
 
 assert bpy.app.background
+if os.environ.get('DESIGN_OS_OUTPUT_DIR'):
+    directory, inputs = output_context()
+    source_path = inputs['artifacts'].get('build:model.blend')
+    if source_path is None:
+        models = [p for p in inputs['project'].values() if p.endswith('/model.blend')]
+        assert len(models) == 1
+        source_path = models[0]
+    assert bpy.ops.wm.open_mainfile(filepath=source_path) == {'FINISHED'}
+else:
+    directory = BUILD/'manufacturing/runs/travel-C01'
+    directory.mkdir(parents=True,exist_ok=False)
 source=Path(bpy.data.filepath).resolve()
 assert source.is_file() and source.is_relative_to(BUILD)
 before=sha(source)
-directory=BUILD/'manufacturing/runs/travel-C01'
-directory.mkdir(parents=True,exist_ok=False)
 layout,interfaces,count,nominal_samples,envelope=fit._contracts()
 samples=tuple(sorted(set((*nominal_samples,3.2))))
 keys,tops,flanges,stems=(fit._indexed(prefix) for prefix in
@@ -39,6 +49,6 @@ report={'status':'pass' if passed else 'fail','scene':str(source),'scene_sha256'
                   'No force, wear, factory housing compatibility, full-assembly collision or continuous-motion proof.']}
 with (directory/'maximum-travel.json').open('x') as handle:
     json.dump(report,handle,indent=2,allow_nan=False)
-assert passed,'maximum travel failed; inspect manufacturing/runs/travel-C01/maximum-travel.json'
+assert passed, f'maximum travel failed; inspect {directory}/maximum-travel.json'
 emit_ok('manufacturing-maximum-travel',keys=count,travel_samples=len(samples),max_travel_mm=3.2,
         colliding_keys=collision['collision_pairs'],guides=guides['guides_checked'],negative_control=bad)

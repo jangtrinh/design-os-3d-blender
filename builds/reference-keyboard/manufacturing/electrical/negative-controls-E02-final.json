@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "design_id": "CK-001-E02",
+  "status": "PASS_NEGATIVE_CONTROLS_E02",
+  "controls": [
+    {
+      "id": "usb_data_short",
+      "status": "pass",
+      "rejected_with": "usb_data: USB2 ESD + 27R source termination"
+    },
+    {
+      "id": "missing_key_diode",
+      "status": "pass",
+      "rejected_with": "diodes: 58 unique BAS316 logical diodes COL2ROW"
+    },
+    {
+      "id": "usb_cc_missing_rd",
+      "status": "pass",
+      "rejected_with": "usb_cc: two independent 5.1k Rd; SBU NC"
+    },
+    {
+      "id": "power_limit_over_500mA",
+      "status": "pass",
+      "rejected_with": "power_limit: {'limit': {'min': 351.2, 'nominal': 396.7, 'max': 650}, 'budget_mA': 302.1602}"
+    },
+    {
+      "id": "gpio_reuse",
+      "status": "pass",
+      "rejected_with": "gpio_ownership: [('GP0', 'row0'), ('GP1', 'row1'), ('GP2', 'row2'), ('GP3', 'row3'), ('GP4', 'row4'), ('GP5', 'row5'), ('GP6', 'col0'), ('GP7', 'col1'), ('GP8', 'col2'), ('GP9', 'col3'), ('GP10', 'col4'), ('GP11', 'col5'), ('GP12', 'col6'), ('GP13', 'col7'), ('GP14', 'col8'), ('GP15', 'col9'), ('GP0', 'ENC1.A'), ('GP17', 'ENC1.B'), ('GP20', 'ENC2.A'), ('GP21', 'ENC2.B'), ('GP22', 'ENC3.A'), ('GP23', 'ENC3.B'), ('GP24', 'ENC4.A'), ('GP25', 'ENC4.B'), ('GP26', 'ENC5.A'), ('GP27', 'ENC5.B'), ('GP18', 'i2c.sda'), ('GP19', 'i2c.scl'), ('GP28', 'rgb.sdb'), ('GP29', 'power.fault')]"
+    },
+    {
+      "id": "rgb_common_cathode_regression",
+      "status": "pass",
+      "rejected_with": "rgb_led_polarity: exact Everlight A01 common-anode part; SW sources pin3; CS sinks R/G/B cathodes pins1/2/4"
+    },
+    {
+      "id": "rgb_false_guaranteed_headroom",
+      "status": "pass",
+      "rejected_with": "rgb_headroom_source_math_consistency: {'guaranteed_headroom': 'NOT_ESTABLISHED', 'design_vf_V': 3.9, 'low_current_estimate_margin_V': 0.69391, 'pessimistic_full_rated_drop_margin_V': -0.47523}"
+    }
+  ],
+  "supersedes": {
+    "design_id": "CK-001-E01",
+    "reason": "adds explicit common-cathode regression falsifier"
+  }
+}

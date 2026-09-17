@@ -32,13 +32,13 @@ Getting this wrong costs a rebuild, not a tweak: `render-only` geometry cannot b
    - MCP: `import sys; sys.path.insert(0, "<ROOT>/scripts"); import agent_runtime as rt; rt.run_file("/abs/builds/<slug>/pass-NN.py")`
    - Headless: `bash scripts/headless-run.sh builds/<slug>/pass-NN.py`
    - **Decide by the last stdout line** `AGENT_OK {json}` / `AGENT_FAIL {json}`; "Code executed successfully" is only transport. Blender's exit code is wrong in both directions. Timeout after a mutation has already been sent → outcome unknown: read state before sending again.
-5. **Verify ladder (cheap → expensive; if a number can answer it, spend no image):** (1) numeric asserts: `assert_exists`, `tri_count`, `world_bbox`, `has_material`, fcurve keys → (2) `framing()` + `preview_render(engine="EEVEE"|"CYCLES")` + `frame_stats()` (≈0.2 s at 256px on a small scene, both engines run headless on macOS; restore state) → (3) viewport screenshot **after writing down the expectation + what would falsify it** → (4) low-sample Cycles preview → (5) comparison sheet when a reference exists → (6) turntable. Production part: `python3 scripts/production-gate.py --scene <blend> --spec <spec.json> --report <out.json>` exit 0 before delivery; attach the report.
+5. **Verify ladder (cheap → expensive; if a number can answer it, spend no image):** (1) numeric asserts: `assert_exists`, `tri_count`, `world_bbox`, `has_material`, fcurve keys → (2) `framing()` + preview with the established working engine + `frame_stats()`; restore state and measure actual cost rather than assume renderer availability/speed → (3) viewport screenshot **after writing down the expectation + what would falsify it** → (4) low-sample Cycles preview → (5) comparison sheet when a reference exists → (6) turntable. Production part: `python3 scripts/production-gate.py --scene <blend> --spec <spec.json> --report <out.json>` exit 0 before delivery, plus the per-part coverage review below; attach the report.
 5b. **Two gates when purpose is `print` or `both` (MANUAL).**
-   - **Form gate — the closing condition of phase 2 (build phases: 1 blockout · 2 form + interfaces · 3 detail + materials · 4 studio + composition · 5 delivery), before any material, studio or delivery-media work:** temporary identity bake of the printable parts (`pass-NN-print-prep` pattern) → `spec.json` written from measurement (skill `blender-agent-core` → recipes "Spec from measurement") → `production-gate.py` exit 0. **No *delivery* still, film or turntable starts before this gate is PASS or waived.** *Delivery media* = the images/films/turntables produced for the owner in phases 4–5. **Verification imagery is exempt and stays MANDATORY:** verify-ladder rungs 2–6 (`preview_render`, viewport screenshot, low-sample Cycles, comparison sheet, turntable) and per-pass clay/pose renders are how a pass proves itself (see step 5 and §Visual feedback) — they are never blocked by a gate. Verification imagery stays cheap: ≤ 512 px or low-sample, ≤ ~2 min GPU per pass; anything costlier, or anything the owner is asked to accept, is delivery media and needs the gate. Gate ≈ 3 s; the delivery media it protects ≈ 1 h (2026-09-06 watch winder: a 0.9 mm knife edge surfaced only after 16 stills and 2 films — 53 min GPU re-rendered).
+   - **Form gate** closes phase 2 before delivery materials/studio/media: temporary identity bake → compare actual measurements with the independently authored `spec.json` → `production-gate.py` exit 0. Do not replace a failed target with the observed output. For pre-existing geometry without a target, follow the recipe "Spec from measurement" and label the resulting dimensions as provisional observations, not proof of design intent. **Verification imagery remains mandatory and exempt:** numeric checks, framing, low-sample previews, comparison sheets and short pose views remain available to diagnose the part. Keep them ≤512 px or low-sample and roughly ≤2 minutes per pass. Costlier or owner-acceptance imagery is delivery media and requires the applicable gate or an explicit waiver.
    - **Final gate — at delivery**, on the delivered print bake. Both gates must PASS or be waived; a report bound to another scene/spec sha is not reusable.
-   - **Gate waiver:** one owner-quoted line in `state.md` — `GATE WAIVED <time> "<owner words>"`. README manufacture then reads NOT_REQUESTED. Silence is never a waiver.
+   - **Gate waiver:** record `GATE WAIVED <time> "<owner words>"` and the specific waived stage in `state.md`. A waiver authorizes that stage only; for `print`/`both`, manufacture remains `BLOCKED` while required evidence is absent, and the waived check remains visible. `NOT_REQUESTED` requires an explicit purpose change removing manufacture, or a task with no manufacturing scope. Silence is never a waiver.
    - Gate fails → `refine-spec` (root cause in the spec) or `refine-code`; max 3 runs, then `request-input`.
-   - Purpose `render-only`, or no printable part → both gates are skipped and README manufacture = NOT_REQUESTED. Say so explicitly; do not leave it blank.
+   - Purpose `render-only`, or no manufacturing scope → manufacturing gates are not requested and README manufacture = NOT_REQUESTED. Machined parts and electrical assemblies still have manufacturing scope even when nothing is 3D printed; use the applicable geometry and domain-specific gates.
 6. **Verdict (pick exactly 1):** `continue` · `refine-spec` (root cause is in the spec — fix the spec first) · `refine-code` · `request-input` · `stop` (= tell the user, change direction). 2 failures at the same step → change the approach **class**; 3 failures → `request-input`.
 
 **Owner decision points (MANUAL, mandatory):** blockout sheet before detailing; animatic ≤ 120 frames before any render > 120 frames; long renders only after the owner has seen and signed off. Record: 2 render-then-discard events (~26 minutes, ~3,000 frames) happened after a retro had already written this rule down as prose.
@@ -55,6 +55,50 @@ Getting this wrong costs a rebuild, not a tweak: `render-only` geometry cannot b
 | MCP connection error | addon not Connected | tell the user, do not retry |
 | Gate `wall_thickness_screen` fails at ~1 mm on a lathe part that is 2.5 mm thick everywhere | a bore/opening meets a curved inner wall → knife edge at the lip (watch winder shell: 0.9 mm) | truncate the cavity with a flat ceiling one wall below the rim; a D-keyed hole needs `keyed_flat_mm` + `keyed_flat_dir` in the spec, not a wider `tol_mm` |
 | Boolean cuts a hole with no walls / leaves boundary edges, or `DIFFERENCE` empties the target | target or cutter mesh is inside-out (signed volume < 0 — procedural lathes/fans are the usual culprit) | assert signed volume > 0 and 0 non-contiguous edges on BOTH operands before adding the modifier (`builds/watch-winder-capsule/scripts/ww_mesh.py::orient_outward`) |
+
+## Product evidence and recovery
+
+For a new product, use `docs/product-workflow-template.md`. These rules consolidate
+the CK-001 session; details route through the existing three skills.
+
+- Keep requirements, measured output and acceptance separate. Source drawings,
+  primary photos, generated secondary sheets and local design adaptations have
+  different authority. Pin actual bytes; a filename or source URL alone is not a
+  verified input. Do not make a rendered concept stand in for the saved model.
+- Check nominal and tolerance-extreme interfaces, plus a discriminating negative
+  control. Inspect actual common-Z geometry, mating features and access. A sample
+  sweep is not continuous clearance; a pre-tap bore is not the final thread wall.
+- A surprising result needs a geometry/spec/checker/environment diagnosis before
+  changing the part. Do not lower min-wall requirements, remove physical features
+  or simplify a measured surface to bypass the checker. Coverage failures need a
+  bounded predicate fix and wrong-result regressions on unchanged source geometry.
+- `native-pipeline.py` requires finite numerical postconditions and explicit
+  producer dependencies. Put SHA strings in evidence metadata. If a saved build
+  exists after wrapper/schema failure, inspect its identity and verify that artifact
+  through a new declared route; retain the failed journal and do not rebuild just
+  to obtain a green history. New run names do not reset the failure budget.
+- A saved report is evidence only for its inputs and scope. Treat export, media,
+  visual review, electrical logic, ERC/DRC, target firmware and physical pilot
+  records as separate domains. Missing physical measurements stay missing; a
+  logic checker or role name cannot manufacture them.
+- Preflight each view at the requested aspect and apparent scale before batching.
+  Check actual image headers and fully decode video. Share-quality review includes
+  originals and decoded motion, not only thumbnails or a transport success.
+
+Enforcement is scoped: manifests, runtime helpers, geometry gates and critic packet
+bindings are implemented on their declared routes; visual judgment, source
+applicability, physical tests and cross-domain release decisions still need the
+controller or the responsible engineer. See `docs/ck-001-session-retrospective.md`.
+
+**Production coverage review (MANUAL):** the generic schema permits omitted
+`min_wall_mm` for partial diagnostics, and `required_checks` coverage is aggregated
+across parts. A green generic report therefore does not establish that every part
+received a wall check. Before print/both delivery, require a positive authored
+minimum wall for every applicable part, request `wall_thickness_screen`, and
+inspect each part's actual non-skipped result along with all other required
+features. Keep deliberate partial diagnostics labeled partial; never remove the
+wall requirement to bypass a failure. This is a controller completion requirement,
+not an unimplemented universal schema invariant.
 
 ## Visual feedback for the user (MANDATORY)
 MCP live: the user watches objects grow in the viewport. Headless: after each pass `open <sheet.png>`; when the build finishes `open -a Blender <file.blend>`. Build > 2 minutes → announce the number of passes + a time estimate up front.

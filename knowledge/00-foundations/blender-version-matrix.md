@@ -46,9 +46,10 @@ R1. Read `bpy.app.version` before the first line of real work.
     Why: every rule below is version-conditional; there is no safe default.
     Violation: `AttributeError` / `KeyError` on a line that looks obviously correct.
 
-R2. Treat `docs.blender.org/api/current/` as **5.2**, not as "whatever is newest".
-    Why: `current` tracks the latest release; as of July 2026 that is 5.2 LTS.
-    Violation: citing a signature that does not exist on the user's 4.5 install.
+R2. Treat `docs.blender.org/api/current/` as a moving locator, not a version pin.
+    Record the installed build and the version of the documentation actually read.
+    Prefer a versioned API page and introspect the installed RNA before mutation.
+    The historical 5.2 target of this knowledge base is not proof of today's page.
 
 R3. Never hardcode a name that appears in §4's rename tables. Resolve it at runtime.
     Why: these are the exact strings that changed, and they change again.

@@ -1,6 +1,24 @@
 # Blender workflow implementation backlog
 
-2026-09-05 (status lines added 2026-09-06). Findings come from the [retro](../plans/reports/retro-260905-1946-blender-workflow.md), independent debate and fresh-process probes. **These fixes are not implemented by the retrospective.** Shared code and delivered robot artifacts were preserved. Project has no Git repository/remote available for issue filing; these local executor-ready items are the current record.
+Historical baseline: 2026-09-05, with updates below. Some linked session reports
+are local-only. The repository now versions the implemented helpers and worked
+sources; the [CK-001 retrospective](ck-001-session-retrospective.md) is the public
+record of the 2026-09-17 additions. Historical unresolved scopes are not silently
+closed by a newer prototype.
+
+## Status update: 2026-09-17
+
+| Item | Current implementation | Still open |
+|---|---|---|
+| E1/E2 | Isolated runtime/preview/export; explicit helper-dependency reload; evaluated mesh lifetime and camera depth contracts | Generic dependency discovery and arbitrary caller/module-state migration |
+| E3 | Native pipeline/review input bindings and task-specific CK-001 package/qualification consumers | Universal cross-domain release schema and unmodified historical checkers |
+| E4 | Attempt-level hash-checked reuse; CK-001 complete frame/media validation | Generic partial-frame recovery across arbitrary renderers/dependencies |
+| E5 | CK-001 physical blockers preserved; actual empty-record assessment; calibrated/cohort/source checks | Real pilot data, source/criterion adequacy and broader product adoption |
+| E6 | Actual key/guide/D interface sampling and bounded product animation review | General continuous assembly/transit solver and all physical interactions |
+| E7/E8 | Selected GN/animation/mesh boilerplates and wall-screen controls now have native regressions | Unrelated adapter qualification and a measured productivity benchmark |
+
+Next implementation work should follow a reproduced retrieval/acceptance gap,
+not add another daemon, router or fabricated universal threshold.
 
 ## E1 — Propagate execution failure and preserve evidence
 

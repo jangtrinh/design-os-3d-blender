@@ -48,6 +48,29 @@ The current plant layout uses an illustrative 1:15 scale. Catalogue dimensions a
 
 Read the [complete lessons and next-component procedure](docs/orc-session-lessons.md), [public journal](docs/journals/orc-component-reconstruction.md), [brief template](docs/orc-component-brief-template.md), and [Separator worked example](docs/orc-separator-worked-example.md).
 
+### Product workflow learned from CK-001
+
+The [session retrospective](docs/ck-001-session-retrospective.md) follows API research,
+the three upstream mechanisms, actual keyboard failures, native Full HD delivery
+and C03/E02 engineering checks. Start a new project from the
+[product workflow template](docs/product-workflow-template.md). Specialized reading:
+[geometry diagnosis](knowledge/60-pipeline/geometry-diagnostic-workflow.md),
+[native media delivery](knowledge/60-pipeline/native-render-delivery.md), and
+[manufacturing evidence](knowledge/60-pipeline/manufacturing-evidence-workflow.md).
+
+```bash
+python3 scripts/blender-knowledge.py route native-hard-surface --topic session-retrospective
+python3 scripts/blender-knowledge.py route precision-assembly-metrology --topic geometry-diagnostics
+python3 scripts/blender-knowledge.py route render-export-delivery --topic native-render-delivery
+python3 scripts/blender-knowledge.py route precision-assembly-metrology --topic manufacturing-evidence
+```
+
+The [C03/E02 source package](builds/reference-keyboard/manufacturing/README.md) adds
+full-stroke cap clearance, mechanical retention, acrylic collars, corrected LED
+polarity and an explicitly incomplete physical pilot ledger. Local C03 scenes,
+run reports and archives are not shipped; the public Revision-B gallery remains
+historical media for B, not a visualization or approval of C03.
+
 The [HQ coverage gate](docs/hq-coverage-gate.md) validates receipts on its explicit guarded launch route. It does not judge visual likeness or intercept every Blender render. The C05 refresh used a direct renderer after review and approval; its final checks passed, but automated pre-HQ launch protection did not run.
 
 ## Tools and skills

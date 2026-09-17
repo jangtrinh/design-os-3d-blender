@@ -9,8 +9,9 @@
     "gpio_direction_boot_contract": "HOST_VERIFIED_PASS_LOGICAL",
     "matrix_and_diode_contract": "HOST_VERIFIED_PASS",
     "encoder_gray_decoder": "HOST_C_TEST_PASS",
-    "rgb_current_calculation": "HOST_VERIFIED_PASS_E02_SOURCE_BOUND_A01_VF_SCREENING_ASSUMPTION_BENCH_REQUIRED",
+    "rgb_current_calculation": "HOST_VERIFIED_PASS_E02_SOURCE_MATH_CONSISTENCY_ONLY_NOT_HEADROOM_GUARANTEE",
     "rgb_led_package_driver_compatibility": "HOST_VERIFIED_PASS_E02_EXACT_A01_COMMON_ANODE_SW_SOURCE_CS_SINK_ECAD_PENDING",
+    "rgb_guaranteed_headroom": "NOT_ESTABLISHED_MANUFACTURER_MAXIMUM_VHR_NOT_SPECIFIED_AT_E02_OPERATING_CURRENTS",
     "status_led_integration": "NOT_WIRED_E02_THREE_BLENDER_STATUS_MESHES_ONLY_NO_GPIO_OWNERSHIP",
     "usb_cc_and_esd_contract": "HOST_VERIFIED_PASS_LOGICAL_NOT_ECAD",
     "qmk_hardware_contract": "HOST_VERIFIED_PASS_TARGET_BUILD_BLOCKED",
@@ -30,8 +31,8 @@
     "mechanical_cap_revision_effect": "NONE_DECLARED_TO_E02_PIN_NET_POWER_OR_FIRMWARE_CONTRACT",
     "manufacture": "BLOCKED"
   },
-  "verification_report": "builds/reference-keyboard/manufacturing/electrical/verification-E02.json",
-  "negative_control_report": "builds/reference-keyboard/manufacturing/electrical/negative-controls-E02.json",
+  "verification_report": "builds/reference-keyboard/manufacturing/electrical/verification-E02-final.json",
+  "negative_control_report": "builds/reference-keyboard/manufacturing/electrical/negative-controls-E02-final.json",
   "rgb_source_evidence": "builds/reference-keyboard/manufacturing/electrical/E02-led-source-evidence.json",
   "inherited_firmware_host_test_report": "builds/reference-keyboard/manufacturing/electrical/history/E01-before-polarity-fix/firmware-host-test.json",
   "inherited_arm_core_build_report": "builds/reference-keyboard/manufacturing/electrical/history/E01-before-polarity-fix/arm-core-build.json",
@@ -40,5 +41,10 @@
     "builds/reference-keyboard/manufacturing/electrical/verification.json",
     "builds/reference-keyboard/manufacturing/electrical/negative-controls.json"
   ],
-  "note": "E01 historical host verification did not assert RGB LED common-anode compatibility. E02 verification-E02.json and negative-controls-E02.json are authoritative for the polarity-corrected logical/current design."
+  "superseded_e02_pre_truth_guard_reports": [
+    "builds/reference-keyboard/manufacturing/electrical/verification-E02.json",
+    "builds/reference-keyboard/manufacturing/electrical/negative-controls-E02.json",
+    "builds/reference-keyboard/manufacturing/electrical/freeze-E02.json"
+  ],
+  "note": "E01 historical host verification did not assert RGB LED common-anode compatibility. Final E02 verification proves polarity/source/math consistency only; guaranteed RGB path headroom is NOT_ESTABLISHED until physical routed-board measurement."
 }
