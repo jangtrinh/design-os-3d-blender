@@ -1,0 +1,51 @@
+{
+  "revision": "B-native-interface-refinement",
+  "provenance": "Owner photo and blueprint, interpreted grid pending visual review",
+  "width_mm": 284,
+  "depth_mm": 92,
+  "height_options_mm": [32,41],
+  "height_mm": 32,
+  "height_status": "catalog-latest-design-envelope",
+  "stack_mm": {"base_bottom":0,"base_top":4,"diffuser_bottom":4,"diffuser_top":12,"pcb_bottom":10.15,"pcb_top":11.75,"plate_bottom":13.6,"plate_top":15.1,"key_bottom":17.85,"knob_bottom":12,"knob_neck":0,"foot_bottom":-2,"foot_top":0},
+  "fasteners_xy_mm": [[-136,-40],[136,-40],[-136,40],[136,40]],
+  "pitch_x_mm": 18.8,
+  "pitch_y_mm": 17.0,
+  "key_top_mm": 14.0,
+  "key_base_mm": 16.2,
+  "key_height_mm": 9.5,
+  "switch_width_mm": 15.0,
+  "switch_height_mm": 12.2,
+  "key_travel_mm": 3.0,
+  "main_origin_mm": [-104,16],
+  "main_rows": [
+    ["esc","Q","W","E","R","T","Y","U","I","O","P","bck"],
+    ["tab","A","S","D","F","G","H","J","K","L",";","'"],
+    ["shift","Z","X","C","V","B","N","M",",",".","/","enter"]
+  ],
+  "bottom_row": [
+    {"column":0,"units":1,"label":"ctrl"},
+    {"column":1,"units":1,"label":"alt"},
+    {"column":2,"units":1,"label":"cmd"},
+    {"column":3,"units":1,"label":"dot"},
+    {"column":4,"units":1,"label":"dot"},
+    {"column":5.5,"units":2,"label":"space"},
+    {"column":7,"units":1,"label":"dot"},
+    {"column":8,"units":1,"label":"fn"},
+    {"column":9,"units":1,"label":"left"},
+    {"column":10,"units":1,"label":"down"},
+    {"column":11,"units":1,"label":"right"}
+  ],
+  "rear_macros": {"count":9,"origin_mm":[-20,35],"pitch_mm":17.4},
+  "left_macros_mm": [[-126,10],[-126,-9]],
+  "knobs_mm": [[-126,32],[-82,35],[-62,35],[-42,35],[125,-12]],
+  "knob_diameter_mm":16,
+  "knob_height_mm":18,
+  "notes": [
+    "Pitch and main-grid transcription are modeling choices inferred from images, not measured switch compatibility.",
+    "Blueprint switch labels and low-profile photographic switch appearance may describe different hardware.",
+    "Bottom row has a 2-unit spacebar; no unverified stabilizer or electronics claim.",
+    "Newest parts catalog repeats height32; previous side41 remains an unresolved source inconsistency, not silently treated as equal.",
+    "Revision B removes the unsourced skinny knob neck and models a chassis-supported encoder carrier and stepped D receiver. PCB is recessed to10.15..11.75 to provide1.85mm clearance below the plate for components and a3.35mm switch-seat gap.",
+    "Catalog keycap count~70 describes a set; the interpreted installed layout contains58 keys, pending direct reference review."
+  ]
+}

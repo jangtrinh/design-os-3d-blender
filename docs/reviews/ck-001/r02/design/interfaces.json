@@ -1,0 +1,59 @@
+{
+  "revision": "B",
+  "units": "mm",
+  "purpose": "both; digital prototype with physical qualification pending",
+  "keycap": {
+    "total_height": 9.5, "visible_shell_bottom": 4.5, "boss_diameter": 6.4,
+    "receiver_span": 4.12, "receiver_horizontal_arm": 1.22,
+    "receiver_vertical_arm": 1.40, "receiver_depth": 3.2,
+    "mating_cross_span": 4.0, "mating_horizontal_arm": 1.10,
+    "mating_vertical_arm": 1.28, "stem_bottom_z": 17.85, "stem_top_z": 20.85,
+    "cover_clearance_diameter": 6.8, "travel": 3.0,
+    "qualification": "Source-guided custom prototype. Gateron cross dimensions inform the stem; the cover opening, cap boss and receiver fit are local design choices. Not a complete certified KS-33 interchangeability claim."
+  },
+  "encoder": {
+    "reference_family": "Bourns PEC11R-1xxxF-Nxxxx, 15 mm shaft",
+    "mount_plane_z": 10.6, "body_bottom_z": 5.1, "body_width": 12.5, "body_depth": 13.4,
+    "shaft_diameter": 6.0, "shaft_flat_axis_offset": 1.5,
+    "shaft_tip_z": 25.6, "shaft_flat_start_z": 18.6,
+    "bushing_diameter": 7.0, "bushing_top_z": 15.6,
+    "carrier_width": 19.6, "carrier_depth": 15.0,
+    "carrier_bottom_z": 10.6, "carrier_top_z": 11.6,
+    "washer_z": [11.6,12.1], "nut_z": [12.1,14.1],
+    "pcb_window": [20.4,16.6], "plate_knob_clearance": 16.4,
+    "knob_bottom_z": 12.0, "knob_top_z": 30.0,
+    "counterbore_diameter": 12.6, "counterbore_top_z": 18.0,
+    "shaft_bore_diameter": 6.2, "receiver_flat_axis_offset": 1.65,
+    "receiver_flat_start_z": 20.6, "receiver_ceiling_z": 28.0,
+    "top_slot_depth": 0.8, "nominal_D_engagement": 5.0,
+    "qualification": "Manufacturer envelope plus a custom chassis-supported carrier. Nominal fit only; electrical suffix, thread tolerances, axial retention and material fit require selection and bench checks."
+  },
+  "spacebar": {
+    "mechanism": "custom dual parallel guide; not a commercial wire stabilizer",
+    "guide_offsets_x": [-11.9,11.9], "pin_diameter": 2.0,
+    "sleeve_inner_diameter": 2.2, "sleeve_outer_diameter": 4.4,
+    "sleeve_z": [13.6,21.5], "flange_diameter": 6.0,
+    "flange_z": [15.1,16.3], "pin_bottom_z": 17.85,
+    "pin_top_z": 25.85, "travel": 3.0,
+    "qualification": "Digital sliding geometry and parallel guidance; force, friction and rattle require physical testing."
+  },
+  "usb": {
+    "board_center_xy": [67,39], "board_size": [16,10,1.0],
+    "board_z": [5.2,6.2], "support_floor_z": 2.0,
+    "mount_xy": [[61,35],[73,35],[61,41],[73,41]],
+    "role": "mechanically supported custom daughterboard with a generic USB-C envelope, not a vendor-qualified footprint"
+  },
+  "chassis": {
+    "clamp_concept": "four custom double-ended M3 standoffs; nonoverlapping top and bottom screw insertion zones",
+    "standoff_z": [2.0,13.6], "standoff_outer_diameter": 5.4,
+    "top_screw_length": 6.0, "bottom_screw_length": 6.0,
+    "top_insert_z": [9.1,13.6], "bottom_insert_z": [2.0,6.0],
+    "axial_tip_separation": 3.1,
+    "pcb_support_points": [[-110,-40],[-35,-40],[40,-40],[110,-40],[-100,40],[25,40],[95,40]],
+    "qualification": "Resolved nominal grip path. Threads are specified analytical hardware envelopes, not helical mating meshes or preload qualification."
+  },
+  "sources": [
+    {"id":"gateron-ks33-red-v2","url":"https://cdn.shopify.com/s/files/1/0565/8070/2297/files/SPEC-KS-33H10B050NN-Y24_Rev-2_KS-33_Red_Switch.pdf?v=1679714207","pages":[1],"use":"Cross dimensions and 3 mm travel; other prototype geometry remains explicitly adapted"},
+    {"id":"bourns-pec11r-1123","url":"https://www.bourns.com/docs/Product-Datasheets/pec11R.pdf","pages":[1,3],"use":"Encoder envelope, L/LB/F, shaft flat and mounting hardware dimensions"}
+  ]
+}

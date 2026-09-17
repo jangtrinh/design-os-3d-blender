@@ -1,0 +1,23 @@
+{
+  "frames": [
+    1,
+    96
+  ],
+  "fps": 24,
+  "keys": 58,
+  "drivers": 58,
+  "assembly_groups": [
+    "keycaps",
+    "knobs",
+    "plate",
+    "switches",
+    "pcb",
+    "diffuser",
+    "top_screws"
+  ],
+  "purpose": "exploded product inspection and control demonstration",
+  "limits": [
+    "Exploded views are choreography, not a validated hardware assembly procedure.",
+    "Press travel is 3 mm; modeled cross receivers and guides are digital prototypes, not measured retention-force evidence."
+  ]
+}

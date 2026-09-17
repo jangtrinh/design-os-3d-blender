@@ -1,0 +1,21 @@
+{
+  "references": {
+    "photo": {
+      "path": "builds/reference-keyboard/delivery/r01/reference/original-work-louder.png",
+      "sha256": "808901aae162bfda8a0fd7fca7d7b50e1c4584fe0b6dcd0f24aa6ca60ca21817"
+    },
+    "blueprint": {
+      "path": "builds/reference-keyboard/delivery/r01/reference/blueprint-rev01.png",
+      "sha256": "a2f2a01b95243e913f3eae8e9632c165364a31bc7f2c3b51781f2c28e4f1e030"
+    },
+    "catalog": {
+      "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+      "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+    },
+    "turnaround": {
+      "path": "builds/reference-keyboard/delivery/r01/reference/360-product-view.png",
+      "sha256": "f94bd46005ad246b4656e2e6660ed61995b8526b6d05270bca20a996631c8009"
+    }
+  },
+  "provenance": "Local copies visually cross-checked against the owner images in this conversation; hash identifies these local bytes, not original upload transport or vendor certification."
+}

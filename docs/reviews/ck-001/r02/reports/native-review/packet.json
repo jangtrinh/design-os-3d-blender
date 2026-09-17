@@ -1,0 +1,585 @@
+{
+  "version": 1,
+  "round": 1,
+  "author": "prime-native-builder",
+  "target": {
+    "path": "builds/reference-keyboard/runs/reference-review-B01/target.json",
+    "sha256": "72497c16d66dabb7ce46551cf07ae68b20fa4c96b8d56fa1fd3ed837d47589f6"
+  },
+  "contract": {
+    "version": 1,
+    "purpose": "both",
+    "target_revision": "B-local-reference-feature-review-1",
+    "max_rounds": 3,
+    "views": [
+      {
+        "id": "hero",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/original-work-louder.png",
+          "sha256": "808901aae162bfda8a0fd7fca7d7b50e1c4584fe0b6dcd0f24aa6ca60ca21817"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0.3,
+            -0.43,
+            0.33
+          ],
+          "target": [
+            0,
+            0,
+            0.015
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.365
+        }
+      },
+      {
+        "id": "top",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/blueprint-rev01.png",
+          "sha256": "a2f2a01b95243e913f3eae8e9632c165364a31bc7f2c3b51781f2c28e4f1e030"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0,
+            0,
+            0.5
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.32
+        }
+      },
+      {
+        "id": "exploded",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+          "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 60,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0.3,
+            -0.43,
+            0.33
+          ],
+          "target": [
+            0,
+            0,
+            0.037
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.415
+        }
+      },
+      {
+        "id": "knob-detail",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/360-product-view.png",
+          "sha256": "f94bd46005ad246b4656e2e6660ed61995b8526b6d05270bca20a996631c8009"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0.16,
+            -0.1,
+            0.11
+          ],
+          "target": [
+            0.125,
+            -0.012,
+            0.021
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.04800000041723251
+        }
+      },
+      {
+        "id": "key-detail",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/360-product-view.png",
+          "sha256": "f94bd46005ad246b4656e2e6660ed61995b8526b6d05270bca20a996631c8009"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            -0.067,
+            -0.095,
+            0.125
+          ],
+          "target": [
+            -0.05,
+            -0.001,
+            0.023
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.05999999865889549
+        }
+      },
+      {
+        "id": "bottom",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/360-product-view.png",
+          "sha256": "f94bd46005ad246b4656e2e6660ed61995b8526b6d05270bca20a996631c8009"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0,
+            0,
+            -0.4
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.32
+        }
+      },
+      {
+        "id": "receiver",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+          "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            -0.0860000029206276,
+            -0.008999999612569809,
+            -0.020149998366832733
+          ],
+          "target": [
+            -0.10400000214576721,
+            0.01600000075995922,
+            0.022849999368190765
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.039000000804662704
+        }
+      },
+      {
+        "id": "spacebar-guides",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+          "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0.017399998381733894,
+            -0.06000000238418579,
+            -0.020149998366832733
+          ],
+          "target": [
+            -0.0006000000284984708,
+            -0.03500000014901161,
+            0.022849999368190765
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.061000000685453415
+        }
+      },
+      {
+        "id": "D-receiver",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+          "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0.14300000667572021,
+            -0.03700000047683716,
+            -0.025999998673796654
+          ],
+          "target": [
+            0.125,
+            -0.012000000104308128,
+            0.017000000923871994
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.055796971281584326
+        }
+      },
+      {
+        "id": "encoder-mount",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+          "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            -0.047,
+            -0.011,
+            0.057
+          ],
+          "target": [
+            -0.082,
+            0.035,
+            0.012
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.05881669457999245
+        }
+      },
+      {
+        "id": "usb-mount",
+        "target": {
+          "path": "builds/reference-keyboard/delivery/r01/reference/parts-catalog-rev01.png",
+          "sha256": "acf7b869fc4509f904d01453f695a25f1e1377e6fa68e19d12e90036f03166bf"
+        },
+        "proof_size": [
+          1920,
+          1080
+        ],
+        "capture": {
+          "camera": "RK_CAMERA",
+          "projection": "ORTHO",
+          "frame": 1,
+          "resolution": [
+            1920,
+            1080
+          ],
+          "location": [
+            0.086,
+            0.095,
+            0.041
+          ],
+          "target": [
+            0.067,
+            0.041,
+            0.008
+          ],
+          "clip_start": 0.001,
+          "clip_end": 10.0,
+          "ortho_scale": 0.04500000178813934
+        }
+      }
+    ],
+    "features": [
+      {
+        "id": "control-layout",
+        "views": [
+          "hero",
+          "top"
+        ],
+        "expectation": "Five knobs in left/rear-trio/right arrangement, compact key grid, rear macro strip and wide spacebar remain readable.",
+        "falsifier": "Missing/extra knob, lost macro strip or wide spacebar, or gross layout divergence."
+      },
+      {
+        "id": "key-form-and-legends",
+        "views": [
+          "hero",
+          "key-detail"
+        ],
+        "expectation": "Rounded charcoal key faces carry readable white legends; revision-B visible skirt is shorter than the old full-height wall.",
+        "falsifier": "Illegible/floating letters, lost rounded form, visibly inconsistent key families."
+      },
+      {
+        "id": "slotted-knobs",
+        "views": [
+          "hero",
+          "knob-detail"
+        ],
+        "expectation": "Silver cylindrical controls retain actual recessed indicator channels, visible in the close-up.",
+        "falsifier": "A flat painted line replaces the channel, slots disappear in the close-up, or geometry breaks."
+      },
+      {
+        "id": "layered-body-and-rgb",
+        "views": [
+          "hero",
+          "exploded"
+        ],
+        "expectation": "Dark mounting plate, separate PCB, translucent acrylic RGB perimeter and silver lower body remain distinct.",
+        "falsifier": "A layer is absent or fused visually; RGB is absent; gross intersections or cropped assembly."
+      },
+      {
+        "id": "underside",
+        "views": [
+          "bottom"
+        ],
+        "expectation": "Silver underside and four separate dark feet are visible, without added certification claims.",
+        "falsifier": "Missing feet, hidden underside, gross crop or unreadable lighting."
+      },
+      {
+        "id": "modeled-interfaces",
+        "views": [
+          "receiver",
+          "spacebar-guides",
+          "D-receiver"
+        ],
+        "expectation": "Revision-B declared design additions are visible: real cross receiver, two integral guide pins, stepped D receiver.",
+        "falsifier": "A promised opening or guide is missing, hidden or substituted by a flat surface. This is design inspection, not proof of source-photo hidden geometry."
+      },
+      {
+        "id": "supported-hardware",
+        "views": [
+          "encoder-mount",
+          "usb-mount"
+        ],
+        "expectation": "Encoder carrier/shaft/hardware and mounted USB assembly are inspectable as the declared prototype design.",
+        "falsifier": "Required support geometry is absent, occluded beyond useful inspection or visibly disconnected. No electrical or load qualification is inferred."
+      }
+    ],
+    "scope": "Owner-requested reconstruction and declared revision-B mechanical adaptations. Camera poses differ from source sheets; record visible deviations, not a similarity score."
+  },
+  "candidates": {
+    "scene": {
+      "path": "builds/reference-keyboard/runs/presentation-B03/steps/presentation/attempt-0001/keyboard.blend",
+      "sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16"
+    },
+    "layout": {
+      "path": "builds/reference-keyboard/layout.json",
+      "sha256": "e5fdef446f3c5eef4b5e4f2e9467c585290421cebdc0e663e0a349d12a9ad6d6"
+    },
+    "interfaces": {
+      "path": "builds/reference-keyboard/interfaces.json",
+      "sha256": "7509c9941b05ef3d9eaa4f48b4b893639bcfb9163beb34a0b1e3e1dbd548aa24"
+    },
+    "spec": {
+      "path": "builds/reference-keyboard/spec-B.json",
+      "sha256": "fdcff5dae9873e3db9093780ed729e4e3045714723ffc6b43e5b98d450170434"
+    },
+    "gate": {
+      "path": "builds/reference-keyboard/runs/verification-B03/steps/final-gate/attempt-0001/final-gate.json",
+      "sha256": "64072da6d9f1dbd7dd3e055334047cfe9ac885cb6abaaa5d21d4bf1359a4464f"
+    },
+    "fit": {
+      "path": "builds/reference-keyboard/runs/verification-B03/steps/inspect/attempt-0001/fit-report.json",
+      "sha256": "ae93052fd9d1b1436d42684220942a2801213480c356e1ad6841937530115c98"
+    },
+    "roundtrip": {
+      "path": "builds/reference-keyboard/runs/verification-B03/steps/reopen/attempt-0001/glb-roundtrip.json",
+      "sha256": "4ec8ea28c2faf30356af3c8e516e936224c73a8d19689920b58edad26264da2e"
+    },
+    "renderer": {
+      "path": "builds/reference-keyboard/scripts/fullhd.py",
+      "sha256": "d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a"
+    },
+    "stills": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/stills.json",
+      "sha256": "c8bd5f8979f87df231f387eb4295c7acccf10988bc194249fbe6246753672263"
+    }
+  },
+  "candidate_sha256": "7b8a33322abf406356d03d2838997610db0e3912e897f01aa8392f38db651310",
+  "proofs": {
+    "hero": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-hero.png",
+      "sha256": "31e3af589b0557e3fe60d4aae022d8a9500679b450f64300a9b87c557916c4c5",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "top": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-top.png",
+      "sha256": "6f2648af1dfd76afce078e4fadea33eb4e50f7a7c9e7b85f2bdc455e7e4c3742",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "exploded": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-exploded.png",
+      "sha256": "d05bb35f5390a7b0775de63e9e71a4d1378a138015c186b1997efed5fce993b7",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "knob-detail": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-knob-detail.png",
+      "sha256": "02bbae4a22556f64b8bcf0310a7168c3063904444d3f50b100d4cc55fbd713bb",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "key-detail": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-key-detail.png",
+      "sha256": "f9300de572dbd70a73dff87827c255f77b200ab629199bce7277911180faf3cf",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "bottom": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-bottom.png",
+      "sha256": "f5f4aa06a37388ff0cd16fa0dd6d45a6c6a6b9c23cfb34f3acbe905ec574588c",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "receiver": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-receiver.png",
+      "sha256": "65b439784209c337b27d0aaccb7282fa905b8f59974f13fb5039fed7fd3040a3",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "spacebar-guides": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-spacebar-guides.png",
+      "sha256": "bf8d59a8497cdf206c68bc98a10a5c14a2b130ca0bff145c23028f3df12ac63d",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "D-receiver": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-D-receiver.png",
+      "sha256": "89457b0484d57fc337e3e3b1c22a0e9f68ebb35d3ee1e38b21d3babe4e5ef44d",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "encoder-mount": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-encoder-mount.png",
+      "sha256": "e8117bf7e2bc0b7c752fcc36ffb3a360c048fd7be6a0447813aff5c7e531ea79",
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    "usb-mount": {
+      "path": "builds/reference-keyboard/runs/fullhd-B02/steps/media/attempt-0001/CK-001-usb-mount.png",
+      "sha256": "e3e6a625d81ed70945024d0a7c17d43204c8cee6e787d4c45820ff2bbade112b",
+      "size": [
+        1920,
+        1080
+      ]
+    }
+  },
+  "numeric": {
+    "path": "builds/reference-keyboard/runs/reference-review-B01/numeric.json",
+    "sha256": "62a5174f5a03fd409f664a3b3c5cb82b12dcf75386b9318ad49f29d18d61862e"
+  },
+  "previous": null,
+  "limits": [
+    "Bindings validate declared evidence, not image likeness.",
+    "Critic identity/independence is declared, not authenticated.",
+    "Capture context must be verified by the renderer/controller."
+  ]
+}

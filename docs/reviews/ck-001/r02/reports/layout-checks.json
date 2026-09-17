@@ -1,0 +1,370 @@
+{
+  "status": "pass",
+  "physical_scope_status": "not_tested",
+  "digital_interface_scope": "checked",
+  "checks": [
+    {
+      "name": "required_components",
+      "status": "pass",
+      "actual": [],
+      "expected": "none missing"
+    },
+    {
+      "name": "key_count",
+      "status": "pass",
+      "actual": 58,
+      "expected": 58
+    },
+    {
+      "name": "switch_count",
+      "status": "pass",
+      "actual": 58,
+      "expected": 58
+    },
+    {
+      "name": "switch_stem_count",
+      "status": "pass",
+      "actual": 58,
+      "expected": 58
+    },
+    {
+      "name": "knob_count",
+      "status": "pass",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "name": "foot_count",
+      "status": "pass",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "rk_base_z",
+      "status": "pass",
+      "actual": [
+        0.0,
+        4.0
+      ],
+      "expected": [
+        0.0,
+        4.0
+      ]
+    },
+    {
+      "name": "rk_diffuser_z",
+      "status": "pass",
+      "actual": [
+        4.0,
+        12.0
+      ],
+      "expected": [
+        4.0,
+        12.0
+      ]
+    },
+    {
+      "name": "rk_pcb_z",
+      "status": "pass",
+      "actual": [
+        10.15,
+        11.75
+      ],
+      "expected": [
+        10.15,
+        11.75
+      ]
+    },
+    {
+      "name": "rk_main_plate_z",
+      "status": "pass",
+      "actual": [
+        13.6,
+        15.1
+      ],
+      "expected": [
+        13.6,
+        15.1
+      ]
+    },
+    {
+      "name": "base_footprint",
+      "status": "pass",
+      "actual": [
+        284.0,
+        92.0
+      ],
+      "expected": [
+        284.0,
+        92.0
+      ]
+    },
+    {
+      "name": "base_center_xy",
+      "status": "pass",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "main_plate_footprint",
+      "status": "pass",
+      "actual": [
+        284.0,
+        92.0
+      ],
+      "expected": [
+        284.0,
+        92.0
+      ]
+    },
+    {
+      "name": "foot_envelope",
+      "status": "pass",
+      "actual": [
+        [
+          14.0,
+          5.0,
+          2.0
+        ],
+        [
+          14.0,
+          5.0,
+          2.0
+        ],
+        [
+          14.0,
+          5.0,
+          2.0
+        ],
+        [
+          14.0,
+          5.0,
+          2.0
+        ]
+      ],
+      "expected": [
+        14,
+        5,
+        2
+      ]
+    },
+    {
+      "name": "foot_z",
+      "status": "pass",
+      "actual": [
+        [
+          -2.0,
+          0.0
+        ],
+        [
+          -2.0,
+          0.0
+        ],
+        [
+          -2.0,
+          0.0
+        ],
+        [
+          -2.0,
+          0.0
+        ]
+      ],
+      "expected": [
+        -2.0,
+        0.0
+      ]
+    },
+    {
+      "name": "overall_height",
+      "status": "pass",
+      "actual": {
+        "min_z_mm": -2.0,
+        "max_z_mm": 30.0,
+        "height_mm": 32.0
+      },
+      "expected": {
+        "height_mm": 32.0,
+        "tol_mm": 0.05
+      }
+    },
+    {
+      "name": "key_centers",
+      "status": "pass",
+      "actual": 0.0,
+      "expected": {
+        "max_error_mm": 0.25
+      }
+    },
+    {
+      "name": "key_height",
+      "status": "pass",
+      "actual": [
+        9.5,
+        9.5
+      ],
+      "expected": 9.5
+    },
+    {
+      "name": "key_z",
+      "status": "pass",
+      "actual": [
+        17.85,
+        27.35
+      ],
+      "expected": [
+        17.85,
+        27.35
+      ]
+    },
+    {
+      "name": "key_top_spacing",
+      "status": "pass",
+      "actual": 3.0,
+      "expected": {
+        "min_mm": 1
+      }
+    },
+    {
+      "name": "switch_centers",
+      "status": "pass",
+      "actual": 0.0,
+      "expected": {
+        "max_error_mm": 0.25
+      }
+    },
+    {
+      "name": "switch_repeat_count",
+      "status": "pass",
+      "actual": 58,
+      "expected": 58
+    },
+    {
+      "name": "switch_assembly_envelope",
+      "status": "pass",
+      "actual": {
+        "cells": 58,
+        "max_error_mm": 1.0000000003174137e-05
+      },
+      "expected": {
+        "nominal_mm": [
+          15.0,
+          15.0,
+          12.2
+        ],
+        "tolerance_mm": 0.05
+      }
+    },
+    {
+      "name": "switch_keycap_overlap_collision",
+      "status": "pass",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "knob_centers",
+      "status": "pass",
+      "actual": 0.0,
+      "expected": {
+        "max_error_mm": 0.25
+      }
+    },
+    {
+      "name": "knob_envelope",
+      "status": "pass",
+      "actual": [
+        [
+          16.0,
+          16.0,
+          18.0
+        ],
+        [
+          16.0,
+          16.0,
+          18.0
+        ],
+        [
+          16.0,
+          16.0,
+          18.0
+        ],
+        [
+          16.0,
+          16.0,
+          18.0
+        ],
+        [
+          16.0,
+          16.0,
+          18.0
+        ]
+      ],
+      "expected": [
+        16.0,
+        16.0,
+        18.0
+      ]
+    },
+    {
+      "name": "knob_z",
+      "status": "pass",
+      "actual": [
+        [
+          12.0,
+          30.0
+        ],
+        [
+          12.0,
+          30.0
+        ],
+        [
+          12.0,
+          30.0
+        ],
+        [
+          12.0,
+          30.0
+        ],
+        [
+          12.0,
+          30.0
+        ]
+      ],
+      "expected": [
+        12.0,
+        30.0
+      ]
+    },
+    {
+      "name": "knob_planar_disjoint",
+      "status": "pass",
+      "actual": 2.9,
+      "expected": {
+        "min_margin_mm": 0
+      }
+    },
+    {
+      "name": "knob_base_margin",
+      "status": "pass",
+      "actual": 3.0,
+      "expected": {
+        "min_mm": 0
+      }
+    }
+  ],
+  "failed": [],
+  "unqualified": [],
+  "limits": [
+    "Overall 32 mm is checked as maxZ-minZ across actual RK_* geometry; feet at -2 mm and knob tops at 30 mm therefore span 32 mm.",
+    "Switch TOP/STEM object counts establish interpreted layout repetition only. Actual RK_SWITCH_HOUSINGS repeat count requires an evaluated connected-shell count from the Blender producer.",
+    "Switch assembly dimensions are checked only when the caller supplies actual per-cell evaluated geometry; array bounds alone are insufficient.",
+    "Switch/keycap fit requires evaluated mesh intersection at their common Z range. Full-body XY containment inside a cap cavity is not a valid substitute.",
+    "Layout checks do not establish image likeness, switch/socket/PCB compatibility, load, thermal, print success or manufacture qualification."
+  ],
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16"
+}

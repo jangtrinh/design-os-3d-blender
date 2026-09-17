@@ -1,0 +1,6298 @@
+{
+  "switch_housings": {
+    "object": "RK_SWITCH_HOUSINGS",
+    "method": "evaluated_mesh_connected_components",
+    "evaluated_connected_shells": 58,
+    "expected": 58,
+    "component_to_flange_center_max_error_mm": 4e-06,
+    "component_bboxes_mm": [
+      [
+        [
+          -110.9,
+          9.1,
+          11.75
+        ],
+        [
+          -97.1,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -92.09999,
+          9.1,
+          11.75
+        ],
+        [
+          -78.3,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -73.3,
+          9.1,
+          11.75
+        ],
+        [
+          -59.5,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -54.5,
+          9.1,
+          11.75
+        ],
+        [
+          -40.7,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -35.7,
+          9.1,
+          11.75
+        ],
+        [
+          -21.9,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -16.9,
+          9.1,
+          11.75
+        ],
+        [
+          -3.1,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          1.9,
+          9.1,
+          11.75
+        ],
+        [
+          15.7,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          20.7,
+          9.1,
+          11.75
+        ],
+        [
+          34.5,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          39.5,
+          9.1,
+          11.75
+        ],
+        [
+          53.3,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          58.3,
+          9.1,
+          11.75
+        ],
+        [
+          72.1,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          77.1,
+          9.1,
+          11.75
+        ],
+        [
+          90.9,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          95.9,
+          9.1,
+          11.75
+        ],
+        [
+          109.69999,
+          22.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -110.9,
+          -7.9,
+          11.75
+        ],
+        [
+          -97.1,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -92.09999,
+          -7.9,
+          11.75
+        ],
+        [
+          -78.3,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -73.3,
+          -7.9,
+          11.75
+        ],
+        [
+          -59.5,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -54.5,
+          -7.9,
+          11.75
+        ],
+        [
+          -40.7,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -35.7,
+          -7.9,
+          11.75
+        ],
+        [
+          -21.9,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -16.9,
+          -7.9,
+          11.75
+        ],
+        [
+          -3.1,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          1.9,
+          -7.9,
+          11.75
+        ],
+        [
+          15.7,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          20.7,
+          -7.9,
+          11.75
+        ],
+        [
+          34.5,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          39.5,
+          -7.9,
+          11.75
+        ],
+        [
+          53.3,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          58.3,
+          -7.9,
+          11.75
+        ],
+        [
+          72.1,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          77.1,
+          -7.9,
+          11.75
+        ],
+        [
+          90.9,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          95.9,
+          -7.9,
+          11.75
+        ],
+        [
+          109.69999,
+          5.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -110.9,
+          -24.9,
+          11.75
+        ],
+        [
+          -97.1,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -92.09999,
+          -24.9,
+          11.75
+        ],
+        [
+          -78.3,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -73.3,
+          -24.9,
+          11.75
+        ],
+        [
+          -59.5,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -54.5,
+          -24.9,
+          11.75
+        ],
+        [
+          -40.7,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -35.7,
+          -24.9,
+          11.75
+        ],
+        [
+          -21.9,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -16.9,
+          -24.9,
+          11.75
+        ],
+        [
+          -3.1,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          1.9,
+          -24.9,
+          11.75
+        ],
+        [
+          15.7,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          20.7,
+          -24.9,
+          11.75
+        ],
+        [
+          34.5,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          39.5,
+          -24.9,
+          11.75
+        ],
+        [
+          53.3,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          58.3,
+          -24.9,
+          11.75
+        ],
+        [
+          72.1,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          77.1,
+          -24.9,
+          11.75
+        ],
+        [
+          90.9,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          95.9,
+          -24.9,
+          11.75
+        ],
+        [
+          109.69999,
+          -11.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -110.9,
+          -41.9,
+          11.75
+        ],
+        [
+          -97.1,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -92.09999,
+          -41.9,
+          11.75
+        ],
+        [
+          -78.3,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -73.3,
+          -41.9,
+          11.75
+        ],
+        [
+          -59.5,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -54.5,
+          -41.9,
+          11.75
+        ],
+        [
+          -40.7,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -35.7,
+          -41.9,
+          11.75
+        ],
+        [
+          -21.9,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -7.5,
+          -41.9,
+          11.75
+        ],
+        [
+          6.3,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          20.7,
+          -41.9,
+          11.75
+        ],
+        [
+          34.5,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          39.5,
+          -41.9,
+          11.75
+        ],
+        [
+          53.3,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          58.3,
+          -41.9,
+          11.75
+        ],
+        [
+          72.1,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          77.1,
+          -41.9,
+          11.75
+        ],
+        [
+          90.9,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          95.9,
+          -41.9,
+          11.75
+        ],
+        [
+          109.69999,
+          -28.1,
+          15.1
+        ]
+      ],
+      [
+        [
+          -26.9,
+          28.1,
+          11.75
+        ],
+        [
+          -13.1,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -9.5,
+          28.1,
+          11.75
+        ],
+        [
+          4.3,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          7.9,
+          28.1,
+          11.75
+        ],
+        [
+          21.7,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          25.3,
+          28.1,
+          11.75
+        ],
+        [
+          39.1,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          42.7,
+          28.1,
+          11.75
+        ],
+        [
+          56.5,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          60.1,
+          28.1,
+          11.75
+        ],
+        [
+          73.9,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          77.5,
+          28.1,
+          11.75
+        ],
+        [
+          91.3,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          94.9,
+          28.1,
+          11.75
+        ],
+        [
+          108.7,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          112.3,
+          28.1,
+          11.75
+        ],
+        [
+          126.1,
+          41.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -132.9,
+          3.1,
+          11.75
+        ],
+        [
+          -119.1,
+          16.9,
+          15.1
+        ]
+      ],
+      [
+        [
+          -132.9,
+          -15.9,
+          11.75
+        ],
+        [
+          -119.1,
+          -2.1,
+          15.1
+        ]
+      ]
+    ]
+  },
+  "switch_assembly_envelope": {
+    "method": "evaluated_per_cell_union_bbox",
+    "cells_checked": 58,
+    "expected_mm": [
+      15.0,
+      15.0,
+      12.2
+    ],
+    "tolerance_mm": 0.05,
+    "dimensions_range_mm": {
+      "x": [
+        14.99999,
+        15.0
+      ],
+      "y": [
+        15.0,
+        15.0
+      ],
+      "z": [
+        12.2,
+        12.2
+      ]
+    },
+    "all_within_tolerance": true,
+    "cells": [
+      {
+        "index": 0,
+        "bbox_mm": [
+          [
+            -111.5,
+            8.5,
+            8.65
+          ],
+          [
+            -96.5,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 1,
+        "bbox_mm": [
+          [
+            -92.7,
+            8.5,
+            8.65
+          ],
+          [
+            -77.7,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 2,
+        "bbox_mm": [
+          [
+            -73.9,
+            8.5,
+            8.65
+          ],
+          [
+            -58.9,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 3,
+        "bbox_mm": [
+          [
+            -55.1,
+            8.5,
+            8.65
+          ],
+          [
+            -40.1,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 4,
+        "bbox_mm": [
+          [
+            -36.3,
+            8.5,
+            8.65
+          ],
+          [
+            -21.3,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 5,
+        "bbox_mm": [
+          [
+            -17.5,
+            8.5,
+            8.65
+          ],
+          [
+            -2.5,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 6,
+        "bbox_mm": [
+          [
+            1.3,
+            8.5,
+            8.65
+          ],
+          [
+            16.3,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 7,
+        "bbox_mm": [
+          [
+            20.1,
+            8.5,
+            8.65
+          ],
+          [
+            35.1,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 8,
+        "bbox_mm": [
+          [
+            38.9,
+            8.5,
+            8.65
+          ],
+          [
+            53.9,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 9,
+        "bbox_mm": [
+          [
+            57.7,
+            8.5,
+            8.65
+          ],
+          [
+            72.7,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 10,
+        "bbox_mm": [
+          [
+            76.5,
+            8.5,
+            8.65
+          ],
+          [
+            91.5,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 11,
+        "bbox_mm": [
+          [
+            95.3,
+            8.5,
+            8.65
+          ],
+          [
+            110.3,
+            23.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 12,
+        "bbox_mm": [
+          [
+            -111.5,
+            -8.5,
+            8.65
+          ],
+          [
+            -96.5,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 13,
+        "bbox_mm": [
+          [
+            -92.7,
+            -8.5,
+            8.65
+          ],
+          [
+            -77.7,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 14,
+        "bbox_mm": [
+          [
+            -73.9,
+            -8.5,
+            8.65
+          ],
+          [
+            -58.9,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 15,
+        "bbox_mm": [
+          [
+            -55.1,
+            -8.5,
+            8.65
+          ],
+          [
+            -40.1,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 16,
+        "bbox_mm": [
+          [
+            -36.3,
+            -8.5,
+            8.65
+          ],
+          [
+            -21.3,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 17,
+        "bbox_mm": [
+          [
+            -17.5,
+            -8.5,
+            8.65
+          ],
+          [
+            -2.5,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 18,
+        "bbox_mm": [
+          [
+            1.3,
+            -8.5,
+            8.65
+          ],
+          [
+            16.3,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 19,
+        "bbox_mm": [
+          [
+            20.1,
+            -8.5,
+            8.65
+          ],
+          [
+            35.1,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 20,
+        "bbox_mm": [
+          [
+            38.9,
+            -8.5,
+            8.65
+          ],
+          [
+            53.9,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 21,
+        "bbox_mm": [
+          [
+            57.7,
+            -8.5,
+            8.65
+          ],
+          [
+            72.7,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 22,
+        "bbox_mm": [
+          [
+            76.5,
+            -8.5,
+            8.65
+          ],
+          [
+            91.5,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 23,
+        "bbox_mm": [
+          [
+            95.3,
+            -8.5,
+            8.65
+          ],
+          [
+            110.3,
+            6.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 24,
+        "bbox_mm": [
+          [
+            -111.5,
+            -25.5,
+            8.65
+          ],
+          [
+            -96.5,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 25,
+        "bbox_mm": [
+          [
+            -92.7,
+            -25.5,
+            8.65
+          ],
+          [
+            -77.7,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 26,
+        "bbox_mm": [
+          [
+            -73.9,
+            -25.5,
+            8.65
+          ],
+          [
+            -58.9,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 27,
+        "bbox_mm": [
+          [
+            -55.1,
+            -25.5,
+            8.65
+          ],
+          [
+            -40.1,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 28,
+        "bbox_mm": [
+          [
+            -36.3,
+            -25.5,
+            8.65
+          ],
+          [
+            -21.3,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 29,
+        "bbox_mm": [
+          [
+            -17.5,
+            -25.5,
+            8.65
+          ],
+          [
+            -2.5,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 30,
+        "bbox_mm": [
+          [
+            1.3,
+            -25.5,
+            8.65
+          ],
+          [
+            16.3,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 31,
+        "bbox_mm": [
+          [
+            20.1,
+            -25.5,
+            8.65
+          ],
+          [
+            35.1,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 32,
+        "bbox_mm": [
+          [
+            38.9,
+            -25.5,
+            8.65
+          ],
+          [
+            53.9,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 33,
+        "bbox_mm": [
+          [
+            57.7,
+            -25.5,
+            8.65
+          ],
+          [
+            72.7,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 34,
+        "bbox_mm": [
+          [
+            76.5,
+            -25.5,
+            8.65
+          ],
+          [
+            91.5,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 35,
+        "bbox_mm": [
+          [
+            95.3,
+            -25.5,
+            8.65
+          ],
+          [
+            110.3,
+            -10.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 36,
+        "bbox_mm": [
+          [
+            -111.5,
+            -42.5,
+            8.65
+          ],
+          [
+            -96.5,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 37,
+        "bbox_mm": [
+          [
+            -92.7,
+            -42.5,
+            8.65
+          ],
+          [
+            -77.7,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 38,
+        "bbox_mm": [
+          [
+            -73.9,
+            -42.5,
+            8.65
+          ],
+          [
+            -58.9,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 39,
+        "bbox_mm": [
+          [
+            -55.1,
+            -42.5,
+            8.65
+          ],
+          [
+            -40.1,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 40,
+        "bbox_mm": [
+          [
+            -36.3,
+            -42.5,
+            8.65
+          ],
+          [
+            -21.3,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 41,
+        "bbox_mm": [
+          [
+            -8.1,
+            -42.5,
+            8.65
+          ],
+          [
+            6.9,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 42,
+        "bbox_mm": [
+          [
+            20.1,
+            -42.5,
+            8.65
+          ],
+          [
+            35.1,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 43,
+        "bbox_mm": [
+          [
+            38.9,
+            -42.5,
+            8.65
+          ],
+          [
+            53.9,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 44,
+        "bbox_mm": [
+          [
+            57.7,
+            -42.5,
+            8.65
+          ],
+          [
+            72.7,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 45,
+        "bbox_mm": [
+          [
+            76.5,
+            -42.5,
+            8.65
+          ],
+          [
+            91.5,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 46,
+        "bbox_mm": [
+          [
+            95.3,
+            -42.5,
+            8.65
+          ],
+          [
+            110.3,
+            -27.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 47,
+        "bbox_mm": [
+          [
+            -27.5,
+            27.5,
+            8.65
+          ],
+          [
+            -12.5,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 48,
+        "bbox_mm": [
+          [
+            -10.1,
+            27.5,
+            8.65
+          ],
+          [
+            4.9,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 49,
+        "bbox_mm": [
+          [
+            7.3,
+            27.5,
+            8.65
+          ],
+          [
+            22.3,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 50,
+        "bbox_mm": [
+          [
+            24.7,
+            27.5,
+            8.65
+          ],
+          [
+            39.7,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 51,
+        "bbox_mm": [
+          [
+            42.1,
+            27.5,
+            8.65
+          ],
+          [
+            57.1,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 52,
+        "bbox_mm": [
+          [
+            59.5,
+            27.5,
+            8.65
+          ],
+          [
+            74.5,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 53,
+        "bbox_mm": [
+          [
+            76.9,
+            27.5,
+            8.65
+          ],
+          [
+            91.9,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 54,
+        "bbox_mm": [
+          [
+            94.3,
+            27.5,
+            8.65
+          ],
+          [
+            109.3,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 55,
+        "bbox_mm": [
+          [
+            111.7,
+            27.5,
+            8.65
+          ],
+          [
+            126.7,
+            42.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          15.0,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 56,
+        "bbox_mm": [
+          [
+            -133.49999,
+            2.5,
+            8.65
+          ],
+          [
+            -118.5,
+            17.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          14.99999,
+          15.0,
+          12.2
+        ]
+      },
+      {
+        "index": 57,
+        "bbox_mm": [
+          [
+            -133.49999,
+            -16.5,
+            8.65
+          ],
+          [
+            -118.5,
+            -1.5,
+            20.85
+          ]
+        ],
+        "dimensions_mm": [
+          14.99999,
+          15.0,
+          12.2
+        ]
+      }
+    ]
+  },
+  "switch_keycap_overlap": {
+    "method": "evaluated_mesh_intersection_common_z",
+    "predicate": "BVH triangle overlap plus multi-ray parity inside-solid/contact samples",
+    "pairs_checked": 58,
+    "collision_pairs": 0,
+    "colliding_indices": [],
+    "travel_samples_mm": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "moving": "RK_KEY_## virtual -Z travel only; source transforms are untouched",
+    "static": [
+      "RK_SWITCH_TOP_##",
+      "RK_SWITCH_FLANGE_##",
+      "RK_MAIN_PLATE"
+    ],
+    "per_travel": [
+      {
+        "travel_mm": 0.0,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 0,
+          "plate": 0
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      },
+      {
+        "travel_mm": 0.5,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 0,
+          "plate": 0
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      },
+      {
+        "travel_mm": 1.0,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 0,
+          "plate": 0
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      },
+      {
+        "travel_mm": 1.5,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 0,
+          "plate": 0
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      },
+      {
+        "travel_mm": 2.0,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 58,
+          "plate": 0
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      },
+      {
+        "travel_mm": 2.5,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 58,
+          "plate": 0
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      },
+      {
+        "travel_mm": 3.0,
+        "common_z_pairs": {
+          "cover": 58,
+          "flange": 58,
+          "plate": 58
+        },
+        "collisions": {
+          "cover": [],
+          "flange": [],
+          "plate": []
+        },
+        "collision_key_indices": []
+      }
+    ]
+  },
+  "keycap_mesh_reuse": {
+    "mesh_groups": {
+      "TEMP_KEY_TEMPLATE_Mesh": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "TEMP_SPACE_TEMPLATE_Mesh.002": [
+        41
+      ]
+    },
+    "unique_key_meshes": 2,
+    "cells_checked_for_collision": 58
+  },
+  "keycap_switch_engagement": {
+    "status": "PASS_DIGITAL_PROTOTYPE",
+    "compatibility": "NOT_QUALIFIED",
+    "reason": "source-guided cross geometry is modeled and inspected; retention/force and complete factory interchangeability remain unqualified"
+  },
+  "interfaces": {
+    "key_stem": {
+      "method": "evaluated_mesh_rays_and_bvh_virtual_travel",
+      "cells_checked": 58,
+      "travel_samples_mm": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "expected_mm": {
+        "receiver_span": 4.12,
+        "receiver_horizontal_arm": 1.22,
+        "receiver_vertical_arm": 1.4,
+        "stem_span": 4.0,
+        "stem_horizontal_arm": 1.1,
+        "stem_vertical_arm": 1.28,
+        "receiver_depth": 3.2
+      },
+      "dimensions_within_0_05_mm": true,
+      "key_material_stem_collision_indices": [],
+      "stem_static_collision_indices": [],
+      "insertion_range_mm": [
+        3.0,
+        3.0
+      ],
+      "ceiling_reserve_range_mm": [
+        0.2,
+        0.2
+      ],
+      "rows": [
+        {
+          "index": 0,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 32,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 33,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 34,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 35,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 36,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 37,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 38,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 39,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 40,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 41,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 42,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 43,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 44,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 45,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 46,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 47,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 48,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 49,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 50,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 51,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.4
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 52,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 53,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 54,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 55,
+          "receiver_mm": {
+            "span_x": 4.12001,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 3.99999,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.27999
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 56,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28001
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        },
+        {
+          "index": 57,
+          "receiver_mm": {
+            "span_x": 4.12,
+            "span_y": 4.12,
+            "horizontal_arm": 1.22,
+            "vertical_arm": 1.39999
+          },
+          "stem_mm": {
+            "span_x": 4.0,
+            "span_y": 4.0,
+            "horizontal_arm": 1.1,
+            "vertical_arm": 1.28001
+          },
+          "receiver_ceiling_z_mm": 21.05,
+          "stem_bbox_z_mm": [
+            17.85,
+            20.85
+          ],
+          "insertion_mm": 3.0,
+          "ceiling_reserve_mm": 0.2,
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 0.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 1.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 2.5,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            },
+            {
+              "travel_mm": 3.0,
+              "key_material_stem_collision": false,
+              "key_material_stem_reason": "disjoint",
+              "stem_static_collisions": []
+            }
+          ]
+        }
+      ],
+      "qualification": "digital prototype geometry only; retention/force and factory interchangeability remain unqualified"
+    },
+    "wide_guides": {
+      "method": "actual_wide_cap_union_rays_plus_evaluated_mesh_bvh",
+      "wide_key_index": 41,
+      "guides_checked": 2,
+      "travel_samples_mm": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "collision_free": true,
+      "rest_engagement_range_mm": [
+        3.65,
+        3.65
+      ],
+      "rows": [
+        {
+          "guide_index": 0,
+          "center_xy_mm": [
+            -12.5,
+            -35.0
+          ],
+          "pin_bottom_z_mm": 17.85,
+          "pin_diameter_mm": 2.0,
+          "sleeve_bbox_mm": [
+            [
+              -15.5,
+              -38.0,
+              13.6
+            ],
+            [
+              -9.5,
+              -32.0,
+              21.5
+            ]
+          ],
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 3.65
+            },
+            {
+              "travel_mm": 0.5,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 4.15
+            },
+            {
+              "travel_mm": 1.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 4.65
+            },
+            {
+              "travel_mm": 1.5,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 5.15
+            },
+            {
+              "travel_mm": 2.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 5.65
+            },
+            {
+              "travel_mm": 2.5,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 6.15
+            },
+            {
+              "travel_mm": 3.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 6.65
+            }
+          ]
+        },
+        {
+          "guide_index": 1,
+          "center_xy_mm": [
+            11.3,
+            -35.0
+          ],
+          "pin_bottom_z_mm": 17.85,
+          "pin_diameter_mm": 2.0,
+          "sleeve_bbox_mm": [
+            [
+              8.3,
+              -38.0,
+              13.6
+            ],
+            [
+              14.3,
+              -32.0,
+              21.5
+            ]
+          ],
+          "per_travel": [
+            {
+              "travel_mm": 0.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 3.65
+            },
+            {
+              "travel_mm": 0.5,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 4.15
+            },
+            {
+              "travel_mm": 1.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 4.65
+            },
+            {
+              "travel_mm": 1.5,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 5.15
+            },
+            {
+              "travel_mm": 2.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 5.65
+            },
+            {
+              "travel_mm": 2.5,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 6.15
+            },
+            {
+              "travel_mm": 3.0,
+              "collision": false,
+              "reason": "disjoint",
+              "axial_engagement_mm": 6.65
+            }
+          ]
+        }
+      ],
+      "qualification": "custom guide digital sliding geometry only; friction/rattle/load require physical testing"
+    },
+    "encoder_dshaft": {
+      "method": "evaluated_mesh_D_receiver_rays_and_virtual_common_rotation",
+      "pairs_checked": 5,
+      "matching_rotations_collision_free": true,
+      "negative_controls_detect_collision": true,
+      "engagement_range_mm": [
+        5.0,
+        5.0
+      ],
+      "rows": [
+        {
+          "index": 1,
+          "knob_flat_y_mm": 1.65,
+          "shaft_flat_y_mm": 1.5,
+          "D_engagement_mm": 5.0,
+          "matching_rotation_probes": [
+            {
+              "angle_rad": 0.0,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 0.6,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 1.2,
+              "collision": false,
+              "reason": "disjoint"
+            }
+          ],
+          "negative_mismatch": {
+            "angle_rad": 0.6,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          },
+          "negative_offset": {
+            "offset_y_mm": 0.3,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          }
+        },
+        {
+          "index": 2,
+          "knob_flat_y_mm": 1.65,
+          "shaft_flat_y_mm": 1.5,
+          "D_engagement_mm": 5.0,
+          "matching_rotation_probes": [
+            {
+              "angle_rad": 0.0,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 0.6,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 1.2,
+              "collision": false,
+              "reason": "disjoint"
+            }
+          ],
+          "negative_mismatch": {
+            "angle_rad": 0.6,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          },
+          "negative_offset": {
+            "offset_y_mm": 0.3,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          }
+        },
+        {
+          "index": 3,
+          "knob_flat_y_mm": 1.65,
+          "shaft_flat_y_mm": 1.5,
+          "D_engagement_mm": 5.0,
+          "matching_rotation_probes": [
+            {
+              "angle_rad": 0.0,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 0.6,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 1.2,
+              "collision": false,
+              "reason": "disjoint"
+            }
+          ],
+          "negative_mismatch": {
+            "angle_rad": 0.6,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          },
+          "negative_offset": {
+            "offset_y_mm": 0.3,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          }
+        },
+        {
+          "index": 4,
+          "knob_flat_y_mm": 1.65,
+          "shaft_flat_y_mm": 1.5,
+          "D_engagement_mm": 5.0,
+          "matching_rotation_probes": [
+            {
+              "angle_rad": 0.0,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 0.6,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 1.2,
+              "collision": false,
+              "reason": "disjoint"
+            }
+          ],
+          "negative_mismatch": {
+            "angle_rad": 0.6,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          },
+          "negative_offset": {
+            "offset_y_mm": 0.3,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          }
+        },
+        {
+          "index": 5,
+          "knob_flat_y_mm": 1.65,
+          "shaft_flat_y_mm": 1.5,
+          "D_engagement_mm": 5.0,
+          "matching_rotation_probes": [
+            {
+              "angle_rad": 0.0,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 0.6,
+              "collision": false,
+              "reason": "disjoint"
+            },
+            {
+              "angle_rad": 1.2,
+              "collision": false,
+              "reason": "disjoint"
+            }
+          ],
+          "negative_mismatch": {
+            "angle_rad": 0.6,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          },
+          "negative_offset": {
+            "offset_y_mm": 0.3,
+            "collision": true,
+            "reason": "triangle_surface_intersection"
+          }
+        }
+      ],
+      "qualification": "nominal digital D coupling only; retention, tolerance stack and physical fit remain unqualified"
+    },
+    "source_binding": {
+      "caller_scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+      "scene_filepath": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/runs/presentation-B03/steps/presentation/attempt-0001/keyboard.blend",
+      "layout_revision": "B-native-interface-refinement",
+      "interfaces_revision": "B"
+    }
+  },
+  "limits": [
+    "This evidence checks digital geometry only; it does not establish factory switch interchangeability, retention force, electrical fit, preload, or physical manufacture.",
+    "Press travel is sampled at 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0 mm; no continuous-motion proof is claimed between samples.",
+    "D-shaft matching-angle probes and guide/key travel are virtual evaluated-coordinate checks; source objects are not moved or saved.",
+    "The inspector reads evaluated scene geometry and does not mutate or save the source scene."
+  ],
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16"
+}

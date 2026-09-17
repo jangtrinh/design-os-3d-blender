@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "filepath": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/runs/verification-B03/steps/export/attempt-0001/keyboard.glb",
+    "export_format": "GLB",
+    "use_selection": true,
+    "use_active_scene": true,
+    "export_apply": true,
+    "export_animations": true,
+    "export_frame_range": true,
+    "export_animation_mode": "SCENE",
+    "export_force_sampling": true,
+    "export_frame_step": 1,
+    "export_extras": true,
+    "export_yup": true,
+    "export_anim_slide_to_zero": false,
+    "export_anim_scene_split_object": false,
+    "export_bake_animation": true
+  },
+  "blend_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+  "glb_sha256": "bc8c3c2f868b1052c7baa88f55d7533e2fa810dece21a0af8f39023a3633eb82",
+  "meshes": 781,
+  "animations": 1,
+  "embedded_images": 1,
+  "extensions": [
+    "KHR_materials_transmission",
+    "KHR_materials_emissive_strength",
+    "KHR_materials_specular",
+    "KHR_materials_ior"
+  ]
+}

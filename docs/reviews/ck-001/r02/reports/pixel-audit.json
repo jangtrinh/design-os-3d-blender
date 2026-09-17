@@ -1,0 +1,23 @@
+{
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+  "png_count": 107,
+  "png_resolution": [
+    1920,
+    1080
+  ],
+  "frame_hashes_verified": 96,
+  "video_probe": {
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "duration": "4.000000",
+    "nb_read_frames": "96"
+  },
+  "full_decode": "pass",
+  "review_frames": [
+    1,
+    7,
+    60,
+    96
+  ]
+}

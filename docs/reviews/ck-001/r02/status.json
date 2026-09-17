@@ -1,0 +1,66 @@
+{
+  "revision": "B",
+  "package_status": "REVIEWED_DIGITAL_PROTOTYPE",
+  "share_quality_review": "PASS_DECLARED_MEDIA_SCOPE",
+  "review": {
+    "accepted": true,
+    "verdict": "stop",
+    "reviewer": "worker6"
+  },
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+  "glb_sha256": "bc8c3c2f868b1052c7baa88f55d7533e2fa810dece21a0af8f39023a3633eb82",
+  "native_meshes": 781,
+  "gated_part_families": 8,
+  "gated_part_ids": [
+    "RK_BASE",
+    "RK_DIFFUSER",
+    "RK_MAIN_PLATE",
+    "RK_KEY_00",
+    "RK_KEY_41",
+    "RK_KNOB_1",
+    "RK_FOOT_0",
+    "RK_GUIDE_SLEEVE_0"
+  ],
+  "roundtrip_frames": [
+    1,
+    7,
+    60
+  ],
+  "roundtrip_surface_tolerance_mm": 0.05,
+  "max_roundtrip_surface_error_mm": 0.0,
+  "native_render_pixels": [
+    1920,
+    1080
+  ],
+  "stills": 11,
+  "video_frames": 96,
+  "fps": 24,
+  "media": "PASS_NATIVE_FULLHD",
+  "motion": "PASS_DECLARED_DIGITAL_SCOPE",
+  "fit": "PASS_DECLARED_DIGITAL_SCOPE",
+  "manufacture": "BLOCKED",
+  "contract": {
+    "envelope_mm": [
+      284,
+      92,
+      32
+    ],
+    "keys": 58,
+    "knobs": 5,
+    "key_travel_mm": 3.0,
+    "stem_insertion_mm": 3.0,
+    "receiver_ceiling_reserve_mm": 0.2,
+    "spacebar_guides": 2,
+    "spacebar_rest_engagement_mm": 3.65,
+    "D_engagement_mm": 5.0
+  },
+  "physical_blockers": [
+    "Keycap/switch insertion, retention force, tolerance stack, wear and process shrinkage need physical coupons.",
+    "Knob D-flat fit and axial retention need physical shaft/knob testing.",
+    "Encoder carrier threads, tightening torque and bonded-riser adhesive shear/peel/creep need physical qualification.",
+    "PCB, encoder and USB footprints/netlist/ESD/power/firmware are not electrically qualified.",
+    "Spacebar guide friction/rattle/wear and assembly bench testing remain open.",
+    "Material/process, slicer/support, dimensional post-process and load/thermal evidence remain open."
+  ],
+  "media_review_sha256": "cae77a2fe9aa13b82bd7f6ff8fd45928a87a06fcd5b1e6da52206b3c920d9e2f"
+}

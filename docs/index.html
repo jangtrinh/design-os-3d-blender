@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>design-os-3d-blender — reviewed native Blender deliveries, in the browser</title>
+<meta name="description" content="Delivery review pages for parts built natively in Blender 5.2 by an AI agent: Full HD stills, the verified GLB in a three.js viewer with explode, parts catalog and animatic, and the honest manufacture status.">
+<link rel="canonical" href="https://jangtrinh.github.io/design-os-3d-blender/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="design-os-3d-blender — reviewed native Blender deliveries">
+<meta property="og:description" content="Delivery review pages for parts built natively in Blender 5.2 by an AI agent, with the verified GLB in a three.js viewer.">
+<meta property="og:url" content="https://jangtrinh.github.io/design-os-3d-blender/">
+<meta property="og:image" content="https://jangtrinh.github.io/design-os-3d-blender/reviews/ck-001/r02/CK-001-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Design language carried from jang-personal-site (generation 11): zero-chroma greys, one accent,
+   Inter body at 1.625 line-height, JetBrains Mono for the instrument register, 760px measure,
+   Phosphor (regular) as the one icon family, no keyframes. Values are the site's token ladder. */
+:root{
+  --c-accent:#00a5ef;--c-accent-fg:#202020;--c-accent-text:#0069a4;--c-sky-600:#0084cc;
+  --c-canvas:#ffffff;--c-gray-100:#fcfcfc;--c-gray-200:#f6f6f6;--c-gray-300:#f0f0f0;--c-gray-400:#e8e8e8;
+  --c-gray-500:#e0e0e0;--c-gray-600:#d9d9d9;--c-gray-900:#8d8d8d;--c-gray-1000:#7b7b7b;--c-gray-1100:#646464;--c-gray-1200:#202020;
+  --c-preview-bg:#ffffff;--c-preview-border:#e8e8e8;
+  --t-13:13px;--t-14:14px;--t-16:16px;--t-18:18px;--t-20:20px;--t-24:24px;--t-30:30px;--t-36:36px;--t-48:48px;
+  --s-2:4px;--s-3:6px;--s-4:8px;--s-5:10px;--s-6:12px;--s-8:16px;--s-10:20px;--s-12:24px;--s-16:32px;--s-24:48px;--s-32:64px;--s-40:80px;--s-48:96px;--s-64:128px;
+  --r-3:8px;--r-4:12px;--r-5:16px;--r-pill:9999px;--ctl-28:28px;--ctl-32:32px;--ctl-48:48px;--tap-min:44px;
+  --fw-body:400;--fw-book:450;--fw-medium:500;--fw-display:550;--fw-semibold:600;
+  --lh-text:1.625;--lh-ui:1.5;--lh-tight:1.1;--track-heading:-0.01em;--track-tight:-0.02em;--track-flat:0;--track-wordmark:-0.08em;
+  --w-container:760px;--w-breakout:880px;--dur-fast:150ms;--dur-base:200ms;--ease-out:cubic-bezier(0,0,.2,1);
+  --stack-sans:"Inter",sans-serif;--stack-mono:"JetBrains Mono",monospace;
+  --shadow-ink-4:color-mix(in srgb,var(--c-gray-1200) 4%,transparent);--shadow-ink-6:color-mix(in srgb,var(--c-gray-1200) 6%,transparent);--shadow-ink-8:color-mix(in srgb,var(--c-gray-1200) 8%,transparent);
+  --shadow-custom:0 0 0 1px var(--shadow-ink-6),0 1px 2px -1px var(--shadow-ink-6),0 2px 4px 0 var(--shadow-ink-4);
+  --shadow-custom-hover:0 0 0 1px var(--shadow-ink-8),0 1px 2px -1px var(--shadow-ink-8),0 2px 4px 0 var(--shadow-ink-6);
+  --icon-16:16px;--icon-20:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c-gray-100);color:var(--c-gray-1200);font-family:var(--stack-sans);font-size:var(--t-16);line-height:var(--lh-text);font-weight:var(--fw-body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--c-accent);color:var(--c-accent-fg)}
+:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:2px}
+p{margin:0 0 var(--s-8);max-width:68ch}
+p a,li a,dd a{color:var(--c-accent-text);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--c-accent-text) 35%,transparent);text-underline-offset:3px}
+/* Inline code is a voice, not a box: mono in the paragraph's own colour. Boxes are for blocks. */
+code{font-family:var(--stack-mono);font-size:.9em;font-weight:var(--fw-medium)}
+strong{font-weight:var(--fw-semibold)}
+/* One icon family, one weight, two sizes. Inline icons sit on the cap height of their text. */
+.ph{width:var(--icon-16);height:var(--icon-16);flex:none;vertical-align:-0.15em}
+.ph[data-size="20"]{width:var(--icon-20);height:var(--icon-20)}
+
+.ds-skip-link{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.ds-skip-link:focus{position:fixed;top:var(--s-8);left:var(--s-8);z-index:100;width:auto;height:auto;padding:var(--s-4) var(--s-8);overflow:visible;clip-path:none;border-radius:var(--r-pill);background:var(--c-preview-bg);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-medium)}
+
+.ds-shell{--ds-gutter:var(--s-10);display:flex;flex-direction:column;min-height:100dvh}
+.ds-shell-nav,.ds-shell-main,.ds-shell-footer-inner{width:100%;max-width:var(--w-container);margin-inline:auto;padding-inline:var(--ds-gutter)}
+.ds-shell-nav{display:flex;align-items:center;justify-content:space-between;min-height:var(--ctl-48);flex-wrap:wrap;gap:var(--s-3) var(--s-8);padding-block:var(--s-3)}
+.wordmark{position:relative;font-size:var(--t-16);font-weight:var(--fw-semibold);letter-spacing:var(--track-wordmark)}
+.wordmark span{font:var(--fw-body) var(--t-13) var(--stack-mono);vertical-align:top;margin-left:var(--s-2);letter-spacing:0}
+.home-nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
+.ds-tab{position:relative;display:inline-flex;align-items:center;gap:var(--s-2);height:var(--ctl-32);padding-inline:var(--s-8);border:0;border-radius:var(--r-pill);background:transparent;color:var(--c-gray-1100);font-size:var(--t-14);font-weight:var(--fw-medium);transition:color var(--dur-base) var(--ease-out),background-color var(--dur-base) var(--ease-out)}
+.ds-tab::after{content:"";position:absolute;inset:calc((var(--tap-min) - var(--ctl-32)) / -2)}
+.ds-tab[aria-current="page"]{background:var(--c-gray-300);color:var(--c-gray-1200)}
+
+.ds-shell-main{flex:1;padding-block:var(--s-24)}
+/* Pacing is authored per section, not one gap everywhere: a step that continues the
+   previous thought sits close; a new chapter gets the full 128px. */
+.ds-shell-main>section{margin-top:var(--s-40);scroll-margin-top:var(--s-40)}
+.ds-shell-main>section:first-child{margin-top:var(--s-16)}
+.ds-shell-main>section[data-pace="tight"]{margin-top:var(--s-24)}
+.ds-shell-main>section[data-pace="chapter"]{margin-top:var(--s-48)}
+@media(min-width:640px){
+  .ds-shell{--ds-gutter:var(--s-12)}
+  .ds-shell-main{padding-block:var(--s-40)}
+  .ds-shell-main>section{margin-top:var(--s-48)}
+  .ds-shell-main>section[data-pace="tight"]{margin-top:var(--s-32)}
+  .ds-shell-main>section[data-pace="chapter"]{margin-top:var(--s-64)}
+}
+
+/* Headings hold rank through weight and space; the mono eyebrow is the instrument voice. */
+.ds-heading{display:flex;align-items:center;gap:var(--s-6);margin:0 0 var(--s-10);font-weight:var(--fw-display);text-wrap:balance}
+.ds-heading[data-level="1"]{display:block;max-width:22ch;font-size:clamp(var(--t-30),4.6vw,var(--t-48));font-weight:var(--fw-medium);line-height:var(--lh-tight);letter-spacing:var(--track-tight)}
+.ds-heading[data-level="2"]{font-size:var(--t-24);letter-spacing:var(--track-heading)}
+.ds-heading[data-level="3"]{margin-bottom:var(--s-6);color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);letter-spacing:var(--track-flat);text-transform:uppercase}
+.ds-heading[data-level="3"]::after{content:"";flex:1;height:1px;background:var(--c-preview-border)}
+.eyebrow{margin-bottom:var(--s-8)}
+.lede{font-size:var(--t-18);color:var(--c-gray-1100);max-width:56ch;margin-bottom:var(--s-12)}
+/* shields.io badges (markdown-badges set), owner-requested: same row as the README carries. */
+.badges{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:0 0 var(--s-12);max-width:none}
+.badges img{display:block;height:28px}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-6) var(--s-8)}
+.text-link{display:inline-flex;align-items:center;gap:var(--s-2);color:var(--c-gray-1100);font-size:var(--t-14);font-weight:var(--fw-medium);transition:color var(--dur-fast) var(--ease-out)}
+
+.ds-chip{display:inline-flex;align-items:center;gap:var(--s-2);height:var(--ctl-28);padding-inline:var(--s-5);width:fit-content;border-radius:var(--r-pill);background:var(--c-preview-bg);color:var(--c-gray-1100);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-book);user-select:none;white-space:nowrap}
+.ds-chip[data-variant="mono"]{font-family:var(--stack-mono);font-size:var(--t-13)}
+.ds-btn-pill{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-3);height:var(--ctl-32);padding-inline:var(--s-8);border:0;border-radius:var(--r-pill);background:var(--c-preview-bg);color:var(--c-gray-1200);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-medium);cursor:pointer;transition:box-shadow var(--dur-base) var(--ease-out),background-color var(--dur-base) var(--ease-out)}
+.ds-btn-pill[data-tone="solid"]{background:var(--c-gray-1200);color:var(--c-canvas);box-shadow:none}
+
+/* Surfaces: hairline card, recessed stage. Nested radii stay concentric (16 = 12 + 4). */
+.ds-card{display:flex;flex-direction:column;padding:var(--s-2);border:1px solid var(--c-preview-border);border-radius:var(--r-5);background:var(--c-gray-100)}
+.ds-card-stage{display:grid;place-items:center;padding:var(--s-24);border-radius:var(--r-4);background:var(--c-gray-200);position:relative}
+.case-plate-chip{position:absolute;top:var(--s-8);left:var(--s-8);z-index:1}
+/* A capture IS the surface: full width inside the stage, no inset (owner ruling 2026-08-23). */
+.capture-stage{padding:0;overflow:hidden}
+.capture-stage img{display:block;width:100%;height:auto}
+.case-plate-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-12);padding:var(--s-6) var(--s-10) var(--s-5)}
+.case-plate-caption p{margin:0;color:var(--c-gray-1100);font-size:var(--t-14);max-width:none}
+.case-plate-caption cite{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13);font-style:normal;white-space:nowrap}
+.branch-page-media{margin-block:var(--s-16) 0;margin-inline:0}
+@media(min-width:960px){.branch-page-media{--bp-w:min(var(--w-breakout),calc(100vw - var(--s-12) * 2));margin-inline:calc(50% - var(--bp-w) / 2) 0;width:var(--bp-w)}}
+
+/* The register: label column + value column sharing one edge. Shared edges do the
+   tracking — one hairline at the head, none per row (soul: an accounting ledger is a rule
+   under every row; a technical drawing is not). */
+.register{border-top:1px solid var(--c-gray-300)}
+.register-row{display:grid;grid-template-columns:var(--icon-20) minmax(0,1fr);grid-template-areas:"icon label" "icon body";gap:var(--s-2) var(--s-6);padding-block:var(--s-8)}
+.register-row>.ph{grid-area:icon;color:var(--c-gray-900);margin-top:3px}
+.register-row h3,.register-row dt{grid-area:label}
+.register-row p,.register-row dd{grid-area:body}
+.register-row[data-icon="none"]{grid-template-columns:minmax(0,1fr);grid-template-areas:"label" "body"}
+.register-row:first-child{padding-top:var(--s-8)}
+@media(min-width:640px){.register-row{grid-template-columns:var(--icon-20) 220px minmax(0,1fr);grid-template-areas:"icon label body";gap:var(--s-2) var(--s-8);padding-block:var(--s-8)}.register-row[data-icon="none"]{grid-template-columns:200px minmax(0,1fr);grid-template-areas:"label body"}}
+.register-row dt,.register-row h3{margin:0;font-size:var(--t-16);font-weight:var(--fw-semibold);line-height:var(--lh-text)}
+.register-row dt{font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);color:var(--c-gray-900);text-transform:uppercase;letter-spacing:var(--track-flat);padding-top:2px}
+.register-row dd,.register-row p{margin:0;color:var(--c-gray-1100);max-width:none}
+.register-row dd{color:var(--c-gray-1200)}
+.register-row h3 code{font-weight:var(--fw-medium)}
+/* No border here: the eyebrow above already draws the head rule (one line, not two). */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--s-16);margin:0;padding-top:var(--s-2)}
+@media(min-width:640px){.facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.facts>div{padding-block:var(--s-6)}
+.facts dt{display:flex;align-items:center;gap:var(--s-3);font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900);text-transform:uppercase}
+.facts dt .ph{color:var(--c-gray-900)}
+.facts dd{margin:0;overflow-wrap:anywhere}
+.facts dd small{display:block;color:var(--c-gray-1100);font-size:var(--t-14)}
+
+.ds-code{margin:0 0 var(--s-8);padding:var(--s-6) var(--s-8);border-radius:var(--r-3);background:var(--c-gray-200);color:var(--c-gray-1200);font-family:var(--stack-mono);font-size:var(--t-13);line-height:var(--lh-ui);tab-size:4;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.ds-code code{font:inherit;white-space:pre}
+ol.steps{margin:0;padding-left:var(--s-10);counter-reset:step}
+ol.steps li{margin-bottom:var(--s-8);padding-left:var(--s-2)}
+ol.steps li::marker{font-family:var(--stack-mono);color:var(--c-gray-900);font-size:var(--t-13)}
+ol.steps .ds-code{margin-top:var(--s-3)}
+.aside{border-left:2px solid var(--c-gray-400);padding-left:var(--s-8);margin-top:var(--s-12);color:var(--c-gray-1100)}
+.aside p{max-width:62ch}
+
+.link-list{border-top:0}
+.ds-icon-row{display:flex;align-items:center;gap:var(--s-6);min-height:var(--tap-min);padding-block:var(--s-4);color:var(--c-gray-1200)}
+.ds-icon-row .ph[data-lead]{color:var(--c-gray-1100)}
+.ds-icon-row-label{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:var(--t-16);font-weight:var(--fw-medium)}
+.ds-icon-row-meta{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13)}
+.ds-icon-row .ph{color:var(--c-gray-900);transition:color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out)}
+
+.faq details{border-top:1px solid var(--c-gray-300)}
+.faq details:last-of-type{border-bottom:1px solid var(--c-gray-300)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:var(--s-8);min-height:var(--tap-min);padding-block:var(--s-4);cursor:pointer;font-weight:var(--fw-medium);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ph{color:var(--c-gray-900);transition:transform var(--dur-fast) var(--ease-out)}
+.faq details[open] summary .ph{transform:rotate(180deg)}
+.faq details p{margin:0 0 var(--s-8);color:var(--c-gray-1100)}
+
+.ds-shell-footer{padding-top:var(--s-24);border-top:1px solid var(--c-gray-300)}
+.ds-shell-footer-inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:var(--s-12);padding-bottom:var(--s-24);color:var(--c-gray-1100);font-size:var(--t-14)}
+.ds-shell-footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
+
+/* Hover is a pointer affordance; on touch it would stick after a tap. */
+@media (hover: hover){
+  .ds-tab:hover{color:var(--c-gray-1200)}
+  .ds-btn-pill:hover{background:var(--c-gray-100);box-shadow:var(--shadow-custom-hover)}
+  .ds-btn-pill[data-tone="solid"]:hover{background:var(--c-gray-1100)}
+  .text-link:hover{color:var(--c-gray-1200)}
+  p a:hover,li a:hover,dd a:hover{text-decoration-color:var(--c-accent-text)}
+  .ds-icon-row:hover .ph:last-child{color:var(--c-gray-1200);transform:translateX(2px)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:0.01ms !important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------------------------------------------------------------- Document pages
+   Markdown rendered by Jekyll inside _layouts/default.html. Same ladder, same voice:
+   h1 holds rank at 24/550 (soul: no shouting headings), h2 at 20/550, h3 is the mono
+   eyebrow with its hairline. Tables are an instrument register: one rule under the
+   header, none per row, tabular figures. */
+.prose{max-width:var(--w-reading,720px)}
+.prose>h1{margin:0 0 var(--s-8);font-size:var(--t-24);font-weight:var(--fw-display);letter-spacing:var(--track-heading);line-height:var(--lh-heading,1.333);text-wrap:balance}
+.prose>h2{margin:var(--s-24) 0 var(--s-6);font-size:var(--t-20);font-weight:var(--fw-display);letter-spacing:var(--track-heading);line-height:var(--lh-heading,1.333);text-wrap:balance}
+.prose>h3{display:flex;align-items:center;gap:var(--s-6);margin:var(--s-16) 0 var(--s-6);color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);letter-spacing:var(--track-flat);text-transform:uppercase}
+.prose>h3::after{content:"";flex:1;height:1px;background:var(--c-preview-border)}
+.prose>h4{margin:var(--s-12) 0 var(--s-3);font-size:var(--t-16);font-weight:var(--fw-semibold)}
+.prose p{max-width:68ch}
+.prose code{font-weight:var(--fw-body);font-size:.88em}
+.prose pre{max-width:100%}
+.prose>p:first-of-type{color:var(--c-gray-1100);font-size:var(--t-18)}
+.prose ul,.prose ol{margin:0 0 var(--s-8);padding-left:var(--s-10)}
+.prose li{margin-bottom:var(--s-2);max-width:68ch}
+.prose li::marker{color:var(--c-gray-900)}
+.prose ol li::marker{font-family:var(--stack-mono);font-size:var(--t-13)}
+.prose hr{border:0;border-top:1px solid var(--c-gray-300);margin:var(--s-16) 0}
+.prose blockquote{margin:0 0 var(--s-8);padding-left:var(--s-8);border-left:2px solid var(--c-gray-400);color:var(--c-gray-1100)}
+.prose img{display:block;max-width:100%;height:auto;border:1px solid var(--c-preview-border);border-radius:var(--r-4);margin:var(--s-8) 0}
+.prose pre,.prose .highlight pre{margin:0 0 var(--s-8);padding:var(--s-6) var(--s-8);border-radius:var(--r-3);background:var(--c-gray-200);color:var(--c-gray-1200);font-family:var(--stack-mono);font-size:var(--t-13);line-height:var(--lh-ui);tab-size:4;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.prose pre code{font:inherit;white-space:pre}
+.prose .highlighter-rouge{margin:0 0 var(--s-8)}
+.prose .highlighter-rouge pre{margin:0}
+/* display:block so a wide register scrolls inside the column instead of widening the page. */
+.prose table{display:block;width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;border-collapse:collapse;margin:var(--s-4) 0 var(--s-12);font-size:var(--t-14);line-height:var(--lh-ui);font-variant-numeric:tabular-nums}
+.prose thead th{text-align:left;padding:var(--s-3) var(--s-4) var(--s-3) 0;color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);text-transform:uppercase;letter-spacing:var(--track-flat);border-bottom:1px solid var(--c-gray-300)}
+.prose tbody td{vertical-align:top;padding:var(--s-4) var(--s-4) var(--s-4) 0;color:var(--c-gray-1100)}
+.prose tbody td:first-child{color:var(--c-gray-1200);font-weight:var(--fw-medium)}
+.prose tbody tr:first-child td{padding-top:var(--s-6)}
+.table-scroll{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.doc-head{margin-bottom:var(--s-12)}
+.doc-nav{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-24);padding-top:var(--s-12);border-top:1px solid var(--c-gray-300)}
+
+.ds-heading[data-level="3"]+.link-list{border-top:0}
+</style>
+</head>
+<body>
+<a class="ds-skip-link" href="#main">Skip to content</a>
+<div class="ds-shell">
+  <nav class="ds-shell-nav" aria-label="Primary">
+    <a class="wordmark" href="https://www.jang.work/">JANG<span>®</span></a>
+    <div class="home-nav-links">
+      <a class="ds-tab" href="https://github.com/jangtrinh/design-os-3d-blender"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>GitHub <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
+    </div>
+  </nav>
+  <main id="main" class="ds-shell-main">
+    <section aria-labelledby="title">
+      <p class="ds-heading eyebrow" data-level="3">design:os · 3D Blender · delivery reviews</p>
+      <h1 id="title" class="ds-heading" data-level="1">Parts built natively in Blender by an AI agent, reviewed in the browser.</h1>
+      <p class="lede">Each delivery page carries the Full HD stills, the verified GLB in a three.js viewer with explode, parts catalog and animatic, the numbers from the package’s own <code>status.json</code>, and the manufacture status stated plainly. The agent operating system behind them is on <a href="https://github.com/jangtrinh/design-os-3d-blender">GitHub</a>.</p>
+    </section>
+    <section data-pace="tight" aria-labelledby="list-h">
+      <h2 id="list-h" class="ds-heading" data-level="3">Deliveries</h2>
+      <div class="link-list">
+        <a class="ds-icon-row" href="reviews/ck-001/r02/"><span class="ds-icon-row-label">CK-001 revision B: reference keyboard, native Full HD, digital prototype reviewed</span><span class="ds-icon-row-meta">r02 · 2026-09</span><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+      </div>
+    </section>
+  </main>
+  <footer class="ds-shell-footer">
+    <div class="ds-shell-footer-inner">
+      <a class="wordmark" href="https://www.jang.work/">JANG<span>®</span></a>
+      <nav class="ds-shell-footer-nav" aria-label="Footer">
+        <a class="ds-tab" href="https://github.com/jangtrinh/design-os-3d-blender">GitHub</a>
+        <a class="ds-tab" href="https://github.com/jangtrinh/design-os-3d-blender/blob/main/LICENSE">License</a>
+        <a class="ds-tab" href="#main">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

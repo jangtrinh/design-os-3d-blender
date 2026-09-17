@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "reviewer": "prime",
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+  "media_manifest_sha256": "7c1350ef81486e623c3cc5e2416776f31e572d1495c66d6201f30405b4683c8b",
+  "video_sha256": "d317aa72ce512dcaf2816384706e9d532170fd1574cd1019317abab69a0ccb20",
+  "pixel_audit": {
+    "path": "builds/reference-keyboard/runs/fullhd-B02/decoded-review/pixel-audit.json",
+    "sha256": "fb15e929b44d030c886e86526362b5a026db025db9db69f2886dca9f8545c578"
+  },
+  "viewed_decoded_frames": [
+    1,
+    7,
+    60,
+    96
+  ],
+  "observations": [
+    "Actual decoded MP4 shows assembled rest, key travel, separated layers and restored final assembly.",
+    "No gross clipping or foreign helper object was observed at the four decoded frames.",
+    "Eleven stills were reviewed under the separate pinned native-review assessment."
+  ],
+  "limits": [
+    "This visual sampling is not full continuous-motion collision proof.",
+    "All 96 frames were machine decoded, but not individually judged by a human.",
+    "Source-derived prototype geometry and electrical/physical qualification remain separate."
+  ]
+}

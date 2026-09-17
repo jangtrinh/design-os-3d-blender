@@ -1,0 +1,34 @@
+{
+  "source_blend": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/runs/geometry-B03/steps/geometry/attempt-0001/model.blend",
+  "source_sha256": "e4c54bb1eca1a592787b88af4ee25dbbe50dab91837a95bc47aa87e99909aec8",
+  "form_gate": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/runs/geometry-B03/steps/gate/attempt-0001/gate-report.json",
+  "form_gate_sha256": "be5d21972bb2fe567f18dc11f54fc103cf705c357cfdbc9ba672007e8f413e62",
+  "declared_inputs": {
+    "builds/reference-keyboard/interfaces.json": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/interfaces.json",
+    "builds/reference-keyboard/layout.json": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/layout.json",
+    "builds/reference-keyboard/runs/geometry-B03/steps/gate/attempt-0001/gate-report.json": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/runs/geometry-B03/steps/gate/attempt-0001/gate-report.json",
+    "builds/reference-keyboard/runs/geometry-B03/steps/geometry/attempt-0001/model.blend": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/runs/geometry-B03/steps/geometry/attempt-0001/model.blend",
+    "builds/reference-keyboard/scripts/details.py": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/scripts/details.py",
+    "builds/reference-keyboard/scripts/meshkit.py": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/scripts/meshkit.py",
+    "builds/reference-keyboard/scripts/motion.py": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/scripts/motion.py",
+    "builds/reference-keyboard/scripts/project.py": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/scripts/project.py",
+    "builds/reference-keyboard/scripts/studio.py": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/scripts/studio.py",
+    "builds/reference-keyboard/spec-B.json": "/Users/jang/Products/design-os-3d-blender/builds/reference-keyboard/spec-B.json",
+    "scripts/agent_verify/__init__.py": "/Users/jang/Products/design-os-3d-blender/scripts/agent_verify/__init__.py",
+    "scripts/agent_verify/export_check.py": "/Users/jang/Products/design-os-3d-blender/scripts/agent_verify/export_check.py",
+    "scripts/agent_verify/inspect_scene.py": "/Users/jang/Products/design-os-3d-blender/scripts/agent_verify/inspect_scene.py",
+    "scripts/agent_verify/paths.py": "/Users/jang/Products/design-os-3d-blender/scripts/agent_verify/paths.py",
+    "scripts/agent_verify/preview.py": "/Users/jang/Products/design-os-3d-blender/scripts/agent_verify/preview.py",
+    "scripts/agent_verify/session.py": "/Users/jang/Products/design-os-3d-blender/scripts/agent_verify/session.py",
+    "scripts/boilerplates/bp_animation.py": "/Users/jang/Products/design-os-3d-blender/scripts/boilerplates/bp_animation.py",
+    "scripts/boilerplates/bp_core.py": "/Users/jang/Products/design-os-3d-blender/scripts/boilerplates/bp_core.py"
+  },
+  "normal_finish": {
+    "meshes": 7,
+    "smooth_faces": 7708,
+    "sharp_edges": 5578
+  },
+  "limits": [
+    "Presentation and motion candidate, final gate/export/review still required."
+  ]
+}

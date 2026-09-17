@@ -1,0 +1,475 @@
+{
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+  "settings": {
+    "engine": "CYCLES",
+    "device": "GPU",
+    "devices": [
+      "Apple M4 Pro (GPU - 16 cores)"
+    ],
+    "resolution": [
+      1920,
+      1080
+    ],
+    "denoise": true,
+    "adaptive_threshold": 0.02,
+    "native_render": true
+  },
+  "views": {
+    "hero": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0.3,
+          -0.43,
+          0.33
+        ],
+        "target": [
+          0,
+          0,
+          0.015
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.365
+      },
+      "statistics": {
+        "mean": 0.751677014178723,
+        "stdev": 0.24103915808079562,
+        "black": false,
+        "blown": false
+      },
+      "subjects": "all visible product meshes",
+      "requested_ortho_scale": 0.365,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "31e3af589b0557e3fe60d4aae022d8a9500679b450f64300a9b87c557916c4c5",
+      "render_seconds": 11.797
+    },
+    "top": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0,
+          0,
+          0.5
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.32
+      },
+      "statistics": {
+        "mean": 0.630693248475259,
+        "stdev": 0.28506103787242043,
+        "black": false,
+        "blown": false
+      },
+      "subjects": "all visible product meshes",
+      "requested_ortho_scale": 0.32,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "6f2648af1dfd76afce078e4fadea33eb4e50f7a7c9e7b85f2bdc455e7e4c3742",
+      "render_seconds": 11.021
+    },
+    "knob-detail": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0.16,
+          -0.1,
+          0.11
+        ],
+        "target": [
+          0.125,
+          -0.012,
+          0.021
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.04800000041723251
+      },
+      "statistics": {
+        "mean": 0.5390653569851164,
+        "stdev": 0.20648679196858116,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_KNOB_5"
+      ],
+      "requested_ortho_scale": 0.048,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "02bbae4a22556f64b8bcf0310a7168c3063904444d3f50b100d4cc55fbd713bb",
+      "render_seconds": 11.254
+    },
+    "key-detail": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          -0.067,
+          -0.095,
+          0.125
+        ],
+        "target": [
+          -0.05,
+          -0.001,
+          0.023
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.05999999865889549
+      },
+      "statistics": {
+        "mean": 0.36647618796814,
+        "stdev": 0.1722758399832907,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_KEY_15"
+      ],
+      "requested_ortho_scale": 0.06,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "f9300de572dbd70a73dff87827c255f77b200ab629199bce7277911180faf3cf",
+      "render_seconds": 9.657
+    },
+    "exploded": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 60,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0.3,
+          -0.43,
+          0.33
+        ],
+        "target": [
+          0,
+          0,
+          0.037
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.415
+      },
+      "statistics": {
+        "mean": 0.7116639276629931,
+        "stdev": 0.26078060322791474,
+        "black": false,
+        "blown": false
+      },
+      "subjects": "all visible product meshes",
+      "requested_ortho_scale": 0.415,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "d05bb35f5390a7b0775de63e9e71a4d1378a138015c186b1997efed5fce993b7",
+      "render_seconds": 11.31
+    },
+    "bottom": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0,
+          0,
+          -0.4
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.32
+      },
+      "statistics": {
+        "mean": 0.4038068973784985,
+        "stdev": 0.18403059192082968,
+        "black": false,
+        "blown": false
+      },
+      "subjects": "all visible product meshes",
+      "requested_ortho_scale": 0.32,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "f5f4aa06a37388ff0cd16fa0dd6d45a6c6a6b9c23cfb34f3acbe905ec574588c",
+      "render_seconds": 5.827
+    },
+    "receiver": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          -0.0860000029206276,
+          -0.008999999612569809,
+          -0.020149998366832733
+        ],
+        "target": [
+          -0.10400000214576721,
+          0.01600000075995922,
+          0.022849999368190765
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.039000000804662704
+      },
+      "statistics": {
+        "mean": 0.28504471506831214,
+        "stdev": 0.09489996502516035,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_KEY_00"
+      ],
+      "requested_ortho_scale": 0.039,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "65b439784209c337b27d0aaccb7282fa905b8f59974f13fb5039fed7fd3040a3",
+      "render_seconds": 5.233
+    },
+    "spacebar-guides": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0.017399998381733894,
+          -0.06000000238418579,
+          -0.020149998366832733
+        ],
+        "target": [
+          -0.0006000000284984708,
+          -0.03500000014901161,
+          0.022849999368190765
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.061000000685453415
+      },
+      "statistics": {
+        "mean": 0.28399343425847556,
+        "stdev": 0.06613762828847156,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_KEY_41"
+      ],
+      "requested_ortho_scale": 0.061,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "bf8d59a8497cdf206c68bc98a10a5c14a2b130ca0bff145c23028f3df12ac63d",
+      "render_seconds": 4.427
+    },
+    "D-receiver": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0.14300000667572021,
+          -0.03700000047683716,
+          -0.025999998673796654
+        ],
+        "target": [
+          0.125,
+          -0.012000000104308128,
+          0.017000000923871994
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.055796971281584326
+      },
+      "statistics": {
+        "mean": 0.38798205221081317,
+        "stdev": 0.20424452770339785,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_KNOB_5"
+      ],
+      "requested_ortho_scale": 0.037,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "89457b0484d57fc337e3e3b1c22a0e9f68ebb35d3ee1e38b21d3babe4e5ef44d",
+      "render_seconds": 4.131
+    },
+    "encoder-mount": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          -0.047,
+          -0.011,
+          0.057
+        ],
+        "target": [
+          -0.082,
+          0.035,
+          0.012
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.05881669457999245
+      },
+      "statistics": {
+        "mean": 0.37363710737104117,
+        "stdev": 0.1768733773129295,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_ENCODER_BODY_2",
+        "RK_ENCODER_SHAFT_2",
+        "RK_ENCODER_BUSHING_2",
+        "RK_ENCODER_CARRIER_2",
+        "RK_ENCODER_WASHER_2",
+        "RK_ENCODER_NUT_2",
+        "RK_ENCODER_RISER_2_0",
+        "RK_ENCODER_CARRIER_SCREW_2_0",
+        "RK_ENCODER_RISER_2_1",
+        "RK_ENCODER_CARRIER_SCREW_2_1",
+        "RK_ENCODER_RISER_2_2",
+        "RK_ENCODER_CARRIER_SCREW_2_2",
+        "RK_ENCODER_RISER_2_3",
+        "RK_ENCODER_CARRIER_SCREW_2_3",
+        "RK_ENCODER_PIN_2_A",
+        "RK_ENCODER_PIN_2_C",
+        "RK_ENCODER_PIN_2_B",
+        "RK_ENCODER_EAR_2_L",
+        "RK_ENCODER_EAR_2_R",
+        "RK_ENCODER_DAUGHTERBOARD_2",
+        "RK_ENCODER_PAD_2_A",
+        "RK_ENCODER_PAD_2_C",
+        "RK_ENCODER_PAD_2_B",
+        "RK_ENCODER_BOARD_SUPPORT_2_L",
+        "RK_ENCODER_BOARD_SUPPORT_2_R"
+      ],
+      "requested_ortho_scale": 0.054,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "e8117bf7e2bc0b7c752fcc36ffb3a360c048fd7be6a0447813aff5c7e531ea79",
+      "render_seconds": 4.34
+    },
+    "usb-mount": {
+      "capture": {
+        "camera": "RK_CAMERA",
+        "projection": "ORTHO",
+        "frame": 1,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "location": [
+          0.086,
+          0.095,
+          0.041
+        ],
+        "target": [
+          0.067,
+          0.041,
+          0.008
+        ],
+        "clip_start": 0.001,
+        "clip_end": 10.0,
+        "ortho_scale": 0.04500000178813934
+      },
+      "statistics": {
+        "mean": 0.5519438918722885,
+        "stdev": 0.2249750813620224,
+        "black": false,
+        "blown": false
+      },
+      "subjects": [
+        "RK_USB_SHELL"
+      ],
+      "requested_ortho_scale": 0.045,
+      "verified_pixel_size": [
+        1920,
+        1080
+      ],
+      "sha256": "e3e6a625d81ed70945024d0a7c17d43204c8cee6e787d4c45820ff2bbade112b",
+      "render_seconds": 18.576
+    }
+  }
+}

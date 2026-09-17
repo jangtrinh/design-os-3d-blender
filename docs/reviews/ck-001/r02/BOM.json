@@ -1,0 +1,62 @@
+{
+  "revision": "B",
+  "scene_sha256": "de2251261c7d1c17c4150dd3cccc6e42f5a146036916d223801882c4f61c8e16",
+  "installed": [
+    {
+      "family": "Keycaps with integral cross receivers",
+      "quantity": 58,
+      "evidence": "3.0 mm insertion; 0.2 mm ceiling reserve; physical retention unqualified"
+    },
+    {
+      "family": "Switch stem assemblies",
+      "quantity": 58,
+      "evidence": "virtual travel sampled through 3.0 mm; electrical/socket compatibility unqualified"
+    },
+    {
+      "family": "Spacebar guide sleeves",
+      "quantity": 2,
+      "evidence": "collision-free sampled travel; 3.65 mm rest engagement; friction/rattle untested"
+    },
+    {
+      "family": "Slotted D-receiver knobs",
+      "quantity": 5,
+      "evidence": "5.0 mm nominal D engagement; physical retention unqualified"
+    },
+    {
+      "family": "PEC11R reference-envelope encoder bodies",
+      "quantity": 5,
+      "evidence": "mechanical envelope only; exact electrical suffix and fabricated circuit remain open"
+    },
+    {
+      "family": "Encoder carriers",
+      "quantity": 5,
+      "evidence": "modeled fastening path; thread strip, torque and bonded support strength unqualified"
+    },
+    {
+      "family": "USB daughterboard assembly",
+      "quantity": 1,
+      "evidence": "mechanically supported prototype envelope; exact connector footprint and electrical qualification open"
+    },
+    {
+      "family": "Main plate / diffuser / lower case",
+      "quantity": 3,
+      "evidence": "representative dimensional families pass the production geometry screen"
+    },
+    {
+      "family": "Feet",
+      "quantity": 4,
+      "evidence": "14 x 5 x 2 mm digital envelopes"
+    }
+  ],
+  "representative_gated_part_ids": [
+    "RK_BASE",
+    "RK_DIFFUSER",
+    "RK_MAIN_PLATE",
+    "RK_KEY_00",
+    "RK_KEY_41",
+    "RK_KNOB_1",
+    "RK_FOOT_0",
+    "RK_GUIDE_SLEEVE_0"
+  ],
+  "boundary": "The native mesh count is an assembly/export count. Only the declared representative families are production-gated; manufacture remains BLOCKED."
+}

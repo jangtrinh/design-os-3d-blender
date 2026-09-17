@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "capture": {
+      "camera": "RK_CAMERA",
+      "projection": "ORTHO",
+      "frame": 1,
+      "resolution": [
+        512,
+        384
+      ],
+      "location": [
+        0.3,
+        -0.43,
+        0.33
+      ],
+      "target": [
+        0,
+        0,
+        0.015
+      ],
+      "clip_start": 0.001,
+      "clip_end": 10.0,
+      "ortho_scale": 0.39
+    },
+    "statistics": {
+      "mean": 0.7928884825332744,
+      "stdev": 0.199525220921484,
+      "black": false,
+      "blown": false
+    },
+    "subjects": "all visible product meshes"
+  },
+  "top": {
+    "capture": {
+      "camera": "RK_CAMERA",
+      "projection": "ORTHO",
+      "frame": 1,
+      "resolution": [
+        512,
+        384
+      ],
+      "location": [
+        0,
+        0,
+        0.5
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "clip_start": 0.001,
+      "clip_end": 10.0,
+      "ortho_scale": 0.32
+    },
+    "statistics": {
+      "mean": 0.6975247510175997,
+      "stdev": 0.26633411260056733,
+      "black": false,
+      "blown": false
+    },
+    "subjects": "all visible product meshes"
+  },
+  "knob-detail": {
+    "capture": {
+      "camera": "RK_CAMERA",
+      "projection": "ORTHO",
+      "frame": 1,
+      "resolution": [
+        512,
+        384
+      ],
+      "location": [
+        0.16,
+        -0.1,
+        0.11
+      ],
+      "target": [
+        0.125,
+        -0.012,
+        0.021
+      ],
+      "clip_start": 0.001,
+      "clip_end": 10.0,
+      "ortho_scale": 0.048
+    },
+    "statistics": {
+      "mean": 0.5279924790041696,
+      "stdev": 0.19620465036910248,
+      "black": false,
+      "blown": false
+    },
+    "subjects": [
+      "RK_KNOB_5"
+    ]
+  },
+  "key-detail": {
+    "capture": {
+      "camera": "RK_CAMERA",
+      "projection": "ORTHO",
+      "frame": 1,
+      "resolution": [
+        512,
+        384
+      ],
+      "location": [
+        -0.067,
+        -0.095,
+        0.125
+      ],
+      "target": [
+        -0.05,
+        -0.001,
+        0.022
+      ],
+      "clip_start": 0.001,
+      "clip_end": 10.0,
+      "ortho_scale": 0.06
+    },
+    "statistics": {
+      "mean": 0.3779494414638174,
+      "stdev": 0.1687706424159358,
+      "black": false,
+      "blown": false
+    },
+    "subjects": [
+      "RK_KEY_15"
+    ]
+  },
+  "bottom": {
+    "capture": {
+      "camera": "RK_CAMERA",
+      "projection": "ORTHO",
+      "frame": 1,
+      "resolution": [
+        512,
+        384
+      ],
+      "location": [
+        0,
+        0,
+        -0.4
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "clip_start": 0.001,
+      "clip_end": 10.0,
+      "ortho_scale": 0.32
+    },
+    "statistics": {
+      "mean": 0.2576786045314342,
+      "stdev": 0.0510025090172975,
+      "black": false,
+      "blown": false
+    },
+    "subjects": "all visible product meshes"
+  },
+  "exploded": {
+    "capture": {
+      "camera": "RK_CAMERA",
+      "projection": "ORTHO",
+      "frame": 60,
+      "resolution": [
+        512,
+        384
+      ],
+      "location": [
+        0.3,
+        -0.43,
+        0.33
+      ],
+      "target": [
+        0,
+        0,
+        0.037
+      ],
+      "clip_start": 0.001,
+      "clip_end": 10.0,
+      "ortho_scale": 0.405
+    },
+    "statistics": {
+      "mean": 0.7429040002283643,
+      "stdev": 0.23417265058569278,
+      "black": false,
+      "blown": false
+    },
+    "subjects": "all visible product meshes"
+  }
+}

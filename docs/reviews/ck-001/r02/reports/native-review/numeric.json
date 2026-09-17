@@ -1,0 +1,31 @@
+{
+  "candidate_sha256": "7b8a33322abf406356d03d2838997610db0e3912e897f01aa8392f38db651310",
+  "checks": [
+    {
+      "id": "gated-part-failures",
+      "value": 0,
+      "status": "pass"
+    },
+    {
+      "id": "full-key-travel-collisions",
+      "value": 0,
+      "status": "pass"
+    },
+    {
+      "id": "D-pair-negative-controls",
+      "value": 1,
+      "status": "pass"
+    },
+    {
+      "id": "reimported-meshes",
+      "value": 781,
+      "status": "pass"
+    },
+    {
+      "id": "native-fullhd-stills",
+      "value": 11,
+      "status": "pass"
+    }
+  ],
+  "status": "pass"
+}
