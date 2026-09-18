@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jangtrinh.github.io/design-os-3d-blender/sitemap.xml
