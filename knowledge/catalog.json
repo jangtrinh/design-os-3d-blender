@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 144,
+    "execution-source": 147,
     "imported-reference": 47,
     "knowledge": 37,
     "research-synthesis": 76,
-    "workflow": 43
+    "workflow": 44
   },
   "dependency_edges": 108,
   "foundations": [
@@ -35,20 +35,20 @@
           "text": "2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)"
         },
         {
-          "line": 59,
+          "line": 61,
           "text": "3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)"
         },
         {
-          "line": 74,
+          "line": 76,
           "text": "4. Execution modes (check in order)"
         },
         {
-          "line": 80,
+          "line": 82,
           "text": "5. Failure quick-map"
         }
       ],
       "kind": "workflow",
-      "lines": 89,
+      "lines": 91,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -57,7 +57,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/SKILL.md",
       "related": [],
-      "sha256": "81d40743a92f4f45b65bfcc33a884a1981d46d57ec1618a19e451b035a10af82",
+      "sha256": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
       "tags": [],
       "title": "Blender Agent Core",
       "use": "read"
@@ -148,36 +148,36 @@
           "text": "Production contract"
         },
         {
-          "line": 68,
+          "line": 71,
           "text": "Spec from measurement"
         },
         {
-          "line": 84,
+          "line": 87,
           "text": "Articulated task"
         },
         {
-          "line": 96,
+          "line": 99,
           "text": "Assembly and exploded views"
         },
         {
-          "line": 100,
+          "line": 103,
           "text": "Mechanical evidence"
         },
         {
-          "line": 112,
+          "line": 115,
           "text": "Render delivery"
         },
         {
-          "line": 124,
+          "line": 127,
           "text": "Revision-bound acceptance"
         },
         {
-          "line": 133,
+          "line": 136,
           "text": "Product and manufacturing follow-through"
         }
       ],
       "kind": "workflow",
-      "lines": 140,
+      "lines": 143,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -186,7 +186,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/references/recipes.md",
       "related": [],
-      "sha256": "f707712c4e2c2aee03af0c9cf9f0b1464886b50c141788c1c932bf7ddc427c8d",
+      "sha256": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
       "tags": [],
       "title": "Blender operational recipes",
       "use": "read"
@@ -3403,25 +3403,25 @@
           "text": "Product evidence and recovery"
         },
         {
-          "line": 103,
+          "line": 108,
           "text": "Visual feedback for the user (MANDATORY)"
         },
         {
-          "line": 106,
+          "line": 111,
           "text": "Delivery"
         },
         {
-          "line": 111,
+          "line": 116,
           "text": "Resource map"
         }
       ],
       "kind": "workflow",
-      "lines": 123,
+      "lines": 128,
       "loads_with": [],
       "name": null,
       "path": "AGENTS.md",
       "related": [],
-      "sha256": "eb7b2a4e21072f17ea7c8eb0b4e4c1bd7c57070dd7455eef0eb69d519b8628ed",
+      "sha256": "0c2192385e550c8ee9104361ab0525f0bae0c7c5fe0c270eb88772ccde6b7108",
       "tags": [],
       "title": "AGENTS.md — Blender AI Orchestration (primary operational file)",
       "use": "read"
@@ -4244,49 +4244,49 @@
           "text": "Status update: 2026-09-17"
         },
         {
-          "line": 23,
+          "line": 29,
           "text": "E1 — Propagate execution failure and preserve evidence"
         },
         {
-          "line": 35,
+          "line": 41,
           "text": "E2 — Make preview/check helpers preserve state"
         },
         {
-          "line": 45,
+          "line": 51,
           "text": "E3 — Bind gate results to their inputs"
         },
         {
-          "line": 55,
+          "line": 61,
           "text": "E4 — Resume validated frame ranges"
         },
         {
-          "line": 65,
+          "line": 71,
           "text": "E5 — Preserve engineering blockers at delivery"
         },
         {
-          "line": 73,
+          "line": 79,
           "text": "E6 — Validate assembly states before full render"
         },
         {
-          "line": 83,
+          "line": 89,
           "text": "E7 — Qualify the new collision, connector and harness adapters"
         },
         {
-          "line": 97,
+          "line": 103,
           "text": "E8 — Incorporate Astra Decision Rules & Discriminating Checks into Blender Design OS"
         },
         {
-          "line": 109,
+          "line": 115,
           "text": "Deferred or rejected"
         }
       ],
       "kind": "workflow",
-      "lines": 111,
+      "lines": 117,
       "loads_with": [],
       "name": null,
       "path": "docs/blender-workflow-improvement-backlog.md",
       "related": [],
-      "sha256": "e6b3f51d8f7a49572a9d544df847e73ac465e5b66e99ace1f6df245a63989dcd",
+      "sha256": "e9a986e63df776bd80dd61196972257f3a2d98a1724f1be1fad3029e5df7dc72",
       "tags": [],
       "title": "Blender workflow implementation backlog",
       "use": "read"
@@ -8453,20 +8453,20 @@
           "text": "13. Generic commands to run after checker changes"
         },
         {
-          "line": 181,
+          "line": 194,
           "text": "14. Useful falsifiers"
         },
         {
-          "line": 196,
+          "line": 209,
           "text": "15. Runtime enforcement versus manual discipline"
         },
         {
-          "line": 202,
+          "line": 219,
           "text": "16. Source and evidence availability"
         }
       ],
       "kind": "knowledge",
-      "lines": 219,
+      "lines": 236,
       "loads_with": [
         "blender-version-matrix",
         "bpy-scripting-core",
@@ -8479,7 +8479,7 @@
         "knowledge/00-foundations/bpy-scripting-core.md",
         "knowledge/00-foundations/agent-workflow-loop.md"
       ],
-      "sha256": "a6417c48d8fd4320917c31a8c37360b5b918f424fd573614ba2a35c877113ff3",
+      "sha256": "f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf",
       "tags": [
         "geometry",
         "verification",
@@ -9754,12 +9754,12 @@
       "description": "",
       "headings": [],
       "kind": "workflow",
-      "lines": 2863,
+      "lines": 2907,
       "loads_with": [],
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "051c1f86dd3273e1c79ff01bd296bd82c3b41310326b9e787044e194c4ca61d1",
+      "sha256": "c6b2a0f30c414493d1e3907324f42b21f838f8f7836846a21238b27d8db895a2",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -9953,236 +9953,240 @@
         },
         {
           "line": 675,
-          "text": "Topic: geometry-diagnostics"
+          "text": "Topic: production-coverage-audit"
         },
         {
           "line": 704,
+          "text": "Topic: geometry-diagnostics"
+        },
+        {
+          "line": 733,
           "text": "Topic: manufacturing-evidence"
         },
         {
-          "line": 734,
+          "line": 763,
           "text": "Topic: parametric-source-contract"
         },
         {
-          "line": 762,
+          "line": 791,
           "text": "Topic: compliant-tendon-motion"
         },
         {
-          "line": 792,
+          "line": 821,
           "text": "Topic: precision-material-tessellation"
         },
         {
-          "line": 817,
+          "line": 846,
           "text": "Topic: hardware-interface-geometry"
         },
         {
-          "line": 845,
+          "line": 874,
           "text": "Topic: industrial-connector-panel-packaging"
         },
         {
-          "line": 876,
+          "line": 905,
           "text": "Topic: enclosure-sealing-emc-harness"
         },
         {
-          "line": 903,
+          "line": 932,
           "text": "mechanisms-transmissions"
         },
         {
-          "line": 907,
+          "line": 936,
           "text": "Base reading"
         },
         {
-          "line": 917,
+          "line": 946,
           "text": "Steps"
         },
         {
-          "line": 924,
+          "line": 953,
           "text": "Gates"
         },
         {
-          "line": 931,
+          "line": 960,
           "text": "Limitations"
         },
         {
-          "line": 937,
+          "line": 966,
           "text": "Topic: contact-wear-sealing"
         },
         {
-          "line": 963,
+          "line": 992,
           "text": "Topic: cycloid-profile-kinematics"
         },
         {
-          "line": 987,
+          "line": 1016,
           "text": "Topic: actuator-duty-thermal"
         },
         {
-          "line": 1007,
+          "line": 1036,
           "text": "Topic: parametric-gear-profile"
         },
         {
-          "line": 1028,
+          "line": 1057,
           "text": "robotics-links-simulation"
         },
         {
-          "line": 1032,
+          "line": 1061,
           "text": "Base reading"
         },
         {
-          "line": 1042,
+          "line": 1071,
           "text": "Steps"
         },
         {
-          "line": 1049,
+          "line": 1078,
           "text": "Gates"
         },
         {
-          "line": 1056,
+          "line": 1085,
           "text": "Limitations"
-        },
-        {
-          "line": 1062,
-          "text": "Topic: dynamic-harness-routing"
         },
         {
           "line": 1091,
+          "text": "Topic: dynamic-harness-routing"
+        },
+        {
+          "line": 1120,
           "text": "render-export-delivery"
         },
         {
-          "line": 1095,
+          "line": 1124,
           "text": "Base reading"
         },
         {
-          "line": 1104,
+          "line": 1133,
           "text": "Steps"
         },
         {
-          "line": 1111,
+          "line": 1140,
           "text": "Gates"
         },
         {
-          "line": 1118,
+          "line": 1147,
           "text": "Limitations"
-        },
-        {
-          "line": 1124,
-          "text": "Topic: native-render-delivery"
         },
         {
           "line": 1153,
-          "text": "Topic: native-task-lifecycle"
+          "text": "Topic: native-render-delivery"
         },
         {
           "line": 1182,
+          "text": "Topic: native-task-lifecycle"
+        },
+        {
+          "line": 1211,
           "text": "Topic: evaluated-camera-screen"
         },
         {
-          "line": 1207,
+          "line": 1236,
           "text": "Topic: renderer-diagnostics"
         },
         {
-          "line": 1233,
+          "line": 1262,
           "text": "Topic: participating-media"
         },
         {
-          "line": 1254,
+          "line": 1283,
           "text": "Topic: color-denoise-delivery"
         },
         {
-          "line": 1278,
+          "line": 1307,
           "text": "Topic: framing-export-contract"
         },
         {
-          "line": 1302,
+          "line": 1331,
           "text": "native-procedural-simulation"
         },
         {
-          "line": 1306,
+          "line": 1335,
           "text": "Base reading"
         },
         {
-          "line": 1316,
+          "line": 1345,
           "text": "Steps"
         },
         {
-          "line": 1323,
+          "line": 1352,
           "text": "Gates"
         },
         {
-          "line": 1330,
+          "line": 1359,
           "text": "Limitations"
         },
         {
-          "line": 1335,
+          "line": 1364,
           "text": "Topic: modifier-input-contract"
         },
         {
-          "line": 1363,
+          "line": 1392,
           "text": "Topic: fields-parametric-solids"
         },
         {
-          "line": 1393,
+          "line": 1422,
           "text": "Topic: simulation-repeat-budgets"
         },
         {
-          "line": 1420,
+          "line": 1449,
           "text": "Topic: sdf-feature-preservation"
         },
         {
-          "line": 1442,
+          "line": 1471,
           "text": "Topic: graded-lattice-reinforcement"
         },
         {
-          "line": 1464,
+          "line": 1493,
           "text": "Topic: procedural-component-adapters"
         },
         {
-          "line": 1488,
+          "line": 1517,
           "text": "native-character-creature"
         },
         {
-          "line": 1492,
+          "line": 1521,
           "text": "Base reading"
         },
         {
-          "line": 1504,
+          "line": 1533,
           "text": "Steps"
         },
         {
-          "line": 1512,
+          "line": 1541,
           "text": "Gates"
         },
         {
-          "line": 1520,
+          "line": 1549,
           "text": "Limitations"
         },
         {
-          "line": 1528,
+          "line": 1557,
           "text": "Topic: character-proportion-anatomy"
         },
         {
-          "line": 1559,
+          "line": 1588,
           "text": "Topic: animation-topology-facial-loops"
         },
         {
-          "line": 1584,
+          "line": 1613,
           "text": "Topic: facs-blendshape-targets"
         },
         {
-          "line": 1611,
+          "line": 1640,
           "text": "Topic: hair-curves-grooming-shading"
         },
         {
-          "line": 1642,
+          "line": 1671,
           "text": "Topic: character-rig-locomotion"
         }
       ],
       "kind": "knowledge",
-      "lines": 1670,
+      "lines": 1699,
       "loads_with": [],
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "9e6f367c6d691a2726459cce312da2578b4ca7006324f25835fcd281ac48036b",
+      "sha256": "788c3d58212f7e67f18734f44e1a4cf2a09c28742ef3be1ef89fc1a227b71fa2",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -17945,12 +17949,12 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 124,
+      "lines": 132,
       "loads_with": [],
       "name": null,
       "path": "scripts/production-gate.py",
       "related": [],
-      "sha256": "8ff74e8990bd1948e0897878790d1d84c75e6e83f864e88bb20bb43c105f82e5",
+      "sha256": "c43a4dfd0ac1d04e8bdb8f9f847d84c68dbd5dc6a0ac544ff52b173890f51930",
       "tags": [],
       "title": "production-gate.py",
       "use": "inspect-adapt"
@@ -17994,6 +17998,42 @@
       "sha256": "20e6dff82ec9d319be61498941e5f6ecdc69c32e2307cf44a7a013287fa0cebb",
       "tags": [],
       "title": "X1C / P1S / A1 share this bed; the largest common Bambu bed (controller",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Independent source/caller review and read-only audit of the saved C03 twelve-family gate/STL evidence, 2026-09-18; behavioral regressions in test_coverage_audit.py.",
+        "caution": "Coverage/current-byte audit only: does not remeasure geometry or authenticate reports, authored requirements or prior checker code. Covers declared parts/features, not all assembly objects. Original wall/feature sampling limits persist; manufacture remains BLOCKED.",
+        "effects": "Reads explicit scene/spec/gate/manifest/STL files and auditor source hashes. The CLI creates a new audit JSON outside the original export directory; original artifacts are not changed.",
+        "reviewed_sha256": "7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35",
+        "runtime": "Host Python standard library only; no Blender process or bpy import on the audit route"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 165,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/coverage.py",
+      "related": [],
+      "sha256": "7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35",
+      "tags": [],
+      "title": "coverage.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 132,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/production_gate/coverage_checks.py",
+      "related": [],
+      "sha256": "df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e",
+      "tags": [],
+      "title": "coverage_checks.py",
       "use": "inspect-adapt"
     },
     {
@@ -18343,6 +18383,49 @@
       "tags": [],
       "title": "CNC Kitchen / Ruthex Standard Boss Database (dimensions in mm)",
       "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Build specs and the production gate"
+        },
+        {
+          "line": 12,
+          "text": "Read this first: what a PASS is, and is not"
+        },
+        {
+          "line": 33,
+          "text": "Writing a spec"
+        },
+        {
+          "line": 67,
+          "text": "Running the gate"
+        },
+        {
+          "line": 92,
+          "text": "What each check proves — and does not"
+        },
+        {
+          "line": 94,
+          "text": "Audit existing coverage without rebuilding"
+        },
+        {
+          "line": 138,
+          "text": "Geometry predicates"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 166,
+      "loads_with": [],
+      "name": null,
+      "path": "specs/README.md",
+      "related": [],
+      "sha256": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84",
+      "tags": [],
+      "title": "Build specs and the production gate",
+      "use": "read"
     },
     {
       "description": "",
@@ -18988,6 +19071,20 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
+      "lines": 253,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/production-gate/test_coverage_audit.py",
+      "related": [],
+      "sha256": "8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32",
+      "tags": [],
+      "title": "test_coverage_audit.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
       "lines": 140,
       "loads_with": [],
       "name": null,
@@ -19062,12 +19159,12 @@
     }
   },
   "schema": 1,
-  "source_digest": "e3ac8acc6b4aaa5db2457437bc59c0da50752f7267bae89c37e80e3f107c3f2d",
+  "source_digest": "a125c3fcfdf5f16db38b39b0c8a38a83e8c1800c724840608b5b8140c2d413f7",
   "source_hashes": {
-    ".agents/skills/blender-agent-core/SKILL.md": "81d40743a92f4f45b65bfcc33a884a1981d46d57ec1618a19e451b035a10af82",
+    ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".agents/skills/blender-agent-core/references/hard-rules.md": "43e11eee325f274a477fe750b1fb425d7283f019894a15114781096c7dd98fb0",
-    ".agents/skills/blender-agent-core/references/recipes.md": "f707712c4e2c2aee03af0c9cf9f0b1464886b50c141788c1c932bf7ddc427c8d",
+    ".agents/skills/blender-agent-core/references/recipes.md": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
     ".agents/skills/blender-image-to-3d/SKILL.md": "297032c6f30c389ad135a4c71973357f290939ff45d1793d05c597e96a39b15b",
     ".agents/skills/blender-image-to-3d/references/review-rubric.md": "4a9c962fe81b716f4d28188e7f2a23c5a9e2d898e9329bedaef0b9ef1f17375b",
     ".agents/skills/blender-knowledge-workbench/SKILL.md": "8c0a67e87576f2dfe006d08fbd750ccb43a6d23f1de550badef4dfb41611411a",
@@ -19119,10 +19216,10 @@
     ".agents/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".agents/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".claude/skills/blender-agent-core/SKILL.md": "81d40743a92f4f45b65bfcc33a884a1981d46d57ec1618a19e451b035a10af82",
+    ".claude/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".claude/skills/blender-agent-core/references/hard-rules.md": "43e11eee325f274a477fe750b1fb425d7283f019894a15114781096c7dd98fb0",
-    ".claude/skills/blender-agent-core/references/recipes.md": "f707712c4e2c2aee03af0c9cf9f0b1464886b50c141788c1c932bf7ddc427c8d",
+    ".claude/skills/blender-agent-core/references/recipes.md": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
     ".claude/skills/blender-image-to-3d/SKILL.md": "297032c6f30c389ad135a4c71973357f290939ff45d1793d05c597e96a39b15b",
     ".claude/skills/blender-image-to-3d/references/review-rubric.md": "4a9c962fe81b716f4d28188e7f2a23c5a9e2d898e9329bedaef0b9ef1f17375b",
     ".claude/skills/blender-knowledge-workbench/SKILL.md": "8c0a67e87576f2dfe006d08fbd750ccb43a6d23f1de550badef4dfb41611411a",
@@ -19175,7 +19272,7 @@
     ".claude/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".claude/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
     ".project-agent.md": "8cde6609763c6f287717b23587c6f542f195e506e1c9fa283f40b3eaf65af82c",
-    "AGENTS.md": "eb7b2a4e21072f17ea7c8eb0b4e4c1bd7c57070dd7455eef0eb69d519b8628ed",
+    "AGENTS.md": "0c2192385e550c8ee9104361ab0525f0bae0c7c5fe0c270eb88772ccde6b7108",
     "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
     "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833",
     "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py": "6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa",
@@ -19206,7 +19303,7 @@
     "docs/antigravity-setup.md": "490036b63a104332b52870fe9863cb0fc6d0d8d5bc23119483ffc7478d4ce740",
     "docs/blender-ai-workflow.md": "88c350ef98a0d3db6ab5e61d2f8de85b5cab89e9a791bae816cf96d94131c84d",
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
-    "docs/blender-workflow-improvement-backlog.md": "e6b3f51d8f7a49572a9d544df847e73ac465e5b66e99ace1f6df245a63989dcd",
+    "docs/blender-workflow-improvement-backlog.md": "e9a986e63df776bd80dd61196972257f3a2d98a1724f1be1fad3029e5df7dc72",
     "docs/ck-001-session-retrospective.md": "9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17",
     "docs/galleries/exchanger-train.md": "d2f35583e341b5090d6c342a1bdaa41c75da4bea499c3678e072a7b7a0f62fda",
     "docs/galleries/instruments.md": "79bdd0bb06bc63f84e734a0ae35f06c981f4b6d6beb19a5ec60e9335e0c3ac39",
@@ -19252,7 +19349,7 @@
     "knowledge/50-procedural/simulation-physics.md": "eeb6afd6ebdb67b9743da7945d30891d46756145c4cfb4d99d780d33fe0abc00",
     "knowledge/60-pipeline/3d-printing.md": "4bce69b0a198c8406475bf230fe66a35cbad19752bba22aa8ce24ad66e6d0eda",
     "knowledge/60-pipeline/export-interchange.md": "54a6aba3dcdb747009017f27b30d874ac5453f4d137d4ec6186b036c37d23c0c",
-    "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "a6417c48d8fd4320917c31a8c37360b5b918f424fd573614ba2a35c877113ff3",
+    "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf",
     "knowledge/60-pipeline/manufacturing-evidence-workflow.md": "20028e1a959135c553a0d170689a0c1310c0a01bf6853220160aaf5616b6d7a3",
     "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d",
     "knowledge/60-pipeline/native-render-delivery.md": "9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171",
@@ -19267,8 +19364,8 @@
     "knowledge/70-cad-precision-robotics/print-plate-layout.md": "eb9f48179c1eb0a88253a92d49b4c4bee479b58349026e37810687b237802a98",
     "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
     "knowledge/INDEX.md": "84ab0e6bb9cd3b3b338e0ff209751b488d97d9a8b3d6dd8e1ae29359c9409102",
-    "knowledge/catalog-config.json": "051c1f86dd3273e1c79ff01bd296bd82c3b41310326b9e787044e194c4ca61d1",
-    "knowledge/generated-workflows.md": "9e6f367c6d691a2726459cce312da2578b4ca7006324f25835fcd281ac48036b",
+    "knowledge/catalog-config.json": "c6b2a0f30c414493d1e3907324f42b21f838f8f7836846a21238b27d8db895a2",
+    "knowledge/generated-workflows.md": "788c3d58212f7e67f18734f44e1a4cf2a09c28742ef3be1ef89fc1a227b71fa2",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
@@ -19424,9 +19521,11 @@
     "scripts/native_review/evidence.py": "90fef1da272eb4adf7092f47b7085c03582f5b8495f27a84d74ee31243d31b12",
     "scripts/native_review/packets.py": "7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed",
     "scripts/prepare-qremeshify-input.py": "80ef45db24f36c2c86d70109308c9a0b394829e9a54e92be125a4562252326c7",
-    "scripts/production-gate.py": "8ff74e8990bd1948e0897878790d1d84c75e6e83f864e88bb20bb43c105f82e5",
+    "scripts/production-gate.py": "c43a4dfd0ac1d04e8bdb8f9f847d84c68dbd5dc6a0ac544ff52b173890f51930",
     "scripts/production_gate/__init__.py": "109af94e2ef97a6a80d27bfb9d41dfe27bc264fc0f0893b51633f015170db5dc",
     "scripts/production_gate/bed_fit.py": "20e6dff82ec9d319be61498941e5f6ecdc69c32e2307cf44a7a013287fa0cebb",
+    "scripts/production_gate/coverage.py": "7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35",
+    "scripts/production_gate/coverage_checks.py": "df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e",
     "scripts/production_gate/dimensions.py": "a3cedf54de7accca3ee65428cf47ff9ffc41811e52712a3330b1f67733c43a2a",
     "scripts/production_gate/export_roundtrip.py": "b4183f34747fc7f1d54af1ab00ac13454390f54f41d326e5b924e09a8878e92c",
     "scripts/production_gate/fastener_tables.py": "6b533860dc236d0d79b4481e1c546c194f7eeedd7d60abdaeb825c78a3041d29",
@@ -19446,6 +19545,7 @@
     "scripts/samples/native_iteration_coupon.py": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
     "scripts/turntable-preview.py": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
     "scripts/verify-3dprint-tolerances.py": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
+    "specs/README.md": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84",
     "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
     "specs/examples/native-iteration-pipeline.json": "d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4",
     "tests/blender/native-drone-geometry-test.py": "37293fbbc288c363bb9f1ff1096adbcfdb985e54d14c2ff9454d077d47a52c8f",
@@ -19491,6 +19591,7 @@
     "tests/production-gate/fixture_specs.py": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
     "tests/production-gate/gate_harness.py": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
     "tests/production-gate/make_fixtures.py": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
+    "tests/production-gate/test_coverage_audit.py": "8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32",
     "tests/production-gate/test_gate_bed_fit.py": "63b00968e4c664e61979342799fcc9a9530e79599250b0a6cc11a72745aded5d",
     "tests/production-gate/test_gate_contract.py": "5bf32b18dd9c0ad2d8102a2d39aae9392355f820938c309b8360b604fccd5cbe",
     "tests/production-gate/test_gate_predicates.py": "51a65586c3defae4d7ab94e99285c3a02277294a00a860660034be4f3154f09d",
@@ -20910,7 +21011,7 @@
             "kind": "static-routing-review",
             "source_hashes": {
               "builds/reference-keyboard/scripts/export_compare.py": "906a0cbfb1a196c469c0f38bc45bd3ef5c2ce978e7dc87b35ddcb913b24be6cf",
-              "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "a6417c48d8fd4320917c31a8c37360b5b918f424fd573614ba2a35c877113ff3",
+              "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf",
               "scripts/production_gate/features_fasteners.py": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
               "scripts/production_gate/walls_overhang.py": "5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54",
               "tests/production-gate/test_small_surface_walls.py": "f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3"
@@ -21093,6 +21194,42 @@
             "Separate nominal dimensions, tessellation error, process allowance, and material grade."
           ],
           "when": "When bore/tolerance/finish/heat-treatment need a quantified budget."
+        },
+        "production-coverage-audit": {
+          "gates": [
+            "Every declared part must have a positive wall limit and passing non-skipped topology, dimension, wall, declared-feature and STL roundtrip checks.",
+            "Missing/duplicate parts or checks, unowned feature requirements, unsupported feature measurements and stale scene/spec/export bytes prevent coverage acceptance.",
+            "The audit route must work without Blender, preserve input files, reject existing output paths and keep manufacture BLOCKED."
+          ],
+          "limitations": [
+            "Report coverage does not authenticate reports or establish that the declared part/feature inventory exhausts the product requirements.",
+            "Original checker identity and sampling limits are retained; current auditor hashes do not prove prior checker execution or physical operation.",
+            "Roundtrip display bounds use the existing v1 four-decimal representation; consistency auditing is not a new measurement or a tolerance change."
+          ],
+          "review": {
+            "by": "Controller and independent source review, actual C03 evidence audit, 2026-09-18; declared coverage and current bytes only.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "scripts/production-gate.py": "c43a4dfd0ac1d04e8bdb8f9f847d84c68dbd5dc6a0ac544ff52b173890f51930",
+              "scripts/production_gate/coverage.py": "7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35",
+              "scripts/production_gate/coverage_checks.py": "df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e",
+              "specs/README.md": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84",
+              "tests/production-gate/test_coverage_audit.py": "8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32"
+            }
+          },
+          "sources": [
+            "scripts/production_gate/coverage.py",
+            "scripts/production_gate/coverage_checks.py",
+            "scripts/production-gate.py",
+            "tests/production-gate/test_coverage_audit.py",
+            "specs/README.md"
+          ],
+          "steps": [
+            "Identify the authored spec, exact saved scene, original v1 gate report and existing binary-STL export directory.",
+            "Run production-gate.py --audit-report with those explicit inputs and a new --report path; do not use --parts or rebuild the product.",
+            "Review per-part problems, byte pins and original exclusions; retain the separate physical manufacturing decision."
+          ],
+          "when": "When final exported-part delivery needs proof that every declared part has current non-skipped geometry, wall, feature and roundtrip evidence."
         }
       }
     },

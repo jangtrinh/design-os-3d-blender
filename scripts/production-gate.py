@@ -4,6 +4,9 @@
     python3 scripts/production-gate.py --scene part.blend --spec build.spec.json \
         --report out/report.json [--parts id,id] [--export-dir out/stl]
 
+    Add --audit-report existing-gate.json and --export-dir existing/stl to audit
+    declared-part coverage/current hashes into a NEW --report, without Blender.
+
 Exit codes (frozen contract):
     0  every selected part passed every applicable check
     1  a requirement failed (see report.failed[])
@@ -50,7 +53,9 @@ def parse_args(argv=None):
     ap.add_argument("--report", required=True, help="where to write the report JSON")
     ap.add_argument("--parts", default=None, help="comma separated part ids")
     ap.add_argument("--export-dir", default=None,
-                    help="write one binary STL per part (mm) plus manifest.json")
+                    help="write STLs/manifest; with --audit-report, read existing exports")
+    ap.add_argument("--audit-report", default=None,
+                    help="audit existing per-part coverage and STL hashes without launching Blender")
     ap.add_argument("--blender", default=DEFAULT_BLENDER)
     ap.add_argument("--timeout", type=float, default=900.0)
     return ap.parse_args(argv)
@@ -59,6 +64,9 @@ def parse_args(argv=None):
 def main(argv=None):
     started = time.time()
     args = parse_args(argv)
+    if args.audit_report:
+        from production_gate.coverage import audit_command
+        return audit_command(args, emit)
     wanted = [p.strip() for p in args.parts.split(",")] if args.parts else None
     try:
         if not os.path.isfile(args.scene):

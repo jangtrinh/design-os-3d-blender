@@ -90,15 +90,20 @@ bindings are implemented on their declared routes; visual judgment, source
 applicability, physical tests and cross-domain release decisions still need the
 controller or the responsible engineer. See `docs/ck-001-session-retrospective.md`.
 
-**Production coverage review (MANUAL):** the generic schema permits omitted
-`min_wall_mm` for partial diagnostics, and `required_checks` coverage is aggregated
-across parts. A green generic report therefore does not establish that every part
-received a wall check. Before print/both delivery, require a positive authored
-minimum wall for every applicable part, request `wall_thickness_screen`, and
-inspect each part's actual non-skipped result along with all other required
-features. Keep deliberate partial diagnostics labeled partial; never remove the
-wall requirement to bypass a failure. This is a controller completion requirement,
-not an unimplemented universal schema invariant.
+**Production coverage:** the generic schema still permits partial diagnostics and
+aggregates `required_checks` across parts. Before final exported-part delivery, run
+the explicit `production-gate.py --audit-report <existing-gate.json>` route with
+the actual `--scene`, `--spec`, existing `--export-dir` and a new `--report` path.
+It checks every declared part's positive wall limit, non-skipped wall/topology/
+dimension/feature/roundtrip results, current scene/spec bindings and STL hashes
+without launching Blender. A missing check on one part cannot borrow another's
+PASS. See `specs/README.md` for the exact command and scope.
+
+This audit automates recorded coverage, not source authenticity or engineering
+adequacy. The controller must still establish that all applicable parts/features
+are declared and the predicates suit the task. A representative-family spec only
+covers those families. Keep partial diagnostics labeled partial and manufacture
+BLOCKED until its separate evidence is complete; never remove a failed requirement.
 
 ## Visual feedback for the user (MANDATORY)
 MCP live: the user watches objects grow in the viewport. Headless: after each pass `open <sheet.png>`; when the build finishes `open -a Blender <file.blend>`. Build > 2 minutes → announce the number of passes + a time estimate up front.

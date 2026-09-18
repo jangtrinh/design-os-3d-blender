@@ -178,6 +178,19 @@ python3 tests/production-gate/test_small_surface_walls.py -v
 
 Then let the owning integration flow rerun its bound production gate. Do not rebuild a product scene merely to test a checker change when the saved scene is the intended immutable fixture.
 
+For an existing report and exported parts, audit recorded completeness with
+`production-gate.py --audit-report` as documented in `specs/README.md`. This host
+route requires positive per-part wall limits and passing non-skipped results,
+the exact declared part set, correctly owned feature checks, current scene/spec
+hashes and matching STL/roundtrip byte receipts. It does not rerun Blender.
+A globally green report cannot supply a missing wall result on another part.
+Unsupported feature types remain incomplete; unowned required feature names fail.
+
+The audit is not a geometric remeasurement or report-authentication system. It
+retains original sampling limits and manufacturing blockers. Verify that the
+declared part/feature list actually covers the intended product; a twelve-family
+spec does not cover every assembly object. Reuse is limited to the pinned inputs.
+
 ## 14. Useful falsifiers
 
 - A bore check passes when the hole is filled.
@@ -196,6 +209,10 @@ Then let the owning integration flow rerun its bound production gate. Do not reb
 ## 15. Runtime enforcement versus manual discipline
 
 **Runtime today:** evaluated mesh geometry with the declared transform/bake scope; topology checks; feature-axis projection; 24-ray bore screen; four-side material screen; wall threshold/fallback metadata; production-gate spec/hash binding; task-specific keyboard multi-ray travel diagnostics; task-specific export surface comparison.
+
+The explicit coverage-audit route additionally enforces per-declared-part report
+completeness and current export bindings. It leaves generic partial diagnostic
+behavior unchanged and never grants physical manufacturing acceptance.
 
 **Manual today:** deciding that the sample pattern matches the claim; escalating to Exact volume for ambiguous contact/containment; choosing tolerance extrema; deciding whether evidence from an unchanged dependency can be reused; distinguishing pilot from finished thread geometry; keeping support/bearing/preload/strength claims blocked until physical evidence exists.
 

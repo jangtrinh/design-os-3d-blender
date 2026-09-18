@@ -51,7 +51,7 @@ gate did not make it.
    `exclusions[]` so the gap stays visible in the record.
 7. Name non-negotiable checks in `required_checks`. If a name never runs anywhere,
    the gate fails. This field is aggregated across parts; it does not require that
-   every part ran that check. The controller must inspect per-part completeness.
+   every part ran that check. Use the explicit audit below for per-part recorded coverage.
 
 The generic schema intentionally supports partial diagnostics and does not require
 `min_wall_mm`. For the project's print/both completion procedure, every applicable
@@ -90,6 +90,52 @@ on the round-trip audit: the STL is re-imported by Blender's own reader and
 re-measured, so an export bug cannot hide behind a passing in-scene check.
 
 ## What each check proves — and does not
+
+### Audit existing coverage without rebuilding
+
+After the geometry gate has exported and reimported the declared parts:
+
+```bash
+python3 scripts/production-gate.py \
+  --audit-report out/gate-report.json \
+  --scene path/to/part.blend \
+  --spec path/to/build.spec.json \
+  --export-dir out/stl \
+  --report out/coverage-audit.json
+```
+
+This route uses host Python only. It reads existing evidence and writes one new
+report; it neither starts Blender nor changes the original report, scene or STLs.
+`--parts` is not allowed: all parts in the supplied spec must appear exactly once
+in the report and export manifest, with matching objects and current byte hashes.
+
+Every declared part needs a positive authored wall limit, actual passing wall
+samples, topology/dimensions/units/scales/bed screens, declared feature checks and
+STL roundtrip results. Declared overhang limits must pass too. Additional generic
+`required_checks` apply per part. Explicit `feature_*` names require declared owners
+and apply to those parts only. Unsupported boss/slot measurements and skipped
+fastener-table checks remain incomplete. Legitimate informational exclusions, such
+as unconfigured overhang or no declared features, are retained rather than hidden.
+
+Exit 0 produces `PASS_DECLARED_PART_COVERAGE`; exit 1 produces
+`INCOMPLETE_DECLARED_PART_COVERAGE`; invalid input or an existing output path returns
+2. The output must be new and outside the original export directory. It records
+the source checker version, current auditor source hashes and all inspected input
+pins. Original checker code is not retrospectively authenticated by these hashes.
+
+The audit checks raw source bounds where available. The original v1 roundtrip
+report retains four-decimal display bounds only; their half-unit reporting interval
+is checked for consistency without tightening the original geometry tolerance.
+This does not re-measure the STL. Its current bytes must match both the manifest
+and the original roundtrip receipt, including binary-STL length and triangle count.
+
+**Trust and scope:** no report-only audit can authenticate a fabricated report,
+establish missing design requirements, or prove that representative parts exhaust
+the assembly. It audits declared coverage, not all geometry, physics or a machine
+process. `manufacture` remains `BLOCKED` even when this audit passes. Keep actual
+source review, visual judgment and physical qualification separate.
+
+### Geometry predicates
 
 | Check | Proves | Does NOT prove |
 |---|---|---|

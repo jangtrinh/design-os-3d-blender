@@ -50,11 +50,13 @@ Check maximal tolerance stroke and a failing control, not only nominal endpoints
 Keep actual component selection, logic/ECAD, firmware and physical qualification
 as separate closure rows. A successful pilot-record check cannot authenticate a lab.
 
-The generic production schema also supports partial diagnostics: missing minimum
-wall can be skipped, and required-check coverage is aggregated across parts.
-For print/both completion, manually confirm every applicable part declares its
-wall limit and actually passes its required wall/features/export checks. A stage
-waiver does not remove the physical manufacturing scope or turn it into a pass.
+The generic production schema supports partial diagnostics. For final exported-part
+coverage, use `production-gate.py --audit-report <existing>` with the actual scene,
+spec, existing export directory and new report path (see `specs/README.md`). This
+host-only route checks per-part wall/features/roundtrip coverage and current byte
+bindings. It does not rerun geometry, authenticate reports or prove the declared
+part list is exhaustive. Source adequacy and physical acceptance remain manual;
+a stage waiver does not remove manufacturing scope.
 
 ## 3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)
 ```python

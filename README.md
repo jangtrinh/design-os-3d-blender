@@ -148,6 +148,11 @@ python3 scripts/production-gate.py \
 
 See [specification and gate behavior](specs/README.md). A digital gate does not establish physical fit, load capacity, pressure, thermal performance or successful printing.
 
+For final exported-part coverage, the same CLI accepts `--audit-report` to check
+an existing gate report against its scene, spec and STL files without rebuilding.
+It rejects skipped per-part walls, missing declared parts/features and stale file
+bindings. [Audit command and evidence limits](specs/README.md#audit-existing-coverage-without-rebuilding).
+
 ## Evidence boundaries
 
 | Build | Demonstrated | Still separate |

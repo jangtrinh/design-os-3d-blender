@@ -20,6 +20,12 @@ closed by a newer prototype.
 Next implementation work should follow a reproduced retrieval/acceptance gap,
 not add another daemon, router or fabricated universal threshold.
 
+Update 2026-09-18: `production-gate.py --audit-report` now audits existing evidence
+for every declared part, including wall coverage, feature ownership and current
+STL/source bindings. This closes the specific aggregate-coverage gap in the
+delivery procedure. It leaves partial geometry diagnostics supported and does
+not authenticate reports, enumerate undeclared parts or replace physical tests.
+
 ## E1 — Propagate execution failure and preserve evidence
 
 **Status 2026-09-06: IMPLEMENTED** — sentinel contract (`AGENT_OK`/`AGENT_FAIL` last line, exit 0/1/2/3) in `scripts/agent_runtime.py`; `scripts/headless-run.sh` runs payloads through `scripts/agent-run-headless.py` with `--factory-startup --disable-autoexec --python-exit-code 3`, exit 2 on missing script, refuses success when sentinel and Blender exit disagree; `scripts/blender-socket-client.py` fixed (EOF, status, no truncation). Tests: `tests/execution/` (45 pass). Evidence: `plans/260905-2356-blender-workflow-audit/reports/impl-w1-execution-truth.md`.

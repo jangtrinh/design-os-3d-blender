@@ -672,11 +672,40 @@ Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 - A Blender mesh does not by itself provide B-rep/GD&T or a tolerance solver.
 - The inertia helper does not apply object scale/scene scale; do not use its numbers directly when the transform is not identity.
 
+### Topic: production-coverage-audit
+
+When: When final exported-part delivery needs proof that every declared part has current non-skipped geometry, wall, feature and roundtrip evidence.
+
+- `scripts/production_gate/coverage.py` — inspect-adapt; SHA256 `7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35`
+  Caution: Coverage/current-byte audit only: does not remeasure geometry or authenticate reports, authored requirements or prior checker code. Covers declared parts/features, not all assembly objects. Original wall/feature sampling limits persist; manufacture remains BLOCKED.
+- `scripts/production_gate/coverage_checks.py` — inspect-adapt; SHA256 `df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e`
+- `scripts/production-gate.py` — inspect-adapt; SHA256 `c43a4dfd0ac1d04e8bdb8f9f847d84c68dbd5dc6a0ac544ff52b173890f51930`
+- `tests/production-gate/test_coverage_audit.py` — inspect-adapt; SHA256 `8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32`
+- `specs/README.md` — read; SHA256 `6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84`
+
+**Steps**
+
+- Identify the authored spec, exact saved scene, original v1 gate report and existing binary-STL export directory.
+- Run production-gate.py --audit-report with those explicit inputs and a new --report path; do not use --parts or rebuild the product.
+- Review per-part problems, byte pins and original exclusions; retain the separate physical manufacturing decision.
+
+**Gates**
+
+- Every declared part must have a positive wall limit and passing non-skipped topology, dimension, wall, declared-feature and STL roundtrip checks.
+- Missing/duplicate parts or checks, unowned feature requirements, unsupported feature measurements and stale scene/spec/export bytes prevent coverage acceptance.
+- The audit route must work without Blender, preserve input files, reject existing output paths and keep manufacture BLOCKED.
+
+**Limitations**
+
+- Report coverage does not authenticate reports or establish that the declared part/feature inventory exhausts the product requirements.
+- Original checker identity and sampling limits are retained; current auditor hashes do not prove prior checker execution or physical operation.
+- Roundtrip display bounds use the existing v1 four-decimal representation; consistency auditing is not a new measurement or a tolerance change.
+
 ### Topic: geometry-diagnostics
 
 When: When a bore, wall, collision, tolerance-extreme or export result is surprising and code/spec/checker causes must be distinguished.
 
-- `knowledge/60-pipeline/geometry-diagnostic-workflow.md` — read-verify; SHA256 `a6417c48d8fd4320917c31a8c37360b5b918f424fd573614ba2a35c877113ff3`
+- `knowledge/60-pipeline/geometry-diagnostic-workflow.md` — read-verify; SHA256 `f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf`
 - `scripts/production_gate/walls_overhang.py` — inspect-adapt; SHA256 `5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54`
   Caution: Fallback samples positive-area triangles only when no nondegenerate triangle meets 0.3 mm2. Mixed-size faces can still hide unsampled thin regions. Rays and overhang percentages do not prove exhaustive thickness, printability, preload or physical strength.
 - `scripts/production_gate/features_fasteners.py` — inspect-adapt; SHA256 `dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad`

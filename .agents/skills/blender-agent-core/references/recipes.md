@@ -52,14 +52,17 @@ Trigger: any part that will be printed, machined or assembled with real hardware
 4. Read `coverage.unchecked` and `exclusions`: a passing gate proves topology, dimensions, feature diameters, wall/overhang screens and STL round-trip. It does **not** prove load capacity, fit after shrinkage, thermal duty, retention or assembly access — those stay `physical_evidence` items and keep manufacture `BLOCKED` until supplied.
 5. Any geometry change re-runs the gate; an older report cannot be inherited (hash mismatch is rejected by design).
 
-Production completeness is a **manual caller requirement** in addition to generic
-schema validity. The schema permits partial diagnostic specs with no minimum wall;
-the report's `required_checks` coverage is a union across parts. For every
-applicable production part, author a positive `min_wall_mm`, include
-`wall_thickness_screen` in required checks, and confirm that particular part has
-an actual passing wall result rather than `skip` or absent coverage. Do the same
-for each required feature and requested export. Do not infer complete production
-coverage from exit 0, or remove requirements to create it.
+For final exported-part coverage, follow the generic geometry run with:
+`python3 scripts/production-gate.py --audit-report builds/<slug>/reports/gate-report.json --scene builds/<slug>/<file>.blend --spec builds/<slug>/spec.json --export-dir builds/<slug>/parts --report builds/<slug>/reports/coverage-audit.json`
+This read-only host route rejects missing parts, omitted/invalid wall limits,
+skipped or failed required results and stale scene/spec/STL bindings. It requires
+recorded roundtrip evidence and never launches Blender. Generic extra required
+checks apply per part; named feature checks apply to their declared owners.
+
+The audit covers the supplied spec, not every object or unlisted feature. Choosing
+the full part/feature inventory, trusting original evidence and judging the
+adequacy of the geometry screens remain manual engineering responsibilities.
+It always retains manufacture BLOCKED. Do not remove requirements to obtain PASS.
 
 A stage waiver remains a recorded exception. It does not make print/both
 manufacture `NOT_REQUESTED`; unverified manufacture stays `BLOCKED` unless the
