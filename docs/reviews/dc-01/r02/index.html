@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC-01 bản R02 — robot để bàn native Blender: 18 chi tiết in, bo KiCad và phim lắp</title>
+<link rel="canonical" href="https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r02/">
+<meta name="description" content="Gói bàn giao R02 của DC-01: 18 chi tiết in qua gate hình học, bo carrier KiCad với ERC/DRC 0 vi phạm, 26/26 kết nối dây và phim lắp 39 giây dựng native trong Blender. Chưa chấp thuận chế tạo.">
+<meta property="og:title" content="DC-01 bản R02 — robot để bàn dựng native trong Blender">
+<meta property="og:description" content="18 chi tiết in qua gate, bo carrier KiCad ERC/DRC 0 vi phạm, phim lắp 39 giây. Chế tạo vật lý chưa được chấp thuận.">
+<meta property="og:image" content="https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r02/media/assembled.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Design language carried from jang-personal-site (generation 11): zero-chroma greys, one accent,
+   Inter body at 1.625 line-height, JetBrains Mono for the instrument register, 760px measure,
+   Phosphor (regular) as the one icon family, no keyframes. Values are the site's token ladder. */
+:root{
+  --c-accent:#00a5ef;--c-accent-fg:#202020;--c-accent-text:#0069a4;--c-sky-600:#0084cc;
+  --c-canvas:#ffffff;--c-gray-100:#fcfcfc;--c-gray-200:#f6f6f6;--c-gray-300:#f0f0f0;--c-gray-400:#e8e8e8;
+  --c-gray-500:#e0e0e0;--c-gray-600:#d9d9d9;--c-gray-900:#8d8d8d;--c-gray-1000:#7b7b7b;--c-gray-1100:#646464;--c-gray-1200:#202020;
+  --c-preview-bg:#ffffff;--c-preview-border:#e8e8e8;
+  --t-13:13px;--t-14:14px;--t-16:16px;--t-18:18px;--t-20:20px;--t-24:24px;--t-30:30px;--t-36:36px;--t-48:48px;
+  --s-2:4px;--s-3:6px;--s-4:8px;--s-5:10px;--s-6:12px;--s-8:16px;--s-10:20px;--s-12:24px;--s-16:32px;--s-24:48px;--s-32:64px;--s-40:80px;--s-48:96px;--s-64:128px;
+  --r-3:8px;--r-4:12px;--r-5:16px;--r-pill:9999px;--ctl-28:28px;--ctl-32:32px;--ctl-48:48px;--tap-min:44px;
+  --fw-body:400;--fw-book:450;--fw-medium:500;--fw-display:550;--fw-semibold:600;
+  --lh-text:1.625;--lh-ui:1.5;--lh-tight:1.1;--track-heading:-0.01em;--track-tight:-0.02em;--track-flat:0;--track-wordmark:-0.08em;
+  --w-container:760px;--w-breakout:880px;--dur-fast:150ms;--dur-base:200ms;--ease-out:cubic-bezier(0,0,.2,1);
+  --stack-sans:"Inter",sans-serif;--stack-mono:"JetBrains Mono",monospace;
+  --shadow-ink-4:color-mix(in srgb,var(--c-gray-1200) 4%,transparent);--shadow-ink-6:color-mix(in srgb,var(--c-gray-1200) 6%,transparent);--shadow-ink-8:color-mix(in srgb,var(--c-gray-1200) 8%,transparent);
+  --shadow-custom:0 0 0 1px var(--shadow-ink-6),0 1px 2px -1px var(--shadow-ink-6),0 2px 4px 0 var(--shadow-ink-4);
+  --shadow-custom-hover:0 0 0 1px var(--shadow-ink-8),0 1px 2px -1px var(--shadow-ink-8),0 2px 4px 0 var(--shadow-ink-6);
+  --icon-16:16px;--icon-20:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c-gray-100);color:var(--c-gray-1200);font-family:var(--stack-sans);font-size:var(--t-16);line-height:var(--lh-text);font-weight:var(--fw-body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--c-accent);color:var(--c-accent-fg)}
+:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:2px}
+p{margin:0 0 var(--s-8);max-width:68ch}
+p a,li a,dd a{color:var(--c-accent-text);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--c-accent-text) 35%,transparent);text-underline-offset:3px}
+/* Inline code is a voice, not a box: mono in the paragraph's own colour. Boxes are for blocks. */
+code{font-family:var(--stack-mono);font-size:.9em;font-weight:var(--fw-medium)}
+strong{font-weight:var(--fw-semibold)}
+/* One icon family, one weight, two sizes. Inline icons sit on the cap height of their text. */
+.ph{width:var(--icon-16);height:var(--icon-16);flex:none;vertical-align:-0.15em}
+.ph[data-size="20"]{width:var(--icon-20);height:var(--icon-20)}
+
+.ds-skip-link{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.ds-skip-link:focus{position:fixed;top:var(--s-8);left:var(--s-8);z-index:100;width:auto;height:auto;padding:var(--s-4) var(--s-8);overflow:visible;clip-path:none;border-radius:var(--r-pill);background:var(--c-preview-bg);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-medium)}
+
+.ds-shell{--ds-gutter:var(--s-10);display:flex;flex-direction:column;min-height:100dvh}
+.ds-shell-nav,.ds-shell-main,.ds-shell-footer-inner{width:100%;max-width:var(--w-container);margin-inline:auto;padding-inline:var(--ds-gutter)}
+.ds-shell-nav{display:flex;align-items:center;justify-content:space-between;min-height:var(--ctl-48);flex-wrap:wrap;gap:var(--s-3) var(--s-8);padding-block:var(--s-3)}
+.wordmark{position:relative;font-size:var(--t-16);font-weight:var(--fw-semibold);letter-spacing:var(--track-wordmark)}
+.wordmark span{font:var(--fw-body) var(--t-13) var(--stack-mono);vertical-align:top;margin-left:var(--s-2);letter-spacing:0}
+.home-nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
+.ds-tab{position:relative;display:inline-flex;align-items:center;gap:var(--s-2);height:var(--ctl-32);padding-inline:var(--s-8);border:0;border-radius:var(--r-pill);background:transparent;color:var(--c-gray-1100);font-size:var(--t-14);font-weight:var(--fw-medium);transition:color var(--dur-base) var(--ease-out),background-color var(--dur-base) var(--ease-out)}
+.ds-tab::after{content:"";position:absolute;inset:calc((var(--tap-min) - var(--ctl-32)) / -2)}
+.ds-tab[aria-current="page"]{background:var(--c-gray-300);color:var(--c-gray-1200)}
+
+.ds-shell-main{flex:1;padding-block:var(--s-24)}
+/* Pacing is authored per section, not one gap everywhere: a step that continues the
+   previous thought sits close; a new chapter gets the full 128px. */
+.ds-shell-main>section{margin-top:var(--s-40);scroll-margin-top:var(--s-40)}
+.ds-shell-main>section:first-child{margin-top:var(--s-16)}
+.ds-shell-main>section[data-pace="tight"]{margin-top:var(--s-24)}
+.ds-shell-main>section[data-pace="chapter"]{margin-top:var(--s-48)}
+@media(min-width:640px){
+  .ds-shell{--ds-gutter:var(--s-12)}
+  .ds-shell-main{padding-block:var(--s-40)}
+  .ds-shell-main>section{margin-top:var(--s-48)}
+  .ds-shell-main>section[data-pace="tight"]{margin-top:var(--s-32)}
+  .ds-shell-main>section[data-pace="chapter"]{margin-top:var(--s-64)}
+}
+
+/* Headings hold rank through weight and space; the mono eyebrow is the instrument voice. */
+.ds-heading{display:flex;align-items:center;gap:var(--s-6);margin:0 0 var(--s-10);font-weight:var(--fw-display);text-wrap:balance}
+.ds-heading[data-level="1"]{display:block;max-width:22ch;font-size:clamp(var(--t-30),4.6vw,var(--t-48));font-weight:var(--fw-medium);line-height:var(--lh-tight);letter-spacing:var(--track-tight)}
+.ds-heading[data-level="2"]{font-size:var(--t-24);letter-spacing:var(--track-heading)}
+.ds-heading[data-level="3"]{margin-bottom:var(--s-6);color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);letter-spacing:var(--track-flat);text-transform:uppercase}
+.ds-heading[data-level="3"]::after{content:"";flex:1;height:1px;background:var(--c-preview-border)}
+.eyebrow{margin-bottom:var(--s-8)}
+.lede{font-size:var(--t-18);color:var(--c-gray-1100);max-width:56ch;margin-bottom:var(--s-12)}
+/* shields.io badges (markdown-badges set), owner-requested: same row as the README carries. */
+.badges{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:0 0 var(--s-12);max-width:none}
+.badges img{display:block;height:28px}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-6) var(--s-8)}
+.text-link{display:inline-flex;align-items:center;gap:var(--s-2);color:var(--c-gray-1100);font-size:var(--t-14);font-weight:var(--fw-medium);transition:color var(--dur-fast) var(--ease-out)}
+
+.ds-chip{display:inline-flex;align-items:center;gap:var(--s-2);height:var(--ctl-28);padding-inline:var(--s-5);width:fit-content;border-radius:var(--r-pill);background:var(--c-preview-bg);color:var(--c-gray-1100);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-book);user-select:none;white-space:nowrap}
+.ds-chip[data-variant="mono"]{font-family:var(--stack-mono);font-size:var(--t-13)}
+.ds-btn-pill{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-3);height:var(--ctl-32);padding-inline:var(--s-8);border:0;border-radius:var(--r-pill);background:var(--c-preview-bg);color:var(--c-gray-1200);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-medium);cursor:pointer;transition:box-shadow var(--dur-base) var(--ease-out),background-color var(--dur-base) var(--ease-out)}
+.ds-btn-pill[data-tone="solid"]{background:var(--c-gray-1200);color:var(--c-canvas);box-shadow:none}
+
+/* Surfaces: hairline card, recessed stage. Nested radii stay concentric (16 = 12 + 4). */
+.ds-card{display:flex;flex-direction:column;padding:var(--s-2);border:1px solid var(--c-preview-border);border-radius:var(--r-5);background:var(--c-gray-100)}
+.ds-card-stage{display:grid;place-items:center;padding:var(--s-24);border-radius:var(--r-4);background:var(--c-gray-200);position:relative}
+.case-plate-chip{position:absolute;top:var(--s-8);left:var(--s-8);z-index:1}
+/* A capture IS the surface: full width inside the stage, no inset (owner ruling 2026-08-23). */
+.capture-stage{padding:0;overflow:hidden}
+.capture-stage img{display:block;width:100%;height:auto}
+.case-plate-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-12);padding:var(--s-6) var(--s-10) var(--s-5)}
+.case-plate-caption p{margin:0;color:var(--c-gray-1100);font-size:var(--t-14);max-width:none}
+.case-plate-caption cite{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13);font-style:normal;white-space:nowrap}
+.branch-page-media{margin-block:var(--s-16) 0;margin-inline:0}
+@media(min-width:960px){.branch-page-media{--bp-w:min(var(--w-breakout),calc(100vw - var(--s-12) * 2));margin-inline:calc(50% - var(--bp-w) / 2) 0;width:var(--bp-w)}}
+
+/* The register: label column + value column sharing one edge. Shared edges do the
+   tracking — one hairline at the head, none per row (soul: an accounting ledger is a rule
+   under every row; a technical drawing is not). */
+.register{border-top:1px solid var(--c-gray-300)}
+.register-row{display:grid;grid-template-columns:var(--icon-20) minmax(0,1fr);grid-template-areas:"icon label" "icon body";gap:var(--s-2) var(--s-6);padding-block:var(--s-8)}
+.register-row>.ph{grid-area:icon;color:var(--c-gray-900);margin-top:3px}
+.register-row h3,.register-row dt{grid-area:label}
+.register-row p,.register-row dd{grid-area:body}
+.register-row[data-icon="none"]{grid-template-columns:minmax(0,1fr);grid-template-areas:"label" "body"}
+.register-row:first-child{padding-top:var(--s-8)}
+@media(min-width:640px){.register-row{grid-template-columns:var(--icon-20) 220px minmax(0,1fr);grid-template-areas:"icon label body";gap:var(--s-2) var(--s-8);padding-block:var(--s-8)}.register-row[data-icon="none"]{grid-template-columns:200px minmax(0,1fr);grid-template-areas:"label body"}}
+.register-row dt,.register-row h3{margin:0;font-size:var(--t-16);font-weight:var(--fw-semibold);line-height:var(--lh-text)}
+.register-row dt{font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);color:var(--c-gray-900);text-transform:uppercase;letter-spacing:var(--track-flat);padding-top:2px}
+.register-row dd,.register-row p{margin:0;color:var(--c-gray-1100);max-width:none}
+.register-row dd{color:var(--c-gray-1200)}
+.register-row h3 code{font-weight:var(--fw-medium)}
+/* No border here: the eyebrow above already draws the head rule (one line, not two). */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--s-16);margin:0;padding-top:var(--s-2)}
+@media(min-width:640px){.facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.facts>div{padding-block:var(--s-6)}
+.facts dt{display:flex;align-items:center;gap:var(--s-3);font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900);text-transform:uppercase}
+.facts dt .ph{color:var(--c-gray-900)}
+.facts dd{margin:0;overflow-wrap:anywhere}
+.facts dd small{display:block;color:var(--c-gray-1100);font-size:var(--t-14)}
+
+.ds-code{margin:0 0 var(--s-8);padding:var(--s-6) var(--s-8);border-radius:var(--r-3);background:var(--c-gray-200);color:var(--c-gray-1200);font-family:var(--stack-mono);font-size:var(--t-13);line-height:var(--lh-ui);tab-size:4;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.ds-code code{font:inherit;white-space:pre}
+ol.steps{margin:0;padding-left:var(--s-10);counter-reset:step}
+ol.steps li{margin-bottom:var(--s-8);padding-left:var(--s-2)}
+ol.steps li::marker{font-family:var(--stack-mono);color:var(--c-gray-900);font-size:var(--t-13)}
+ol.steps .ds-code{margin-top:var(--s-3)}
+.aside{border-left:2px solid var(--c-gray-400);padding-left:var(--s-8);margin-top:var(--s-12);color:var(--c-gray-1100)}
+.aside p{max-width:62ch}
+
+.link-list{border-top:0}
+.ds-icon-row{display:flex;align-items:center;gap:var(--s-6);min-height:var(--tap-min);padding-block:var(--s-4);color:var(--c-gray-1200)}
+.ds-icon-row .ph[data-lead]{color:var(--c-gray-1100)}
+.ds-icon-row-label{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:var(--t-16);font-weight:var(--fw-medium)}
+.ds-icon-row-meta{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13)}
+.ds-icon-row .ph{color:var(--c-gray-900);transition:color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out)}
+
+.faq details{border-top:1px solid var(--c-gray-300)}
+.faq details:last-of-type{border-bottom:1px solid var(--c-gray-300)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:var(--s-8);min-height:var(--tap-min);padding-block:var(--s-4);cursor:pointer;font-weight:var(--fw-medium);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ph{color:var(--c-gray-900);transition:transform var(--dur-fast) var(--ease-out)}
+.faq details[open] summary .ph{transform:rotate(180deg)}
+.faq details p{margin:0 0 var(--s-8);color:var(--c-gray-1100)}
+
+.ds-shell-footer{padding-top:var(--s-24);border-top:1px solid var(--c-gray-300)}
+.ds-shell-footer-inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:var(--s-12);padding-bottom:var(--s-24);color:var(--c-gray-1100);font-size:var(--t-14)}
+.ds-shell-footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
+
+/* Hover is a pointer affordance; on touch it would stick after a tap. */
+@media (hover: hover){
+  .ds-tab:hover{color:var(--c-gray-1200)}
+  .ds-btn-pill:hover{background:var(--c-gray-100);box-shadow:var(--shadow-custom-hover)}
+  .ds-btn-pill[data-tone="solid"]:hover{background:var(--c-gray-1100)}
+  .text-link:hover{color:var(--c-gray-1200)}
+  p a:hover,li a:hover,dd a:hover{text-decoration-color:var(--c-accent-text)}
+  .ds-icon-row:hover .ph:last-child{color:var(--c-gray-1200);transform:translateX(2px)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:0.01ms !important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------------------------------------------------------------- Document pages
+   Markdown rendered by Jekyll inside _layouts/default.html. Same ladder, same voice:
+   h1 holds rank at 24/550 (soul: no shouting headings), h2 at 20/550, h3 is the mono
+   eyebrow with its hairline. Tables are an instrument register: one rule under the
+   header, none per row, tabular figures. */
+.prose{max-width:var(--w-reading,720px)}
+.prose>h1{margin:0 0 var(--s-8);font-size:var(--t-24);font-weight:var(--fw-display);letter-spacing:var(--track-heading);line-height:var(--lh-heading,1.333);text-wrap:balance}
+.prose>h2{margin:var(--s-24) 0 var(--s-6);font-size:var(--t-20);font-weight:var(--fw-display);letter-spacing:var(--track-heading);line-height:var(--lh-heading,1.333);text-wrap:balance}
+.prose>h3{display:flex;align-items:center;gap:var(--s-6);margin:var(--s-16) 0 var(--s-6);color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);letter-spacing:var(--track-flat);text-transform:uppercase}
+.prose>h3::after{content:"";flex:1;height:1px;background:var(--c-preview-border)}
+.prose>h4{margin:var(--s-12) 0 var(--s-3);font-size:var(--t-16);font-weight:var(--fw-semibold)}
+.prose p{max-width:68ch}
+.prose code{font-weight:var(--fw-body);font-size:.88em}
+.prose pre{max-width:100%}
+.prose>p:first-of-type{color:var(--c-gray-1100);font-size:var(--t-18)}
+.prose ul,.prose ol{margin:0 0 var(--s-8);padding-left:var(--s-10)}
+.prose li{margin-bottom:var(--s-2);max-width:68ch}
+.prose li::marker{color:var(--c-gray-900)}
+.prose ol li::marker{font-family:var(--stack-mono);font-size:var(--t-13)}
+.prose hr{border:0;border-top:1px solid var(--c-gray-300);margin:var(--s-16) 0}
+.prose blockquote{margin:0 0 var(--s-8);padding-left:var(--s-8);border-left:2px solid var(--c-gray-400);color:var(--c-gray-1100)}
+.prose img{display:block;max-width:100%;height:auto;border:1px solid var(--c-preview-border);border-radius:var(--r-4);margin:var(--s-8) 0}
+.prose pre,.prose .highlight pre{margin:0 0 var(--s-8);padding:var(--s-6) var(--s-8);border-radius:var(--r-3);background:var(--c-gray-200);color:var(--c-gray-1200);font-family:var(--stack-mono);font-size:var(--t-13);line-height:var(--lh-ui);tab-size:4;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.prose pre code{font:inherit;white-space:pre}
+.prose .highlighter-rouge{margin:0 0 var(--s-8)}
+.prose .highlighter-rouge pre{margin:0}
+/* display:block so a wide register scrolls inside the column instead of widening the page. */
+.prose table{display:block;width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;border-collapse:collapse;margin:var(--s-4) 0 var(--s-12);font-size:var(--t-14);line-height:var(--lh-ui);font-variant-numeric:tabular-nums}
+.prose thead th{text-align:left;padding:var(--s-3) var(--s-4) var(--s-3) 0;color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);text-transform:uppercase;letter-spacing:var(--track-flat);border-bottom:1px solid var(--c-gray-300)}
+.prose tbody td{vertical-align:top;padding:var(--s-4) var(--s-4) var(--s-4) 0;color:var(--c-gray-1100)}
+.prose tbody td:first-child{color:var(--c-gray-1200);font-weight:var(--fw-medium)}
+.prose tbody tr:first-child td{padding-top:var(--s-6)}
+.table-scroll{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.doc-head{margin-bottom:var(--s-12)}
+.doc-nav{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-24);padding-top:var(--s-12);border-top:1px solid var(--c-gray-300)}
+
+
+/* ---------------------------------------------------------------- Delivery review page
+   Same ladder as the docs site. The viewer is a stage with the view tabs above it; a pressed
+   tab is the only state, no keyframes. Status chips use ink for BLOCKED so the one accent
+   stays reserved. */
+.viewer-tabs{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:var(--s-16) 0 var(--s-6)}
+.ds-tab[aria-pressed="true"]{background:var(--c-gray-300);color:var(--c-gray-1200)}
+.capture-stage img,.capture-stage video{display:block;width:100%;height:auto}
+.pair{display:grid;grid-template-columns:1fr;gap:var(--s-8);margin:0;padding:0;list-style:none}
+@media(min-width:640px){.pair{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pair .ds-card{margin:0}
+.mono{font-family:var(--stack-mono);font-size:var(--t-13)}
+.facts dd.mono{font-size:var(--t-14);overflow-wrap:anywhere}
+.doc-list{border-top:0}
+
+/* Reference pipeline: four captures, in the order the chain ran. The sources differ in size
+   (2048×1534, 1536×1024, 1223×1286); for the demo they present as one square each, cropped
+   to centre. The full file is one click away in reference/. */
+.pipeline .capture-stage{aspect-ratio:1/1}
+.pipeline .capture-stage img{width:100%;height:100%;object-fit:cover;object-position:center}
+.pipeline .capture-stage a{display:block;height:100%}
+.pipeline{display:grid;grid-template-columns:1fr;gap:var(--s-8);margin:0;padding:0;list-style:none}
+@media(min-width:640px){.pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pipeline .ds-card{margin:0;height:100%}
+.step-no{font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900)}
+
+/* ---------------------------------------------------------------- Full-width carousel
+   The band sits outside the 760px measure, so it needs no viewport unit. Native scroll-snap,
+   one still per slide, no keyframes; the caption and counter follow the snapped slide. */
+.band{width:100%}
+.carousel-head{padding-block:var(--s-8) 0}
+.carousel-head .viewer-tabs{margin:var(--s-16) 0 var(--s-6)}
+.carousel-frame{position:relative}
+.track{display:flex;gap:var(--s-4);margin:0;padding:0 var(--s-12);list-style:none;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--s-12);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;aspect-ratio:16/9;border:1px solid var(--c-preview-border);border-radius:var(--r-4);background:var(--c-gray-200);overflow:hidden}
+.slide img{display:block;width:100%;height:100%;object-fit:cover}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);left:var(--s-24);width:44px;height:44px;min-height:44px;padding:0;border-radius:var(--r-pill)}
+.carousel-btn[data-side="next"]{left:auto;right:var(--s-24)}
+.carousel-btn .ph{width:var(--icon-20);height:var(--icon-20)}
+.carousel-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-12);padding-block:var(--s-6) 0}
+.carousel-caption{margin:0;color:var(--c-gray-1100);font-size:var(--t-14);max-width:60ch}
+.carousel-caption span{color:var(--c-gray-1200);font-weight:var(--fw-medium)}
+.carousel-count{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13);font-style:normal;white-space:nowrap;font-variant-numeric:tabular-nums}
+.track:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:2px}
+@media(min-width:640px){.carousel-btn{left:var(--s-32)}.carousel-btn[data-side="next"]{right:var(--s-32)}}
+@media(max-width:639px){.carousel-btn{display:none}}
+@media(prefers-reduced-motion:no-preference){.track{scroll-behavior:smooth}}
+
+/* ---------------------------------------------------------------- 3D viewer band
+   The GLB the gate verified, rendered in the browser. Stage left, controls right on wide
+   screens; stacked on a phone. No decorative motion: auto-rotate is a user toggle. */
+.viewer3d-head{padding-block:var(--s-32) 0}
+.v3d-frame{display:grid;grid-template-columns:1fr;gap:var(--s-8);padding:var(--s-8) var(--s-12) 0}
+@media(min-width:960px){.v3d-frame{grid-template-columns:minmax(0,1fr) 340px}}
+.v3d-stage{position:relative;aspect-ratio:16/10;border:1px solid var(--c-preview-border);border-radius:var(--r-4);background:var(--c-gray-200);overflow:hidden}
+#v3d-canvas{display:block;width:100%;height:100%;touch-action:none;outline:0}
+.v3d-status{position:absolute;left:var(--s-8);bottom:var(--s-6);margin:0;color:var(--c-gray-1000);font-size:var(--t-13)}
+.v3d-file{position:absolute;inset:0;display:grid;place-items:center;padding:var(--s-16);background:var(--c-gray-200)}
+.v3d-file[hidden]{display:none}
+.v3d-file pre{white-space:pre-wrap;overflow-wrap:anywhere}
+button.text-link{border:0;background:transparent;padding:0;cursor:pointer;font:inherit;font-size:var(--t-14);font-weight:var(--fw-medium);min-height:44px}
+#v3d-cat-all{margin-top:var(--s-4)}
+.v3d-file>div,.v3d-file p{max-width:56ch}
+.v3d-side{display:flex;flex-direction:column;gap:var(--s-8)}
+.v3d-modes{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.v3d-modes .ds-tab{gap:var(--s-3)}
+.v3d-panel{margin:0;padding:0;border:0;min-width:0}
+.v3d-panel label{display:flex;justify-content:space-between;gap:var(--s-8);font-size:var(--t-14);font-weight:var(--fw-medium);margin-bottom:var(--s-3)}
+.v3d-toggle{cursor:pointer;justify-content:flex-start !important;min-height:44px;align-items:center}
+.v3d-toggle input{width:18px;height:18px;margin:0;accent-color:var(--c-gray-1200)}
+.v3d-panel input[type="range"]{width:100%;height:44px;margin:0;accent-color:var(--c-gray-1200)}
+.v3d-hint{margin:var(--s-4) 0 0;color:var(--c-gray-1100);font-size:var(--t-14)}
+.v3d-row{display:flex;align-items:center;justify-content:space-between;gap:var(--s-8);flex-wrap:wrap}
+.v3d-foot{padding-top:var(--s-6);border-top:1px solid var(--c-gray-300)}
+.mono{font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-1000);font-variant-numeric:tabular-nums}
+.cat-list{max-height:360px;overflow-y:auto;scrollbar-width:thin}
+.cat-row{display:grid;grid-template-columns:28px minmax(0,1fr);grid-template-areas:"no label" "no body";gap:0 var(--s-4);width:100%;padding:var(--s-5) 0;border:0;background:transparent;text-align:left;font:inherit;color:inherit;cursor:pointer;border-radius:var(--r-3)}
+.cat-row .cat-no{grid-area:no;font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900);padding-top:3px}
+.cat-row h3{grid-area:label;margin:0;font-size:var(--t-14);font-weight:var(--fw-semibold)}
+.cat-row p{grid-area:body;margin:0;color:var(--c-gray-1100);font-size:var(--t-13);line-height:var(--lh-ui)}
+.cat-row .cat-qty{font-family:var(--stack-mono);color:var(--c-gray-1200)}
+.cat-row[aria-pressed="true"]{background:var(--c-gray-300)}
+.cat-row:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:-2px}
+@media (hover: hover){.cat-row:hover{background:var(--c-gray-200)}}
+
+/* Eighteen printable parts: one 1:1 tile each, three across on a desktop. */
+.parts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-6);margin:0;padding:0;list-style:none}
+@media(min-width:960px){.parts-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.parts-grid .ds-card{margin:0;height:100%}
+.parts-grid .ds-card-stage{aspect-ratio:1/1;overflow:hidden}
+.parts-grid .ds-card-stage img{width:100%;height:100%;object-fit:cover}
+.part-body{padding:var(--s-5) var(--s-6) var(--s-6)}
+.part-body h3{margin:0 0 var(--s-2);font-size:var(--t-16);font-weight:var(--fw-semibold);line-height:var(--lh-tight)}
+.part-body p{margin:0;color:var(--c-gray-1100);font-size:var(--t-13);font-family:var(--stack-mono);line-height:var(--lh-ui);overflow-wrap:anywhere}
+/* A 64-character SHA-256 in a caption must wrap; the base rule keeps captions on one line. */
+.case-plate-caption cite,.carousel-caption{white-space:normal;overflow-wrap:anywhere}
+.part-chips{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:var(--s-4) 0 0}
+/* A missing file is a reserved blank that names it, never a stand-in picture. */
+.media-blank{display:flex;align-items:center;justify-content:center;min-height:180px;padding:var(--s-8);
+  border:1px dashed var(--c-gray-600);border-radius:var(--r-3);background:var(--c-gray-200);
+  color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13);text-align:center}
+[hidden]{display:none!important}
+</style>
+<script>window.__imgFallback=function(el){var b=document.createElement("div");
+b.className="media-blank";b.textContent="Không tải được ảnh: "+(el.getAttribute("src")||"");
+el.hidden=true;if(el.parentNode){el.parentNode.appendChild(b);}};</script>
+</head>
+<body class="ds-shell">
+<a class="ds-skip-link" href="#main">Tới nội dung</a>
+<nav class="ds-shell-nav" aria-label="Tệp bàn giao">
+  <a class="wordmark" href="https://www.jang.work/">JANG<span>®</span></a>
+  <div class="home-nav-links">
+    <a class="ds-tab" href="dc01-native-animatic.mp4"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40.07l143.83,87.94Z"/></svg>Phim lắp</a>
+    <a class="ds-tab" href="DC01-P03-print-kit.zip" download><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"/></svg>Bộ in</a>
+    <a class="ds-tab" href="#cad"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg>Sơ đồ điện</a>
+    <a class="ds-tab" href="README.md"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg>README</a>
+  </div>
+</nav>
+
+<main id="main" class="ds-shell-main">
+  <section aria-labelledby="title">
+    <p class="eyebrow">DC-01 · gói R02 · demo kỹ thuật native</p>
+    <h1 id="title" class="ds-heading" data-level="1">Robot để bàn DC-01 dựng hoàn toàn bằng Blender native: 18 chi tiết in đã qua gate hình học, một bo carrier KiCad thật và phim lắp 39 giây.</h1>
+    <p class="lede">Trang này là bản review công khai của gói R02: ảnh render từ chính scene đã giao, sơ đồ nguyên lý và hai lớp đồng của bo mạch, ảnh dựng lại của từng tệp STL và hai khay in. Mọi con số đều đọc từ tệp trong gói, không gõ lại tay. Chế tạo vật lý và vận hành điện <strong>chưa được chấp thuận</strong>.</p>
+    <p class="badges">
+      <img src="https://img.shields.io/badge/trạng%20thái-demo%20số%20đã%20giao-1f2933?style=for-the-badge" alt="trạng thái: demo số đã giao" width="200" height="28" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+      <img src="https://img.shields.io/badge/chế%20tạo-BLOCKED-b42318?style=for-the-badge" alt="chế tạo: BLOCKED" width="200" height="28" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+      <img src="https://img.shields.io/badge/mẫu%20vật%20lý-0-b54708?style=for-the-badge" alt="mẫu vật lý: 0" width="200" height="28" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+      <img src="https://img.shields.io/badge/chi%20tiết%20in-18%20đạt%20gate-067647?style=for-the-badge" alt="chi tiết in: 18 đạt gate" width="200" height="28" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+      <img src="https://img.shields.io/badge/dây-26%2F26-067647?style=for-the-badge" alt="dây: 26/26" width="200" height="28" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+      <img src="https://img.shields.io/badge/ERC%20và%20DRC-0%20vi%20phạm-067647?style=for-the-badge" alt="ERC và DRC: 0 vi phạm" width="200" height="28" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+    </p>
+    <p class="hero-actions">
+      <a class="ds-btn-pill" data-tone="solid" href="dc01-native-animatic.mp4"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40.07l143.83,87.94Z"/></svg>Xem phim lắp 39 giây</a>
+      <a class="text-link" href="DC01-P03-print-kit.zip" download>Tải bộ in P03<svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+    </p>
+    <figure class="ds-card branch-page-media">
+      <div class="ds-card-stage capture-stage">
+        <img src="media/assembled.jpg" width="1920" height="1080" alt="DC-01 đã lắp hoàn chỉnh, render native 1920 × 1080 trong Blender" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)">
+      </div>
+      <figcaption class="case-plate-caption">
+        <p>Mô hình đã lắp, render từ scene <code>dc01-demo.blend</code> đã giao.</p>
+        <cite>SHA-256 5562660ab43d6cae029b5a8b439c47e4f3704a538546636bd026c22f918524cd</cite>
+      </figcaption>
+    </figure>
+  </section>
+</main>
+
+<section class="band carousel" aria-roledescription="carousel" aria-label="Tám góc nhìn từ gói bàn giao">
+  <div class="ds-shell-main carousel-head">
+    <h2 class="ds-heading" data-level="3">Ảnh từ scene đã giao</h2>
+    <div class="viewer-tabs" role="group" aria-label="Chọn ảnh"><button type="button" class="ds-tab" data-index="0" aria-pressed="true">Mô hình đã lắp</button><button type="button" class="ds-tab" data-index="1" aria-pressed="false">Tách rời giải thích</button><button type="button" class="ds-tab" data-index="2" aria-pressed="false">Catalog 29 nhóm</button><button type="button" class="ds-tab" data-index="3" aria-pressed="false">Nút bấm và màng TPU</button><button type="button" class="ds-tab" data-index="4" aria-pressed="false">Sắp khay in</button><button type="button" class="ds-tab" data-index="5" aria-pressed="false">Chi tiết tay</button><button type="button" class="ds-tab" data-index="6" aria-pressed="false">Chi tiết tai</button><button type="button" class="ds-tab" data-index="7" aria-pressed="false">Chi tiết bên trong</button></div>
+  </div>
+  <div class="carousel-frame">
+    <ul class="track" id="track" tabindex="0" aria-label="Ảnh render, kéo ngang để xem"><li class="slide" data-label="Mô hình đã lắp"><img src="media/assembled.jpg" width="1920" height="1080" alt="DC-01 đã lắp hoàn chỉnh, render native trong Blender" loading="eager" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Tách rời giải thích"><img src="media/exploded.jpg" width="1920" height="1080" alt="Các chi tiết DC-01 tách rời để giải thích cấu tạo" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Catalog 29 nhóm"><img src="media/catalog.jpg" width="1920" height="1080" alt="Catalog 29 nhóm chi tiết có nhãn của DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Nút bấm và màng TPU"><img src="media/button.jpg" width="1920" height="1080" alt="Cụm nút bấm và màng TPU của DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Sắp khay in"><img src="media/print-layout.jpg" width="1920" height="1080" alt="Hai khay in PETG và TPU của bộ chi tiết DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Chi tiết tay"><img src="media/detail-arm.jpg" width="1920" height="1080" alt="Cận cảnh tay và nẹp giữ tay của DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Chi tiết tai"><img src="media/detail-ear.jpg" width="1920" height="1080" alt="Cận cảnh tai và nẹp giữ tai của DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li><li class="slide" data-label="Chi tiết bên trong"><img src="media/detail-interior.jpg" width="1920" height="1080" alt="Bên trong DC-01 với bo mạch, pin và dây đã đi" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></li></ul>
+    <button type="button" class="ds-btn-pill carousel-btn" data-side="prev" data-dir="-1" aria-label="Ảnh trước" style="width:44px;height:44px;min-height:44px"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+    <button type="button" class="ds-btn-pill carousel-btn" data-side="next" data-dir="1" aria-label="Ảnh sau" style="width:44px;height:44px;min-height:44px"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></button>
+  </div>
+  <div class="ds-shell-main carousel-foot">
+    <p class="carousel-caption"><span id="carousel-label">Mô hình đã lắp</span> — render native trong Blender 5.2, không chỉnh sửa sau render.</p>
+    <cite class="carousel-count" id="carousel-count">01 / 08</cite>
+  </div>
+</section>
+
+<main class="ds-shell-main">
+  <section data-pace="tight" aria-labelledby="facts-h">
+    <h2 id="facts-h" class="ds-heading" data-level="3">Số liệu đọc từ gói</h2>
+    <dl class="facts"><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Phim lắp</dt><dd>39 giây<small>120 pose native 1920 × 1080, none âm thanh</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Chi tiết in</dt><dd>18 chi tiết<small>17 PETG và 1 TPU trên hai khay</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Gate in cuối</dt><dd>18/18 đạt<small>0 chi tiết hỏng, 0 kiểm tra bắt buộc thiếu</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Bo carrier</dt><dd>351 đường mạch<small>13 via, 63 pad, KiCad 10.0.6</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>ERC và DRC native</dt><dd>0 vi phạm<small>ERC PASS, DRC PASS, đối chiếu PASS</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Dây trong máy</dt><dd>26/26 kết nối<small>7 dây âm thanh tùy chọn chưa gắn</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Đối chứng âm</dt><dd>5/5 lỗi cố tình đều bị bắt<small>kiểm tra tự viết, tách khỏi ERC/DRC của KiCad</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Đo vật lý</dt><dd>0 phép đo<small>chưa in, chưa cấp điện, chưa có mẫu thật</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Gói bàn giao</dt><dd>189 tệp · 63,089,690 byte<small>đã kiểm CRC và hash từng thành viên</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Scene lắp</dt><dd class="mono">526b2ca2822be172…<small>SHA-256</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Scene phim</dt><dd class="mono">5562660ab43d6cae…<small>SHA-256</small></dd></div><div><dt><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.69,160a16,16,0,0,0,0,22.63l52.68,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"/></svg>Scene in</dt><dd class="mono">8bd48a7587712759…<small>SHA-256</small></dd></div></dl>
+  </section>
+
+  <section data-pace="chapter" aria-labelledby="film-h">
+    <h2 id="film-h" class="ds-heading" data-level="2">Phim lắp 39 giây</h2>
+    <p>Phim đi từ sản phẩm đã lắp, rút vít hai bên, nhấc thân trên, tách rời giải thích, catalog 29 nhãn, lắp lại, rồi minh họa màn hình và nút bấm. Đây là animatic dựng từ 120 pose native 1920 × 1080, không phải bản ghi thiết bị đang chạy.</p>
+    <figure class="ds-card branch-page-media">
+      <div class="ds-card-stage capture-stage">
+        <video controls preload="metadata" poster="media/catalog.jpg" width="1920" height="1080">
+          <source src="dc01-native-animatic.mp4" type="video/mp4">
+          Trình duyệt không phát được MP4; tải trực tiếp <a href="dc01-native-animatic.mp4">dc01-native-animatic.mp4</a>.
+        </video>
+      </div>
+      <figcaption class="case-plate-caption">
+        <p>Không có âm thanh. Các chương được giữ khung để đọc kịp nhãn.</p>
+        <cite>SHA-256 d9b937f4eafc427c39a8a9aef4b26c948c2b8cfb82e17b1a77aad4745c8a2780</cite>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section data-pace="chapter" id="cad" aria-labelledby="cad-h">
+    <h2 id="cad-h" class="ds-heading" data-level="2">Sơ đồ điện và tệp CAD</h2>
+    <p>Bo carrier là thiết kế riêng cho module ESP32-S3 mua ngoài, không phải chip tự làm. Ảnh dưới đây xuất trực tiếp từ tệp KiCad trong gói; tệp nguồn nằm ngay cạnh để mở lại và sửa.</p>
+    <dl class="register"><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>ERC</dt><dd>KiCad 10.0.6 báo 0 vi phạm trên <code>desktop-companion.kicad_sch</code>. Báo cáo gốc: <a class="text-link" href="electronics-audit.json">electronics-audit.json</a>.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>DRC</dt><dd>0 vi phạm, 0 mục chưa nối và 0 sai lệch với sơ đồ trên bo hai lớp 54 × 46 × 1,6 mm.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>Đồng và khe hở</dt><dd>351 đường mạch, 13 via và 63 pad điện. Khe hở nhỏ nhất giữa hai net khác nhau đo được 0,285 mm.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>Khoan</dt><dd>41 lỗ mạ 1,0 mm, 13 via mạ 0,3 mm và bốn lỗ không mạ 2,5 mm để bắt vít.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Chưa xác lập</dt><dd>Chọn linh kiện thụ động thật, cửa sổ nhiệt độ sạc, ngưỡng cắt điện áp thấp, phối hợp cầu chì, nhiệt trong vỏ kín, firmware và thử RF vẫn để mở. Xem <a class="text-link" href="bench-validation.md">bench-validation.md</a>.</dd></div></dl>
+    <figure class="ds-card branch-page-media" style="margin-top:var(--s-12)">
+      <div class="ds-card-stage capture-stage">
+        <a href="cad/desktop-companion.svg" aria-label="Mở sơ đồ nguyên lý dạng vector để đọc chữ trên sơ đồ">
+          <img src="media/pcb-desktop-companion.jpg" width="2200" height="1556" alt="Sơ đồ nguyên lý bo carrier DC-01 xuất từ KiCad" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)">
+        </a>
+      </div>
+      <figcaption class="case-plate-caption">
+        <p>Sơ đồ nguyên lý đầy đủ: đường nguồn từ mạch sạc BQ24074 qua cầu chì, công tắc dịch vụ và bộ ổn áp 5 V, cùng các net màn hình, nút bấm và âm thanh tùy chọn.</p>
+        <cite>cad/desktop-companion.kicad_sch · bản vector: cad/desktop-companion.svg</cite>
+      </figcaption>
+    </figure>
+    <ul class="pair" style="margin-top:var(--s-8)">
+      <li><figure class="ds-card">
+        <div class="ds-card-stage capture-stage"><img src="media/pcb-carrier-front.jpg" width="2200" height="1870" alt="Lớp đồng mặt trên của bo carrier DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></div>
+        <figcaption class="case-plate-caption"><p>Lớp đồng mặt trên, silkscreen và bốn lỗ bắt vít 2,5 mm.</p><cite>cad/carrier-front.svg</cite></figcaption>
+      </figure></li>
+      <li><figure class="ds-card">
+        <div class="ds-card-stage capture-stage"><img src="media/pcb-carrier-back.jpg" width="2200" height="1870" alt="Lớp đồng mặt dưới của bo carrier DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></div>
+        <figcaption class="case-plate-caption"><p>Lớp đồng mặt dưới với mảng đất và các via nối.</p><cite>cad/carrier-back.svg</cite></figcaption>
+      </figure></li>
+    </ul>
+    <ul class="pair" style="margin-top:var(--s-8)">
+      <li><figure class="ds-card">
+        <div class="ds-card-stage capture-stage"><img src="cad/desktop-companion-PTH-drl_map.svg" width="1200" height="1200" alt="Bản đồ khoan lỗ mạ của bo carrier DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></div>
+        <figcaption class="case-plate-caption"><p>Bản đồ 41 lỗ mạ 1,0 mm và 13 via 0,3 mm.</p><cite>cad/desktop-companion-PTH-drl_map.svg</cite></figcaption>
+      </figure></li>
+      <li><figure class="ds-card">
+        <div class="ds-card-stage capture-stage"><img src="cad/desktop-companion-NPTH-drl_map.svg" width="1200" height="1200" alt="Bản đồ khoan lỗ không mạ của bo carrier DC-01" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></div>
+        <figcaption class="case-plate-caption"><p>Bốn lỗ không mạ 2,5 mm để bắt bo vào khung.</p><cite>cad/desktop-companion-NPTH-drl_map.svg</cite></figcaption>
+      </figure></li>
+    </ul>
+    <div class="aside">
+      <p>Gerber X2 và Excellon có trong gói nhưng chưa được dựng thành ảnh raster ở đây: máy dựng trang không có trình xem Gerber. Hai bản đồ khoan ở trên là ảnh vector do KiCad xuất ra; muốn xem lớp đồng đúng tỉ lệ hãy mở tệp Gerber bằng trình xem của bạn. Các tệp này <strong>chưa được phát hành để đặt gia công</strong>.</p>
+    </div>
+    <ul class="link-list doc-list" style="margin-top:var(--s-8)"><li><a class="ds-icon-row" href="cad/desktop-companion.kicad_sch"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Sơ đồ nguyên lý KiCad</span><span class="ds-icon-row-meta">desktop-companion.kicad_sch</span></a></li><li><a class="ds-icon-row" href="cad/desktop-companion.kicad_pcb"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Bố trí mạch in KiCad</span><span class="ds-icon-row-meta">desktop-companion.kicad_pcb</span></a></li><li><a class="ds-icon-row" href="cad/desktop-companion.kicad_pro"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Dự án KiCad</span><span class="ds-icon-row-meta">desktop-companion.kicad_pro</span></a></li><li><a class="ds-icon-row" href="cad/desktop-companion.net"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Netlist XML</span><span class="ds-icon-row-meta">desktop-companion.net</span></a></li><li><a class="ds-icon-row" href="cad/DC.kicad_sym"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Thư viện ký hiệu cục bộ</span><span class="ds-icon-row-meta">DC.kicad_sym</span></a></li><li><a class="ds-icon-row" href="cad/desktop-companion.svg"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Sơ đồ nguyên lý dạng vector</span><span class="ds-icon-row-meta">desktop-companion.svg</span></a></li><li><a class="ds-icon-row" href="cad/carrier-front.svg"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Lớp đồng mặt trên dạng vector</span><span class="ds-icon-row-meta">carrier-front.svg</span></a></li><li><a class="ds-icon-row" href="cad/carrier-back.svg"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Lớp đồng mặt dưới dạng vector</span><span class="ds-icon-row-meta">carrier-back.svg</span></a></li><li><a class="ds-icon-row" href="cad/gerber-excellon.zip" download><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,136H192V120a8,8,0,0,0-8-8H136V88h16a8,8,0,0,0,8-8V32a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V80a8,8,0,0,0,8,8h16v24H72a8,8,0,0,0-8,8v16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8H88a8,8,0,0,0,8-8V176a8,8,0,0,0-8-8H80V128h96v40h-8a8,8,0,0,0-8,8v48a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V144A8,8,0,0,0,216,136ZM112,40h32V72H112ZM80,208H48V184H80Zm128,0H176V184h32Z"/></svg><span class="ds-icon-row-label">Gerber X2 và Excellon ứng viên</span><span class="ds-icon-row-meta">gerber-excellon.zip</span></a></li></ul>
+  </section>
+
+  <section data-pace="chapter" aria-labelledby="print-h">
+    <h2 id="print-h" class="ds-heading" data-level="2">Bộ chi tiết in 3D</h2>
+    <p>Mỗi ô dưới đây là ảnh dựng lại từ chính tệp STL đã qua gate, đặt nằm như trên bàn in, cùng kích thước bao và số tam giác đọc từ manifest. Bấm vào ô để tải STL của chi tiết đó.</p>
+    <dl class="register"><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>Gate hình học</dt><dd>18 chi tiết qua gate in cuối: kín, thể tích dương, không mặt diện tích 0, không cạnh hở, đủ chiều dày thành và lọt khay.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>STL quay vòng</dt><dd>Mỗi chi tiết được xuất rồi nạp lại và so khớp: 18/18 khớp tam giác với nguồn.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z"/></svg><dt>3MF mở lại độc lập</dt><dd>PASS — hai tệp 3MF lõi được đọc lại bằng bộ phân tích riêng, so khớp toàn bộ tam giác và tọa độ đặt trên khay.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Chưa gate</dt><dd>Phần nhô (overhang) được báo nhưng chưa có ngưỡng gate; tám chi tiết nẹp/tay/tai không khai báo lỗ nên không có phép đo lỗ nào cho chúng.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Chưa in</dt><dd>Không cắt lớp, không G-code, không profile máy in và không có mẫu in. Đọc <a class="text-link" href="print/README.md">hướng dẫn in</a> trước khi in: giữ tỉ lệ 100%, gán đúng profile PETG/TPU, không xoay chi tiết lần thứ hai.</dd></div></dl>
+    <ul class="parts-grid" style="margin-top:var(--s-12)"><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_LOWER_SHELL.stl" download><img src="media/parts/DC01_LOWER_SHELL.jpg" width="1100" height="1100" alt="Chi tiết in Vỏ dưới dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Vỏ dưới</h3><p>DC01_LOWER_SHELL<br>80.4 × 64 × 62 mm · 31,922 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_LOWER_SHELL.stl" download>Tải STL (1558 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_UPPER_SHELL.stl" download><img src="media/parts/DC01_UPPER_SHELL.jpg" width="1100" height="1100" alt="Chi tiết in Vỏ trên dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Vỏ trên</h3><p>DC01_UPPER_SHELL<br>80 × 64 × 55 mm · 29,310 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_UPPER_SHELL.stl" download>Tải STL (1431 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_BATTERY_RETAINER.stl" download><img src="media/parts/DC01_BATTERY_RETAINER.jpg" width="1100" height="1100" alt="Chi tiết in Thanh giữ pin dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Thanh giữ pin</h3><p>DC01_BATTERY_RETAINER<br>30.2 × 53.2 × 2.4 mm · 1,188 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_BATTERY_RETAINER.stl" download>Tải STL (58 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_MAINBOARD_FRAME.stl" download><img src="media/parts/DC01_MAINBOARD_FRAME.jpg" width="1100" height="1100" alt="Chi tiết in Khung mainboard dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Khung mainboard</h3><p>DC01_MAINBOARD_FRAME<br>72 × 47.6 × 7.1 mm · 6,780 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_MAINBOARD_FRAME.stl" download>Tải STL (331 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_CHARGER_FRAME.stl" download><img src="media/parts/DC01_CHARGER_FRAME.jpg" width="1100" height="1100" alt="Chi tiết in Khay mạch sạc dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Khay mạch sạc</h3><p>DC01_CHARGER_FRAME<br>70.8 × 42.6 × 11.4 mm · 8,366 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_CHARGER_FRAME.stl" download>Tải STL (408 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_DISPLAY_RETAINER.stl" download><img src="media/parts/DC01_DISPLAY_RETAINER.jpg" width="1100" height="1100" alt="Chi tiết in Khung màn hình dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Khung màn hình</h3><p>DC01_DISPLAY_RETAINER<br>50 × 41 × 2.4 mm · 2,362 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_DISPLAY_RETAINER.stl" download>Tải STL (115 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_REGULATOR_PLATE.stl" download><img src="media/parts/DC01_REGULATOR_PLATE.jpg" width="1100" height="1100" alt="Chi tiết in Giá bộ ổn áp dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Giá bộ ổn áp</h3><p>DC01_REGULATOR_PLATE<br>22 × 33 × 2.4 mm · 1,190 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_REGULATOR_PLATE.stl" download>Tải STL (58 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_EAR_L.stl" download><img src="media/parts/DC01_EAR_L.jpg" width="1100" height="1100" alt="Chi tiết in Tai trái dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Tai trái</h3><p>DC01_EAR_L<br>21.5 × 17 × 24.3 mm · 1,564 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_EAR_L.stl" download>Tải STL (76 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_EAR_R.stl" download><img src="media/parts/DC01_EAR_R.jpg" width="1100" height="1100" alt="Chi tiết in Tai phải dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Tai phải</h3><p>DC01_EAR_R<br>21.5 × 17 × 24.3 mm · 1,564 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_EAR_R.stl" download>Tải STL (76 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_ARM_L.stl" download><img src="media/parts/DC01_ARM_L.jpg" width="1100" height="1100" alt="Chi tiết in Tay trái dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Tay trái</h3><p>DC01_ARM_L<br>8.2 × 14 × 25 mm · 10,796 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_ARM_L.stl" download>Tải STL (527 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_ARM_R.stl" download><img src="media/parts/DC01_ARM_R.jpg" width="1100" height="1100" alt="Chi tiết in Tay phải dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Tay phải</h3><p>DC01_ARM_R<br>8.2 × 14 × 25 mm · 10,794 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_ARM_R.stl" download>Tải STL (527 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_BUTTON_HOLDER.stl" download><img src="media/parts/DC01_BUTTON_HOLDER.jpg" width="1100" height="1100" alt="Chi tiết in Giá nút bấm dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Giá nút bấm</h3><p>DC01_BUTTON_HOLDER<br>34 × 14 × 7 mm · 3,142 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_BUTTON_HOLDER.stl" download>Tải STL (153 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_ARM_KEEPER_L.stl" download><img src="media/parts/DC01_ARM_KEEPER_L.jpg" width="1100" height="1100" alt="Chi tiết in Nẹp tay trái dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Nẹp tay trái</h3><p>DC01_ARM_KEEPER_L<br>2.4 × 11.5 × 11.5 mm · 768 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_ARM_KEEPER_L.stl" download>Tải STL (37 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_ARM_KEEPER_R.stl" download><img src="media/parts/DC01_ARM_KEEPER_R.jpg" width="1100" height="1100" alt="Chi tiết in Nẹp tay phải dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Nẹp tay phải</h3><p>DC01_ARM_KEEPER_R<br>2.4 × 11.5 × 11.5 mm · 768 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_ARM_KEEPER_R.stl" download>Tải STL (37 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_EAR_KEEPER_L.stl" download><img src="media/parts/DC01_EAR_KEEPER_L.jpg" width="1100" height="1100" alt="Chi tiết in Nẹp tai trái dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Nẹp tai trái</h3><p>DC01_EAR_KEEPER_L<br>11.6 × 11.5 × 6.5 mm · 768 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_EAR_KEEPER_L.stl" download>Tải STL (37 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_EAR_KEEPER_R.stl" download><img src="media/parts/DC01_EAR_KEEPER_R.jpg" width="1100" height="1100" alt="Chi tiết in Nẹp tai phải dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Nẹp tai phải</h3><p>DC01_EAR_KEEPER_R<br>11.6 × 11.5 × 6.5 mm · 768 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_EAR_KEEPER_R.stl" download>Tải STL (37 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_BUTTON_REAR_KEEPER.stl" download><img src="media/parts/DC01_BUTTON_REAR_KEEPER.jpg" width="1100" height="1100" alt="Chi tiết in Nẹp nút bấm dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Nẹp nút bấm</h3><p>DC01_BUTTON_REAR_KEEPER<br>34 × 8 × 2.4 mm · 1,552 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">PETG</span><span class="ds-chip" data-variant="mono">Khay 1</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_BUTTON_REAR_KEEPER.stl" download>Tải STL (75 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li><li><article class="ds-card"><div class="ds-card-stage capture-stage"><a href="stl/DC01_BUTTON_DIAPHRAGM.stl" download><img src="media/parts/DC01_BUTTON_DIAPHRAGM.jpg" width="1100" height="1100" alt="Chi tiết in Nút / màng TPU dựng lại từ tệp STL đã qua gate" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></a></div><div class="part-body"><h3>Nút / màng TPU</h3><p>DC01_BUTTON_DIAPHRAGM<br>32 × 14 × 7.9 mm · 2,540 tam giác</p><p class="part-chips"><span class="ds-chip" data-variant="mono">TPU</span><span class="ds-chip" data-variant="mono">Khay 2</span></p><p style="margin-top:var(--s-4)"><a class="text-link" href="stl/DC01_BUTTON_DIAPHRAGM.stl" download>Tải STL (124 KB) <svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a></p></div></article></li></ul>
+    <ul class="pair" style="margin-top:var(--s-12)">
+      <li><figure class="ds-card">
+        <div class="ds-card-stage capture-stage"><img src="media/plate-01-PETG.jpg" width="1600" height="1600" alt="Khay in PETG với 17 chi tiết đã sắp" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></div>
+        <figcaption class="case-plate-caption"><p>Khay 1 — 17 chi tiết PETG. Tệp: <a class="text-link" href="print/plate-01-PETG.3mf" download>plate-01-PETG.3mf</a></p><cite>print/plates/plate-01-PETG.3mf</cite></figcaption>
+      </figure></li>
+      <li><figure class="ds-card">
+        <div class="ds-card-stage capture-stage"><img src="media/plate-02-TPU.jpg" width="1600" height="1600" alt="Khay in TPU với màng nút bấm" loading="lazy" onerror="this.onerror=null;window.__imgFallback(this)"></div>
+        <figcaption class="case-plate-caption"><p>Khay 2 — 1 chi tiết TPU (màng nút bấm). Tệp: <a class="text-link" href="print/plate-02-TPU.3mf" download>plate-02-TPU.3mf</a></p><cite>print/plates/plate-02-TPU.3mf</cite></figcaption>
+      </figure></li>
+    </ul>
+  </section>
+
+  <section data-pace="chapter" aria-labelledby="blocked-h">
+    <h2 id="blocked-h" class="ds-heading" data-level="2">Những gì trang này không chứng minh</h2>
+    <dl class="register"><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Chế tạo</dt><dd>BLOCKED — số mẫu vật lý là 0. Các kiểm tra ở trên là hình học số và kết nối, không phải bằng chứng lắp được hay in được.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Điện và pin</dt><dd>Chưa có phép đo nào trên mạch thật: dòng sạc, cửa sổ nhiệt độ của pack, hành vi khi điện áp thấp, nhiệt độ linh kiện và phối hợp cầu chì.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Nút bấm</dt><dd>Khe hở tự do 0,25 mm cộng hành trình 0,25 mm chưa bảo đảm bấm được ở trường hợp xấu nhất. Cần chặn điều chỉnh được và một phép thử vật lý.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Dây</dt><dd>13 đầu dây vẫn là đề xuất vị trí và cách bấm đầu cốt, chưa phải phương án đã chốt.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Lắp ráp</dt><dd>Vít của mạch sạc nằm cao, tua vít đã mô hình không tới được; phải siết trước khi lắp. Chuyển động lắp liên tục, lực siết và dụng cụ thật chưa được xác lập.</dd></div><div class="register-row"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,48a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg><dt>Độ giống ảnh gốc</dt><dd>Mô hình còn lộ vít mặt trước và cạnh/khe sắc hơn ảnh gốc. Không chấp nhận đây là bản giống hệt sản phẩm trong ảnh.</dd></div></dl>
+  </section>
+
+  <section data-pace="tight" aria-labelledby="docs-h">
+    <h2 id="docs-h" class="ds-heading" data-level="3">Tài liệu và báo cáo kèm theo</h2>
+    <ul class="link-list doc-list"><li><a class="ds-icon-row" href="README.md"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">README của gói bàn giao</span><span class="ds-icon-row-meta">README.md</span></a></li><li><a class="ds-icon-row" href="print/README.md"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Hướng dẫn in và giới hạn</span><span class="ds-icon-row-meta">print/README.md</span></a></li><li><a class="ds-icon-row" href="electronics-README.md"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Thiết kế điện tử, mạch và giao diện cơ khí</span><span class="ds-icon-row-meta">electronics-README.md</span></a></li><li><a class="ds-icon-row" href="bench-validation.md"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Điều kiện bắt buộc trước khi phát hành phần cứng</span><span class="ds-icon-row-meta">bench-validation.md</span></a></li><li><a class="ds-icon-row" href="print/package-manifest.json"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Manifest 18 chi tiết, vật liệu và khay</span><span class="ds-icon-row-meta">print/package-manifest.json</span></a></li><li><a class="ds-icon-row" href="print/package-check.json"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Kết quả mở lại 3MF độc lập</span><span class="ds-icon-row-meta">print/package-check.json</span></a></li><li><a class="ds-icon-row" href="electronics-audit.json"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Tổng hợp ERC, DRC, đồng và đối chứng âm</span><span class="ds-icon-row-meta">electronics-audit.json</span></a></li><li><a class="ds-icon-row" href="system-wiring.csv"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">33 kết nối dây với đầu nối nguồn</span><span class="ds-icon-row-meta">system-wiring.csv</span></a></li><li><a class="ds-icon-row" href="system-bom.csv"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">BOM module mua ngoài</span><span class="ds-icon-row-meta">system-bom.csv</span></a></li><li><a class="ds-icon-row" href="carrier-bom.csv"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">BOM bo carrier tự thiết kế</span><span class="ds-icon-row-meta">carrier-bom.csv</span></a></li><li><a class="ds-icon-row" href="SHA256SUMS"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Hash của gói gốc</span><span class="ds-icon-row-meta">SHA256SUMS</span></a></li><li><a class="ds-icon-row" href="media-manifest.json"><svg class="ph" data-size="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg><span class="ds-icon-row-label">Hash và kích thước mọi tệp đã publish ở đây</span><span class="ds-icon-row-meta">media-manifest.json</span></a></li></ul>
+  </section>
+</main>
+
+<footer class="ds-shell-footer">
+  <div class="ds-shell-footer-inner">
+    <p>Trang được sinh lại từ gói bàn giao bằng <code>build-page.py</code> và <code>build-media.py</code>; ảnh chi tiết in được dựng từ tệp STL đã qua gate. Bằng chứng cũ không bị viết lại: khi hình học thay đổi, media cũ được lưu trữ riêng chứ không ghi đè.</p>
+    <nav class="ds-shell-footer-nav" aria-label="Chân trang">
+      <a class="wordmark" href="https://www.jang.work/">JANG<span>®</span></a>
+      <a class="text-link" href="https://jangtrinh.github.io/design-os-3d-blender/">Trang dự án</a>
+      <a class="text-link" href="https://github.com/jangtrinh/design-os-3d-blender">Mã nguồn trên GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script>
+/* Carousel: jump buttons and prev/next scroll the snap track; the snapped slide drives the
+   pressed tab, the counter and the caption. No timers, no autoplay. */
+(function () {
+  var track = document.getElementById("track"), slides = [].slice.call(track.children),
+      tabs = [].slice.call(document.querySelectorAll(".viewer-tabs .ds-tab")),
+      label = document.getElementById("carousel-label"), count = document.getElementById("carousel-count"), current = 0;
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function show(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    if (i === current) return; current = i;
+    tabs.forEach(function (t, k) { t.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+    label.textContent = slides[i].dataset.label; count.textContent = pad(i + 1) + " / " + pad(slides.length);
+  }
+  function goTo(i) { slides[Math.max(0, Math.min(slides.length - 1, i))].scrollIntoView({ block: "nearest", inline: "start" }); }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { goTo(+t.dataset.index); }); });
+  document.querySelectorAll(".carousel-btn").forEach(function (b) { b.addEventListener("click", function () { goTo(current + (+b.dataset.dir)); }); });
+  track.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { goTo(current + 1); e.preventDefault(); } if (e.key === "ArrowLeft") { goTo(current - 1); e.preventDefault(); } });
+  var raf = 0;
+  track.addEventListener("scroll", function () {
+    if (raf) return;
+    raf = requestAnimationFrame(function () { raf = 0; var w = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0); show(Math.round(track.scrollLeft / w)); });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

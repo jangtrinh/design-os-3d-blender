@@ -1,0 +1,1371 @@
+{
+  "status": "PASS",
+  "scope": "Independent ZIP/XML/STL parsing, complete local triangle equality and float64 placed geometry. No slicer or printer execution.",
+  "source_sha256": "37e66375aa4b158b42ebe2031b60330e27c32f0eb3c91bf45d5ce61783d215b1",
+  "print_sha256": "8bd48a75877127596f8ce70742301ef36921801b952ee1ada215b825e345b6de",
+  "spec_sha256": "609214e082e338bffd2b8547ebed9eebd435a17de35e0411f6ac7f96d9cec746",
+  "source_spec_sha256": "de02529f524aba173d040a4e43d45b55f74bc77feb0afe85ce143b0900d0ea2b",
+  "orientation_sha256": "42bd3a9e06f1f8ea804dcd441e6ddf95a5847b14d1830d6541d424818feb9914",
+  "manifest_sha256": "c7445813dd0a8d735a38e632ff5c8b14befc60f656aee28cffe462b0476c4bf9",
+  "checker_sha256": "1871adebb18493531568e6b7ea2c37f5e8130c5827170682fb9a7b7b54668c39",
+  "reader_sha256": "db725c3f0ba58ab6376882e6b5a1ee39e53d7f613b73fbccd08fa269c9f6d2d2",
+  "part_count": 18,
+  "materials": {
+    "PETG": 17,
+    "TPU": 1
+  },
+  "plates": [
+    {
+      "file": "plates/plate-01-PETG.3mf",
+      "sha256": "030349c7f3e0fe5d39426b98f1ccdb78a5b66f115d759c012312f96c6e79fb84",
+      "material": "PETG",
+      "parts": 17,
+      "triangles": 113602,
+      "minimum_axis_gap_mm": 6.999996572732925,
+      "bounds_mm": [
+        [
+          8.0,
+          8.0,
+          0.0
+        ],
+        [
+          243.80000498890877,
+          150.60000160336494,
+          62.000003814697266
+        ]
+      ],
+      "objects": [
+        {
+          "id": "DC01_LOWER_SHELL",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            48.19999694824219,
+            40.0,
+            0.0
+          ],
+          "local": {
+            "vertices": 15927,
+            "triangles": 31922,
+            "signed_volume_mm3": 62397.076485301804,
+            "bounds_mm": [
+              [
+                -40.19999694824219,
+                -32.0,
+                0.0
+              ],
+              [
+                40.19999694824219,
+                32.0,
+                62.000003814697266
+              ]
+            ],
+            "dims_mm": [
+              80.39999389648438,
+              64.0,
+              62.000003814697266
+            ],
+            "triangle_coordinates_sha256": "945d5baec9cec1d5454e5434673d8b3affdea0b80ae3f9d4f285cbed13de32c6",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 15927,
+            "triangles": 31922,
+            "signed_volume_mm3": 62397.076485301804,
+            "bounds_mm": [
+              [
+                8.0,
+                8.0,
+                0.0
+              ],
+              [
+                88.39999389648438,
+                72.0,
+                62.000003814697266
+              ]
+            ],
+            "dims_mm": [
+              80.39999389648438,
+              64.0,
+              62.000003814697266
+            ],
+            "triangle_coordinates_sha256": "244f1997477d4e375806620ac3430f04518a15d409a79fd8ec5e63b3f2026402",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_UPPER_SHELL",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            135.3999975323677,
+            40.0,
+            -39.000003814697266
+          ],
+          "local": {
+            "vertices": 14607,
+            "triangles": 29310,
+            "signed_volume_mm3": 43759.550215999385,
+            "bounds_mm": [
+              [
+                -40.0,
+                -32.0,
+                39.000003814697266
+              ],
+              [
+                40.0,
+                32.0,
+                94.0
+              ]
+            ],
+            "dims_mm": [
+              80.0,
+              64.0,
+              54.999996185302734
+            ],
+            "triangle_coordinates_sha256": "9284e2cd4fddf545de4a0141266cb02e7bf041baf7498800e68f8d43d26a48d8",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 14607,
+            "triangles": 29310,
+            "signed_volume_mm3": 43759.550215999385,
+            "bounds_mm": [
+              [
+                95.3999975323677,
+                8.0,
+                0.0
+              ],
+              [
+                175.3999975323677,
+                72.0,
+                54.999996185302734
+              ]
+            ],
+            "dims_mm": [
+              80.0,
+              64.0,
+              54.999996185302734
+            ],
+            "triangle_coordinates_sha256": "d71273a342e4146d7b22291b7d100c3ebad67eeeaa84cb5dce0ec3d5d73848d4",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_BATTERY_RETAINER",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            185.99999564886093,
+            34.60000038146973,
+            -19.0
+          ],
+          "local": {
+            "vertices": 592,
+            "triangles": 1188,
+            "signed_volume_mm3": 977.7708984548004,
+            "bounds_mm": [
+              [
+                -3.5999999046325684,
+                -26.600000381469727,
+                19.0
+              ],
+              [
+                26.600000381469727,
+                26.600000381469727,
+                21.400001525878906
+              ]
+            ],
+            "dims_mm": [
+              30.200000286102295,
+              53.20000076293945,
+              2.4000015258789062
+            ],
+            "triangle_coordinates_sha256": "588f08861e6ae65d1e4ba0f4996e2244f791e78a4eef94add3912f9d7ead462f",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 592,
+            "triangles": 1188,
+            "signed_volume_mm3": 977.7708984548004,
+            "bounds_mm": [
+              [
+                182.39999574422836,
+                8.0,
+                0.0
+              ],
+              [
+                212.59999603033066,
+                61.20000076293945,
+                2.4000015258789062
+              ]
+            ],
+            "dims_mm": [
+              30.200000286102295,
+              53.20000076293945,
+              2.4000015258789062
+            ],
+            "triangle_coordinates_sha256": "0ac70bb564fc0cce68db23f0b3d895375b80afb4c1cbc80359552d6462bc70d6",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_MAINBOARD_FRAME",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            44.0,
+            165.8000060915947,
+            7.8725645380473e-07
+          ],
+          "local": {
+            "vertices": 3374,
+            "triangles": 6780,
+            "signed_volume_mm3": 5261.87719333632,
+            "bounds_mm": [
+              [
+                -36.0,
+                -86.80000305175781,
+                -7.8725645380473e-07
+              ],
+              [
+                36.0,
+                -39.20000457763672,
+                7.099999904632568
+              ]
+            ],
+            "dims_mm": [
+              72.0,
+              47.599998474121094,
+              7.100000691889022
+            ],
+            "triangle_coordinates_sha256": "a7f25c5c2abb7c1de1ed2cc0f9bb844d9e9268309a4ecd6e632bec2ac3681924",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 3374,
+            "triangles": 6780,
+            "signed_volume_mm3": 5261.87719333632,
+            "bounds_mm": [
+              [
+                8.0,
+                79.00000303983688,
+                0.0
+              ],
+              [
+                80.0,
+                126.60000151395798,
+                7.100000691889022
+              ]
+            ],
+            "dims_mm": [
+              72.0,
+              47.599998474121094,
+              7.100000691889022
+            ],
+            "triangle_coordinates_sha256": "fa71a6252bf415ab7dd7229fffbafbe8986683a9fab73b610057535ab1d8c8f1",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_CHARGER_FRAME",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            122.39999842643738,
+            93.31000345945358,
+            -18.80000114440918
+          ],
+          "local": {
+            "vertices": 4173,
+            "triangles": 8366,
+            "signed_volume_mm3": 6402.955072846441,
+            "bounds_mm": [
+              [
+                -35.400001525878906,
+                -14.3100004196167,
+                18.80000114440918
+              ],
+              [
+                35.400001525878906,
+                28.310001373291016,
+                30.200000762939453
+              ]
+            ],
+            "dims_mm": [
+              70.80000305175781,
+              42.620001792907715,
+              11.399999618530273
+            ],
+            "triangle_coordinates_sha256": "e2720be8b59bbdc093fcc2de031ae486789e1dc7226adefdf97cc495d1b7e933",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 4173,
+            "triangles": 8366,
+            "signed_volume_mm3": 6402.955072846441,
+            "bounds_mm": [
+              [
+                86.99999690055847,
+                79.00000303983688,
+                0.0
+              ],
+              [
+                157.79999995231628,
+                121.6200048327446,
+                11.399999618530273
+              ]
+            ],
+            "dims_mm": [
+              70.80000305175781,
+              42.620001792907715,
+              11.399999618530273
+            ],
+            "triangle_coordinates_sha256": "8e4e506eaf116cafb8dc4df78fac678a9df403fdd1029a80b6162b13404c22b8",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_DISPLAY_RETAINER",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            189.8000032901764,
+            34.49999922513962,
+            -13.399998664855957
+          ],
+          "local": {
+            "vertices": 1173,
+            "triangles": 2362,
+            "signed_volume_mm3": 2156.608809206098,
+            "bounds_mm": [
+              [
+                -25.0,
+                44.500003814697266,
+                13.399998664855957
+              ],
+              [
+                25.0,
+                85.5,
+                15.799999237060547
+              ]
+            ],
+            "dims_mm": [
+              50.0,
+              40.999996185302734,
+              2.40000057220459
+            ],
+            "triangle_coordinates_sha256": "a49c2a22f7cd2d8a6b1d9e4ffb4bb32024917a5d98323e14687685b16d72fa57",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 1173,
+            "triangles": 2362,
+            "signed_volume_mm3": 2156.608809206098,
+            "bounds_mm": [
+              [
+                164.8000032901764,
+                79.00000303983688,
+                0.0
+              ],
+              [
+                214.8000032901764,
+                119.99999922513962,
+                2.40000057220459
+              ]
+            ],
+            "dims_mm": [
+              50.0,
+              40.999996185302734,
+              2.40000057220459
+            ],
+            "triangle_coordinates_sha256": "db1bb049a702684020ffa7763c0d9dba88a186d62c83e6c3def17d53872ee506",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_REGULATOR_PLATE",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            251.80000594258308,
+            155.50000303983688,
+            4.500000476837158
+          ],
+          "local": {
+            "vertices": 593,
+            "triangles": 1190,
+            "signed_volume_mm3": 1572.5108396190406,
+            "bounds_mm": [
+              [
+                -30.000001907348633,
+                -76.5,
+                -4.500000476837158
+              ],
+              [
+                -8.000000953674316,
+                -43.500003814697266,
+                -2.09999942779541
+              ]
+            ],
+            "dims_mm": [
+              22.000000953674316,
+              32.999996185302734,
+              2.400001049041748
+            ],
+            "triangle_coordinates_sha256": "97ce20003b49f1a8fb3d2d33ea158290c6899103d53ea9e580edd605444fa098",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 593,
+            "triangles": 1190,
+            "signed_volume_mm3": 1572.5108396190406,
+            "bounds_mm": [
+              [
+                221.80000403523445,
+                79.00000303983688,
+                0.0
+              ],
+              [
+                243.80000498890877,
+                111.99999922513962,
+                2.400001049041748
+              ]
+            ],
+            "dims_mm": [
+              22.000000953674316,
+              32.999996185302734,
+              2.400001049041748
+            ],
+            "triangle_coordinates_sha256": "1dd7864da4e5e4c200240792e6e07b20c2463dac1a6fa6f0b164bc8e9d0a14b7",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_EAR_L",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            46.60781478881836,
+            149.10000136494637,
+            -86.98224639892578
+          ],
+          "local": {
+            "vertices": 782,
+            "triangles": 1564,
+            "signed_volume_mm3": 2973.374212227163,
+            "bounds_mm": [
+              [
+                -38.60781478881836,
+                -15.500000953674316,
+                86.98224639892578
+              ],
+              [
+                -17.118938446044922,
+                1.500000238418579,
+                111.23873901367188
+              ]
+            ],
+            "dims_mm": [
+              21.488876342773438,
+              17.000001192092896,
+              24.256492614746094
+            ],
+            "triangle_coordinates_sha256": "21ed3a3df1e54c7b7674dd288c653e5a66e0f1e89b88c35b2bac6c04bb09bab6",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 782,
+            "triangles": 1564,
+            "signed_volume_mm3": 2973.374212227163,
+            "bounds_mm": [
+              [
+                8.0,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                29.488876342773438,
+                150.60000160336494,
+                24.256492614746094
+              ]
+            ],
+            "dims_mm": [
+              21.488876342773438,
+              17.000001192092896,
+              24.256492614746094
+            ],
+            "triangle_coordinates_sha256": "acfb0bb2186640c37b2c319dccec8a191bfc0fa1a4822f8c877bec3d0336ff6c",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_EAR_R",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            19.36993670463562,
+            149.10000136494637,
+            -86.98224639892578
+          ],
+          "local": {
+            "vertices": 782,
+            "triangles": 1564,
+            "signed_volume_mm3": 2973.374159704644,
+            "bounds_mm": [
+              [
+                17.118938446044922,
+                -15.500000953674316,
+                86.98224639892578
+              ],
+              [
+                38.60781478881836,
+                1.500000238418579,
+                111.23873901367188
+              ]
+            ],
+            "dims_mm": [
+              21.488876342773438,
+              17.000001192092896,
+              24.256492614746094
+            ],
+            "triangle_coordinates_sha256": "ca39628d4082d0bf8a2aba77145a8be5fd439227215d4b296aee385ab3b9c944",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 782,
+            "triangles": 1564,
+            "signed_volume_mm3": 2973.374159704644,
+            "bounds_mm": [
+              [
+                36.48887515068054,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                57.97775149345398,
+                150.60000160336494,
+                24.256492614746094
+              ]
+            ],
+            "dims_mm": [
+              21.488876342773438,
+              17.000001192092896,
+              24.256492614746094
+            ],
+            "triangle_coordinates_sha256": "b8f444c8d3ebaf2bee856dda3a5761d39968c60a0ea495af0c42a6c04dcb6909",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_ARM_L",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            111.97775030136108,
+            140.60000470280647,
+            -21.500001907348633
+          ],
+          "local": {
+            "vertices": 5398,
+            "triangles": 10796,
+            "signed_volume_mm3": 1410.3479517758606,
+            "bounds_mm": [
+              [
+                -47.0,
+                -7.000004291534424,
+                21.500001907348633
+              ],
+              [
+                -38.80000305175781,
+                7.0,
+                46.5
+              ]
+            ],
+            "dims_mm": [
+              8.199996948242188,
+              14.000004291534424,
+              24.999998092651367
+            ],
+            "triangle_coordinates_sha256": "80e26e208f12f118256a957bd9601dc3f3854ffb5f9e92715320233441f6cb20",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 5398,
+            "triangles": 10796,
+            "signed_volume_mm3": 1410.3479517758606,
+            "bounds_mm": [
+              [
+                64.97775030136108,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                73.17774724960327,
+                147.60000470280647,
+                24.999998092651367
+              ]
+            ],
+            "dims_mm": [
+              8.199996948242188,
+              14.000004291534424,
+              24.999998092651367
+            ],
+            "triangle_coordinates_sha256": "e8648b42030c7e874f913d7b00e7320adcf088c68a857dde214f31480416a5fb",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_ARM_R",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            41.377740770578384,
+            140.60000470280647,
+            -21.500001907348633
+          ],
+          "local": {
+            "vertices": 5397,
+            "triangles": 10794,
+            "signed_volume_mm3": 1410.3472794527881,
+            "bounds_mm": [
+              [
+                38.80000305175781,
+                -7.000004291534424,
+                21.500001907348633
+              ],
+              [
+                47.0,
+                7.0,
+                46.5
+              ]
+            ],
+            "dims_mm": [
+              8.199996948242188,
+              14.000004291534424,
+              24.999998092651367
+            ],
+            "triangle_coordinates_sha256": "bfd01894480c34d46066218e5d84f67a06cb3391120f15cb23f795dd8968051a",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 5397,
+            "triangles": 10794,
+            "signed_volume_mm3": 1410.3472794527881,
+            "bounds_mm": [
+              [
+                80.1777438223362,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                88.37774077057838,
+                147.60000470280647,
+                24.999998092651367
+              ]
+            ],
+            "dims_mm": [
+              8.199996948242188,
+              14.000004291534424,
+              24.999998092651367
+            ],
+            "triangle_coordinates_sha256": "2d42d560fed14c5a343f01854e38b02947a706acbb193190444a2688c30f7fd2",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_BUTTON_HOLDER",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            112.37773734331131,
+            114.60000041127205,
+            -20.799999237060547
+          ],
+          "local": {
+            "vertices": 1567,
+            "triangles": 3142,
+            "signed_volume_mm3": 2216.473475678005,
+            "bounds_mm": [
+              [
+                -17.0,
+                19.0,
+                20.799999237060547
+              ],
+              [
+                17.0,
+                33.0,
+                27.799999237060547
+              ]
+            ],
+            "dims_mm": [
+              34.0,
+              14.0,
+              7.0
+            ],
+            "triangle_coordinates_sha256": "48b72aaf6d72a8b7b60520082d1b882a9665019e3b2e6464bddd8cf4acbe7bcc",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 1567,
+            "triangles": 3142,
+            "signed_volume_mm3": 2216.473475678005,
+            "bounds_mm": [
+              [
+                95.37773734331131,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                129.3777373433113,
+                147.60000041127205,
+                7.0
+              ]
+            ],
+            "dims_mm": [
+              34.0,
+              14.0,
+              7.0
+            ],
+            "triangle_coordinates_sha256": "5a50298fad819715b47e370f0d9883d8caf10359beda112817b947228e27d725",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_ARM_KEEPER_L",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            172.3777391910553,
+            139.35000041127205,
+            -28.250003814697266
+          ],
+          "local": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.25799423031137,
+            "bounds_mm": [
+              [
+                -36.0,
+                -5.75,
+                28.250003814697266
+              ],
+              [
+                -33.599998474121094,
+                5.75,
+                39.750003814697266
+              ]
+            ],
+            "dims_mm": [
+              2.4000015258789062,
+              11.5,
+              11.5
+            ],
+            "triangle_coordinates_sha256": "97d9d2955c837785ea112dd786ed2a9ec17aabafead755d2965396f927ef3abf",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.25799423031137,
+            "bounds_mm": [
+              [
+                136.3777391910553,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                138.7777407169342,
+                145.10000041127205,
+                11.5
+              ]
+            ],
+            "dims_mm": [
+              2.4000015258789062,
+              11.5,
+              11.5
+            ],
+            "triangle_coordinates_sha256": "1ca479d8a5dbcfaa6f589814bcd27b8f7b4d717c3c766b92c230378a6dfde002",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_ARM_KEEPER_R",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            112.1777403652668,
+            139.35000041127205,
+            -28.250003814697266
+          ],
+          "local": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.2579942451674,
+            "bounds_mm": [
+              [
+                33.599998474121094,
+                -5.75,
+                28.250003814697266
+              ],
+              [
+                36.0,
+                5.75,
+                39.750003814697266
+              ]
+            ],
+            "dims_mm": [
+              2.4000015258789062,
+              11.5,
+              11.5
+            ],
+            "triangle_coordinates_sha256": "53e777d55c95750fa4a714b4a52e5b7696d6865c2d1bcda93b3930d0bfe3fbb3",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.2579942451674,
+            "bounds_mm": [
+              [
+                145.7777388393879,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                148.1777403652668,
+                145.10000041127205,
+                11.5
+              ]
+            ],
+            "dims_mm": [
+              2.4000015258789062,
+              11.5,
+              11.5
+            ],
+            "triangle_coordinates_sha256": "7b071fdbd615a5b1ee81cc8b297271db812d7189ba9a4a538a850c23bf80caec",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_EAR_KEEPER_L",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            183.4861701130867,
+            146.35000041127205,
+            -81.61397552490234
+          ],
+          "local": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.25787751292987,
+            "bounds_mm": [
+              [
+                -28.30843162536621,
+                -12.75,
+                81.61397552490234
+              ],
+              [
+                -16.746763229370117,
+                -1.250000238418579,
+                88.1471939086914
+              ]
+            ],
+            "dims_mm": [
+              11.561668395996094,
+              11.499999761581421,
+              6.5332183837890625
+            ],
+            "triangle_coordinates_sha256": "9d169e153736a3ea56f7604cb8adaee2888bd4446023aa39de526aadefde916d",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.25787751292987,
+            "bounds_mm": [
+              [
+                155.1777384877205,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                166.73940688371658,
+                145.10000017285347,
+                6.5332183837890625
+              ]
+            ],
+            "dims_mm": [
+              11.561668395996094,
+              11.499999761581421,
+              6.5332183837890625
+            ],
+            "triangle_coordinates_sha256": "69cd506ce095acd690c167a127aefbd84609965f2db296b71fd6bcdaff2bb356",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_EAR_KEEPER_R",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            156.99264466762543,
+            146.35000041127205,
+            -81.61397552490234
+          ],
+          "local": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.25787274204376,
+            "bounds_mm": [
+              [
+                16.746763229370117,
+                -12.75,
+                81.61397552490234
+              ],
+              [
+                28.30843162536621,
+                -1.250000238418579,
+                88.1471939086914
+              ]
+            ],
+            "dims_mm": [
+              11.561668395996094,
+              11.499999761581421,
+              6.5332183837890625
+            ],
+            "triangle_coordinates_sha256": "ac765928fad8efd88ca3280ebcde389ee141e0a4b9420f51305104488767bb9c",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 384,
+            "triangles": 768,
+            "signed_volume_mm3": 238.25787274204376,
+            "bounds_mm": [
+              [
+                173.73940789699554,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                185.30107629299164,
+                145.10000017285347,
+                6.5332183837890625
+              ]
+            ],
+            "dims_mm": [
+              11.561668395996094,
+              11.499999761581421,
+              6.5332183837890625
+            ],
+            "triangle_coordinates_sha256": "83d1f5e230a6d5e933168791bdc4e308b1d7e76e8c1a4b3475d2bb6682ac2c69",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        },
+        {
+          "id": "DC01_BUTTON_REAR_KEEPER",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            209.3010773062706,
+            111.59875491261482,
+            -18.399999618530273
+          ],
+          "local": {
+            "vertices": 774,
+            "triangles": 1552,
+            "signed_volume_mm3": 323.82911994538676,
+            "bounds_mm": [
+              [
+                -17.0,
+                22.001245498657227,
+                18.399999618530273
+              ],
+              [
+                17.0,
+                29.99875259399414,
+                20.799999237060547
+              ]
+            ],
+            "dims_mm": [
+              34.0,
+              7.997507095336914,
+              2.3999996185302734
+            ],
+            "triangle_coordinates_sha256": "f75bd071f7c34365c47a37c1974820e1e5de9462d18febfef9048af16cbd2aa6",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 774,
+            "triangles": 1552,
+            "signed_volume_mm3": 323.82911994538676,
+            "bounds_mm": [
+              [
+                192.3010773062706,
+                133.60000041127205,
+                0.0
+              ],
+              [
+                226.3010773062706,
+                141.59750750660896,
+                2.3999996185302734
+              ]
+            ],
+            "dims_mm": [
+              34.0,
+              7.997507095336914,
+              2.3999996185302734
+            ],
+            "triangle_coordinates_sha256": "95df41fd087cfb1203696d79bedca8c00e2ff63d0d028542de71721799ed2576",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        }
+      ]
+    },
+    {
+      "file": "plates/plate-02-TPU.3mf",
+      "sha256": "01e3158c1682318c91a8e6e53824c5a288cc4b5f0faee6f62fc97b17f4187418",
+      "material": "TPU",
+      "parts": 1,
+      "triangles": 2540,
+      "minimum_axis_gap_mm": null,
+      "bounds_mm": [
+        [
+          8.0,
+          8.0,
+          0.0
+        ],
+        [
+          40.0,
+          22.0,
+          7.850000381469727
+        ]
+      ],
+      "objects": [
+        {
+          "id": "DC01_BUTTON_DIAPHRAGM",
+          "transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            24.0,
+            -11.0,
+            -26.149999618530273
+          ],
+          "local": {
+            "vertices": 1268,
+            "triangles": 2540,
+            "signed_volume_mm3": 822.3718590163835,
+            "bounds_mm": [
+              [
+                -16.0,
+                19.0,
+                26.149999618530273
+              ],
+              [
+                16.0,
+                33.0,
+                34.0
+              ]
+            ],
+            "dims_mm": [
+              32.0,
+              14.0,
+              7.850000381469727
+            ],
+            "triangle_coordinates_sha256": "869024fe1b0a5aa90d4f55fdefd2c7164556633693f9ee9f620424ced77e3926",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          },
+          "placed": {
+            "vertices": 1268,
+            "triangles": 2540,
+            "signed_volume_mm3": 822.3718590163835,
+            "bounds_mm": [
+              [
+                8.0,
+                8.0,
+                0.0
+              ],
+              [
+                40.0,
+                22.0,
+                7.850000381469727
+              ]
+            ],
+            "dims_mm": [
+              32.0,
+              14.0,
+              7.850000381469727
+            ],
+            "triangle_coordinates_sha256": "923fcb6d772646d609aae3af00d413dc1bb21d0489cab5245a641c0a793110ab",
+            "shells": 1,
+            "closed_edges": true,
+            "consistent_winding": true,
+            "nonzero_triangle_areas": true
+          }
+        }
+      ]
+    }
+  ],
+  "stl_sha256": {
+    "DC01_LOWER_SHELL": "5605a01f5b0f3668d3704048691d324420c4142c5b26c136bf4c8ee0f5f3e4eb",
+    "DC01_UPPER_SHELL": "276aac24d401580cca21b32dab8de90ece22c39d153cb6b1115eeb1eab97043e",
+    "DC01_MAINBOARD_FRAME": "508eea7345a7feee37c10185cd4a39744286021cbac50e3e1a30852c518c63bc",
+    "DC01_DISPLAY_RETAINER": "ae2f0d5c913fc9d3cc5714e1934a74df86d5e8791e9d1e218d82f938f01fc09d",
+    "DC01_REGULATOR_PLATE": "76115df1c259e0b5a7e640986b9655d6b5de167deae02b9156ccb7cc801f6d43",
+    "DC01_BATTERY_RETAINER": "7d9b6aa922ea152eb9b7b0408efc10cd2621c8319935ed4dcc1f039b1389d572",
+    "DC01_CHARGER_FRAME": "29b7963c8ab43e201cd6ff46dba2915139cbbc333b91ba8f3e7cd74b8ea94144",
+    "DC01_ARM_L": "c5e3a299e49472a2c43d98ea92a107c5745f58517e70e0e9936827d28bac7831",
+    "DC01_ARM_KEEPER_L": "d1b30479cf18eb4ccd2c1d4ee2ec9ea00f3682eecb5fac494665c104969894fc",
+    "DC01_EAR_L": "5c7559fd4cd7229bdbb9b90654d3e597f9998e174f824cfed6630cd317cff86a",
+    "DC01_EAR_KEEPER_L": "1ec9d834c3a172c14a5d781e5993cab4de842fc1abc27a4eaf6c7c41135cacef",
+    "DC01_ARM_R": "8663de1436c4f8206b66654df33dddb0334e0661e96aaec597d40aec86225e53",
+    "DC01_ARM_KEEPER_R": "91ab7fd2713a2c22ce62ac47625149d9fb9c157848169153eb422d0845fb655b",
+    "DC01_EAR_R": "24e63ec4cd9c11b9b79ead27e6bb3bdcfc0844a914dde3db1fef112d0e72d537",
+    "DC01_EAR_KEEPER_R": "a9c6fccd5046047ef65704fdf6b1d7f4da1b040e81218321939c6af3f3bf6fc3",
+    "DC01_BUTTON_DIAPHRAGM": "1ec579435ef7e830f273fb26a6a62272e398dc2606a347a3f7f547342906e101",
+    "DC01_BUTTON_HOLDER": "c11f299e1acf75b92b47bd41a53a2b012091522193aff32645d59966d054cdb7",
+    "DC01_BUTTON_REAR_KEEPER": "b3648371b557cf8b44cb8d520f80fad33e7210ac91d8ba08b10a45afee6f0f18"
+  },
+  "falsifiers_detected": [
+    "TPU280mm overview offset wrongly retained",
+    "Missing build item",
+    "Changed local mesh vertex"
+  ],
+  "placement_comparison_epsilon_mm": 5e-05,
+  "authored_requirements_preserved": true,
+  "manufacture": "BLOCKED",
+  "slicing": "NOT_RUN",
+  "gcode": "NOT_PRODUCED"
+}

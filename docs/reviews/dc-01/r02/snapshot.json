@@ -1,0 +1,42 @@
+{
+  "assembly_sha256": "526b2ca2822be17287f49f6fd3682295e700f269b11ade47891f94b5bbe67ab9",
+  "demo_sha256": "5562660ab43d6cae029b5a8b439c47e4f3704a538546636bd026c22f918524cd",
+  "video_sha256": "d9b937f4eafc427c39a8a9aef4b26c948c2b8cfb82e17b1a77aad4745c8a2780",
+  "duration_seconds": 38.99999999999998,
+  "labels": {
+    "DC01_LOWER_SHELL": "Vỏ dưới",
+    "DC01_UPPER_SHELL": "Vỏ trên",
+    "DC01_MAINBOARD_FRAME": "Khung mainboard",
+    "DC01_DISPLAY_RETAINER": "Khung màn hình",
+    "DC01_CHARGER_FRAME": "Khay mạch sạc",
+    "DC01_BATTERY_RETAINER": "Thanh giữ pin",
+    "DC01_REGULATOR_PLATE": "Giá bộ ổn áp",
+    "DC01_BUTTON_DIAPHRAGM": "Nút / màng TPU",
+    "DC01_BUTTON_HOLDER": "Giá nút bấm",
+    "DC01_BUTTON_REAR_KEEPER": "Nẹp nút bấm",
+    "DC01_ARM_L": "Tay trái",
+    "DC01_ARM_R": "Tay phải",
+    "DC01_EAR_L": "Tai trái",
+    "DC01_EAR_R": "Tai phải",
+    "DC01_ARM_KEEPER_L": "Nẹp tay trái",
+    "DC01_ARM_KEEPER_R": "Nẹp tay phải",
+    "DC01_EAR_KEEPER_L": "Nẹp tai trái",
+    "DC01_EAR_KEEPER_R": "Nẹp tai phải",
+    "visor": "Kính mặt",
+    "display": "Màn hình TFT",
+    "carrier": "Bo carrier",
+    "compute": "Module ESP32-S3",
+    "charger": "Mạch sạc USB-C",
+    "battery": "Pin 1S",
+    "regulator": "Bộ ổn áp 5 V",
+    "master": "Công tắc nguồn",
+    "button": "Công tắc tactile",
+    "harness": "Dây và cầu chì",
+    "hardware": "Vít, đệm và cách điện"
+  },
+  "detail_files": [
+    "stills/details/arm.png",
+    "stills/details/ear.png",
+    "stills/details/interior.png"
+  ]
+}

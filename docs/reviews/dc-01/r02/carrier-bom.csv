@@ -1,0 +1,21 @@
+Reference,Value,Package_or_interface,Quantity,Selection_status
+U1,Seeed_XIAO_ESP32S3_nonSense,compute,1,Purchased compute module on removable sockets; no custom silicon design
+J1,BQ24074_OUT,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J2,DISPLAY_5206,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J3,I2S_AUDIO_OPTION,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J4,POWER_SWITCH,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J5,S7V8F5_WIRED,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J6,MOMENTARY_BUTTON,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J7,CHARGER_PROGRAM_NTC,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+J8,103AT2_PACK_SENSOR,connector,1,2.54mm pin-header engineering interface; keyed production connector not selected
+F1,MF-MSMF110_16X-2,1812,1,"Bourns MF-MSMF110/16X-2; sourced style2 land pattern; 1.10A hold at23C, 0.85A at50C; trip coordination unqualified"
+D1,SS14_SCHOTTKY,SMA,1,"Vishay SS14-E3/61T candidate; pin1 cathode, pin2 anode; dedicated DO-214AC footprint"
+R1,10k_1%,0805,1,Value/package candidate; MPN procurement release open
+R2,10k_1%,0805,1,Value/package candidate; MPN procurement release open
+R3,10k_1%,0805,1,Value/package candidate; MPN procurement release open
+R4,3.57k_1%,0805,1,Value/package candidate; MPN procurement release open
+C1,47uF_10V_X5R,1206,1,Value/package candidate; MPN procurement release open
+C2,100nF_16V_X7R,0805,1,Value/package candidate; MPN procurement release open
+C3,10uF_10V_X5R,0805,1,Value/package candidate; MPN procurement release open
+C4,100nF_16V_X7R,0805,1,Value/package candidate; MPN procurement release open
+C5,47uF_10V_X5R,1206,1,Value/package candidate; MPN procurement release open

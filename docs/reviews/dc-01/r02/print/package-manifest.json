@@ -1,0 +1,897 @@
+{
+  "source": "/Users/jang/Products/design-os-3d-blender/builds/desktop-companion/integration/engineering/I06/assembly.blend",
+  "source_sha256": "37e66375aa4b158b42ebe2031b60330e27c32f0eb3c91bf45d5ce61783d215b1",
+  "source_spec_sha256": "de02529f524aba173d040a4e43d45b55f74bc77feb0afe85ce143b0900d0ea2b",
+  "inputs": {
+    "print.blend": "8bd48a75877127596f8ce70742301ef36921801b952ee1ada215b825e345b6de",
+    "spec.json": "609214e082e338bffd2b8547ebed9eebd435a17de35e0411f6ac7f96d9cec746",
+    "orientation.json": "42bd3a9e06f1f8ea804dcd441e6ddf95a5847b14d1830d6541d424818feb9914",
+    "final-gate.json": "237e27638fad3ff36e09d34dfcdd8b14a28b9acefc7c2f8b8fdb6f75d6970765",
+    "coverage-audit.json": "b58aaf4e3f27d33acb039d2d5667d068f9f70eb41a64022463da331c5d60740a",
+    "gated-stl/manifest.json": "417309f6c405cfca188bf3c9786288a8593cec84a645567d979be99d887e5851"
+  },
+  "exporter_sha256": "e4867471654a952b56346970b8a6b35a64dc8dac3fce64ac1288f0e8386936e0",
+  "plates": [
+    {
+      "id": 1,
+      "material": "PETG",
+      "bed_mm": [
+        256,
+        256
+      ],
+      "parts": [
+        "DC01_LOWER_SHELL",
+        "DC01_UPPER_SHELL",
+        "DC01_BATTERY_RETAINER",
+        "DC01_MAINBOARD_FRAME",
+        "DC01_CHARGER_FRAME",
+        "DC01_DISPLAY_RETAINER",
+        "DC01_REGULATOR_PLATE",
+        "DC01_EAR_L",
+        "DC01_EAR_R",
+        "DC01_ARM_L",
+        "DC01_ARM_R",
+        "DC01_BUTTON_HOLDER",
+        "DC01_ARM_KEEPER_L",
+        "DC01_ARM_KEEPER_R",
+        "DC01_EAR_KEEPER_L",
+        "DC01_EAR_KEEPER_R",
+        "DC01_BUTTON_REAR_KEEPER"
+      ],
+      "file": "plates/plate-01-PETG.3mf",
+      "sha256": "030349c7f3e0fe5d39426b98f1ccdb78a5b66f115d759c012312f96c6e79fb84",
+      "triangles": 113602
+    },
+    {
+      "id": 2,
+      "material": "TPU",
+      "bed_mm": [
+        256,
+        256
+      ],
+      "parts": [
+        "DC01_BUTTON_DIAPHRAGM"
+      ],
+      "file": "plates/plate-02-TPU.3mf",
+      "sha256": "01e3158c1682318c91a8e6e53824c5a288cc4b5f0faee6f62fc97b17f4187418",
+      "triangles": 2540
+    }
+  ],
+  "parts": [
+    {
+      "id": "DC01_LOWER_SHELL",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_LOWER_SHELL.stl",
+      "stl_sha256": "5605a01f5b0f3668d3704048691d324420c4142c5b26c136bf4c8ee0f5f3e4eb",
+      "triangles": 31922,
+      "local_bounds_mm": [
+        [
+          -40.19999694824219,
+          -32.0,
+          0.0
+        ],
+        [
+          40.19999694824219,
+          32.0,
+          62.000003814697266
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        48.19999694824219,
+        40.0,
+        0.0
+      ],
+      "placed_bounds_mm": [
+        [
+          8.0,
+          8.0,
+          0.0
+        ],
+        [
+          88.39999389648438,
+          72.0,
+          62.000003814697266
+        ]
+      ]
+    },
+    {
+      "id": "DC01_UPPER_SHELL",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_UPPER_SHELL.stl",
+      "stl_sha256": "276aac24d401580cca21b32dab8de90ece22c39d153cb6b1115eeb1eab97043e",
+      "triangles": 29310,
+      "local_bounds_mm": [
+        [
+          -40.0,
+          -32.0,
+          39.000003814697266
+        ],
+        [
+          40.0,
+          32.0,
+          94.0
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        135.3999975323677,
+        40.0,
+        -39.000003814697266
+      ],
+      "placed_bounds_mm": [
+        [
+          95.3999975323677,
+          8.0,
+          0.0
+        ],
+        [
+          175.3999975323677,
+          72.0,
+          54.999996185302734
+        ]
+      ]
+    },
+    {
+      "id": "DC01_BATTERY_RETAINER",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_BATTERY_RETAINER.stl",
+      "stl_sha256": "7d9b6aa922ea152eb9b7b0408efc10cd2621c8319935ed4dcc1f039b1389d572",
+      "triangles": 1188,
+      "local_bounds_mm": [
+        [
+          -3.5999999046325684,
+          -26.600000381469727,
+          19.0
+        ],
+        [
+          26.600000381469727,
+          26.600000381469727,
+          21.400001525878906
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        185.99999564886093,
+        34.60000038146973,
+        -19.0
+      ],
+      "placed_bounds_mm": [
+        [
+          182.39999574422836,
+          8.0,
+          0.0
+        ],
+        [
+          212.59999603033066,
+          61.20000076293945,
+          2.4000015258789062
+        ]
+      ]
+    },
+    {
+      "id": "DC01_MAINBOARD_FRAME",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_MAINBOARD_FRAME.stl",
+      "stl_sha256": "508eea7345a7feee37c10185cd4a39744286021cbac50e3e1a30852c518c63bc",
+      "triangles": 6780,
+      "local_bounds_mm": [
+        [
+          -36.0,
+          -86.80000305175781,
+          -7.8725645380473e-07
+        ],
+        [
+          36.0,
+          -39.20000457763672,
+          7.099999904632568
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        44.0,
+        165.8000060915947,
+        7.8725645380473e-07
+      ],
+      "placed_bounds_mm": [
+        [
+          8.0,
+          79.00000303983688,
+          0.0
+        ],
+        [
+          80.0,
+          126.60000151395798,
+          7.100000691889022
+        ]
+      ]
+    },
+    {
+      "id": "DC01_CHARGER_FRAME",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_CHARGER_FRAME.stl",
+      "stl_sha256": "29b7963c8ab43e201cd6ff46dba2915139cbbc333b91ba8f3e7cd74b8ea94144",
+      "triangles": 8366,
+      "local_bounds_mm": [
+        [
+          -35.400001525878906,
+          -14.3100004196167,
+          18.80000114440918
+        ],
+        [
+          35.400001525878906,
+          28.310001373291016,
+          30.200000762939453
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        122.39999842643738,
+        93.31000345945358,
+        -18.80000114440918
+      ],
+      "placed_bounds_mm": [
+        [
+          86.99999690055847,
+          79.00000303983688,
+          0.0
+        ],
+        [
+          157.79999995231628,
+          121.6200048327446,
+          11.399999618530273
+        ]
+      ]
+    },
+    {
+      "id": "DC01_DISPLAY_RETAINER",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_DISPLAY_RETAINER.stl",
+      "stl_sha256": "ae2f0d5c913fc9d3cc5714e1934a74df86d5e8791e9d1e218d82f938f01fc09d",
+      "triangles": 2362,
+      "local_bounds_mm": [
+        [
+          -25.0,
+          44.500003814697266,
+          13.399998664855957
+        ],
+        [
+          25.0,
+          85.5,
+          15.799999237060547
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        189.8000032901764,
+        34.49999922513962,
+        -13.399998664855957
+      ],
+      "placed_bounds_mm": [
+        [
+          164.8000032901764,
+          79.00000303983688,
+          0.0
+        ],
+        [
+          214.8000032901764,
+          119.99999922513962,
+          2.40000057220459
+        ]
+      ]
+    },
+    {
+      "id": "DC01_REGULATOR_PLATE",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_REGULATOR_PLATE.stl",
+      "stl_sha256": "76115df1c259e0b5a7e640986b9655d6b5de167deae02b9156ccb7cc801f6d43",
+      "triangles": 1190,
+      "local_bounds_mm": [
+        [
+          -30.000001907348633,
+          -76.5,
+          -4.500000476837158
+        ],
+        [
+          -8.000000953674316,
+          -43.500003814697266,
+          -2.09999942779541
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        251.80000594258308,
+        155.50000303983688,
+        4.500000476837158
+      ],
+      "placed_bounds_mm": [
+        [
+          221.80000403523445,
+          79.00000303983688,
+          0.0
+        ],
+        [
+          243.80000498890877,
+          111.99999922513962,
+          2.400001049041748
+        ]
+      ]
+    },
+    {
+      "id": "DC01_EAR_L",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_EAR_L.stl",
+      "stl_sha256": "5c7559fd4cd7229bdbb9b90654d3e597f9998e174f824cfed6630cd317cff86a",
+      "triangles": 1564,
+      "local_bounds_mm": [
+        [
+          -38.60781478881836,
+          -15.500000953674316,
+          86.98224639892578
+        ],
+        [
+          -17.118938446044922,
+          1.500000238418579,
+          111.23873901367188
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        46.60781478881836,
+        149.10000136494637,
+        -86.98224639892578
+      ],
+      "placed_bounds_mm": [
+        [
+          8.0,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          29.488876342773438,
+          150.60000160336494,
+          24.256492614746094
+        ]
+      ]
+    },
+    {
+      "id": "DC01_EAR_R",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_EAR_R.stl",
+      "stl_sha256": "24e63ec4cd9c11b9b79ead27e6bb3bdcfc0844a914dde3db1fef112d0e72d537",
+      "triangles": 1564,
+      "local_bounds_mm": [
+        [
+          17.118938446044922,
+          -15.500000953674316,
+          86.98224639892578
+        ],
+        [
+          38.60781478881836,
+          1.500000238418579,
+          111.23873901367188
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        19.36993670463562,
+        149.10000136494637,
+        -86.98224639892578
+      ],
+      "placed_bounds_mm": [
+        [
+          36.48887515068054,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          57.97775149345398,
+          150.60000160336494,
+          24.256492614746094
+        ]
+      ]
+    },
+    {
+      "id": "DC01_ARM_L",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_ARM_L.stl",
+      "stl_sha256": "c5e3a299e49472a2c43d98ea92a107c5745f58517e70e0e9936827d28bac7831",
+      "triangles": 10796,
+      "local_bounds_mm": [
+        [
+          -47.0,
+          -7.000004291534424,
+          21.500001907348633
+        ],
+        [
+          -38.80000305175781,
+          7.0,
+          46.5
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        111.97775030136108,
+        140.60000470280647,
+        -21.500001907348633
+      ],
+      "placed_bounds_mm": [
+        [
+          64.97775030136108,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          73.17774724960327,
+          147.60000470280647,
+          24.999998092651367
+        ]
+      ]
+    },
+    {
+      "id": "DC01_ARM_R",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_ARM_R.stl",
+      "stl_sha256": "8663de1436c4f8206b66654df33dddb0334e0661e96aaec597d40aec86225e53",
+      "triangles": 10794,
+      "local_bounds_mm": [
+        [
+          38.80000305175781,
+          -7.000004291534424,
+          21.500001907348633
+        ],
+        [
+          47.0,
+          7.0,
+          46.5
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        41.377740770578384,
+        140.60000470280647,
+        -21.500001907348633
+      ],
+      "placed_bounds_mm": [
+        [
+          80.1777438223362,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          88.37774077057838,
+          147.60000470280647,
+          24.999998092651367
+        ]
+      ]
+    },
+    {
+      "id": "DC01_BUTTON_HOLDER",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_BUTTON_HOLDER.stl",
+      "stl_sha256": "c11f299e1acf75b92b47bd41a53a2b012091522193aff32645d59966d054cdb7",
+      "triangles": 3142,
+      "local_bounds_mm": [
+        [
+          -17.0,
+          19.0,
+          20.799999237060547
+        ],
+        [
+          17.0,
+          33.0,
+          27.799999237060547
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        112.37773734331131,
+        114.60000041127205,
+        -20.799999237060547
+      ],
+      "placed_bounds_mm": [
+        [
+          95.37773734331131,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          129.3777373433113,
+          147.60000041127205,
+          7.0
+        ]
+      ]
+    },
+    {
+      "id": "DC01_ARM_KEEPER_L",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_ARM_KEEPER_L.stl",
+      "stl_sha256": "d1b30479cf18eb4ccd2c1d4ee2ec9ea00f3682eecb5fac494665c104969894fc",
+      "triangles": 768,
+      "local_bounds_mm": [
+        [
+          -36.0,
+          -5.75,
+          28.250003814697266
+        ],
+        [
+          -33.599998474121094,
+          5.75,
+          39.750003814697266
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        172.3777391910553,
+        139.35000041127205,
+        -28.250003814697266
+      ],
+      "placed_bounds_mm": [
+        [
+          136.3777391910553,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          138.7777407169342,
+          145.10000041127205,
+          11.5
+        ]
+      ]
+    },
+    {
+      "id": "DC01_ARM_KEEPER_R",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_ARM_KEEPER_R.stl",
+      "stl_sha256": "91ab7fd2713a2c22ce62ac47625149d9fb9c157848169153eb422d0845fb655b",
+      "triangles": 768,
+      "local_bounds_mm": [
+        [
+          33.599998474121094,
+          -5.75,
+          28.250003814697266
+        ],
+        [
+          36.0,
+          5.75,
+          39.750003814697266
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        112.1777403652668,
+        139.35000041127205,
+        -28.250003814697266
+      ],
+      "placed_bounds_mm": [
+        [
+          145.7777388393879,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          148.1777403652668,
+          145.10000041127205,
+          11.5
+        ]
+      ]
+    },
+    {
+      "id": "DC01_EAR_KEEPER_L",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_EAR_KEEPER_L.stl",
+      "stl_sha256": "1ec9d834c3a172c14a5d781e5993cab4de842fc1abc27a4eaf6c7c41135cacef",
+      "triangles": 768,
+      "local_bounds_mm": [
+        [
+          -28.30843162536621,
+          -12.75,
+          81.61397552490234
+        ],
+        [
+          -16.746763229370117,
+          -1.250000238418579,
+          88.1471939086914
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        183.4861701130867,
+        146.35000041127205,
+        -81.61397552490234
+      ],
+      "placed_bounds_mm": [
+        [
+          155.1777384877205,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          166.73940688371658,
+          145.10000017285347,
+          6.5332183837890625
+        ]
+      ]
+    },
+    {
+      "id": "DC01_EAR_KEEPER_R",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_EAR_KEEPER_R.stl",
+      "stl_sha256": "a9c6fccd5046047ef65704fdf6b1d7f4da1b040e81218321939c6af3f3bf6fc3",
+      "triangles": 768,
+      "local_bounds_mm": [
+        [
+          16.746763229370117,
+          -12.75,
+          81.61397552490234
+        ],
+        [
+          28.30843162536621,
+          -1.250000238418579,
+          88.1471939086914
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        156.99264466762543,
+        146.35000041127205,
+        -81.61397552490234
+      ],
+      "placed_bounds_mm": [
+        [
+          173.73940789699554,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          185.30107629299164,
+          145.10000017285347,
+          6.5332183837890625
+        ]
+      ]
+    },
+    {
+      "id": "DC01_BUTTON_REAR_KEEPER",
+      "plate": 1,
+      "material": "PETG",
+      "stl": "gated-stl/DC01_BUTTON_REAR_KEEPER.stl",
+      "stl_sha256": "b3648371b557cf8b44cb8d520f80fad33e7210ac91d8ba08b10a45afee6f0f18",
+      "triangles": 1552,
+      "local_bounds_mm": [
+        [
+          -17.0,
+          22.001245498657227,
+          18.399999618530273
+        ],
+        [
+          17.0,
+          29.99875259399414,
+          20.799999237060547
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        209.3010773062706,
+        111.59875491261482,
+        -18.399999618530273
+      ],
+      "placed_bounds_mm": [
+        [
+          192.3010773062706,
+          133.60000041127205,
+          0.0
+        ],
+        [
+          226.3010773062706,
+          141.59750750660896,
+          2.3999996185302734
+        ]
+      ]
+    },
+    {
+      "id": "DC01_BUTTON_DIAPHRAGM",
+      "plate": 2,
+      "material": "TPU",
+      "stl": "gated-stl/DC01_BUTTON_DIAPHRAGM.stl",
+      "stl_sha256": "1ec579435ef7e830f273fb26a6a62272e398dc2606a347a3f7f547342906e101",
+      "triangles": 2540,
+      "local_bounds_mm": [
+        [
+          -16.0,
+          19.0,
+          26.149999618530273
+        ],
+        [
+          16.0,
+          33.0,
+          34.0
+        ]
+      ],
+      "build_transform_3mf": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        24.0,
+        -11.0,
+        -26.149999618530273
+      ],
+      "placed_bounds_mm": [
+        [
+          8.0,
+          8.0,
+          0.0
+        ],
+        [
+          40.0,
+          22.0,
+          7.850000381469727
+        ]
+      ]
+    }
+  ],
+  "status": "EXPORTED_PENDING_INDEPENDENT_REOPEN",
+  "reference": "https://github.com/3MFConsortium/spec_core/blob/master/3MF%20Core%20Specification.md",
+  "reference_version": "1.4.0; sections3.3,3.4.3 and AppendixC read2026-09-18",
+  "coordinate_policy": "STL local coordinates preserved exactly; each core build item supplies its own translation.",
+  "manufacture": "BLOCKED",
+  "slicing": "NOT_RUN",
+  "gcode": "NOT_PRODUCED"
+}

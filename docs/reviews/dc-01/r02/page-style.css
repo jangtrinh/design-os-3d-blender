@@ -1,0 +1,284 @@
+
+/* Design language carried from jang-personal-site (generation 11): zero-chroma greys, one accent,
+   Inter body at 1.625 line-height, JetBrains Mono for the instrument register, 760px measure,
+   Phosphor (regular) as the one icon family, no keyframes. Values are the site's token ladder. */
+:root{
+  --c-accent:#00a5ef;--c-accent-fg:#202020;--c-accent-text:#0069a4;--c-sky-600:#0084cc;
+  --c-canvas:#ffffff;--c-gray-100:#fcfcfc;--c-gray-200:#f6f6f6;--c-gray-300:#f0f0f0;--c-gray-400:#e8e8e8;
+  --c-gray-500:#e0e0e0;--c-gray-600:#d9d9d9;--c-gray-900:#8d8d8d;--c-gray-1000:#7b7b7b;--c-gray-1100:#646464;--c-gray-1200:#202020;
+  --c-preview-bg:#ffffff;--c-preview-border:#e8e8e8;
+  --t-13:13px;--t-14:14px;--t-16:16px;--t-18:18px;--t-20:20px;--t-24:24px;--t-30:30px;--t-36:36px;--t-48:48px;
+  --s-2:4px;--s-3:6px;--s-4:8px;--s-5:10px;--s-6:12px;--s-8:16px;--s-10:20px;--s-12:24px;--s-16:32px;--s-24:48px;--s-32:64px;--s-40:80px;--s-48:96px;--s-64:128px;
+  --r-3:8px;--r-4:12px;--r-5:16px;--r-pill:9999px;--ctl-28:28px;--ctl-32:32px;--ctl-48:48px;--tap-min:44px;
+  --fw-body:400;--fw-book:450;--fw-medium:500;--fw-display:550;--fw-semibold:600;
+  --lh-text:1.625;--lh-ui:1.5;--lh-tight:1.1;--track-heading:-0.01em;--track-tight:-0.02em;--track-flat:0;--track-wordmark:-0.08em;
+  --w-container:760px;--w-breakout:880px;--dur-fast:150ms;--dur-base:200ms;--ease-out:cubic-bezier(0,0,.2,1);
+  --stack-sans:"Inter",sans-serif;--stack-mono:"JetBrains Mono",monospace;
+  --shadow-ink-4:color-mix(in srgb,var(--c-gray-1200) 4%,transparent);--shadow-ink-6:color-mix(in srgb,var(--c-gray-1200) 6%,transparent);--shadow-ink-8:color-mix(in srgb,var(--c-gray-1200) 8%,transparent);
+  --shadow-custom:0 0 0 1px var(--shadow-ink-6),0 1px 2px -1px var(--shadow-ink-6),0 2px 4px 0 var(--shadow-ink-4);
+  --shadow-custom-hover:0 0 0 1px var(--shadow-ink-8),0 1px 2px -1px var(--shadow-ink-8),0 2px 4px 0 var(--shadow-ink-6);
+  --icon-16:16px;--icon-20:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c-gray-100);color:var(--c-gray-1200);font-family:var(--stack-sans);font-size:var(--t-16);line-height:var(--lh-text);font-weight:var(--fw-body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--c-accent);color:var(--c-accent-fg)}
+:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:2px}
+p{margin:0 0 var(--s-8);max-width:68ch}
+p a,li a,dd a{color:var(--c-accent-text);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--c-accent-text) 35%,transparent);text-underline-offset:3px}
+/* Inline code is a voice, not a box: mono in the paragraph's own colour. Boxes are for blocks. */
+code{font-family:var(--stack-mono);font-size:.9em;font-weight:var(--fw-medium)}
+strong{font-weight:var(--fw-semibold)}
+/* One icon family, one weight, two sizes. Inline icons sit on the cap height of their text. */
+.ph{width:var(--icon-16);height:var(--icon-16);flex:none;vertical-align:-0.15em}
+.ph[data-size="20"]{width:var(--icon-20);height:var(--icon-20)}
+
+.ds-skip-link{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.ds-skip-link:focus{position:fixed;top:var(--s-8);left:var(--s-8);z-index:100;width:auto;height:auto;padding:var(--s-4) var(--s-8);overflow:visible;clip-path:none;border-radius:var(--r-pill);background:var(--c-preview-bg);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-medium)}
+
+.ds-shell{--ds-gutter:var(--s-10);display:flex;flex-direction:column;min-height:100dvh}
+.ds-shell-nav,.ds-shell-main,.ds-shell-footer-inner{width:100%;max-width:var(--w-container);margin-inline:auto;padding-inline:var(--ds-gutter)}
+.ds-shell-nav{display:flex;align-items:center;justify-content:space-between;min-height:var(--ctl-48);flex-wrap:wrap;gap:var(--s-3) var(--s-8);padding-block:var(--s-3)}
+.wordmark{position:relative;font-size:var(--t-16);font-weight:var(--fw-semibold);letter-spacing:var(--track-wordmark)}
+.wordmark span{font:var(--fw-body) var(--t-13) var(--stack-mono);vertical-align:top;margin-left:var(--s-2);letter-spacing:0}
+.home-nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
+.ds-tab{position:relative;display:inline-flex;align-items:center;gap:var(--s-2);height:var(--ctl-32);padding-inline:var(--s-8);border:0;border-radius:var(--r-pill);background:transparent;color:var(--c-gray-1100);font-size:var(--t-14);font-weight:var(--fw-medium);transition:color var(--dur-base) var(--ease-out),background-color var(--dur-base) var(--ease-out)}
+.ds-tab::after{content:"";position:absolute;inset:calc((var(--tap-min) - var(--ctl-32)) / -2)}
+.ds-tab[aria-current="page"]{background:var(--c-gray-300);color:var(--c-gray-1200)}
+
+.ds-shell-main{flex:1;padding-block:var(--s-24)}
+/* Pacing is authored per section, not one gap everywhere: a step that continues the
+   previous thought sits close; a new chapter gets the full 128px. */
+.ds-shell-main>section{margin-top:var(--s-40);scroll-margin-top:var(--s-40)}
+.ds-shell-main>section:first-child{margin-top:var(--s-16)}
+.ds-shell-main>section[data-pace="tight"]{margin-top:var(--s-24)}
+.ds-shell-main>section[data-pace="chapter"]{margin-top:var(--s-48)}
+@media(min-width:640px){
+  .ds-shell{--ds-gutter:var(--s-12)}
+  .ds-shell-main{padding-block:var(--s-40)}
+  .ds-shell-main>section{margin-top:var(--s-48)}
+  .ds-shell-main>section[data-pace="tight"]{margin-top:var(--s-32)}
+  .ds-shell-main>section[data-pace="chapter"]{margin-top:var(--s-64)}
+}
+
+/* Headings hold rank through weight and space; the mono eyebrow is the instrument voice. */
+.ds-heading{display:flex;align-items:center;gap:var(--s-6);margin:0 0 var(--s-10);font-weight:var(--fw-display);text-wrap:balance}
+.ds-heading[data-level="1"]{display:block;max-width:22ch;font-size:clamp(var(--t-30),4.6vw,var(--t-48));font-weight:var(--fw-medium);line-height:var(--lh-tight);letter-spacing:var(--track-tight)}
+.ds-heading[data-level="2"]{font-size:var(--t-24);letter-spacing:var(--track-heading)}
+.ds-heading[data-level="3"]{margin-bottom:var(--s-6);color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);letter-spacing:var(--track-flat);text-transform:uppercase}
+.ds-heading[data-level="3"]::after{content:"";flex:1;height:1px;background:var(--c-preview-border)}
+.eyebrow{margin-bottom:var(--s-8)}
+.lede{font-size:var(--t-18);color:var(--c-gray-1100);max-width:56ch;margin-bottom:var(--s-12)}
+/* shields.io badges (markdown-badges set), owner-requested: same row as the README carries. */
+.badges{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:0 0 var(--s-12);max-width:none}
+.badges img{display:block;height:28px}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-6) var(--s-8)}
+.text-link{display:inline-flex;align-items:center;gap:var(--s-2);color:var(--c-gray-1100);font-size:var(--t-14);font-weight:var(--fw-medium);transition:color var(--dur-fast) var(--ease-out)}
+
+.ds-chip{display:inline-flex;align-items:center;gap:var(--s-2);height:var(--ctl-28);padding-inline:var(--s-5);width:fit-content;border-radius:var(--r-pill);background:var(--c-preview-bg);color:var(--c-gray-1100);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-book);user-select:none;white-space:nowrap}
+.ds-chip[data-variant="mono"]{font-family:var(--stack-mono);font-size:var(--t-13)}
+.ds-btn-pill{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-3);height:var(--ctl-32);padding-inline:var(--s-8);border:0;border-radius:var(--r-pill);background:var(--c-preview-bg);color:var(--c-gray-1200);box-shadow:var(--shadow-custom);font-size:var(--t-14);font-weight:var(--fw-medium);cursor:pointer;transition:box-shadow var(--dur-base) var(--ease-out),background-color var(--dur-base) var(--ease-out)}
+.ds-btn-pill[data-tone="solid"]{background:var(--c-gray-1200);color:var(--c-canvas);box-shadow:none}
+
+/* Surfaces: hairline card, recessed stage. Nested radii stay concentric (16 = 12 + 4). */
+.ds-card{display:flex;flex-direction:column;padding:var(--s-2);border:1px solid var(--c-preview-border);border-radius:var(--r-5);background:var(--c-gray-100)}
+.ds-card-stage{display:grid;place-items:center;padding:var(--s-24);border-radius:var(--r-4);background:var(--c-gray-200);position:relative}
+.case-plate-chip{position:absolute;top:var(--s-8);left:var(--s-8);z-index:1}
+/* A capture IS the surface: full width inside the stage, no inset (owner ruling 2026-08-23). */
+.capture-stage{padding:0;overflow:hidden}
+.capture-stage img{display:block;width:100%;height:auto}
+.case-plate-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-12);padding:var(--s-6) var(--s-10) var(--s-5)}
+.case-plate-caption p{margin:0;color:var(--c-gray-1100);font-size:var(--t-14);max-width:none}
+.case-plate-caption cite{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13);font-style:normal;white-space:nowrap}
+.branch-page-media{margin-block:var(--s-16) 0;margin-inline:0}
+@media(min-width:960px){.branch-page-media{--bp-w:min(var(--w-breakout),calc(100vw - var(--s-12) * 2));margin-inline:calc(50% - var(--bp-w) / 2) 0;width:var(--bp-w)}}
+
+/* The register: label column + value column sharing one edge. Shared edges do the
+   tracking — one hairline at the head, none per row (soul: an accounting ledger is a rule
+   under every row; a technical drawing is not). */
+.register{border-top:1px solid var(--c-gray-300)}
+.register-row{display:grid;grid-template-columns:var(--icon-20) minmax(0,1fr);grid-template-areas:"icon label" "icon body";gap:var(--s-2) var(--s-6);padding-block:var(--s-8)}
+.register-row>.ph{grid-area:icon;color:var(--c-gray-900);margin-top:3px}
+.register-row h3,.register-row dt{grid-area:label}
+.register-row p,.register-row dd{grid-area:body}
+.register-row[data-icon="none"]{grid-template-columns:minmax(0,1fr);grid-template-areas:"label" "body"}
+.register-row:first-child{padding-top:var(--s-8)}
+@media(min-width:640px){.register-row{grid-template-columns:var(--icon-20) 220px minmax(0,1fr);grid-template-areas:"icon label body";gap:var(--s-2) var(--s-8);padding-block:var(--s-8)}.register-row[data-icon="none"]{grid-template-columns:200px minmax(0,1fr);grid-template-areas:"label body"}}
+.register-row dt,.register-row h3{margin:0;font-size:var(--t-16);font-weight:var(--fw-semibold);line-height:var(--lh-text)}
+.register-row dt{font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);color:var(--c-gray-900);text-transform:uppercase;letter-spacing:var(--track-flat);padding-top:2px}
+.register-row dd,.register-row p{margin:0;color:var(--c-gray-1100);max-width:none}
+.register-row dd{color:var(--c-gray-1200)}
+.register-row h3 code{font-weight:var(--fw-medium)}
+/* No border here: the eyebrow above already draws the head rule (one line, not two). */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--s-16);margin:0;padding-top:var(--s-2)}
+@media(min-width:640px){.facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.facts>div{padding-block:var(--s-6)}
+.facts dt{display:flex;align-items:center;gap:var(--s-3);font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900);text-transform:uppercase}
+.facts dt .ph{color:var(--c-gray-900)}
+.facts dd{margin:0;overflow-wrap:anywhere}
+.facts dd small{display:block;color:var(--c-gray-1100);font-size:var(--t-14)}
+
+.ds-code{margin:0 0 var(--s-8);padding:var(--s-6) var(--s-8);border-radius:var(--r-3);background:var(--c-gray-200);color:var(--c-gray-1200);font-family:var(--stack-mono);font-size:var(--t-13);line-height:var(--lh-ui);tab-size:4;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.ds-code code{font:inherit;white-space:pre}
+ol.steps{margin:0;padding-left:var(--s-10);counter-reset:step}
+ol.steps li{margin-bottom:var(--s-8);padding-left:var(--s-2)}
+ol.steps li::marker{font-family:var(--stack-mono);color:var(--c-gray-900);font-size:var(--t-13)}
+ol.steps .ds-code{margin-top:var(--s-3)}
+.aside{border-left:2px solid var(--c-gray-400);padding-left:var(--s-8);margin-top:var(--s-12);color:var(--c-gray-1100)}
+.aside p{max-width:62ch}
+
+.link-list{border-top:0}
+.ds-icon-row{display:flex;align-items:center;gap:var(--s-6);min-height:var(--tap-min);padding-block:var(--s-4);color:var(--c-gray-1200)}
+.ds-icon-row .ph[data-lead]{color:var(--c-gray-1100)}
+.ds-icon-row-label{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:var(--t-16);font-weight:var(--fw-medium)}
+.ds-icon-row-meta{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13)}
+.ds-icon-row .ph{color:var(--c-gray-900);transition:color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out)}
+
+.faq details{border-top:1px solid var(--c-gray-300)}
+.faq details:last-of-type{border-bottom:1px solid var(--c-gray-300)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:var(--s-8);min-height:var(--tap-min);padding-block:var(--s-4);cursor:pointer;font-weight:var(--fw-medium);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ph{color:var(--c-gray-900);transition:transform var(--dur-fast) var(--ease-out)}
+.faq details[open] summary .ph{transform:rotate(180deg)}
+.faq details p{margin:0 0 var(--s-8);color:var(--c-gray-1100)}
+
+.ds-shell-footer{padding-top:var(--s-24);border-top:1px solid var(--c-gray-300)}
+.ds-shell-footer-inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:var(--s-12);padding-bottom:var(--s-24);color:var(--c-gray-1100);font-size:var(--t-14)}
+.ds-shell-footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
+
+/* Hover is a pointer affordance; on touch it would stick after a tap. */
+@media (hover: hover){
+  .ds-tab:hover{color:var(--c-gray-1200)}
+  .ds-btn-pill:hover{background:var(--c-gray-100);box-shadow:var(--shadow-custom-hover)}
+  .ds-btn-pill[data-tone="solid"]:hover{background:var(--c-gray-1100)}
+  .text-link:hover{color:var(--c-gray-1200)}
+  p a:hover,li a:hover,dd a:hover{text-decoration-color:var(--c-accent-text)}
+  .ds-icon-row:hover .ph:last-child{color:var(--c-gray-1200);transform:translateX(2px)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:0.01ms !important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------------------------------------------------------------- Document pages
+   Markdown rendered by Jekyll inside _layouts/default.html. Same ladder, same voice:
+   h1 holds rank at 24/550 (soul: no shouting headings), h2 at 20/550, h3 is the mono
+   eyebrow with its hairline. Tables are an instrument register: one rule under the
+   header, none per row, tabular figures. */
+.prose{max-width:var(--w-reading,720px)}
+.prose>h1{margin:0 0 var(--s-8);font-size:var(--t-24);font-weight:var(--fw-display);letter-spacing:var(--track-heading);line-height:var(--lh-heading,1.333);text-wrap:balance}
+.prose>h2{margin:var(--s-24) 0 var(--s-6);font-size:var(--t-20);font-weight:var(--fw-display);letter-spacing:var(--track-heading);line-height:var(--lh-heading,1.333);text-wrap:balance}
+.prose>h3{display:flex;align-items:center;gap:var(--s-6);margin:var(--s-16) 0 var(--s-6);color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);letter-spacing:var(--track-flat);text-transform:uppercase}
+.prose>h3::after{content:"";flex:1;height:1px;background:var(--c-preview-border)}
+.prose>h4{margin:var(--s-12) 0 var(--s-3);font-size:var(--t-16);font-weight:var(--fw-semibold)}
+.prose p{max-width:68ch}
+.prose code{font-weight:var(--fw-body);font-size:.88em}
+.prose pre{max-width:100%}
+.prose>p:first-of-type{color:var(--c-gray-1100);font-size:var(--t-18)}
+.prose ul,.prose ol{margin:0 0 var(--s-8);padding-left:var(--s-10)}
+.prose li{margin-bottom:var(--s-2);max-width:68ch}
+.prose li::marker{color:var(--c-gray-900)}
+.prose ol li::marker{font-family:var(--stack-mono);font-size:var(--t-13)}
+.prose hr{border:0;border-top:1px solid var(--c-gray-300);margin:var(--s-16) 0}
+.prose blockquote{margin:0 0 var(--s-8);padding-left:var(--s-8);border-left:2px solid var(--c-gray-400);color:var(--c-gray-1100)}
+.prose img{display:block;max-width:100%;height:auto;border:1px solid var(--c-preview-border);border-radius:var(--r-4);margin:var(--s-8) 0}
+.prose pre,.prose .highlight pre{margin:0 0 var(--s-8);padding:var(--s-6) var(--s-8);border-radius:var(--r-3);background:var(--c-gray-200);color:var(--c-gray-1200);font-family:var(--stack-mono);font-size:var(--t-13);line-height:var(--lh-ui);tab-size:4;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.prose pre code{font:inherit;white-space:pre}
+.prose .highlighter-rouge{margin:0 0 var(--s-8)}
+.prose .highlighter-rouge pre{margin:0}
+/* display:block so a wide register scrolls inside the column instead of widening the page. */
+.prose table{display:block;width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;border-collapse:collapse;margin:var(--s-4) 0 var(--s-12);font-size:var(--t-14);line-height:var(--lh-ui);font-variant-numeric:tabular-nums}
+.prose thead th{text-align:left;padding:var(--s-3) var(--s-4) var(--s-3) 0;color:var(--c-gray-900);font-family:var(--stack-mono);font-size:var(--t-13);font-weight:var(--fw-body);text-transform:uppercase;letter-spacing:var(--track-flat);border-bottom:1px solid var(--c-gray-300)}
+.prose tbody td{vertical-align:top;padding:var(--s-4) var(--s-4) var(--s-4) 0;color:var(--c-gray-1100)}
+.prose tbody td:first-child{color:var(--c-gray-1200);font-weight:var(--fw-medium)}
+.prose tbody tr:first-child td{padding-top:var(--s-6)}
+.table-scroll{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.doc-head{margin-bottom:var(--s-12)}
+.doc-nav{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-24);padding-top:var(--s-12);border-top:1px solid var(--c-gray-300)}
+
+
+/* ---------------------------------------------------------------- Delivery review page
+   Same ladder as the docs site. The viewer is a stage with the view tabs above it; a pressed
+   tab is the only state, no keyframes. Status chips use ink for BLOCKED so the one accent
+   stays reserved. */
+.viewer-tabs{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:var(--s-16) 0 var(--s-6)}
+.ds-tab[aria-pressed="true"]{background:var(--c-gray-300);color:var(--c-gray-1200)}
+.capture-stage img,.capture-stage video{display:block;width:100%;height:auto}
+.pair{display:grid;grid-template-columns:1fr;gap:var(--s-8);margin:0;padding:0;list-style:none}
+@media(min-width:640px){.pair{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pair .ds-card{margin:0}
+.mono{font-family:var(--stack-mono);font-size:var(--t-13)}
+.facts dd.mono{font-size:var(--t-14);overflow-wrap:anywhere}
+.doc-list{border-top:0}
+
+/* Reference pipeline: four captures, in the order the chain ran. The sources differ in size
+   (2048×1534, 1536×1024, 1223×1286); for the demo they present as one square each, cropped
+   to centre. The full file is one click away in reference/. */
+.pipeline .capture-stage{aspect-ratio:1/1}
+.pipeline .capture-stage img{width:100%;height:100%;object-fit:cover;object-position:center}
+.pipeline .capture-stage a{display:block;height:100%}
+.pipeline{display:grid;grid-template-columns:1fr;gap:var(--s-8);margin:0;padding:0;list-style:none}
+@media(min-width:640px){.pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pipeline .ds-card{margin:0;height:100%}
+.step-no{font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900)}
+
+/* ---------------------------------------------------------------- Full-width carousel
+   The band sits outside the 760px measure, so it needs no viewport unit. Native scroll-snap,
+   one still per slide, no keyframes; the caption and counter follow the snapped slide. */
+.band{width:100%}
+.carousel-head{padding-block:var(--s-8) 0}
+.carousel-head .viewer-tabs{margin:var(--s-16) 0 var(--s-6)}
+.carousel-frame{position:relative}
+.track{display:flex;gap:var(--s-4);margin:0;padding:0 var(--s-12);list-style:none;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--s-12);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;aspect-ratio:16/9;border:1px solid var(--c-preview-border);border-radius:var(--r-4);background:var(--c-gray-200);overflow:hidden}
+.slide img{display:block;width:100%;height:100%;object-fit:cover}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);left:var(--s-24);width:44px;height:44px;min-height:44px;padding:0;border-radius:var(--r-pill)}
+.carousel-btn[data-side="next"]{left:auto;right:var(--s-24)}
+.carousel-btn .ph{width:var(--icon-20);height:var(--icon-20)}
+.carousel-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-12);padding-block:var(--s-6) 0}
+.carousel-caption{margin:0;color:var(--c-gray-1100);font-size:var(--t-14);max-width:60ch}
+.carousel-caption span{color:var(--c-gray-1200);font-weight:var(--fw-medium)}
+.carousel-count{color:var(--c-gray-1000);font-family:var(--stack-mono);font-size:var(--t-13);font-style:normal;white-space:nowrap;font-variant-numeric:tabular-nums}
+.track:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:2px}
+@media(min-width:640px){.carousel-btn{left:var(--s-32)}.carousel-btn[data-side="next"]{right:var(--s-32)}}
+@media(max-width:639px){.carousel-btn{display:none}}
+@media(prefers-reduced-motion:no-preference){.track{scroll-behavior:smooth}}
+
+/* ---------------------------------------------------------------- 3D viewer band
+   The GLB the gate verified, rendered in the browser. Stage left, controls right on wide
+   screens; stacked on a phone. No decorative motion: auto-rotate is a user toggle. */
+.viewer3d-head{padding-block:var(--s-32) 0}
+.v3d-frame{display:grid;grid-template-columns:1fr;gap:var(--s-8);padding:var(--s-8) var(--s-12) 0}
+@media(min-width:960px){.v3d-frame{grid-template-columns:minmax(0,1fr) 340px}}
+.v3d-stage{position:relative;aspect-ratio:16/10;border:1px solid var(--c-preview-border);border-radius:var(--r-4);background:var(--c-gray-200);overflow:hidden}
+#v3d-canvas{display:block;width:100%;height:100%;touch-action:none;outline:0}
+.v3d-status{position:absolute;left:var(--s-8);bottom:var(--s-6);margin:0;color:var(--c-gray-1000);font-size:var(--t-13)}
+.v3d-file{position:absolute;inset:0;display:grid;place-items:center;padding:var(--s-16);background:var(--c-gray-200)}
+.v3d-file[hidden]{display:none}
+.v3d-file pre{white-space:pre-wrap;overflow-wrap:anywhere}
+button.text-link{border:0;background:transparent;padding:0;cursor:pointer;font:inherit;font-size:var(--t-14);font-weight:var(--fw-medium);min-height:44px}
+#v3d-cat-all{margin-top:var(--s-4)}
+.v3d-file>div,.v3d-file p{max-width:56ch}
+.v3d-side{display:flex;flex-direction:column;gap:var(--s-8)}
+.v3d-modes{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.v3d-modes .ds-tab{gap:var(--s-3)}
+.v3d-panel{margin:0;padding:0;border:0;min-width:0}
+.v3d-panel label{display:flex;justify-content:space-between;gap:var(--s-8);font-size:var(--t-14);font-weight:var(--fw-medium);margin-bottom:var(--s-3)}
+.v3d-toggle{cursor:pointer;justify-content:flex-start !important;min-height:44px;align-items:center}
+.v3d-toggle input{width:18px;height:18px;margin:0;accent-color:var(--c-gray-1200)}
+.v3d-panel input[type="range"]{width:100%;height:44px;margin:0;accent-color:var(--c-gray-1200)}
+.v3d-hint{margin:var(--s-4) 0 0;color:var(--c-gray-1100);font-size:var(--t-14)}
+.v3d-row{display:flex;align-items:center;justify-content:space-between;gap:var(--s-8);flex-wrap:wrap}
+.v3d-foot{padding-top:var(--s-6);border-top:1px solid var(--c-gray-300)}
+.mono{font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-1000);font-variant-numeric:tabular-nums}
+.cat-list{max-height:360px;overflow-y:auto;scrollbar-width:thin}
+.cat-row{display:grid;grid-template-columns:28px minmax(0,1fr);grid-template-areas:"no label" "no body";gap:0 var(--s-4);width:100%;padding:var(--s-5) 0;border:0;background:transparent;text-align:left;font:inherit;color:inherit;cursor:pointer;border-radius:var(--r-3)}
+.cat-row .cat-no{grid-area:no;font-family:var(--stack-mono);font-size:var(--t-13);color:var(--c-gray-900);padding-top:3px}
+.cat-row h3{grid-area:label;margin:0;font-size:var(--t-14);font-weight:var(--fw-semibold)}
+.cat-row p{grid-area:body;margin:0;color:var(--c-gray-1100);font-size:var(--t-13);line-height:var(--lh-ui)}
+.cat-row .cat-qty{font-family:var(--stack-mono);color:var(--c-gray-1200)}
+.cat-row[aria-pressed="true"]{background:var(--c-gray-300)}
+.cat-row:focus-visible{outline:2px solid var(--c-sky-600);outline-offset:-2px}
+@media (hover: hover){.cat-row:hover{background:var(--c-gray-200)}}

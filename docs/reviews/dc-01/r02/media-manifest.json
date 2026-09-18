@@ -1,0 +1,387 @@
+{
+ "source_package": "builds/desktop-companion/delivery/R02",
+ "files": 76,
+ "bytes": 24885007,
+ "published": [
+  {
+   "path": "media/assembled.jpg",
+   "bytes": 70213,
+   "sha256": "ecea1c9447e556ebeb90bc7c784e7c8fadef0c86035478adee851fa7c830803a"
+  },
+  {
+   "path": "media/exploded.jpg",
+   "bytes": 89001,
+   "sha256": "686ee3a9eef1d5ec9b870e35bb5e68aa5a0a86515d316652dbdb042bafe95400"
+  },
+  {
+   "path": "media/catalog.jpg",
+   "bytes": 141481,
+   "sha256": "a58f0e09072583d3c0c069758d957d4c781c47fc76b78627896911862cfb013b"
+  },
+  {
+   "path": "media/button.jpg",
+   "bytes": 79744,
+   "sha256": "1aeb37995a92722b30088b571405604bb95899bb4b53fa2802b7de36448ab03e"
+  },
+  {
+   "path": "media/print-layout.jpg",
+   "bytes": 108708,
+   "sha256": "77874237b43bc76aed22fc188ce346ac843306228013e7ca723368a06e72a9f0"
+  },
+  {
+   "path": "media/detail-arm.jpg",
+   "bytes": 33869,
+   "sha256": "e6d90d6c72f500c3cd0083d83bcbb5a81d3431036f08a48509507a162f41495b"
+  },
+  {
+   "path": "media/detail-ear.jpg",
+   "bytes": 32887,
+   "sha256": "445994d23fb1184422da489721f701f2f430cdeefdd98f203359ceab6177b82d"
+  },
+  {
+   "path": "media/detail-interior.jpg",
+   "bytes": 53944,
+   "sha256": "dbcb17132863a6802230ea969d48de51c7c1b7b7b889a912baf8b026d6f69526"
+  },
+  {
+   "path": "media/pcb-desktop-companion.jpg",
+   "bytes": 109777,
+   "sha256": "87f7a4edff098cf3c06301111e74c23dd43ea6ba703120eebc1de0ae334c3d96"
+  },
+  {
+   "path": "cad/desktop-companion.svg",
+   "bytes": 803726,
+   "sha256": "a2a93323950af97ae897416b091d79458d75727cc6d0cdd9336334b67516df10"
+  },
+  {
+   "path": "media/pcb-carrier-front.jpg",
+   "bytes": 191264,
+   "sha256": "b32079cfbc087e2236c4a76f7c1b524d21476081782fa1ced98a2e56e30ea35e"
+  },
+  {
+   "path": "cad/carrier-front.svg",
+   "bytes": 53886,
+   "sha256": "dc3340334a5c3806a4b1770a9d95f6ac1ef8b4c4db066ed205061a3a529bb151"
+  },
+  {
+   "path": "media/pcb-carrier-back.jpg",
+   "bytes": 120888,
+   "sha256": "bde8db95ef5aff7e404723d059dc030617c58c8c93db2aa63655ab7e527ba346"
+  },
+  {
+   "path": "cad/carrier-back.svg",
+   "bytes": 13371,
+   "sha256": "b430483df6fbe15339af25df965da6e15cd34cae4c06ee26f713668210c7ddd3"
+  },
+  {
+   "path": "cad/desktop-companion-PTH-drl_map.svg",
+   "bytes": 37745,
+   "sha256": "1361d2dede62cfa959863c97348a62707c42d88e627cbbdd4adf823237bb5186"
+  },
+  {
+   "path": "cad/desktop-companion-NPTH-drl_map.svg",
+   "bytes": 25883,
+   "sha256": "11fb63ac65ad910c6e2e37b3673f561cb9e52db29646a0e01a42c9b8cb5c5516"
+  },
+  {
+   "path": "media/plate-01-PETG.jpg",
+   "bytes": 12916,
+   "sha256": "246b92d7703b7bfd52b59077ba58e51223dd98ce942a02fef920ca39b74caff4"
+  },
+  {
+   "path": "print/plate-01-PETG.3mf",
+   "bytes": 1411078,
+   "sha256": "030349c7f3e0fe5d39426b98f1ccdb78a5b66f115d759c012312f96c6e79fb84"
+  },
+  {
+   "path": "media/plate-02-TPU.jpg",
+   "bytes": 5303,
+   "sha256": "f2e13cad0cfac4fe02220e071d3a6df5c679d8400528f85ab3c2b1f4be2a4357"
+  },
+  {
+   "path": "print/plate-02-TPU.3mf",
+   "bytes": 28173,
+   "sha256": "01e3158c1682318c91a8e6e53824c5a288cc4b5f0faee6f62fc97b17f4187418"
+  },
+  {
+   "path": "media/parts/DC01_LOWER_SHELL.jpg",
+   "bytes": 50627,
+   "sha256": "9bc7b236d84ea35114bc2cc37729ed8f02e7be2ceb6af866f11566cb794d5704"
+  },
+  {
+   "path": "stl/DC01_LOWER_SHELL.stl",
+   "bytes": 1596184,
+   "sha256": "5605a01f5b0f3668d3704048691d324420c4142c5b26c136bf4c8ee0f5f3e4eb"
+  },
+  {
+   "path": "media/parts/DC01_UPPER_SHELL.jpg",
+   "bytes": 52502,
+   "sha256": "b282717ffdbf2326bfbf5a2a0b31474de7e5218102dd00a8f8e318af8081ffc6"
+  },
+  {
+   "path": "stl/DC01_UPPER_SHELL.stl",
+   "bytes": 1465584,
+   "sha256": "276aac24d401580cca21b32dab8de90ece22c39d153cb6b1115eeb1eab97043e"
+  },
+  {
+   "path": "media/parts/DC01_BATTERY_RETAINER.jpg",
+   "bytes": 34119,
+   "sha256": "2f082564e93fd844904871ab5b2ec24c3a95bb886906a546b3e4a44760be1163"
+  },
+  {
+   "path": "stl/DC01_BATTERY_RETAINER.stl",
+   "bytes": 59484,
+   "sha256": "7d9b6aa922ea152eb9b7b0408efc10cd2621c8319935ed4dcc1f039b1389d572"
+  },
+  {
+   "path": "media/parts/DC01_MAINBOARD_FRAME.jpg",
+   "bytes": 39000,
+   "sha256": "f587fc733058b9d5c7770a721b3ec9ff1631d74899666ed5322f218ad52c07e6"
+  },
+  {
+   "path": "stl/DC01_MAINBOARD_FRAME.stl",
+   "bytes": 339084,
+   "sha256": "508eea7345a7feee37c10185cd4a39744286021cbac50e3e1a30852c518c63bc"
+  },
+  {
+   "path": "media/parts/DC01_CHARGER_FRAME.jpg",
+   "bytes": 45821,
+   "sha256": "65283c02e5be44cd71c55d3d2eb93a1f96f5a1cad6e6925a870defa505034f25"
+  },
+  {
+   "path": "stl/DC01_CHARGER_FRAME.stl",
+   "bytes": 418384,
+   "sha256": "29b7963c8ab43e201cd6ff46dba2915139cbbc333b91ba8f3e7cd74b8ea94144"
+  },
+  {
+   "path": "media/parts/DC01_DISPLAY_RETAINER.jpg",
+   "bytes": 48695,
+   "sha256": "c5e2474ce2e21df918d164c10e7c3e4e4983945355fd996fd6c997cc5944c7ca"
+  },
+  {
+   "path": "stl/DC01_DISPLAY_RETAINER.stl",
+   "bytes": 118184,
+   "sha256": "ae2f0d5c913fc9d3cc5714e1934a74df86d5e8791e9d1e218d82f938f01fc09d"
+  },
+  {
+   "path": "media/parts/DC01_REGULATOR_PLATE.jpg",
+   "bytes": 32623,
+   "sha256": "810409bcc7132dc33091bf7bf89ad5d23603dac845aa78041ba8373a720d89d6"
+  },
+  {
+   "path": "stl/DC01_REGULATOR_PLATE.stl",
+   "bytes": 59584,
+   "sha256": "76115df1c259e0b5a7e640986b9655d6b5de167deae02b9156ccb7cc801f6d43"
+  },
+  {
+   "path": "media/parts/DC01_EAR_L.jpg",
+   "bytes": 44124,
+   "sha256": "4be5ca2535ea27f1bb2104aaed857c716dc45c27346eb7694f88fc813a3e4706"
+  },
+  {
+   "path": "stl/DC01_EAR_L.stl",
+   "bytes": 78284,
+   "sha256": "5c7559fd4cd7229bdbb9b90654d3e597f9998e174f824cfed6630cd317cff86a"
+  },
+  {
+   "path": "media/parts/DC01_EAR_R.jpg",
+   "bytes": 44769,
+   "sha256": "e20e15c6b1666e795db6198713ff8c1b611b051a86e386d0c85c1f98291a6d87"
+  },
+  {
+   "path": "stl/DC01_EAR_R.stl",
+   "bytes": 78284,
+   "sha256": "24e63ec4cd9c11b9b79ead27e6bb3bdcfc0844a914dde3db1fef112d0e72d537"
+  },
+  {
+   "path": "media/parts/DC01_ARM_L.jpg",
+   "bytes": 80735,
+   "sha256": "ae4889f011f44edcfabad75ade5d5152f3f122260b7f43984559e456cb48bf85"
+  },
+  {
+   "path": "stl/DC01_ARM_L.stl",
+   "bytes": 539884,
+   "sha256": "c5e3a299e49472a2c43d98ea92a107c5745f58517e70e0e9936827d28bac7831"
+  },
+  {
+   "path": "media/parts/DC01_ARM_R.jpg",
+   "bytes": 45672,
+   "sha256": "dd2c97defc46f5368d6488c8019da0c5f68793a854a9c265db189303d62ecc88"
+  },
+  {
+   "path": "stl/DC01_ARM_R.stl",
+   "bytes": 539784,
+   "sha256": "8663de1436c4f8206b66654df33dddb0334e0661e96aaec597d40aec86225e53"
+  },
+  {
+   "path": "media/parts/DC01_BUTTON_HOLDER.jpg",
+   "bytes": 69606,
+   "sha256": "1db8f1b74c97c1a2f47de359015acb693a96238cd138769092f64a1ece0cce05"
+  },
+  {
+   "path": "stl/DC01_BUTTON_HOLDER.stl",
+   "bytes": 157184,
+   "sha256": "c11f299e1acf75b92b47bd41a53a2b012091522193aff32645d59966d054cdb7"
+  },
+  {
+   "path": "media/parts/DC01_ARM_KEEPER_L.jpg",
+   "bytes": 30236,
+   "sha256": "0569cda640baa93296bdd0a66022117f7cb2056ccffe80ac3d1c90233751ed34"
+  },
+  {
+   "path": "stl/DC01_ARM_KEEPER_L.stl",
+   "bytes": 38484,
+   "sha256": "d1b30479cf18eb4ccd2c1d4ee2ec9ea00f3682eecb5fac494665c104969894fc"
+  },
+  {
+   "path": "media/parts/DC01_ARM_KEEPER_R.jpg",
+   "bytes": 31708,
+   "sha256": "7a2f2eb5dda4f09d13ca17251f66ffc2e9558b434497f0d9b748fbef4f359cc9"
+  },
+  {
+   "path": "stl/DC01_ARM_KEEPER_R.stl",
+   "bytes": 38484,
+   "sha256": "91ab7fd2713a2c22ce62ac47625149d9fb9c157848169153eb422d0845fb655b"
+  },
+  {
+   "path": "media/parts/DC01_EAR_KEEPER_L.jpg",
+   "bytes": 16573,
+   "sha256": "6ffcc6320ac019bd82d24cd4800b7e2759cc9529575c4de16c6512cb6a7b508b"
+  },
+  {
+   "path": "stl/DC01_EAR_KEEPER_L.stl",
+   "bytes": 38484,
+   "sha256": "1ec9d834c3a172c14a5d781e5993cab4de842fc1abc27a4eaf6c7c41135cacef"
+  },
+  {
+   "path": "media/parts/DC01_EAR_KEEPER_R.jpg",
+   "bytes": 17438,
+   "sha256": "33223b954d600dbc6bd9072ad5e1ad0c9557de206948eb79e37b005eb62c77ab"
+  },
+  {
+   "path": "stl/DC01_EAR_KEEPER_R.stl",
+   "bytes": 38484,
+   "sha256": "a9c6fccd5046047ef65704fdf6b1d7f4da1b040e81218321939c6af3f3bf6fc3"
+  },
+  {
+   "path": "media/parts/DC01_BUTTON_REAR_KEEPER.jpg",
+   "bytes": 44545,
+   "sha256": "a99252c1730745aca14786f49fde2e7de3cdabbf8d1a6694683bc189be94bdb3"
+  },
+  {
+   "path": "stl/DC01_BUTTON_REAR_KEEPER.stl",
+   "bytes": 77684,
+   "sha256": "b3648371b557cf8b44cb8d520f80fad33e7210ac91d8ba08b10a45afee6f0f18"
+  },
+  {
+   "path": "media/parts/DC01_BUTTON_DIAPHRAGM.jpg",
+   "bytes": 67112,
+   "sha256": "9545aa57c22c244224432590856c884cdeffe47bc13328b1170cdcb140d5b3a4"
+  },
+  {
+   "path": "stl/DC01_BUTTON_DIAPHRAGM.stl",
+   "bytes": 127084,
+   "sha256": "1ec579435ef7e830f273fb26a6a62272e398dc2606a347a3f7f547342906e101"
+  },
+  {
+   "path": "cad/gerber-excellon.zip",
+   "bytes": 25633,
+   "sha256": "1b4249e70ef085013bb127c1014c8228b4746bba7a2e3c5fffba49e3d9fbe7ba"
+  },
+  {
+   "path": "dc01-native-animatic.mp4",
+   "bytes": 5055976,
+   "sha256": "d9b937f4eafc427c39a8a9aef4b26c948c2b8cfb82e17b1a77aad4745c8a2780"
+  },
+  {
+   "path": "DC01-P03-print-kit.zip",
+   "bytes": 9501411,
+   "sha256": "342fdd7bfd465a5f672e586129615cf556d0d943a349c4f354dc85887e78116e"
+  },
+  {
+   "path": "cad/desktop-companion.kicad_sch",
+   "bytes": 49400,
+   "sha256": "2ff1ca19ee58c641b240cb519201555f8e2beb2b2af8bd505a63d4a569d940ea"
+  },
+  {
+   "path": "cad/desktop-companion.kicad_pcb",
+   "bytes": 69695,
+   "sha256": "6a2bdd73758670abe841d4943922a23349a56b0e5cdfe622c4c9dfacd71a2974"
+  },
+  {
+   "path": "cad/desktop-companion.kicad_pro",
+   "bytes": 569,
+   "sha256": "7af00e37e32a4bd266efbbdc41ca410ed90721b149c99fc2a28468def176f2d0"
+  },
+  {
+   "path": "cad/desktop-companion.net",
+   "bytes": 6247,
+   "sha256": "b4b568ad8f02a46ced5191557e9614ece15df856d2cb8e3199ddbfb0bffda8a0"
+  },
+  {
+   "path": "cad/DC.kicad_sym",
+   "bytes": 20675,
+   "sha256": "310f02e95f7e87f4032401b0099f2c1e4885f06cfa96eefcf3aa3355f92b600d"
+  },
+  {
+   "path": "README.md",
+   "bytes": 5225,
+   "sha256": "d854340976a19058da5a92455ab1737aa44fe56700f9dcc2b8ae99d9c740782b"
+  },
+  {
+   "path": "SHA256SUMS",
+   "bytes": 19300,
+   "sha256": "d8bb1aab9b9c900444b6c7e37f1d4ba2d8b31f554034152cadf049df39654162"
+  },
+  {
+   "path": "snapshot.json",
+   "bytes": 1594,
+   "sha256": "cf64d9df8c43331d3e57ea1e2071c5007fab7642a64558ff78ed383fef1d3358"
+  },
+  {
+   "path": "electronics-README.md",
+   "bytes": 11674,
+   "sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765"
+  },
+  {
+   "path": "bench-validation.md",
+   "bytes": 5540,
+   "sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e"
+  },
+  {
+   "path": "electronics-audit.json",
+   "bytes": 959,
+   "sha256": "4ca4382fe0b9f0de669520dfde1f50497e1f22a055fb045fd7b91dc8d7ea39b2"
+  },
+  {
+   "path": "system-wiring.csv",
+   "bytes": 13223,
+   "sha256": "c888572f8d24ba6f7449c5f9c451b1af237b378e1a734c844347d6ebf043df0b"
+  },
+  {
+   "path": "system-bom.csv",
+   "bytes": 2812,
+   "sha256": "f99bdec9e5d646f5d3c5c123656a5fb2057ce4cb7835e394963517558b09926a"
+  },
+  {
+   "path": "carrier-bom.csv",
+   "bytes": 2016,
+   "sha256": "c50553cc99aec6efe3850615626f6e9e9dd7e4a7f48028cfc14655c99852463b"
+  },
+  {
+   "path": "print/README.md",
+   "bytes": 6207,
+   "sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16"
+  },
+  {
+   "path": "print/package-manifest.json",
+   "bytes": 19003,
+   "sha256": "c7445813dd0a8d735a38e632ff5c8b14befc60f656aee28cffe462b0476c4bf9"
+  },
+  {
+   "path": "print/package-check.json",
+   "bytes": 39474,
+   "sha256": "5e8f90c45ccf4cd1a9e2f8a44176f013a821149c33054e728aab6e06c527ec86"
+  }
+ ]
+}

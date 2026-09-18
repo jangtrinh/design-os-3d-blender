@@ -1,0 +1,25 @@
+{
+  "native_version": "10.0.6",
+  "native_erc": "PASS",
+  "native_drc": "PASS",
+  "native_parity": "PASS",
+  "custom_screen": "PASS",
+  "negative_controls_detected": 5,
+  "tracks": 351,
+  "vias": 13,
+  "pads": 63,
+  "geometry_identity": "PASS",
+  "base_wires": 26,
+  "optional_wires": 7,
+  "physical_measurements": 0,
+  "manufacture": "BLOCKED",
+  "electrical_use": "BLOCKED",
+  "geometry_interface_revision": "E05",
+  "source_cad_sha256": {
+    "cad/desktop-companion.kicad_sch": "2ff1ca19ee58c641b240cb519201555f8e2beb2b2af8bd505a63d4a569d940ea",
+    "cad/desktop-companion.kicad_pcb": "6a2bdd73758670abe841d4943922a23349a56b0e5cdfe622c4c9dfacd71a2974",
+    "cad/desktop-companion.kicad_pro": "7af00e37e32a4bd266efbbdc41ca410ed90721b149c99fc2a28468def176f2d0",
+    "cad/desktop-companion.net": "b4b568ad8f02a46ced5191557e9614ece15df856d2cb8e3199ddbfb0bffda8a0"
+  },
+  "finalizer_sha256": "4443a512b2122223e3265bf7b7322c764ad5f8026377533c417c05dcc49e3fee"
+}
