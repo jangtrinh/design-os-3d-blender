@@ -5,7 +5,7 @@ Every number on the page is read from the delivered package (snapshot.json,
 print/package-manifest.json, print/final-gate.json, electronics-audit.json,
 media-manifest.json), never retyped. Regenerate instead of patching the HTML:
 
-    python3 docs/reviews/dc-01/r02/build-page.py [--source builds/desktop-companion/delivery/R02]
+    python3 docs/reviews/dc-01/{revision}/build-page.py [--source builds/desktop-companion/delivery/R02]
 
 The stylesheet and the carousel script are inlined from page-style.css and
 page-carousel.js so the page also opens straight from disk.
@@ -16,7 +16,8 @@ import json
 import re
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parent  # holds the shared builders
+OUT = None  # set from --out: the revision directory this run publishes into
 SITE = "https://jangtrinh.github.io/design-os-3d-blender"
 PHOSPHOR = {
     "download": "M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z",
@@ -45,6 +46,8 @@ EXTRA_CSS = """
 .part-body p{margin:0;color:var(--c-gray-1100);font-size:var(--t-13);font-family:var(--stack-mono);line-height:var(--lh-ui);overflow-wrap:anywhere}
 /* A 64-character SHA-256 in a caption must wrap; the base rule keeps captions on one line. */
 .case-plate-caption cite,.carousel-caption{white-space:normal;overflow-wrap:anywhere}
+/* Badges keep their intrinsic aspect ratio: height is fixed, width follows the image. */
+.badges img{height:28px;width:auto;max-width:100%}
 .part-chips{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:var(--s-4) 0 0}
 /* A missing file is a reserved blank that names it, never a stand-in picture. */
 .media-blank{display:flex;align-items:center;justify-content:center;min-height:180px;padding:var(--s-8);
@@ -73,7 +76,8 @@ def badge(label, value, colour):
     def quote(text):
         return text.replace(" ", "%20").replace("-", "--").replace("/", "%2F")
     url = f"https://img.shields.io/badge/{quote(label)}-{quote(value)}-{colour}?style=for-the-badge"
-    return f'<img src="{url}" alt="{label} {value}" width="200" height="28" loading="eager">'
+    # No width attribute: a shields badge has its own intrinsic width and must never be stretched.
+    return f'<img src="{url}" alt="{label} {value}" height="28" loading="eager">'
 
 
 def fact(name, value, note=None, mono=False):
@@ -111,17 +115,37 @@ def part_card(part, label, render_bytes):
         "</div></article></li>")
 
 
-def build(source):
-    snapshot = json.loads((HERE / "snapshot.json").read_text())
+def build(source, revision, sibling_href, sibling_label):
+    snapshot = json.loads((OUT / "snapshot.json").read_text())
     labels = snapshot["labels"]
-    manifest = json.loads((HERE / "print" / "package-manifest.json").read_text())
-    check = json.loads((HERE / "print" / "package-check.json").read_text())
+    manifest = json.loads((OUT / "print" / "package-manifest.json").read_text())
+    check = json.loads((OUT / "print" / "package-check.json").read_text())
     gate = json.loads((source / "print" / "final-gate.json").read_text())
-    audit = json.loads((HERE / "electronics-audit.json").read_text())
+    audit = json.loads((OUT / "electronics-audit.json").read_text())
     completion = json.loads((source.parent / "completion.json").read_text())
     video = json.loads((source / "reports" / "presentation" / "video-receipt.json").read_text())
     frames = json.loads((source / "reports" / "presentation" / "native-frames.json").read_text())
-    media = json.loads((HERE / "media-manifest.json").read_text())
+    # R02 recorded the engine in the frame receipt; R03 records the device there and names
+    # the engine in the renderer profile. Read whichever the package actually carries.
+    engine = frames.get("engine")
+    if not engine:
+        profile = (source / "reports" / "presentation" / "renderer-profile.md")
+        engine = "Cycles" if profile.exists() and "Cycles" in profile.read_text() else None
+    assert engine, "no render engine recorded in the package"
+    device = frames.get("device", "")
+
+    # One honest sentence about the film, whichever way the revision was rendered.
+    audio_note = "không có âm thanh" if video["audio"] == "none" else f'âm thanh {video["audio"]}'
+    if video.get("unique_native_rendered_states"):
+        poses = f'{video["native_poses"]:,}'.replace(",", ".")  # Vietnamese thousands separator
+        film_note = (f'{poses} khung {video["native_pose_rate"]} fps 1920 × 1080 từ '
+                     f'{video["unique_native_rendered_states"]} render native riêng '
+                     f'({video["stationary_state_reuse_frames"]} khung tái dùng ở trạng thái đứng yên), '
+                     f'{audio_note}')
+    else:
+        film_note = (f'{video["native_poses"]} pose native 1920 × 1080 tại {video["native_pose_rate"]} pose/giây, '
+                     f'{audio_note}')
+    media = json.loads((OUT / "media-manifest.json").read_text())
     stl_bytes = {r["path"]: r["bytes"] for r in media["published"]}
 
     stills = [
@@ -148,8 +172,7 @@ def build(source):
         for p in manifest["parts"])
 
     facts = "".join([
-        fact("Phim lắp", f'{round(video["encoded_duration_seconds"])} giây',
-             f'{video["native_poses"]} pose native 1920 × 1080, {video["audio"]} âm thanh'),
+        fact("Phim lắp", f'{round(video["encoded_duration_seconds"])} giây', film_note),
         fact("Chi tiết in", f"{check['part_count']} chi tiết",
              f"{petg} PETG và {tpu} TPU trên hai khay"),
         fact("Gate in cuối", f"{len(gate['parts'])}/{len(gate['parts'])} đạt",
@@ -237,6 +260,7 @@ def build(source):
         f'{icon("circuit", 20)}<span class="ds-icon-row-label">{text}</span>'
         f'<span class="ds-icon-row-meta">{href.split("/")[-1]}</span></a></li>' for href, text in cad_files)
 
+    # Stylesheet and script are shared by every revision, so they sit next to the builders.
     style = (HERE / "page-style.css").read_text()
     carousel = (HERE / "page-carousel.js").read_text()
 
@@ -245,17 +269,17 @@ def build(source):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DC-01 bản R02 — robot để bàn native Blender: 18 chi tiết in, bo KiCad và phim lắp</title>
-<link rel="canonical" href="{SITE}/reviews/dc-01/r02/">
-<meta name="description" content="Gói bàn giao R02 của DC-01: 18 chi tiết in qua gate hình học, bo carrier KiCad với ERC/DRC 0 vi phạm, 26/26 kết nối dây và phim lắp 39 giây dựng native trong Blender. Chưa chấp thuận chế tạo.">
-<meta property="og:title" content="DC-01 bản R02 — robot để bàn dựng native trong Blender">
+<title>DC-01 bản {revision.upper()} — robot để bàn native Blender: 18 chi tiết in, bo KiCad và phim lắp</title>
+<link rel="canonical" href="{SITE}/reviews/dc-01/{revision}/">
+<meta name="description" content="Gói bàn giao {revision.upper()} của DC-01: 18 chi tiết in qua gate hình học, bo carrier KiCad với ERC/DRC 0 vi phạm, 26/26 kết nối dây và phim lắp 39 giây dựng native trong Blender. Chưa chấp thuận chế tạo.">
+<meta property="og:title" content="DC-01 bản {revision.upper()} — robot để bàn dựng native trong Blender">
 <meta property="og:description" content="18 chi tiết in qua gate, bo carrier KiCad ERC/DRC 0 vi phạm, phim lắp 39 giây. Chế tạo vật lý chưa được chấp thuận.">
-<meta property="og:image" content="{SITE}/reviews/dc-01/r02/media/assembled.jpg">
+<meta property="og:image" content="{SITE}/reviews/dc-01/{revision}/media/assembled.jpg">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="vi_VN">
 <script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"CreativeWork","name":"DC-01 desktop companion, package R02",
-"inLanguage":"vi","url":"{SITE}/reviews/dc-01/r02/","image":"{SITE}/reviews/dc-01/r02/media/assembled.jpg",
+{{"@context":"https://schema.org","@type":"CreativeWork","name":"DC-01 desktop companion, package {revision.upper()}",
+"inLanguage":"vi","url":"{SITE}/reviews/dc-01/{revision}/","image":"{SITE}/reviews/dc-01/{revision}/media/assembled.jpg",
 "creator":{{"@type":"Organization","name":"design:os"}},"isPartOf":{{"@type":"SoftwareSourceCode","name":"design-os-3d-blender","url":"{SITE}/"}},
 "about":["Blender 5.2","3D printing","KiCad","STL","3MF","native agent workflow"],
 "description":"Native Blender build of a desktop companion: {check['part_count']} gated printable parts, a KiCad carrier with zero ERC and DRC violations, and a {round(video['encoded_duration_seconds'])}-second animatic. Manufacture not approved."}}
@@ -280,13 +304,13 @@ def build(source):
 
 <main id="main" class="ds-shell-main">
   <section aria-labelledby="title">
-    <p class="eyebrow">DC-01 · gói R02 · demo kỹ thuật native</p>
+    <p class="eyebrow">DC-01 · gói {revision.upper()} · demo kỹ thuật native</p>
     <h1 id="title" class="ds-heading" data-level="1">Robot để bàn DC-01 dựng hoàn toàn bằng Blender native: {check['part_count']} chi tiết in đã qua gate hình học, một bo carrier KiCad thật và phim lắp {round(snapshot['duration_seconds'])} giây.</h1>
     <p class="lede">Ảnh render, sơ đồ mạch, từng tệp in và phim lắp, đọc thẳng từ gói đã giao. Chế tạo vật lý và vận hành điện <strong>chưa được chấp thuận</strong>: 0 mẫu thật.</p>
     <p class="badges">
       {badge("Blender", gate["checker"]["blender"], "e87d0d")}
       {badge("Python", "bpy", "3776ab")}
-      {badge("render", frames["engine"].title() + f" · {frames['samples']} mẫu", "1f2933")}
+      {badge("render", engine.title() + f" · {frames['samples']} mẫu", "1f2933")}
       {badge("KiCad", audit["native_version"], "314cb0")}
       {badge("xuất", "STL · 3MF", "067647")}
       {badge("video", "FFmpeg", "5c6370")}
@@ -331,7 +355,7 @@ def build(source):
 
   <section data-pace="chapter" aria-labelledby="film-h">
     <h2 id="film-h" class="ds-heading" data-level="2">Phim lắp {round(snapshot['duration_seconds'])} giây</h2>
-    <p>Lắp sẵn, rút vít, nhấc thân trên, tách rời, catalog {len(labels)} nhãn, lắp lại, rồi màn hình và nút bấm. Animatic từ {video['native_poses']} pose native, không phải thiết bị đang chạy.</p>
+    <p>Lắp sẵn, rút vít, nhấc thân trên, tách rời, catalog {len(labels)} nhãn, lắp lại, rồi màn hình và nút bấm. {film_note}, không phải bản ghi thiết bị đang chạy.</p>
     <figure class="ds-card branch-page-media">
       <div class="ds-card-stage capture-stage">
         <video controls preload="metadata" poster="media/catalog.jpg" width="1920" height="1080">
@@ -420,7 +444,7 @@ def build(source):
       <p style="margin:0;max-width:none">Tệp CAD và STL giữ byte-for-byte trong <code>cad/</code> và <code>stl/</code>. Hash và kích thước mọi tệp nằm trong <code>media-manifest.json</code> và <code>SHA256SUMS</code>. Không sửa lịch sử để tạo kết quả PASS.</p>
       <nav class="ds-shell-footer-nav" aria-label="Chân trang">
         <a class="ds-tab" href="https://github.com/jangtrinh/design-os-3d-blender">{icon("github")}design-os-3d-blender</a>
-        <a class="ds-tab" href="../../ck-001/r02/">Bàn giao CK-001</a>
+        <a class="ds-tab" href="{sibling_href}">{sibling_label}</a>
         <a class="ds-tab" href="#main">Lên đầu trang</a>
       </nav>
     </div>
@@ -432,15 +456,20 @@ def build(source):
     # Declare the fallback on every image, as the static gate requires, using this page's
     # own handler rather than the autofixer's placeholder service.
     html = re.sub(r"(<img\b(?:(?!onerror)[^>])*?)>", r"\1" + IMG_ONERROR + ">", html)
-    (HERE / "index.html").write_text(html)
-    print(f"wrote {HERE / 'index.html'} ({len(html):,} bytes)")
+    (OUT / "index.html").write_text(html)
+    print(f"wrote {OUT / 'index.html'} ({len(html):,} bytes)")
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", default="builds/desktop-companion/delivery/R02")
+    parser.add_argument("--source", required=True, help="delivered package directory")
+    parser.add_argument("--out", required=True, help="revision directory to publish into, e.g. docs/reviews/dc-01/r03")
+    parser.add_argument("--sibling-href", default="../../ck-001/r02/", help="footer sibling link")
+    parser.add_argument("--sibling-label", default="Bàn giao CK-001", help="footer sibling label")
     args = parser.parse_args()
-    build(Path(args.source).resolve())
+    global OUT
+    OUT = Path(args.out).resolve()
+    build(Path(args.source).resolve(), OUT.name, args.sibling_href, args.sibling_label)
     return 0
 
 

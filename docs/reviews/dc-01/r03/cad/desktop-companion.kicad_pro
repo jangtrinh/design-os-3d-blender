@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "filename": "desktop-companion.kicad_pro",
+    "version": 1
+  },
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.254,
+        "min_track_width": 0.254,
+        "min_via_diameter": 0.7,
+        "min_through_hole_diameter": 0.3
+      },
+      "drc_exclusions": []
+    }
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.254,
+        "track_width": 0.254,
+        "via_diameter": 0.7,
+        "via_drill": 0.3
+      }
+    ],
+    "meta": {
+      "version": 3
+    }
+  }
+}

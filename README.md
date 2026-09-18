@@ -32,7 +32,7 @@ The current plant layout uses an illustrative 1:15 scale. Catalogue dimensions a
 |---|---|---|
 | Robot arm | [Assembly and completed model](docs/galleries/robot-arm.md) | [Native assembly build](builds/robot-arm-original-refined/README.md) and [38-part fit prototype](builds/robot-arm-print-assembly/README.md). |
 | Watch-winder capsule | [Overview and surface details](docs/galleries/watch-winder.md) | [Parameters, native scenes, scripts and print-kit evidence](builds/watch-winder-capsule/README.md). |
-| DC-01 desktop companion | [Revision R02 review: printable parts, schematic, copper layers and the assembly film](https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r02/) · [package files](docs/reviews/dc-01/r02/README.md) | Eighteen gated STL parts, two plates, KiCad carrier sources and the native animatic ship with the review page; run directories and the editable scenes stay local. |
+| DC-01 desktop companion | [Revision R03 review: printable parts, schematic, copper layers and the assembly film](https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r03/) · [package files](docs/reviews/dc-01/r03/README.md) | Eighteen gated STL parts, two plates, KiCad carrier sources and the native animatic ship with the review page; run directories and the editable scenes stay local. |
 | CK-001 reference keyboard | [Revision B review: 3D viewer, Full HD stills and film](https://jangtrinh.github.io/design-os-3d-blender/reviews/ck-001/r02/) · [package files](docs/reviews/ck-001/r02/README.md) | [Contracts, pass scripts, manufacturing studies and tests](builds/reference-keyboard/README.md). Run directories and the delivery archive stay local. |
 
 ### Reusable parts

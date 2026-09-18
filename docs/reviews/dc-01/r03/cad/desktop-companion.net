@@ -1,0 +1,186 @@
+<export version="E">
+  <components>
+    <comp ref="U1">
+      <value>Seeed_XIAO_ESP32S3_nonSense</value>
+      <footprint>DC:U1</footprint>
+    </comp>
+    <comp ref="J1">
+      <value>BQ24074_OUT</value>
+      <footprint>DC:J1</footprint>
+    </comp>
+    <comp ref="J2">
+      <value>DISPLAY_5206</value>
+      <footprint>DC:J2</footprint>
+    </comp>
+    <comp ref="J3">
+      <value>I2S_AUDIO_OPTION</value>
+      <footprint>DC:J3</footprint>
+    </comp>
+    <comp ref="J4">
+      <value>POWER_SWITCH</value>
+      <footprint>DC:J4</footprint>
+    </comp>
+    <comp ref="J5">
+      <value>S7V8F5_WIRED</value>
+      <footprint>DC:J5</footprint>
+    </comp>
+    <comp ref="J6">
+      <value>MOMENTARY_BUTTON</value>
+      <footprint>DC:J6</footprint>
+    </comp>
+    <comp ref="J7">
+      <value>CHARGER_PROGRAM_NTC</value>
+      <footprint>DC:J7</footprint>
+    </comp>
+    <comp ref="J8">
+      <value>103AT2_PACK_SENSOR</value>
+      <footprint>DC:J8</footprint>
+    </comp>
+    <comp ref="F1">
+      <value>MF-MSMF110_16X-2</value>
+      <footprint>DC:F1</footprint>
+    </comp>
+    <comp ref="D1">
+      <value>SS14_SCHOTTKY</value>
+      <footprint>DC:D1</footprint>
+    </comp>
+    <comp ref="R1">
+      <value>10k_1%</value>
+      <footprint>DC:R1</footprint>
+    </comp>
+    <comp ref="R2">
+      <value>10k_1%</value>
+      <footprint>DC:R2</footprint>
+    </comp>
+    <comp ref="R3">
+      <value>10k_1%</value>
+      <footprint>DC:R3</footprint>
+    </comp>
+    <comp ref="R4">
+      <value>3.57k_1%</value>
+      <footprint>DC:R4</footprint>
+    </comp>
+    <comp ref="C1">
+      <value>47uF_10V_X5R</value>
+      <footprint>DC:C1</footprint>
+    </comp>
+    <comp ref="C2">
+      <value>100nF_16V_X7R</value>
+      <footprint>DC:C2</footprint>
+    </comp>
+    <comp ref="C3">
+      <value>10uF_10V_X5R</value>
+      <footprint>DC:C3</footprint>
+    </comp>
+    <comp ref="C4">
+      <value>100nF_16V_X7R</value>
+      <footprint>DC:C4</footprint>
+    </comp>
+    <comp ref="C5">
+      <value>47uF_10V_X5R</value>
+      <footprint>DC:C5</footprint>
+    </comp>
+  </components>
+  <nets>
+    <net code="1" name="+3V3">
+      <node ref="U1" pin="12" pinfunction="3V3_OUT" />
+      <node ref="J2" pin="1" pinfunction="+3V3" />
+      <node ref="R1" pin="2" pinfunction="+3V3" />
+      <node ref="R2" pin="2" pinfunction="+3V3" />
+      <node ref="R3" pin="2" pinfunction="+3V3" />
+      <node ref="C3" pin="1" pinfunction="+3V3" />
+    </net>
+    <net code="2" name="+5V">
+      <node ref="J3" pin="1" pinfunction="+5V" />
+      <node ref="J5" pin="3" pinfunction="+5V" />
+      <node ref="D1" pin="2" pinfunction="A" />
+      <node ref="C1" pin="1" pinfunction="+5V" />
+    </net>
+    <net code="3" name="BUTTON_N">
+      <node ref="U1" pin="6" pinfunction="D5_GPIO6" />
+      <node ref="J6" pin="1" pinfunction="BUTTON_N" />
+      <node ref="R1" pin="1" pinfunction="BUTTON_N" />
+      <node ref="C4" pin="1" pinfunction="BUTTON_N" />
+    </net>
+    <net code="4" name="COMPUTE_5V">
+      <node ref="U1" pin="14" pinfunction="VBUS_IN" />
+      <node ref="D1" pin="1" pinfunction="K" />
+      <node ref="C2" pin="1" pinfunction="COMPUTE_5V" />
+    </net>
+    <net code="5" name="GND">
+      <node ref="U1" pin="13" pinfunction="GND" />
+      <node ref="J1" pin="2" pinfunction="GND" />
+      <node ref="J2" pin="2" pinfunction="GND" />
+      <node ref="J3" pin="2" pinfunction="GND" />
+      <node ref="J5" pin="2" pinfunction="GND" />
+      <node ref="J6" pin="2" pinfunction="GND" />
+      <node ref="J7" pin="2" pinfunction="GND" />
+      <node ref="J8" pin="2" pinfunction="GND" />
+      <node ref="R4" pin="2" pinfunction="GND" />
+      <node ref="C1" pin="2" pinfunction="GND" />
+      <node ref="C2" pin="2" pinfunction="GND" />
+      <node ref="C3" pin="2" pinfunction="GND" />
+      <node ref="C4" pin="2" pinfunction="GND" />
+      <node ref="C5" pin="2" pinfunction="GND" />
+    </net>
+    <net code="6" name="I2S_BCLK">
+      <node ref="U1" pin="7" pinfunction="D6_GPIO43" />
+      <node ref="J3" pin="3" pinfunction="I2S_BCLK" />
+    </net>
+    <net code="7" name="I2S_DIN">
+      <node ref="U1" pin="10" pinfunction="D9_GPIO8" />
+      <node ref="J3" pin="5" pinfunction="I2S_DIN" />
+    </net>
+    <net code="8" name="I2S_LRCLK">
+      <node ref="U1" pin="8" pinfunction="D7_GPIO44" />
+      <node ref="J3" pin="4" pinfunction="I2S_LRCLK" />
+    </net>
+    <net code="9" name="ISET">
+      <node ref="J7" pin="1" pinfunction="ISET" />
+      <node ref="R4" pin="1" pinfunction="ISET" />
+    </net>
+    <net code="10" name="LCD_BL">
+      <node ref="U1" pin="5" pinfunction="D4_GPIO5" />
+      <node ref="J2" pin="8" pinfunction="LCD_BL" />
+    </net>
+    <net code="11" name="LCD_CS">
+      <node ref="U1" pin="1" pinfunction="D0_GPIO1" />
+      <node ref="J2" pin="5" pinfunction="LCD_CS" />
+      <node ref="R2" pin="1" pinfunction="LCD_CS" />
+    </net>
+    <net code="12" name="LCD_DC">
+      <node ref="U1" pin="2" pinfunction="D1_GPIO2" />
+      <node ref="J2" pin="6" pinfunction="LCD_DC" />
+    </net>
+    <net code="13" name="LCD_RST">
+      <node ref="U1" pin="4" pinfunction="D3_GPIO4" />
+      <node ref="J2" pin="7" pinfunction="LCD_RST" />
+      <node ref="R3" pin="1" pinfunction="LCD_RST" />
+    </net>
+    <net code="14" name="NTC_TS">
+      <node ref="J7" pin="3" pinfunction="NTC_TS" />
+      <node ref="J8" pin="1" pinfunction="NTC_TS" />
+    </net>
+    <net code="15" name="SPI_MOSI">
+      <node ref="U1" pin="11" pinfunction="D10_GPIO9" />
+      <node ref="J2" pin="4" pinfunction="SPI_MOSI" />
+    </net>
+    <net code="16" name="SPI_SCK">
+      <node ref="U1" pin="9" pinfunction="D8_GPIO7" />
+      <node ref="J2" pin="3" pinfunction="SPI_SCK" />
+    </net>
+    <net code="17" name="SYS_FUSED">
+      <node ref="J4" pin="1" pinfunction="SYS_FUSED" />
+      <node ref="F1" pin="2" pinfunction="SYS_FUSED" />
+    </net>
+    <net code="18" name="SYS_RAW">
+      <node ref="J1" pin="1" pinfunction="SYS_RAW" />
+      <node ref="F1" pin="1" pinfunction="SYS_RAW" />
+    </net>
+    <net code="19" name="SYS_SW">
+      <node ref="J4" pin="2" pinfunction="SYS_SW" />
+      <node ref="J5" pin="1" pinfunction="SYS_SW" />
+      <node ref="C5" pin="1" pinfunction="SYS_SW" />
+    </net>
+  </nets>
+</export>
