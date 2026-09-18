@@ -30,6 +30,7 @@ PHOSPHOR = {
     "check": "M104,192a8.5,8.5,0,0,1-5.66-2.34l-56-56A8,8,0,0,1,53.66,122.3L104,172.69,218.34,58.34a8,8,0,0,1,11.32,11.32l-120,120A8.5,8.5,0,0,1,104,192Z",
     "caret-left": "M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z",
     "caret-right": "M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z",
+    "github": "M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z",
     "arrow-right": "M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z",
 }
 EXTRA_CSS = """
@@ -68,10 +69,11 @@ def icon(name, size=None):
 
 
 def badge(label, value, colour):
+    """One shields.io badge naming a tool this build was made with."""
     def quote(text):
         return text.replace(" ", "%20").replace("-", "--").replace("/", "%2F")
     url = f"https://img.shields.io/badge/{quote(label)}-{quote(value)}-{colour}?style=for-the-badge"
-    return f'<img src="{url}" alt="{label}: {value}" width="200" height="28" loading="eager">'
+    return f'<img src="{url}" alt="{label} {value}" width="200" height="28" loading="eager">'
 
 
 def fact(name, value, note=None, mono=False):
@@ -118,6 +120,7 @@ def build(source):
     audit = json.loads((HERE / "electronics-audit.json").read_text())
     completion = json.loads((source.parent / "completion.json").read_text())
     video = json.loads((source / "reports" / "presentation" / "video-receipt.json").read_text())
+    frames = json.loads((source / "reports" / "presentation" / "native-frames.json").read_text())
     media = json.loads((HERE / "media-manifest.json").read_text())
     stl_bytes = {r["path"]: r["bytes"] for r in media["published"]}
 
@@ -169,43 +172,34 @@ def build(source):
     ])
 
     electronics_rows = "".join([
-        row("ERC", f'KiCad {audit["native_version"]} báo 0 vi phạm trên <code>desktop-companion.kicad_sch</code>. '
-                   'Báo cáo gốc: <a class="text-link" href="electronics-audit.json">electronics-audit.json</a>.'),
-        row("DRC", "0 vi phạm, 0 mục chưa nối và 0 sai lệch với sơ đồ trên bo hai lớp 54 × 46 × 1,6 mm."),
-        row("Đồng và khe hở", f'{audit["tracks"]} đường mạch, {audit["vias"]} via và {audit["pads"]} pad điện. '
-                              "Khe hở nhỏ nhất giữa hai net khác nhau đo được 0,285 mm."),
-        row("Khoan", "41 lỗ mạ 1,0 mm, 13 via mạ 0,3 mm và bốn lỗ không mạ 2,5 mm để bắt vít."),
-        row("Chưa xác lập", "Chọn linh kiện thụ động thật, cửa sổ nhiệt độ sạc, ngưỡng cắt điện áp thấp, "
-                            "phối hợp cầu chì, nhiệt trong vỏ kín, firmware và thử RF vẫn để mở. "
-                            'Xem <a class="text-link" href="bench-validation.md">bench-validation.md</a>.', "warning"),
+        row("ERC và DRC", f'KiCad {audit["native_version"]}: 0 vi phạm, 0 mục chưa nối, 0 sai lệch với sơ đồ. '
+                            '<a class="text-link" href="electronics-audit.json">Báo cáo</a>.'),
+        row("Bo mạch", f'Hai lớp 54 × 46 × 1,6 mm · {audit["tracks"]} đường mạch · {audit["vias"]} via · '
+                       f'{audit["pads"]} pad · khe hở nhỏ nhất 0,285 mm.'),
+        row("Khoan", "41 lỗ mạ 1,0 mm · 13 via 0,3 mm · 4 lỗ không mạ 2,5 mm."),
+        row("Chưa xác lập", 'Linh kiện thật, nhiệt độ sạc, ngưỡng cắt điện áp thấp, cầu chì, nhiệt vỏ kín, '
+                            'firmware, RF. <a class="text-link" href="bench-validation.md">bench-validation.md</a>.', "warning"),
     ])
 
     print_rows = "".join([
-        row("Gate hình học", f'{len(gate["parts"])} chi tiết qua gate in cuối: kín, thể tích dương, '
-                             "không mặt diện tích 0, không cạnh hở, đủ chiều dày thành và lọt khay."),
-        row("STL quay vòng", "Mỗi chi tiết được xuất rồi nạp lại và so khớp: "
-                             f'{check["part_count"]}/{check["part_count"]} khớp tam giác với nguồn.'),
-        row("3MF mở lại độc lập", f'{check["status"]} — hai tệp 3MF lõi được đọc lại bằng bộ phân tích riêng, '
-                                  "so khớp toàn bộ tam giác và tọa độ đặt trên khay."),
-        row("Chưa gate", "Phần nhô (overhang) được báo nhưng chưa có ngưỡng gate; tám chi tiết nẹp/tay/tai "
-                         "không khai báo lỗ nên không có phép đo lỗ nào cho chúng.", "warning"),
-        row("Chưa in", "Không cắt lớp, không G-code, không profile máy in và không có mẫu in. "
-                       'Đọc <a class="text-link" href="print/README.md">hướng dẫn in</a> trước khi in: '
-                       "giữ tỉ lệ 100%, gán đúng profile PETG/TPU, không xoay chi tiết lần thứ hai.", "warning"),
+        row("Gate hình học", f'{len(gate["parts"])} chi tiết: kín, thể tích dương, không mặt 0, không cạnh hở, '
+                             "đủ dày thành, lọt khay."),
+        row("Quay vòng", f'STL xuất rồi nạp lại: {check["part_count"]}/{check["part_count"]} khớp tam giác. '
+                         f'3MF mở lại bằng bộ phân tích riêng: {check["status"]}.'),
+        row("Chưa gate", "Overhang chưa có ngưỡng. Tám chi tiết nẹp/tay/tai không khai báo lỗ.", "warning"),
+        row("Chưa in", 'Không cắt lớp, không G-code, không mẫu in. '
+                       '<a class="text-link" href="print/README.md">Hướng dẫn in</a>: tỉ lệ 100%, '
+                       "profile PETG/TPU, không xoay lần hai.", "warning"),
     ])
 
     blocked_rows = "".join([
-        row("Chế tạo", f'{completion["manufacture"]} — số mẫu vật lý là {completion["physical_samples"]}. '
-                       "Các kiểm tra ở trên là hình học số và kết nối, không phải bằng chứng lắp được hay in được.", "warning"),
-        row("Điện và pin", "Chưa có phép đo nào trên mạch thật: dòng sạc, cửa sổ nhiệt độ của pack, "
-                           "hành vi khi điện áp thấp, nhiệt độ linh kiện và phối hợp cầu chì.", "warning"),
-        row("Nút bấm", "Khe hở tự do 0,25 mm cộng hành trình 0,25 mm chưa bảo đảm bấm được ở trường hợp xấu nhất. "
-                       "Cần chặn điều chỉnh được và một phép thử vật lý.", "warning"),
-        row("Dây", "13 đầu dây vẫn là đề xuất vị trí và cách bấm đầu cốt, chưa phải phương án đã chốt.", "warning"),
-        row("Lắp ráp", "Vít của mạch sạc nằm cao, tua vít đã mô hình không tới được; phải siết trước khi lắp. "
-                       "Chuyển động lắp liên tục, lực siết và dụng cụ thật chưa được xác lập.", "warning"),
-        row("Độ giống ảnh gốc", "Mô hình còn lộ vít mặt trước và cạnh/khe sắc hơn ảnh gốc. "
-                                "Không chấp nhận đây là bản giống hệt sản phẩm trong ảnh.", "warning"),
+        row("Chế tạo", f'{completion["manufacture"]} · {completion["physical_samples"]} mẫu vật lý. '
+                       "Trên đây là hình học số, không phải bằng chứng in được hay lắp được.", "warning"),
+        row("Điện và pin", "0 phép đo trên mạch thật: dòng sạc, nhiệt độ pack, điện áp thấp, cầu chì.", "warning"),
+        row("Nút bấm", "Khe 0,25 mm + hành trình 0,25 mm chưa bảo đảm bấm được ở trường hợp xấu nhất.", "warning"),
+        row("Dây", "13 đầu dây còn là đề xuất vị trí và cách bấm cốt.", "warning"),
+        row("Lắp ráp", "Vít mạch sạc phải siết trước khi lắp; lực siết và dụng cụ thật chưa xác lập.", "warning"),
+        row("Giống ảnh gốc", "Còn lộ vít mặt trước, cạnh và khe sắc hơn ảnh gốc. Không phải bản giống hệt.", "warning"),
     ])
 
     docs = [
@@ -280,14 +274,14 @@ def build(source):
   <section aria-labelledby="title">
     <p class="eyebrow">DC-01 · gói R02 · demo kỹ thuật native</p>
     <h1 id="title" class="ds-heading" data-level="1">Robot để bàn DC-01 dựng hoàn toàn bằng Blender native: {check['part_count']} chi tiết in đã qua gate hình học, một bo carrier KiCad thật và phim lắp {round(snapshot['duration_seconds'])} giây.</h1>
-    <p class="lede">Trang này là bản review công khai của gói R02: ảnh render từ chính scene đã giao, sơ đồ nguyên lý và hai lớp đồng của bo mạch, ảnh dựng lại của từng tệp STL và hai khay in. Mọi con số đều đọc từ tệp trong gói, không gõ lại tay. Chế tạo vật lý và vận hành điện <strong>chưa được chấp thuận</strong>.</p>
+    <p class="lede">Ảnh render, sơ đồ mạch, từng tệp in và phim lắp, đọc thẳng từ gói đã giao. Chế tạo vật lý và vận hành điện <strong>chưa được chấp thuận</strong>: 0 mẫu thật.</p>
     <p class="badges">
-      {badge("trạng thái", "demo số đã giao", "1f2933")}
-      {badge("chế tạo", "BLOCKED", "b42318")}
-      {badge("mẫu vật lý", "0", "b54708")}
-      {badge("chi tiết in", f"{check['part_count']} đạt gate", "067647")}
-      {badge("dây", f"{audit['base_wires']}/{audit['base_wires']}", "067647")}
-      {badge("ERC và DRC", "0 vi phạm", "067647")}
+      {badge("Blender", gate["checker"]["blender"], "e87d0d")}
+      {badge("Python", "bpy", "3776ab")}
+      {badge("render", frames["engine"].title() + f" · {frames['samples']} mẫu", "1f2933")}
+      {badge("KiCad", audit["native_version"], "314cb0")}
+      {badge("xuất", "STL · 3MF", "067647")}
+      {badge("video", "FFmpeg", "5c6370")}
     </p>
     <p class="hero-actions">
       <a class="ds-btn-pill" data-tone="solid" href="dc01-native-animatic.mp4">{icon("play")}Xem phim lắp {round(snapshot['duration_seconds'])} giây</a>
@@ -298,7 +292,7 @@ def build(source):
         <img src="media/assembled.jpg" width="1920" height="1080" alt="DC-01 đã lắp hoàn chỉnh, render native 1920 × 1080 trong Blender" loading="eager">
       </div>
       <figcaption class="case-plate-caption">
-        <p>Mô hình đã lắp, render từ scene <code>dc01-demo.blend</code> đã giao.</p>
+        <p>Render từ scene <code>dc01-demo.blend</code> đã giao.</p>
         <cite>SHA-256 {snapshot['demo_sha256']}</cite>
       </figcaption>
     </figure>
@@ -316,7 +310,7 @@ def build(source):
     <button type="button" class="ds-btn-pill carousel-btn" data-side="next" data-dir="1" aria-label="Ảnh sau" style="width:44px;height:44px;min-height:44px">{icon("caret-right")}</button>
   </div>
   <div class="ds-shell-main carousel-foot">
-    <p class="carousel-caption"><span id="carousel-label">{stills[0][1]}</span> — render native trong Blender 5.2, không chỉnh sửa sau render.</p>
+    <p class="carousel-caption"><span id="carousel-label">{stills[0][1]}</span> — Cycles, không chỉnh sau render.</p>
     <cite class="carousel-count" id="carousel-count">01 / 0{len(stills)}</cite>
   </div>
 </section>
@@ -329,7 +323,7 @@ def build(source):
 
   <section data-pace="chapter" aria-labelledby="film-h">
     <h2 id="film-h" class="ds-heading" data-level="2">Phim lắp {round(snapshot['duration_seconds'])} giây</h2>
-    <p>Phim đi từ sản phẩm đã lắp, rút vít hai bên, nhấc thân trên, tách rời giải thích, catalog {len(labels)} nhãn, lắp lại, rồi minh họa màn hình và nút bấm. Đây là animatic dựng từ {video['native_poses']} pose native 1920 × 1080, không phải bản ghi thiết bị đang chạy.</p>
+    <p>Lắp sẵn, rút vít, nhấc thân trên, tách rời, catalog {len(labels)} nhãn, lắp lại, rồi màn hình và nút bấm. Animatic từ {video['native_poses']} pose native, không phải thiết bị đang chạy.</p>
     <figure class="ds-card branch-page-media">
       <div class="ds-card-stage capture-stage">
         <video controls preload="metadata" poster="media/catalog.jpg" width="1920" height="1080">
@@ -338,7 +332,7 @@ def build(source):
         </video>
       </div>
       <figcaption class="case-plate-caption">
-        <p>Không có âm thanh. Các chương được giữ khung để đọc kịp nhãn.</p>
+        <p>Không âm thanh. Chương được giữ khung để đọc kịp nhãn.</p>
         <cite>SHA-256 {snapshot['video_sha256']}</cite>
       </figcaption>
     </figure>
@@ -346,7 +340,7 @@ def build(source):
 
   <section data-pace="chapter" id="cad" aria-labelledby="cad-h">
     <h2 id="cad-h" class="ds-heading" data-level="2">Sơ đồ điện và tệp CAD</h2>
-    <p>Bo carrier là thiết kế riêng cho module ESP32-S3 mua ngoài, không phải chip tự làm. Ảnh dưới đây xuất trực tiếp từ tệp KiCad trong gói; tệp nguồn nằm ngay cạnh để mở lại và sửa.</p>
+    <p>Bo carrier riêng cho module ESP32-S3 mua ngoài, không phải chip tự làm. Ảnh xuất trực tiếp từ tệp KiCad kèm dưới.</p>
     <dl class="register">{electronics_rows}</dl>
     <figure class="ds-card branch-page-media" style="margin-top:var(--s-12)">
       <div class="ds-card-stage capture-stage">
@@ -355,39 +349,39 @@ def build(source):
         </a>
       </div>
       <figcaption class="case-plate-caption">
-        <p>Sơ đồ nguyên lý đầy đủ: đường nguồn từ mạch sạc BQ24074 qua cầu chì, công tắc dịch vụ và bộ ổn áp 5 V, cùng các net màn hình, nút bấm và âm thanh tùy chọn.</p>
+        <p>Nguồn từ mạch sạc BQ24074 qua cầu chì, công tắc dịch vụ và bộ ổn áp 5 V; kèm net màn hình, nút bấm và âm thanh tùy chọn. Bấm để mở bản vector.</p>
         <cite>cad/desktop-companion.kicad_sch · bản vector: cad/desktop-companion.svg</cite>
       </figcaption>
     </figure>
     <ul class="pair" style="margin-top:var(--s-8)">
       <li><figure class="ds-card">
         <div class="ds-card-stage capture-stage"><img src="media/pcb-carrier-front.jpg" width="2200" height="1870" alt="Lớp đồng mặt trên của bo carrier DC-01" loading="lazy"></div>
-        <figcaption class="case-plate-caption"><p>Lớp đồng mặt trên, silkscreen và bốn lỗ bắt vít 2,5 mm.</p><cite>cad/carrier-front.svg</cite></figcaption>
+        <figcaption class="case-plate-caption"><p>Đồng mặt trên, silkscreen, 4 lỗ vít 2,5 mm.</p><cite>cad/carrier-front.svg</cite></figcaption>
       </figure></li>
       <li><figure class="ds-card">
         <div class="ds-card-stage capture-stage"><img src="media/pcb-carrier-back.jpg" width="2200" height="1870" alt="Lớp đồng mặt dưới của bo carrier DC-01" loading="lazy"></div>
-        <figcaption class="case-plate-caption"><p>Lớp đồng mặt dưới với mảng đất và các via nối.</p><cite>cad/carrier-back.svg</cite></figcaption>
+        <figcaption class="case-plate-caption"><p>Đồng mặt dưới, mảng đất và via nối.</p><cite>cad/carrier-back.svg</cite></figcaption>
       </figure></li>
     </ul>
     <ul class="pair" style="margin-top:var(--s-8)">
       <li><figure class="ds-card">
         <div class="ds-card-stage capture-stage"><img src="cad/desktop-companion-PTH-drl_map.svg" width="1200" height="1200" alt="Bản đồ khoan lỗ mạ của bo carrier DC-01" loading="lazy"></div>
-        <figcaption class="case-plate-caption"><p>Bản đồ 41 lỗ mạ 1,0 mm và 13 via 0,3 mm.</p><cite>cad/desktop-companion-PTH-drl_map.svg</cite></figcaption>
+        <figcaption class="case-plate-caption"><p>41 lỗ mạ 1,0 mm và 13 via 0,3 mm.</p><cite>cad/desktop-companion-PTH-drl_map.svg</cite></figcaption>
       </figure></li>
       <li><figure class="ds-card">
         <div class="ds-card-stage capture-stage"><img src="cad/desktop-companion-NPTH-drl_map.svg" width="1200" height="1200" alt="Bản đồ khoan lỗ không mạ của bo carrier DC-01" loading="lazy"></div>
-        <figcaption class="case-plate-caption"><p>Bốn lỗ không mạ 2,5 mm để bắt bo vào khung.</p><cite>cad/desktop-companion-NPTH-drl_map.svg</cite></figcaption>
+        <figcaption class="case-plate-caption"><p>4 lỗ không mạ 2,5 mm bắt bo vào khung.</p><cite>cad/desktop-companion-NPTH-drl_map.svg</cite></figcaption>
       </figure></li>
     </ul>
     <div class="aside">
-      <p>Gerber X2 và Excellon có trong gói nhưng chưa được dựng thành ảnh raster ở đây: máy dựng trang không có trình xem Gerber. Hai bản đồ khoan ở trên là ảnh vector do KiCad xuất ra; muốn xem lớp đồng đúng tỉ lệ hãy mở tệp Gerber bằng trình xem của bạn. Các tệp này <strong>chưa được phát hành để đặt gia công</strong>.</p>
+      <p>Gerber X2 và Excellon có trong gói nhưng chưa dựng thành ảnh raster: máy dựng trang không có trình xem Gerber. Các tệp này <strong>chưa phát hành để đặt gia công</strong>.</p>
     </div>
     <ul class="link-list doc-list" style="margin-top:var(--s-8)">{cad_html}</ul>
   </section>
 
   <section data-pace="chapter" aria-labelledby="print-h">
     <h2 id="print-h" class="ds-heading" data-level="2">Bộ chi tiết in 3D</h2>
-    <p>Mỗi ô dưới đây là ảnh dựng lại từ chính tệp STL đã qua gate, đặt nằm như trên bàn in, cùng kích thước bao và số tam giác đọc từ manifest. Bấm vào ô để tải STL của chi tiết đó.</p>
+    <p>Mỗi ô dựng lại từ chính tệp STL đã qua gate, nằm như trên bàn in. Bấm để tải STL.</p>
     <dl class="register">{print_rows}</dl>
     <ul class="parts-grid" style="margin-top:var(--s-12)">{parts_html}</ul>
     <ul class="pair" style="margin-top:var(--s-12)">
@@ -414,15 +408,15 @@ def build(source):
 </main>
 
 <footer class="ds-shell-footer">
-  <div class="ds-shell-footer-inner">
-    <p>Trang được sinh lại từ gói bàn giao bằng <code>build-page.py</code> và <code>build-media.py</code>; ảnh chi tiết in được dựng từ tệp STL đã qua gate. Bằng chứng cũ không bị viết lại: khi hình học thay đổi, media cũ được lưu trữ riêng chứ không ghi đè.</p>
-    <nav class="ds-shell-footer-nav" aria-label="Chân trang">
-      <a class="wordmark" href="https://www.jang.work/">JANG<span>®</span></a>
-      <a class="text-link" href="{SITE}/">Trang dự án</a>
-      <a class="text-link" href="https://github.com/jangtrinh/design-os-3d-blender">Mã nguồn trên GitHub</a>
-    </nav>
-  </div>
-</footer>
+    <div class="ds-shell-footer-inner">
+      <p style="margin:0;max-width:none">Tệp CAD và STL giữ byte-for-byte trong <code>cad/</code> và <code>stl/</code>. Hash và kích thước mọi tệp nằm trong <code>media-manifest.json</code> và <code>SHA256SUMS</code>. Không sửa lịch sử để tạo kết quả PASS.</p>
+      <nav class="ds-shell-footer-nav" aria-label="Chân trang">
+        <a class="ds-tab" href="https://github.com/jangtrinh/design-os-3d-blender">{icon("github")}design-os-3d-blender</a>
+        <a class="ds-tab" href="../../ck-001/r02/">Bàn giao CK-001</a>
+        <a class="ds-tab" href="#main">Lên đầu trang</a>
+      </nav>
+    </div>
+  </footer>
 <script>{carousel}</script>
 </body>
 </html>
