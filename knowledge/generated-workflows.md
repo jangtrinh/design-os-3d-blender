@@ -39,8 +39,9 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 
 When: When starting a serious product project or converting a completed session into reusable workflow and skills.
 
-- `docs/ck-001-session-retrospective.md` — read; SHA256 `9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17`
-- `docs/product-workflow-template.md` — read; SHA256 `c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69`
+- `docs/ck-001-session-retrospective.md` — read; SHA256 `9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e`
+- `docs/native-build-pipeline-lessons.md` — read; SHA256 `f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb`
+- `docs/product-workflow-template.md` — read; SHA256 `dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b`
 - `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
 - `CONTEXT.md` — read; SHA256 `52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833`
 
@@ -1159,7 +1160,7 @@ When: When rendering the saved model at requested resolution, changing aspect, d
   Caution: Inspect/adapt only: names, views and 96-frame choreography are specific to the local B scene. Not a generic renderer, no automatic visual judgment or physical evidence. Prior B media cannot qualify later C03 geometry.
 - `builds/reference-keyboard/scripts/package_delivery.py` — inspect-adapt; SHA256 `3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852`
 - `builds/reference-keyboard/scripts/prepare_reference_review.py` — inspect-adapt; SHA256 `aea46f665a503f9a68475af8bc9ec96de7dac2cf4c3fe4ee1dd74ec3d59818b5`
-- `docs/product-workflow-template.md` — read; SHA256 `c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69`
+- `docs/product-workflow-template.md` — read; SHA256 `dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b`
 
 **Steps**
 
@@ -1327,6 +1328,33 @@ When: When auto-framing the camera or exporting GLB/STL through an adapter.
 
 - FINISHED, an existing file, or a camera distance does not prove the output is correct.
 - The helper can change an existing target/constraint and write to a hardcoded path; do not run its self-test on a production scene.
+
+### Topic: public-review-publication
+
+When: When a delivered package must be published as a public review page, or an existing published revision is superseded.
+
+- `docs/delivery-review-publication.md` — read; SHA256 `2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55`
+- `docs/native-build-pipeline-lessons.md` — read; SHA256 `f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb`
+- `scripts/check-html-tag-balance.py` — inspect-adapt; SHA256 `28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3`
+  Caution: Nesting only: it says nothing about layout, accessibility, tokens, copy or whether the page's claims are supported. It is the cheapest rung, not the gate.
+
+**Steps**
+
+- Generate the page from the package with its builder; read every figure from the package receipts and assert the fact is recorded rather than defaulting it.
+- Publish media at web size with a byte/SHA-256 manifest; keep run directories, delivery archives and licensed third-party documents local.
+- Add a superseding revision as its own folder, repoint the landing, README and sitemap, and keep the previous revision online with links both ways.
+- Run the tag-balance check, the static design gate, the layout-rule check and the render check at 1280 and 390 against the live URL, then look at the screenshots.
+
+**Gates**
+
+- A published page states no physical property: manufacture status and the physical sample count stay visible while that evidence is absent.
+- A figure with no receipt in the package does not appear on the page; a missing image is a named blank, never a placeholder picture.
+- An overwritten published revision is a failure: supersession adds a folder and preserves the old record.
+
+**Limitations**
+
+- The design gate judges structure and tokens, not whether the evidence is adequate or the claim honest.
+- Live-URL checks prove loading, layout and console cleanliness; real-device touch and search indexing stay manual.
 
 ## native-procedural-simulation
 

@@ -17,6 +17,8 @@ is a controller template; no generic validator interprets this Markdown.
 | Engineering source | Exact part/revision/page; read vs search-only vs unavailable |
 | Authored dimensions | Separate targets, tolerances and worst-case conditions |
 | Unresolved requirements | Which work needs input; which independent work can proceed |
+| Motion contract (any animation) | Frame rate, distinct rendered states, what the owner accepts as smooth |
+| Pass inventory | Every intended pass has a manifest step; `scripts/check-pass-coverage.py` clean or excused with a reason |
 
 ## Pass contract
 

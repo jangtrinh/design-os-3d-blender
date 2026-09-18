@@ -89,6 +89,8 @@ The [HQ coverage gate](docs/hq-coverage-gate.md) validates receipts on its expli
 | Verification | `scripts/agent-verify-lib.py`, `scripts/production-gate.py` | Scene checks, isolated previews, spec-bound digital geometry/export evidence. |
 | HQ coverage | `scripts/hq-coverage-gate.py` | Source-bound proof receipts before an explicitly guarded render launch. |
 | MakerWorld | [Publishing leg](makerworld-pipeline/README.md) | Bambu project validation and documented publishing constraints. |
+| Build lessons | [Two full product builds](docs/native-build-pipeline-lessons.md) | The pipeline both builds converged on, what each failure cost, and which rules are code rather than prose. |
+| Public review pages | [Publication procedure](docs/delivery-review-publication.md), `scripts/page-checks/` | Generated review pages bound to package receipts, with layout, media and live-URL checks. |
 
 The `.claude/skills` directories mirror the local skill sources. Antigravity setup is documented in [the setup guide](docs/antigravity-setup.md). Vendored [img2threejs](.agents/skills/img2threejs/README.md) retains its Apache-2.0 license; production reconstruction uses native Blender geometry.
 

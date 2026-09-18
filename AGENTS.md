@@ -111,7 +111,28 @@ MCP live: the user watches objects grow in the viewport. Headless: after each pa
 ## Delivery
 The build's README records **separate** status for media / motion / fit / manufacture; attach `gate-report.json`, input hashes, frame range; geometry changed → old evidence is void. Do not infer load/thermal/strength from numeric checks or video; missing physical evidence → manufacture **BLOCKED**, stated explicitly.
 
+**Motion contract before any animation render (MANUAL, owner-facing).** Ask and record, in
+`state.md` next to the purpose: frame rate, how many DISTINCT rendered states the motion has, and
+what the owner accepts as smooth. A film that renders 120 poses at 5 poses per second and repeats
+frames to 30 fps passes every numeric and visual gate and still fails the owner — that is exactly
+what happened to DC-01's D05 and it cost a 35-minute re-render (`docs/native-build-pipeline-lessons.md`).
+Pose rate and distinct-state count belong in the media receipt, not only in the encoder settings.
+
+**Every intended check must be declared and run (MANUAL + checked).** An authored pass script is
+not evidence: CK-001's `pass-B-rotation.py` was written, reviewed into the plan and never
+executed, so the rotated-pose export was never proved. Run
+`python3 scripts/check-pass-coverage.py builds/<slug>` before a delivery claim; an exception needs
+a reason in `<slug>/pass-coverage-allow.json`.
+
 **Media evidence void (geometry changed after media exists, MANUAL):** never re-render automatically. The README media rows carry `rendered from <blend sha>` and a `current <blend sha>` line marked *pre-change*; then ask the owner **exactly one** question, with a GPU estimate per media set (stills / film / turntable), and quote the answer in `state.md`. Owner declines → the mismatch line stays in the README permanently, that is the honest record. Owner accepts → archive the old set (`renders/<set>-pre-<tag>/`) and never overwrite it.
+
+**Public review page (a delivered package published on Pages):** generate it, never hand-edit it —
+`docs/reviews/<build>/build-media.py` + `build-page.py` with `--source <package> --out docs/reviews/<build>/<revision>`.
+Every figure is read from the package's own receipts and asserted present; a newer revision is a
+new folder, the old one stays online. Gate ladder before and after publishing:
+`scripts/check-html-tag-balance.py` -> `ui gate` -> `scripts/page-checks/check-rules.mjs` ->
+`scripts/page-checks/check-page.mjs` on the LIVE url. Full procedure and the paid-for traps:
+`docs/delivery-review-publication.md`.
 
 ## Resource map
 | Need | Read/use |
@@ -123,6 +144,9 @@ The build's README records **separate** status for media / motion / fit / manufa
 | Production spec/gate | `specs/README.md`, `scripts/production-gate.py` |
 | Sense organs inside bpy | `scripts/agent-verify-lib.py` (safe read-only; `preview_render` restores state; `verify_export` runs a separate process) |
 | Fast preview / image comparison | `scripts/turntable-preview.py`, `scripts/make-comparison-sheet.sh` |
+| Lessons from two full product builds | `docs/native-build-pipeline-lessons.md` |
+| Every authored pass declared and run | `scripts/check-pass-coverage.py`, `tests/pass-coverage/` |
+| Publishing a package as a public review page | `docs/delivery-review-publication.md`, `scripts/page-checks/` |
 | Architecture, backlog | `docs/system-architecture.md`, `docs/blender-workflow-improvement-backlog.md` |
 
 Native Asset Policy, QRemeshify gate and the other binding rules: `.project-agent.md` (not repeated here).

@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 147,
+    "execution-source": 150,
     "imported-reference": 47,
     "knowledge": 37,
     "research-synthesis": 76,
-    "workflow": 44
+    "workflow": 54
   },
   "dependency_edges": 108,
   "foundations": [
@@ -3411,17 +3411,17 @@
           "text": "Delivery"
         },
         {
-          "line": 116,
+          "line": 137,
           "text": "Resource map"
         }
       ],
       "kind": "workflow",
-      "lines": 128,
+      "lines": 152,
       "loads_with": [],
       "name": null,
       "path": "AGENTS.md",
       "related": [],
-      "sha256": "0c2192385e550c8ee9104361ab0525f0bae0c7c5fe0c270eb88772ccde6b7108",
+      "sha256": "d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7",
       "tags": [],
       "title": "AGENTS.md — Blender AI Orchestration (primary operational file)",
       "use": "read"
@@ -4333,9 +4333,68 @@
       "name": null,
       "path": "docs/ck-001-session-retrospective.md",
       "related": [],
-      "sha256": "9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17",
+      "sha256": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
       "tags": [],
       "title": "From API research to a tested product workflow",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Publishing a delivered package as a public review page"
+        },
+        {
+          "line": 8,
+          "text": "The generators, not the HTML"
+        },
+        {
+          "line": 18,
+          "text": "Numbers come from receipts"
+        },
+        {
+          "line": 37,
+          "text": "Media rules"
+        },
+        {
+          "line": 52,
+          "text": "Revisions are added, never overwritten"
+        },
+        {
+          "line": 59,
+          "text": "Page rules the gate cannot infer"
+        },
+        {
+          "line": 73,
+          "text": "Gate ladder, cheapest first"
+        },
+        {
+          "line": 80,
+          "text": "check-page: 1280 and 390 - scrollWidth === innerWidth, every image decoded, Inter and"
+        },
+        {
+          "line": 81,
+          "text": "JetBrains Mono resolved, 0 console errors, 0 keyframes, no two rules within 40 px, plus a"
+        },
+        {
+          "line": 82,
+          "text": "screenshot per width. It scrolls the page and the carousel first, so lazy images decode."
+        },
+        {
+          "line": 93,
+          "text": "What the page may never do"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 98,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/delivery-review-publication.md",
+      "related": [],
+      "sha256": "2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55",
+      "tags": [],
+      "title": "Publishing a delivered package as a public review page",
       "use": "read"
     },
     {
@@ -4673,6 +4732,45 @@
       "headings": [
         {
           "line": 1,
+          "text": "Two full product builds: the pipeline that ran, and what it cost"
+        },
+        {
+          "line": 15,
+          "text": "The shape both builds converged on"
+        },
+        {
+          "line": 33,
+          "text": "What actually cost the most"
+        },
+        {
+          "line": 51,
+          "text": "The ten rules worth carrying to the next build"
+        },
+        {
+          "line": 75,
+          "text": "Enforced by code today"
+        },
+        {
+          "line": 91,
+          "text": "Still controller discipline, not code"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 105,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/native-build-pipeline-lessons.md",
+      "related": [],
+      "sha256": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+      "tags": [],
+      "title": "Two full product builds: the pipeline that ran, and what it cost",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
           "text": "Visual component brief template"
         },
         {
@@ -4960,37 +5058,37 @@
           "text": "Identity and authority"
         },
         {
-          "line": 21,
+          "line": 23,
           "text": "Pass contract"
         },
         {
-          "line": 63,
+          "line": 65,
           "text": "Stage exits"
         },
         {
-          "line": 80,
+          "line": 82,
           "text": "Failure and recovery record"
         },
         {
-          "line": 88,
+          "line": 90,
           "text": "Media brief"
         },
         {
-          "line": 101,
+          "line": 103,
           "text": "Closure ledger"
         },
         {
-          "line": 116,
+          "line": 118,
           "text": "Handoff and retrospective"
         }
       ],
       "kind": "workflow",
-      "lines": 123,
+      "lines": 125,
       "loads_with": [],
       "name": null,
       "path": "docs/product-workflow-template.md",
       "related": [],
-      "sha256": "c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69",
+      "sha256": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b",
       "tags": [],
       "title": "New product workflow contract",
       "use": "read"
@@ -5283,6 +5381,286 @@
       "sha256": "adaff823ef5657d68047f8ceadc5c4e6f1159361da7a9fc9e504eb460033b671",
       "tags": [],
       "title": "CK-001 revision-B package code review",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "DC-01 native engineering demo"
+        },
+        {
+          "line": 5,
+          "text": "Included deliverables"
+        },
+        {
+          "line": 17,
+          "text": "What the demonstration establishes"
+        },
+        {
+          "line": 25,
+          "text": "Fixed construction and authored behavior"
+        },
+        {
+          "line": 31,
+          "text": "Print and electrical status"
+        },
+        {
+          "line": 41,
+          "text": "Source pins and reproducibility"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 49,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r02/README.md",
+      "related": [],
+      "sha256": "d854340976a19058da5a92455ab1737aa44fe56700f9dcc2b8ae99d9c740782b",
+      "tags": [],
+      "title": "DC-01 native engineering demo",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Release qualification for DC-E02"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 22,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r02/bench-validation.md",
+      "related": [],
+      "sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e",
+      "tags": [],
+      "title": "Release qualification for DC-E02",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Desktop companion electronics candidate"
+        },
+        {
+          "line": 7,
+          "text": "Files to open"
+        },
+        {
+          "line": 30,
+          "text": "Circuit and power path"
+        },
+        {
+          "line": 40,
+          "text": "Display, button and optional audio"
+        },
+        {
+          "line": 48,
+          "text": "Mechanical interfaces"
+        },
+        {
+          "line": 60,
+          "text": "Verification scope"
+        },
+        {
+          "line": 68,
+          "text": "Reproduce the candidate"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 85,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r02/electronics-README.md",
+      "related": [],
+      "sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765",
+      "tags": [],
+      "title": "Desktop companion electronics candidate",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "DC01 P03 print kit"
+        },
+        {
+          "line": 19,
+          "text": "Files to open"
+        },
+        {
+          "line": 31,
+          "text": "Print preparation"
+        },
+        {
+          "line": 54,
+          "text": "Checks that should reject a damaged package"
+        },
+        {
+          "line": 66,
+          "text": "Measured placement and evidence"
+        },
+        {
+          "line": 88,
+          "text": "Source identity"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 117,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r02/print/README.md",
+      "related": [],
+      "sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
+      "tags": [],
+      "title": "DC01 P03 print kit",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "DC-01 native engineering demo"
+        },
+        {
+          "line": 5,
+          "text": "Included deliverables"
+        },
+        {
+          "line": 17,
+          "text": "What the demonstration establishes"
+        },
+        {
+          "line": 25,
+          "text": "Fixed construction and authored behavior"
+        },
+        {
+          "line": 31,
+          "text": "Print and electrical status"
+        },
+        {
+          "line": 41,
+          "text": "Source pins and reproducibility"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 49,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r03/README.md",
+      "related": [],
+      "sha256": "c3cc95aa539ca59df7b2d96e950e87ff5282db0208623a9231077cff0681599a",
+      "tags": [],
+      "title": "DC-01 native engineering demo",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Release qualification for DC-E02"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 22,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r03/bench-validation.md",
+      "related": [],
+      "sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e",
+      "tags": [],
+      "title": "Release qualification for DC-E02",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Desktop companion electronics candidate"
+        },
+        {
+          "line": 7,
+          "text": "Files to open"
+        },
+        {
+          "line": 30,
+          "text": "Circuit and power path"
+        },
+        {
+          "line": 40,
+          "text": "Display, button and optional audio"
+        },
+        {
+          "line": 48,
+          "text": "Mechanical interfaces"
+        },
+        {
+          "line": 60,
+          "text": "Verification scope"
+        },
+        {
+          "line": 68,
+          "text": "Reproduce the candidate"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 85,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r03/electronics-README.md",
+      "related": [],
+      "sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765",
+      "tags": [],
+      "title": "Desktop companion electronics candidate",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "DC01 P03 print kit"
+        },
+        {
+          "line": 19,
+          "text": "Files to open"
+        },
+        {
+          "line": 31,
+          "text": "Print preparation"
+        },
+        {
+          "line": 54,
+          "text": "Checks that should reject a damaged package"
+        },
+        {
+          "line": 66,
+          "text": "Measured placement and evidence"
+        },
+        {
+          "line": 88,
+          "text": "Source identity"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 117,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/dc-01/r03/print/README.md",
+      "related": [],
+      "sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
+      "tags": [],
+      "title": "DC01 P03 print kit",
       "use": "read"
     },
     {
@@ -9754,12 +10132,12 @@
       "description": "",
       "headings": [],
       "kind": "workflow",
-      "lines": 2907,
+      "lines": 3033,
       "loads_with": [],
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "c6b2a0f30c414493d1e3907324f42b21f838f8f7836846a21238b27d8db895a2",
+      "sha256": "c5d7de5196432817a13bf1932c456197419064b3570157d8acafbb10cc1cf57b",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -9796,397 +10174,401 @@
           "text": "Topic: session-retrospective"
         },
         {
-          "line": 63,
+          "line": 64,
           "text": "Topic: upstream-agent-patterns"
         },
         {
-          "line": 91,
+          "line": 92,
           "text": "Topic: target-bound-review"
         },
         {
-          "line": 120,
+          "line": 121,
           "text": "Topic: api-contract-research"
         },
         {
-          "line": 146,
+          "line": 147,
           "text": "Topic: evaluated-mesh-contract"
         },
         {
-          "line": 175,
+          "line": 176,
           "text": "Topic: helper-dependency-reload"
         },
         {
-          "line": 203,
+          "line": 204,
           "text": "Topic: python-adapter-review"
         },
         {
-          "line": 229,
+          "line": 230,
           "text": "native-product-visualization"
         },
         {
-          "line": 233,
+          "line": 234,
           "text": "Base reading"
         },
         {
-          "line": 242,
+          "line": 243,
           "text": "Steps"
         },
         {
-          "line": 249,
+          "line": 250,
           "text": "Gates"
         },
         {
-          "line": 255,
+          "line": 256,
           "text": "Limitations"
         },
         {
-          "line": 260,
+          "line": 261,
           "text": "Topic: opaque-micro-surfaces"
         },
         {
-          "line": 287,
+          "line": 288,
           "text": "Topic: subsurface-optics"
         },
         {
-          "line": 308,
+          "line": 309,
           "text": "Topic: thin-film-optics"
         },
         {
-          "line": 331,
+          "line": 332,
           "text": "Topic: fiber-fabric-surfaces"
         },
         {
-          "line": 352,
+          "line": 353,
           "text": "native-animation-rigging"
         },
         {
-          "line": 356,
+          "line": 357,
           "text": "Base reading"
         },
         {
-          "line": 367,
+          "line": 368,
           "text": "Steps"
         },
         {
-          "line": 374,
+          "line": 375,
           "text": "Gates"
         },
         {
-          "line": 382,
+          "line": 383,
           "text": "Limitations"
         },
         {
-          "line": 388,
+          "line": 389,
           "text": "Topic: rig-spaces-ik-mechanisms"
         },
         {
-          "line": 420,
+          "line": 421,
           "text": "Topic: skinning-modular-rigs"
         },
         {
-          "line": 444,
+          "line": 445,
           "text": "Topic: animation-curves-drivers"
         },
         {
-          "line": 468,
+          "line": 469,
           "text": "Topic: robot-joint-frame-adapter"
         },
         {
-          "line": 490,
+          "line": 491,
           "text": "Topic: assembly-collision-staging"
         },
         {
-          "line": 519,
+          "line": 520,
           "text": "polymer-functional-print"
         },
         {
-          "line": 523,
+          "line": 524,
           "text": "Base reading"
         },
         {
-          "line": 533,
+          "line": 534,
           "text": "Steps"
         },
         {
-          "line": 540,
+          "line": 541,
           "text": "Gates"
         },
         {
-          "line": 547,
+          "line": 548,
           "text": "Limitations"
         },
         {
-          "line": 553,
+          "line": 554,
           "text": "Topic: advanced-deposition-process"
         },
         {
-          "line": 577,
+          "line": 578,
           "text": "Topic: polymer-selection"
         },
         {
-          "line": 596,
+          "line": 597,
           "text": "Topic: print-boss-cutouts"
         },
         {
-          "line": 620,
+          "line": 621,
           "text": "Topic: plate-nesting-screen"
         },
         {
-          "line": 645,
+          "line": 646,
           "text": "precision-assembly-metrology"
         },
         {
-          "line": 649,
+          "line": 650,
           "text": "Base reading"
         },
         {
-          "line": 657,
+          "line": 658,
           "text": "Steps"
         },
         {
-          "line": 664,
+          "line": 665,
           "text": "Gates"
         },
         {
-          "line": 670,
+          "line": 671,
           "text": "Limitations"
         },
         {
-          "line": 675,
+          "line": 676,
           "text": "Topic: production-coverage-audit"
         },
         {
-          "line": 704,
+          "line": 705,
           "text": "Topic: geometry-diagnostics"
         },
         {
-          "line": 733,
+          "line": 734,
           "text": "Topic: manufacturing-evidence"
         },
         {
-          "line": 763,
+          "line": 764,
           "text": "Topic: parametric-source-contract"
         },
         {
-          "line": 791,
+          "line": 792,
           "text": "Topic: compliant-tendon-motion"
         },
         {
-          "line": 821,
+          "line": 822,
           "text": "Topic: precision-material-tessellation"
         },
         {
-          "line": 846,
+          "line": 847,
           "text": "Topic: hardware-interface-geometry"
         },
         {
-          "line": 874,
+          "line": 875,
           "text": "Topic: industrial-connector-panel-packaging"
         },
         {
-          "line": 905,
+          "line": 906,
           "text": "Topic: enclosure-sealing-emc-harness"
         },
         {
-          "line": 932,
+          "line": 933,
           "text": "mechanisms-transmissions"
         },
         {
-          "line": 936,
+          "line": 937,
           "text": "Base reading"
         },
         {
-          "line": 946,
+          "line": 947,
           "text": "Steps"
         },
         {
-          "line": 953,
+          "line": 954,
           "text": "Gates"
         },
         {
-          "line": 960,
+          "line": 961,
           "text": "Limitations"
         },
         {
-          "line": 966,
+          "line": 967,
           "text": "Topic: contact-wear-sealing"
         },
         {
-          "line": 992,
+          "line": 993,
           "text": "Topic: cycloid-profile-kinematics"
         },
         {
-          "line": 1016,
+          "line": 1017,
           "text": "Topic: actuator-duty-thermal"
         },
         {
-          "line": 1036,
+          "line": 1037,
           "text": "Topic: parametric-gear-profile"
         },
         {
-          "line": 1057,
+          "line": 1058,
           "text": "robotics-links-simulation"
         },
         {
-          "line": 1061,
+          "line": 1062,
           "text": "Base reading"
         },
         {
-          "line": 1071,
+          "line": 1072,
           "text": "Steps"
         },
         {
-          "line": 1078,
+          "line": 1079,
           "text": "Gates"
         },
         {
-          "line": 1085,
+          "line": 1086,
           "text": "Limitations"
         },
         {
-          "line": 1091,
+          "line": 1092,
           "text": "Topic: dynamic-harness-routing"
         },
         {
-          "line": 1120,
+          "line": 1121,
           "text": "render-export-delivery"
         },
         {
-          "line": 1124,
+          "line": 1125,
           "text": "Base reading"
         },
         {
-          "line": 1133,
+          "line": 1134,
           "text": "Steps"
         },
         {
-          "line": 1140,
+          "line": 1141,
           "text": "Gates"
         },
         {
-          "line": 1147,
+          "line": 1148,
           "text": "Limitations"
         },
         {
-          "line": 1153,
+          "line": 1154,
           "text": "Topic: native-render-delivery"
         },
         {
-          "line": 1182,
+          "line": 1183,
           "text": "Topic: native-task-lifecycle"
         },
         {
-          "line": 1211,
+          "line": 1212,
           "text": "Topic: evaluated-camera-screen"
         },
         {
-          "line": 1236,
+          "line": 1237,
           "text": "Topic: renderer-diagnostics"
         },
         {
-          "line": 1262,
+          "line": 1263,
           "text": "Topic: participating-media"
         },
         {
-          "line": 1283,
+          "line": 1284,
           "text": "Topic: color-denoise-delivery"
         },
         {
-          "line": 1307,
+          "line": 1308,
           "text": "Topic: framing-export-contract"
         },
         {
-          "line": 1331,
-          "text": "native-procedural-simulation"
-        },
-        {
-          "line": 1335,
-          "text": "Base reading"
-        },
-        {
-          "line": 1345,
-          "text": "Steps"
-        },
-        {
-          "line": 1352,
-          "text": "Gates"
+          "line": 1332,
+          "text": "Topic: public-review-publication"
         },
         {
           "line": 1359,
-          "text": "Limitations"
+          "text": "native-procedural-simulation"
         },
         {
-          "line": 1364,
-          "text": "Topic: modifier-input-contract"
-        },
-        {
-          "line": 1392,
-          "text": "Topic: fields-parametric-solids"
-        },
-        {
-          "line": 1422,
-          "text": "Topic: simulation-repeat-budgets"
-        },
-        {
-          "line": 1449,
-          "text": "Topic: sdf-feature-preservation"
-        },
-        {
-          "line": 1471,
-          "text": "Topic: graded-lattice-reinforcement"
-        },
-        {
-          "line": 1493,
-          "text": "Topic: procedural-component-adapters"
-        },
-        {
-          "line": 1517,
-          "text": "native-character-creature"
-        },
-        {
-          "line": 1521,
+          "line": 1363,
           "text": "Base reading"
         },
         {
-          "line": 1533,
+          "line": 1373,
           "text": "Steps"
         },
         {
-          "line": 1541,
+          "line": 1380,
           "text": "Gates"
         },
         {
-          "line": 1549,
+          "line": 1387,
           "text": "Limitations"
         },
         {
-          "line": 1557,
+          "line": 1392,
+          "text": "Topic: modifier-input-contract"
+        },
+        {
+          "line": 1420,
+          "text": "Topic: fields-parametric-solids"
+        },
+        {
+          "line": 1450,
+          "text": "Topic: simulation-repeat-budgets"
+        },
+        {
+          "line": 1477,
+          "text": "Topic: sdf-feature-preservation"
+        },
+        {
+          "line": 1499,
+          "text": "Topic: graded-lattice-reinforcement"
+        },
+        {
+          "line": 1521,
+          "text": "Topic: procedural-component-adapters"
+        },
+        {
+          "line": 1545,
+          "text": "native-character-creature"
+        },
+        {
+          "line": 1549,
+          "text": "Base reading"
+        },
+        {
+          "line": 1561,
+          "text": "Steps"
+        },
+        {
+          "line": 1569,
+          "text": "Gates"
+        },
+        {
+          "line": 1577,
+          "text": "Limitations"
+        },
+        {
+          "line": 1585,
           "text": "Topic: character-proportion-anatomy"
         },
         {
-          "line": 1588,
+          "line": 1616,
           "text": "Topic: animation-topology-facial-loops"
         },
         {
-          "line": 1613,
+          "line": 1641,
           "text": "Topic: facs-blendshape-targets"
         },
         {
-          "line": 1640,
+          "line": 1668,
           "text": "Topic: hair-curves-grooming-shading"
         },
         {
-          "line": 1671,
+          "line": 1699,
           "text": "Topic: character-rig-locomotion"
         }
       ],
       "kind": "knowledge",
-      "lines": 1699,
+      "lines": 1727,
       "loads_with": [],
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "788c3d58212f7e67f18734f44e1a4cf2a09c28742ef3be1ef89fc1a227b71fa2",
+      "sha256": "2e7611d6a1935a01d8158c0c8dac1bb0f7a8da13aef08480ae1ab159f596c7d3",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -17255,6 +17637,50 @@
     },
     {
       "annotation": {
+        "basis": "Written and reviewed 2026-09-18 after regex edits to a shipped page closed a fieldset early; run on all four published pages, which reported balanced.",
+        "caution": "Nesting only: it says nothing about layout, accessibility, tokens, copy or whether the page's claims are supported. It is the cheapest rung, not the gate.",
+        "effects": "Reads the given HTML files; writes nothing; exits 1 on an unbalanced or unclosed tag.",
+        "reviewed_sha256": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3",
+        "runtime": "Host Python standard library only (html.parser); no browser, no Blender."
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 56,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/check-html-tag-balance.py",
+      "related": [],
+      "sha256": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3",
+      "tags": [],
+      "title": "check-html-tag-balance.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "basis": "Written and reviewed 2026-09-18 against the CK-001 pass-B-rotation defect (authored, never executed); 7 host tests in tests/pass-coverage cover unreferenced, excused, empty-reason, missing-script and unreadable-manifest cases plus an audit of the shipped builds.",
+        "caution": "Declaration coverage only: it proves a manifest step exists for each authored pass, not that the pass ran, that its run directory is current, or that its assertions are adequate. An allowlist entry with a reason silences a finding, so the reason is the evidence.",
+        "effects": "Reads a build's pass scripts, its *pipeline*.json manifests and an optional pass-coverage-allow.json. Writes nothing; reports to stdout and exits 1 when something is unreferenced or missing.",
+        "reviewed_sha256": "703ba9b7a27bab5b75cfe0e8ec600c2662ad7aafe9485bbe5b62ca7f9856ccc7",
+        "runtime": "Host Python standard library only; no Blender process or bpy import."
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 115,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/check-pass-coverage.py",
+      "related": [],
+      "sha256": "703ba9b7a27bab5b75cfe0e8ec600c2662ad7aafe9485bbe5b62ca7f9856ccc7",
+      "tags": [],
+      "title": "check-pass-coverage.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
         "basis": "static scout; not runtime certification",
         "caution": "Local coordinates: ignores object scale and scene scale_length; identity-cube test only.",
         "effects": "Evaluates and triangulates mesh for integration; inspect source before use.",
@@ -19026,6 +19452,28 @@
       "use": "inspect-adapt"
     },
     {
+      "annotation": {
+        "basis": "Contract tests for the pass-coverage check, reviewed 2026-09-18; 7 tests pass on host Python 3.14.",
+        "caution": "Tests the checker's own contract, not any build's real coverage status.",
+        "effects": "Creates throwaway build directories under the system temp dir; the repository is only read (one test audits the shipped builds without asserting they are clean).",
+        "reviewed_sha256": "aa6422320cfdc4794968a4c3eb4537d03c1b648c447ca5767cbdc14623ccad98",
+        "runtime": "Host Python unittest; temporary directories only."
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 90,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/pass-coverage/test_check_pass_coverage.py",
+      "related": [],
+      "sha256": "aa6422320cfdc4794968a4c3eb4537d03c1b648c447ca5767cbdc14623ccad98",
+      "tags": [],
+      "title": "test_check_pass_coverage.py",
+      "use": "inspect-adapt"
+    },
+    {
       "description": "",
       "headings": [],
       "kind": "execution-source",
@@ -19153,13 +19601,45 @@
     }
   ],
   "routing_exclusions": {
+    "docs/reviews/dc-01/r02/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "d854340976a19058da5a92455ab1737aa44fe56700f9dcc2b8ae99d9c740782b"
+    },
+    "docs/reviews/dc-01/r02/bench-validation.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e"
+    },
+    "docs/reviews/dc-01/r02/electronics-README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765"
+    },
+    "docs/reviews/dc-01/r02/print/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16"
+    },
+    "docs/reviews/dc-01/r03/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "c3cc95aa539ca59df7b2d96e950e87ff5282db0208623a9231077cff0681599a"
+    },
+    "docs/reviews/dc-01/r03/bench-validation.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e"
+    },
+    "docs/reviews/dc-01/r03/electronics-README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765"
+    },
+    "docs/reviews/dc-01/r03/print/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16"
+    },
     "research/robotics-precision-cad/00-BRAINSTORM-CONTRACT.md": {
       "reason": "Historical research planning contract, not a technical procedure; searchable as background.",
       "reviewed_sha256": "fd43778d7310f2a19b79dde5b810a4ca2c77103b13d18b34538cde3ca8464b72"
     }
   },
   "schema": 1,
-  "source_digest": "a125c3fcfdf5f16db38b39b0c8a38a83e8c1800c724840608b5b8140c2d413f7",
+  "source_digest": "e78f056df03acdb3c23322afbd931117bda465ce8e1fbdabc7d962c845c66180",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -19272,7 +19752,7 @@
     ".claude/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".claude/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
     ".project-agent.md": "8cde6609763c6f287717b23587c6f542f195e506e1c9fa283f40b3eaf65af82c",
-    "AGENTS.md": "0c2192385e550c8ee9104361ab0525f0bae0c7c5fe0c270eb88772ccde6b7108",
+    "AGENTS.md": "d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7",
     "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
     "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833",
     "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py": "6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa",
@@ -19304,7 +19784,8 @@
     "docs/blender-ai-workflow.md": "88c350ef98a0d3db6ab5e61d2f8de85b5cab89e9a791bae816cf96d94131c84d",
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
     "docs/blender-workflow-improvement-backlog.md": "e9a986e63df776bd80dd61196972257f3a2d98a1724f1be1fad3029e5df7dc72",
-    "docs/ck-001-session-retrospective.md": "9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17",
+    "docs/ck-001-session-retrospective.md": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
+    "docs/delivery-review-publication.md": "2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55",
     "docs/galleries/exchanger-train.md": "d2f35583e341b5090d6c342a1bdaa41c75da4bea499c3678e072a7b7a0f62fda",
     "docs/galleries/instruments.md": "79bdd0bb06bc63f84e734a0ae35f06c981f4b6d6beb19a5ec60e9335e0c3ac39",
     "docs/galleries/robot-arm.md": "138bcdbb0d19052456bc7be816ea15ec98ca1e5cea070491b0c451fd9ad5c7aa",
@@ -19315,17 +19796,26 @@
     "docs/galleries/wellhead.md": "527d45bf296542c7a8a43788d59d0b521d3669b9ecefe70673e70e5da88c917e",
     "docs/hq-coverage-gate.md": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
     "docs/journals/orc-component-reconstruction.md": "c1da71e4925251a63f3d57a72125237c90390a412d5b8bbf2697f64264bb0a93",
+    "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
     "docs/orc-component-brief-template.md": "c5c56946b063550ad27115d8475040e6c7b730dee0ace4a04242cf15b4b32326",
     "docs/orc-component-workflow.md": "18bc17390437d634cc92b079b3b76bd7aa50c526feec5db6ea64834b9f9dbad4",
     "docs/orc-separator-worked-example.md": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
     "docs/orc-session-lessons.md": "403a2938c788cfe49af67641de9bd2601f0b6ec9853f74836732372f142738c1",
-    "docs/product-workflow-template.md": "c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69",
+    "docs/product-workflow-template.md": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b",
     "docs/reviews/ck-001/r02/README.md": "fbb40d58d956af86fa260f703fc9041d311a91fd3658ee6b3a8c1e6a74a7bf4d",
     "docs/reviews/ck-001/r02/design/design-notes.md": "e292c0c804c293de439a2a913d0b899532858b4bd3edf8fc20e74c582ee9a7a6",
     "docs/reviews/ck-001/r02/reference/ORIGINAL-INPUTS.md": "f439f194e22eed7d70b9fbd0ed526b4dc385e296facd89bf8e537fe850724734",
     "docs/reviews/ck-001/r02/reports/final-engineering-review.md": "e292c0c804c293de439a2a913d0b899532858b4bd3edf8fc20e74c582ee9a7a6",
     "docs/reviews/ck-001/r02/reports/final-visual-review.md": "2b0c1767b1487b5e0c3fb88d5522370b7499590b07670fe6cecb6683fc3ee406",
     "docs/reviews/ck-001/r02/reports/package-review.md": "adaff823ef5657d68047f8ceadc5c4e6f1159361da7a9fc9e504eb460033b671",
+    "docs/reviews/dc-01/r02/README.md": "d854340976a19058da5a92455ab1737aa44fe56700f9dcc2b8ae99d9c740782b",
+    "docs/reviews/dc-01/r02/bench-validation.md": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e",
+    "docs/reviews/dc-01/r02/electronics-README.md": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765",
+    "docs/reviews/dc-01/r02/print/README.md": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
+    "docs/reviews/dc-01/r03/README.md": "c3cc95aa539ca59df7b2d96e950e87ff5282db0208623a9231077cff0681599a",
+    "docs/reviews/dc-01/r03/bench-validation.md": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e",
+    "docs/reviews/dc-01/r03/electronics-README.md": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765",
+    "docs/reviews/dc-01/r03/print/README.md": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc",
     "knowledge/00-foundations/agent-workflow-loop.md": "087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3",
@@ -19364,8 +19854,8 @@
     "knowledge/70-cad-precision-robotics/print-plate-layout.md": "eb9f48179c1eb0a88253a92d49b4c4bee479b58349026e37810687b237802a98",
     "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e",
     "knowledge/INDEX.md": "84ab0e6bb9cd3b3b338e0ff209751b488d97d9a8b3d6dd8e1ae29359c9409102",
-    "knowledge/catalog-config.json": "c6b2a0f30c414493d1e3907324f42b21f838f8f7836846a21238b27d8db895a2",
-    "knowledge/generated-workflows.md": "788c3d58212f7e67f18734f44e1a4cf2a09c28742ef3be1ef89fc1a227b71fa2",
+    "knowledge/catalog-config.json": "c5d7de5196432817a13bf1932c456197419064b3570157d8acafbb10cc1cf57b",
+    "knowledge/generated-workflows.md": "2e7611d6a1935a01d8158c0c8dac1bb0f7a8da13aef08480ae1ab159f596c7d3",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
@@ -19493,6 +19983,8 @@
     "scripts/boilerplates/pipeline_render/bp_export_pipeline.py": "f2499c0298d379263e2e8f2078d06ddbbfa6ca326a19e756c4b97290c0ce2ae1",
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
+    "scripts/check-html-tag-balance.py": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3",
+    "scripts/check-pass-coverage.py": "703ba9b7a27bab5b75cfe0e8ec600c2662ad7aafe9485bbe5b62ca7f9856ccc7",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
     "scripts/export-public-repo.sh": "acb1ed3067de86750b74b371ef840ab40493c1014743af4388fb50e136b9fa38",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
@@ -19588,6 +20080,7 @@
     "tests/native-pipeline/test_runner.py": "6e26453da366dd5615d9b92d0b094fa253b89619d00cbbd9708915753aeb9423",
     "tests/native-review/fixtures/coupon_collision.py": "d42af17dc2a4d5e2a5a8b8853588f7fdf361b80fe634519abec1b6090effdab2",
     "tests/native-review/test_native_review.py": "b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338",
+    "tests/pass-coverage/test_check_pass_coverage.py": "aa6422320cfdc4794968a4c3eb4537d03c1b648c447ca5767cbdc14623ccad98",
     "tests/production-gate/fixture_specs.py": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
     "tests/production-gate/gate_harness.py": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
     "tests/production-gate/make_fixtures.py": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
@@ -20312,17 +20805,19 @@
             "Worked constants and host-bound artifact scripts are not portable hardware presets; historical claims retain their original scope."
           ],
           "review": {
-            "by": "Controller source/caller review and session consolidation, 2026-09-17.",
+            "by": "Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: motion contract and pass-inventory rows added, qualification enforcement row corrected, two new procedures routed.",
             "kind": "static-routing-review",
             "source_hashes": {
               "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833",
-              "docs/ck-001-session-retrospective.md": "9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17",
-              "docs/product-workflow-template.md": "c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69",
+              "docs/ck-001-session-retrospective.md": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
+              "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+              "docs/product-workflow-template.md": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b",
               "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d"
             }
           },
           "sources": [
             "docs/ck-001-session-retrospective.md",
+            "docs/native-build-pipeline-lessons.md",
             "docs/product-workflow-template.md",
             "knowledge/60-pipeline/native-agent-iteration.md",
             "CONTEXT.md"
@@ -21366,13 +21861,13 @@
             "Decoded frames and sampled export poses do not certify all temporal/material fidelity or physical operation; visual judgment remains manual."
           ],
           "review": {
-            "by": "Controller source/caller and actual B-media failure review, 2026-09-17.",
+            "by": "Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: product-workflow-template gained a motion contract and a pass-inventory row.",
             "kind": "static-routing-review",
             "source_hashes": {
               "builds/reference-keyboard/scripts/fullhd.py": "d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a",
               "builds/reference-keyboard/scripts/package_delivery.py": "3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852",
               "builds/reference-keyboard/scripts/prepare_reference_review.py": "aea46f665a503f9a68475af8bc9ec96de7dac2cf4c3fe4ee1dd74ec3d59818b5",
-              "docs/product-workflow-template.md": "c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69",
+              "docs/product-workflow-template.md": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b",
               "knowledge/60-pipeline/native-render-delivery.md": "9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171"
             }
           },
@@ -21450,6 +21945,38 @@
             "Compare against a baseline with the atmosphere off to isolate exposure/material defects."
           ],
           "when": "Only when the scene has haze/cloud/volume that must be controlled."
+        },
+        "public-review-publication": {
+          "gates": [
+            "A published page states no physical property: manufacture status and the physical sample count stay visible while that evidence is absent.",
+            "A figure with no receipt in the package does not appear on the page; a missing image is a named blank, never a placeholder picture.",
+            "An overwritten published revision is a failure: supersession adds a folder and preserves the old record."
+          ],
+          "limitations": [
+            "The design gate judges structure and tokens, not whether the evidence is adequate or the claim honest.",
+            "Live-URL checks prove loading, layout and console cleanliness; real-device touch and search indexing stay manual."
+          ],
+          "review": {
+            "by": "Written from the CK-001 r01/r02 and DC-01 R02/R03 publications and verified on the live pages, 2026-09-18.",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "docs/delivery-review-publication.md": "2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55",
+              "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+              "scripts/check-html-tag-balance.py": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3"
+            }
+          },
+          "sources": [
+            "docs/delivery-review-publication.md",
+            "docs/native-build-pipeline-lessons.md",
+            "scripts/check-html-tag-balance.py"
+          ],
+          "steps": [
+            "Generate the page from the package with its builder; read every figure from the package receipts and assert the fact is recorded rather than defaulting it.",
+            "Publish media at web size with a byte/SHA-256 manifest; keep run directories, delivery archives and licensed third-party documents local.",
+            "Add a superseding revision as its own folder, repoint the landing, README and sitemap, and keep the previous revision online with links both ways.",
+            "Run the tag-balance check, the static design gate, the layout-rule check and the render check at 1280 and 390 against the live URL, then look at the screenshots."
+          ],
+          "when": "When a delivered package must be published as a public review page, or an existing published revision is superseded."
         },
         "renderer-diagnostics": {
           "gates": [

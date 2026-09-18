@@ -113,7 +113,7 @@ an incomplete criterion. C03 does not inherit B's presentation or GLB acceptance
 | `native-review.py` | Target/candidate/proof/numeric pins, complete attributed findings, bounded rounds | Looking at images, correct target, true independence and final visual judgment |
 | Parameter helper | Length units, local frames, datums/roles and source/export pins | World composition, true mating, B-rep and physical meaning |
 | Production checker 1.0.2 | Declared geometry families and numerical screens, export/reimport | Exhaustive local thickness, process, loads, wear, thermal and factory fit |
-| CK-001 package/qualification code | Task-specific source/result/media checks and record replay | General schema coverage across arbitrary products; evidence authenticity |
+| CK-001 package/qualification code | Task-specific source/result/media checks and record replay; `evidence_gate.py` now also binds `frozen_at`, `design_snapshot_sha256`, required `test_configurations`, prerequisite shas and `validate_assessment()` (Q1–Q4 implemented 2026-09-18) | General schema coverage across arbitrary products; evidence authenticity |
 | Skills and playbook | Bounded source routing and hash-current publication | Execution and appropriate task-specific acceptance |
 
 ## Operating changes for the next project

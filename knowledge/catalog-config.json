@@ -982,6 +982,27 @@
       "runtime": "bpy; inspect/adapt only",
       "effects": "Creates animation data, an action, a slot and 12 F-curves on the target armature; renames the auto-created action.",
       "caution": "A 5-key harmonic approximation, not a gait solve: no stance plateau so expect foot slide, and pelvis Z extrema fall at 0/T/2 rather than Winter's 12%/62%. Review an animatic before calling it a walk."
+    },
+    "scripts/check-pass-coverage.py": {
+      "reviewed_sha256": "703ba9b7a27bab5b75cfe0e8ec600c2662ad7aafe9485bbe5b62ca7f9856ccc7",
+      "basis": "Written and reviewed 2026-09-18 against the CK-001 pass-B-rotation defect (authored, never executed); 7 host tests in tests/pass-coverage cover unreferenced, excused, empty-reason, missing-script and unreadable-manifest cases plus an audit of the shipped builds.",
+      "runtime": "Host Python standard library only; no Blender process or bpy import.",
+      "effects": "Reads a build's pass scripts, its *pipeline*.json manifests and an optional pass-coverage-allow.json. Writes nothing; reports to stdout and exits 1 when something is unreferenced or missing.",
+      "caution": "Declaration coverage only: it proves a manifest step exists for each authored pass, not that the pass ran, that its run directory is current, or that its assertions are adequate. An allowlist entry with a reason silences a finding, so the reason is the evidence."
+    },
+    "scripts/check-html-tag-balance.py": {
+      "reviewed_sha256": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3",
+      "basis": "Written and reviewed 2026-09-18 after regex edits to a shipped page closed a fieldset early; run on all four published pages, which reported balanced.",
+      "runtime": "Host Python standard library only (html.parser); no browser, no Blender.",
+      "effects": "Reads the given HTML files; writes nothing; exits 1 on an unbalanced or unclosed tag.",
+      "caution": "Nesting only: it says nothing about layout, accessibility, tokens, copy or whether the page's claims are supported. It is the cheapest rung, not the gate."
+    },
+    "tests/pass-coverage/test_check_pass_coverage.py": {
+      "reviewed_sha256": "aa6422320cfdc4794968a4c3eb4537d03c1b648c447ca5767cbdc14623ccad98",
+      "basis": "Contract tests for the pass-coverage check, reviewed 2026-09-18; 7 tests pass on host Python 3.14.",
+      "runtime": "Host Python unittest; temporary directories only.",
+      "effects": "Creates throwaway build directories under the system temp dir; the repository is only read (one test audits the shipped builds without asserting they are clean).",
+      "caution": "Tests the checker's own contract, not any build's real coverage status."
     }
   },
   "workflows": {
@@ -1022,7 +1043,13 @@
       "topics": {
         "session-retrospective": {
           "when": "When starting a serious product project or converting a completed session into reusable workflow and skills.",
-          "sources": ["docs/ck-001-session-retrospective.md", "docs/product-workflow-template.md", "knowledge/60-pipeline/native-agent-iteration.md", "CONTEXT.md"],
+          "sources": [
+            "docs/ck-001-session-retrospective.md",
+            "docs/native-build-pipeline-lessons.md",
+            "docs/product-workflow-template.md",
+            "knowledge/60-pipeline/native-agent-iteration.md",
+            "CONTEXT.md"
+          ],
           "steps": [
             "Trace incidents to actual source and reports, including work already merged; classify code/spec/checker/environment or missing evidence.",
             "Record cause, reusable action, falsifier, implementation/test and scope; keep authored requirements independent of measurements.",
@@ -1036,12 +1063,17 @@
             "Controller procedure, not an autonomous-repair benchmark or universal release validator.",
             "Worked constants and host-bound artifact scripts are not portable hardware presets; historical claims retain their original scope."
           ],
-          "review": {"kind": "static-routing-review", "by": "Controller source/caller review and session consolidation, 2026-09-17.", "source_hashes": {
-            "docs/ck-001-session-retrospective.md": "9a6d231c61e5aa94fc7cf18808d09d16d2db8b489a06b2a36380def1e5cc2a17",
-            "docs/product-workflow-template.md": "c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69",
-            "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d",
-            "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833"
-          }}
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: motion contract and pass-inventory rows added, qualification enforcement row corrected, two new procedures routed.",
+            "source_hashes": {
+              "docs/ck-001-session-retrospective.md": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
+              "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+              "docs/product-workflow-template.md": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b",
+              "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d",
+              "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833"
+            }
+          }
         },
         "upstream-agent-patterns": {
           "when": "When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechanisms to Blender-native work.",
@@ -1794,7 +1826,13 @@
         },
         "geometry-diagnostics": {
           "when": "When a bore, wall, collision, tolerance-extreme or export result is surprising and code/spec/checker causes must be distinguished.",
-          "sources": ["knowledge/60-pipeline/geometry-diagnostic-workflow.md", "scripts/production_gate/walls_overhang.py", "scripts/production_gate/features_fasteners.py", "tests/production-gate/test_small_surface_walls.py", "builds/reference-keyboard/scripts/export_compare.py"],
+          "sources": [
+            "knowledge/60-pipeline/geometry-diagnostic-workflow.md",
+            "scripts/production_gate/walls_overhang.py",
+            "scripts/production_gate/features_fasteners.py",
+            "tests/production-gate/test_small_surface_walls.py",
+            "builds/reference-keyboard/scripts/export_compare.py"
+          ],
           "steps": [
             "Freeze source/spec/checker identity and choose a predicate matching evaluated bounds, axis rays, surface/solid contact or export correspondence.",
             "Use positive and wrong-result controls; inspect coverage and numerical precision before changing the part.",
@@ -1810,17 +1848,27 @@
             "The production mesh preparer uses the input object matrix; use a verified identity bake for constrained parts rather than infer evaluated-transform parity.",
             "Thread pilots and nominal support contact do not establish final thread strength, preload, bearing or factory fit."
           ],
-          "review": {"kind": "static-routing-review", "by": "Controller and geometry reviewer, actual source and session failures, 2026-09-17.", "source_hashes": {
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and geometry reviewer, actual source and session failures, 2026-09-17.",
+            "source_hashes": {
               "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf",
-            "scripts/production_gate/walls_overhang.py": "5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54",
-            "scripts/production_gate/features_fasteners.py": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
-            "tests/production-gate/test_small_surface_walls.py": "f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3",
-            "builds/reference-keyboard/scripts/export_compare.py": "906a0cbfb1a196c469c0f38bc45bd3ef5c2ce978e7dc87b35ddcb913b24be6cf"
-          }}
+              "scripts/production_gate/walls_overhang.py": "5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54",
+              "scripts/production_gate/features_fasteners.py": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
+              "tests/production-gate/test_small_surface_walls.py": "f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3",
+              "builds/reference-keyboard/scripts/export_compare.py": "906a0cbfb1a196c469c0f38bc45bd3ef5c2ce978e7dc87b35ddcb913b24be6cf"
+            }
+          }
         },
         "manufacturing-evidence": {
           "when": "When advancing a digital assembly to an engineering candidate and collecting physical pilot evidence for retention, process, electronics or bench claims.",
-          "sources": ["knowledge/60-pipeline/manufacturing-evidence-workflow.md", "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py", "builds/reference-keyboard/manufacturing/qualification/record_checks.py", "builds/reference-keyboard/manufacturing/qualification/evidence_io.py", "builds/reference-keyboard/manufacturing/qualification/test_evidence_gate.py"],
+          "sources": [
+            "knowledge/60-pipeline/manufacturing-evidence-workflow.md",
+            "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py",
+            "builds/reference-keyboard/manufacturing/qualification/record_checks.py",
+            "builds/reference-keyboard/manufacturing/qualification/evidence_io.py",
+            "builds/reference-keyboard/manufacturing/qualification/test_evidence_gate.py"
+          ],
           "steps": [
             "Define sourced dimensional/interface requirements, exact component/process choices and a geometry/electrical/physical closure ledger.",
             "Verify retention construction, polarity/pin mapping and bounded electrical calculations; distinguish logic, ERC/DRC, target build and hardware.",
@@ -1837,13 +1885,17 @@
             "Case forces, sample counts, dimensions, power assumptions and host-bound snapshots are examples, not standards.",
             "This workflow generates no physical observation, ECAD result, linked firmware or manufacturing certificate."
           ],
-          "review": {"kind": "static-routing-review", "by": "Controller and manufacturing reviewer, source/caller and evidence-boundary review, 2026-09-17.", "source_hashes": {
-            "knowledge/60-pipeline/manufacturing-evidence-workflow.md": "20028e1a959135c553a0d170689a0c1310c0a01bf6853220160aaf5616b6d7a3",
-            "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py": "6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa",
-            "builds/reference-keyboard/manufacturing/qualification/record_checks.py": "1a38c0f322117df386b9c873eec096649faceb641af93efccd2f50e2803bf992",
-            "builds/reference-keyboard/manufacturing/qualification/evidence_io.py": "8000a8da7b3da47f732d3f7f7184449310bb83e28c70d2ac9c9d174bc5830393",
-            "builds/reference-keyboard/manufacturing/qualification/test_evidence_gate.py": "cc33a8003f3412ccdcb86e7f07bfed3f3ebfe7a74856ed7719307c2b7e5b5d24"
-          }}
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller and manufacturing reviewer, source/caller and evidence-boundary review, 2026-09-17.",
+            "source_hashes": {
+              "knowledge/60-pipeline/manufacturing-evidence-workflow.md": "20028e1a959135c553a0d170689a0c1310c0a01bf6853220160aaf5616b6d7a3",
+              "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py": "6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa",
+              "builds/reference-keyboard/manufacturing/qualification/record_checks.py": "1a38c0f322117df386b9c873eec096649faceb641af93efccd2f50e2803bf992",
+              "builds/reference-keyboard/manufacturing/qualification/evidence_io.py": "8000a8da7b3da47f732d3f7f7184449310bb83e28c70d2ac9c9d174bc5830393",
+              "builds/reference-keyboard/manufacturing/qualification/test_evidence_gate.py": "cc33a8003f3412ccdcb86e7f07bfed3f3ebfe7a74856ed7719307c2b7e5b5d24"
+            }
+          }
         },
         "parametric-source-contract": {
           "when": "When native component code needs explicit length parameters, frames, datums, semantic ports or declared source/export evidence.",
@@ -2286,7 +2338,13 @@
       "topics": {
         "native-render-delivery": {
           "when": "When rendering the saved model at requested resolution, changing aspect, delivering GLB/video or refreshing media after geometry changes.",
-          "sources": ["knowledge/60-pipeline/native-render-delivery.md", "builds/reference-keyboard/scripts/fullhd.py", "builds/reference-keyboard/scripts/package_delivery.py", "builds/reference-keyboard/scripts/prepare_reference_review.py", "docs/product-workflow-template.md"],
+          "sources": [
+            "knowledge/60-pipeline/native-render-delivery.md",
+            "builds/reference-keyboard/scripts/fullhd.py",
+            "builds/reference-keyboard/scripts/package_delivery.py",
+            "builds/reference-keyboard/scripts/prepare_reference_review.py",
+            "docs/product-workflow-template.md"
+          ],
           "steps": [
             "Freeze actual scene, geometry/shading/camera/settings and gates; separate original references from generated concepts.",
             "Preflight all shots at final aspect/apparent scale and inspect risky normals, slots, legends and translucent surfaces before batching.",
@@ -2302,13 +2360,17 @@
             "CK-001 media/package sources are case-specific and require local artifacts, reviewed runtime and scoped authorization.",
             "Decoded frames and sampled export poses do not certify all temporal/material fidelity or physical operation; visual judgment remains manual."
           ],
-          "review": {"kind": "static-routing-review", "by": "Controller source/caller and actual B-media failure review, 2026-09-17.", "source_hashes": {
-            "knowledge/60-pipeline/native-render-delivery.md": "9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171",
-            "builds/reference-keyboard/scripts/fullhd.py": "d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a",
-            "builds/reference-keyboard/scripts/package_delivery.py": "3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852",
-            "builds/reference-keyboard/scripts/prepare_reference_review.py": "aea46f665a503f9a68475af8bc9ec96de7dac2cf4c3fe4ee1dd74ec3d59818b5",
-            "docs/product-workflow-template.md": "c55b32096c82e90c761dd4084102e2e2ac785851c084e80bdb87d9006cfc0d69"
-          }}
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: product-workflow-template gained a motion contract and a pass-inventory row.",
+            "source_hashes": {
+              "knowledge/60-pipeline/native-render-delivery.md": "9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171",
+              "builds/reference-keyboard/scripts/fullhd.py": "d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a",
+              "builds/reference-keyboard/scripts/package_delivery.py": "3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852",
+              "builds/reference-keyboard/scripts/prepare_reference_review.py": "aea46f665a503f9a68475af8bc9ec96de7dac2cf4c3fe4ee1dd74ec3d59818b5",
+              "docs/product-workflow-template.md": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b"
+            }
+          }
         },
         "native-task-lifecycle": {
           "when": "When a series of native Blender passes needs a durable journal, explicit artifact dependencies and safe resumption.",
@@ -2482,6 +2544,38 @@
             "source_hashes": {
               "scripts/boilerplates/pipeline_render/bp_export_pipeline.py": "f2499c0298d379263e2e8f2078d06ddbbfa6ca326a19e756c4b97290c0ce2ae1",
               "scripts/boilerplates/pipeline_render/bp_cam_autoframing.py": "78234a210fb236dcd25a08b9cd2faddca9c1976fd9f6cdb4deb200f13d2ce780"
+            }
+          }
+        },
+        "public-review-publication": {
+          "when": "When a delivered package must be published as a public review page, or an existing published revision is superseded.",
+          "sources": [
+            "docs/delivery-review-publication.md",
+            "docs/native-build-pipeline-lessons.md",
+            "scripts/check-html-tag-balance.py"
+          ],
+          "steps": [
+            "Generate the page from the package with its builder; read every figure from the package receipts and assert the fact is recorded rather than defaulting it.",
+            "Publish media at web size with a byte/SHA-256 manifest; keep run directories, delivery archives and licensed third-party documents local.",
+            "Add a superseding revision as its own folder, repoint the landing, README and sitemap, and keep the previous revision online with links both ways.",
+            "Run the tag-balance check, the static design gate, the layout-rule check and the render check at 1280 and 390 against the live URL, then look at the screenshots."
+          ],
+          "gates": [
+            "A published page states no physical property: manufacture status and the physical sample count stay visible while that evidence is absent.",
+            "A figure with no receipt in the package does not appear on the page; a missing image is a named blank, never a placeholder picture.",
+            "An overwritten published revision is a failure: supersession adds a folder and preserves the old record."
+          ],
+          "limitations": [
+            "The design gate judges structure and tokens, not whether the evidence is adequate or the claim honest.",
+            "Live-URL checks prove loading, layout and console cleanliness; real-device touch and search indexing stay manual."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Written from the CK-001 r01/r02 and DC-01 R02/R03 publications and verified on the live pages, 2026-09-18.",
+            "source_hashes": {
+              "docs/delivery-review-publication.md": "2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55",
+              "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+              "scripts/check-html-tag-balance.py": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3"
             }
           }
         }
@@ -2902,6 +2996,38 @@
     "research/robotics-precision-cad/00-BRAINSTORM-CONTRACT.md": {
       "reason": "Historical research planning contract, not a technical procedure; searchable as background.",
       "reviewed_sha256": "fd43778d7310f2a19b79dde5b810a4ca2c77103b13d18b34538cde3ca8464b72"
+    },
+    "docs/reviews/dc-01/r02/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "d854340976a19058da5a92455ab1737aa44fe56700f9dcc2b8ae99d9c740782b"
+    },
+    "docs/reviews/dc-01/r02/bench-validation.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e"
+    },
+    "docs/reviews/dc-01/r02/electronics-README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765"
+    },
+    "docs/reviews/dc-01/r02/print/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16"
+    },
+    "docs/reviews/dc-01/r03/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "c3cc95aa539ca59df7b2d96e950e87ff5282db0208623a9231077cff0681599a"
+    },
+    "docs/reviews/dc-01/r03/bench-validation.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e"
+    },
+    "docs/reviews/dc-01/r03/electronics-README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765"
+    },
+    "docs/reviews/dc-01/r03/print/README.md": {
+      "reason": "Copy of the DC-01 delivery package document, published for the public review page; the build's own copy under builds/desktop-companion is the routed source.",
+      "reviewed_sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16"
     }
   }
 }
