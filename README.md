@@ -13,6 +13,7 @@ Agent skills, a verified bpy knowledge base, an `AGENT_OK` / `AGENT_FAIL` execut
 ![bpy: data API first](https://img.shields.io/badge/bpy-data_API_first-202020?style=for-the-badge)
 [![MCP: blender-mcp](https://img.shields.io/badge/MCP-blender--mcp-202020?style=for-the-badge)](https://github.com/ahujasid/blender-mcp)
 ![Claude Code · Codex · Antigravity](https://img.shields.io/badge/Claude_Code-Codex_·_Antigravity-202020?style=for-the-badge&logo=anthropic&logoColor=white)
+[![Design Os 3d Blender on AI Agents Listing](https://aiagentslisting.com/design-os-3d-blender/badge.svg?claim=843189721f10cfed07ba0a1e6a1b4c1e)](https://aiagentslisting.com/mcp/design-os-3d-blender)
 
 [Live site](https://jangtrinh.github.io/design-os-3d-blender/) · [Worked builds](#worked-builds) · [Install and use](#install-and-use) · [Tools and skills](#tools-and-skills) · [design:os ecosystem](#the-designos-ecosystem) · [Evidence boundaries](#evidence-boundaries)
 
