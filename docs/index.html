@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>design-os-3d-blender — an AI agent that builds parts natively in Blender, with the evidence</title>
 <meta name="description" content="Agent skills, a verified bpy knowledge base, an AGENT_OK/AGENT_FAIL execution contract and a production gate for Blender 5.2. Worked builds: a reference keyboard reviewed in a three.js viewer, a robot arm, a watch winder and five ORC plant components.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://jangtrinh.github.io/design-os-3d-blender/">
+<link rel="alternate" type="text/plain" href="https://jangtrinh.github.io/design-os-3d-blender/llms.txt" title="LLM documentation">
 <meta property="og:type" content="website">
 <meta property="og:title" content="design-os-3d-blender — an AI agent that builds parts natively in Blender">
 <meta property="og:description" content="Worked builds with the evidence: a reference keyboard reviewed in a three.js viewer, a robot arm, a watch winder and five ORC plant components.">
@@ -16,7 +18,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"design-os-3d-blender","description":"AI-agent operating system for Blender 5.2: skills, verified bpy knowledge base, AGENT_OK/AGENT_FAIL execution contract, production gate for 3D-printable parts.","url":"https://jangtrinh.github.io/design-os-3d-blender/","codeRepository":"https://github.com/jangtrinh/design-os-3d-blender","programmingLanguage":"Python","runtimePlatform":"Blender 5.2 LTS","license":"https://opensource.org/licenses/MIT","author":{"@type":"Person","name":"Jang Trịnh","url":"https://github.com/jangtrinh"}}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "design-os-3d-blender",
+      "description": "AI-agent operating system for Blender 5.2: skills, verified bpy knowledge base, AGENT_OK/AGENT_FAIL execution contract, production gate for 3D-printable parts.",
+      "url": "https://jangtrinh.github.io/design-os-3d-blender/",
+      "codeRepository": "https://github.com/jangtrinh/design-os-3d-blender",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Blender 5.2 LTS",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@type": "Person", "name": "Jang Trịnh", "url": "https://github.com/jangtrinh" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How does the AI agent interact with Blender?", "acceptedAnswer": { "@type": "Answer", "text": "Through verified bpy scripts executed via Blender background mode with an AGENT_OK or AGENT_FAIL exit contract." } },
+        { "@type": "Question", "name": "Can the 3D models be reviewed interactively?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, each delivery package includes a Three.js WebGL viewer with orbit controls, layer explosion, and BOM catalog dimming." } }
+      ]
+    }
+  ]
+}
 </script>
 <style>
 /* Design language carried from jang-personal-site (generation 11): zero-chroma greys, one accent,

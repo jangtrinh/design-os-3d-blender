@@ -1,0 +1,18 @@
+# design-os-3d-blender
+
+> AI agent operating system for Blender 5.2 LTS: agent skills, verified bpy knowledge base, AGENT_OK/AGENT_FAIL execution contract, and production gate for 3D-printable parts.
+
+An AI agent system that builds mechanical and industrial parts natively inside Blender via bpy scripts, accompanied by evidence-graded reviews in interactive Three.js 3D viewers.
+
+## Documentation
+
+- [Project Landing](https://jangtrinh.github.io/design-os-3d-blender/): Overview of worked builds, verification contracts, and CLI commands.
+- [DC-01 Drill Press Stand Review](https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r03/): Interactive Three.js review of drill press stand with 3D model, carousel, and bill of materials.
+- [CK-001 Reference Keyboard Review](https://jangtrinh.github.io/design-os-3d-blender/reviews/ck-001/r02/): Mechanical keyboard delivery package with CAD proof.
+- [GitHub Repository](https://github.com/jangtrinh/design-os-3d-blender): Python automation scripts, test suites, and Blender runner.
+
+## Technical Architecture
+
+- **Runtime**: Blender 5.2 LTS, Python 3.10+
+- **Execution Contract**: Two-state outcome (`AGENT_OK` or `AGENT_FAIL`) with explicit exit status logs.
+- **Review Pipeline**: WebGL / Three.js interactive viewer supporting orbit, layer explode, BOM catalog dimming, and motion animatic.
