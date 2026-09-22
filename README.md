@@ -15,7 +15,7 @@ Agent skills, a verified bpy knowledge base, an `AGENT_OK` / `AGENT_FAIL` execut
 ![Claude Code · Codex · Antigravity](https://img.shields.io/badge/Claude_Code-Codex_·_Antigravity-202020?style=for-the-badge&logo=anthropic&logoColor=white)
 [![Design Os 3d Blender on AI Agents Listing](https://aiagentslisting.com/design-os-3d-blender/badge.svg?claim=843189721f10cfed07ba0a1e6a1b4c1e)](https://aiagentslisting.com/mcp/design-os-3d-blender)
 
-[Live site](https://jangtrinh.github.io/design-os-3d-blender/) · [Worked builds](#worked-builds) · [Install and use](#install-and-use) · [Tools and skills](#tools-and-skills) · [design:os ecosystem](#the-designos-ecosystem) · [Evidence boundaries](#evidence-boundaries)
+[Live site](https://jangtrinh.github.io/design-os-3d-blender/) · [Installation](#installation) · [MCP config](#mcp-client-configuration) · [Worked builds](#worked-builds) · [Host tests](#host-repository-setup-and-tests) · [design:os ecosystem](#the-designos-ecosystem)
 
 ## Native renders from the worked builds
 
@@ -60,7 +60,81 @@ The plant layout uses an illustrative 1:15 scale. Catalogue dimensions and insta
 
 [Instrument families and mounting details](docs/galleries/instruments.md) show the parts shared across assemblies. Reuse requires a defined local origin, a mounting interface, supported parameters and verification in the receiving assembly.
 
-## Install and use
+## Installation
+
+Run directly via `uvx`:
+
+```bash
+uvx design-os-3d-blender
+```
+
+Or run from GitHub source:
+
+```bash
+uvx --from git+https://github.com/jangtrinh/design-os-3d-blender design-os-3d-blender
+```
+
+Or install via `pip`:
+
+```bash
+pip install design-os-3d-blender
+```
+
+## MCP client configuration
+
+Add to your Claude Desktop, Cursor, or Antigravity `mcpServers` configuration:
+
+```json
+{
+  "mcpServers": {
+    "design-os-3d-blender": {
+      "command": "uvx",
+      "args": ["design-os-3d-blender"]
+    }
+  }
+}
+```
+
+To enable execution passes inside Blender, specify your local `BLENDER_BIN`:
+
+```json
+{
+  "mcpServers": {
+    "design-os-3d-blender": {
+      "command": "uvx",
+      "args": ["design-os-3d-blender"],
+      "env": {
+        "BLENDER_BIN": "/Applications/Blender.app/Contents/MacOS/Blender"
+      }
+    }
+  }
+}
+```
+
+## Available tools
+
+| Tool | Description |
+|---|---|
+| `blender_runtime_status` | Inspects Blender 5.2 binary availability, environment versions, and execution readiness. |
+| `query_blender_knowledge` | Queries verified bpy 5.2 knowledge base for modeling, shading, modifiers, and gate rules. |
+| `validate_part_spec` | Validates a 3D part specification (`spec.json`) against design:os requirements. |
+| `execute_blender_pass` | Executes a bpy Python script in headless Blender and verifies the `AGENT_OK` contract. |
+
+## Prompts
+
+| Prompt | Description |
+|---|---|
+| `design_parametric_part` | Structured prompt template for designing parametric mechanical parts in Blender 5.2. |
+| `review_geometry_gate` | Verification prompt template for auditing 3D print digital gate reports. |
+
+## Resources
+
+| Resource URI | Description |
+|---|---|
+| `blender://knowledge/index` | Catalog index of all verified bpy 5.2 knowledge base chapters. |
+| `blender://specs/bracket-example` | Reference M3 mounting bracket specification fixture. |
+
+## Host repository setup and tests
 
 Requirements: Blender 5.2.x, Python 3.10+, macOS or Linux. The host-side tests use the Python standard library only.
 

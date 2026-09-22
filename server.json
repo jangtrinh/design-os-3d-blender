@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jangtrinh/design-os-3d-blender",
+  "title": "design-os-3d-blender",
+  "description": "Evidence-first native Blender modeling and verification for Blender 5.2 LTS.",
+  "version": "0.2.0",
+  "repository": {
+    "url": "https://github.com/jangtrinh/design-os-3d-blender",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "design-os-3d-blender",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
