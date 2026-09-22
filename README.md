@@ -62,7 +62,7 @@ The plant layout uses an illustrative 1:15 scale. Catalogue dimensions and insta
 
 ## Installation
 
-Run directly via `uvx`:
+Run directly via `uvx` (zero local package install required):
 
 ```bash
 uvx design-os-3d-blender
@@ -82,8 +82,9 @@ pip install design-os-3d-blender
 
 ## MCP client configuration
 
-Add to your Claude Desktop, Cursor, or Antigravity `mcpServers` configuration:
+Add the paste-ready block to your client configuration:
 
+### Quickstart (Knowledge & Specs — runs anywhere with zero Blender installation)
 ```json
 {
   "mcpServers": {
@@ -95,8 +96,7 @@ Add to your Claude Desktop, Cursor, or Antigravity `mcpServers` configuration:
 }
 ```
 
-To enable execution passes inside Blender, specify your local `BLENDER_BIN`:
-
+### Full Execution Mode (With local Blender 5.2 LTS)
 ```json
 {
   "mcpServers": {
@@ -110,6 +110,65 @@ To enable execution passes inside Blender, specify your local `BLENDER_BIN`:
   }
 }
 ```
+
+### Client Setup Locations
+
+- **Claude Desktop:** `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows).
+- **Cursor:** Open `Settings` → `Features` → `MCP` → Click `Add New MCP Server` → Name: `design-os-3d-blender`, Type: `command`, Command: `uvx design-os-3d-blender`.
+- **Antigravity / Codex:** Add to your MCP configuration in `antigravity.json` or `.gemini/antigravity/mcp_config.json`.
+- **Cline / Roo Code / Windsurf:** Add the JSON snippet above to your client's MCP configuration settings.
+
+---
+
+## User Guide: For Humans
+
+### Why use this MCP server?
+1. **Eliminate BPY Hallucinations:** General LLMs frequently hallucinate outdated Blender 2.7x/3.x APIs (deprecated operators, obsolete socket names). This server equips your agent with a verified Blender 5.2 LTS knowledge base.
+2. **Automated Mechanical Validation:** Have your AI automatically audit `.spec.json` files for wall thickness, watertight manifoldness, and fastener clearances before 3D printing.
+3. **Headless Generation:** Direct the AI to build parts and verify geometry in the background without needing to manually launch or click in the Blender GUI.
+
+### Example Prompts to Ask Your AI
+- *"Check my Blender environment and verify if headless execution is ready."*
+- *"Query the design-os knowledge base for how to set up procedural Chamfer and Bevel modifiers in Blender 5.2 without `bpy.ops`."*
+- *"Validate the mechanical specification at `specs/examples/bracket-m3.spec.json`."*
+- *"Execute the modeling pass `builds/my-part/pass-01.py` and verify the `AGENT_OK` sentinel."*
+
+---
+
+## Agent Guide: For AI Assistants & LLMs
+
+> **Binding Execution Contract for AI Agents:** When this MCP server is active, agents MUST adhere to the following deterministic workflow:
+
+```mermaid
+flowchart LR
+    A["User Request"] --> B["1. Query Knowledge"]
+    B --> C["2. Author & Validate Spec"]
+    C --> D["3. Build Script (Data API)"]
+    D --> E["4. Execute Pass & Verify Sentinel"]
+```
+
+### 1. Tool Selection Matrix
+
+| Intent | Tool to Call | Expected Behavior |
+|---|---|---|
+| Check system readiness | `blender_runtime_status` | Inspect host OS, detected Blender binary, and execution capability. |
+| Research bpy syntax / modifiers / shaders | `query_blender_knowledge` | Always query verified rules before writing code. Avoid guessing socket names. |
+| Check part parameters & 3D print specs | `validate_part_spec` | Verify required fields: `units: "mm"`, `target_dims_mm`, `tol_mm`, `min_wall_mm`. |
+| Run script in Blender | `execute_blender_pass` | Execute headless pass. Check for `AGENT_OK` sentinel in output. |
+
+### 2. Mandatory Coding Constraints for AI Agents
+- **Data API First:** Never use `bpy.ops` when equivalent `bpy.data` or `bmesh` operations exist.
+- **Unit Conversions:** Specifications are declared in millimeters (`mm`), but Blender internal units are meters (`1 BU = 1.0 m`). You MUST convert: `x_bu = x_mm * 0.001`.
+- **Sentinel Contract:** Every authored script pass MUST end with:
+  ```python
+  if postconditions_pass:
+      print("AGENT_OK")
+  else:
+      print("AGENT_FAIL: <diagnostic>")
+  ```
+  Execution success is governed exclusively by the sentinel on the last line, NEVER by the shell exit code.
+
+---
 
 ## Available tools
 

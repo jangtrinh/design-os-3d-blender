@@ -4,15 +4,60 @@
 
 An AI agent system that builds mechanical and industrial parts natively inside Blender via bpy scripts, accompanied by evidence-graded reviews in interactive Three.js 3D viewers.
 
-## Documentation
+## Model Context Protocol (MCP) Server
+
+`design-os-3d-blender` exposes a certified First-Party Model Context Protocol server for AI coding agents (Claude Code, Codex, Antigravity, Cursor, Cline).
+
+### Quickstart Command
+```bash
+uvx design-os-3d-blender
+```
+
+### Client Configuration (JSON)
+```json
+{
+  "mcpServers": {
+    "design-os-3d-blender": {
+      "command": "uvx",
+      "args": ["design-os-3d-blender"],
+      "env": {
+        "BLENDER_BIN": "/Applications/Blender.app/Contents/MacOS/Blender"
+      }
+    }
+  }
+}
+```
+
+### MCP Tools for LLMs
+- `blender_runtime_status`: Check host OS, python version, and Blender binary availability. Call this first to verify execution capabilities.
+- `query_blender_knowledge`: Search verified bpy 5.2 knowledge base (00-foundations, 10-modeling, 20-shading, 60-pipeline). Use this before authoring bpy scripts to prevent hallucinated APIs.
+- `validate_part_spec`: Validate a mechanical part specification (`spec.json`) against schema requirements (`units: "mm"`, `target_dims_mm`, `tol_mm`, `min_wall_mm`).
+- `execute_blender_pass`: Run headless pass script in Blender and evaluate the `AGENT_OK` sentinel.
+
+### MCP Prompts
+- `design_parametric_part`: Guidance template for designing parametric mechanical parts in Blender 5.2.
+- `review_geometry_gate`: Protocol for auditing 3D print gate reports.
+
+### MCP Resources
+- `blender://knowledge/index`: Full index of bpy 5.2 knowledge packs.
+- `blender://specs/bracket-example`: Reference M3 bracket specification fixture.
+
+---
+
+## AI Agent Operational Protocol & Execution Contract
+
+1. **Knowledge-First**: Query `query_blender_knowledge` before generating any complex Blender script to ensure accurate Blender 5.2 data API syntax.
+2. **Data API First**: Avoid `bpy.ops` whenever possible; prefer `bpy.data` and `bmesh`.
+3. **Unit System**: Specifications are declared in millimeters (`mm`), but Blender internal units are meters (`1 BU = 1 m`). Convert explicitly: `1 mm = 0.001 BU`.
+4. **Sentinel Contract**: Every headless pass must conclude with:
+   `print('AGENT_OK')` on verified success, or `print('AGENT_FAIL: <reason>')` on failure.
+   Never evaluate success by process returncode alone.
+
+---
+
+## Documentation Links
 
 - [Project Landing](https://jangtrinh.github.io/design-os-3d-blender/): Overview of worked builds, verification contracts, and CLI commands.
-- [DC-01 Drill Press Stand Review](https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r03/): Interactive Three.js review of drill press stand with 3D model, carousel, and bill of materials.
+- [DC-01 Desktop Companion Review](https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r03/): Interactive Three.js review with 3D model, carousel, and bill of materials.
 - [CK-001 Reference Keyboard Review](https://jangtrinh.github.io/design-os-3d-blender/reviews/ck-001/r02/): Mechanical keyboard delivery package with CAD proof.
 - [GitHub Repository](https://github.com/jangtrinh/design-os-3d-blender): Python automation scripts, test suites, and Blender runner.
-
-## Technical Architecture
-
-- **Runtime**: Blender 5.2 LTS, Python 3.10+
-- **Execution Contract**: Two-state outcome (`AGENT_OK` or `AGENT_FAIL`) with explicit exit status logs.
-- **Review Pipeline**: WebGL / Three.js interactive viewer supporting orbit, layer explode, BOM catalog dimming, and motion animatic.

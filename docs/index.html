@@ -374,15 +374,19 @@ ol.steps .ds-code{margin-top:var(--s-3)}
       <h2 id="install-h" class="ds-heading" data-level="2">Install and use</h2>
       <p>Requirements: Blender 5.2.x, Python 3.10+, macOS or Linux. The host-side tests use the Python standard library only.</p>
       <div class="register">
-        <div class="register-row" data-icon="none"><h3>0 · Model Context Protocol (MCP)</h3><p>Run directly via <code>uvx</code> or add to your Claude Desktop / Cursor / Antigravity client configuration.</p>
-<pre class="ds-code"><code>uvx design-os-3d-blender
+        <div class="register-row" data-icon="none"><h3>0 · Model Context Protocol (MCP) — For Humans &amp; AI</h3><p>Instant zero-install setup via <code>uvx</code>. Equips Claude Desktop, Cursor, Antigravity, and Cline with verified Blender 5.2 knowledge, mechanical spec validation, and headless pass execution.</p>
+<pre class="ds-code"><code># Zero-install execution (runs anywhere without local setup):
+uvx design-os-3d-blender
 
-# Or in Claude Desktop / Cursor config:
+# Client configuration (Claude Desktop, Cursor, Antigravity, Cline):
 {
   "mcpServers": {
     "design-os-3d-blender": {
       "command": "uvx",
-      "args": ["design-os-3d-blender"]
+      "args": ["design-os-3d-blender"],
+      "env": {
+        "BLENDER_BIN": "/Applications/Blender.app/Contents/MacOS/Blender"
+      }
     }
   }
 }</code></pre></div>
