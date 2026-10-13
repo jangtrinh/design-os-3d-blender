@@ -41,3 +41,6 @@ plans/*
 !plans/knowledge-updates/
 # Frozen web/source captures for knowledge provenance; sha256 + URL recorded in each module (owner 2026-10-13).
 knowledge/_evidence/
+
+# Local sync tool state (personal tooling, not product).
+.sync-state.local.json
