@@ -13027,7 +13027,7 @@
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "5c2bffed986cbcb145f4a19e298428cf0e8743f78fbf5a88dd77348e0cccde15",
+      "sha256": "1d1468afd53c58006e9d6f7f5aa4b55f0797fae8a4c46e859aee9cc15c9d6499",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -20884,10 +20884,10 @@
     },
     {
       "annotation": {
-        "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py)",
+        "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py) | re-verified 2026-10-13 after portable mktemp fix (GNU/BSD): tests/execution/test_headless_run.py 13/13 on macOS 5.2.0 and in Linux CI",
         "caution": "Exit 0/1/2/3 derived from the last-line AGENT_OK/AGENT_FAIL sentinel; HEADLESS_RAW=1 bypasses the runtime and falls back to Blender's unreliable exit. Not a sandbox.",
         "effects": "Runs payload through scripts/agent-run-headless.py → agent_runtime.run_file in a fresh --factory-startup process; writes whatever the payload writes.",
-        "reviewed_sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+        "reviewed_sha256": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
         "runtime": "shell → Blender"
       },
       "annotation_revision": "matched",
@@ -20992,7 +20992,7 @@
       "name": null,
       "path": "scripts/headless-run.sh",
       "related": [],
-      "sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+      "sha256": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
       "tags": [],
       "title": "Run a bpy payload in a fresh headless Blender and report the truth about it.",
       "use": "inspect-adapt"
@@ -22650,7 +22650,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "0e8427d319e0add5859a1579459106e4d8dd7181d2c432de2206fef304e7d95e",
+  "source_digest": "cbafd1ac961a746fbb3c44df59e8e628548132f1c7a00806c787e6a6a2a4b3db",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -22887,7 +22887,7 @@
     "knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md": "eda812e52299751b0ae30b3f8adde753767850a395aa2d0670bbb7285d95dc87",
     "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md": "4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a",
     "knowledge/INDEX.md": "cee3260720710a8b87724bc9eac66bce1fa7f89ee54791f11e8c3acbdd05e760",
-    "knowledge/catalog-config.json": "5c2bffed986cbcb145f4a19e298428cf0e8743f78fbf5a88dd77348e0cccde15",
+    "knowledge/catalog-config.json": "1d1468afd53c58006e9d6f7f5aa4b55f0797fae8a4c46e859aee9cc15c9d6499",
     "knowledge/generated-workflows.md": "723588b24787066f6d360d04b96defd99ab913676b63f9c3ec950d9b9c1d0d63",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
@@ -23023,7 +23023,7 @@
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
-    "scripts/headless-run.sh": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+    "scripts/headless-run.sh": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
     "scripts/hq-coverage-gate.py": "0a4310a9247a0b2fdd6674f64e50b560efb03407d481f8cd46e038864636e284",
     "scripts/hq_coverage/__init__.py": "bfbb15696445e3b07f50be8559ddb10aed83526114bfd49dea2131706c2e2e7a",
     "scripts/hq_coverage/core.py": "4044cee0768e615f4695939f1e2677396607a1e91a0561bef1f06b88a3f6edb4",

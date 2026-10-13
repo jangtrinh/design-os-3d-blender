@@ -102,8 +102,8 @@
       "caution": "Controlled calibration fixture, not autonomous learning or a general reconstruction benchmark. Do not run in a live GUI/product scene. Checks overall height and units, deliberately not every feature; actual critic must inspect the pictures. Manufacture NOT_REQUESTED."
     },
     "scripts/headless-run.sh": {
-      "reviewed_sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
-      "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py)",
+      "reviewed_sha256": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
+      "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py) | re-verified 2026-10-13 after portable mktemp fix (GNU/BSD): tests/execution/test_headless_run.py 13/13 on macOS 5.2.0 and in Linux CI",
       "runtime": "shell → Blender",
       "effects": "Runs payload through scripts/agent-run-headless.py → agent_runtime.run_file in a fresh --factory-startup process; writes whatever the payload writes.",
       "caution": "Exit 0/1/2/3 derived from the last-line AGENT_OK/AGENT_FAIL sentinel; HEADLESS_RAW=1 bypasses the runtime and falls back to Blender's unreliable exit. Not a sandbox."
