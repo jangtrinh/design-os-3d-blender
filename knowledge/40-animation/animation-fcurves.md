@@ -7,22 +7,42 @@ audience: ai-agent-bpy
 description: Slotted-Action data model, F-curve/keyframe creation, interpolation & Bezier easing math, F-modifiers, drivers, and timing numbers for bpy agents.
 loads_with: [rigging-armature, mocap-retargeting, scene-organization, render-engines]
 tags: [animation, fcurve, keyframe, action, slot, driver, easing, timing]
+id: animation-fcurves
+title: "Animation & F-Curves (5.2 slotted Actions)"
+when: [slotted-action-api, fcurve-keyframes, interpolation-easing, fmodifier-cycles-noise, drivers, scene-fps-timing]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
+
 
 # Animation & F-Curves (5.2 slotted Actions)
 
-## 1. Mental model
+## Purpose
 
-Animation in Blender is a chain of containers, and in 4.4+ that chain got one
+Prevents 4.x-era Action/F-curve code from breaking on 5.x: documents the slotted Action chain (Action -> slot -> layer -> strip -> channelbag -> fcurve), version-safe key creation, easing/handles, F-modifiers, drivers and timing numbers.
+
+## When to Use / When NOT
+
+- ALLOWED: creating or reading F-curves/keyframes on 5.x slotted Actions; setting interpolation, handles, F-modifiers, drivers; fps/fps_base and motion-blur shutter arithmetic
+- ALLOWED: choosing between `keyframe_insert()` and channelbag + `foreach_set` for many keys
+- NOT ALLOWED: armature/bone/constraint construction and skinning — use `rigging-armature` instead
+- NOT ALLOWED: importing mocap, retargeting, baking and NLA strip composition — use `mocap-retargeting` instead
+- NOT ALLOWED: rendering/encoding the animation (frame vs pose rate delivery, Persistent Data) — use `video-animation-cinematics` instead
+
+## Core Knowledge Content
+
+### 1. Mental model
+
+Animation in Blender is a chain of containers, and in 4.4+ that chain got one <!-- ease:source S5 anchor="Action.slots, Action.layers; ActionKeyframeStrip.channelbag" -->
 level longer. `ID` (Object, Material, ShapeKey...) → `id.animation_data`
 (`AnimData`) → `animation_data.action` (`Action` datablock) **+**
 `animation_data.action_slot` (`ActionSlot`) → `action.layers[0]` →
 `layer.strips[0]` (an `ActionKeyframeStrip`) → `strip.channelbag(slot)`
 (`ActionChannelbag`) → `channelbag.fcurves` → `fcurve.keyframe_points`.
 
-Before 4.4 an Action belonged to exactly one datablock type and exposed
+Before 4.4 an Action belonged to exactly one datablock type and exposed <!-- ease:source S2 anchor="Proxy System: action.fcurves acts as proxy for layers[0].strips[0].channelbag(slots[0]); deprecated, removed in 5.0" -->
 `action.fcurves` directly. In 4.4 that became a deprecated proxy for
-`action.layers[0].strips[0].channelbag(action.slots[0])`. **In Blender 5.0 the
+`action.layers[0].strips[0].channelbag(action.slots[0])`. **In Blender 5.0 the <!-- ease:source S1 anchor="The legacy Action API has been removed (action.fcurves, action.groups, action.id_root)" -->
 proxy was deleted.** `action.fcurves`, `action.groups` and `action.id_root` do
 not exist in 5.x. This is the single most common way stale-training-data agents
 break: they write `action.fcurves.new(...)` and get an `AttributeError`.
@@ -34,41 +54,41 @@ generated procedurally by F-modifiers/drivers. Everything the agent can see is
 either a traceback or a rendered frame, so prefer code that asserts its own
 results (`fcurve.evaluate(f)`) over code that "looks right".
 
-## 2. Decision first
+### 2. Decision first
 
 | Goal | Route | Why |
 |---|---|---|
 | Key a property you can already set in Python | `obj.keyframe_insert(data_path=..., frame=...)` | Creates animdata + action + slot + layer + strip + channelbag + fcurve for you. Never touches slot plumbing. |
-| Build a curve with exact handles / thousands of keys | `channelbag.fcurves.ensure(...)` + `kp.insert()` / `kp.add()` + `foreach_set("co", ...)` | 10-100x faster and fully deterministic. |
-| Read an existing curve | `anim_utils.animdata_get_channelbag_for_assigned_slot(ad)` then `cb.fcurves.find(path, index=i)` | Version-safe, no slot guessing. |
-| Endless / cyclic motion (spin, bob, walk loop) | `FModifierCycles` on the fcurve | No key duplication, loop length stays editable. |
+| Build a curve with exact handles / thousands of keys | `channelbag.fcurves.ensure(...)` + `kp.insert()` / `kp.add()` + `foreach_set("co", ...)` | 10-100x faster and fully deterministic. <!-- ease:source S14 anchor="ActionChannelbagFCurves new/ensure/find with group_name" --> |
+| Read an existing curve | `anim_utils.animdata_get_channelbag_for_assigned_slot(ad)` then `cb.fcurves.find(path, index=i)` | Version-safe, no slot guessing. <!-- ease:source S7 anchor="animdata_get_channelbag_for_assigned_slot, action_get_channelbag_for_slot" --> |
+| Endless / cyclic motion (spin, bob, walk loop) | `FModifierCycles` on the fcurve | No key duplication, loop length stays editable. <!-- ease:source S15 anchor="FModifierCycles mode_before/mode_after: NONE, REPEAT, REPEAT_OFFSET, MIRROR; FModifierNoise page frozen as S16" --> |
 | Organic jitter, camera shake, idle noise | `FModifierNoise` | Deterministic per `phase`, no keys. |
 | Value derived from another value | `id.driver_add(path)` + `Driver.expression` | Rebuilds every depsgraph eval; survives retiming. |
 | Same motion on many objects | One `Action` + one `ActionSlot` per object, or NLA strips | Slots are the 4.4+ mechanism for action reuse. |
 
-Speed vs control: `keyframe_insert` is convenient but does a full RNA resolve
+Speed vs control: `keyframe_insert` is convenient but does a full RNA resolve <!-- ease:source UNVERIFIED reason="~2000-key threshold and 10-100x speedup are unmeasured practitioner figures" -->
 and dependency-graph tag per call. Above ~2000 keys, drop to the channelbag +
 `foreach_set` path.
 
-## 3. Rules
+### 3. Rules
 
-R1. Never write `action.fcurves`, `action.groups`, or `action.id_root` on a 5.x target.
+R1. Never write `action.fcurves`, `action.groups`, or `action.id_root` on a 5.x target. <!-- ease:source S1 anchor="legacy Action API removed (commit 1395abc502): action.fcurves, action.groups, action.id_root" -->
     Why: the legacy Action API was removed in 5.0 (commit 1395abc502); in 4.4/4.5 it was a deprecated proxy.
     Violation: `AttributeError: 'Action' object has no attribute 'fcurves'`.
 
-R2. Resolve the channelbag through `bpy_extras.anim_utils`, not by indexing `layers[0].strips[0]` blindly.
+R2. Resolve the channelbag through `bpy_extras.anim_utils`, not by indexing `layers[0].strips[0]` blindly. <!-- ease:source S7 anchor="action_ensure_channelbag_for_slot, action_get_channelbag_for_slot" -->
     Why: a freshly created Action has zero layers; `layers[0]` raises before you create one.
     Violation: `IndexError: bpy_prop_collection[index]: index 0 out of range, size 0`.
 
-R3. After assigning `anim_data.action = act`, verify `anim_data.action_slot is not None`.
+R3. After assigning `anim_data.action = act`, verify `anim_data.action_slot is not None`. <!-- ease:source S2 anchor="In Blender 4.4 this assignment will try and auto-assign a slot, based on heuristics" -->
     Why: 4.4+ auto-assigns a slot by heuristic; when the heuristic fails the Action is assigned but nothing animates.
     Violation: object sits at rest pose in every rendered frame despite a populated Action.
 
-R4. Call `fcurve.update()` (or `keyframe_points.sort()`) after direct `co`/`foreach_set` writes.
+R4. Call `fcurve.update()` (or `keyframe_points.sort()`) after direct `co`/`foreach_set` writes. <!-- ease:source UNVERIFIED reason="evaluator sorting assumption not stated in fetched API docs" -->
     Why: the evaluator assumes chronologically sorted points and cached handles.
     Violation: curve evaluates to garbage, keys appear out of order, viewport shows teleporting motion.
 
-R5. Set `handle_left_type`/`handle_right_type` to `'FREE'` (or `'ALIGNED'`) *before* writing `handle_left`/`handle_right`.
+R5. Set `handle_left_type`/`handle_right_type` to `'FREE'` (or `'ALIGNED'`) *before* writing `handle_left`/`handle_right`. <!-- ease:source UNVERIFIED reason="handle recompute behaviour stated from experience; FCurve/Keyframe pages not frozen" -->
     Why: `'AUTO'`/`'AUTO_CLAMPED'`/`'VECTOR'` handles are recomputed on update and your values are discarded.
     Violation: custom easing silently reverts to the default S-curve.
 
@@ -76,33 +96,33 @@ R6. Key rotation on the channel that matches `rotation_mode`.
     Why: keying `rotation_euler` while `rotation_mode == 'QUATERNION'` writes an fcurve that is never evaluated.
     Violation: fcurve exists, `len(keyframe_points) > 0`, object does not rotate.
 
-R7. Use `scene.frame_set(f)` — not `scene.frame_current = f` — before reading evaluated transforms.
+R7. Use `scene.frame_set(f)` — not `scene.frame_current = f` — before reading evaluated transforms. <!-- ease:source UNVERIFIED reason="Scene.frame_set docs page not fetched" -->
     Why: `frame_set()` forces a depsgraph update; the plain assignment defers it.
     Violation: `obj.matrix_world` returns the previous frame's values; baked data is off by one frame.
 
-R8. Treat frame rate as `fps / fps_base`, never `fps` alone.
+R8. Treat frame rate as `fps / fps_base`, never `fps` alone. <!-- ease:source S9 anchor="RenderSettings fps, fps_base" -->
     Why: 29.97 is stored as `fps=30, fps_base=1.001`; 23.976 as `fps=24, fps_base=1.001`.
     Violation: audio/video sync drift of 1 frame per ~1000 in exported sequences.
 
-R9. Strip the auto-created contents of a driver F-curve if you want raw pass-through.
+R9. Strip the auto-created contents of a driver F-curve if you want raw pass-through. <!-- ease:source UNVERIFIED reason="5.0 Animation & Rigging release note returned a bot challenge; claim 'driver_add inserts 2 keyframes' is from the previous reading" -->
     Why: `driver_add()` historically added a Generator F-modifier; 5.0 changed it to insert 2 keyframes instead. Either one remaps the driver result.
     Violation: driver expression is correct but the driven property clamps or scales unexpectedly.
 
-R10. Never rely on `preferences.edit.use_keyframe_insert_available` being off.
+R10. Never rely on `preferences.edit.use_keyframe_insert_available` being off. <!-- ease:source S3 anchor="The user preference Only Insert Available will now be on by default" -->
     Why: Blender 5.2 flipped this preference to default **True** — "Only Insert Available".
     Violation: operator-driven keying (auto-key, `anim.keyframe_insert`) silently inserts nothing on properties that are not already animated.
 
-R11. In `--background`, do not assume drivers with Python expressions will evaluate.
+R11. In `--background`, do not assume drivers with Python expressions will evaluate. <!-- ease:source S10 anchor="use_scripts_auto_execute" -->
     Why: auto-execution of scripts is gated by `preferences.filepaths.use_scripts_auto_execute` / the `--enable-autoexec` CLI flag.
     Violation: `bpy.app.autoexec_fail == True`, driven values frozen at their last stored value, render shows an unposed rig.
 
-R12. Give every generated Action a `use_fake_user = True` if it is not assigned to anything.
+R12. Give every generated Action a `use_fake_user = True` if it is not assigned to anything. <!-- ease:source UNVERIFIED reason="orphan purge on save is standard Blender behaviour, not re-sourced here" -->
     Why: unassigned Actions are purged on save/reload.
     Violation: action disappears from `bpy.data.actions` after `bpy.ops.wm.save_mainfile()` + reload.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Version-safe channelbag resolver (the one function to always carry)
+#### 4.1 Version-safe channelbag resolver (the one function to always carry)
 
 ```python
 import bpy
@@ -151,7 +171,7 @@ def fcurves_of(action, slot=None):
     return cb.fcurves
 ```
 
-### 4.2 Route A — high level, let Blender build the plumbing
+#### 4.2 Route A — high level, let Blender build the plumbing
 
 ```python
 obj = bpy.data.objects["Cube"]
@@ -176,7 +196,7 @@ arm_obj.pose.bones["Arm_L"].keyframe_insert(data_path="rotation_quaternion", fra
 arm_obj.keyframe_insert(data_path='pose.bones["Arm_L"].rotation_quaternion', frame=1)
 ```
 
-### 4.3 Route B — low level, explicit F-curves
+#### 4.3 Route B — low level, explicit F-curves
 
 ```python
 cb = get_channelbag(obj)                                  # 4.1
@@ -210,7 +230,7 @@ for k in fcu.keyframe_points:
 fcu.update()                                              # R4 — mandatory here
 ```
 
-### 4.4 Interpolation, easing, handles
+#### 4.4 Interpolation, easing, handles
 
 ```python
 # kp.interpolation: 'CONSTANT' | 'LINEAR' | 'BEZIER'
@@ -254,7 +274,7 @@ fcu.update()
 `fcu.extrapolation` is `'CONSTANT'` (default, hold endpoints) or `'LINEAR'`
 (continue slope). `fcu.auto_smoothing` controls how `'AUTO'` handles are solved.
 
-### 4.5 F-curve modifiers (procedural motion, no keys)
+#### 4.5 F-curve modifiers (procedural motion, no keys)
 
 ```python
 # FModifierCycles: repeat the keyed range forever
@@ -286,7 +306,7 @@ Available `type` values: `GENERATOR`, `FNGENERATOR`, `ENVELOPE`, `CYCLES`,
 `NOISE`, `LIMITS`, `STEPPED`, `SMOOTH` (Gaussian, added 5.1 — must be first in
 the stack to work).
 
-### 4.6 Classic principles as numbers (24 fps baseline; scale by fps/24)
+#### 4.6 Classic principles as numbers (24 fps baseline; scale by fps/24) <!-- ease:source UNVERIFIED reason="animation-principle frame counts and percentages are practitioner conventions, not Blender documentation" -->
 
 | Principle | Concrete encoding |
 |---|---|
@@ -303,7 +323,7 @@ the stack to work).
 | Secondary action | Same curve shape, 20-40% amplitude, offset 3-6 frames. |
 | Slow-in on contact | Last 3 frames before impact get `LINEAR` (no ease) so the hit reads hard. |
 
-### 4.7 Scene time, subframes, motion blur
+#### 4.7 Scene time, subframes, motion blur
 
 ```python
 sc = bpy.context.scene
@@ -321,10 +341,10 @@ sc.render.motion_blur_shutter = 0.5                    # frames open; 0.5 = 180d
 sc.render.motion_blur_position = 'CENTER'              # 'START'|'CENTER'|'END'
 ```
 
-Shutter angle → `motion_blur_shutter = angle / 360`. 180° = 0.5, 90° = 0.25,
+Shutter angle → `motion_blur_shutter = angle / 360`. 180° = 0.5, 90° = 0.25, <!-- ease:source S9 anchor="motion_blur_shutter: time taken in frames between shutter open and close" -->
 270° = 0.75.
 
-### 4.8 Drivers
+#### 4.8 Drivers
 
 ```python
 obj = bpy.data.objects["Cube"]
@@ -374,7 +394,7 @@ t.fallback_value = 1.0
 fast built-in parser (no Python interpreter, and **not** blocked by autoexec).
 Only non-simple expressions need script auto-execution.
 
-### 4.9 Headless / autoexec
+#### 4.9 Headless / autoexec
 
 ```bash
 blender --background scene.blend --enable-autoexec --python build_anim.py
@@ -394,31 +414,31 @@ print("only-insert-available:", prefs.edit.use_keyframe_insert_available)
 Prefer `is_simple_expression`-compatible driver expressions (arithmetic,
 `min`/`max`, `abs`, trig) in headless pipelines so autoexec never matters.
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
-| `AttributeError: 'Action' object has no attribute 'fcurves'` | Legacy Action API removed in 5.0 | Use `anim_utils.action_ensure_channelbag_for_slot(act, slot).fcurves` (§4.1) |
+| `AttributeError: 'Action' object has no attribute 'fcurves'` | Legacy Action API removed in 5.0 | Use `anim_utils.action_ensure_channelbag_for_slot(act, slot).fcurves` (§4.1) <!-- ease:source S1 anchor="legacy Action API removed in 5.0" --> |
 | `AttributeError: 'Action' object has no attribute 'id_root'` | Same removal; the concept moved to the slot | `action.slots[0].target_id_type` |
-| `TypeError: ActionChannelbagFCurves.new(): unexpected keyword 'action_group'` | 5.0 renamed the kwarg | `group_name="..."` |
+| `TypeError: ActionChannelbagFCurves.new(): unexpected keyword 'action_group'` | 5.0 renamed the kwarg | `group_name="..."` <!-- ease:source S1 anchor="channelbag.fcurves.new() group_name parameter" --> |
 | `IndexError: bpy_prop_collection[0] ... size 0` on `action.layers[0]` | Fresh Action has no layer/strip yet | `anim_utils.action_ensure_channelbag_for_slot()`, or `layers.new("Layer")` + `strips.new(type='KEYFRAME')` |
-| Action is assigned, fcurves exist, object does not move in the render | `animation_data.action_slot is None` (4.4+ heuristic missed) | `ad.action_slot = ad.action_suitable_slots[0]` (R3) |
-| `TypeError: keyframe_insert(): takes 1 positional argument but 2 were given` | `index`/`frame` are keyword-only in 4.5 and 5.x | `keyframe_insert("location", frame=1)` |
+| Action is assigned, fcurves exist, object does not move in the render | `animation_data.action_slot is None` (4.4+ heuristic missed) | `ad.action_slot = ad.action_suitable_slots[0]` (R3) <!-- ease:source S6 anchor="AnimData.action_slot, action_suitable_slots" --> |
+| `TypeError: keyframe_insert(): takes 1 positional argument but 2 were given` | `index`/`frame` are keyword-only in 4.5 and 5.x | `keyframe_insert("location", frame=1)` <!-- ease:source UNVERIFIED reason="bpy_struct.keyframe_insert signature page not fetched" --> |
 | Custom `handle_left/right` values snap back to a smooth S | Handle type left at `'AUTO'`/`'AUTO_CLAMPED'` | Set `handle_*_type='FREE'` first (R5) |
 | Curve evaluates to nonsense / keys visually out of order | Wrote `co` directly without re-sorting | `fcu.keyframe_points.sort()` then `fcu.update()` (R4) |
 | Rotation fcurve exists with keys, object never rotates | Keyed `rotation_euler` on a `QUATERNION` bone/object (or vice versa) | Match `rotation_mode`; convert with `mathutils` before keying (R6) |
 | Baked matrices are all one frame stale | Used `scene.frame_current = f` | `scene.frame_set(f)` (R7) |
 | Driven property clamps at a constant instead of following the expression | 5.0 `driver_add()` leaves 2 keyframes on the driver curve; `extrapolation='CONSTANT'` clamps outside them | Clear `keyframe_points` and modifiers, set `extrapolation='LINEAR'` (R9) |
-| `bpy.app.autoexec_fail == True`; drivers frozen | Headless run without `--enable-autoexec` | Add the flag, or rewrite expressions so `is_simple_expression` is True (R11) |
-| Operator-based keying inserts nothing | 5.2 default `use_keyframe_insert_available = True` | Key an initial value with `keyframe_insert()` first, or flip the preference (R10) |
+| `bpy.app.autoexec_fail == True`; drivers frozen | Headless run without `--enable-autoexec` | Add the flag, or rewrite expressions so `is_simple_expression` is True (R11) <!-- ease:source UNVERIFIED reason="bpy.app page returned a bot challenge" --> |
+| Operator-based keying inserts nothing | 5.2 default `use_keyframe_insert_available = True` | Key an initial value with `keyframe_insert()` first, or flip the preference (R10) <!-- ease:source S4 anchor="use_keyframe_insert_available (default True)" --> |
 | Generated Action gone after save/reload | Zero users | `action.use_fake_user = True` (R12) |
 | Exported video drifts out of sync | Used `render.fps` and ignored `fps_base` | true fps = `fps / fps_base` (R8) |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
-| `render.fps` / `fps_base` | 30 / 1.0 | 24 / 1.0 | 60 / 1.0 | 25 / 1.0 | n/a |
+| `render.fps` / `fps_base` | 30 / 1.0 | 24 / 1.0 | 60 / 1.0 | 25 / 1.0 | n/a <!-- ease:source UNVERIFIED reason="per-use-case values are starting points" --> |
 | Default `kp.interpolation` | `LINEAR` (baked) | `BEZIER` | `BEZIER` + `SINE`/`QUAD` easing | `BEZIER` | n/a |
 | Default handle type | `VECTOR` | `AUTO_CLAMPED` | `FREE` (authored) | `AUTO_CLAMPED` | n/a |
 | Key density | every frame (baked) | 1 key / 4-8 frames | 1 key / 6-12 frames | 1 key / 12-24 frames | n/a |
@@ -433,7 +453,7 @@ Prefer `is_simple_expression`-compatible driver expressions (arithmetic,
 | `fcurve.extrapolation` | `CONSTANT` | `CONSTANT` | `CONSTANT` | `CONSTANT` | n/a |
 | `scene.frame_step` | 1 | 1 | 1 | 1 | n/a |
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `assert not hasattr(bpy.types.Action, "fcurves") or bpy.app.version < (5, 0)` — confirms which API surface you are on.
 - [ ] `assert obj.animation_data.action_slot is not None` — the slot is bound, so the Action actually drives this ID (R3).
@@ -448,8 +468,7 @@ Prefer `is_simple_expression`-compatible driver expressions (arithmetic,
 - [ ] Sample the motion: `for f in range(s, e, 4): scene.frame_set(f); print(f, obj.matrix_world.translation[:])` — spacing should be non-uniform for eased motion; equal deltas mean your easing did not apply.
 - [ ] Viewport screenshot at three frames (start / mid / end) — mid frame must not be the arithmetic mean of start and end for an eased channel.
 
-## 8. Sources
-
+### 8. Source notes and unverified items (legacy list)
 - [bpy.types.Action (5.2)](https://docs.blender.org/api/current/bpy.types.Action.html) — confirms `slots`, `layers`, `fcurve_ensure_for_datablock`, `is_action_legacy`; **no** `fcurves`/`groups`/`id_root`.
 - [bpy.types.ActionSlot / ActionSlots](https://docs.blender.org/api/current/bpy.types.ActionSlot.html)
 - [bpy.types.ActionKeyframeStrip](https://docs.blender.org/api/current/bpy.types.ActionKeyframeStrip.html) — `channelbag(slot, *, ensure=False)`, `key_insert()`
@@ -477,3 +496,27 @@ opposed to the keying *operators*) consults
 `preferences.edit.use_keyframe_insert_available` is not stated in the API docs.
 The function takes an explicit `options` set; assume it does **not** read the
 preference, but assert the resulting key count rather than trusting either way.
+
+## Failure Modes (Mandatory)
+
+- **`AttributeError: 'Action' object has no attribute 'fcurves'` in an old script** — cause: legacy Action API removed in 5.0 <!-- ease:source S1 anchor="The legacy Action API has been removed" --> — fix: resolve the channelbag via `bpy_extras.anim_utils` (4.1) and use `channelbag.fcurves`.
+- **Action assigned, curves populated, object frozen at rest in every rendered frame** — cause: no slot auto-assigned (4.4+ heuristic) <!-- ease:source S2 anchor="auto-assign a slot ... based on a set of heuristics" --> — fix: `ad.action_slot = ad.action_suitable_slots[0]` and assert it is not None.
+- **Operator keying inserts nothing on 5.2** — cause: 'Only Insert Available' now defaults on <!-- ease:source S3 anchor="Only Insert Available will now be on by default" --> — fix: key an initial value with `keyframe_insert()` or set the preference explicitly.
+- **End-point check passes but parts interpenetrate mid-motion** — cause: only the final state was verified, not every frame — fix: per-frame sweep plus a short animatic before any long render; repo failure map names this <!-- ease:source S12 anchor="Failure map: Endpoint PASS but interpenetration mid-motion" -->.
+- **Film that animates at a low pose rate is re-timed to 30 fps by repeating frames and is rejected** — cause: distinct-state count not part of the timing contract — fix: decide key density (4.6, section 6) against the delivered frame rate and record it before rendering <!-- ease:source S13 anchor="line 37, DC-01 film rejected" -->.
+
+## Sources
+
+- [S1] Blender 5.0 Release Notes: Python API — https://developer.blender.org/docs/release_notes/5.0/python_api/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-0-python_api-.html) — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff
+- [S2] Slotted Actions: Upgrading to 4.4 — https://developer.blender.org/docs/release_notes/4.4/upgrading/slotted_actions/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-4-4-upgrading-slotted_actions-.html) — captured 2026-10-13 — sha256 0c2bd11c20fa5113d5c894e79261d7ddbfbdb47761028604608f0a0a78462251
+- [S3] Blender 5.2 Release Notes: Animation & Rigging — https://developer.blender.org/docs/release_notes/5.2/animation_rigging/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-2-animation_rigging-.html) — captured 2026-10-13 — sha256 a3f38b48d43272783e6bd095ce4cfc5b5a085d552239581e31ad23966fecd623
+- [S4] PreferencesEdit — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.PreferencesEdit.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-PreferencesEdit.html) — captured 2026-10-13 — sha256 e19f15eb735d9071c6fdfea6387a2432a44f2eb912e34da6be47e12c80e56da2
+- [S5] Action — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.Action.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-Action.html) — captured 2026-10-13 — sha256 1ad65f668634cd563179d56df00543fc30f475bd93a7396453fdb91269eb6eeb
+- [S6] AnimData — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.AnimData.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-AnimData.html) — captured 2026-10-13 — sha256 aa3f19ed247ad1eabe97856f701c6dc9d13885705bc13a2183623b0ef6e2d23f
+- [S7] bpy_extras.anim_utils — Blender Python API (current) — https://docs.blender.org/api/current/bpy_extras.anim_utils.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy_extras-anim_utils.html) — captured 2026-10-13 — sha256 50822f6b4f28fd4434c2503b526345f9dae2d3583d0ce95f28c79b140fba9c2b
+- [S9] Blender source rna_scene.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_scene.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_scene.cc) — captured 2026-10-13 — sha256 54b6e437b4fae8baaffaf60c97516d29c6f643d37c73d2c695e1a71c1f36a743
+- [S10] Blender source rna_userdef.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_userdef.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_userdef.cc) — captured 2026-10-13 — sha256 1e8c0508b577d60e644f12d7ea4025900a40630969dfbe14361a5a91e39aaa45
+- [S12] Repo: AGENTS.md (failure map: endpoint PASS but mid-motion interpenetration) — AGENTS.md — captured 2026-10-13 — sha256 d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7
+- [S14] ActionChannelbagFCurves — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.ActionChannelbagFCurves.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-ActionChannelbagFCurves.html) — captured 2026-10-13 — sha256 966dd8f532e818155e017dd85abdd394a825e7f538ad4f6b5a7d430c9bc5fadc
+- [S15] FModifierCycles — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.FModifierCycles.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-FModifierCycles.html) — captured 2026-10-13 — sha256 52327dd35edd3ca1a5365bb7415b833b7936852c22bf77f356a81a828b0ecbb1
+- [S13] Repo: native build pipeline lessons (DC-01 D05 pose rate) — docs/native-build-pipeline-lessons.md — captured 2026-10-13 — sha256 f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb

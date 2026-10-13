@@ -6,8 +6,8 @@ headless. Written against **Blender 5.2 LTS** (July 2026), with divergences from
 **4.5 LTS** called out inline.
 
 This file is the **router**. Read it first, load only the domain files a task
-actually needs. Every file is self-contained and follows the same 8-section
-structure, so a file can be lifted into a Claude Skill with minimal editing.
+actually needs. Every file is self-contained and follows the Hybrid UKMC.v1 layout
+(see File anatomy), so a file can be lifted into a Claude Skill with minimal editing.
 
 ---
 
@@ -56,6 +56,7 @@ This INDEX is an on-demand lookup, not a session-start read. Use [blender-knowle
 | print plates, nesting/packing, part orientation, STL per plate | `70-cad-precision-robotics/print-plate-layout.md` |
 | bolts, counterbores, O-ring glands, bearings | `70-cad-precision-robotics/fasteners-seals-mechanics.md` |
 | wiring, industrial connectors (M12, RJ45, DB9), harness | `70-cad-precision-robotics/industrial-connectors-wire-harness.md` |
+| character/creature anatomy, facial loops, blendshapes, hair curves | `15-character-creature/character-creature-modeling.md` |
 
 Each file's frontmatter carries a `loads_with:` list — the files usually needed
 alongside it. Follow it rather than guessing.
@@ -72,6 +73,8 @@ alongside it. Follow it rather than guessing.
 | `bpy-scripting-core` | How to write bpy that actually runs — data API over operators, context overrides, headless reality, introspection instead of recall, and the error taxonomy. |
 | `python-agent-boilerplates` | Standard, copy-pasteable, headless-verified Python boilerplates for CAD, geometry nodes, PBR shaders, armatures, animation, physics, and rendering. |
 | `agent-workflow-loop` | The execute-verify-refine loop over blender-mcp — how to plan, how to prove a step worked, and when to stop and hand off. |
+| `blender-addon-ecosystem` | Which third-party Blender add-ons fit which production task, and why headless automation must not depend on them. |
+| `native-api-contracts` | Evaluated geometry lifetime, assigned Action slots, explicit GN modifier inputs, and numerical failure controls for reusable AI scripts. |
 
 ### 10 — Modeling
 
@@ -80,7 +83,8 @@ alongside it. Follow it rather than guessing.
 | `modeling-topology` | Quad-flow, poles, normals/sharpness attributes, transform application, and headless mesh construction/diagnostics via bmesh and `from_pydata`. |
 | `modifiers` | The modifier stack as an ordered evaluation graph — order rules, data-API configuration, headless application via depsgraph, boolean solver selection. |
 | `uv-unwrapping` | Seams, unwrap methods, packing margin math, texel density, UDIMs, multi-UV layouts, and the headless operator-context patterns UV work actually requires. |
-| character/creature anatomy, facial loops, blendshapes, hair curves | `15-character-creature/character-creature-modeling.md` |
+| `game-asset-pipeline-low-to-aaa` | Game-asset pipeline in Blender: poly and texel budgets, high-to-low normal baking with per-engine green-channel convention, LOD vs Nanite, Unreal collision naming, pre-export gate. |
+| `mesh-optimization-retopology` | Decimate modes, native remesh/retopology choices and a headless bmesh non-manifold diagnostic/repair protocol; third-party retopology add-ons are out-of-policy context only. |
 
 ### 15 — Character & Creature
 
@@ -94,6 +98,7 @@ alongside it. Follow it rather than guessing.
 |---|---|
 | `materials-pbr` | Principled BSDF socket inventory for 5.x, physically plausible value ranges, and safe runtime socket resolution when building node trees. |
 | `texturing-baking` | Image texture wiring, color space correctness (sRGB vs Non-Color), procedural textures in 5.x, and the headless Cycles bake pipeline. |
+| `master-artisan-pbr-and-grooming` | Production-level skin/hair/sheen/thin-film shading and Hair Curves grooming on Blender 5.x, with Cycles hair and SSS settings, checked against a live 5.2.0 build. |
 
 ### 30 — Lighting & Render
 
@@ -102,6 +107,7 @@ alongside it. Follow it rather than guessing.
 | `lighting` | Light data properties, physical wattage reasoning against AgX/Film Exposure, HDRI worlds, light linking, studio recipes. |
 | `render-engines` | Choosing and configuring Cycles / EEVEE / Workbench, GPU device setup, denoising traps, and what actually works under `--background`. |
 | `compositing-output` | Building the 5.x compositor node group in Python, passes/AOVs, File Output wiring, scene- vs display-referred color, VSE stitching. |
+| `video-animation-cinematics` | Cinematic camera staging (FOV, DoF, 180-degree shutter), Cycles animation render settings, AgX vs Filmic, and delivery encoding/gate checklist for multi-frame Blender animation. |
 
 ### 40 — Animation & Rigging
 
@@ -117,6 +123,7 @@ alongside it. Follow it rather than guessing.
 |---|---|
 | `geometry-nodes` | Build, wire and drive Geometry Node trees entirely from bpy — 4.0+ interface API, fields vs values, zones, instancing, baking. |
 | `simulation-physics` | Rigid body, cloth, soft body, particles, Mantaflow, dynamic paint, force fields — statefulness, caches, headless baking. |
+| `geometry-nodes-advanced-production` | Production patterns for Geometry Nodes on 5.x: field/socket semantics, parabolic cables, slope-masked scattering, density-threshold volume remeshing, simulation-zone discipline and the Realize Instances cost. |
 
 ### 60 — Pipeline
 
@@ -127,6 +134,12 @@ alongside it. Follow it rather than guessing.
 | `optimization-realtime` | Poly/draw-call budgets, LODs, atlasing, high-to-low baking, instancing, simplify, and what actually costs time in Cycles. |
 | `3d-printing` | Manifold/watertight requirements, wall thickness and clearance by process, bmesh-based failure detection, STL/3MF export. |
 | `product-viz-and-shots` | Camera as a technical instrument — framing math, DOF, constraints, studio backdrops, turntables, shadow catchers, render-review loop. |
+| `dfam-3dprinting-production` | Production DFAM rules for printed Blender parts: process minimums, overhang/elephant-foot geometry, heat-set insert bosses and build-orientation strength. |
+| `geometry-diagnostic-workflow` | Diagnose geometry and verifier failures by separating code, specification and checker causes, choosing predicates that match the geometric question, and preserving physical-evidence boundaries. |
+| `manufacturing-evidence-workflow` | Move a native digital prototype through an engineering candidate to traceable pilot evidence while preserving source, process, measurement and acceptance boundaries. |
+| `native-agent-iteration` | Local task lifecycle, target-bound independent criticism and source-parameter contracts adapted from three reviewed upstream agent repositories. |
+| `native-render-delivery` | Deliver actual saved Blender assets at requested pixel density with camera, surface, decoded-video, reference and revision evidence. |
+| `visual-fidelity-image-to-3d-matching` | Verify reference-image fidelity with per-feature review plus diagnostic silhouette IoU and MAE; hosted blueprint synthesis is not permitted in production under the Native Asset Policy. |
 
 ### 70 — Precision CAD & Robotics
 
@@ -138,25 +151,45 @@ alongside it. Follow it rather than guessing.
 | `polymer-3dprinting-cad` | Engineering design for 3D printing in polymers (FDM/SLA/SLS), tear-drop holes, self-supporting chamfers, heat-set insert bosses, and hole shrinkage compensation. |
 | `fasteners-seals-mechanics` | Standards and modeling patterns for ISO 4762 metric fastener counterbores, AS568/ISO 3601 O-ring glands, and bearing housing shoulders. |
 | `industrial-connectors-wire-harness` | Standards and modeling patterns for industrial connectors (M12 D-cut, RJ45, DB9), cable glands, wire harness bend radius, and panel cutouts. |
+| `actuators-motors-foc-control` | Actuator selection, torque-inertia matching, Field-Oriented Control (FOC), driver selection (DRV830x/TMC6300), and encoder integration. |
+| `embedded-realtime-bus-architecture` | Real-time multi-axis bus networks (CAN-FD, RS-485), cascade control loop timing, trajectory generation, and hardware E-Stop safety architectures. |
+| `emc-emi-environmental-qualification` | EMC, ESD, vibration/shock, HALT/HASS and IP-seal qualification reference for robot actuators and controllers (design reference, not certification). |
+| `functional-safety-iso13849-robotics` | Functional-safety architecture notes for cobots: ISO 13849-1 PL parameters, dual-channel STO supervision and ISO/TS 15066 contact-limit inputs (design reference, not certification). |
+| `impedance-admittance-contact-control` | Impedance and admittance contact-control reference for robot arms: governing equations, tuning ranges, passivity and contact-stability gates (design reference, not certification). |
+| `joint-bearing-preload-fatigue-life` | Cross-roller and angular-contact joint bearing load, preload and rating-life reference for robot joints (design reference, not certification). |
+| `kinematic-calibration-dh-metrology` | Industrial arm kinematic calibration: Hayati-Mirmirani error model, parameter identification, pose selection and 4-point TCP calibration, with ISO 9283 metrology targets. |
+| `power-distribution-bms-protection` | Robot DC-bus power distribution: pre-charge inrush sizing, regenerative brake chopper, TVS clamping, power/logic grounding and BMS interaction for roughly 48 V joint drives. |
+| `print-plate-layout` | Laying printable parts out on build plates — default beds, material/process buckets, spacing and margin, guillotine free-rectangle packing, per-part orientation, STL per plate. |
+| `production-mechatronics-gate` | Holistic production-grade gate synthesizing mechanical DFAM, electrical wire harness, firmware safety, and automated manufacturing delivery. |
+| `robot-pcb-layout-power-electronics` | Production PCB layout rules for high-current BLDC motor drivers: gate loops, Kelvin shunt sensing, stackup and ground plane, and thermal-via arrays under power FETs. |
+| `ros2-realtime-control-architecture` | Real-time ROS 2 control architecture: PREEMPT_RT host tuning, ros2_control hardware interface, CiA 402 drive state machine and fault handling for multi-axis robots. |
+| `sensor-fusion-state-estimation` | Sensor selection, magnetic/optical encoder architectures, 6-DOF IMU filtering, and Extended Kalman Filter (EKF) state estimation. |
+| `thermal-management-actuator-cooling` | Thermal design of robot joint actuators: two-node lumped thermal network, continuous and intermittent (S3) current limits, polymer-chassis heat paths, potting and winding temperature sensing. |
 
 ---
 
 ## File anatomy
 
-Every domain file has these eight sections, in this order:
+Every domain file follows the **Hybrid UKMC.v1** contract of the standalone
+`design-os-knowledge-builder` tool (upgrade run 2026-10-13, plan
+`plans/261013-0928-knowledge-ukmc-hybrid-upgrade/plan.md`):
 
-1. **Mental model** — what the domain is and the single most common way agents get it wrong
-2. **Decision first** — the table/tree consulted *before* writing code
-3. **Rules** — numbered, each with `Why:` and `Violation:` (the observable symptom)
-4. **bpy patterns** — copy-paste-ready, data-API-first, headless-safe, version-gated
-5. **Failure modes** — symptom → root cause → fix
-6. **Parameter defaults by use case** — Game/realtime · Character anim · Motion graphics · Product viz · 3D print
-7. **Verification checklist** — assertions the agent can run itself
-8. **Sources** — primary docs, with `[UNVERIFIED]` marking anything not confirmed
+- **Frontmatter** keeps the catalogue keys (`name`, `domain`/`category`, `loads_with`, `tags`, …)
+  and adds `id` (= `name`), `title`, `description`, `when` (routing triggers),
+  `trust_tier` (`draft` · `community_reference` · `verified`) and `sources_checked`.
+- `## Purpose` — 1–2 sentences.
+- `## When to Use / When NOT` — `ALLOWED` / `NOT ALLOWED` rules; NOT ALLOWED names the module to use instead.
+- `## Core Knowledge Content` — the domain body. Older files keep their sections here, one level
+  down (mental model, decision table, rules with `Why:`/`Violation:`, bpy patterns, parameter
+  defaults, verification checklist).
+- `## Failure Modes (Mandatory)` — symptom → cause → fix, written as **observable symptoms**,
+  because a traceback string or a visual artifact is what the agent has when it needs this.
+- `## Sources` — `[Sn]` entries with URL or repo path, capture date and sha256 of the frozen copy
+  in `_evidence/kb-261013/` (or of the repo file).
 
-The `Violation:` lines and the §5 tables are deliberately written as **observable
-symptoms** rather than explanations, because a traceback string or a visual artifact
-is the only thing the agent will actually have when it needs this knowledge.
+Load-bearing claims carry `<!-- ease:source Sn anchor="…" -->`; claims without a primary source
+carry `<!-- ease:source UNVERIFIED reason="…" -->` instead of being guessed. Lint one file with
+`PYTHONPATH=~/Products/design-os-knowledge-builder/src python3 -m knowledge_builder.cli lint <file>`.
 
 ---
 

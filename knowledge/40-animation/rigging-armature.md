@@ -7,13 +7,33 @@ audience: ai-agent-bpy
 description: Armature data model (edit_bones vs bones vs pose_bones), headless edit-mode patterns, bone collections, constraints, IK/FK, and skinning limits for bpy agents.
 loads_with: [animation-fcurves, mocap-retargeting, modeling-topology]
 tags: [rigging, armature, bones, ik, constraints, skinning, vertex-groups, rigify]
+id: rigging-armature
+title: "Armatures & Rigging"
+when: [armature-edit-bones, bone-collections, ik-fk-constraints, skinning-vertex-groups, rigify, pose-bone-5x-api]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
+
 
 # Armatures & Rigging
 
-## 1. Mental model
+## Purpose
 
-A rig is two datablocks glued together. `bpy.data.armatures[...]` is the
+Gives an agent the armature data model (EditBone vs Bone vs PoseBone), headless Edit Mode patterns, bone collections, constraints/IK and skinning limits so scripts do not hit dangling EditBone references, the removed 4.x select/layers API, or unlimited IK chains.
+
+## When to Use / When NOT
+
+- ALLOWED: creating/editing bones, bone collections, pose-bone constraints, IK/FK setups and armature skinning in bpy (including `--background`)
+- ALLOWED: diagnosing 5.x API breaks (`Bone.select` removal, bone layers gone) and mode-switch crashes
+- NOT ALLOWED: keyframes, slots, F-curves and drivers — use `animation-fcurves` instead
+- NOT ALLOWED: importing mocap, retargeting, baking, NLA — use `mocap-retargeting` instead
+- NOT ALLOWED: facial rigs, weight-paint fine-tuning, corrective shapes — stop and hand off to a human (R15); no machine-checkable acceptance test
+
+## Core Knowledge Content
+
+### 1. Mental model
+
+A rig is two datablocks glued together. `bpy.data.armatures[...]` is the <!-- ease:source S1 anchor="Pose is accessed from the object rather than the object data; two objects can share one armature in different poses" -->
 *skeleton definition* (bone names, rest positions, hierarchy, collections).
 `bpy.data.objects[...]` with `obj.type == 'ARMATURE'` is the *instance* — it
 owns the pose (`obj.pose.bones`), the constraints and the animation data. Two
@@ -22,21 +42,21 @@ objects can share one armature datablock and hold different poses.
 The same bone is exposed through three different Python types, and picking the
 wrong one is by far the largest source of agent errors:
 
-- `armature.edit_bones` → `EditBone`. **Only exists while the object is in Edit
+- `armature.edit_bones` → `EditBone`. **Only exists while the object is in Edit <!-- ease:source S1 anchor="Armature Mode Switching: do not keep references to edit bones; further access will crash Blender" -->
   Mode.** This is the only place you can create bones, move `head`/`tail`, set
   `roll`, or change parenting. Outside Edit Mode the collection is empty and
   any `EditBone` reference you kept is a dangling pointer that can crash Blender.
 - `armature.bones` → `Bone`. Rest-pose data in Object/Pose mode. `head`/`tail`
   are **read-only** here. Good for `matrix_local`, `use_deform`, hierarchy reads.
-- `object.pose.bones` → `PoseBone`. The animatable state: `location`,
+- `object.pose.bones` → `PoseBone`. The animatable state: `location`, <!-- ease:source S1 anchor="pose is accessed from the object rather than the object data" -->
   `rotation_quaternion`, `scale`, `constraints`, IK settings, custom shapes.
   Note it hangs off the **object**, not the armature data.
 
-Blender 5.0 moved bone *selection* and *visibility* for Object/Pose mode onto
+Blender 5.0 moved bone *selection* and *visibility* for Object/Pose mode onto <!-- ease:source S5 anchor="Pose bones now have select; Bone.select/select_head/select_tail removed; hide moved to pose bone" -->
 the `PoseBone`, and removed `Bone.select`. That is a hard break for any code
 carried over from 4.x.
 
-## 2. Decision first
+### 2. Decision first
 
 | Task | Where | Mode required |
 |---|---|---|
@@ -45,83 +65,83 @@ carried over from 4.x.
 | Parent, connect, inherit-scale | `EditBone.parent`, `.use_connect`, `.inherit_scale` | EDIT |
 | Rename a bone | `EditBone.name` or `Bone.name` | any (Bone works in OBJECT) |
 | `use_deform`, envelope radii | `Bone.use_deform` (also on `EditBone`) | any |
-| Bone collections (membership) | `armature.collections[...].assign(bone)` | any (`bone` may be Bone/EditBone/PoseBone) |
-| Read collection membership | `BoneCollection.bones` | **not** EDIT (empty in edit mode) |
+| Bone collections (membership) | `armature.collections[...].assign(bone)` | any (`bone` may be Bone/EditBone/PoseBone) <!-- ease:source S10 anchor="BoneCollection.assign / unassign" --> |
+| Read collection membership | `BoneCollection.bones` | **not** EDIT (empty in edit mode) <!-- ease:source S15 anchor="In armature edit mode .bones always returns an empty list; memberships synchronized when exiting edit mode" --> |
 | Add a constraint | `pose_bone.constraints.new(type)` | any |
 | Pose a bone | `pose_bone.matrix_basis` / `.location` / `.rotation_*` | any (POSE for operators) |
 | Custom widget shape | `pose_bone.custom_shape = obj` | any |
 | Select bones for an operator | `pose_bone.select` (5.x) / `edit_bone.select` | POSE / EDIT |
-| Automatic weights | `bpy.ops.object.parent_set(type='ARMATURE_AUTO')` | OBJECT, operator-only |
+| Automatic weights | `bpy.ops.object.parent_set(type='ARMATURE_AUTO')` | OBJECT, operator-only <!-- ease:source UNVERIFIED reason="bpy.ops.object page returned a bot challenge; ARMATURE_AUTO enum not re-confirmed" --> |
 | Weight values | `mesh_obj.vertex_groups[...].add([i], w, 'REPLACE')` | OBJECT |
 
 Rule of thumb: **do all topology in one Edit-Mode block, exit, then do all
 constraints/poses in Object or Pose mode.** Never interleave.
 
-## 3. Rules
+### 3. Rules
 
-R1. Enter Edit Mode before touching `armature.edit_bones`; exit before doing anything else.
+R1. Enter Edit Mode before touching `armature.edit_bones`; exit before doing anything else. <!-- ease:source S1 anchor="Armature Mode Switching" -->
     Why: `edit_bones` is a runtime-only mirror built on entering Edit Mode and flushed on exit.
     Violation: the collection is empty (`len(arm.edit_bones) == 0`) or `bpy.ops` reports `{'CANCELLED'}`.
 
-R2. Never keep an `EditBone` (or a Vector taken from one) across a mode switch.
+R2. Never keep an `EditBone` (or a Vector taken from one) across a mode switch. <!-- ease:source S1 anchor="Further access to these will crash Blender" -->
     Why: the underlying C struct is freed on exit; the Python wrapper is left dangling.
     Violation: segfault, or `ReferenceError: StructRNA of type EditBone has been removed`.
 
-R3. Set `bpy.context.view_layer.objects.active` **and** link the object into the view layer before `mode_set`.
+R3. Set `bpy.context.view_layer.objects.active` **and** link the object into the view layer before `mode_set`. <!-- ease:source UNVERIFIED reason="poll behaviour of object.mode_set in background not confirmed by a fetched source" -->
     Why: `object.mode_set` polls `context.object`; in `--background` there is no UI to supply one.
     Violation: `RuntimeError: Operator bpy.ops.object.mode_set.poll() failed, context is incorrect`.
 
-R4. A bone with zero length cannot exist.
+R4. A bone with zero length cannot exist. <!-- ease:source UNVERIFIED reason="zero-length deletion on leaving Edit Mode is observed behaviour, not stated in fetched sources" -->
     Why: Blender deletes bones whose `head == tail` when leaving Edit Mode.
     Violation: bone silently missing from `armature.bones` after exiting Edit Mode.
 
-R5. Set `use_connect` only after `parent`, and only when the child head equals the parent tail.
+R5. Set `use_connect` only after `parent`, and only when the child head equals the parent tail. <!-- ease:source UNVERIFIED reason="connect snapping behaviour not stated in fetched sources" -->
     Why: connecting snaps the child head onto the parent tail, destroying your position.
     Violation: bones visibly collapse onto their parents in a viewport screenshot.
 
-R6. Use `pose_bone.select` / `pose_bone.hide` on 5.x, not `bone.select` / `bone.hide`.
+R6. Use `pose_bone.select` / `pose_bone.hide` on 5.x, not `bone.select` / `bone.hide`. <!-- ease:source S5 anchor="properties select, select_head, select_tail of the bone removed; use edit bone or pose bone" -->
     Why: 5.0 removed `Bone.select`/`select_head`/`select_tail`, and repurposed `Bone.hide` to mean *edit-bone* visibility.
     Violation: `AttributeError: 'Bone' object has no attribute 'select'`; or bones hide in Edit Mode instead of Pose Mode.
 
-R7. Set `pose_bone.rotation_mode` before writing rotation, and write the matching channel.
+R7. Set `pose_bone.rotation_mode` before writing rotation, and write the matching channel. <!-- ease:source S8 anchor="PoseBone rotation_mode" -->
     Why: only the channel matching `rotation_mode` is evaluated. Default is `'QUATERNION'`.
     Violation: `rotation_euler` set and keyed, bone does not move.
 
-R8. Bone collections replaced bone layers in 4.0 — `bone.layers` / `armature.layers` do not exist.
+R8. Bone collections replaced bone layers in 4.0 — `bone.layers` / `armature.layers` do not exist. <!-- ease:source S2 anchor="Armature.collections / collections_all; no layers property" -->
     Why: removed in the 4.0 Animation & Rigging rewrite.
     Violation: `AttributeError: 'Bone' object has no attribute 'layers'`.
 
-R9. Read `BoneCollection.bones` outside Edit Mode.
+R9. Read `BoneCollection.bones` outside Edit Mode. <!-- ease:source S15 anchor="bones: in armature edit mode this will always return an empty list" -->
     Why: the docs state membership is only synchronised on exiting Edit Mode; in Edit Mode the list is always empty.
     Violation: your membership assertion returns 0 and you "fix" a non-bug.
 
-R10. Set `owner_space` / `target_space` explicitly on every bone constraint.
+R10. Set `owner_space` / `target_space` explicitly on every bone constraint. <!-- ease:source S4 anchor="Constraint.owner_space / target_space enums" -->
     Why: the default is `'WORLD'` for both, which is almost never what you want between two bones of different rigs.
     Violation: the constrained bone flies off by the armature object's transform.
 
-R11. Set the IK constraint's `chain_count` explicitly.
+R11. Set the IK constraint's `chain_count` explicitly. <!-- ease:source S3 anchor="chain_count: 0 uses all bones (in [0, 255], default 0)" -->
     Why: default `0` means "use all bones up the hierarchy to the root", so an arm IK will drag the spine.
     Violation: whole-body wobble when the IK target moves.
 
-R12. Put the pole target on a bone/empty that is off the chain plane, and tune `pole_angle`.
+R12. Put the pole target on a bone/empty that is off the chain plane, and tune `pole_angle`. <!-- ease:source S3 anchor="KinematicConstraint pole_target, pole_angle" -->
     Why: the pole defines the chain's plane; a collinear pole is undefined.
     Violation: knee/elbow snaps or flips 180° partway through a motion.
 
-R13. Add an `ARMATURE` modifier (or use `parent_set(type='ARMATURE*')`) — vertex groups alone deform nothing.
+R13. Add an `ARMATURE` modifier (or use `parent_set(type='ARMATURE*')`) — vertex groups alone deform nothing. <!-- ease:source S16 anchor="ArmatureModifier.use_vertex_groups: Bind vertex groups to armature modifier" -->
     Why: vertex groups are just named weight maps; the modifier is what reads them.
     Violation: rig poses, mesh stays rigid.
 
-R14. Normalise weights after programmatic weight assignment.
+R14. Normalise weights after programmatic weight assignment. <!-- ease:source UNVERIFIED reason="weight-sum behaviour is general skinning practice" -->
     Why: per-vertex weight sums != 1.0 cause shrinking/blow-up under deformation.
     Violation: mesh visibly shrinks near joints in a render.
 
-R15. STOP and hand off to a human for: weight-painting fine-tuning around joints, facial rigs, corrective shape keys, and any "make it look good" deformation pass.
+R15. STOP and hand off to a human for: weight-painting fine-tuning around joints, facial rigs, corrective shape keys, and any "make it look good" deformation pass. <!-- ease:source UNVERIFIED reason="scope decision of this module, not a factual claim" -->
     Why: these are judged perceptually on silhouette and volume; there is no assertion an agent can write for them.
     Violation: hours of iteration producing candy-wrapper elbows the agent cannot detect from a screenshot.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Headless-safe Edit Mode (verified behaviour: `--background` works)
+#### 4.1 Headless-safe Edit Mode (verified behaviour: `--background` works)
 
 Edit Mode is fully available in background mode. `armature.edit_bones` is
 populated exactly when `armature.is_editmode` is True. What background mode
@@ -181,7 +201,7 @@ top-to-bottom straight after this context manager, builds all 5 bones and return
 Object Mode (`arm.is_editmode == False`). It works both when the caller has already
 linked the armature (the §4.2 case) and when it has not.
 
-### 4.2 Building a skeleton
+#### 4.2 Building a skeleton
 
 ```python
 from mathutils import Vector
@@ -228,7 +248,7 @@ Operator alternative when you want Blender's own roll solver across a selection:
 `bpy.ops.armature.calculate_roll(type='POS_X', axis_flip=False, axis_only=False)`
 (Edit Mode; `type` also accepts `GLOBAL_POS_Z`, `ACTIVE`, `VIEW`, `CURSOR`, ...).
 
-### 4.3 Bone collections (replaced bone layers in 4.0)
+#### 4.3 Bone collections (replaced bone layers in 4.0) <!-- ease:source S10 anchor="BoneCollections.new(name, parent=None), collections, collections_all" -->
 
 ```python
 arm = arm_obj.data
@@ -253,7 +273,7 @@ print([b.name for b in grp_deform.bones])
 print(grp_deform.bones_recursive)   # incl. child collections
 ```
 
-### 4.4 Pose bones: shapes, locks, limits
+#### 4.4 Pose bones: shapes, locks, limits
 
 ```python
 pb = arm_obj.pose.bones["hand_ik.L"]
@@ -277,7 +297,7 @@ pb.select = True
 pb.hide = False
 ```
 
-### 4.5 Constraints
+#### 4.5 Constraints
 
 ```python
 def add(pb, ctype, target, subtarget="", *, owner='LOCAL', tgt='LOCAL'):
@@ -317,7 +337,7 @@ Base props on every constraint: `name`, `influence` (0..1), `mute`, `enabled`,
 setter, use `bpy.ops.constraint.childof_set_inverse(constraint=c.name,
 owner='BONE')` under a `temp_override` with the right active pose bone.
 
-### 4.6 IK vs FK
+#### 4.6 IK vs FK
 
 FK = you rotate each bone in the chain, children inherit. It is just
 `pose_bone.rotation_*`, nothing special. Arcs are free; end-effector contact is
@@ -355,7 +375,7 @@ assert mid.is_in_ik_chain                 # sanity check the chain actually form
 Chain-length cheat sheet: arm 2 (upper_arm + forearm), leg 2 (thigh + shin),
 leg with foot roll 3, spine 3-4, tail/tentacle 4-8 (raise `iterations`).
 
-### 4.7 Skinning
+#### 4.7 Skinning
 
 Automatic weights is **operator-only** — there is no `bpy.data` equivalent:
 
@@ -401,7 +421,7 @@ with bpy.context.temp_override(object=mesh_obj, active_object=mesh_obj,
     bpy.ops.object.vertex_group_normalize_all(group_select_mode='ALL', lock_active=False)
 ```
 
-### 4.8 Rest pose changes after skinning
+#### 4.8 Rest pose changes after skinning
 
 ```python
 # Apply the current pose as the new rest pose (Pose Mode operator).
@@ -414,7 +434,7 @@ with bpy.context.temp_override(object=arm_obj, active_object=arm_obj):
 # bound mesh's bind pose. Only do this before skinning, or re-bind afterwards.
 ```
 
-### 4.9 Rigify
+#### 4.9 Rigify
 
 Rigify is a bundled add-on that turns a *metarig* (a plain armature whose bones
 carry `rigify_type` properties) into a full generated control rig: IK/FK
@@ -440,12 +460,13 @@ print(mods)                       # e.g. ['rigify'] or a 'bl_ext.*.rigify' path
 for name in mods:
     addon_utils.enable(name, default_set=True, persistent=True)
 
-# Operators are only present once the add-on is enabled — probe, don't guess:
-print(hasattr(bpy.ops.object, "armature_human_metarig_add"))   # add a human metarig
-print(hasattr(bpy.ops.pose, "rigify_generate"))                # generate the rig
+# Operators are only present once the add-on is enabled — probe, don't guess.
+# hasattr() on bpy.ops submodules is always True on 5.2.0, so test dir():
+print("armature_human_metarig_add" in dir(bpy.ops.object))   # add a human metarig
+print("rigify_generate" in dir(bpy.ops.pose))                # generate the rig
 ```
 
-### 4.10 Where the agent must stop (R15)
+#### 4.10 Where the agent must stop (R15)
 
 Hand off to a human for:
 
@@ -462,7 +483,7 @@ The agent *can* still deliver: skeleton topology, naming conventions, bone
 collections, constraint networks, IK setups, widget assignment, weight
 normalization, and automated validation of all of the above.
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
@@ -471,12 +492,12 @@ normalization, and automated validation of all of the above.
 | `RuntimeError: Operator bpy.ops.object.mode_set.poll() failed, context is incorrect` | No active object in `--background` | Link into the view layer + set `view_layer.objects.active` (R3) |
 | Bone missing from `armature.bones` after exiting Edit Mode | `head == tail` | Give the bone non-zero length (R4) |
 | Bones visually collapse onto their parents | `use_connect = True` with mismatched head/tail | Set `parent` first, only connect when positions match (R5) |
-| `AttributeError: 'Bone' object has no attribute 'select'` | 5.0 removed it | `pose.bones[n].select` (Pose) or `edit_bones[n].select` (Edit) (R6) |
+| `AttributeError: 'Bone' object has no attribute 'select'` | 5.0 removed it | `pose.bones[n].select` (Pose) or `edit_bones[n].select` (Edit) (R6) <!-- ease:source S5 anchor="Bone.select removed in 5.0" --> |
 | Bones hide in Edit Mode when you meant Pose Mode | 5.0 repurposed `Bone.hide` | `object.pose.bones[n].hide` (R6) |
-| `AttributeError: 'Bone' object has no attribute 'layers'` | Bone layers removed in 4.0 | `armature.collections` / `BoneCollection.assign()` (R8) |
+| `AttributeError: 'Bone' object has no attribute 'layers'` | Bone layers removed in 4.0 | `armature.collections` / `BoneCollection.assign()` (R8) <!-- ease:source S2 anchor="Armature API exposes collections, not layers" --> |
 | `len(collection.bones) == 0` for a collection you just filled | Read it while in Edit Mode | Exit Edit Mode first (R9) |
 | Constrained bone flies off by the rig's world transform | `owner_space`/`target_space` left at `'WORLD'` | Set both explicitly (R10) |
-| Whole spine wobbles when the hand IK target moves | `chain_count == 0` (unlimited) | Set `chain_count` to the real chain length (R11) |
+| Whole spine wobbles when the hand IK target moves | `chain_count == 0` (unlimited) | Set `chain_count` to the real chain length (R11) <!-- ease:source S3 anchor="chain_count 0 uses all bones" --> |
 | Knee/elbow flips 180° mid-motion | Pole collinear with the chain, or wrong `pole_angle` | Move the pole off-plane; sweep `pole_angle` in ±π/2 steps (R12) |
 | Rig poses but the mesh does not deform | No Armature modifier | `mesh.modifiers.new("Armature", 'ARMATURE'); mod.object = arm_obj` (R13) |
 | Mesh shrinks / balloons near joints | Weight sums != 1.0 | `bpy.ops.object.vertex_group_normalize_all(...)` (R14) |
@@ -484,17 +505,17 @@ normalization, and automated validation of all of the above.
 | `parent_set` returns `{'CANCELLED'}` | Armature not the active object, or mesh not selected | Set active = armature, select both, use `temp_override` |
 | Bone rotates in the viewport but its fcurve does nothing | `rotation_mode` mismatch | Set `rotation_mode` before keying the matching channel (R7) |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
-| Deform bone count | 50-90 | 150-400 (incl. helpers) | 4-20 | 0-8 | n/a |
+| Deform bone count | 50-90 | 150-400 (incl. helpers) | 4-20 | 0-8 | n/a <!-- ease:source UNVERIFIED reason="bone-count budgets are practitioner figures" --> |
 | Weights per vertex (`vertex_group_limit_total`) | 4 | 8-12 (unlimited ok) | 4 | 4 | n/a |
 | `use_deform_preserve_volume` | False (engine cost) | True | False | False | n/a |
 | `use_bone_envelopes` | False | False | False | False | n/a |
 | Skinning method | `ARMATURE_AUTO` + manual cleanup | `ARMATURE_AUTO` + human paint pass | explicit `vg.add()` | explicit `vg.add()` | n/a |
 | IK `chain_count` (arm / leg) | 2 / 2 | 2 / 2 (3 with foot roll) | 2 / 2 | n/a | n/a |
-| IK `iterations` | 100 | 500 | 500 | n/a | n/a |
+| IK `iterations` | 100 | 500 | 500 | n/a | n/a <!-- ease:source S3 anchor="KinematicConstraint.iterations range [0, 10000], default 0; per-use-case values are starting points" --> |
 | IK `use_stretch` | False | True (cartoon) / False (realistic) | True | n/a | n/a |
 | `bbone_segments` on spine | 1 (no B-bones) | 4-8 | 1 | 1 | n/a |
 | Custom shapes | omit (stripped on export) | required | optional | optional | n/a |
@@ -507,7 +528,7 @@ normalization, and automated validation of all of the above.
 manifold mesh — armature deformation has to be applied and the modifier removed
 before export, at which point the rig no longer exists in the pipeline.
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `assert arm_obj.data.is_editmode` inside the edit block, and `assert not arm_obj.data.is_editmode` after — mode transitions actually happened (R1).
 - [ ] `assert set(b.name for b in arm.bones) == set(expected_names)` — every bone survived the Edit-Mode exit (R4).
@@ -523,8 +544,7 @@ before export, at which point the rig no longer exists in the pipeline.
 - [ ] Pose the rig to an extreme (elbow at 150°, shoulder at 90°) with `scene.frame_set()` and take a viewport screenshot — visible candy-wrapper twisting or volume loss is the signal to hand off (R15).
 - [ ] `assert not any(b.use_deform for b in arm.bones if b.name.startswith(("CTRL", "MCH", "WGT")))` — control bones are not deforming the mesh.
 
-## 8. Sources
-
+### 8. Source notes and unverified items (legacy list)
 - [Gotchas: Bones & Armatures (5.2)](https://docs.blender.org/api/current/info_gotchas_armatures_and_bones.html) — the authoritative statement on edit_bones vs bones vs pose_bones and mode-switch dangling references
 - [bpy.types.Armature](https://docs.blender.org/api/current/bpy.types.Armature.html) — `edit_bones`, `bones`, `collections`, `collections_all`, `is_editmode`, `pose_position`
 - [bpy.types.ArmatureEditBones](https://docs.blender.org/api/current/bpy.types.ArmatureEditBones.html) / [EditBone](https://docs.blender.org/api/current/bpy.types.EditBone.html)
@@ -558,3 +578,25 @@ mode is stated from the operator's documented poll requirement (`context.object`
 plus the fact that `bpy.context.object` resolves from
 `view_layer.objects.active`. Not confirmed by a primary doc sentence; the
 pattern in §4.1 sets both, so it is correct either way.
+
+## Failure Modes (Mandatory)
+
+- **Blender crashes or `ReferenceError: StructRNA of type EditBone has been removed` after a mode switch** — cause: an `EditBone` (or its head/tail vector) was kept across leaving Edit Mode <!-- ease:source S1 anchor="Armature Mode Switching" --> — fix: do all topology in one Edit Mode block, exit, then re-fetch bones by name.
+- **`AttributeError: 'Bone' object has no attribute 'select'` after moving a 4.x script to 5.x** — cause: `Bone.select`/`select_head`/`select_tail` removed in 5.0 <!-- ease:source S5 anchor="properties select, select_head and select_tail of the bone itself have been removed" --> — fix: `pose_bone.select` in Pose mode, `edit_bone.select` in Edit mode.
+- **Whole body wobbles when a hand/foot IK goal moves** — cause: `chain_count` left at 0, which uses every bone to the root <!-- ease:source S3 anchor="chain_count: 0 uses all bones" --> — fix: set the real chain length and assert it.
+- **Motion passes a nominal-pose check but still collides or touches at tolerance extremes** — cause: sampled sweep used the nominal stroke; repo record: nominal 3.0 mm stroke vs 3.0 +/- 0.2 mm switch, 3.2 mm touched 57 caps <!-- ease:source S13 anchor="CK-001 caps contacted covers (line 40)" --> — fix: evaluate rig/IK limits at tolerance extremes and check continuous clearance, not samples.
+- **Subagent tries to drive the user's open Blender GUI to build a rig** — cause: GUI is single-writer for the controller session — fix: subagents run `blender --factory-startup` headless only <!-- ease:source S14 anchor="Notes specific to Claude Code: a subagent may only run Blender headless" -->.
+
+## Sources
+
+- [S1] Gotchas: Bones & Armatures — Blender Python API (current) — https://docs.blender.org/api/current/info_gotchas_armatures_and_bones.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-info_gotchas_armatures_and_bones.html) — captured 2026-10-13 — sha256 0d8f37ec8433b7dc8dbfe72a16c02c5b2d633d1748d303031e752487f7b31105
+- [S2] Armature — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.Armature.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-Armature.html) — captured 2026-10-13 — sha256 64db7e8f9d5339374676e44f805c21362ccdb753594e07c66056c38b2499f4bf
+- [S3] KinematicConstraint — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.KinematicConstraint.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-KinematicConstraint.html) — captured 2026-10-13 — sha256 33fe38824ca34475a8a4ff84d4f76e2fe5f23045d7351a5f9333904ab35dc17f
+- [S4] Constraint — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.Constraint.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-Constraint.html) — captured 2026-10-13 — sha256 4ef366c6cb227a0da88e4306594f633c12d724c489953dd4beb985e301f6e445
+- [S5] Blender 5.0 Release Notes: Python API — https://developer.blender.org/docs/release_notes/5.0/python_api/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-0-python_api-.html) — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff
+- [S8] Blender source rna_pose.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_pose.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_pose.cc) — captured 2026-10-13 — sha256 71748ddfafe8438599edecd836e3ebfb4ea1d5b0f37767a4c4fb762a6b391eaf
+- [S10] BoneCollections — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.BoneCollections.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-BoneCollections.html) — captured 2026-10-13 — sha256 b5b351f99335260ec6ba9c958629ac79015344b94cca41236ce422994c56aec9
+- [S13] Repo: native build pipeline lessons (CK-001 sweep/tolerance) — docs/native-build-pipeline-lessons.md — captured 2026-10-13 — sha256 f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb
+- [S15] BoneCollection — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.BoneCollection.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-BoneCollection.html) — captured 2026-10-13 — sha256 97fbbed1652c3b1531e4022c2aef21c6b69dea4631caf30097684be6678850e5
+- [S16] ArmatureModifier — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.ArmatureModifier.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-ArmatureModifier.html) — captured 2026-10-13 — sha256 b22eec9ef9c31562ccaf48ea4cb293f98915b332af8d37faef3a3b6f88f62235
+- [S14] Repo: CLAUDE.md (subagents run Blender headless only) — CLAUDE.md — captured 2026-10-13 — sha256 bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53

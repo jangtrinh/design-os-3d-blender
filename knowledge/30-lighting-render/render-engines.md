@@ -7,13 +7,34 @@ audience: ai-agent-bpy
 description: Choosing and configuring Cycles / EEVEE / Workbench in bpy, GPU device setup, denoising traps, and what actually works under blender --background.
 loads_with: [lighting, compositing-output, materials-pbr]
 tags: [cycles, eevee, workbench, headless, samples, denoise, gpu, ffmpeg, render-settings]
+id: render-engines
+title: "Render Engines"
+when: [engine-selection, cycles-gpu-setup, denoise-verification, headless-render, eevee-raytracing, render-output-settings]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
+
 
 # Render Engines
 
-## 1. Mental model
+## Purpose
 
-`scene.render.engine` is a string enum. In 5.x the three built-ins are `'CYCLES'`,
+Lets an agent pick and configure Cycles / EEVEE / Workbench in bpy without silent fallbacks: correct 5.x engine ids, explicit GPU enabling, denoise-off verification renders, and what actually works under `blender --background`.
+
+## When to Use / When NOT
+
+- ALLOWED: choosing the render engine and sampling/denoising/clamp settings; enabling Cycles GPU devices; configuring EEVEE raytracing/shadow settings
+- ALLOWED: deciding whether EEVEE or Workbench is viable on the current headless machine before using it for verification renders
+- NOT ALLOWED: light power/HDRI design — use `lighting` instead
+- NOT ALLOWED: compositor tree, passes/AOV and File Output wiring — use `compositing-output` instead
+- NOT ALLOWED: camera staging, motion blur, Persistent Data render-time budgeting and delivery encoding standards for animation — use `video-animation-cinematics` instead
+- NOT ALLOWED: treating EEVEE as the macOS batch engine — repo route is Cycles (CPU/Metal measured per scene); EEVEE only as a probed preview
+
+## Core Knowledge Content
+
+### 1. Mental model
+
+`scene.render.engine` is a string enum. In 5.x the three built-ins are `'CYCLES'`, <!-- ease:source S1 anchor="EEVEE's render engine identifier was changed from BLENDER_EEVEE_NEXT to BLENDER_EEVEE" -->
 `'BLENDER_EEVEE'` and `'BLENDER_WORKBENCH'`. The identifier changed: EEVEE was
 `'BLENDER_EEVEE_NEXT'` in 4.2–4.5 and is `'BLENDER_EEVEE'` again from 5.0 — a script
 that hardcodes either string breaks on the other side of that boundary.
@@ -27,10 +48,10 @@ geometry verification screenshots.
 
 For an agent whose only feedback is a rendered image, the decisive constraint is
 **headless viability**. Cycles CPU runs anywhere, including a container with no GPU.
-EEVEE and Workbench are rasterisers and need a working GPU context; the manual states
+EEVEE and Workbench are rasterisers and need a working GPU context; the manual states <!-- ease:source UNVERIFIED reason="EEVEE Limitations manual page returned a bot challenge and could not be frozen; quotes below are from the previous session's reading" -->
 plainly that "Headless rendering is not supported on headless Windows systems", and
 EEVEE has "no plan to support CPU (software) rendering". So: EEVEE in `--background` is
-viable on Linux and macOS *with a GPU and driver* (measured OK on this macOS 5.2.0 /
+viable on Linux and macOS *with a GPU and driver* (measured OK on this macOS 5.2.0 / <!-- ease:source UNVERIFIED reason="local measurement from 2026-09-06; no receipt file found in the repo" -->
 Apple Silicon install, 0.2 s for a 256 px still - see §4.8), and not viable on headless
 Windows or on a GPU-less Linux container.
 
@@ -39,7 +60,7 @@ broken, under-sampled, firefly-ridden render into a smooth plausible image. An a
 verifies its work by looking at a denoised render can miss a light that is 100× too
 bright or a material that is producing NaNs.
 
-## 2. Decision first
+### 2. Decision first
 
 | Goal | Engine | Why |
 |---|---|---|
@@ -47,7 +68,7 @@ bright or a material that is producing NaNs.
 | Fast look-dev iteration, motion graphics, previz | `BLENDER_EEVEE` | Seconds per frame, GPU |
 | Geometry / topology / 3D-print check, turntable | `BLENDER_WORKBENCH` | No lights or materials needed |
 | Anything that must run in a GPU-less container | `CYCLES` with `cycles.device='CPU'` | Only universally headless option |
-| Baking textures | `CYCLES` | EEVEE/Workbench have no bake engine |
+| Baking textures | `CYCLES` | EEVEE/Workbench have no bake engine <!-- ease:source UNVERIFIED reason="baking engine support not re-checked against a frozen source" --> |
 | Rendering render passes / AOVs / cryptomatte | `CYCLES` (full set) | EEVEE supports fewer, and `BLENDED` materials break passes |
 | Deterministic regression images | `CYCLES` CPU, fixed `seed`, denoise off | GPU and denoiser are not bit-reproducible |
 
@@ -55,20 +76,20 @@ bright or a material that is producing NaNs.
 |---|---|
 | Verifying own render for correctness | Denoise **off** first pass; on only for the deliverable |
 | Animation, many frames, same scene | `scene.render.use_persistent_data = True` |
-| Scene has thousands of small lights | Cycles `use_light_tree = True` (default) |
+| Scene has thousands of small lights | Cycles `use_light_tree = True` (default) <!-- ease:source S3 anchor="use_light_tree default=True" --> |
 | Interior with slow convergence | raise `max_bounces` **and** clamp indirect; consider `use_fast_gi` |
 | Glass with strong caustics | Cycles; keep `caustics_*` on, or accept the noise |
 | Alpha over a plate | `scene.render.film_transparent = True`, PNG/EXR RGBA |
 | Video deliverable | render PNG/EXR frames, then encode — not straight to FFmpeg |
 
-## 3. Rules
+### 3. Rules
 
-R1. Read `scene.render.engine`, never assume it.
+R1. Read `scene.render.engine`, never assume it. <!-- ease:source S1 anchor="BLENDER_EEVEE_NEXT -> BLENDER_EEVEE" -->
     Why: identifiers moved (`BLENDER_EEVEE_NEXT` in 4.2–4.5 → `BLENDER_EEVEE` in 5.x).
     Violation: `TypeError: bpy_struct: item.attr = val: enum "BLENDER_EEVEE_NEXT" not
     found in ('BLENDER_EEVEE', 'BLENDER_WORKBENCH', 'CYCLES')`.
 
-R2. Do not assume EEVEE can render headlessly on the machine you are on.
+R2. Do not assume EEVEE can render headlessly on the machine you are on. <!-- ease:source S7 anchor="do not rely on EEVEE for the current macOS batch route" -->
     Why: EEVEE is GPU-only; headless Windows is unsupported; a GPU-less Linux container
     has no EGL/Vulkan device.
     Violation: `blender --background -E BLENDER_EEVEE` aborts with a GPU/context error
@@ -80,25 +101,25 @@ R3. Turn denoising **off** for any render you are using to verify correctness.
     Violation: agent ships a "clean" image built on a broken scene; downstream comp
     reveals the artifacts.
 
-R4. Enable GPU devices explicitly; setting `cycles.device='GPU'` alone is not enough.
+R4. Enable GPU devices explicitly; setting `cycles.device='GPU'` alone is not enough. <!-- ease:source S3 anchor="CyclesPreferences.compute_device_type, get_devices_for_type" -->
     Why: `preferences.addons['cycles'].preferences.compute_device_type` must be set AND
     `device.use = True` for each device, and `get_devices_for_type()` must be called to
     populate the list.
     Violation: render silently falls back to CPU and takes 30× longer, no error.
 
-R5. Access the Cycles preferences through a defensive lookup, not a bare key.
+R5. Access the Cycles preferences through a defensive lookup, not a bare key. <!-- ease:source S3 anchor="CyclesPreferences bl_idname = __package__" -->
     Why: the key is the add-on module name — `'cycles'` for the bundled core add-on — but
     the 4.2+ extensions system introduced `bl_ext.*` module IDs for other add-ons, and
     builds without Cycles have no entry at all.
     Violation: `KeyError: bpy_prop_collection[key]: key "cycles" not found`.
 
-R6. Clamp indirect, not direct.
+R6. Clamp indirect, not direct. <!-- ease:source S3 anchor="sample_clamp_direct default 0.0; sample_clamp_indirect default 10.0" -->
     Why: `sample_clamp_indirect` (default 10.0) kills fireflies from indirect paths
     without dimming your key light. `sample_clamp_direct` (default 0.0 = off) darkens
     the actual lighting.
     Violation: scene mysteriously loses contrast and highlights after "fixing noise".
 
-R7. `scene.render.image_settings.media_type` must be set **before** `file_format` in 5.x.
+R7. `scene.render.image_settings.media_type` must be set **before** `file_format` in 5.x. <!-- ease:source S2 anchor="ImageFormatSettings media_type enum" -->
     Why: 5.0 introduced `media_type` (`'IMAGE' | 'MULTI_LAYER_IMAGE' | 'VIDEO'`) and
     `file_format`'s available enum items depend on it.
     Violation: `TypeError: ... enum "OPEN_EXR_MULTILAYER" not found in ('AVIF','JPEG',
@@ -110,7 +131,7 @@ R8. For a still, `bpy.ops.render.render(write_still=True)`; for a sequence,
     in memory only.
     Violation: render "succeeds", output directory is empty.
 
-R9. Set `scene.render.filepath` to a directory + prefix, not a full filename, for animations.
+R9. Set `scene.render.filepath` to a directory + prefix, not a full filename, for animations. <!-- ease:source S2 anchor="use_file_extension" -->
     Why: Blender appends the frame number and extension (`use_file_extension`).
     Violation: `/out/movie.png` becomes `/out/movie.png0001.png`.
 
@@ -118,31 +139,31 @@ R10. Do not render straight to FFmpeg for anything you may need to re-do.
     Why: a crash at frame 400 of 500 loses the whole file; frames are resumable.
     Violation: hours of GPU time gone; no partial deliverable.
 
-R11. `use_persistent_data = True` only for animations of a static scene.
+R11. `use_persistent_data = True` only for animations of a static scene. <!-- ease:source S2 anchor="RenderSettings use_persistent_data" -->
     Why: it keeps the whole Cycles scene resident between frames — big speedup, big RAM
     cost, and it can retain stale data if you mutate the scene between frames from Python.
     Violation: OOM kill, or frames that render with the previous frame's data.
 
-R12. EEVEE raytracing is **off** by default; without it there are no ray-traced
+R12. EEVEE raytracing is **off** by default; without it there are no ray-traced <!-- ease:source UNVERIFIED reason="RNA defines use_raytracing but the default lives in DNA defaults, which were not frozen" -->
     reflections/GI.
     Why: `scene.eevee.use_raytracing` defaults to False.
     Violation: agent concludes "EEVEE has no reflections" and switches to Cycles
     unnecessarily.
 
-R13. `material.surface_render_method = 'BLENDED'` disables render passes and raytracing
+R13. `material.surface_render_method = 'BLENDED'` disables render passes and raytracing <!-- ease:source UNVERIFIED reason="EEVEE material render-method behaviour not re-checked against a frozen source" -->
     for that material in EEVEE.
     Why: forward rendering path.
     Violation: cryptomatte/AOVs come back empty for exactly the transparent objects you
     needed to isolate.
 
-R14. Workbench renders with `scene.display.shading`, not with `scene.render` samples.
+R14. Workbench renders with `scene.display.shading`, not with `scene.render` samples. <!-- ease:source S4 anchor="scene.display.render_aa" -->
     Why: it is the viewport shading engine; `scene.display.render_aa` controls quality.
     Violation: setting `cycles.samples` has no effect and the agent concludes the render
     settings are ignored.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Engine selection that survives 4.5 ↔ 5.2
+#### 4.1 Engine selection that survives 4.5 ↔ 5.2
 
 **`render.engine` is a DYNAMIC enum — never gate on `enum_items`.** Measured on 5.2.0
 (macOS, `--factory-startup -b`): `scene.render.bl_rna.properties['engine'].enum_items.keys()`
@@ -177,7 +198,7 @@ print(set_engine(bpy.context.scene, 'CYCLES'))
 Verified 5.2.0: returns `CYCLES` / `BLENDER_EEVEE` / `BLENDER_WORKBENCH`;
 `'BLENDER_EEVEE_NEXT'` raises `TypeError` (4.2-4.5 name) and is skipped.
 
-### 4.2 Cycles device selection (verified 5.2)
+#### 4.2 Cycles device selection (verified 5.2)
 
 ```python
 def enable_cycles_gpu(prefer=('OPTIX', 'CUDA', 'HIP', 'METAL', 'ONEAPI')):
@@ -235,7 +256,7 @@ blender -b scene.blend -E CYCLES -- --cycles-device CPU
 blender -b scene.blend --gpu-backend vulkan -E BLENDER_EEVEE -o //e_ -f 1
 ```
 
-### 4.3 Cycles sampling, denoising, light paths (verified defaults in parentheses)
+#### 4.3 Cycles sampling, denoising, light paths (verified defaults in parentheses) <!-- ease:source S3 anchor="samples 4096, preview_samples 1024, adaptive_threshold 0.01, denoising_* defaults, max_bounces 12" -->
 
 ```python
 c = bpy.context.scene.cycles
@@ -296,7 +317,7 @@ machines. Enumerate first:
 print(c.bl_rna.properties['denoiser'].enum_items.keys())
 ```
 
-### 4.4 EEVEE settings (verified 5.2 RNA)
+#### 4.4 EEVEE settings (verified 5.2 RNA) <!-- ease:source S2 anchor="shadow_pool_size, use_backface_hit, direct/indirect_light_intensity, use_overscan" -->
 
 ```python
 e = bpy.context.scene.eevee
@@ -360,7 +381,7 @@ appear in reflections; only one refraction event is modelled; ≤128 sphere prob
 ≤16 plane probes in frustum; render output is half-precision (16-bit float); Combined
 and Light passes clamp negatives to zero; no multi-GPU.
 
-### 4.5 Workbench
+#### 4.5 Workbench
 
 ```python
 set_engine(bpy.context.scene, 'WORKBENCH')
@@ -379,7 +400,7 @@ bpy.context.scene.display.viewport_aa = '8'
 
 Workbench ignores lights, materials' shading, GI and `cycles.samples` entirely.
 
-### 4.6 Resolution, format, output (5.x `media_type` first!)
+#### 4.6 Resolution, format, output (5.x `media_type` first!)
 
 ```python
 r = bpy.context.scene.render
@@ -427,7 +448,7 @@ constant_rate_factor, ffmpeg_preset, ffmpeg_prores_profile, use_autosplit,
 use_lossless_output, audio_codec, audio_bitrate, audio_volume, audio_mixrate,
 audio_channels`.
 
-### 4.7 Rendering headlessly
+#### 4.7 Rendering headlessly
 
 ```bash
 # Still, frame 1, PNG
@@ -484,7 +505,7 @@ Useful headless flags:
                                    # call context.evaluated_depsgraph_get() yourself
 ```
 
-5.2 added `gpu.init()` so scripts can initialise the GPU backend explicitly in
+5.2 added `gpu.init()` so scripts can initialise the GPU backend explicitly in <!-- ease:source S10 anchor="Added gpu.init() to initialize gpu backend when running Blender in background mode" -->
 `--background` mode — required before using the `gpu` module headlessly, and a useful
 probe for whether a GPU context is obtainable at all:
 
@@ -499,7 +520,7 @@ except Exception as ex:
     eevee_ok = False
 ```
 
-### 4.8 Headless viability matrix
+#### 4.8 Headless viability matrix
 
 | Platform | Cycles CPU | Cycles GPU | EEVEE | Workbench |
 |---|---|---|---|---|
@@ -526,11 +547,11 @@ only unconditionally *portable* engine for an automated agent pipeline, and prob
 > Reproduce: `blender --factory-startup -b --python-exit-code 3 --python eevee_bench.py`
 > (set engine, `eevee.taa_render_samples = 8`, 256 px, `bpy.ops.render.render(write_still=True)`).
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
-| `TypeError: ... enum "BLENDER_EEVEE_NEXT" not found in ('BLENDER_EEVEE','BLENDER_WORKBENCH','CYCLES')` | engine id changed in 5.0 | resolve against `enum_items.keys()` (`set_engine`) |
+| `TypeError: ... enum "BLENDER_EEVEE_NEXT" not found in ('BLENDER_EEVEE','BLENDER_WORKBENCH','CYCLES')` | engine id changed in 5.0 | resolve against `enum_items.keys()` (`set_engine`) <!-- ease:source S1 anchor="engine id changed in 5.0" --> |
 | `KeyError: bpy_prop_collection[key]: key "cycles" not found` | build without Cycles, or add-on disabled | defensive scan for `compute_device_type` |
 | Render takes 30× longer than expected on a GPU box | `compute_device_type` set but `get_devices_for_type()` never called / `d.use` False | call it, then set `d.use = True`, then `cycles.device='GPU'` |
 | `TypeError: ... enum "OPTIX" not found` when setting `denoiser` | no OptiX device configured | enumerate `denoiser` enum items first; fall back to `OPENIMAGEDENOISE` |
@@ -539,18 +560,18 @@ only unconditionally *portable* engine for an automated agent pipeline, and prob
 | Render command exits 0, output directory empty | `bpy.ops.render.render()` without `write_still=True` / `animation=True` | pass one of them |
 | Files named `movie.png0001.png` | `filepath` given a full filename for an animation | give directory + prefix only |
 | EEVEE in `--background` aborts with a GPU/display error, or writes a black frame | no GPU context (headless Windows / GPU-less container) | probe `gpu.init()`; fall back to Cycles CPU |
-| EEVEE render has no reflections or GI | `scene.eevee.use_raytracing` is False by default | `e.use_raytracing = True` |
+| EEVEE render has no reflections or GI | `scene.eevee.use_raytracing` is False by default | `e.use_raytracing = True` <!-- ease:source UNVERIFIED reason="default of use_raytracing not frozen (see R12)" --> |
 | EEVEE effects break at the image border | screen-space tracing has no data offscreen | `e.use_overscan = True; e.overscan_size = 3.0` |
 | Cryptomatte/AOV empty for glass objects in EEVEE | those materials use `surface_render_method='BLENDED'` | switch to `'DITHERED'` |
-| `AttributeError: 'SceneEEVEE' object has no attribute 'gtao_distance'` | removed in 5.0 | `view_layer.eevee.ambient_occlusion_distance` |
+| `AttributeError: 'SceneEEVEE' object has no attribute 'gtao_distance'` | removed in 5.0 | `view_layer.eevee.ambient_occlusion_distance` <!-- ease:source S1 anchor="scene.eevee.gtao_distance moved to view_layer.eevee.ambient_occlusion_distance" --> |
 | Clean render, but downstream comp shows blown values / NaNs | denoiser smoothed over the evidence | re-render with `use_denoising = False` |
-| Fireflies remain after clamping | clamped `direct` instead of `indirect`, or caustics | `sample_clamp_indirect ≈ 10`, `caustics_reflective/refractive = False`, `blur_glossy` up |
+| Fireflies remain after clamping | clamped `direct` instead of `indirect`, or caustics | `sample_clamp_indirect ≈ 10`, `caustics_reflective/refractive = False`, `blur_glossy` up <!-- ease:source S3 anchor="sample_clamp_indirect" --> |
 | Animation frames render with stale geometry | `use_persistent_data=True` while mutating the scene from Python per frame | disable it, or force `depsgraph.update()` |
 | Out-of-memory during a long animation | `use_persistent_data=True` on a heavy scene | disable, or lower `tile_size` |
 | Workbench render unaffected by any quality setting changed | Workbench uses `scene.display.*` | `scene.display.render_aa`, `scene.display.shading.*` |
 | Render engine reports "does not support baking" | EEVEE/Workbench active | `scene.render.engine = 'CYCLES'` |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
@@ -576,7 +597,7 @@ only unconditionally *portable* engine for an automated agent pipeline, and prob
 | `color_depth` | `8` | `16` | `16` | `32` | `8` |
 | Frames → video | direct PNG | frames then encode | frames then encode | still | still |
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `assert bpy.context.scene.render.engine in bpy.context.scene.render.bl_rna.properties['engine'].enum_items.keys()` — engine id valid on this build.
 - [ ] `p = bpy.context.preferences.addons['cycles'].preferences; assert any(d.use and d.type != 'CPU' for d in p.devices) == (bpy.context.scene.cycles.device == 'GPU')` — GPU intent matches GPU reality.
@@ -590,8 +611,7 @@ only unconditionally *portable* engine for an automated agent pipeline, and prob
 - [ ] Load the rendered EXR back and `assert not np.isnan(px).any() and px.max() < 1e6` — no NaN/inf materials or absurd light values that a denoiser would have hidden.
 - [ ] Render one frame at `samples=8`, denoise off: visible noise proves the path tracer is actually running (a suspiciously clean image at 8 samples means something is emitting flat colour, not lit geometry).
 
-## 8. Sources
-
+### 8. Source notes and unverified items (legacy list)
 - [Blender 5.0 Release Notes: Python API — EEVEE engine id `BLENDER_EEVEE`, pass renames, `gtao_distance` move, `ImageFormatSettings.media_type`](https://developer.blender.org/docs/release_notes/5.0/python_api/)
 - [Blender 5.0 Release Notes: EEVEE & Viewport](https://developer.blender.org/docs/release_notes/5.0/eevee/)
 - [Blender 5.1 Release Notes: EEVEE & Viewport — light path intensity, Raycast node](https://developer.blender.org/docs/release_notes/5.1/eevee/)
@@ -607,3 +627,22 @@ only unconditionally *portable* engine for an automated agent pipeline, and prob
 - `[UNVERIFIED]`: the exact EEVEE failure mode on a GPU-less Linux container (error text
   vs. black frame) is not documented; probe with `gpu.init()` rather than relying on a
   specific traceback.
+
+## Failure Modes (Mandatory)
+
+- **Verification render looks clean but the scene is broken** — cause: denoising enabled (Cycles `use_denoising` defaults to True) hides fireflies/NaNs <!-- ease:source S3 anchor="use_denoising default=True" --> — fix: denoise off for verification renders, on only for the deliverable.
+- **Render takes 10-30x longer than expected, no error** — cause: GPU backend not actually enabled (`get_devices_for_type()` not called, `d.use` False, or the enum_items-gated helper returned CPU) — fix: try-assign `compute_device_type`, read it back, log the device list; repo rule: choose CPU/Metal from a measurement per scene, never assume the GPU is faster <!-- ease:source S7 anchor="Headless: blender -b ... choose CPU/Metal with a profile measured for the scene" -->.
+- **Black render / black silhouette in headless batch** — cause: stale `persistent_data`, camera inside a wall, no light — fix: `framing()`, `frame_stats()`, `persistent_data=False` <!-- ease:source S8 anchor="Failure map: Black render / black silhouette" -->.
+- **Timeout authored from a toy-resolution probe** — cause: probe extrapolated 9.8 h while the real full-size render took 609 s — fix: preflight at the requested aspect and apparent scale before batching <!-- ease:source S9 anchor="CK-001 render budget (line 43)" -->.
+- **`TypeError: enum "BLENDER_EEVEE_NEXT" not found`** — cause: engine id hardcoded from 4.2-4.5 — fix: resolve the engine id at runtime (R1).
+
+## Sources
+
+- [S1] Blender 5.0 Release Notes: Python API — https://developer.blender.org/docs/release_notes/5.0/python_api/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-0-python_api-.html) — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff
+- [S2] Blender source rna_scene.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_scene.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_scene.cc) — captured 2026-10-13 — sha256 54b6e437b4fae8baaffaf60c97516d29c6f643d37c73d2c695e1a71c1f36a743
+- [S3] Blender source Cycles properties.py @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/intern/cycles/blender/addon/properties.py (frozen: knowledge/_evidence/kb-261013/w3-src-properties.py) — captured 2026-10-13 — sha256 296c4b20dbbd4527eff09db9c1ae8502ed875499b2027f17e6023e22bed598f6
+- [S4] Blender source properties_render.py @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/scripts/startup/bl_ui/properties_render.py (frozen: knowledge/_evidence/kb-261013/w3-src-properties_render.py) — captured 2026-10-13 — sha256 63c17687e849ec46961d4f39519592f68b1e3ab13b87fb0de01350b0652eeb39
+- [S7] Repo: .project-agent.md (headless route, Cycles on macOS) — .project-agent.md — captured 2026-10-13 — sha256 8cde6609763c6f287717b23587c6f542f195e506e1c9fa283f40b3eaf65af82c
+- [S8] Repo: AGENTS.md (failure map, verify ladder) — AGENTS.md — captured 2026-10-13 — sha256 d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7
+- [S10] Blender 5.2 Release Notes: Python API — https://developer.blender.org/docs/release_notes/5.2/python_api/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-2-python_api-.html) — captured 2026-10-13 — sha256 613fac2fa63a96155d40c761571e1a7407c709926ebc2eff96f846343bb1b086
+- [S9] Repo: native build pipeline lessons — docs/native-build-pipeline-lessons.md — captured 2026-10-13 — sha256 f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb

@@ -7,13 +7,33 @@ audience: ai-agent-bpy
 description: Light object data properties, physical wattage reasoning against AgX/Film Exposure, HDRI worlds, light linking, and studio recipes built in bpy.
 loads_with: [render-engines, materials-pbr, compositing-output]
 tags: [lighting, watts, hdri, world, three-point, light-linking, agx, exposure]
+id: lighting
+title: "Lighting"
+when: [light-object-properties, watts-exposure-planning, hdri-world, light-linking, three-point-rig, view-transform-check]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
+
 
 # Lighting
 
-## 1. Mental model
+## Purpose
 
-Blender lights are physical emitters measured in **radiant power (watts)**, not artistic
+Lets an agent set up physically sensible lights in bpy (watts vs distance, emitter size for soft shadows, HDRI worlds, light linking) and judge exposure under the active view transform instead of guessing slider values.
+
+## When to Use / When NOT
+
+- ALLOWED: creating or tuning Light data (`bpy.types.Light`: energy, size, angle, spot, spread, temperature) and world/HDRI lighting
+- ALLOWED: applying light linking and three-point/studio recipes; checking the active view transform before judging exposure
+- NOT ALLOWED: render engine selection, sample counts, denoise, GPU/headless setup — use `render-engines` instead
+- NOT ALLOWED: compositor/File Output/EXR pass wiring — use `compositing-output` instead
+- NOT ALLOWED: PBR material/emission setup — use `materials-pbr` instead
+
+## Core Knowledge Content
+
+### 1. Mental model
+
+Blender lights are physical emitters measured in **radiant power (watts)**, not artistic <!-- ease:source S1 anchor="rna_def_light energy (W) / sun strength" -->
 0-to-1 intensities. A light object is a thin wrapper: `obj.type == 'LIGHT'`, and all the
 interesting properties live on `obj.data` (a `bpy.types.Light`), whose `type` is
 `'POINT' | 'SUN' | 'SPOT' | 'AREA'`. Shadow softness is a function of **emitter size**,
@@ -21,8 +41,8 @@ not a shadow setting — a 0-radius point light physically cannot produce a soft
 
 The image the agent finally looks at is `scene_linear_radiance → view transform → display`.
 Since 4.0 the default view transform is **AgX** (still the default in 5.2, set from
-`BKE_color_managed_view_settings_init(..., "AgX")`), which is a filmic tone map with
-~16.5 stops of latitude and strong highlight desaturation. This means: **a render that
+`BKE_color_managed_view_settings_init(..., "AgX")`), which is a filmic tone map with <!-- ease:source S4 anchor="BKE_color_managed_view_settings_init AgX default at scene.cc:246" -->
+~16.5 stops of latitude and strong highlight desaturation. This means: **a render that <!-- ease:source UNVERIFIED reason="latitude figure; manual displays_views page returned a bot challenge and could not be frozen" -->
 "looks fine" under AgX can be several stops off in scene-linear terms**, and a render that
 looks blown out under `Standard` may be perfectly exposed. An agent evaluating its own
 render must know which transform is active before drawing conclusions.
@@ -31,14 +51,14 @@ Most common agent mistake: reaching for `energy = 5` (a value that reads as "med
 game engines) and then concluding the scene is unlit. In Blender, 5 W at 3 m is nearly
 black.
 
-## 2. Decision first
+### 2. Decision first
 
 | Goal | Light type | Key property |
 |---|---|---|
-| Sun / outdoor key | `SUN` | `energy` in **W/m²**, `angle` (radians) = angular diameter → shadow softness |
-| Bare bulb, candle, small lamp | `POINT` | `energy` in **W**, `shadow_soft_size` = radius |
-| Softbox, window, TV panel, bounce card | `AREA` | `energy` in **W**, `shape` + `size`/`size_y`, `spread` |
-| Stage / practical beam, cone falloff | `SPOT` | `energy` in **W**, `spot_size` (radians), `spot_blend` |
+| Sun / outdoor key | `SUN` | `energy` in **W/m²**, `angle` (radians) = angular diameter → shadow softness <!-- ease:source S1 anchor="sun energy, angle (PROP_ANGLE)" --> |
+| Bare bulb, candle, small lamp | `POINT` | `energy` in **W**, `shadow_soft_size` = radius <!-- ease:source S1 anchor="energy, shadow_soft_size" --> |
+| Softbox, window, TV panel, bounce card | `AREA` | `energy` in **W**, `shape` + `size`/`size_y`, `spread` <!-- ease:source S1 anchor="shape, size_y, spread" --> |
+| Stage / practical beam, cone falloff | `SPOT` | `energy` in **W**, `spot_size` (radians), `spot_blend` <!-- ease:source S1 anchor="spot_size, spot_blend" --> |
 | Whole-scene ambient / reflections / realism | World HDRI | `ShaderNodeTexEnvironment` + `ShaderNodeBackground.Strength` |
 | Flat, engine-independent, no shadows | World `Background` color only | cheap, no light objects |
 
@@ -48,83 +68,83 @@ black.
 | Soft shadows? | Large emitter: area light 1–3× the subject's size, or `SUN.angle` 5–20° |
 | Realistic reflections on a product? | HDRI world (even at low strength) + area lights, not point lights |
 | Fast realtime bake? | Few lights, `SUN` + area, no volumetrics, light probes for indirect |
-| Path traced hero shot? | HDRI + 2–4 area lights, `scene.cycles.use_light_tree = True` |
-| Isolate a rim light to one character? | Light linking (`obj.light_linking.receiver_collection`) |
-| Colour by physical temperature? | `light.use_temperature = True; light.temperature = 3200` |
+| Path traced hero shot? | HDRI + 2–4 area lights, `scene.cycles.use_light_tree = True` <!-- ease:source S11 anchor="use_light_tree (CyclesRenderSettings)" --> |
+| Isolate a rim light to one character? | Light linking (`obj.light_linking.receiver_collection`) <!-- ease:source S2 anchor="rna_def_object light_linking receiver_collection" --> |
+| Colour by physical temperature? | `light.use_temperature = True; light.temperature = 3200` <!-- ease:source S1 anchor="use_temperature, temperature" --> |
 
-## 3. Rules
+### 3. Rules
 
-R1. Set light properties on `obj.data`, never on the object.
+R1. Set light properties on `obj.data`, never on the object. <!-- ease:source S1 anchor="properties defined on Light struct" -->
     Why: `energy`, `color`, `shape` are on `bpy.types.Light`.
     Violation: `AttributeError: 'Object' object has no attribute 'energy'`.
 
-R2. Think in watts and distances, not in 0–1 sliders.
+R2. Think in watts and distances, not in 0–1 sliders. <!-- ease:source UNVERIFIED reason="the 40*d^2 and 10*d^2 W rules are derived from radiometry in section 4.3, not published by Blender" -->
     Why: irradiance falls off as 1/d²; a "reasonable" number depends entirely on distance.
     Rule of thumb (derived below): a **point** light needs ≈ `40 × d²` W and an **area**
     light ≈ `10 × d²` W to put an 18% grey subject at ~0.18 scene-linear.
     Violation: `energy = 5` at 3 m renders essentially black; agent adds more lights and
     ends up with a flat, over-bounced scene.
 
-R3. Shadow softness comes from emitter size, and only from emitter size.
+R3. Shadow softness comes from emitter size, and only from emitter size. <!-- ease:source UNVERIFIED reason="penumbra formula is geometric optics, not a Blender doc statement" -->
     Why: penumbra width ≈ emitter_size × (occluder→receiver distance) / (light→occluder
     distance). There is no "soften shadow" slider on the light.
     Violation: agent raises samples to fix "hard, aliased shadows" and only gets slower.
 
-R4. Know the active view transform before judging your own render.
+R4. Know the active view transform before judging your own render. <!-- ease:source S9 anchor="view transform list: AgX, Khronos PBR Neutral" -->
     Why: AgX (default), Filmic (deprecated legacy), Standard, ACES 1.3/2.0, Khronos PBR
     Neutral and False Color all map the same scene-linear data very differently.
     Violation: agent "fixes" exposure that was already correct, or ships an image that is
     3 stops hot because it was evaluated under AgX's highlight rolloff.
 
-R5. Use `False Color` view transform to measure exposure, not your eyes.
+R5. Use `False Color` view transform to measure exposure, not your eyes. <!-- ease:source UNVERIFIED reason="grey 16-22 percent / red 80-97 percent heat-map bands not confirmed against a frozen primary source" -->
     Why: it is a documented heat map — grey = 16–22% (correct mid-grey), red = 80–97%,
     white = clipped.
     Violation: subjective "looks a bit dark" loops that never converge.
 
-R6. Do not set `world.use_nodes = True` expecting a tree to be created in 5.x.
+R6. Do not set `world.use_nodes = True` expecting a tree to be created in 5.x. <!-- ease:source S5 anchor="world.use_nodes is deprecated and will be removed in 6.0" -->
     Why: deprecated in 5.0 (removal in 6.0); `bpy.data.worlds.new()` already builds the
     default tree.
     Violation: `AttributeError: 'NoneType' object has no attribute 'nodes'` when the code
     also cleared the tree first.
 
-R7. HDRIs must be `Linear Rec.709` (or `Working Space`), never `sRGB`.
+R7. HDRIs must be `Linear Rec.709` (or `Working Space`), never `sRGB`. <!-- ease:source S9 anchor="Linear Rec.709 / working space color spaces" -->
     Why: `.hdr`/`.exr` are already scene-linear; a second decode crushes the sun disc.
     Violation: HDRI looks washed out and produces almost no directional shadow.
 
-R8. Rotate an HDRI with a `Mapping` node fed by `Texture Coordinate → Generated`.
+R8. Rotate an HDRI with a `Mapping` node fed by `Texture Coordinate → Generated`. <!-- ease:source UNVERIFIED reason="node socket list not frozen from a primary source" -->
     Why: `ShaderNodeTexEnvironment` has only a `Vector` input; there is no rotation
     property on the node or on the world.
     Violation: agent looks for `world.rotation` and finds nothing.
 
-R9. `SUN.angle` and `SPOT.spot_size` are in **radians**.
+R9. `SUN.angle` and `SPOT.spot_size` are in **radians**. <!-- ease:source S1 anchor="angle/spot_size PROP_ANGLE" -->
     Why: RNA subtype is `PROP_ANGLE`.
     Violation: `sun.data.angle = 30` gives a 30-radian sun — a fully ambient, shadowless
     scene.
 
-R10. EEVEE ignores several light features Cycles honours.
+R10. EEVEE ignores several light features Cycles honours. <!-- ease:source UNVERIFIED reason="EEVEE limitations manual page returned a bot challenge and could not be frozen" -->
     Why: documented EEVEE limitations — light node trees (`light.use_nodes`), area
     `spread` (Beam Spread), and spot `shadow_soft_size` affecting cone softness.
     Violation: identical scene, wildly different render between engines; agent blames
     the light values.
 
-R11. Light linking needs a real Collection, and per-member `link_state`.
+R11. Light linking needs a real Collection, and per-member `link_state`. <!-- ease:source S3 anchor="link_state enum on CollectionLightLinking" -->
     Why: `obj.light_linking.receiver_collection` points at a Collection whose
     `collection_objects[i].light_linking.link_state` is `'INCLUDE'` or `'EXCLUDE'`.
     Violation: creating the collection but not adding objects → light affects everything
     (empty include list is treated as "no restriction").
 
-R12. Balance a three-point rig by ratio, not by absolute numbers.
+R12. Balance a three-point rig by ratio, not by absolute numbers. <!-- ease:source UNVERIFIED reason="key:fill:rim ratios are cinematography practice, not Blender documentation" -->
     Why: key:fill:rim ≈ 1 : 0.2–0.5 : 0.5–2 is scale-invariant; absolute watts are not.
     Violation: correct-looking ratios destroyed the moment the scene is scaled.
 
-R13. Set `scene.render.film_transparent = True` before compositing over a plate — it does
+R13. Set `scene.render.film_transparent = True` before compositing over a plate — it does <!-- ease:source S14 anchor="film_transparent" -->
     not change lighting, only the alpha of the background.
     Why: the world still contributes light; only its *camera-ray* visibility is dropped.
     Violation: agent removes the world to get alpha and loses all ambient light.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Verified `bpy.types.Light` properties (5.2)
+#### 4.1 Verified `bpy.types.Light` properties (5.2)
 
 ```python
 L = bpy.data.lights["Key"]
@@ -166,7 +186,7 @@ L.shadow_filter_radius; L.shadow_maximum_resolution
 L.use_shadow_jitter; L.shadow_jitter_overblur; L.use_absolute_resolution
 ```
 
-### 4.2 Creating lights without operators
+#### 4.2 Creating lights without operators
 
 ```python
 import bpy, math
@@ -201,7 +221,7 @@ def aim_at(obj, target):
     obj.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
 ```
 
-### 4.3 Physical intensity reasoning
+#### 4.3 Physical intensity reasoning
 
 For a Lambertian surface of albedo ρ, the scene-linear pixel value the renderer stores is
 its outgoing radiance `L = ρ · E / π`, where `E` is irradiance.
@@ -256,7 +276,7 @@ sc.cycles.film_exposure = 1.0            # leave at 1.0 and use view_settings.ex
 `scene.cycles.film_exposure` is a Cycles-only linear multiplier. Prefer the former so the
 same number works for EEVEE and for the compositor.
 
-### 4.4 Colour management the agent must check before judging a render
+#### 4.4 Colour management the agent must check before judging a render
 
 ```python
 vs = bpy.context.scene.view_settings
@@ -266,7 +286,7 @@ print(ds.display_device, vs.view_transform, vs.look, vs.exposure, vs.gamma)
 vs.view_transform = 'AgX'          # DEFAULT in 4.0-5.2 (verified in 5.2 source)
 # Other 5.2 views: 'Standard', 'Filmic' (deprecated legacy), 'Filmic Log',
 #   'ACES 1.3', 'ACES 2.0', 'Khronos PBR Neutral', 'False Color', 'Raw'
-vs.look = 'None'                   # e.g. 'AgX - Punchy', 'AgX - Medium Contrast'
+vs.look = 'None'                   # e.g. 'AgX - Punchy', 'AgX - Base Contrast'
 vs.exposure = 0.0
 vs.gamma = 1.0
 vs.use_white_balance = False       # 4.5+: white_balance_temperature / _tint
@@ -283,7 +303,7 @@ print(vs.bl_rna.properties['view_transform'].enum_items.keys())
 print(vs.bl_rna.properties['look'].enum_items.keys())
 ```
 
-### 4.5 Three-point lighting rig
+#### 4.5 Three-point lighting rig
 
 ```python
 import math
@@ -308,7 +328,7 @@ def three_point(target=(0, 0, 1), key_w=400, fill_ratio=0.25, rim_ratio=1.5, dis
 Ratios, not watts, are the contract: key 1.0, fill 0.2–0.5, rim 0.5–2.0.
 Because irradiance is 1/d², `energy` must scale with `dist**2` when the rig is resized.
 
-### 4.6 HDRI / world lighting
+#### 4.6 HDRI / world lighting
 
 ```python
 import bpy, math
@@ -363,7 +383,7 @@ w.cycles_visibility.camera = False                 # Cycles: world invisible to 
 w.cycles.use_shadows = True                        # 5.2: world cast-shadow toggle
 ```
 
-### 4.7 Light linking (added 4.0; Cycles + EEVEE in 5.x)
+#### 4.7 Light linking (added 4.0; Cycles + EEVEE in 5.x)
 
 ```python
 def link_light_to(light_obj, receivers, exclude=()):
@@ -386,7 +406,7 @@ Semantics (from the manual): only includes → light affects **only** those;
 only excludes → light affects everything **except** those; both → includes minus excludes.
 Emissive mesh objects support light linking in Cycles only; Grease Pencil not at all.
 
-### 4.8 Recipes
+#### 4.8 Recipes
 
 ```python
 # --- Product / studio: HDRI fill + large softbox key + white bounce card -------------
@@ -411,7 +431,7 @@ sun.data.energy = 1.2
 sun.data.angle = math.radians(20.0)               # huge angular size -> no hard shadow
 ```
 
-### 4.9 Lighting for realtime bake vs path traced
+#### 4.9 Lighting for realtime bake vs path traced
 
 ```python
 sc = bpy.context.scene
@@ -437,13 +457,13 @@ Practical differences that change how you *build* the rig:
   far less noisy than dozens of tiny bright ones.
 - EEVEE ignores area `spread`, light node trees, and spot radius-driven cone softness.
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
 | `AttributeError: 'Object' object has no attribute 'energy'` | wrote to the object, not `obj.data` | `obj.data.energy = ...` |
 | Scene renders almost black with several lights | watts far too low for the distance (1/d²) | use `≈40·d²` W (point) / `≈10·d²` W (area) |
-| Whole render blown out white | real-world watts (1000 W/m² sun) with no exposure comp | `scene.view_settings.exposure = -8.3` |
+| Whole render blown out white | real-world watts (1000 W/m² sun) with no exposure comp | `scene.view_settings.exposure = -8.3` <!-- ease:source UNVERIFIED reason="exposure -8.3 is derived from a 1000 W/m2 sun, not published" --> |
 | Shadows are hard and aliased no matter the sample count | `shadow_soft_size == 0` / `SUN.angle ≈ 0` | enlarge the emitter |
 | Scene has no shadows at all and looks flat | `sun.data.angle` set in degrees (e.g. `30` = 30 rad) | `math.radians(...)` |
 | Spot cone fills the whole frame | `spot_size` set in degrees | `spot_size = math.radians(45)` |
@@ -451,21 +471,21 @@ Practical differences that change how you *build* the rig:
 | HDRI is washed out and casts no directional shadow | `.hdr` loaded as `'sRGB'` | `img.colorspace_settings.name = 'Linear Rec.709'` |
 | `AttributeError: 'NoneType' object has no attribute 'nodes'` on world | `world.use_nodes` set expecting tree creation (no-op in 5.x) | use the tree from `bpy.data.worlds.new()` or rebuild nodes explicitly |
 | No way found to rotate the HDRI | looked for a property; there is none | `TexCoord.Generated → Mapping.Rotation → Environment.Vector` |
-| Light linking collection created but light still hits everything | objects added to the collection without `link_state` | set `collection_objects[name].light_linking.link_state = 'INCLUDE'` |
+| Light linking collection created but light still hits everything | objects added to the collection without `link_state` | set `collection_objects[name].light_linking.link_state = 'INCLUDE'` <!-- ease:source S3 anchor="link_state" --> |
 | Same scene looks completely different in EEVEE vs Cycles | area `spread`, light node tree, or spot softness — all EEVEE-unsupported | remove reliance on those, or accept engine divergence |
 | Render "looks correct" but downstream comp says it is 3 stops hot | judged under AgX's highlight rolloff | verify with `'False Color'` or `'Standard'` |
 | Background transparent but scene also went dark | world deleted instead of `film_transparent` | `scene.render.film_transparent = True`, keep the world |
-| Colour temperature has no effect | `use_temperature` left False | `light.use_temperature = True` before setting `temperature` |
+| Colour temperature has no effect | `use_temperature` left False | `light.use_temperature = True` before setting `temperature` <!-- ease:source S1 anchor="use_temperature" --> |
 | EEVEE indirect bounce missing in a room interior | no light probe volume baked | add a `'VOLUME'` light probe and bake the probe cache |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
 | Engine | EEVEE | Cycles | EEVEE | Cycles | Workbench |
 | Primary rig | 1 SUN + HDRI | 3-point AREA + HDRI | 2 AREA, high key | HDRI + 2–3 AREA softboxes | studio (Workbench) |
 | Key light type | AREA | AREA | AREA | AREA (`RECTANGLE`) | n/a |
-| Key energy @2 m | 100–200 W | 150–400 W | 200–600 W | 200–500 W | n/a |
+| Key energy @2 m | 100–200 W | 150–400 W | 200–600 W | 200–500 W | n/a <!-- ease:source UNVERIFIED reason="ranges are practitioner starting values" --> |
 | Key size | 0.5–1 m | 1–2 m | 1–2 m | 1.5–3 m (very soft) | n/a |
 | Fill : key ratio | 0.4 | 0.25 | 0.5 | 0.3 | n/a |
 | Rim : key ratio | 0.5 | 1.5 | 1.0 | 1.0 | n/a |
@@ -473,15 +493,15 @@ Practical differences that change how you *build* the rig:
 | SUN angle | 2–5° | 0.526–3° | — | 0.526° (crisp) | — |
 | HDRI strength | 0.3–0.6 | 0.5–1.0 | 0–0.3 | 0.5–1.0 | 0 |
 | Colour temperature | 6500 K flat | key 5600 / fill 6500 / rim 4500 | stylised RGB | 5600 K neutral | n/a |
-| `view_transform` | `AgX` | `AgX` | `Standard` (flat graphics) or `AgX` | `Khronos PBR Neutral` | `Standard` |
-| `look` | `None` | `AgX - Medium Contrast` | `None` | `None` | `None` |
+| `view_transform` | `AgX` | `AgX` | `Standard` (flat graphics) or `AgX` | `Khronos PBR Neutral` | `Standard` <!-- ease:source S9 anchor="view transform names" --> |
+| `look` | `None` | `AgX - Base Contrast` | `None` | `None` | `None` <!-- ease:source S15 anchor="looks: AgX - Base Contrast / Medium High Contrast exist; 'AgX - Medium Contrast' does not (Medium Contrast is a Filmic look)" --> |
 | `view_settings.exposure` | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |
 | `film_transparent` | often True | False | True | True | False |
 | Light linking used | rarely | yes (rim on character) | yes (per-element) | yes (specular kickers) | no |
 | Volumetrics | off | sparingly | on for beams | off | off |
 | Shadow softness source | light size | light size | light size | light size | n/a |
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `assert any(o.type=='LIGHT' for o in bpy.context.view_layer.objects) or bpy.context.scene.world` — there is at least one light source in the render.
 - [ ] `assert all(o.data.energy > 0 for o in bpy.data.objects if o.type=='LIGHT')` — no zero-power lights.
@@ -497,8 +517,7 @@ Practical differences that change how you *build* the rig:
 - [ ] Render once with `view_transform='Standard'`: confirms the scene-linear data is sane independently of AgX's rolloff.
 - [ ] Numeric exposure check without a human: `import numpy as np; px = np.array(bpy.data.images['Render Result'].pixels[:])` is unreliable for Render Result — instead render to an EXR and read it back, then `assert 0.05 < np.median(rgb) < 0.5`.
 
-## 8. Sources
-
+### 8. Source notes and unverified items (legacy list)
 - [Light Objects (types, Power of Lights tables) — Blender Manual](https://docs.blender.org/manual/en/latest/render/lights/light_object.html)
 - [Light Linking — Blender Manual](https://docs.blender.org/manual/en/latest/render/lights/light_linking.html)
 - [Color Management: Displays and Views (AgX, Filmic, Standard, False Color, Look, Exposure) — Blender Manual](https://docs.blender.org/manual/en/latest/render/color_management/displays_views.html)
@@ -518,3 +537,25 @@ Practical differences that change how you *build* the rig:
 - Whether Blender's spot `spot_size` redistributes power (narrower cone = brighter) with
   `normalize` enabled is `[UNVERIFIED]` against primary docs. Determine empirically:
   render a flat plane, halve `spot_size`, compare median pixel value.
+
+## Failure Modes (Mandatory)
+
+- **Scene renders almost black although several lights exist** — cause: `energy` far too low for the light distance (inverse-square), or no light linked into the view layer — fix: scale watts with distance (derived rule in 4.3), assert `light_obj.name in view_layer.objects`; repo failure map lists black render causes (no light, camera inside a wall, stale persistent_data) <!-- ease:source S12 anchor="Failure map: Black render / black silhouette" -->.
+- **Sun gives a shadowless, flat scene** — cause: `sun.data.angle = 30` was set in degrees but the property is radians — fix: `math.radians(30)` <!-- ease:source S1 anchor="angle is PROP_ANGLE" -->.
+- **Same scene differs wildly between EEVEE and Cycles** — cause: EEVEE does not honour light node trees / area spread / some spot softness; repo batch route on macOS is Cycles and does not rely on EEVEE <!-- ease:source S13 anchor="Headless: blender -b ... Cycles ... do not rely on EEVEE" --> — fix: validate lighting in Cycles for batch output, treat EEVEE as preview only.
+- **Exposure judged fine from an AgX PNG, downstream shows hot highlights** — cause: view transform not checked before judging — fix: render EXR or `False Color`/`Standard` and compare (R4, R5).
+- **HDRI looks washed out and casts no directional shadow** — cause: `.hdr` loaded as sRGB, decoded twice — fix: `colorspace_settings.name = 'Linear Rec.709'`.
+
+## Sources
+
+- [S1] Blender source rna_light.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_light.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_light.cc) — captured 2026-10-13 — sha256 3427611cfb104a38a792f6360f2d335892aeb7a297d3a9e5840a8570266e730f
+- [S2] Blender source rna_object.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_object.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_object.cc) — captured 2026-10-13 — sha256 de0c7ab9abe8127dd0c534e94fec469d21fdca7d33d6991c61c1c7667eee9886
+- [S3] Blender source rna_collection.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_collection.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_collection.cc) — captured 2026-10-13 — sha256 5925d45e651595ff86cd033bc4300ec4451c7cf3f5a6145e743415aa33341f62
+- [S4] Blender source scene.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/blenkernel/intern/scene.cc (frozen: knowledge/_evidence/kb-261013/w3-src-scene.cc) — captured 2026-10-13 — sha256 f34e990993d50cda50994a0825856ef6b7fa85a7e354e0ba1e1339dc2aca1290
+- [S5] Blender 5.0 Release Notes: Python API — https://developer.blender.org/docs/release_notes/5.0/python_api/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-0-python_api-.html) — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff
+- [S9] Color Spaces — Blender Manual — https://docs.blender.org/manual/en/latest/render/color_management/color_spaces.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-manual-en-latest-render-color_management-color_spaces.html) — captured 2026-10-13 — sha256 8176210071982a904cbac1b74b78f09f56538aefc69fb1e8131ddf8f30e2ee0d
+- [S11] Blender source properties.py (Cycles) @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/intern/cycles/blender/addon/properties.py (frozen: knowledge/_evidence/kb-261013/w3-src-properties.py) — captured 2026-10-13 — sha256 296c4b20dbbd4527eff09db9c1ae8502ed875499b2027f17e6023e22bed598f6
+- [S12] Repo: AGENTS.md (failure map: black render) — AGENTS.md — captured 2026-10-13 — sha256 d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7
+- [S13] Repo: .project-agent.md (macOS batch route uses Cycles, not EEVEE) — .project-agent.md — captured 2026-10-13 — sha256 8cde6609763c6f287717b23587c6f542f195e506e1c9fa283f40b3eaf65af82c
+- [S14] Blender source rna_scene.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_scene.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_scene.cc) — captured 2026-10-13 — sha256 54b6e437b4fae8baaffaf60c97516d29c6f643d37c73d2c695e1a71c1f36a743
+- [S15] Blender OCIO config.ocio @ v5.2.0 (views, looks) — https://raw.githubusercontent.com/blender/blender/v5.2.0/release/datafiles/colormanagement/config.ocio (frozen: knowledge/_evidence/kb-261013/w3-src-config.ocio) — captured 2026-10-13 — sha256 47a7d83e79c1d21f49ba6c505efe311da723471688c614b5c366e1da7eb8ea3a
