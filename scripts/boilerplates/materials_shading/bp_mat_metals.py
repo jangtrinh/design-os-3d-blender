@@ -11,7 +11,7 @@ Target: Blender 5.2 LTS (Zero use_nodes deprecation, safe socket access).
 
 from __future__ import annotations
 import bpy
-from typing import Tuple, Dict, Any
+from typing import Tuple, Dict, Any, Optional
 
 
 # Complex Refractive Index & Reflectance Data (at 550nm green light)

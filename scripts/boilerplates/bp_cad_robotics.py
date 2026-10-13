@@ -13,7 +13,7 @@ import bpy
 import bmesh
 import math
 from mathutils import Vector, Matrix
-from typing import Dict, Tuple, Optional
+from typing import Dict, Tuple, Optional, Any
 
 
 # ISO 4762 Metric Cap Screw standard dimensions (meters)

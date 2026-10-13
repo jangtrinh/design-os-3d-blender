@@ -9,9 +9,20 @@ import sys
 import tempfile
 
 MODULES = Path(__file__).resolve().parent
-for module in ('knowledge-catalog.py', 'knowledge-query.py'):
-    globals().update({k: v for k, v in runpy.run_path(str(MODULES / module)).items()
-                      if not k.startswith('__')})
+_catalog_mod = runpy.run_path(str(MODULES / 'knowledge-catalog.py'))
+_query_mod = runpy.run_path(str(MODULES / 'knowledge-query.py'))
+
+# Re-export catalog and query symbols for downstream pipeline and tests
+globals().update({k: v for k, v in _catalog_mod.items() if not k.startswith('__')})
+globals().update({k: v for k, v in _query_mod.items() if not k.startswith('__')})
+
+# Explicit bindings for static analysis and IDEs
+OUTPUT = _catalog_mod['OUTPUT']
+make_catalog = _catalog_mod['make_catalog']
+route = _query_mod['route']
+search = _query_mod['search']
+show = _query_mod['show']
+
 DEFAULT_ROOT = MODULES.parent
 
 
