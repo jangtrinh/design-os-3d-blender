@@ -7,17 +7,36 @@ audience: ai-agent-bpy
 description: Verified 5.2 operator names and arguments for glTF, FBX, USD, OBJ, STL, PLY, Alembic, plus a target-to-settings decision table.
 loads_with: [scene-organization, optimization-realtime, 3d-printing]
 tags: [gltf, fbx, usd, obj, stl, alembic, export, interchange, draco]
+id: export-interchange
+title: "Export & Interchange"
+when: [export-gltf, export-fbx, export-usd, export-stl-obj-ply, export-alembic, verify-export-artifact]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
 
 # Export & Interchange
 
-## 1. Mental model
+## Purpose
+
+Give the real Blender 5.2 operator names and argument lists for glTF, FBX, USD, OBJ, STL, PLY and Alembic, a target-to-settings decision table, and artefact checks that prove an export actually contains geometry. All operator signatures below were machine-compared against the 5.2 API docs on 2026-10-13; per-engine (Unity/Unreal/Godot) settings are practice, not Blender documentation.
+
+## When to Use / When NOT
+
+- ALLOWED: choosing a format/operator for a delivery target and writing a background-safe export call with a verification step.
+- ALLOWED: diagnosing an export that succeeded but is empty, mis-scaled, or missing animation/materials.
+- NOT ALLOWED: printed-part STL specifics (unit contract, manifold audit, wall limits, 3D Print Toolbox) — use `3d-printing`; production DFAM rules — use `dfam-3dprinting-production`.
+- NOT ALLOWED: final media/render packaging, video and receipts — use `native-render-delivery`.
+- NOT ALLOWED: claiming an exported file passed a manufacturing gate — gate evidence comes from `scripts/production-gate.py` roundtrip checks (see `geometry-diagnostic-workflow`).
+
+## Core Knowledge Content
+
+### 1. Mental model
 
 Blender's IO layer was rebuilt between 4.2 and 5.0 and the operator namespace no
 longer matches what most models remember. OBJ, STL, PLY, USD, Alembic and (since
 5.0) FBX **import** are C++ operators in `bpy.ops.wm.*`. Only glTF and FBX
-**export** are still Python add-ons, and they live in `bpy.ops.export_scene.*`.
-Collada was removed entirely in 5.0. Nothing exports 3MF natively.
+**export** are still Python add-ons, and they live in `bpy.ops.export_scene.*`. <!-- ease:source S1 anchor="export_scene lists fbx and gltf operators; S2 lists C++ wm exporters" -->
+Collada was removed entirely in 5.0. Nothing exports 3MF natively. <!-- ease:source S3 anchor="Collada (.dae) import & export has been removed" -->
 
 An export is a lossy projection of Blender's node-graph world onto a fixed
 schema. The agent's job is to decide *what is allowed to be lost* before writing
@@ -26,12 +45,12 @@ hierarchy, skinning and takes but mangles bones and units; USD keeps stage
 structure and instancing; OBJ/STL/PLY keep triangles and nothing else; Alembic
 keeps baked, per-frame geometry.
 
-The most common agent failure is calling `bpy.ops.export_scene.obj` (removed in
+The most common agent failure is calling `bpy.ops.export_scene.obj` (removed in <!-- ease:source UNVERIFIED reason="operator removal versions (OBJ export_scene.obj in 4.0, STL export_mesh.stl in 4.2) not re-checked: 4.x release-note pages returned HTTP 403 on 2026-10-13" -->
 4.0) or `bpy.ops.export_mesh.stl` (removed in 4.2) and then hallucinating a fix.
 Second most common: exporting with `use_selection=True` in `--background`, where
 nothing is selected, producing a valid but empty file with no traceback.
 
-## 2. Decision first
+### 2. Decision first
 
 | Target consumer | Format | Operator (5.2) | Non-obvious settings |
 |---|---|---|---|
@@ -49,6 +68,16 @@ nothing is selected, producing a valid but empty file with no traceback.
 | Anything Collada | **impossible in 5.x** | removed in 5.0 | convert via glTF or FBX |
 | 3MF | not native | extension `ThreeMF_io` (`bl_ext.blender_org.ThreeMF_io`) | see 3d-printing.md |
 
+<!-- ease:source S8 anchor="extension id ThreeMF_io, 3MF Import/Export, blender_version_min 4.2.0; no 3MF operator in S2" -->
+
+<!-- ease:source S3 anchor="Collada removed in 5.0" -->
+
+<!-- ease:source S2 anchor="usd_export export_materials, generate_preview_surface, root_prim_path, convert_scene_units" -->
+
+<!-- ease:source UNVERIFIED reason="Unity/Unreal/Godot/Maya per-engine settings are practice; Blender docs give mechanism only" -->
+
+<!-- ease:source S1 anchor="gltf export_format, export_yup, export_apply, Draco options" -->
+
 Operator name map — memorise this, it is what LLMs get wrong:
 
 | Format | Export | Import | Provider |
@@ -64,55 +93,63 @@ Operator name map — memorise this, it is what LLMs get wrong:
 | BVH | `bpy.ops.export_anim.bvh` | `bpy.ops.import_anim.bvh` | core add-on `io_anim_bvh` |
 | Collada | **removed in 5.0** | **removed in 5.0** | — |
 
-## 3. Rules
+<!-- ease:source UNVERIFIED reason="BVH operator names and C++-since-version notes (3.3/3.4, 4.2, 4.0) not re-checked" -->
 
-R1. Resolve the operator's real argument list at runtime before trusting any remembered name.
+<!-- ease:source S2 anchor="wm.obj_export/obj_import, stl_export/stl_import, ply, usd, alembic present" -->
+
+<!-- ease:source S3 anchor="C++ FBX importer is the default; Python importer legacy" -->
+
+<!-- ease:source S1 anchor="gltf and fbx are in bpy.ops.export_scene" -->
+
+### 3. Rules
+
+R1. Resolve the operator's real argument list at runtime before trusting any remembered name. <!-- ease:source S4 anchor="attr_import_mode renamed property_import_mode" --> <!-- ease:source UNVERIFIED reason="export_textures -> export_textures_mode and visible_objects_only removal for USD are not in the fetched 5.0 notes; current names confirmed in S2" -->
     Why: exporter arguments were added, renamed and removed in 4.2, 5.0 and 5.2 (`export_textures` → `export_textures_mode`, `attr_import_mode` → `property_import_mode`, `visible_objects_only` removed).
     Violation: `TypeError: Converting py args to operator properties: WM_OT_usd_export.export_textures: keyword "export_textures" unrecognized`.
 
-R2. Never export by selection in background mode; export by collection or by explicit visibility.
+R2. Never export by selection in background mode; export by collection or by explicit visibility. <!-- ease:source UNVERIFIED reason="empty-selection behaviour in --background observed in practice; no frozen receipt" -->
     Why: `--background` starts with an empty selection and `use_selection=True` then silently writes an empty file.
     Violation: a 900-byte `.glb` with `"meshes": []` and exit code 0.
 
-R3. Enable the IO add-on defensively before calling `export_scene.*`.
+R3. Enable the IO add-on defensively before calling `export_scene.*`. <!-- ease:source UNVERIFIED reason="add-on enablement behaviour under --factory-startup not re-verified in this pass" -->
     Why: `io_scene_gltf2`/`io_scene_fbx` are user-preference driven; a headless run with a stripped config, or `--factory-startup` on a custom build, may not have them enabled.
     Violation: `AttributeError: module 'bpy.ops.export_scene' has no attribute 'gltf'`.
 
-R4. Apply object scale and rotation before FBX/USD export unless you deliberately want them in the node transforms.
+R4. Apply object scale and rotation before FBX/USD export unless you deliberately want them in the node transforms. <!-- ease:source S1 anchor="apply_scale_options: how to apply custom and units scalings; bake_space_transform" -->
     Why: FBX bakes Blender's Z-up→Y-up conversion into either the node transforms or the FBX unit scale depending on `apply_scale_options`/`bake_space_transform`; unapplied scale multiplies with that.
     Violation: a 1x model that is 0.01x in Unreal, or a mesh rotated -90° on X after import.
 
-R5. Use `export_apply=True` (glTF) / `use_mesh_modifiers=True` (FBX) only when you have already decided modifiers should be destructive.
+R5. Use `export_apply=True` (glTF) / `use_mesh_modifiers=True` (FBX) only when you have already decided modifiers should be destructive. <!-- ease:source UNVERIFIED reason="export_apply dropping shape keys is behavioural; S1 documents the flag only" -->
     Why: `export_apply` evaluates the depsgraph, which drops shape keys on modified meshes.
     Violation: morph targets missing from the `.glb`; `"targets"` array absent on every primitive.
 
-R6. For glTF animation, put every action on its own NLA track and use `export_animation_mode='ACTIONS'`.
+R6. For glTF animation, put every action on its own NLA track and use `export_animation_mode='ACTIONS'`. <!-- ease:source S7 anchor="action exported if active or stashed to an NLA track; track name becomes animation name" --> <!-- ease:source UNVERIFIED reason="'since 4.4 slotted actions, merged by action' version claim not frozen" -->
     Why: since 4.4 slotted actions, tracks are merged **by action**, not by track name; loose actions that are neither active nor stashed are simply not exported.
     Violation: `.glb` contains one animation named "Animation" or none at all.
 
-R7. Never combine `global_scale` and `use_scene_unit` in the STL/OBJ exporters.
+R7. Never combine `global_scale` and `use_scene_unit` in the STL/OBJ exporters. <!-- ease:source S2 anchor="stl_export use_scene_unit: apply scene unit scale to exported data; global_scale range [1e-06, 1e+06]" -->
     Why: they multiply. `use_scene_unit=True` already converts via `scene.unit_settings.scale_length`.
     Violation: a 1,000,000x model; slicer reports build volume overflow.
 
-R8. Set `evaluation_mode='RENDER'` for USD/Alembic/STL when the modifier render level differs from the viewport level.
+R8. Set `evaluation_mode='RENDER'` for USD/Alembic/STL when the modifier render level differs from the viewport level. <!-- ease:source S2 anchor="obj_export export_eval_mode default DAG_EVAL_VIEWPORT; stl_export evaluation_mode default DAG_EVAL_RENDER; usd/alembic RENDER" -->
     Why: the default for USD/Alembic is `'RENDER'` but STL's is also `'DAG_EVAL_RENDER'` while OBJ defaults to `'DAG_EVAL_VIEWPORT'` — the inconsistency is real.
     Violation: OBJ exports a subdivision level 1 cage instead of the level 3 render mesh.
 
-R9. Write to an absolute path and verify the file exists and is non-trivial afterwards.
+R9. Write to an absolute path and verify the file exists and is non-trivial afterwards. <!-- ease:source UNVERIFIED reason="relative-path resolution in unsaved background sessions is behavioural, not documented" -->
     Why: `//`-relative paths resolve against the current `.blend`, which is unsaved (empty) in a fresh background session.
     Violation: file written to CWD or `/`; `os.path.exists()` False with no traceback.
 
-R10. Prefer `export_materials='EXPORT'` + `export_image_format='AUTO'` for glTF and let the exporter transcode, unless you have already packed ORM textures.
+R10. Prefer `export_materials='EXPORT'` + `export_image_format='AUTO'` for glTF and let the exporter transcode, unless you have already packed ORM textures. <!-- ease:source S7 anchor="metallic in B, roughness in G; images copied verbatim only when they match, otherwise adapted with longer export time" -->
     Why: the exporter can copy an image verbatim only when the node graph matches the glTF packing convention (R in occlusion, G in roughness, B in metallic); otherwise it re-bakes, slowly.
     Violation: exports take minutes and the log shows image conversion warnings.
 
-R11. Triangulate explicitly for realtime targets rather than relying on the importer.
+R11. Triangulate explicitly for realtime targets rather than relying on the importer. <!-- ease:source UNVERIFIED reason="cross-engine triangulation differences are practice" -->
     Why: n-gon triangulation differs between exporters and engines, which changes lightmap seams and normal-map tangents.
     Violation: shading seams that appear only in the engine, not in Blender.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Discover a version's real arguments (do this before writing an export call)
+#### 4.1 Discover a version's real arguments (do this before writing an export call)
 
 ```python
 import bpy
@@ -137,11 +174,11 @@ print(bpy.ops.export_scene.gltf.idname(), bpy.ops.export_scene.gltf.bl_options)
 print(bpy.ops.export_scene.gltf.__doc__)
 ```
 
-`get_rna_type()`, `idname()`, `idname_py()`, `poll()` and `bl_options` are all
+`get_rna_type()`, `idname()`, `idname_py()`, `poll()` and `bl_options` are all <!-- ease:source UNVERIFIED reason="BPyOpFunction methods (get_rna_type, idname, poll, bl_options) not re-checked against the bpy.ops doc page this pass" -->
 methods/attributes on the operator callable itself (`BPyOpFunction`). This is
 the only reliable way to know what a given build accepts.
 
-### 4.2 Enable the IO add-ons (bundled core add-ons keep plain module names)
+#### 4.2 Enable the IO add-ons (bundled core add-ons keep plain module names)
 
 ```python
 import bpy, addon_utils
@@ -156,7 +193,7 @@ assert ensure_addon("io_scene_gltf2")
 assert ensure_addon("io_scene_fbx")
 ```
 
-In 5.2 the bundled add-ons live in `scripts/addons_core/` and are addressed by
+In 5.2 the bundled add-ons live in `scripts/addons_core/` and are addressed by <!-- ease:source UNVERIFIED reason="addons_core module list and default repository names (blender_org, user_default, system) not re-checked" -->
 their **plain module name**, not a `bl_ext.*` path: `io_scene_gltf2`,
 `io_scene_fbx`, `io_anim_bvh`, `io_curve_svg`, `io_mesh_uv_layout`,
 `node_wrangler`, `pose_library`, `rigify`, `hydra_storm`, `bl_pkg`,
@@ -175,9 +212,9 @@ bpy.ops.extensions.package_install(repo_index=0, pkg_id="print3d_toolbox",
                                    enable_on_install=True)
 ```
 
-### 4.3 glTF 2.0 export — full 5.2 signature, grouped
+#### 4.3 glTF 2.0 export — full 5.2 signature, grouped
 
-Verified `bpy.ops.export_scene.gltf` keyword arguments (5.2):
+Verified `bpy.ops.export_scene.gltf` keyword arguments (5.2): <!-- ease:source S1 anchor="gltf signature compared programmatically: all 110 properties match" -->
 
 ```text
 FILE      filepath check_existing filter_glob export_format ui_tab export_copyright
@@ -226,7 +263,7 @@ ANIM      export_animations export_animation_mode export_merge_animation
 LIGHTING  export_import_convert_lighting_mode
 ```
 
-Enum values verified from the add-on source:
+Enum values verified from the add-on source: <!-- ease:source S1 anchor="export_format default empty string; export_animation_mode default ACTIONS; export_merge_animation default ACTION; meshopt default EXT_meshopt_compression" -->
 
 - `export_format`: `'GLB'` (default), `'GLTF_SEPARATE'`, and `'GLTF_EMBEDDED'`
   only when enabled in the add-on preferences. It is a dynamic enum, so the RNA
@@ -280,11 +317,11 @@ def export_glb(path, collection=None, draco=True, animations=False):
     return assert_valid_glb(kw["filepath"])   # defined in the next block
 ```
 
-**Do not gate on file size.** A correct single-cube GLB is far below any "looks big
+**Do not gate on file size.** A correct single-cube GLB is far below any "looks big <!-- ease:source UNVERIFIED reason="1120 B / 1732 B / 936 B sizes are a local measurement (2026-09-06) with no frozen receipt" -->
 enough" threshold: measured on 5.2.0 with exactly the kwargs above, one default cube is
 **1120 B with Draco / 1732 B plain** (audit-02 measured 936 B / 1400 B for its own
 variant of the scene). The pre-2026-09 gate here was `assert getsize(...) > 2048`, which
-reports a perfectly good small asset as a failure. Parse the container instead — it is
+reports a perfectly good small asset as a failure. Parse the container instead — it is <!-- ease:source S6 anchor="GLB header magic 0x46546C67 (glTF), version, length; first chunk type 0x4E4F534A (JSON)" -->
 cheap, it catches truncation and half-written files, and it proves geometry arrived:
 
 ```python
@@ -306,7 +343,7 @@ def assert_valid_glb(path, min_meshes=1):
     return size, n
 ```
 
-Verified 2026-09-06 on 5.2.0: passes on both the Draco and the plain single-cube export
+Verified 2026-09-06 on 5.2.0: passes on both the Draco and the plain single-cube export <!-- ease:source UNVERIFIED reason="local run result, no frozen receipt" -->
 (`(1120, 1)` / `(1732, 1)`); on a file truncated to half its length it fails with
 `header length 1732 != file size 866`. For `.gltf` (separate JSON) the same check is
 `json.load(open(path))` plus the same `meshes` assertion — there is no binary header.
@@ -316,9 +353,9 @@ Stronger still, when you can afford ~0.5 s: re-import into a fresh
 `collection=` names a collection to export without touching selection — the
 robust background-safe entry point.
 
-### 4.4 What glTF keeps and what it silently drops
+#### 4.4 What glTF keeps and what it silently drops
 
-Principled BSDF → glTF metal/rough mapping (verified against the 5.2 manual):
+Principled BSDF → glTF metal/rough mapping (verified against the 5.2 manual): <!-- ease:source S7 anchor="Principled BSDF to glTF material mapping" -->
 
 | Principled input | glTF | Survives? |
 |---|---|---|
@@ -350,7 +387,13 @@ Principled BSDF → glTF metal/rough mapping (verified against the 5.2 manual):
 | Lights | `KHR_lights_punctual` (needs `export_lights=True`) | Sun/Point/Spot only, Area dropped |
 | Animated material / light properties | `KHR_animation_pointer` (needs `export_pointer_animation=True`) | limited runtime support |
 
-Compression choice:
+<!-- ease:source S7 anchor="point, spot and directional (Sun) only; Area and World ignored" -->
+
+<!-- ease:source S7 anchor="IOR defaults to 1.5 when KHR_materials_ior is not set" -->
+
+<!-- ease:source S5 anchor="KHR_materials_dispersion and KHR_materials_iridescence export added in 5.2" -->
+
+Compression choice: <!-- ease:source S5 anchor="EXT/KHR_meshopt_compression export added in 5.2" -->
 
 | Method | Extension | When |
 |---|---|---|
@@ -358,7 +401,7 @@ Compression choice:
 | meshopt | `EXT_meshopt_compression` / `KHR_meshopt_compression` | good ratio, very fast decode, widest modern support (5.2 added export) |
 | gltfpack | external `gltfpack` binary via `export_use_gltfpack=True` | full pipeline optimisation (quantisation + meshopt); requires the binary on PATH |
 
-### 4.5 FBX export — full 5.2 signature and the axis/scale problem
+#### 4.5 FBX export — full 5.2 signature and the axis/scale problem
 
 ```python
 bpy.ops.export_scene.fbx(
@@ -384,11 +427,11 @@ bpy.ops.export_scene.fbx(
     axis_forward='-Z', axis_up='Y')
 ```
 
-`axis_forward`/`axis_up` ∈ `{'X','Y','Z','-X','-Y','-Z'}`. Blender is Y-forward,
+`axis_forward`/`axis_up` ∈ `{'X','Y','Z','-X','-Y','-Z'}`. Blender is Y-forward, <!-- ease:source S1 anchor="fbx axis_forward default -Z, axis_up default Y" -->
 Z-up. The FBX default `-Z` forward / `Y` up is what Maya, Unity and Unreal
 expect — **do not "fix" it**.
 
-`apply_scale_options` (verified enum + semantics):
+`apply_scale_options` (verified enum + semantics): <!-- ease:source S1 anchor="FBX_SCALE_NONE, FBX_SCALE_UNITS, FBX_SCALE_CUSTOM, FBX_SCALE_ALL" -->
 
 | Value | Custom scale goes to | Unit scale goes to | Use when |
 |---|---|---|---|
@@ -397,7 +440,7 @@ expect — **do not "fix" it**.
 | `'FBX_SCALE_CUSTOM'` ("FBX Custom Scale") | FBX global scale | object transforms | rarely |
 | `'FBX_SCALE_ALL'` ("FBX All") | FBX global scale | FBX global scale | Unity, which reads the FBX unit header |
 
-Armature/leaf-bone problems and their fixes:
+Armature/leaf-bone problems and their fixes: <!-- ease:source UNVERIFIED reason="leaf-bone, bone-axis and engine skeleton advice is practice-derived" -->
 
 - **Extra `_end` bones in the engine skeleton** → `add_leaf_bones=False`. Blender
   writes a zero-length terminal bone per chain purely to encode bone length; most
@@ -411,7 +454,7 @@ Armature/leaf-bone problems and their fixes:
   `use_armature_deform_only=True`.
 - **Armature appears as a mesh/null oddity** → `armature_nodetype='NULL'` is
   correct for almost everything; `'ROOT'`/`'LIMBNODE'` exist for legacy tools.
-- **`bake_space_transform=True` is marked experimental and is known to break
+- **`bake_space_transform=True` is marked experimental and is known to break <!-- ease:source S1 anchor="bake_space_transform: WARNING experimental option, known to be broken" -->
   armatures/animations** — do not enable it for rigged assets.
 - **Animation missing** → `bake_anim=True` plus `bake_anim_use_all_actions=True`
   exports every action as a take; `bake_anim_use_nla_strips=True` exports NLA
@@ -422,7 +465,7 @@ Armature/leaf-bone problems and their fixes:
 custom split normals), `'FACE'`, `'EDGE'`, `'SMOOTH_GROUP'`. Unity/Unreal are
 happiest with `'FACE'` or `'OFF'`; older Max pipelines want `'SMOOTH_GROUP'`.
 
-FBX **import** in 5.2 is the C++ operator:
+FBX **import** in 5.2 is the C++ operator: <!-- ease:source S3 anchor="C++ FBX importer default; Python importer legacy" -->
 
 ```python
 bpy.ops.wm.fbx_import(filepath='', directory='', files=None,
@@ -433,7 +476,7 @@ bpy.ops.wm.fbx_import(filepath='', directory='', files=None,
     use_anim=True, anim_offset=1.0, filter_glob='*.fbx')
 ```
 
-### 4.6 USD
+#### 4.6 USD
 
 Stage/layer mental model: a USD file is a *layer*; layers compose into a
 *stage*. Blender exports a single flattened layer rooted at `root_prim_path`
@@ -469,12 +512,12 @@ bpy.ops.wm.usd_export(
     convert_scene_units='METERS', meters_per_unit=1.0)
 ```
 
-5.0 removed `export_textures` (superseded by `export_textures_mode`) and
+5.0 removed `export_textures` (superseded by `export_textures_mode`) and <!-- ease:source UNVERIFIED reason="5.0 removal of export_textures/visible_objects_only and allow_unicode default flip not in the fetched 5.0 notes" --> <!-- ease:source S5 anchor="5.2: colour space tagging on prims and textures; export option to flush USD data periodically to reduce peak memory" -->
 `visible_objects_only`, and flipped `allow_unicode` to default `True`. 5.2 added
 color-space tagging on prims/textures and a flush-frequency option to cut peak
 memory. `allow_unicode=False` restricts prim names to `[A-Za-z_][A-Za-z0-9_]*`.
 
-### 4.7 OBJ / STL / PLY — the C++ rewrites
+#### 4.7 OBJ / STL / PLY — the C++ rewrites
 
 ```python
 bpy.ops.wm.obj_export(filepath='', export_animation=False,
@@ -506,15 +549,15 @@ bpy.ops.wm.ply_export(filepath='', forward_axis='Y', up_axis='Z',
     ascii_format=False, filter_glob='*.ply')
 ```
 
-Axis enums for these three are the long form: `'X'`, `'Y'`, `'Z'`,
+Axis enums for these three are the long form: `'X'`, `'Y'`, `'Z'`, <!-- ease:source S2 anchor="forward_axis enum X,Y,Z,NEGATIVE_X,NEGATIVE_Y,NEGATIVE_Z" -->
 `'NEGATIVE_X'`, `'NEGATIVE_Y'`, `'NEGATIVE_Z'` — **not** the FBX `'-Z'` short
 form. Mixing them up raises
 `TypeError: enum "-Z" not found in ('X', 'Y', 'Z', 'NEGATIVE_X', ...)`.
 
-Note the inconsistent evaluation defaults: OBJ `export_eval_mode` defaults to
+Note the inconsistent evaluation defaults: OBJ `export_eval_mode` defaults to <!-- ease:source S2 anchor="obj export_eval_mode DAG_EVAL_VIEWPORT vs stl evaluation_mode DAG_EVAL_RENDER" -->
 `'DAG_EVAL_VIEWPORT'`; STL `evaluation_mode` defaults to `'DAG_EVAL_RENDER'`.
 
-### 4.8 Alembic — baked caches
+#### 4.8 Alembic — baked caches
 
 ```python
 bpy.ops.wm.alembic_export(filepath='/cache/shot.abc',
@@ -529,14 +572,14 @@ bpy.ops.wm.alembic_export(filepath='/cache/shot.abc',
     init_scene_frame_range=True)
 ```
 
-`as_background_job=False` is mandatory in `--background`: with `True` the
+`as_background_job=False` is mandatory in `--background`: with `True` the <!-- ease:source UNVERIFIED reason="effect of as_background_job=True in --background is behavioural, not documented" -->
 operator returns immediately and the process may exit before the cache is
-written. 5.0 removed `visible_objects_only` and the deprecated
+written. 5.0 removed `visible_objects_only` and the deprecated <!-- ease:source S4 anchor="Removed deprecated Scene.alembic_export; removed visible_objects_only option of alembic_export" -->
 `Scene.alembic_export` Python method. Alembic is the right answer for cloth/soft
 body/geometry-node results that must arrive in another DCC exactly as rendered;
 it is the wrong answer for anything that must stay editable or rigged.
 
-### 4.9 Verify the artefact, don't trust the return code
+#### 4.9 Verify the artefact, don't trust the return code
 
 ```python
 import os, json, struct, bpy
@@ -575,7 +618,7 @@ tris = sum(len(o.data.loop_triangles) for o in bpy.data.objects
            if o.type == 'MESH' and (o.data.calc_loop_triangles() or True))
 ```
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
@@ -597,7 +640,9 @@ tris = sum(len(o.data.loop_triangles) for o in bpy.data.objects
 | Export takes minutes, log full of image conversions | textures not in glTF's ORM packing, or non-PNG/JPEG sources | pre-pack ORM; keep sources as PNG/JPEG |
 | `RuntimeError: Error: Cannot save image ...` | `path_mode='COPY'`/`export_texture_dir` pointing at a non-writable dir | use an absolute, writable output dir |
 
-## 6. Parameter defaults by use case
+<!-- ease:source UNVERIFIED reason="version of each operator move is not frozen (see 4.x release-note 403)" -->
+
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
@@ -620,11 +665,13 @@ tris = sum(len(o.data.loop_triangles) for o in bpy.data.objects
 | Cameras / lights | off | off | on | on (`export_cameras=True`) | off |
 | Custom properties | `export_extras=True` | `use_custom_props=True` | on | on | off |
 
-## 7. Verification checklist
+<!-- ease:source UNVERIFIED reason="per-engine rows (bone influences, scale option, tangents) are practice-derived" -->
+
+### 7. Verification checklist
 
 - [ ] `assert 'gltf' in dir(bpy.ops.export_scene)` — the add-on is enabled.
 - [ ] `assert 'collection' in bpy.ops.export_scene.gltf.get_rna_type().properties.keys()` — this build supports collection-scoped export.
-- [ ] `assert os.path.getsize(out) > 2048` — the exporter actually wrote geometry.
+- [ ] `check_glb(out)["meshes"] >= expected` — the exporter actually wrote geometry. Do not use a file-size threshold: §4.3 shows a correct single-cube GLB is ~1.1–1.7 kB, so the previous `getsize(out) > 2048` checklist item contradicted that section.
 - [ ] `check_glb(out)["meshes"] >= expected` — mesh count round-trips (§4.9).
 - [ ] `check_glb(out)["animations"] == len(expected_clips)` — NLA stashing worked.
 - [ ] `assert 'KHR_draco_mesh_compression' in check_glb(out)["extensions"]` — compression really applied.
@@ -633,7 +680,7 @@ tris = sum(len(o.data.loop_triangles) for o in bpy.data.objects
 - [ ] Re-import and assert `max(o.dimensions) / expected_size` is within 1% — catches every unit/scale mistake.
 - [ ] Render the re-imported scene at 16 samples and eyeball the screenshot for flipped normals (black facets) and missing textures (magenta/grey).
 
-## 8. Sources
+### 8. Legacy source list (pre-UKMC; superseded by the Sources section at the end)
 
 - [bpy.ops.export_scene (gltf, fbx) — 5.2](https://docs.blender.org/api/current/bpy.ops.export_scene.html)
 - [bpy.ops.wm (obj/stl/ply/usd/alembic/fbx_import) — 5.2](https://docs.blender.org/api/current/bpy.ops.wm.html)
@@ -648,3 +695,22 @@ tris = sum(len(o.data.loop_triangles) for o in bpy.data.objects
 - [Blender source `source/blender/editors/io/`](https://projects.blender.org/blender/blender/src/branch/main/source/blender/editors/io) — `IO_FH_*` file-handler idnames
 - `[UNVERIFIED]` Engine-specific recommendations for Unity/Unreal/Godot import settings are practice-derived; Blender's docs state the mechanism (`apply_scale_options`, `add_leaf_bones`) but not the per-engine choice.
 - `[UNVERIFIED]` `export_use_gltfpack` requires an external `gltfpack` binary; the manual does not document the lookup path in 5.2.
+
+## Failure Modes (Mandatory)
+
+- **Export reports success but the file is ~900 B with `"meshes": []`** — cause: `use_selection=True` (nothing is selected in `--background`) or the collection is excluded — fix: export by `collection=` / explicit visibility and assert `check_glb(out)["meshes"] >= expected`.
+- **`TypeError: ... keyword "export_textures" unrecognized` (or `AttributeError` on a removed operator)** — cause: remembered signature from an older Blender — fix: introspect `get_rna_type()` (§4.1) before writing the call; use `export_textures_mode`, `wm.obj_export`, `wm.stl_export`.
+- **`TypeError: enum "-Z" not found` on OBJ/STL/PLY** — cause: FBX-style short axis names used on the C++ exporters — fix: `'NEGATIVE_Z'`/`'Y'` long form.
+- **Valid small GLB rejected by a file-size gate** — cause: threshold such as `> 2048` bytes (a single-cube GLB is far smaller, per the 2026-09-06 local measurement) — fix: parse the GLB header and JSON chunk and assert the mesh count instead.
+- **1,000,000x or 1000x scale in the receiving tool** — cause: `global_scale` and `use_scene_unit` combined, or FBX scale option mismatched to the engine — fix: use exactly one scale mechanism and re-import to assert the dimensions within 1 percent.
+
+## Sources
+
+- [S1] bpy.ops.export_scene — fbx and gltf operator signatures (Blender API current) — https://docs.blender.org/api/current/bpy.ops.export_scene.html — captured 2026-10-13 — sha256 7178b98532b4fee7bf8517afba628cfcffc4d57106f285c9b97c167b9c49a532 — frozen `knowledge/_evidence/kb-261013/w4-blender-api-bpy-ops-export-scene.html`
+- [S2] bpy.ops.wm — obj/stl/ply/usd/alembic export and import, fbx_import signatures (Blender API current) — https://docs.blender.org/api/current/bpy.ops.wm.html — captured 2026-10-13 — sha256 ada74a22a286b954f93ae9389100f8b5ce2ff4f4d9210c355ec95c7d04a395be — frozen `knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-ops-wm.html`
+- [S3] Blender 5.0 release notes: Pipeline & I/O (Collada removed, C++ FBX importer default) — https://developer.blender.org/docs/release_notes/5.0/pipeline_io/ — captured 2026-10-13 — sha256 8daa865ef286852fcded1db512d6584aed793e5d3ee4b2e45986ac8098cec763 — frozen `knowledge/_evidence/kb-261013/w4-blender-rn-5.0-pipeline-io.html`
+- [S4] Blender 5.0 release notes: Python API (Alembic visible_objects_only removal, attr_import_mode rename) — https://developer.blender.org/docs/release_notes/5.0/python_api/ — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff — frozen `knowledge/_evidence/kb-261013/w4-blender-rn-5.0-python-api.html`
+- [S5] Blender 5.2 release notes: Pipeline & I/O (meshopt, iridescence, dispersion, USD colour space, STL eval mode) — https://developer.blender.org/docs/release_notes/5.2/pipeline_io/ — captured 2026-10-13 — sha256 5eaff1d62f04b84523a2e473054231e459e1d76ff52209ba2ad10db9473c888c — frozen `knowledge/_evidence/kb-261013/w4-blender-rn-5.2-pipeline-io.html`
+- [S6] glTF 2.0 Specification (Khronos; Binary glTF container magic, version, JSON chunk type) — https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/Specification.adoc — captured 2026-10-13 — sha256 657167c1a083fa9eac28432a5ba5f6486149b5da7f932c8a7ee631e71c5e099e — frozen `knowledge/_evidence/kb-261013/w4-gltf-spec-readme.md.txt`
+- [S7] Blender Manual: glTF 2.0 add-on (material mapping, animation/NLA export, lights) — https://docs.blender.org/manual/en/latest/addons/scene_gltf2.html — captured 2026-10-13 — sha256 7f9eefe8982b6b0181380781682225dfb525fcf791f547545554fb76ae6725ff — frozen `knowledge/_evidence/kb-261013/w4-blender-manual-gltf.html`
+- [S8] Blender Extensions platform API index (id ThreeMF_io, 3MF Import/Export, blender_version_min 4.2.0) — https://extensions.blender.org/api/v1/extensions/ — captured 2026-10-13 — sha256 cf9ddcc606fbf8914ca7ff34d5ec0b28c791ce84a8711d9a1e46f705537203ad — frozen `knowledge/_evidence/kb-261013/w4-blender-extensions-api-index.json`

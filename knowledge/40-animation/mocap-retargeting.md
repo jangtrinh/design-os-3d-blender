@@ -7,11 +7,32 @@ audience: ai-agent-bpy
 description: Importing FBX/BVH/glTF animation, constraint-based retargeting, baking, NLA with slotted actions, root motion, loop cleanup, and shot staging.
 loads_with: [rigging-armature, animation-fcurves, export-interchange]
 tags: [mocap, retargeting, fbx, bvh, nla, baking, root-motion, camera, staging]
+id: mocap-retargeting
+title: "Mocap, Retargeting & NLA"
+when: [mocap-import, constraint-retarget, bake-action, nla-slotted-actions, root-motion-loop, shot-staging]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
+
 
 # Mocap, Retargeting & NLA
 
-## 1. Mental model
+## Purpose
+
+Gives an agent a safe pipeline from FBX/BVH/glTF animation to a clean baked Action on a target rig: constraint-based retarget (Copy Rotation + LOCAL_OWNER_ORIENT), bake, NLA with slotted actions, root motion, loop cleanup and shot staging.
+
+## When to Use / When NOT
+
+- ALLOWED: importing FBX/BVH/glTF clips, retargeting by constraints, baking with `bpy_extras.anim_utils.bake_action`, pushing actions to NLA strips with slots
+- ALLOWED: root-motion extraction, loop closure with `FModifierCycles`, and basic character camera staging checks
+- NOT ALLOWED: authoring keyframes/F-curves from scratch or 5.x Action plumbing — use `animation-fcurves` instead
+- NOT ALLOWED: building the target armature, IK/constraints for a new rig, skinning — use `rigging-armature` instead
+- NOT ALLOWED: exporting the baked result to FBX/glTF/USD for engines — use `export-interchange` instead
+- NOT ALLOWED: cinematic render settings (shutter, bounces, delivery encode) — use `video-animation-cinematics` instead
+
+## Core Knowledge Content
+
+### 1. Mental model
 
 Mocap data is *rotations relative to some other skeleton's rest pose*. That
 sentence contains the whole problem. An FBX/BVH action stores, per frame, a
@@ -29,39 +50,39 @@ bones, with spaces chosen so the rest-pose difference is compensated, then
 Constraints handle the math; baking makes it editable and exportable.
 
 Everything downstream — NLA layering, root motion, loop cleanup — operates on
-that baked Action. And since 4.4, an Action is not a flat bag of F-curves: it
+that baked Action. And since 4.4, an Action is not a flat bag of F-curves: it <!-- ease:source S8 anchor="NLA strips and Action Constraints have similar properties; auto-assignment of slots" -->
 carries slots, and NLA strips carry an `action_slot` too. Assigning an Action to
 a strip without a slot gives you a strip that plays nothing.
 
-## 2. Decision first
+### 2. Decision first
 
 | Input | Importer | Watch out for |
 |---|---|---|
-| `.fbx` from Mixamo / Maya / MotionBuilder | `bpy.ops.import_scene.fbx` — the **legacy Python** importer, deliberately (see note) | cm→m scale, bone axis convention, leaf bones, `use_prepost_rot` |
-| `.bvh` from optical/inertial capture | `bpy.ops.import_anim.bvh` | fps mismatch, Z-up vs Y-up, huge world scale |
-| `.glb` / `.gltf` from a game/web pipeline | `bpy.ops.import_scene.gltf` | `bone_heuristic`, `guess_original_bind_pose` |
-| Blender-native | `bpy.ops.wm.append` / `bpy.data.libraries.load` | slot binding on append (4.4+) |
+| `.fbx` from Mixamo / Maya / MotionBuilder | `bpy.ops.import_scene.fbx` — the **legacy Python** importer, deliberately (see note) | cm→m scale, bone axis convention, leaf bones, `use_prepost_rot` <!-- ease:source S1 anchor="import_scene.fbx signature: global_scale, ignore_leaf_bones, use_prepost_rot" --> |
+| `.bvh` from optical/inertial capture | `bpy.ops.import_anim.bvh` | fps mismatch, Z-up vs Y-up, huge world scale <!-- ease:source S2 anchor="import_anim.bvh signature: global_scale, use_fps_scale, rotate_mode" --> |
+| `.glb` / `.gltf` from a game/web pipeline | `bpy.ops.import_scene.gltf` | `bone_heuristic`, `guess_original_bind_pose` <!-- ease:source S1 anchor="import_scene.gltf bone_heuristic, guess_original_bind_pose" --> |
+| Blender-native | `bpy.ops.wm.append` / `bpy.data.libraries.load` | slot binding on append (4.4+) <!-- ease:source UNVERIFIED reason="append/slot-binding behaviour not re-confirmed against a frozen source" --> |
 
 | Situation | Retarget route |
 |---|---|
 | Source and target are the *same* skeleton (same names, same rest) | Assign the Action directly + bind the slot. No retargeting. |
-| Same proportions, different rest orientation (T-pose vs A-pose) | Copy Rotation, `owner_space='LOCAL'`, `target_space='LOCAL_OWNER_ORIENT'` |
+| Same proportions, different rest orientation (T-pose vs A-pose) | Copy Rotation, `owner_space='LOCAL'`, `target_space='LOCAL_OWNER_ORIENT'` <!-- ease:source S4 anchor="target_space LOCAL_OWNER_ORIENT description" --> |
 | Different proportions, need world-space contact (feet planted) | Copy Rotation for the chain + Copy Location / IK constraints for hands & feet |
 | Rest poses already identical in world space, no parent offsets | Copy Rotation, both spaces `'WORLD'` (simplest, least robust) |
 | One-off, script-controlled, need full determinism | Per-frame matrix math + `pose_bone.matrix` writes + manual keying |
 
 | Baking route | When |
 |---|---|
-| `bpy_extras.anim_utils.bake_action(obj, action=..., frames=..., bake_options=...)` | **Default for agents.** Pure Python, no operator context, works headless. |
-| `bpy.ops.nla.bake(...)` | When you want Blender's exact UI semantics, or need `bake_types={'OBJECT'}` + parent clearing. Needs a valid context. |
+| `bpy_extras.anim_utils.bake_action(obj, action=..., frames=..., bake_options=...)` | **Default for agents.** Pure Python, no operator context, works headless. <!-- ease:source S3 anchor="bake_action, BakeOptions" --> |
+| `bpy.ops.nla.bake(...)` | When you want Blender's exact UI semantics, or need `bake_types={'OBJECT'}` + parent clearing. Needs a valid context. <!-- ease:source UNVERIFIED reason="bpy.ops.nla page returned a bot challenge" --> |
 
-## 3. Rules
+### 3. Rules
 
-R1. Never copy `rotation_quaternion`/`rotation_euler` values bone-to-bone between different rigs.
+R1. Never copy `rotation_quaternion`/`rotation_euler` values bone-to-bone between different rigs. <!-- ease:source UNVERIFIED reason="explanatory rule of thumb; not a single documented sentence" -->
     Why: those values are relative to each bone's own rest orientation, which differs.
     Violation: the target character folds into an impossible pose on frame 1.
 
-R2. Check and fix scale immediately after import, before anything else.
+R2. Check and fix scale immediately after import, before anything else. <!-- ease:source S1 anchor="import_scene.fbx global_scale; BVH import global_scale" -->
     Why: FBX/BVH from DCCs often ships in centimetres; Blender works in metres.
     Violation: a 175 cm human imports 175 m tall, IK/physics/lighting all break.
 
@@ -69,11 +90,11 @@ R3. Apply the import's object-level transform to the armature before retargeting
     Why: an unapplied rotation/scale on the source object silently contaminates every world-space constraint.
     Violation: retargeted motion is rotated 90° or scaled by 100.
 
-R4. Bind the Action slot after assigning an Action to an object *or* an NLA strip.
+R4. Bind the Action slot after assigning an Action to an object *or* an NLA strip. <!-- ease:source S8 anchor="In Blender 4.4 this assignment will try to auto-assign a slot using heuristics" -->
     Why: 4.4+ Actions hold multiple slots; the auto-assign heuristic can miss.
     Violation: strip exists with the right Action, character does not move.
 
-R5. Bake with `do_visual_keying=True` (or `visual_keying=True` for the operator).
+R5. Bake with `do_visual_keying=True` (or `visual_keying=True` for the operator). <!-- ease:source S3 anchor="BakeOptions.do_visual_keying" -->
     Why: without it, you key the pre-constraint local values, i.e. nothing.
     Violation: baked action contains all-zero/rest keys.
 
@@ -81,15 +102,15 @@ R6. Remove or mute the retargeting constraints after baking.
     Why: constraints re-evaluate on top of the baked keys, doubling the motion.
     Violation: character rotates twice as far as the source.
 
-R7. Set `scene.frame_start`/`frame_end` to the source clip's real range before baking.
+R7. Set `scene.frame_start`/`frame_end` to the source clip's real range before baking. <!-- ease:source UNVERIFIED reason="bpy.ops.nla page returned a bot challenge" -->
     Why: `bake_action` bakes exactly the `frames` you give it; the operator defaults to 1-250.
     Violation: truncated motion, or 200 frames of held final pose.
 
-R8. Match `scene.render.fps` to the clip's fps before baking, or bake in source frames and retime afterwards.
+R8. Match `scene.render.fps` to the clip's fps before baking, or bake in source frames and retime afterwards. <!-- ease:source S2 anchor="use_fps_scale, update_scene_fps" -->
     Why: BVH import can rescale time (`use_fps_scale`) and produce fractional keys.
     Violation: keys land on non-integer frames; game exporters drop or round them.
 
-R9. Run an Euler filter on baked euler rotations.
+R9. Run an Euler filter on baked euler rotations. <!-- ease:source S7 anchor="bpy.ops.graph.euler_filter" -->
     Why: converting continuous quaternions to euler introduces ±360° discontinuities.
     Violation: limbs spin a full revolution over one frame in the render.
 
@@ -97,7 +118,7 @@ R10. For a loop, make the last key numerically identical to the first, then add 
     Why: any difference reads as a hitch every cycle.
     Violation: visible pop at the loop seam in a playblast.
 
-R11. For locomotion loops, use `FModifierCycles.mode_after = 'REPEAT_OFFSET'` on translation channels, `'REPEAT'` on rotation.
+R11. For locomotion loops, use `FModifierCycles.mode_after = 'REPEAT_OFFSET'` on translation channels, `'REPEAT'` on rotation. <!-- ease:source S17 anchor="mode_before/mode_after; REPEAT_OFFSET" -->
     Why: `REPEAT` on forward translation teleports the character back to the origin each cycle.
     Violation: character moonwalks back to the start every N frames.
 
@@ -105,30 +126,31 @@ R12. Decide root motion policy *before* baking: extract to a root bone/object, o
     Why: game engines want root motion on a dedicated root; in-place loops want it removed.
     Violation: character slides through the floor, or animates on the spot when it should travel.
 
-R13. Push the current Action to NLA before assigning the next one, or you lose it.
+R13. Push the current Action to NLA before assigning the next one, or you lose it. <!-- ease:source UNVERIFIED reason="orphan-Action purge on save is general Blender behaviour; no frozen sentence" -->
     Why: assigning `animation_data.action` replaces the previous assignment; a zero-user Action is purged on save.
     Violation: only the last imported clip survives the file round-trip.
 
-R14. Never leave `animation_data.use_tweak_mode = True` in a headless script.
+R14. Never leave `animation_data.use_tweak_mode = True` in a headless script. <!-- ease:source S6 anchor="AnimData.use_tweak_mode, action_tweak_storage" -->
     Why: tweak mode swaps the action into `action_tweak_storage`; leaving it on corrupts the save.
     Violation: on reload the object is animated by the wrong strip, or by nothing.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Import (5.2 signatures, all keyword-only)
+#### 4.1 Import (5.2 signatures, all keyword-only)
 
-> **Which FBX importer?** Blender 5.0 made `bpy.ops.wm.fbx_import` (C++) the
+> **Which FBX importer?** Blender 5.0 made `bpy.ops.wm.fbx_import` (C++) the <!-- ease:source UNVERIFIED reason="default-importer switch statement not found in fetched 5.0 Python API notes (5.0 compositor/eevee pages blocked); wm.fbx_import existence verified" -->
 > default, and `export-interchange.md` recommends it for general asset import.
 > For **mocap** this file deliberately keeps the legacy Python importer
-> `bpy.ops.import_scene.fbx`, because the rig-specific arguments below
+> `bpy.ops.import_scene.fbx`, because the rig-specific arguments below <!-- ease:source S12 anchor="wm.fbx_import has no primary_bone_axis/automatic_bone_orientation/use_prepost_rot; import_scene.fbx does (S1)" -->
 > (`ignore_leaf_bones`, `primary_bone_axis` / `secondary_bone_axis`,
 > `automatic_bone_orientation`, `use_prepost_rot`, `bake_space_transform`) are
 > what make a Mixamo/MotionBuilder skeleton usable, and the C++ importer does not
 > expose the same set. Verify availability before choosing:
 >
 > ```python
-> legacy = hasattr(bpy.ops.import_scene, "fbx")
-> modern = hasattr(bpy.ops.wm, "fbx_import")
+> # hasattr() on bpy.ops submodules is always True on 5.2.0 (even for bogus names) — test dir() instead
+> legacy = "fbx" in dir(bpy.ops.import_scene)
+> modern = "fbx_import" in dir(bpy.ops.wm)
 > args   = set(bpy.ops.wm.fbx_import.get_rna_type().properties.keys()) if modern else set()
 > print(legacy, modern, sorted(args))
 > ```
@@ -208,7 +230,7 @@ automatically. If you instead retarget in world space, you must first pose the
 target into the source's rest shape and `bpy.ops.pose.armature_apply()` — a
 destructive change that invalidates existing skinning, so prefer the space fix.
 
-### 4.2 Bone name mapping
+#### 4.2 Bone name mapping
 
 ```python
 # Mixamo -> your rig. Keep this data-driven; never hardcode it inline.
@@ -245,7 +267,7 @@ for cand in ("mixamorig:", "mixamorig1:", "mixamorig_"):
 print("detected prefix:", repr(prefix))
 ```
 
-### 4.3 Constraint-based retargeting (pure Python)
+#### 4.3 Constraint-based retargeting (pure Python)
 
 ```python
 def build_retarget(src, tgt, mapping, *, hips_src=None, hips_tgt=None):
@@ -296,7 +318,7 @@ constraints on the target's IK controls pointing at the source's hand/foot
 bones, `owner_space='WORLD'`, `target_space='WORLD'`. This removes foot sliding
 caused by limb-length differences.
 
-### 4.4 Baking
+#### 4.4 Baking <!-- ease:source S3 anchor="bake_action(obj, ...), bake_action_objects, BakeOptions fields" -->
 
 Preferred, headless-safe, no operator context:
 
@@ -367,7 +389,7 @@ for pb in tgt.pose.bones:
         pb.constraints.remove(c)
 ```
 
-### 4.5 Post-bake cleanup
+#### 4.5 Post-bake cleanup
 
 ```python
 from bpy_extras import anim_utils
@@ -397,7 +419,7 @@ def prune(fcu, tol=1e-4):
 #   bpy.ops.graph.smooth()  /  bpy.ops.graph.samples_to_keys()
 ```
 
-### 4.6 Root motion
+#### 4.6 Root motion
 
 ```python
 from bpy_extras import anim_utils
@@ -431,7 +453,7 @@ dedicated `root` bone at the origin. Treadmill/in-place loops, or engines that
 drive locomotion from code → `extract=False`. Cinematic shots → leave hips travel intact
 and do not create a root at all.
 
-### 4.7 Loop cleanup
+#### 4.7 Loop cleanup
 
 ```python
 def make_cyclic(obj, first, last, *, offset_channels=()):
@@ -470,7 +492,7 @@ act.frame_start, act.frame_end = 1, 32
 act.use_cyclic = True          # flag only; does not itself make it loop
 ```
 
-### 4.8 NLA with slotted actions
+#### 4.8 NLA with slotted actions <!-- ease:source S5 anchor="NlaStrip.action_slot, action_suitable_slots, last_slot_identifier" -->
 
 ```python
 ad = tgt.animation_data or tgt.animation_data_create()
@@ -529,7 +551,7 @@ above in headless scripts):
 `bpy.ops.nla.tweakmode_enter(isolate_action=False)` / `tweakmode_exit()`,
 `bpy.ops.nla.action_sync_length(active=True)`.
 
-### 4.9 Mixamo output quirks (practical)
+#### 4.9 Mixamo output quirks (practical) <!-- ease:source UNVERIFIED reason="Mixamo publishes no API contract; table rows are field detections" -->
 
 | Quirk | Detection | Handling |
 |---|---|---|
@@ -544,7 +566,7 @@ above in headless scripts):
 | Leaf/end bones (`*_end`) | zero-length bones | `ignore_leaf_bones=True` on import |
 | Every clip is a separate FBX with its own skeleton | duplicate armatures pile up | import → retarget → bake → push to NLA → delete the source armature |
 
-### 4.10 Character camera & staging
+#### 4.10 Character camera & staging <!-- ease:source UNVERIFIED reason="lens/distance/height figures are cinematography practice" -->
 
 ```python
 cam_data = bpy.data.cameras.new("ShotCam")
@@ -597,7 +619,7 @@ Staging rules an agent can encode numerically:
 - **Never cut on the extreme.** Cut 2-4 frames after a pose settles, not on the
   frame the pose is reached.
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
@@ -610,15 +632,15 @@ Staging rules an agent can encode numerically:
 | Visible pop at the loop seam | First and last keys differ | Force last == first, then Cycles modifier (R10) |
 | Character moonwalks back to the origin every cycle | `mode_after='REPEAT'` on a travelling channel | `'REPEAT_OFFSET'` on translation (R11) |
 | Feet slide along the ground | Limb-length difference; rotation-only retarget | Add world-space Copy Location / IK on foot controls (§4.3) |
-| NLA strip has the right Action but nothing plays | `strip.action_slot is None` | `strip.action_slot = strip.action_suitable_slots[0]` (R4) |
+| NLA strip has the right Action but nothing plays | `strip.action_slot is None` | `strip.action_slot = strip.action_suitable_slots[0]` (R4) <!-- ease:source S5 anchor="NlaStrip.action_slot" --> |
 | Only the last imported clip exists after save/reload | Previous Actions had zero users | Push each to NLA and/or `use_fake_user = True` (R13) |
-| On reload, the object is animated by the wrong strip | Script exited with `use_tweak_mode = True` | Always `ad.use_tweak_mode = False` before saving (R14) |
-| `AttributeError: 'Action' object has no attribute 'fcurves'` in a mocap script | 5.0 removed the legacy Action API | Route through `anim_utils` channelbag helpers (see `animation-fcurves`) |
+| On reload, the object is animated by the wrong strip | Script exited with `use_tweak_mode = True` | Always `ad.use_tweak_mode = False` before saving (R14) <!-- ease:source S6 anchor="use_tweak_mode" --> |
+| `AttributeError: 'Action' object has no attribute 'fcurves'` in a mocap script | 5.0 removed the legacy Action API | Route through `anim_utils` channelbag helpers (see `animation-fcurves`) <!-- ease:source S9 anchor="legacy Action API removed in 5.0" --> |
 | `RuntimeError: Operator bpy.ops.nla.bake.poll() failed` | No active object / wrong mode in `--background` | Use `anim_utils.bake_action()` instead (§4.4) |
-| Keys land on fractional frames | BVH fps rescaling | `use_fps_scale=False`, set scene fps to the source's (R8) |
+| Keys land on fractional frames | BVH fps rescaling | `use_fps_scale=False`, set scene fps to the source's (R8) <!-- ease:source S2 anchor="use_fps_scale: otherwise each BVH frame maps directly to a Blender frame" --> |
 | Fingers eat 60% of the action's size | Mixamo keys every finger bone | Filter `cb.fcurves` by data_path before baking (§4.9) |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
@@ -630,9 +652,9 @@ Staging rules an agent can encode numerically:
 | Root motion policy | extract to `root` | keep in hips | strip | n/a | n/a |
 | Loop closure tolerance | exact (`==`) | exact | 1e-3 | n/a | n/a |
 | `FModifierCycles` on export | no (bake the loop out) | yes | yes | no | n/a |
-| Target fps | 30 | 24 | 60 | 25 | n/a |
+| Target fps | 30 | 24 | 60 | 25 | n/a <!-- ease:source S13 anchor="fps / fps_base; per-use-case values are starting points" --> |
 | NLA usage | flatten to one action per clip | layered tracks | layered tracks | single action | n/a |
-| `blend_type` for additive layers | n/a | `COMBINE` | `ADD` | n/a | n/a |
+| `blend_type` for additive layers | n/a | `COMBINE` | `ADD` | n/a | n/a <!-- ease:source S11 anchor="NlaStrip blend_type enum incl. COMBINE" --> |
 | FBX `ignore_leaf_bones` | True | True | True | True | n/a |
 | FBX `automatic_bone_orientation` | False | False | False | False | n/a |
 | Camera focal length | 60 (FOV-driven) | 35-85 | 24-50 | 85-135 | n/a |
@@ -641,7 +663,7 @@ Staging rules an agent can encode numerically:
 3D print is "n/a" across the board: printable output is a single static
 manifold mesh; animation, NLA and cameras have no role in that pipeline.
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `assert 1.4 < max(b.tail_local.z for b in src.data.bones) < 2.2` — the imported human skeleton is in metres (R2).
 - [ ] `assert src.scale[:] == (1.0, 1.0, 1.0) and src.rotation_euler[:] == (0.0, 0.0, 0.0)` — import transform was applied (R3).
@@ -658,8 +680,7 @@ manifold mesh; animation, NLA and cameras have no role in that pipeline.
 - [ ] Framing: `world_to_camera_view(scene, cam, head_world)` returns x,y in (0,1) and z > 0 — the character is actually in frame and in front of the camera.
 - [ ] Render frames `[start, 25%, 50%, 75%, end]` and read the silhouettes — the only reliable staging check available to an agent.
 
-## 8. Sources
-
+### 8. Source notes and unverified items (legacy list)
 - [bpy.ops.import_scene (5.2)](https://docs.blender.org/api/current/bpy.ops.import_scene.html) — full `fbx()` and `gltf()` signatures
 - [bpy.ops.import_anim (5.2)](https://docs.blender.org/api/current/bpy.ops.import_anim.html) — full `bvh()` signature
 - [bpy.ops.nla (5.2)](https://docs.blender.org/api/current/bpy.ops.nla.html) — `bake()` signature, `action_pushdown`, `tweakmode_enter/exit`, `action_sync_length`
@@ -696,3 +717,29 @@ export, which removes the need for the filter entirely.
 `[UNVERIFIED]` The lens/distance/height figures in §4.10 are standard
 cinematography practice, not Blender documentation. They are starting values to
 be checked against a rendered frame.
+
+## Failure Modes (Mandatory)
+
+- **Character folds into an impossible pose on frame 1 after copying rotations between rigs** — cause: rotation values are relative to each bone's own rest orientation — fix: Copy Rotation constraints with `target_space='LOCAL_OWNER_ORIENT'`, then bake <!-- ease:source S4 anchor="LOCAL_OWNER_ORIENT: correction for the difference in target and owner rest pose orientations" -->.
+- **Strip has the right Action but the character does not move** — cause: no slot bound (`strip.action_slot is None`) <!-- ease:source S5 anchor="NlaStrip.action_slot / action_suitable_slots" --> — fix: `strip.action_slot = strip.action_suitable_slots[0]` and assert it.
+- **Baked action holds a 250-frame final pose, or the motion doubles** — cause: operator default frame range / constraints left live after the bake — fix: derive the range from the source clip, clear constraints with `do_constraint_clear`, assert key counts <!-- ease:source S3 anchor="BakeOptions.do_constraint_clear" -->.
+- **Clip delivered at a pose rate far below the frame rate, owner rejects the film** — cause: BVH/FBX clip fps differs from scene fps and frames were repeated at encode — fix: set scene fps to the source fps before baking, retime afterwards, and record pose rate and distinct states in the media contract <!-- ease:source S14 anchor="line 37, DC-01 film rejected" --> <!-- ease:source S15 anchor="Motion contract before any animation render" -->.
+- **Object animated by the wrong strip after save/reload** — cause: script exited with `use_tweak_mode = True` <!-- ease:source S6 anchor="AnimData.use_tweak_mode" --> — fix: assert `use_tweak_mode is False` before saving.
+
+## Sources
+
+- [S1] bpy.ops.import_scene — Blender Python API (current) — https://docs.blender.org/api/current/bpy.ops.import_scene.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-ops-import_scene.html) — captured 2026-10-13 — sha256 3bd598dda1e1d49c586db7c7b50065b9db8d1942dac29c5cbb6520fbe40031fb
+- [S2] bpy.ops.import_anim — Blender Python API (current) — https://docs.blender.org/api/current/bpy.ops.import_anim.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-ops-import_anim.html) — captured 2026-10-13 — sha256 e2221ca849e71e70d879391ca4e69bc185f740953ae9cdf3e0bb85d4beb0e4a1
+- [S3] bpy_extras.anim_utils — Blender Python API (current) — https://docs.blender.org/api/current/bpy_extras.anim_utils.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy_extras-anim_utils.html) — captured 2026-10-13 — sha256 50822f6b4f28fd4434c2503b526345f9dae2d3583d0ce95f28c79b140fba9c2b
+- [S4] Constraint — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.Constraint.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-Constraint.html) — captured 2026-10-13 — sha256 4ef366c6cb227a0da88e4306594f633c12d724c489953dd4beb985e301f6e445
+- [S5] NlaStrip — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.NlaStrip.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-NlaStrip.html) — captured 2026-10-13 — sha256 1407ca92e92a7d7a0014b1c352e9cbe5a63b48b22c954de7e809869361297777
+- [S6] AnimData — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.AnimData.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-AnimData.html) — captured 2026-10-13 — sha256 aa3f19ed247ad1eabe97856f701c6dc9d13885705bc13a2183623b0ef6e2d23f
+- [S7] bpy.ops.graph — Blender Python API (current) — https://docs.blender.org/api/current/bpy.ops.graph.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-ops-graph.html) — captured 2026-10-13 — sha256 e7ca0b5408ec74b8891b88040c8d20db5f0cb63291fc4839a134cada6ff1b1c6
+- [S8] Slotted Actions: Upgrading to 4.4 — https://developer.blender.org/docs/release_notes/4.4/upgrading/slotted_actions/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-4-4-upgrading-slotted_actions-.html) — captured 2026-10-13 — sha256 0c2bd11c20fa5113d5c894e79261d7ddbfbdb47761028604608f0a0a78462251
+- [S9] Blender 5.0 Release Notes: Python API — https://developer.blender.org/docs/release_notes/5.0/python_api/ (frozen: knowledge/_evidence/kb-261013/w3-developer-blender-org-docs-release_notes-5-0-python_api-.html) — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff
+- [S11] Blender source rna_nla.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_nla.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_nla.cc) — captured 2026-10-13 — sha256 87ff595072b22c8ee1801572b21807a05547e6a765d5b79371a337f36045eb93
+- [S12] bpy.ops.wm — Blender Python API (current) — https://docs.blender.org/api/current/bpy.ops.wm.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-ops-wm.html) — captured 2026-10-13 — sha256 ada74a22a286b954f93ae9389100f8b5ce2ff4f4d9210c355ec95c7d04a395be
+- [S13] Blender source rna_scene.cc @ v5.2.0 — https://raw.githubusercontent.com/blender/blender/v5.2.0/source/blender/makesrna/intern/rna_scene.cc (frozen: knowledge/_evidence/kb-261013/w3-src-rna_scene.cc) — captured 2026-10-13 — sha256 54b6e437b4fae8baaffaf60c97516d29c6f643d37c73d2c695e1a71c1f36a743
+- [S14] Repo: native build pipeline lessons (DC-01 pose rate) — docs/native-build-pipeline-lessons.md — captured 2026-10-13 — sha256 f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb
+- [S15] Repo: AGENTS.md (Motion contract) — AGENTS.md — captured 2026-10-13 — sha256 d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7
+- [S17] FModifierCycles — Blender Python API (current) — https://docs.blender.org/api/current/bpy.types.FModifierCycles.html (frozen: knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-types-FModifierCycles.html) — captured 2026-10-13 — sha256 52327dd35edd3ca1a5365bb7415b833b7936852c22bf77f356a81a828b0ecbb1

@@ -7,16 +7,36 @@ audience: ai-agent-bpy
 description: Manifold/watertight requirements, wall thickness and clearance by process, bmesh-based failure detection, and STL/3MF export from Blender 5.2.
 loads_with: [scene-organization, export-interchange, optimization-realtime]
 tags: [3d-print, manifold, bmesh, stl, 3mf, tolerance, boolean, wall-thickness]
+id: 3d-printing
+title: "3D Printing from Blender"
+when: [3d-print-export, manifold-audit, wall-thickness-check, stl-unit-scale, boolean-for-print, overhang-orientation]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
 
 # 3D Printing from Blender
 
-## 1. Mental model
+## Purpose
+
+Make a Blender mesh printable: prove it is a closed, consistently wound solid with a bmesh audit, fix the unit contract (Blender metres vs slicer millimetres), apply process-specific wall/clearance/overhang limits, and export STL (or 3MF) with a verified triangle count. Process numbers here are manufacturing practice, not Blender facts; the gate-enforced limits live in the build's `spec.json` and `scripts/production-gate.py`.
+
+## When to Use / When NOT
+
+- ALLOWED: preparing a mesh for FDM/SLA/SLS export — run the §4.1 bmesh audit, assert the unit contract, export binary STL.
+- ALLOWED: choosing STL vs 3MF, or deciding boolean solver/bevel order for a printed part.
+- NOT ALLOWED: production DFAM rules (heat-set insert bosses, elephant-foot chamfer, build-orientation strength) — use `dfam-3dprinting-production`.
+- NOT ALLOWED: polymer-specific CAD tolerances, snap fits, printed threads — use `polymer-3dprinting-cad` (knowledge/70-cad-precision-robotics).
+- NOT ALLOWED: exporter arguments for glTF/FBX/USD/OBJ/PLY/Alembic — use `export-interchange`.
+- NOT ALLOWED: claiming a part is manufacturable from these tables — min-wall and gate rules come from the spec and `production-gate.py` (see `AGENTS.md`); physical acceptance goes through `manufacturing-evidence-workflow`.
+
+## Core Knowledge Content
+
+### 1. Mental model
 
 A slicer does not see your mesh; it sees a stack of 2D cross-sections computed
 by intersecting a plane with your triangles. That works if and only if every
 point in space is unambiguously inside or outside the solid. That is what
-"manifold / watertight / 2-manifold" means in practice: **every edge is shared
+"manifold / watertight / 2-manifold" means in practice: **every edge is shared <!-- ease:source S1 anchor="BMEdge.is_manifold / is_contiguous" -->
 by exactly two faces, every face normal points outward consistently, and no two
 faces intersect**. Everything else in this file follows from that one
 requirement.
@@ -26,14 +46,14 @@ size, gravity acts on unsupported material during the build, and mated parts
 need clearance because plastic swells. These are process- and material-specific
 numbers, not modelling opinions.
 
-The classic agent failure is scale. Blender works in metres, slicers work in
+The classic agent failure is scale. Blender works in metres, slicers work in <!-- ease:source UNVERIFIED reason="no unit field in STL structure: inferred from S11 byte layout, which lists none" -->
 millimetres, and STL is unitless. A 30 mm part modelled as 30 Blender units
 exports as "30" and arrives as 30 mm only by accident. Model in metres
 (0.03 BU = 30 mm) and export with `global_scale=1000`, **or** model in
 "1 BU = 1 mm" and export with `global_scale=1.0` — pick one and assert it.
 Doing both gives the 1000x error.
 
-## 2. Decision first
+### 2. Decision first
 
 | Question | Answer |
 |---|---|
@@ -47,11 +67,13 @@ Doing both gives the 1000x error.
 | Overhang steeper than the process limit | Reorient (`object.print3d_align_xy`), redesign, or accept supports |
 | Two parts must fit together | Add clearance per §2 table to the *negative* side |
 
-Wall thickness minimums (nominal; always confirm with the specific printer/service):
+<!-- ease:source S5 anchor="FAST renamed to FLOAT in boolean modifier and operator" -->
+
+Wall thickness minimums (nominal; always confirm with the specific printer/service): <!-- ease:source S15 anchor="print/both: real walls >= spec min_wall_mm; gate decides" -->
 
 | Process | Absolute min wall | Safe min wall | Min unsupported wall | Min embossed detail | Min hole Ø |
 |---|---|---|---|---|---|
-| FDM, 0.4 mm nozzle, PLA/PETG | 0.8 mm (2 perimeters) | 1.2–1.6 mm | 1.2 mm | 0.6 mm wide × 0.4 mm high | 2.0 mm |
+| FDM, 0.4 mm nozzle, PLA/PETG | 0.9 mm (2 perimeters at ≈0.45 mm) | 1.2–1.6 mm | 1.2 mm | 0.6 mm wide × 0.4 mm high | 2.0 mm |
 | FDM, ABS/ASA (warp-prone) | 1.2 mm | 2.0 mm | 1.6 mm | 0.8 mm | 2.5 mm |
 | FDM, flexible (TPU) | 1.0 mm | 1.6 mm | 1.6 mm | 0.8 mm | 2.5 mm |
 | SLA / DLP / MSLA resin, standard | 0.4 mm | 0.8–1.0 mm | 0.6 mm | 0.2 mm | 0.5 mm |
@@ -60,6 +82,12 @@ Wall thickness minimums (nominal; always confirm with the specific printer/servi
 | MJF nylon | 0.5 mm | 1.0 mm | 0.8 mm | 0.3 mm | 1.5 mm |
 | Binder-jet / SLM metal | 1.0 mm | 2.0 mm | 1.5 mm | 0.5 mm | 2.0 mm |
 
+<!-- ease:source UNVERIFIED reason="ABS/TPU/PETG-tough/MJF/metal wall, hole and emboss minimums are service-bureau practice with no frozen primary source" -->
+
+<!-- ease:source S8 anchor="perimeter table: 1 perimeter 0.45, 2 = 0.9, 3 = 1.35 mm for 0.4 mm nozzle" -->
+
+Vendor cross-check (2026-10-13): Formlabs lists 0.2 mm minimum supported and unsupported wall and 0.1 mm embossed detail for Form 4 / Grey Resin at 50 µm <!-- ease:source S9 anchor="minimum supported/unsupported wall 0.2 mm; embossed 0.1 mm" -->; Formlabs Fuse SLS lists 0.6 mm vertical / 0.3 mm horizontal walls and 1.0 mm minimum hole <!-- ease:source S10 anchor="minimum wall thickness; minimum hole diameter 1.0 mm" -->. The table above deliberately keeps the more conservative multi-printer values; use the vendor values only for a named printer/resin and record that choice in `spec.json`.
+
 Overhang and support:
 
 | Process | Self-supporting up to | Needs support beyond | Max unsupported bridge |
@@ -67,6 +95,10 @@ Overhang and support:
 | FDM | 45° from vertical | 45–60° | 5–10 mm (well cooled: 20 mm) |
 | SLA/MSLA | 30–35° from vertical | > 35° | 2–5 mm |
 | SLS / MJF | any (powder bed supports) | never | any |
+
+<!-- ease:source UNVERIFIED reason="30-35 deg SLA self-support not found; S9 uses a different metric (min 10 deg from level, 5 mm max unsupported overhang, 29 mm bridge span)" -->
+
+<!-- ease:source S8 anchor="overhangs 45-60 degrees; Nextruder+360 cooling printers up to 75" -->
 
 Clearance for mated parts (gap modelled into the geometry, per side):
 
@@ -78,25 +110,29 @@ Clearance for mated parts (gap modelled into the geometry, per side):
 | Print-in-place hinge/joint | 0.50 mm | 0.30 mm | 0.40 mm |
 | Threaded (printed threads) | 0.40 mm on the flanks | 0.20 mm | 0.30 mm |
 
-## 3. Rules
+<!-- ease:source UNVERIFIED reason="per-process clearance values (SLA, SLS/MJF columns) are practice; only the FDM movable-part figure has S8 support" -->
 
-R1. Assert the unit contract at the start: `scale_length == 1.0`, metric, and a documented BU→mm factor.
+<!-- ease:source S8 anchor="initial good measurement for movable parts at least 0.3 mm; printer accurate to 0.2 mm" -->
+
+### 3. Rules
+
+R1. Assert the unit contract at the start: `scale_length == 1.0`, metric, and a documented BU→mm factor. <!-- ease:source S4 anchor="stl_export global_scale range [1e-06,1e+06], use_scene_unit" -->
     Why: STL carries no units; every downstream tool guesses millimetres.
     Violation: part arrives 1000x too large; slicer says "object exceeds build volume".
 
-R2. Every edge must have exactly two faces. Check `edge.is_manifold` on a bmesh, not by eye.
+R2. Every edge must have exactly two faces. Check `edge.is_manifold` on a bmesh, not by eye. <!-- ease:source S1 anchor="BMEdge.is_manifold" -->
     Why: an edge with 1 face is a hole; with 3+ it is an internal wall — both make inside/outside undefined.
     Violation: slicer produces zero-thickness or inverted layers; "non-manifold" warning; random missing regions.
 
-R3. Every face must wind consistently outward: check `edge.is_contiguous` and fix with `bmesh.ops.recalc_face_normals`.
+R3. Every face must wind consistently outward: check `edge.is_contiguous` and fix with `bmesh.ops.recalc_face_normals`. <!-- ease:source S2 anchor="recalc_face_normals(bm, faces=[])" -->
     Why: an inverted face flips the inside/outside test locally.
     Violation: hollow shells printed as solid or vice versa; slicer preview shows inverted normals in red.
 
-R4. No self-intersecting faces. Detect with a BVH self-overlap test.
+R4. No self-intersecting faces. Detect with a BVH self-overlap test. <!-- ease:source S3 anchor="BVHTree.FromBMesh(bmesh, epsilon) / overlap" -->
     Why: intersecting shells give a slicer contradictory inside/outside evidence; most slicers "repair" by guessing.
     Violation: unexpected internal voids or blobs at the intersection.
 
-R5. Delete loose geometry (wire edges, isolated verts, zero-area faces) before exporting.
+R5. Delete loose geometry (wire edges, isolated verts, zero-area faces) before exporting. <!-- ease:source S11 anchor="binary STL stores 80-byte header, uint32 count, 50 bytes per triangle" -->
     Why: STL only stores triangles; loose verts/edges vanish but zero-area faces become degenerate triangles that break slicer topology.
     Violation: slicer reports "N degenerate facets removed"; layers with missing segments.
 
@@ -104,7 +140,7 @@ R6. Apply all transforms and all modifiers before measuring or exporting.
     Why: `ob.dimensions` reflects object scale but the exported vertices may not, depending on export options.
     Violation: measured 30 mm, printed 15 mm.
 
-R7. Use the `'EXACT'` boolean solver for parts, and give each operand a manifold, non-degenerate mesh.
+R7. Use the `'EXACT'` boolean solver for parts, and give each operand a manifold, non-degenerate mesh. <!-- ease:source S5 anchor="FAST renamed FLOAT" -->
     Why: `'FLOAT'` (called `'FAST'` before 5.0) trades correctness for speed and reliably produces non-manifold seams.
     Violation: boolean result has non-manifold edges exactly along the cut.
 
@@ -120,13 +156,13 @@ R10. Orient the part so critical surfaces face up and overhangs stay under the p
     Why: the exported orientation is the print orientation for most naive workflows.
     Violation: cosmetic face covered in support scars.
 
-R11. Add drainage/escape holes (≥ 4 mm) for hollow SLA and SLS parts.
+R11. Add drainage/escape holes (≥ 4 mm) for hollow SLA and SLS parts. <!-- ease:source S10 anchor="escape holes: at least 2, >= 3.5 mm diameter (Fuse SLS)" -->
     Why: trapped resin cures and cracks the part; trapped powder adds weight and cost.
     Violation: part cracks days after printing.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Complete printability audit with bmesh — no add-on required
+#### 4.1 Complete printability audit with bmesh — no add-on required <!-- ease:source S14 anchor="evaluated_mm_bmesh docstring: promoted from print_audit" -->
 
 ```python
 import bpy, bmesh, array
@@ -220,7 +256,7 @@ Interpretation:
 | `shells > 1` | multiple disconnected solids | may be intentional (multi-part plate) or a floating fragment |
 | `signed_volume_m3 < 0` | all normals inverted | everything prints inside-out |
 
-### 4.2 Automated repair (conservative, in order)
+#### 4.2 Automated repair (conservative, in order)
 
 ```python
 import bpy, bmesh
@@ -258,12 +294,12 @@ def repair(ob, merge_dist=1e-5, fill_holes=True, max_hole_sides=0):
     return print_audit(ob)
 ```
 
-`holes_fill(sides=0)` fills holes with any number of sides; a positive value
+`holes_fill(sides=0)` fills holes with any number of sides; a positive value <!-- ease:source S2 anchor="holes_fill(bm, edges=[], sides=0)" -->
 skips larger holes. Filling is a *guess* — for a part with a genuine missing
 face it is right, for a part where a boolean tore the surface it just hides the
 bug. Always re-audit after repairing.
 
-### 4.3 Boolean-based solid modelling
+#### 4.3 Boolean-based solid modelling <!-- ease:source S13 anchor="SolidifyModifier use_even_offset, use_rim_only" -->
 
 ```python
 import bpy
@@ -297,7 +333,7 @@ def offset_shell(ob, thickness_m, even=True):
     return m
 ```
 
-Boolean hygiene that actually determines success:
+Boolean hygiene that actually determines success: <!-- ease:source UNVERIFIED reason="operand hygiene rules (coplanar offset 0.01-0.1 mm, apply scale first) are practice, not in Blender docs" -->
 
 1. Both operands must individually pass `print_audit` (`watertight=True`).
 2. Neither operand may have coplanar faces exactly touching the other — offset
@@ -307,7 +343,7 @@ Boolean hygiene that actually determines success:
    produces non-manifold spikes.
 5. Re-audit after every boolean, not at the end of a chain.
 
-### 4.4 Scale, orientation and measurement
+#### 4.4 Scale, orientation and measurement
 
 ```python
 import bpy, math
@@ -351,7 +387,7 @@ def overhang_faces(ob, limit_deg=45.0):
     return dict(overhang_faces=len(bad), total_faces=total, indices=bad[:64])
 ```
 
-### 4.5 STL / PLY / OBJ export for printing
+#### 4.5 STL / PLY / OBJ export for printing
 
 ```python
 import bpy, os, struct
@@ -386,13 +422,13 @@ which multiplies by `scene.unit_settings.scale_length`. That only helps if you
 deliberately set `scale_length = 0.001`, which breaks physics and every other
 exporter — so prefer the explicit `global_scale=1000.0` form.
 
-`wm.stl_export` full signature (5.2): `filepath, check_existing, ascii_format,
+`wm.stl_export` full signature (5.2): `filepath, check_existing, ascii_format, <!-- ease:source S4 anchor="bpy.ops.wm.stl_export parameter list" --> <!-- ease:source S6 anchor="STL: added option how to eval (Viewport vs. Render) during export" -->
 use_batch, export_selected_objects, collection, global_scale, use_scene_unit,
 forward_axis, up_axis, apply_modifiers, evaluation_mode, filter_glob`.
 `forward_axis`/`up_axis` take the long enum form (`'X'`, `'Y'`, `'Z'`,
 `'NEGATIVE_X'`, `'NEGATIVE_Y'`, `'NEGATIVE_Z'`) — not FBX's `'-Z'`.
 
-**3MF status in Blender 5.2: not supported natively.** There is no
+**3MF status in Blender 5.2: not supported natively.** There is no <!-- ease:source S4 anchor="no 3MF operator in bpy.ops.wm docs; extension id ThreeMF_io in S7" -->
 `wm.threemf_export` and no 3MF entry in `bpy.ops.wm` / `bpy.ops.export_scene`.
 3MF comes from the community extension `ThreeMF_io` ("3MF Import/Export",
 `blender_version_min = 4.2.0`) on extensions.blender.org:
@@ -408,12 +444,12 @@ print([n for n in dir(bpy.ops.export_mesh) + dir(bpy.ops.wm)
        if "3mf" in n.lower() or "threemf" in n.lower()])
 ```
 
-Prefer 3MF over STL when you need real units, per-object colours/materials, or
+Prefer 3MF over STL when you need real units, per-object colours/materials, or <!-- ease:source S12 anchor="model unit attribute default millimeter; valid micron/millimeter/centimeter/inch/foot/meter" -->
 several parts in one file; prefer binary STL for maximum compatibility.
 
-### 4.6 The 3D-Print Toolbox in 5.2
+#### 4.6 The 3D-Print Toolbox in 5.2
 
-The toolbox is **no longer bundled**. It is a community extension:
+The toolbox is **no longer bundled**. It is a community extension: <!-- ease:source S7 anchor="id print3d_toolbox, blender_version_min 4.2.0, maintainer MikhailRachinskiy" -->
 
 - extensions.blender.org id: `print3d_toolbox` (page slug `print3d-toolbox`),
   maintainer Mikhail Rachinskiy, `blender_version_min = "4.2.0"`.
@@ -458,7 +494,7 @@ def toolbox_check_all(ob):
     return [(i.name, i.value, len(i.indices or ())) for i in report.get()]
 ```
 
-Operator idnames registered by the extension (verified from its source):
+Operator idnames registered by the extension (verified from its source): <!-- ease:source UNVERIFIED reason="operator idnames and min-version notes (>=4.3 shells, >=4.5 hollow/bisect) not re-checked against extension source in this pass" -->
 
 | Operator | Purpose |
 |---|---|
@@ -487,7 +523,7 @@ in the operator return value, which is why the snippet imports it.
 no network access, works under `--factory-startup`, and it returns structured
 data instead of UI state.
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
@@ -508,7 +544,7 @@ data instead of UI state.
 | Hollow SLA part cracks | trapped uncured resin | add ≥ 4 mm drain holes |
 | `ob.dimensions` disagrees with the printed size | unapplied scale, or modifiers not evaluated | `transform_apply(scale=True)` and measure the evaluated object |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
@@ -518,7 +554,7 @@ data instead of UI state.
 | Normals must be outward | yes-ish | yes-ish | no | yes | **yes, mandatory** |
 | N-gons allowed | no (triangulated) | quads | any | any | yes (STL triangulates) |
 | Boolean solver | `'FLOAT'` (preview) | n/a | `'FLOAT'` | `'EXACT'` | **`'EXACT'`** |
-| Min wall thickness | n/a | n/a | n/a | n/a | 0.8 mm FDM / 0.4 mm SLA / 0.7 mm SLS |
+| Min wall thickness | n/a | n/a | n/a | n/a | 0.9 mm FDM / 0.4 mm SLA / 0.7 mm SLS (conservative; see vendor cross-check) |
 | Min feature detail | n/a | n/a | n/a | n/a | 0.6 mm FDM / 0.2 mm SLA |
 | Mated-part clearance | n/a | n/a | n/a | n/a | 0.2 mm snug / 0.4 mm loose (FDM) |
 | Max overhang from vertical | n/a | n/a | n/a | n/a | 45° FDM / 30° SLA / any SLS |
@@ -529,7 +565,7 @@ data instead of UI state.
 | Subdivision before export | no | no | no | keep as modifier | apply at level 2–4 |
 | Triangle budget | tight | tight | tight | loose | irrelevant; resolution matters |
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `assert bpy.context.scene.unit_settings.scale_length == 1.0` — unit contract holds.
 - [ ] `a = print_audit(ob); assert a["watertight"]` — the single gate for printability.
@@ -545,7 +581,7 @@ data instead of UI state.
 - [ ] Re-import the STL (`bpy.ops.wm.stl_import`) into an empty file and re-run `print_audit` — round-trip proves nothing was lost.
 - [ ] Orthographic front/side screenshots at known scale to eyeball wall thickness and overhangs.
 
-## 8. Sources
+### 8. Legacy source list (pre-UKMC; superseded by the Sources section at the end)
 
 - [bmesh.types (`BMEdge.is_manifold`, `is_contiguous`, `is_wire`, `BMesh.calc_volume`) — 5.2](https://docs.blender.org/api/current/bmesh.types.html)
 - [bmesh.ops (`recalc_face_normals`, `remove_doubles`, `dissolve_degenerate`, `holes_fill`, `triangulate`, `delete`) — 5.2](https://docs.blender.org/api/current/bmesh.ops.html)
@@ -558,3 +594,29 @@ data instead of UI state.
 - [3MF Import/Export extension](https://extensions.blender.org/) — id `ThreeMF_io`, min Blender 4.2.0
 - `[UNVERIFIED]` All wall-thickness, overhang and clearance tables are manufacturing practice from printer/service-bureau guidelines, not Blender documentation. Confirm against the specific machine and material.
 - `[UNVERIFIED]` The exact operator names registered by `ThreeMF_io` were not confirmed against its source; discover them at runtime as shown in §4.5.
+
+## Failure Modes (Mandatory)
+
+- **Slicer says object exceeds build volume by ~1000x (or part is 1 mm tall)** — cause: unit contract applied twice or not at all (`global_scale=1000` on a mm-scale model, or `1.0` on a metre-scale one) — fix: assert `scale_length==1.0`, pick one contract, export with `global_scale=1000.0` only (never with `use_scene_unit=True`).
+- **Slicer reports non-manifold / auto-repairs / prints inside-out** — cause: `edge.is_manifold` false (holes, 3+ face edges) or `signed_volume < 0` from flipped normals — fix: §4.2 repair order, then re-run `print_audit` and require `watertight=True` before export.
+- **Boolean seam is non-manifold or a cut leaves no walls** — cause: coplanar cutter faces, `FLOAT` solver, or an inside-out operand (see AGENTS.md failure map: signed volume < 0 on a procedural lathe) — fix: `EXACT` solver, offset cutter 0.01–0.1 mm, assert signed volume > 0 on both operands first.
+- **`AttributeError` on `export_mesh.stl` / `Scene.print3d_toolbox`** — cause: STL operator is `bpy.ops.wm.stl_export` and the toolbox is an extension, not bundled — fix: use `wm.stl_export` and the §4.1 audit (no add-on needed), or install extension id `print3d_toolbox` first.
+- **Thin walls print as gaps though the model shows geometry** — cause: wall below the process minimum (a wall narrower than one perimeter is not printable) — fix: Solidify/thicken to the table minimum and let the gate's `min_wall_mm` (from `spec.json`) decide; do not lower the spec to match the mesh.
+
+## Sources
+
+- [S1] bmesh.types — BMEdge.is_manifold/is_contiguous/is_wire, BMesh.calc_volume (Blender API current) — https://docs.blender.org/api/current/bmesh.types.html — captured 2026-10-13 — sha256 38bc14776291a14763af56ce8565b300c5b7dbd348a3382f8ddcad599371294f — frozen `knowledge/_evidence/kb-261013/w4-blender-api-bmesh-types.html`
+- [S2] bmesh.ops — recalc_face_normals, remove_doubles, dissolve_degenerate, holes_fill (Blender API current) — https://docs.blender.org/api/current/bmesh.ops.html — captured 2026-10-13 — sha256 45f98573a8ee18729eadeb8a5bcc784df770d34ebfe443953f27ebb3932a8555 — frozen `knowledge/_evidence/kb-261013/w4-blender-api-bmesh-ops.html`
+- [S3] mathutils.bvhtree — BVHTree.FromBMesh, overlap (Blender API current) — https://docs.blender.org/api/current/mathutils.bvhtree.html — captured 2026-10-13 — sha256 ab5d8dd9e0e67bec21fbbc828dee03c72071eab2941f658d309a39b3e681c1bd — frozen `knowledge/_evidence/kb-261013/w4-blender-api-bvhtree.html`
+- [S4] bpy.ops.wm — stl_export / stl_import signature (Blender API current) — https://docs.blender.org/api/current/bpy.ops.wm.html — captured 2026-10-13 — sha256 ada74a22a286b954f93ae9389100f8b5ce2ff4f4d9210c355ec95c7d04a395be — frozen `knowledge/_evidence/kb-261013/w3-docs-blender-org-api-current-bpy-ops-wm.html`
+- [S5] Blender 5.0 release notes: Python API (boolean FAST renamed FLOAT) — https://developer.blender.org/docs/release_notes/5.0/python_api/ — captured 2026-10-13 — sha256 5ee8a5f78edc6bba1b822a31271598934e3988263b0345632b8fcdc4e3ef3eff — frozen `knowledge/_evidence/kb-261013/w4-blender-rn-5.0-python-api.html`
+- [S6] Blender 5.2 release notes: Pipeline & I/O (STL export evaluation mode) — https://developer.blender.org/docs/release_notes/5.2/pipeline_io/ — captured 2026-10-13 — sha256 5eaff1d62f04b84523a2e473054231e459e1d76ff52209ba2ad10db9473c888c — frozen `knowledge/_evidence/kb-261013/w4-blender-rn-5.2-pipeline-io.html`
+- [S7] Blender Extensions platform API index (ids print3d_toolbox, ThreeMF_io; blender_version_min) — https://extensions.blender.org/api/v1/extensions/ — captured 2026-10-13 — sha256 cf9ddcc606fbf8914ca7ff34d5ec0b28c791ce84a8711d9a1e46f705537203ad — frozen `knowledge/_evidence/kb-261013/w4-blender-extensions-api-index.json`
+- [S8] Prusa Knowledge Base: Modeling with 3D printing in mind (perimeter widths, overhangs, tolerances) — https://help.prusa3d.com/en/article/modeling-with-3d-printing-in-mind_164135/ — captured 2026-10-13 — sha256 c954de516475f4464aeaffafa673db70616e445d2ef5d122c5c7e4b05186b120 — frozen `knowledge/_evidence/kb-261013/w7-prusa-modeling-with-3d-printing-in-mind.html`
+- [S9] Formlabs Form 4 Design Guide (SLA feature minimums) — https://formlabs.com/global/white-papers/form-4-design-guide/ — captured 2026-10-13 — sha256 2ef4e2d0885da13e3513a7e8b2bb0cfce5d71b401379d2848dfa553bd26ac309 — frozen `knowledge/_evidence/kb-261013/w4-formlabs-form4-design-guide.html`
+- [S10] Formlabs Fuse SLS Design Guide (SLS walls, holes, escape holes; university-hosted copy) — https://torontomu.ca/content/dam/design-technology-lab/services/3d-printing/SLS_DesignGuide.pdf — captured 2026-10-13 — sha256 f634766e1c24b76b8bd7739636ac110cbfa002d7f89f2704275b9fbf1eac3bef — frozen `knowledge/_evidence/kb-261013/w4-formlabs-sls-design-guide-torontomu.pdf`
+- [S11] Library of Congress FDD: STL (STereoLithography) Binary format description — https://www.loc.gov/preservation/digital/formats/fdd/fdd000505.shtml — captured 2026-10-13 — sha256 7289a890ae0b48ee2f5fd7a8000d135fe3541f7db883bf34c66c0983e06824d8 — frozen `knowledge/_evidence/kb-261013/w4-loc-stl-binary.html`
+- [S12] 3MF Core Specification (3MF Consortium, model unit attribute default) — https://github.com/3MFConsortium/spec_core/blob/master/3MF%20Core%20Specification.md — captured 2026-10-13 — sha256 4db7a7a13e7f757c6afc1a9ad731b56d8d068b1a766025692ff757d0f7f16940 — frozen `knowledge/_evidence/kb-261013/w4-3mf-core-spec.md.txt`
+- [S13] bpy.types.SolidifyModifier (Blender API current) — https://docs.blender.org/api/current/bpy.types.SolidifyModifier.html — captured 2026-10-13 — sha256 5f9710106eeed27c353c384d73e0ce2996eb22765b7867dd5d8d6e6b7212bd3a — frozen `knowledge/_evidence/kb-261013/w4-blender-api-bpy-types-solidifymodifier.html`
+- [S14] Repo: scripts/production_gate/meshprep.py (print_audit promotion, mm scaling) — scripts/production_gate/meshprep.py — captured 2026-10-13 — sha256 c75f0725a7222557c079bed0527583af440760c9d44708c95d735f6740e042a4
+- [S15] Repo: AGENTS.md (purpose gating, form gate, min-wall rule) — AGENTS.md — captured 2026-10-13 — sha256 d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7

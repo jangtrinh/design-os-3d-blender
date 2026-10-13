@@ -10,11 +10,12 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608`
-- `knowledge/10-modeling/modifiers.md` — read-verify; SHA256 `88f4e06ffc4d5b9f74db1d00f2c0a95cee35cbe28a8248ab12b19dbf8f6a1ff1`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `5c83f88ce45805aa9b06fe0c893629d49deaf11693cd7693b6ca63981ca419c8`
+- `knowledge/10-modeling/modifiers.md` — read-verify; SHA256 `80f45ba7cf4d2d8d3787aa24d0e448e1c5e5498cc9c9a45fbcf8a1b287e3fab8`
+- `knowledge/10-modeling/game-asset-pipeline-low-to-aaa.md` — read-verify; SHA256 `887f4c901c58bf6c6e07eb44c47e100203659d2d6abb618bb064762e8a81717a`
 
 ### Steps
 
@@ -42,7 +43,7 @@ When: When starting a serious product project or converting a completed session 
 - `docs/ck-001-session-retrospective.md` — read; SHA256 `9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e`
 - `docs/native-build-pipeline-lessons.md` — read; SHA256 `f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb`
 - `docs/product-workflow-template.md` — read; SHA256 `dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78`
 - `CONTEXT.md` — read; SHA256 `52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833`
 
 **Steps**
@@ -68,7 +69,7 @@ When: When applying the reviewed Meshy, Dream-loop and Text-to-CAD agent mechani
 - `research/upstream-agent-patterns/meshy.md` — read-verify; SHA256 `0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33`
 - `research/upstream-agent-patterns/dream-loop.md` — read-verify; SHA256 `55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07`
 - `research/upstream-agent-patterns/text-to-cad.md` — read-verify; SHA256 `77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78`
 - `docs/upstream-agent-integration.md` — read; SHA256 `e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc`
 
 **Steps**
@@ -98,7 +99,7 @@ When: When a reference-led model needs independent feature criticism across boun
 - `scripts/native_review/packets.py` — inspect-adapt; SHA256 `7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed`
 - `scripts/native_review/decision.py` — inspect-adapt; SHA256 `19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df`
 - `tests/native-review/test_native_review.py` — inspect-adapt; SHA256 `b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78`
 
 **Steps**
 
@@ -148,7 +149,7 @@ When: When researching or improving an existing Blender helper, workflow, techni
 
 When: When measuring modifier output or evaluated transforms, or borrowing temporary Blender meshes.
 
-- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9`
 - `scripts/boilerplates/bp_core.py` — inspect-adapt; SHA256 `7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d`
   Caution: Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous.
 - `scripts/agent_verify/inspect_scene.py` — inspect-adapt; SHA256 `49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5`
@@ -182,7 +183,7 @@ When: When a long-lived MCP process may be using stale helper code after depende
   Caution: Loading may remove owned generated bytecode caches and reimport declared local dependencies. Callers must use the returned module; old external references are not rewritten. Numeric predicates do not prove visibility, physical fit or manufacture. checkpoint() writes under AGENT_CHECKPOINT_DIR or the repo output/checkpoints directory.
 - `tests/execution/test_agent_runtime.py` — inspect-adapt; SHA256 `6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e`
 - `tests/execution/fixtures/verify-lib/reload_dependencies.py` — inspect-adapt; SHA256 `992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4`
-- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9`
 
 **Steps**
 
@@ -205,7 +206,7 @@ When: When a long-lived MCP process may be using stale helper code after depende
 
 When: When reusing a bpy boilerplate library instead of writing a new helper.
 
-- `knowledge/00-foundations/python-agent-boilerplates.md` — read-verify; SHA256 `0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0`
+- `knowledge/00-foundations/python-agent-boilerplates.md` — read-verify; SHA256 `8bd1b7f0b2ff3da98e52f037a1475ce4d2548526835beaf62e283caefd0c953d`
   Caution: Registry membership and bibliography do not qualify modules. Unrelated bearing bores, sag, gear features, joint limits and optical/physical behavior retain their module-specific cautions. Selected 5.2 API tests do not establish all-platform or manufacturing compliance.
 - `scripts/boilerplates/bp_core.py` — inspect-adapt; SHA256 `7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d`
   Caution: Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous.
@@ -226,6 +227,80 @@ When: When reusing a bpy boilerplate library instead of writing a new helper.
 
 - clean_scene and node group/mesh replacement can destroy another scene; do not run them just because they are indexed.
 - Knowledge routing does not certify mass/inertia, bone roll, or physics.
+- The module's standards/literature matrix is provenance leads only (draft tier; two suspected-wrong citations: ISO/ASTM 52915:2020 is AMF, ISO 16903:2015 looks like an LNG standard); a listed module is not standards-compliant or print-ready.
+
+### Topic: game-asset-low-to-aaa
+
+When: When authoring real-time game assets, managing poly budgets, baking normal maps, or configuring LOD/Nanite meshes.
+
+- `knowledge/10-modeling/game-asset-pipeline-low-to-aaa.md` — read-verify; SHA256 `887f4c901c58bf6c6e07eb44c47e100203659d2d6abb618bb064762e8a81717a`
+- `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `5c83f88ce45805aa9b06fe0c893629d49deaf11693cd7693b6ca63981ca419c8`
+
+**Steps**
+
+- Allocate polygon budget from target platform and silhouette curvature; the module's budget table values are UNVERIFIED conventions, not limits.
+- Split UVs on every hard edge (module's Hard Edge Law is an UNVERIFIED bake convention; check bake seams on the actual result).
+- Standardize texel density per asset tier with TD = R*sqrt(A_uv/A_world) on world-space areas with scale applied; 2048 px/m for hero items is an UNVERIFIED convention example.
+
+**Gates**
+
+- Object transforms applied with scale (1.0, 1.0, 1.0).
+- Zero non-manifold edges, internal faces, or unmapped vertices, measured on the actual mesh.
+- Normal-map green channel matches the target engine: Blender bake default, Unity and Godot are Y+ (OpenGL); flip green only for Unreal (DirectX -Y, vendor page not found, UNVERIFIED) and confirm in the engine.
+
+**Limitations**
+
+- Nanite (UE 5.8 docs) supports skeletal meshes, Masked materials and splines; translucent materials and morph targets are not supported. The module still advises LODs for hero characters; re-check the Nanite page for the engine version shipped.
+- Aggressive planar decimation can create sliver triangles that cause shading artifacts in mobile engines.
+
+### Topic: mesh-optimization-retopology
+
+When: When optimizing raw scans, high-poly sculpts, or repairing non-manifold geometry for downstream animation.
+
+- `knowledge/10-modeling/mesh-optimization-retopology.md` — read-verify; SHA256 `d1453ee1e34d48489030a9bef5e45316442d97fc64cfcd138b023e73c2dc5576`
+- `knowledge/10-modeling/modifiers.md` — read-verify; SHA256 `80f45ba7cf4d2d8d3787aa24d0e448e1c5e5498cc9c9a45fbcf8a1b287e3fab8`
+
+**Steps**
+
+- Select a native retopology path: Voxel Remesh, QuadriFlow, Poly Build + Snapping for rigid parts; manual retopo for deforming loops. Quad Remesher/RetopoFlow/PolyQuilt/MeshMachine are out-of-policy (.project-agent.md); QRemeshify offline gate only if the owner selected it.
+- Clean non-manifold edges and degenerate faces; clean_and_repair_mesh only detects internal-face conflicts (measured faces 7 -> 7, 1 edge still on >2 faces), so delete/split them explicitly and re-audit.
+- Enforce outward normal orientation (signed volume > 0) and check quad aspect ratio to avoid pinching.
+
+**Gates**
+
+- BMesh validation returns zero open boundaries and zero non-manifold vertices on the actual mesh.
+- Report the valence-4 ratio for deforming meshes; the module's 92% figure is an UNVERIFIED convention, not an acceptance threshold.
+- UV seams/material borders: `delimit` protects only Planar (DISSOLVE) decimation; after Collapse inspect UV stretch and material borders by hand.
+
+**Limitations**
+
+- Automated quad remeshing does not align edge loops to anatomical muscle deformation lines.
+- Un-Subdivide is intended for mainly grid-based topology (manual); results on irregular or triangulated meshes are unreliable, not guaranteed to fail.
+
+### Topic: blender-addon-ecosystem
+
+When: When choosing third-party add-ons versus native workflows, or developing headless automation scripts.
+
+- `knowledge/00-foundations/blender-addon-ecosystem.md` — read-verify; SHA256 `80d2a42dc2bb1f586ee1c175d98c40ecb54e850422f7a35e1787c6fc8595195c`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+
+**Steps**
+
+- Compare the task against the add-on decision matrix as orientation only; production geometry stays native per the Native Asset Policy (.project-agent.md), and Hard Ops, Quad Remesher and UVPackmaster are vendor-doc UNVERIFIED context, not recommendations.
+- Avoid context-dependent UI operator calls (view3d ops need VIEW_3D) inside headless background build scripts.
+- Use native bmesh/data-API fallbacks (e.g. obj.modifiers.new) for CI/headless server execution; Node Wrangler is bundled but disabled by default under --factory-startup.
+
+**Gates**
+
+- Project files containing custom modifier setups open cleanly on stock Blender (apply or package helper modifiers before export).
+- UV packing coverage is measured on the actual layout; the module's >= 70% is an unsourced figure, not an acceptance threshold.
+- Headless scripts run without Viewport context errors in background mode.
+
+**Limitations**
+
+- Third-party add-on updates can break compatibility across major Blender releases; 4.2+ uses the extensions platform (`blender --command extension install-file`).
+- Proprietary compiled add-ons cannot run inside sandboxed cloud server nodes without licenses.
+- Vendor quality claims (quad %, packing gain) are marketing, not measurements; module trust tier is draft.
 
 ## native-product-visualization
 
@@ -233,12 +308,12 @@ Matte plastic materials, studio setup, camera, and polished product imagery.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `e455cc41465700c56266f5d9652adae920972e941644b27085b2982ab3fa8705`
-- `knowledge/30-lighting-render/lighting.md` — read-verify; SHA256 `f2b8db7610f1793524b248c9442b0f1a6951dfe5015faa35d35168eadedd894f`
-- `knowledge/60-pipeline/product-viz-and-shots.md` — read-verify; SHA256 `0ae55d706fd7496ee8bf802784938a97cbb5e4383939b27c09d47e1f48a85f35`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `b087af786748fae21ed68c3f0f76d2e47a1a9f73db557ea0b837f8b8f404e6e3`
+- `knowledge/30-lighting-render/lighting.md` — read-verify; SHA256 `088816c0c0073751bdd8bdc865de102ac20a12577405054e9dede45c8345bfec`
+- `knowledge/60-pipeline/product-viz-and-shots.md` — read-verify; SHA256 `39a86a300e663f428117ead2556fb9b54c20d5f28833e6fa11b351a5cca5f342`
 
 ### Steps
 
@@ -268,7 +343,7 @@ When: When plastic/metal reflects incorrectly, or grain/imperfection at real-wor
   Caution: Snippet uses 3D Object Noise rather than the described triplanar blending. Bump unit/presets are not calibrated physical thickness.
 - `scripts/boilerplates/bp_materials_pbr.py` — inspect-adapt; SHA256 `8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd`
   Caution: Named material deletion affects global data; missing sockets silently ignored; data.materials assignment can affect shared mesh users. No actual rendered self-test.
-- `scripts/boilerplates/materials_shading/bp_mat_metals.py` — inspect-adapt; SHA256 `c8ec6e3e66989bac62cc2a22c02c902666a8368ed77145c938aaac04de6775e9`
+- `scripts/boilerplates/materials_shading/bp_mat_metals.py` — inspect-adapt; SHA256 `e8ee6d36e3ad8e0468d9ba6b294350bdc5e30361a376a80236463f06842be86f`
   Caution: Missing sockets silently skipped; unknown preset becomes aluminum. Deletes same-name material. Two-node test does not verify values, links, tangent orientation or physical reflectance; Optional annotation unresolved.
 
 **Steps**
@@ -350,20 +425,45 @@ When: Only when hair/fur, velvet, satin, or weave direction is clearly visible i
 
 - Research sources do not certify APIs or figures; verify against the runtime and the origin per the task's requirements.
 
+### Topic: master-artisan-pbr-grooming
+
+When: When rendering physically accurate organic skin, thin-film iridescence, microfiber sheen, or procedural Hair Curves grooming.
+
+- `knowledge/20-shading/master-artisan-pbr-and-grooming.md` — read-verify; SHA256 `86b55391ecb8ce83d25a31d5dcab7b9ccb6cfb2364566124024b6ff640ce0750`
+- `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `b087af786748fae21ed68c3f0f76d2e47a1a9f73db557ea0b837f8b8f404e6e3`
+
+**Steps**
+
+- Configure Principled BSDF with subsurface_method RANDOM_WALK_SKIN and a per-channel Subsurface Radius (x Subsurface Scale); Subsurface IOR (default 1.4, Cycles only) exists only with that method and is separate from the surface IOR.
+- Use the Principled Sheen inputs (Weight/Roughness/Tint) or the Sheen BSDF default Microfiber model (linearly transformed cosines multiple-scattering sheen) for peach fuzz and fabric; there is no 'Charlie' option.
+- Construct the Geometry Nodes Hair Curves groom from the bundled assets (Generate -> Interpolate -> Clump -> Frizz/Curl -> Trim, Attach Hair Curves to Surface) with surface-UV attachment.
+
+**Gates**
+
+- Dielectric energy stays within E_total = (1-F)*E_diffuse + F*E_specular <= 1 (formula, not a render proof); inspect grazing-angle fringes visually.
+- Subsurface keeps a crisp silhouette without light leaking through thin geometry, checked on the actual render.
+- Cycles hair uses scene.cycles_curves.shape RIBBONS (default) or THICK; the module's transparent-bounce 8-12, BVH-memory and speed-up figures are UNVERIFIED, so measure on the real scene.
+
+**Limitations**
+
+- Volumetric SSS requires manifold, closed-surface geometry; open planar meshes cause artifacts.
+- Hair Curves objects (3.5+ introduction not source-verified) are evaluated through Geometry Nodes; legacy particle hair still exists on 5.2.0 as a separate system.
+- Skin radius/melanin ranges and Cycles hair/SSS speed-up percentages are practitioner values, not sourced thresholds (module trust tier draft).
+
 ## native-animation-rigging
 
 Joints, hand, natural pick/place, range of motion, and explode/reassemble.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
-- `knowledge/40-animation/animation-fcurves.md` — read-verify; SHA256 `1d0bc0a7456fb7dc092737f0d8f92b4aecc6d954061ace4fc6e07b9feaa9df81`
-- `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `540a630c008c22c42e69492935c5066796cb616f5c5d91bdca7f26d18feea478`
+- `knowledge/40-animation/animation-fcurves.md` — read-verify; SHA256 `25dbdbf28a4136a6a172e5367fe480bbb59d9aa7252f79d0faa458bd54723512`
+- `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `b32fed6971b00d98126c3ac8ddc457dedf84ae04a1779094c380bf4e1f7027bf`
   Caution: Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently.
-- `knowledge/60-pipeline/scene-organization.md` — read-verify; SHA256 `7ca6183bbf3160eb85aae0c7d2843c3fe8ca4c0ad5eccf80f56a3890aa8ca10a`
+- `knowledge/60-pipeline/scene-organization.md` — read-verify; SHA256 `1a4dfcb1ad5b395bc34c64f76ab97aa8d59aaf98079bbdab37399371dd362d87`
 
 ### Steps
 
@@ -449,7 +549,7 @@ When: When keyframes, a driver, or a turntable must be created from a Python hel
 - `scripts/boilerplates/bp_animation.py` — inspect-adapt; SHA256 `0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5`
   Caution: Edits stay in the assigned slot and requested frames; objects deliberately sharing one slot still share animation. Whole-value assignment expects direct Object attributes. Unrelated keys may affect motion. Turntable has no infinite Cycles loop; driver setup replaces state on the exact requested channel. NLA/layered motion is not qualified.
 - `tests/boilerplates/test_animation_contract.py` — inspect-adapt; SHA256 `e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0`
-- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9`
 
 **Steps**
 
@@ -523,13 +623,13 @@ FDM plastic printing, fit, inserts, assembly/disassembly, durability, and materi
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/60-pipeline/3d-printing.md` — read-verify; SHA256 `4bce69b0a198c8406475bf230fe66a35cbad19752bba22aa8ce24ad66e6d0eda`
-- `knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md` — read-verify; SHA256 `eab55760bfe566860b330463a65a8802b1dd569354d05e85ce96e5af3febd69d`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/60-pipeline/3d-printing.md` — read-verify; SHA256 `dbeb2fdbc055332cc1dd3ef2f1e71f98b4ac4a6d8ed9e805d34a64b328cc4d66`
+- `knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md` — read-verify; SHA256 `cbc3300f08b8a739940d0a37403ee725fca8adbc9f19b4c8872e45b9d62a624a`
   Caution: Static audit: bottom semicircle spans90deg; chamfer example creates cylinder; wall test is bbox. Verify actual geometry before reuse.
-- `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `870ac87843291f7991ff38c0d804fff817d743fac5e123b2c4ad667da68dfaa0`
+- `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `e51fbd22ca45df695560d44198313bf099f5bf0d87bcbbfad6875e9ae404f8a6`
 
 ### Steps
 
@@ -643,17 +743,42 @@ When: When using heuristic orientation and guillotine packing to lay parts out o
 - The packer currently accepts an oversize part when it opens a new plate; do not treat an unverified result as print-ready.
 - The weights/margins in the source are historical examples with no evidence of being generally optimal/calibrated.
 
+### Topic: dfam-3dprinting-production
+
+When: When designing parts for FDM, SLA, or SLS 3D printing, sizing heat-set inserts, or avoiding overhang failures.
+
+- `knowledge/60-pipeline/dfam-3dprinting-production.md` — read-verify; SHA256 `d391e808cc31aa478792ac6804b0b998c65bb19c1a9eb3ebac225ccbe9e408eb`
+- `knowledge/60-pipeline/3d-printing.md` — read-verify; SHA256 `dbeb2fdbc055332cc1dd3ef2f1e71f98b4ac4a6d8ed9e805d34a64b328cc4d66`
+
+**Steps**
+
+- Treat 45 degrees from vertical as the FDM-derived self-support rule (SLA metrics differ per Formlabs) and start anti-elephant-foot with a 0.8 mm x 45 degree bottom chamfer (unverified starting point; slicer compensation is the alternative).
+- Size brass heat-set insert holes at D_hole ~ D_insert_outer - 0.4 mm (M3 knurl 4.6 mm -> 4.2 mm as printed, 4.0 mm drilled; other sizes are INFERENCE) and boss OD >= 2.0 x insert OD (UNVERIFIED), then prove with a pull-out/torque coupon.
+- Orient primary tension/bending load paths along the in-plane extrusion direction to avoid delamination; confirm by test.
+
+**Gates**
+
+- Mesh verified as 2-manifold with zero open boundaries via BMesh inspection.
+- Minimum wall meets the spec min_wall_mm or the module's conservative table (FDM 1.2 mm ~3 perimeters at 0.45 mm, SLA 0.8 mm); these are policy values, vendor minima are lower.
+- Hollow printed cavities have at least two escape holes sized from the larger of the cited guidance (Fuse SLS >= 3.5 mm; 3d-printing R11 4 mm); the SLA 3.0 mm figure is unverified.
+
+**Limitations**
+
+- FDM Z-axis strength is lower than in-plane (module: S5 'significantly lower'); the 40-60% ratio and PLA MPa figures are UNVERIFIED, so test.
+- Printed threads wear/strip with repeated assembly; the M6 cut-off and '2-3 cycles' are UNVERIFIED, so prefer inserts and test the actual thread.
+- Module is trust_tier draft: bridge span 10-15 mm vs 3d-printing 5-10 mm is an unresolved conflict; wall/hole numbers are not printer-qualified.
+
 ## precision-assembly-metrology
 
 Precision CAD, datums, tolerance stacks, and assembly/disassembly.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/70-cad-precision-robotics/cad-precision-modeling.md` — read-verify; SHA256 `bc171eb925df0f536a5745c294496268eb8a31464c2044439d2a688051fc51f6`
-- `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `870ac87843291f7991ff38c0d804fff817d743fac5e123b2c4ad667da68dfaa0`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/70-cad-precision-robotics/cad-precision-modeling.md` — read-verify; SHA256 `e1c1c8da92c1394b73ac08934439556dc8f7966c3c188d51675662a94912d559`
+- `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `e51fbd22ca45df695560d44198313bf099f5bf0d87bcbbfad6875e9ae404f8a6`
 
 ### Steps
 
@@ -680,7 +805,7 @@ When: When final exported-part delivery needs proof that every declared part has
 - `scripts/production_gate/coverage.py` — inspect-adapt; SHA256 `7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35`
   Caution: Coverage/current-byte audit only: does not remeasure geometry or authenticate reports, authored requirements or prior checker code. Covers declared parts/features, not all assembly objects. Original wall/feature sampling limits persist; manufacture remains BLOCKED.
 - `scripts/production_gate/coverage_checks.py` — inspect-adapt; SHA256 `df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e`
-- `scripts/production-gate.py` — inspect-adapt; SHA256 `c43a4dfd0ac1d04e8bdb8f9f847d84c68dbd5dc6a0ac544ff52b173890f51930`
+- `scripts/production-gate.py` — inspect-adapt; SHA256 `85ba67d838058a3419e29b951d7f2e8c31aaa07057a4e20bdd001230e95d7294`
 - `tests/production-gate/test_coverage_audit.py` — inspect-adapt; SHA256 `8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32`
 - `specs/README.md` — read; SHA256 `6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84`
 
@@ -706,8 +831,8 @@ When: When final exported-part delivery needs proof that every declared part has
 
 When: When a bore, wall, collision, tolerance-extreme or export result is surprising and code/spec/checker causes must be distinguished.
 
-- `knowledge/60-pipeline/geometry-diagnostic-workflow.md` — read-verify; SHA256 `f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf`
-- `scripts/production_gate/walls_overhang.py` — inspect-adapt; SHA256 `5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54`
+- `knowledge/60-pipeline/geometry-diagnostic-workflow.md` — read-verify; SHA256 `ea5b21d001d858ae48344d08f431476075d7ca5c6eab75b894f9793a0fe2b32a`
+- `scripts/production_gate/walls_overhang.py` — inspect-adapt; SHA256 `488c61bf10979a47074a94c61d56ad72f2bb69b51abd4a06bfa54e59096a9f4f`
   Caution: Fallback samples positive-area triangles only when no nondegenerate triangle meets 0.3 mm2. Mixed-size faces can still hide unsampled thin regions. Rays and overhang percentages do not prove exhaustive thickness, printability, preload or physical strength.
 - `scripts/production_gate/features_fasteners.py` — inspect-adapt; SHA256 `dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad`
 - `tests/production-gate/test_small_surface_walls.py` — inspect-adapt; SHA256 `f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3`
@@ -722,20 +847,21 @@ When: When a bore, wall, collision, tolerance-extreme or export result is surpri
 **Gates**
 
 - Filled bores, thin walls, empty/degenerate meshes and deliberate overtravel must be rejected by their applicable controls.
-- Fine-face fallback activates only for an empty primary eligible set; minimum wall and geometry density remain unchanged.
-- Tolerance extrema and sampling scope must match the claim; export vertex splitting alone is not geometry loss.
+- Fine-face fallback activates only for an empty primary eligible set; minimum wall and geometry density remain unchanged, and the wall verdict must not depend on world offset (samples are taken in the bbox-centered `wall_sampling_frame`).
+- Tolerance extrema and sampling scope must match the claim (nominal 3.0 mm plus worst case 3.2 mm, plus a negative overtravel control); export vertex splitting alone is not geometry loss.
 
 **Limitations**
 
 - Centroid/ring/surface samples are not exhaustive thickness, continuous collision or Hausdorff proof.
 - The production mesh preparer uses the input object matrix; use a verified identity bake for constrained parts rather than infer evaluated-transform parity.
 - Thread pilots and nominal support contact do not establish final thread strength, preload, bearing or factory fit.
+- Recentring the wall samples cannot restore detail an input mesh has already quantized away (huge world offsets).
 
 ### Topic: manufacturing-evidence
 
 When: When advancing a digital assembly to an engineering candidate and collecting physical pilot evidence for retention, process, electronics or bench claims.
 
-- `knowledge/60-pipeline/manufacturing-evidence-workflow.md` — read-verify; SHA256 `20028e1a959135c553a0d170689a0c1310c0a01bf6853220160aaf5616b6d7a3`
+- `knowledge/60-pipeline/manufacturing-evidence-workflow.md` — read-verify; SHA256 `9ef859a1eff50adc593437415563340596c753c28d89417d9d104ba367644ea5`
 - `builds/reference-keyboard/manufacturing/qualification/evidence_gate.py` — inspect-adapt; SHA256 `6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa`
   Caution: Task-specific pilot checker, not a certification system. Source roles/assertions and physical-origin labels are caller-supplied; hashes do not authenticate a laboratory or establish adequacy of the criteria. Local C03 snapshots/run artifacts are not shipped.
 - `builds/reference-keyboard/manufacturing/qualification/record_checks.py` — inspect-adapt; SHA256 `1a38c0f322117df386b9c873eec096649faceb641af93efccd2f50e2803bf992`
@@ -769,7 +895,7 @@ When: When native component code needs explicit length parameters, frames, datum
   Caution: Length scalars in mm/m only; rigid local frame validation does not compose world transforms. Datums/ports/visual-collision-physical labels do not prove mating or object behavior. Explicit source files only; export suffix/hash is not format validation or manufacturing proof.
 - `tests/boilerplates/test_parametric_contract.py` — inspect-adapt; SHA256 `7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4`
 - `specs/examples/native-iteration-parameters.json` — read; SHA256 `e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b`
-- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d`
+- `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78`
 
 **Steps**
 
@@ -827,7 +953,7 @@ When: When bore/tolerance/finish/heat-treatment need a quantified budget.
   Caution: Radial sagitta is not directly a diameter/H7 budget; STEP does not by itself supply GD&T. No CAD addon activation follows.
 - `research/mechanical-engineering-foundations/03-MATERIALS-METALLURGY-HEAT-TREATMENT.md` — read-verify; SHA256 `73724dbe3b68749c29462f8093f84a183dc5fc8df897ecdbff16cc2a8a648f13`
   Caution: Grade/process dependence incomplete; zero-distortion/uniform-thickness/zero-dimension-change statements are not unconditional process guarantees.
-- `scripts/boilerplates/bp_cad_robotics.py` — inspect-adapt; SHA256 `f4cefba47a6540da6fd19de46eb9cee9998c3065d9f974a2dcde69498435b566`
+- `scripts/boilerplates/bp_cad_robotics.py` — inspect-adapt; SHA256 `295454702a567fd0f07c0ce956ea52f82d93f568f3ae6d1dc6bbaa1ef02a29d9`
   Caution: Advertised inertia tensor is not computed/returned. Mass uses local evaluated coordinates without object/scene scale or validity guards. Counterbore concatenates capped cylinders, not a boolean union. Hull ignores modifiers.
 
 **Steps**
@@ -876,7 +1002,7 @@ When: When using bearing, nut/washer, keyway, or gland helpers as mechanical int
 
 When: When building connectors, panel cutouts, terminals, and service clearance in a control enclosure.
 
-- `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c`
+- `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef`
   Caution: Lines36-49/154-158 present universal flats, bend and EMC spacing; treat as unverified task-specific inputs. Lines109-130 accept min_bend_radius but never use it; no curvature/strain-relief enforcement. Dimensions and connector coding require selected part drawings.
 - `research/industrial-wiring-harness-packaging/01-INDUSTRIAL-BUS-PHYSICAL-LAYERS-PINOUTS.md` — read-verify; SHA256 `0de4f110d19f68c8b2fa83b1942970b058878e86f220e6aea2874fb11028d593`
   Caution: Lines51-60 collapse protocols/speeds/pinouts; A/B labels and terminal numbering require selected endpoint pin-view verification. Line73 says A>B while schematic pulls B high. HART loop resistance shares a table column with cable characteristic impedance. Lines153-159 mating/standoff envelopes are not universal dimensions.
@@ -889,9 +1015,9 @@ When: When building connectors, panel cutouts, terminals, and service clearance 
 
 **Steps**
 
-- Lock connector/contact part numbers, pin view, protocol, cable, and the specific drawing; record where the sources conflict.
-- Inspect/adapt the cutter in a separate scene; measure the cross-section, panel thickness, mounting face, and tool approach.
-- Declare the pin-to-pin wire list, terminals/crimps, and the install/removal clearance.
+- Lock connector/contact part numbers, pin view, protocol, cable, the specific drawing and the governing standard part (M12 D-coding IEC 61076-2-101:2024, X/H-coding IEC 61076-2-109:2014); record where the sources conflict.
+- Inspect/adapt the cutter in a separate scene; measure the cross-section, panel thickness, mounting face and tool approach; the +0.2 mm process offset is a heuristic.
+- Declare the pin-to-pin wire list, terminals/crimps and the install/removal clearance.
 
 **Gates**
 
@@ -900,7 +1026,7 @@ When: When building connectors, panel cutouts, terminals, and service clearance 
 
 **Limitations**
 
-- The pinout/dimension tables are unvalidated synthesis; do not treat a pitch or an ISO name as a compatibility guarantee.
+- The pinout/dimension tables are unvalidated synthesis (standards cited from IEC abstracts, not clause text); every cutout dimension must come from the selected part drawing, and a pitch or ISO name is not a compatibility guarantee.
 - The saddle is currently a cube with no slot; the vent lacks thread/membrane and ignores its parameters; the adapter must be fixed before production.
 
 ### Topic: enclosure-sealing-emc-harness
@@ -936,13 +1062,13 @@ Gears, reducers, shafts/bearings, sustained holding loads, and transmissions.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/70-cad-precision-robotics/gears-transmission-modeling.md` — read-verify; SHA256 `1975a92284d94b2b84cf09707c7594935f3bde34bf448b6624efb37a415dbe86`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/70-cad-precision-robotics/gears-transmission-modeling.md` — read-verify; SHA256 `4033f63e73706b9e9c98108ce88a3f3c4a04248265379d58ed5c95c37bf6a81c`
   Caution: Static audit: root radius and tolerance arguments unused; root fillets not constructed.
-- `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `870ac87843291f7991ff38c0d804fff817d743fac5e123b2c4ad667da68dfaa0`
-- `knowledge/70-cad-precision-robotics/cad-precision-modeling.md` — read-verify; SHA256 `bc171eb925df0f536a5745c294496268eb8a31464c2044439d2a688051fc51f6`
+- `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `e51fbd22ca45df695560d44198313bf099f5bf0d87bcbbfad6875e9ae404f8a6`
+- `knowledge/70-cad-precision-robotics/cad-precision-modeling.md` — read-verify; SHA256 `e1c1c8da92c1394b73ac08934439556dc8f7966c3c188d51675662a94912d559`
 
 ### Steps
 
@@ -1061,13 +1187,14 @@ Robot links, URDF, coordinate frames, collision, and inertia.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `dbd386d203b4e9f109a874f873fada6fd12aaab46016e04ed948d8e25f95174e`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `b32fed6971b00d98126c3ac8ddc457dedf84ae04a1779094c380bf4e1f7027bf`
   Caution: Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently.
-- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
-- `knowledge/60-pipeline/export-interchange.md` — read-verify; SHA256 `54a6aba3dcdb747009017f27b30d874ac5453f4d137d4ec6186b036c37d23c0c`
+- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `540a630c008c22c42e69492935c5066796cb616f5c5d91bdca7f26d18feea478`
+- `knowledge/60-pipeline/export-interchange.md` — read-verify; SHA256 `43f9a23b6b8b7c9441b72ca1b09c62b69c6f41effbeba0ba150b557d64166068`
+- `knowledge/70-cad-precision-robotics/production-mechatronics-gate.md` — read-verify; SHA256 `47c9a045ae7b381f315b797b0d81d52115c80d6f7ed404fa3376d76e8e30684d`
 
 ### Steps
 
@@ -1093,7 +1220,7 @@ Robot links, URDF, coordinate frames, collision, and inertia.
 
 When: When routing wiring from the controller across moving joints, or designing a carrier/drag chain.
 
-- `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c`
+- `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef`
   Caution: Lines36-49/154-158 present universal flats, bend and EMC spacing; treat as unverified task-specific inputs. Lines109-130 accept min_bend_radius but never use it; no curvature/strain-relief enforcement. Dimensions and connector coding require selected part drawings.
 - `research/industrial-wiring-harness-packaging/03-CABLE-MECHANICS-FLEX-LIFE-DRAG-CHAINS.md` — read-verify; SHA256 `9505da833fe0db557b3385b4c94251829a5e5926ce37c86ed8987d98049256c6`
   Caution: Lines23-26 conductor class is not cycle-life qualification; generic radius, torsion/free-length and20-50N retraction values are unverified for target hardware. Chain neutral-axis layout, cable length/bend/torsion and endpoint strain relief require per-pose checks; no physical life proof.
@@ -1117,6 +1244,333 @@ When: When routing wiring from the controller across moving joints, or designing
 
 - A curve reveal does not preserve length or prove real routing.
 - The boilerplate currently creates detached primitives and lacks sockets/stops; a conductor type does not certify flex life.
+- Bend-radius multipliers (6x static, 12x dynamic of cable diameter) are UNVERIFIED: the cable datasheet minimum wins, and the waypoint-level bend check must be repeated on the evaluated curve.
+
+### Topic: actuator-foc-motion-control
+
+When: When sizing BLDC/PMSM motors, configuring Field-Oriented Control (FOC), or tuning torque/velocity/position cascade loops.
+
+- `knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md` — read-verify; SHA256 `e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0`
+- `research/robotics-precision-cad/10-HUMANOID-HARDWARE-ACTUATORS.md` — read-verify; SHA256 `3745640e0eb1e416bd13a0a4628d91b789e2c9846cb96596f041224d1874af7a`
+
+**Steps**
+
+- Compute reflected load inertia J_L = J_load/N^2 against rotor inertia: sourced guideline 10:1 or lower, project rule 5:1 (a stricter choice, not a vendor limit).
+- Use Clarke/Park transforms with SVPWM and closed-loop Iq current control; calibrate electrical angle at boot; encoder >= 12-bit and low axial runout (project rule R2).
+- Check thermal equilibrium at continuous torque with a metal heat path; take limits from the motor datasheet (Class B 130 C / Class F 155 C insulation).
+
+**Gates**
+
+- Phase currents stay within the driver and motor datasheet continuous limits under rated payload.
+- Inertia gate: size_rotary_actuator() inertia_ratio <= 5.0 (project rule); phase R/L balanced within 5% (module ladder).
+- Thermal bench: 100% duty for 20 minutes keeps motor surface below the module's 75 C project target (not a datasheet limit); trip thresholds come from the datasheet.
+
+**Limitations**
+
+- Theoretical torque constants degrade with motor magnet temperature rise.
+- Design-reference note, not certification: current-loop rates, bandwidth targets and thermal limits must come from the motor/driver datasheets and tests, not from this module.
+
+### Topic: sensor-fusion-state-estimation
+
+When: When designing joint feedback, configuring dual magnetic/optical encoders, or filtering IMU states with EKF/Complementary filters.
+
+- `knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md` — read-verify; SHA256 `eda812e52299751b0ae30b3f8adde753767850a395aa2d0670bbb7285d95dc87`
+- `research/robotics-precision-cad/01-MECHANICAL-ROBOTICS-FUNDAMENTALS.md` — read-verify; SHA256 `072a2394e501f873e2acff6665cb49c5b7cdd76b9909f551e36312feb7b956f8`
+
+**Steps**
+
+- Mount the diametric magnet at the sensor-datasheet air gap (module 0.5-1.5 mm is UNVERIFIED) and keep axial runout small (module: > 0.2 mm distorts angle); verify angle increases monotonically over 360 degrees.
+- Calibrate gyro bias at zero motion, then fuse gyro and accelerometer with a complementary filter (tau = alpha*dt/(1-alpha) = 0.245 s for alpha 0.98 at 200 Hz) or an EKF with acceleration gating.
+- Map joint-side absolute position against motor-side incremental position for backlash and belt slip detection.
+
+**Gates**
+
+- Static gyro noise (60 s) and homing repeatability over 10 cycles are checked against project heuristics (0.05 deg/s RMS, +-0.05 mm), which are UNVERIFIED and not acceptance standards.
+- Filter step response matches the computed time constant (98% settling about 0.97 s for alpha 0.98), not a fixed 150 ms.
+- Encoder, endstop and homing signals are filtered (RC 1 kOhm x 100 nF = 100 us is arithmetic) and homing does not shift between boots.
+
+**Limitations**
+
+- Ferromagnetic components, motor phase cables and the stator field distort magnetometer and Hall/magnetic-encoder readings.
+- Design-reference note, not certification: sensor part numbers, protocols (the AS5600 interface list is inconsistent in the module) and thresholds are unverified; confirm against datasheets before design freeze.
+
+### Topic: embedded-realtime-bus-safety
+
+When: When architecting CAN-FD/EtherCAT real-time communication, deterministic multi-axis sync, or hardware E-Stop/STO fail-safe circuits.
+
+- `knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md` — read-verify; SHA256 `ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787`
+- `knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md` — read-verify; SHA256 `6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef`
+  Caution: Lines36-49/154-158 present universal flats, bend and EMC spacing; treat as unverified task-specific inputs. Lines109-130 accept min_bend_radius but never use it; no curvature/strain-relief enforcement. Dimensions and connector coding require selected part drawings.
+
+**Steps**
+
+- Terminate a linear CAN-FD bus with 120 ohm at both physical ends and measure 60 ohm CAN_H-CAN_L unpowered.
+- Choose loop rates from the drive/MCU budget; the module's tiers (current 20-50 kHz, velocity 1-5 kHz, trajectory 200-1000 Hz) are design guidance, not standard values, and CAN-FD arbitration is limited to 1 Mbit/s.
+- Wire Safe Torque Off so it cuts gate-driver power or enables directly in hardware, never through software handlers; any safety-function claim needs functional-safety-iso13849-robotics and the licensed standards.
+
+**Gates**
+
+- No bus error-passive or bus-off state during a soak run with the project-defined duration under high-speed motion.
+- Heartbeat loss reaches safe torque off within the 50 ms project target and E-Stop drops gate voltage to 0 V within 5 ms project target (UNVERIFIED, not safety-rated).
+- Measured CAN_H-CAN_L resistance is 60 ohm +-5% unpowered (the +-5% band is a project choice).
+
+**Limitations**
+
+- Star or tree topology on high-speed CAN-FD is not allowed by the module (R1 linear daisy-chain trunk).
+- Software E-Stop over the bus is supplemental only; hardware STO is required, and the module is a design reference, not certification.
+
+### Topic: production-mechatronics-gate
+
+When: When evaluating end-to-end mechatronics models from Blender/CAD through electrical, kinematic, and manufacturing export readiness.
+
+- `knowledge/70-cad-precision-robotics/production-mechatronics-gate.md` — read-verify; SHA256 `47c9a045ae7b381f315b797b0d81d52115c80d6f7ed404fa3376d76e8e30684d`
+- `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `b32fed6971b00d98126c3ac8ddc457dedf84ae04a1779094c380bf4e1f7027bf`
+  Caution: Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently.
+
+**Steps**
+
+- Execute the 4-level gate check (Form & Fit, Electrical & Harness, Kinematic Integrity, Manufacturing Pack); a pass is digital evidence only.
+- Validate thread engagements, insert wall thicknesses and connector clearances against the spec (min_wall_mm per part; module default 1.2 mm is not built into the gate script).
+- Audit URDF joint limits and visual-vs-collision mesh separation; positive-definite and triangle-inequality inertia checks are necessary conditions only.
+
+**Gates**
+
+- Zero zero-area faces, non-manifold edges or unmodeled fastener clearances across all BOM components, measured on the actual geometry.
+- Harness bend radii are at least the cable datasheet minimum (module's 10 x OD is an UNVERIFIED default; DIN EN 50618 is not cited by the module).
+- Manufacturing pack exports match the master CAD revision and report a digital-evidence verdict (not PRODUCTION_READY); manufacture stays BLOCKED until physical evidence exists.
+
+**Limitations**
+
+- CAD geometry clearances do not account for injection mold thermal shrinkage or 3D print creep over time.
+- Kinematic simulation does not predict flexure deflection under extreme cantilever dynamic shock loads.
+- Design-reference note, not certification: a gate pass never replaces physical testing; motion sweeps need a separate pass (the gate has no link-collision sweep driver).
+
+### Topic: thermal-management-actuator-cooling
+
+When: When sizing continuous motor torque, designing conductive/convective heat dissipation, or selecting thermal interface materials.
+
+- `knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md` — read-verify; SHA256 `4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a`
+- `knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md` — read-verify; SHA256 `e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0`
+
+**Steps**
+
+- Model the two-node lumped thermal network (winding, case) as an in-module derivation (UNVERIFIED) and compute T_cont with the corrected P_joule (3/2 factor) and S3 peak current from the corrected formula (no extra CDF term).
+- Route heat through direct metal or an intermediate aluminum spreader when mounting to polymer/3D-printed chassis (spreader >2.5 mm and polymer k 0.3-0.7 W/mK are unsourced).
+- Place a PT1000/KTY84 sensor in the hot winding slot and sample at >= 10 Hz with current foldback; 110 C and 125 C trips are project choices to be set from the insulation class and datasheet.
+
+**Gates**
+
+- Continuous rated-torque test reaches thermal equilibrium (dT/dt < 1 C per 10 min) below the project target of 110 C winding in 25 C ambient (UNVERIFIED; insulation class governs).
+- TIM compression stays within the chosen pad datasheet range (module lists 20-35% in the table and 20-30% in the checklist; project targets) without stressing the driver PCB.
+- Insulation/dielectric withstand per the applicable standard (module 1000 V + 2 x V_bus, 60 s, < 1.0 mA is UNVERIFIED, not confirmed against IEC 60034-1).
+
+**Limitations**
+
+- The lumped network assumes uniform stator heat; end-turn hotspots can exceed the model, so keep margin.
+- Polymer structural relaxation under thermal cycling reduces fastener clamping force over time (values unverified).
+- Design-reference note, not certification: material/standard numbers (IEC 60085, ASTM D5470, ISO 13732-1) were not captured; module is trust_tier draft.
+
+### Topic: power-distribution-bms-protection
+
+When: When architecting robot 48V DC bus power distribution, inrush pre-charge circuits, or active regenerative braking choppers.
+
+- `knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md` — read-verify; SHA256 `fd3d05b99ac326f28776895f4fa096457a2094bef2c37c10fb34d5f7fdb4e75a`
+- `knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md` — read-verify; SHA256 `ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787`
+
+**Steps**
+
+- Size the pre-charge resistor from the energy 1/2 C V^2 with a pulse rating over 3-5 tau (heuristic) and close the main contactor/MOSFET only when V_bus >= 0.90 x V_bat (90% is 2.3 tau; 3 tau is 95%).
+- Set the brake-chopper trip window below the derated driver FET rating (68 V for an 80 V FET, 85 V for a 100 V FET); the 57 V trip and 60 V SELV claim are unverified project values.
+- Separate high-current motor return from logic ground with a single star-point tie next to the isolated DC-DC output (design heuristic).
+
+**Gates**
+
+- Pre-charge current peak is measured below the project target of 5.0 A (heuristic, not a contactor rating).
+- Emergency reversal at max payload keeps bus voltage below the derated FET limit with the chopper active (58 V is a project target, not a standard).
+- No MCU resets or CAN/SPI frame errors during step transients; the di/dt > 100 A/us figure is illustrative, so use the real transient.
+
+**Limitations**
+
+- Braking resistors accumulate heat rapidly during sustained payload descents; thermal cutoff is required.
+- TVS clamping must stay at or below the derated FET V_DS,max (85 V clamp on an 80 V FET was wrong) and cannot sink continuous regenerative overvoltage.
+- Design-reference note, not certification: cell limits, SELV and IPC-2152 figures are not verified against standards.
+
+### Topic: functional-safety-iso13849
+
+When: When architecting collaborative robot safety zones, dual OSSD monitoring, or ISO/TS 15066 contact force limits.
+
+- `knowledge/70-cad-precision-robotics/functional-safety-iso13849-robotics.md` — read-verify; SHA256 `b3f8a0317e86c765fd5c807ff606c26c258b74ef957aa1cc118bd4483455316c`
+- `knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md` — read-verify; SHA256 `ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787`
+
+**Steps**
+
+- Structure dual-channel OSSD circuits with test pulses and a discrepancy window; 50 ms is a project design target, not a standard value.
+- Derive collaborative speed caps from force/pressure values read from the licensed ISO/TS 15066 Annex A (module pressure column and 2x transient rule are UNVERIFIED and must not be used) with the sourced K and effective mass per body region.
+- Remove gate-driver bias supply galvanically for hardware Safe Torque Off (STO), independent of firmware.
+
+**Gates**
+
+- STO response is taken from the drive datasheet (module's 8 ms nominal / 15 ms max is an UNVERIFIED design target), not from this module.
+- Contact force/pressure is measured with a calibrated biofidelic device and compared with values read from the licensed standard; a pass is not certification.
+- A single-channel discrepancy fault latches a fail-safe lockout requiring manual reset.
+
+**Limitations**
+
+- PL claims must be evaluated from DC, MTTFd and CCF per ISO 13849-1 (Figure 5/Annex K/SISTEMA); Cat 3/medium DC/high MTTFd attaining PL d is unconfirmed, and redundant safety encoders are needed for SLS at PL d/e.
+- Sharp workpiece geometry or tooling pinch points can cause severe local pressure even if total force is low.
+- Design-reference note, not a substitute for the standards, a risk assessment or certification.
+
+### Topic: impedance-admittance-control
+
+When: When designing compliant physical interaction, peg-in-hole assembly, or surface contouring under external contact.
+
+- `knowledge/70-cad-precision-robotics/impedance-admittance-contact-control.md` — read-verify; SHA256 `e8a720ca29cafbcb483e6011758aa3dfb4ec3c5c5576df847b7755bd15ad7253`
+- `knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md` — read-verify; SHA256 `e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0`
+
+**Steps**
+
+- Formulate Cartesian target impedance with symmetric positive-definite M_d, D_d and K_d matrices.
+- Enforce zeta = D_d/(2*sqrt(M_d*K_d)) >= 1.0 (critical damping or slight overdamping; 0.707 is lightly underdamped and still overshoots about 4.3%).
+- Map Cartesian compliance to joint torques via Jacobian transpose with gravity compensation; tuning ranges are starting-point heuristics, tune per robot.
+
+**Gates**
+
+- Step approach to a rigid steel plate at 100 mm/s shows zero overshoot bounce and no sustained chatter.
+- Free-space gravity compensation holds with net force error under the project target of 0.5 N (UNVERIFIED target).
+- Peg-in-hole insertion (project target: 25 um clearance H7/g6, UNVERIFIED) succeeds without force jamming on the real fixture.
+
+**Limitations**
+
+- Admittance control relies on outer-loop trajectory updates; latency causes phase lag on very stiff contacts.
+- Singularities in the Jacobian inverse will command unbounded joint velocities without damping.
+- Design-reference note, not certification: gate thresholds and DFMEA guardrails are heuristics, not standards.
+
+### Topic: kinematic-calibration-metrology
+
+When: When identifying robot geometric errors, compensating DH/Hayati parameters, or calibrating Tool Center Points.
+
+- `knowledge/70-cad-precision-robotics/kinematic-calibration-dh-metrology.md` — read-verify; SHA256 `f43664571e1bd40d43d6cb843052f31aa850348c0fd8680e4276093c5861a3b0`
+- `knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md` — read-verify; SHA256 `b32fed6971b00d98126c3ac8ddc457dedf84ae04a1779094c380bf4e1f7027bf`
+  Caution: Static audit: named hull block decimates only; inertia block formats values; diagonal positivity is incomplete. Verify frame conventions independently.
+
+**Steps**
+
+- Choose measurement poses that maximize an SVD observability index (O_1; the module's sqrt(5N) normaliser is flagged doubtful, re-check Borm-Menq before implementing) with wide envelope coverage (80% is a heuristic).
+- Identify Hayati-Mirmirani parameters with damped Levenberg-Marquardt and check the Jacobian condition number (kappa < 100 is a heuristic).
+- Calibrate the TCP by 4-point or 6-point pivot least squares to isolate the tool offset vector.
+
+**Gates**
+
+- Post-calibration absolute accuracy is verified on an independent path (module: 500 mm diagonal cube); the < 0.25 mm figure is an UNVERIFIED project target, not an ISO 9283 limit.
+- TCP sphere-fit residual is recorded; <= 0.12 mm is a project heuristic.
+- Environmental drift is controlled or compensated (steel CTE about 12 um/m/K, 20 +-1 C cell) and recorded with the calibration.
+
+**Limitations**
+
+- Kinematic calibration does not compensate for dynamic link flexure under high inertial accelerations.
+- Ambient thermal drift can introduce apparent link length scaling errors unless climate-controlled.
+- Design-reference note, not certification: ISO 9283, Hayati-Mirmirani and Borm-Menq sources were paywalled/not re-read; module is trust_tier draft.
+
+### Topic: joint-bearing-preload-life
+
+When: When sizing robot joint cross-roller bearings, grinding precision preload shims, or verifying tilting moment life.
+
+- `knowledge/70-cad-precision-robotics/joint-bearing-preload-fatigue-life.md` — read-verify; SHA256 `574af99c0f4795fb827333a85b6f547d2ed60881fcd668586f2e5cb8f73c6557`
+- `knowledge/70-cad-precision-robotics/gears-transmission-modeling.md` — read-verify; SHA256 `4033f63e73706b9e9c98108ce88a3f3c4a04248265379d58ed5c95c37bf6a81c`
+  Caution: Static audit: root radius and tolerance arguments unused; root fillets not constructed.
+
+**Steps**
+
+- Select the cross-roller bearing from combined loads using the catalog equivalent load P = X(Fr + 2M/Dpw) + Y Fa with manufacturer X, Y (NSK pairs (1.0, 0.45) and (0.67, 0.67), side of the 1.5 split ambiguous in the extracted PDF) and L10 exponent 10/3.
+- Apply the ground precision shim or locknut preload per the manufacturer's preload code; check negative internal clearance and the resulting tilting stiffness against the catalog moment-rigidity curves (the 2.5-4x stiffness gain is unsourced).
+- Check static safety with P0 = Fr + 2M/Dpw + 0.44 Fa and fs = C0r/P0 against the manufacturer's recommended fs; the 1800 MPa Hertz limit is NOT an ISO 76 value.
+
+**Gates**
+
+- Runout/TIR (module target <= 0.005 mm) and drag torque (module 0.20-0.70 Nm, breakaway ratio max 1.5x) are project gate targets, not manufacturer or standard values; set them from the catalog.
+- Static safety factor meets the manufacturer's recommended fs for the emergency-stop load case.
+- Tilting stiffness K_theta (module min 25 kNm/rad for an 80 mm bearing, project target) is confirmed from catalog curves or a measured moment test.
+
+**Limitations**
+
+- Heavy preload combined with high motor stator temperatures can cause thermal runaway and seizure (0.08 C threshold and 30 minute scale are unsourced heuristics).
+- Repetitive small-angle dithering motion can cause false brinelling fretting corrosion.
+- Design-reference note, not certification or a manufacturer calculation; module is trust_tier draft.
+
+### Topic: robot-pcb-layout-power
+
+When: When routing motor controller inverters, high-current H-bridges, gate driver traces, or Kelvin shunt sensing.
+
+- `knowledge/70-cad-precision-robotics/robot-pcb-layout-power-electronics.md` — read-verify; SHA256 `f9b41056563b6121a3abc677a7a50f96620787f59425b2a165a3d714994c928c`
+- `knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md` — read-verify; SHA256 `fd3d05b99ac326f28776895f4fa096457a2094bef2c37c10fb34d5f7fdb4e75a`
+
+**Steps**
+
+- Keep the gate loop small: gate resistor adjacent to the gate pin (module < 5 mm heuristic) with the return trace on the layer directly beneath.
+- Route Kelvin current-sense connections from the inner shunt pads as a tightly coupled differential pair with no shared return.
+- Stitch thermal vias under power MOSFET exposed pads (0.3 mm drill; module pitch 1.0 mm, range 0.8-1.2 mm, is unsourced; 16 vias derive to about 10.2 K/W ideal).
+
+**Gates**
+
+- Gate loop inductance target below 5.0 nH is UNVERIFIED (source is qualitative); measure ringing on the real board (module: <= 10% of drive voltage, project heuristic).
+- MOSFET junction-to-ambient rise at full phase current is measured with a thermal soak; module target <= 45 K is a project heuristic.
+- Power ground and analog ground meet at a single star point near the current-sense shunt; 48 V clearance audited against IPC-2221B (0.6 mm minimum for B2 per a secondary source, 1.5 mm kept as design margin).
+
+**Limitations**
+
+- PCB layout heuristics cannot substitute for full 3D electromagnetic simulation or a real EMC test at high switching frequencies.
+- Thermal via conduction assumes solid copper infill or solder-filled vias during assembly (tenting/VIPPO advice is unsourced).
+- Design-reference note, not certification: most thresholds are unverified heuristics; follow FET, driver and fab datasheets; module is trust_tier draft.
+
+### Topic: ros2-realtime-control
+
+When: When configuring PREEMPT_RT Linux kernels, writing ros2_control HardwareInterface plugins, or running CiA 402 CST/CSV drives.
+
+- `knowledge/70-cad-precision-robotics/ros2-realtime-control-architecture.md` — read-verify; SHA256 `62d7bd39a5f0bc0743548aa69ff36a37027ffdc8d9d416c3de9231d8ed01f003`
+- `knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md` — read-verify; SHA256 `ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787`
+
+**Steps**
+
+- Configure the PREEMPT_RT kernel with isolcpus/nohz_full/rcu_nocbs for dedicated RT cores (kernel-parameters doc), mlockall(MCL_CURRENT|MCL_FUTURE) and SCHED_FIFO (priority 95-98 is a convention).
+- Implement ros2_control SystemInterface read/write loops allocation-free at the chosen update rate (module project target 1 kHz, 1.0 ms period).
+- Enforce the CiA 402 state machine for power-up, fault reset and Cyclic Synchronous Torque (CST); keep STO fault latched, no automatic reset.
+
+**Gates**
+
+- Worst-case latency is measured with cyclictest under CPU/IO stress (module project targets: nominal 15 us, max 50 us, <= 45 us in the 24 h run, UNVERIFIED) with zero overruns.
+- Zero page faults in RT threads after mlockall, observed with a method the project chooses (e.g. fault counters).
+- Heartbeat or bus loss triggers a safe stop within the project target (module 50 ms heartbeat, 15 ms STO fault injection), not a safety-rated figure.
+
+**Limitations**
+
+- PREEMPT_RT is designed for bounded worst-case latency, but the achieved bound depends on hardware, firmware and configuration; physical packet jitter is also bounded by CAN/EtherCAT hardware.
+- micro-ROS transport over UART/CAN requires hardware DMA buffers to avoid dropped serial frames.
+- Design-reference note, not certification: rate/jitter/timeouts are project targets; CiA 402 mode numbers 8/9/10 were not seen in the fetched source.
+
+### Topic: emc-environmental-qualification
+
+When: When qualifying robot enclosures, actuators, and electronics for CISPR 25 radiated emissions, IEC 61000 ESD, MIL-STD-810H vibration, or IP67 sealing.
+
+- `knowledge/70-cad-precision-robotics/emc-emi-environmental-qualification.md` — read-verify; SHA256 `88a149d2b56160ab8bdd08861ec4eb33bff52ef80365b99a729c66c81aac13df`
+- `knowledge/70-cad-precision-robotics/production-mechatronics-gate.md` — read-verify; SHA256 `47c9a045ae7b381f315b797b0d81d52115c80d6f7ed404fa3376d76e8e30684d`
+
+**Steps**
+
+- Terminate cable shield braid 360 degrees circumferentially to chassis ground; avoid pigtails.
+- Size the O-ring groove: static squeeze nominal 25% (Parker max about 30%; the 20% floor is cross-section dependent, UNVERIFIED) and gland fill about 75% (60-85%, keep at least 10% void), with an e-PTFE pressure vent.
+- Compute random-vibration G_RMS from the test plan's PSD (Cat 24 7.7 g rms in the module is 810G Change 1 text, not for qualification) and run HALT screening with ranges from the plan.
+
+**Gates**
+
+- Radiated emissions are measured against the applicable CISPR 25 class limit from the licensed standard; the module's 28 dBuV/m figure is UNVERIFIED.
+- ESD per IEC 61000-4-2 at the product's chosen level (module: +-8 kV contact, +-15 kV air, class 4 table) with the criterion set by the product requirement.
+- IP67 submersion leak test by pressure decay; the module's < 0.5 mbar/min, 30 min and 10+10 ESD strikes are project targets, not standard values.
+
+**Limitations**
+
+- Pre-compliance sniffer probes provide relative near-field hot-spot detection but do not guarantee far-field ALSE compliance.
+- O-ring chemical compatibility must be verified for the specific operating fluid/solvent envelope.
+- Design-reference note, not a test plan or certification: IP69K is a high-pressure 80 C water jet (not steam); limits come from the licensed standards.
 
 ## render-export-delivery
 
@@ -1124,12 +1578,12 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `a241aa51cbfffb4bd67aca186e5605e158049a88e2fac1d569de308fa44d8dfb`
-- `knowledge/30-lighting-render/compositing-output.md` — read-verify; SHA256 `ce19c33464e1ea8ef58cc5c686406eb3d227272c4cc1feb98a4c361e1c42f2ab`
-- `knowledge/60-pipeline/export-interchange.md` — read-verify; SHA256 `54a6aba3dcdb747009017f27b30d874ac5453f4d137d4ec6186b036c37d23c0c`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8`
+- `knowledge/30-lighting-render/compositing-output.md` — read-verify; SHA256 `0528c5e2114f45647c05c0bd9f3b97247a805bad43975e8b70f01b655b2c28b6`
+- `knowledge/60-pipeline/export-interchange.md` — read-verify; SHA256 `43f9a23b6b8b7c9441b72ca1b09c62b69c6f41effbeba0ba150b557d64166068`
 
 ### Steps
 
@@ -1155,7 +1609,7 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 
 When: When rendering the saved model at requested resolution, changing aspect, delivering GLB/video or refreshing media after geometry changes.
 
-- `knowledge/60-pipeline/native-render-delivery.md` — read-verify; SHA256 `9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171`
+- `knowledge/60-pipeline/native-render-delivery.md` — read-verify; SHA256 `a646027c50b2eb968654d5cb2ad447f0d544f8cbc55245c51fd3ad64d2ba38a1`
 - `builds/reference-keyboard/scripts/fullhd.py` — inspect-adapt; SHA256 `d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a`
   Caution: Inspect/adapt only: names, views and 96-frame choreography are specific to the local B scene. Not a generic renderer, no automatic visual judgment or physical evidence. Prior B media cannot qualify later C03 geometry.
 - `builds/reference-keyboard/scripts/package_delivery.py` — inspect-adapt; SHA256 `3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852`
@@ -1213,7 +1667,7 @@ When: When a series of native Blender passes needs a durable journal, explicit a
 
 When: When screening whether evaluated mesh geometry fits a perspective or orthographic camera before rendering.
 
-- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9`
 - `scripts/agent_verify/inspect_scene.py` — inspect-adapt; SHA256 `49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5`
 - `tests/boilerplates/test_evaluated_mesh_contract.py` — inspect-adapt; SHA256 `ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4`
 - `scripts/samples/native-api-contract.py` — inspect-adapt; SHA256 `45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29`
@@ -1335,7 +1789,7 @@ When: When a delivered package must be published as a public review page, or an 
 
 - `docs/delivery-review-publication.md` — read; SHA256 `2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55`
 - `docs/native-build-pipeline-lessons.md` — read; SHA256 `f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb`
-- `scripts/check-html-tag-balance.py` — inspect-adapt; SHA256 `28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3`
+- `scripts/check-html-tag-balance.py` — inspect-adapt; SHA256 `3fb3f1033942e519dd4aa2c05c307d5a31503dcf783d806723056330467bfefd`
   Caution: Nesting only: it says nothing about layout, accessibility, tokens, copy or whether the page's claims are supported. It is the cheapest rung, not the gate.
 
 **Steps**
@@ -1356,19 +1810,69 @@ When: When a delivered package must be published as a public review page, or an 
 - The design gate judges structure and tokens, not whether the evidence is adequate or the claim honest.
 - Live-URL checks prove loading, layout and console cleanliness; real-device touch and search indexing stay manual.
 
+### Topic: cinematic-animation-render
+
+When: When configuring cinematic cameras, optimizing multi-frame Cycles animation renders, or staging optical shots.
+
+- `knowledge/30-lighting-render/video-animation-cinematics.md` — read-verify; SHA256 `3919a180a8f3b7c701f1d76d1aa3ee8fbe567d5aa642ea935abe91bad2023bfd`
+- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8`
+
+**Steps**
+
+- Stage cameras with a 3-tier crane rig (practitioner pattern, UNVERIFIED) and choose focal length/shutter for the shot.
+- Enable Persistent Data only for static-scene animations; Cycles sample_clamp_indirect is already 10.0 (unitless), so change it only for a measured firefly reason.
+- Render to 16-bit OpenEXR half-float or 16-bit PNG frame sequences before encoding to final video.
+
+**Gates**
+
+- Measure per-frame render time with and without Persistent Data on the actual scene; the 40-70% reduction is an unmeasured claim.
+- A 3-frame preview strip shows no frame-to-frame denoise crawl at the chosen samples (the 64-sample floor is practitioner guidance).
+- Color management uses the AgX view transform with a valid look id ('AgX - High Contrast', 'AgX - Medium High Contrast' or 'AgX - Base Contrast'; 'AgX - Medium Contrast' does not exist); highlight hue behaviour is judged visually, not asserted.
+
+**Limitations**
+
+- Persistent Data keeps BVH/textures in memory between frames, which can run out of GPU memory on heavy scenes and leaves stale data if the scene is mutated from Python.
+- Aggressive denoising at low sample counts can make noise crawl between frames; thresholds here are practitioner guidance, not measured.
+
+### Topic: visual-fidelity-image-matching
+
+When: When reconstructing 3D assets from 2D image references with high geometric and visual fidelity.
+
+- `knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md` — read-verify; SHA256 `f39da6c43b5acaabfb0334eb768bdd1bbf66e41a5db2d4e657db2e5873b97320`
+- `knowledge/60-pipeline/product-viz-and-shots.md` — read-verify; SHA256 `39a86a300e663f428117ead2556fb9b54c20d5f28833e6fa11b351a5cca5f342`
+
+**Steps**
+
+- Do not synthesize blueprints, exploded assemblies or parts catalogs with Nano Banana or any hosted model (Native Asset Policy); work from the supplied reference images and record what each view proves.
+- Load orthographic reference views as image empties (EMPTY IMAGE) and orthographic cameras to remove perspective drift in the Blender view; hidden sides stay UNKNOWN.
+- Deconstruct the assembly into modular parts following the visible hierarchy and mirror across the plane that matches the module's Front-view convention (YZ plane, mirror X).
+- Match materials with Principled BSDF inputs (e.g. Coat Weight; Blender 5.2 has no OpenPBR node) from the CMF specification, then review per feature.
+
+**Gates**
+
+- The reference/spec establishes an explicit metric bounding box; the module's landmark tolerance of 1.0 mm is a local heuristic.
+- Silhouette IoU and MAE are diagnostics only (the module's 98%/MAE<5 are unsourced heuristics); the verdict is a per-feature PASS/FAIL/UNKNOWN review per blender-image-to-3d review-rubric.
+- PBR albedo is delit without baked specular contamination, checked on the actual textures.
+
+**Limitations**
+
+- Single-view inputs leave hidden sides unknown; do not fill them with hosted generation, record UNKNOWN or request more references.
+- High-frequency decal textures require vector artwork for sub-pixel sharpness.
+- The module's Nano Banana section is historical and policy-forbidden; module is trust_tier draft and its numeric gates are heuristics.
+
 ## native-procedural-simulation
 
 Geometry Nodes, patterns, instances, and simulation/caches using Blender-native tools.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/50-procedural/geometry-nodes.md` — read-verify; SHA256 `4e4dc95e1d559e39c4446d62b3a2b9ea6abbd85e35e461b25b15a2abf6c981a6`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/50-procedural/geometry-nodes.md` — read-verify; SHA256 `866d83eeeec5b18a97b854f2bb66f8ebab7a7cadaab0b7c0a9e94dfd8b8511c7`
   Caution: Vertex-count growth does not verify pure instancing, and fixed-topology simulation need not change vertex count. Check instance counts/transforms or expected simulation state; require topology growth only if the task specifies it.
-- `knowledge/50-procedural/simulation-physics.md` — read-verify; SHA256 `eeb6afd6ebdb67b9743da7945d30891d46756145c4cfb4d99d780d33fe0abc00`
-- `knowledge/10-modeling/modifiers.md` — read-verify; SHA256 `88f4e06ffc4d5b9f74db1d00f2c0a95cee35cbe28a8248ab12b19dbf8f6a1ff1`
+- `knowledge/50-procedural/simulation-physics.md` — read-verify; SHA256 `16a30f37e4331ac62082ba9f966b02b571ce189ec7bdac06a0f7ef7cd1adab1e`
+- `knowledge/10-modeling/modifiers.md` — read-verify; SHA256 `80f45ba7cf4d2d8d3787aa24d0e448e1c5e5498cc9c9a45fbcf8a1b287e3fab8`
 
 ### Steps
 
@@ -1393,7 +1897,7 @@ Geometry Nodes, patterns, instances, and simulation/caches using Blender-native 
 
 When: When assigning Geometry Nodes modifier inputs from Python and proving the parameters affect evaluated geometry.
 
-- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8`
+- `knowledge/00-foundations/native-api-contracts.md` — read-verify; SHA256 `0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9`
 - `scripts/boilerplates/bp_geonodes.py` — inspect-adapt; SHA256 `53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e`
   Caution: Requires Blender 5.2 modifier RNA; no legacy ID-property fallback. Direct Float/Vector VALUE binding is tested; other RNA value kinds and attribute/layer modes are not qualified. Group creation refuses any name collision; modifier reuse requires the exact same tree. connect() is a separate socket resolver and retains its own ambiguity limits.
 - `tests/boilerplates/test_geonodes_contract.py` — inspect-adapt; SHA256 `88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30`
@@ -1542,21 +2046,47 @@ When: When adapting a parametric cable/tube or flange graph.
 - The cable currently ignores Sag; the flange is only a disc minus a bore, with no hub/bolt pattern.
 - A nonempty mesh is not enough to prove the graph acted on the input.
 
+### Topic: geometry-nodes-production
+
+When: When designing complex procedural patterns, surface scatter graphs, or simulation zone animations.
+
+- `knowledge/50-procedural/geometry-nodes-advanced-production.md` — read-verify; SHA256 `941c4ef0f8a52626dccef2ababf09f8966bb29ea36cae27492ee316b35f04fe3`
+- `knowledge/50-procedural/geometry-nodes.md` — read-verify; SHA256 `866d83eeeec5b18a97b854f2bb66f8ebab7a7cadaab0b7c0a9e94dfd8b8511c7`
+  Caution: Vertex-count growth does not verify pure instancing, and fixed-topology simulation need not change vertex count. Check instance counts/transforms or expected simulation state; require topology growth only if the task specifies it.
+
+**Steps**
+
+- Maintain strict field-domain understanding (Point, Edge, Face, Corner, Instance); fields evaluate lazily per context.
+- Scatter with Distribute Points on Faces (Poisson mode uses Distance Min/Density Max) plus slope masks from Normal for natural distribution.
+- Keep instances on scatter systems and realize only before booleans, per-instance deformation or game export; realizing multiplies geometry by instance count (measured 408 x 12 = 4,896 vertices).
+
+**Gates**
+
+- User parameters are exposed in the modifier panel with explicit min, max and units.
+- Evaluation cost is measured on the target scene; the module's 60 vs 4 FPS and 5 MB vs 2.5 GB figures are illustrative and unsourced, so no fixed fps threshold applies.
+- Simulation zones use Delta Time (the only time output of Simulation Input) so physics is frame-rate independent.
+
+**Limitations**
+
+- Realize Instances is required before boolean cuts, per-instance deformation or export, but it multiplies geometry by instance count and is costly on dense scatters.
+- Geometry Nodes evaluate lazily; attributes written in the point domain cannot be directly sampled on faces without interpolation.
+- Evaluated mesh read-back of an instance-only tree returns 0 vertices (new_from_object); read evaluated_geometry().instances_pointcloud() or realize first.
+
 ## native-character-creature
 
 Build a humanoid or creature that must deform: proportions, animation topology, facial blendshapes, hair/skin shading, IK rig and walk cycle.
 
 ### Base reading
 
-- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `032fc8bd0476f0d60106375aefffdbd56d090555a5d33c2fd7bb426f444906a0`
-- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `8bd924aae27b545232d3d8222152fe2160ff7f7cfeddd54ee1c7126487efcc5c`
-- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3`
-- `knowledge/15-character-creature/character-creature-modeling.md` — read-verify; SHA256 `a185251e5024b5d00ec85118711558515687cde1d7f8ab8b8042c52c90f9678d`
+- `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
+- `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
+- `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
+- `knowledge/15-character-creature/character-creature-modeling.md` — read-verify; SHA256 `6ac3ffbf685a531f4051f7c8b2c44d8ebe977a51187e49d4102ad0ec0c02fa6a`
   Caution: Anatomy/proportion tables and the SSS radius and scale values are artistic or literature figures, not standards - the ones the audit could not confirm are marked UNVERIFIED inline. The 52 ARKit targets are Apple's spec, not FACS AUs and not ISO/IEC 14496-2.
-- `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `1b24a3089c56d919a90b1717ce805592229479c03a3db9bc73697e3d4ddc3608`
-- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `dd5b6f0feebbfb0d58ae1aed6963261ed8e5f09e96f16ece6e031b8b88671889`
-- `knowledge/40-animation/animation-fcurves.md` — read-verify; SHA256 `1d0bc0a7456fb7dc092737f0d8f92b4aecc6d954061ace4fc6e07b9feaa9df81`
-- `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `e455cc41465700c56266f5d9652adae920972e941644b27085b2982ab3fa8705`
+- `knowledge/10-modeling/modeling-topology.md` — read-verify; SHA256 `5c83f88ce45805aa9b06fe0c893629d49deaf11693cd7693b6ca63981ca419c8`
+- `knowledge/40-animation/rigging-armature.md` — read-verify; SHA256 `540a630c008c22c42e69492935c5066796cb616f5c5d91bdca7f26d18feea478`
+- `knowledge/40-animation/animation-fcurves.md` — read-verify; SHA256 `25dbdbf28a4136a6a172e5367fe480bbb59d9aa7252f79d0faa458bd54723512`
+- `knowledge/20-shading/materials-pbr.md` — read-verify; SHA256 `b087af786748fae21ed68c3f0f76d2e47a1a9f73db557ea0b837f8b8f404e6e3`
 
 ### Steps
 
@@ -1702,7 +2232,7 @@ When: When building a humanoid IK/FK armature, twist bones, automatic weights, o
 
 - `research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md` — read-verify; SHA256 `eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d`
   Caution: Christensen-Burley 2015 is the BURLEY method, not the random walk; Kavan 2007 is dual quaternion skinning, not twist bones. The Gaussian weight formula is NOT what the boilerplate implements. Hildebrand 1976 and Jimenez 2010 citation details are flagged UNVERIFIED.
-- `scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py` — inspect-adapt; SHA256 `079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3`
+- `scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py` — inspect-adapt; SHA256 `892d714c228b187677609f5fa3bd9a98a412d09b16058dd4ecc7a1e1b79327dc`
   Caution: Binding is NEAREST-BONE hard assignment (one group per vertex at weight 1.0), not smooth skinning - smooth the weights before any deformation-quality claim. Dual quaternion skinning stays off unless use_deform_preserve_volume is set.
 - `scripts/boilerplates/character_creature/bp_biped_locomotion.py` — inspect-adapt; SHA256 `220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43`
   Caution: A 5-key harmonic approximation, not a gait solve: no stance plateau so expect foot slide, and pelvis Z extrema fall at 0/T/2 rather than Winter's 12%/62%. Review an animatic before calling it a walk.
