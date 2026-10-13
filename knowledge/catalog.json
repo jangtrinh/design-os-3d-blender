@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 165,
+    "execution-source": 152,
     "imported-reference": 47,
     "knowledge": 58,
     "research-synthesis": 76,
-    "workflow": 54
+    "workflow": 55
   },
   "dependency_edges": 166,
   "foundations": [
@@ -5661,6 +5661,25 @@
       "sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
       "tags": [],
       "title": "DC01 P03 print kit",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Nodestack public story"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 14,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/nodestack/README.md",
+      "related": [],
+      "sha256": "b55665d453f5f5f46e9d65909c92ca153c07c657dfc11b5dc261f6efa093e87a",
+      "tags": [],
+      "title": "Nodestack public story",
       "use": "read"
     },
     {
@@ -13008,7 +13027,7 @@
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "5c2bffed986cbcb145f4a19e298428cf0e8743f78fbf5a88dd77348e0cccde15",
+      "sha256": "1d1468afd53c58006e9d6f7f5aa4b55f0797fae8a4c46e859aee9cc15c9d6499",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -19793,25 +19812,6 @@
       "use": "inspect-adapt"
     },
     {
-      "description": "",
-      "headings": [
-        {
-          "line": 13,
-          "text": "Add scripts directory"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 120,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/boilerplates/bp_mating_contract.py",
-      "related": [],
-      "sha256": "96d5337e127299e8b6bcad9e70fa710aee6ccf8b6c9ea6b5a511872488f7f4a4",
-      "tags": [],
-      "title": "Add scripts directory",
-      "use": "inspect-adapt"
-    },
-    {
       "annotation": {
         "basis": "Controller source review 2026-09-17; eight host contract tests for SI normalization, frames/roles/name collisions and evidence identity.",
         "caution": "Length scalars in mm/m only; rigid local frame validation does not compose world transforms. Datums/ports/visual-collision-physical labels do not prove mating or object behavior. Explicit source files only; export suffix/hash is not format validation or manufacturing proof.",
@@ -20619,20 +20619,6 @@
       "use": "inspect-adapt"
     },
     {
-      "description": "",
-      "headings": [],
-      "kind": "execution-source",
-      "lines": 366,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/bounded-refine.py",
-      "related": [],
-      "sha256": "635f89005fd1dc83ad2ec25258e924ac79c6a83d03be3dd3eef6de10c2f83952",
-      "tags": [],
-      "title": "bounded-refine.py",
-      "use": "inspect-adapt"
-    },
-    {
       "annotation": {
         "basis": "Written and reviewed 2026-09-18 after regex edits to a shipped page closed a fieldset early; run on all four published pages, which reported balanced.",
         "caution": "Nesting only: it says nothing about layout, accessibility, tokens, copy or whether the page's claims are supported. It is the cheapest rung, not the gate.",
@@ -20898,10 +20884,10 @@
     },
     {
       "annotation": {
-        "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py)",
+        "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py) | re-verified 2026-10-13 after portable mktemp fix (GNU/BSD): tests/execution/test_headless_run.py 13/13 on macOS 5.2.0 and in Linux CI",
         "caution": "Exit 0/1/2/3 derived from the last-line AGENT_OK/AGENT_FAIL sentinel; HEADLESS_RAW=1 bypasses the runtime and falls back to Blender's unreliable exit. Not a sandbox.",
         "effects": "Runs payload through scripts/agent-run-headless.py → agent_runtime.run_file in a fresh --factory-startup process; writes whatever the payload writes.",
-        "reviewed_sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+        "reviewed_sha256": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
         "runtime": "shell → Blender"
       },
       "annotation_revision": "matched",
@@ -21006,7 +20992,7 @@
       "name": null,
       "path": "scripts/headless-run.sh",
       "related": [],
-      "sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+      "sha256": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
       "tags": [],
       "title": "Run a bpy payload in a fresh headless Blender and report the truth about it.",
       "use": "inspect-adapt"
@@ -21079,45 +21065,6 @@
       "sha256": "5c70abf7a7d1224714a20d8a5aee0397ed6610a2f53aa64f373d248791db054f",
       "tags": [],
       "title": "png.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
-      "headings": [
-        {
-          "line": 254,
-          "text": "1. Physical Principles & Governing Equations"
-        },
-        {
-          "line": 256,
-          "text": "Core Formulations"
-        },
-        {
-          "line": 261,
-          "text": "2. Quantitative Interface Specifications"
-        },
-        {
-          "line": 270,
-          "text": "3. Hardware & Mechanical Architecture"
-        },
-        {
-          "line": 275,
-          "text": "4. Failure Modes & Mitigation Matrix (DFMEA)"
-        },
-        {
-          "line": 283,
-          "text": "5. Production Verification Gate"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 376,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/jev-knowledge-curator.py",
-      "related": [],
-      "sha256": "29c395702ed83bebc5c61dd959535430f3b6ef167f0783cd730c25738e14688e",
-      "tags": [],
-      "title": "1. Physical Principles & Governing Equations",
       "use": "inspect-adapt"
     },
     {
@@ -21463,34 +21410,6 @@
       "use": "inspect-adapt"
     },
     {
-      "description": "",
-      "headings": [],
-      "kind": "execution-source",
-      "lines": 170,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/production_gate/collision.py",
-      "related": [],
-      "sha256": "b2162263667e974f8f192d266ddd10936a59a07792148e4a9af0546c2daf2bf6",
-      "tags": [],
-      "title": "collision.py",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
-      "headings": [],
-      "kind": "execution-source",
-      "lines": 178,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/production_gate/connectivity.py",
-      "related": [],
-      "sha256": "c28f561e51d1cec84dbe9c20b48f96746d19c2809d11cd4e547eed7b0b4642d5",
-      "tags": [],
-      "title": "connectivity.py",
-      "use": "inspect-adapt"
-    },
-    {
       "annotation": {
         "basis": "Independent source/caller review and read-only audit of the saved C03 twelve-family gate/STL evidence, 2026-09-18; behavioral regressions in test_coverage_audit.py.",
         "caution": "Coverage/current-byte audit only: does not remeasure geometry or authenticate reports, authored requirements or prior checker code. Covers declared parts/features, not all assembly objects. Original wall/feature sampling limits persist; manufacture remains BLOCKED.",
@@ -21605,33 +21524,6 @@
     },
     {
       "description": "",
-      "headings": [
-        {
-          "line": 16,
-          "text": "Per-side offset in mm applied to the female mating feature."
-        },
-        {
-          "line": 17,
-          "text": "Positive = clearance (gap); negative = interference (press fit)."
-        },
-        {
-          "line": 88,
-          "text": "── Optional bmesh geometry builders (active inside Blender environment) ──"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 129,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/production_gate/mating.py",
-      "related": [],
-      "sha256": "a57c367289d6cd7813927dada45700498e7405c295ae0df30fa6ece1f292ec09",
-      "tags": [],
-      "title": "Per-side offset in mm applied to the female mating feature.",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
       "headings": [],
       "kind": "execution-source",
       "lines": 84,
@@ -21648,12 +21540,12 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 96,
+      "lines": 90,
       "loads_with": [],
       "name": null,
       "path": "scripts/production_gate/report.py",
       "related": [],
-      "sha256": "932fd1b2933ff48645f2fe53beecb570c2869665c279b4ea04f992f4e0c399e3",
+      "sha256": "bc6634d495bf76b637840a23296668f6674cc8231b1abb5ab2b6ff10a8abbefd",
       "tags": [],
       "title": "report.py",
       "use": "inspect-adapt"
@@ -21767,20 +21659,6 @@
       "use": "inspect-adapt"
     },
     {
-      "description": "",
-      "headings": [],
-      "kind": "execution-source",
-      "lines": 237,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/render_evidence.py",
-      "related": [],
-      "sha256": "bdc5057748e23b3151afaaf2c2a09aca418dfd1f734448c17545bbc2a86caee3",
-      "tags": [],
-      "title": "render_evidence.py",
-      "use": "inspect-adapt"
-    },
-    {
       "annotation": {
         "basis": "static scout; not runtime certification",
         "caution": "Pinned hashes/quarantine/timeout required; no approval to remove quarantine or retrieve assets.",
@@ -21867,168 +21745,6 @@
       "use": "inspect-adapt"
     },
     {
-      "description": "",
-      "headings": [
-        {
-          "line": 2,
-          "text": "sync-to-external-drive.sh — keep this project identical across machines through an exFAT drive."
-        },
-        {
-          "line": 4,
-          "text": "Usage:"
-        },
-        {
-          "line": 5,
-          "text": "scripts/sync-to-external-drive.sh status            # which side is newer? prints NONE|PUSH|PULL|DIVERGED"
-        },
-        {
-          "line": 6,
-          "text": "scripts/sync-to-external-drive.sh push [--delete]   # local -> drive  (run before leaving a machine)"
-        },
-        {
-          "line": 7,
-          "text": "scripts/sync-to-external-drive.sh pull [--delete]   # drive -> local  (run when arriving on a machine)"
-        },
-        {
-          "line": 8,
-          "text": "DEST_ROOT=\"/Volumes/OtherDrive/Products\" tools/sync-to-external-drive.sh push"
-        },
-        {
-          "line": 10,
-          "text": "Why a drive and not a remote: this project has no git repository at all, so the drive is the"
-        },
-        {
-          "line": 11,
-          "text": "single source of truth between machines. Shared implementation with ~/Products/Games — keep the"
-        },
-        {
-          "line": 12,
-          "text": "two in step when either changes."
-        },
-        {
-          "line": 14,
-          "text": "Behaviour:"
-        },
-        {
-          "line": 15,
-          "text": "- rsync, excludes node_modules / .venv / caches (reinstall on the target machine); .git IS carried,"
-        },
-        {
-          "line": 16,
-          "text": "because with no remote the history exists nowhere else"
-        },
-        {
-          "line": 17,
-          "text": "- exFAT holds no symlinks and reports every file as 0700: pull resets files to 644 and then"
-        },
-        {
-          "line": 18,
-          "text": ".exec-manifest.txt restores the real chmod +x set. Without that reset a pull marks EVERY file"
-        },
-        {
-          "line": 19,
-          "text": "executable — measured 2026-09-12: 29929 of 29954 files here were +x, PNGs and AGENTS.md included,"
-        },
-        {
-          "line": 20,
-          "text": "repaired to the real 1437. .symlink-manifest.txt replaces the old hardcoded"
-        },
-        {
-          "line": 21,
-          "text": "\"makerworld pipeline\" case and"
-        },
-        {
-          "line": 22,
-          "text": ".symlink-manifest.txt (52 skill links .claude/skills/* -> tools/skills/*) is excluded from the"
-        },
-        {
-          "line": 23,
-          "text": "transfer and re-created on pull, so the drive never carries 52 duplicate skill copies"
-        },
-        {
-          "line": 24,
-          "text": "- VENDOR_DIR packs a many-small-file corpus into one tar (exFAT clusters are 512 KB, so 90k tiny"
-        },
-        {
-          "line": 25,
-          "text": "files cost ~45 GB); this project has none — 30k files averaging 890 KB — so it is left empty"
-        },
-        {
-          "line": 26,
-          "text": "- macOS writes a 4 KB \"._*\" AppleDouble sidecar per file on exFAT; junk elsewhere -> stripped after push"
-        },
-        {
-          "line": 27,
-          "text": "- Claude memory dir (~/.claude/projects/<slug>/memory) travels as <drive>/_claude-memory/<name>"
-        },
-        {
-          "line": 28,
-          "text": "- the project must sit at the SAME path on every Mac (~/Products/Blender): the Claude memory slug"
-        },
-        {
-          "line": 29,
-          "text": "is derived from it, and the \"makerworld pipeline\" symlink stores an absolute target"
-        },
-        {
-          "line": 30,
-          "text": "- sync markers: <drive>/<name>/.sync-state.json (last push: host + time) and"
-        },
-        {
-          "line": 31,
-          "text": "<project>/.sync-state.local.json (last push/pull from THIS machine) -> `status` decides"
-        },
-        {
-          "line": 32,
-          "text": "- --delete is opt-in: nothing is removed on the destination unless asked"
-        },
-        {
-          "line": 62,
-          "text": "exFAT-safe rsync (macOS ships openrsync): no perms/owner, 2 s mtime window"
-        },
-        {
-          "line": 70,
-          "text": "count + newest mtime of the vendor corpus: cheap and enough to notice a real change"
-        },
-        {
-          "line": 78,
-          "text": "rsync exclude file holding every symlink path, anchored to the transfer root"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 163,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/sync-to-external-drive.sh",
-      "related": [],
-      "sha256": "b61a93bfbff8f65313c9ef61d968a6f151ca2970ebff7f786bd99db309c8915f",
-      "tags": [],
-      "title": "sync-to-external-drive.sh — keep this project identical across machines through an exFAT drive.",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
-      "headings": [
-        {
-          "line": 22,
-          "text": "bounded-refine.py has a hyphenated name; load it by path instead of a symlink alias,"
-        },
-        {
-          "line": 23,
-          "text": "because the knowledge catalog census refuses symlinked sources."
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 130,
-      "loads_with": [],
-      "name": null,
-      "path": "scripts/test_healing_demo.py",
-      "related": [],
-      "sha256": "85a82be78aeaeafd1695e396e8b36a24dc893ea8aead8625cfb29b919b207003",
-      "tags": [],
-      "title": "bounded-refine.py has a hyphenated name; load it by path instead of a symlink alias,",
-      "use": "inspect-adapt"
-    },
-    {
       "annotation": {
         "basis": "static scout; not runtime certification | re-read 2026-09-06: output default now derived from repo root (AGENT_REPO_ROOT / script location), no hardcoded user path",
         "caution": "Scene-specific framing/GPU assumption; no restoration.",
@@ -22036,16 +21752,16 @@
         "reviewed_sha256": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
         "runtime": "bpy render"
       },
-      "annotation_revision": "changed-since-review",
+      "annotation_revision": "matched",
       "description": "",
       "headings": [],
       "kind": "execution-source",
-      "lines": 140,
+      "lines": 91,
       "loads_with": [],
       "name": null,
       "path": "scripts/turntable-preview.py",
       "related": [],
-      "sha256": "a524383538cf63657933d608659e77c6f7686553b8004c0962564ba1760396d2",
+      "sha256": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
       "tags": [],
       "title": "turntable-preview.py",
       "use": "inspect-adapt"
@@ -22547,25 +22263,6 @@
     },
     {
       "description": "",
-      "headings": [
-        {
-          "line": 7,
-          "text": "Add scripts directory to path"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 70,
-      "loads_with": [],
-      "name": null,
-      "path": "tests/execution/test_render_evidence.py",
-      "related": [],
-      "sha256": "09eb789ac1ddcc9d7626f20234189bc4fe1bc767c42ce14df1cdfd9b8ce6b6d5",
-      "tags": [],
-      "title": "Add scripts directory to path",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
       "headings": [],
       "kind": "execution-source",
       "lines": 148,
@@ -22817,44 +22514,6 @@
     },
     {
       "description": "",
-      "headings": [
-        {
-          "line": 6,
-          "text": "Add scripts directory to path"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 77,
-      "loads_with": [],
-      "name": null,
-      "path": "tests/production-gate/test_collision.py",
-      "related": [],
-      "sha256": "27825372efcba3f57566b07d8fede15e895bb764dc5357206dbbd322d864bbad",
-      "tags": [],
-      "title": "Add scripts directory to path",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
-      "headings": [
-        {
-          "line": 6,
-          "text": "Add scripts directory to path"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 71,
-      "loads_with": [],
-      "name": null,
-      "path": "tests/production-gate/test_connectivity.py",
-      "related": [],
-      "sha256": "f0e84ab8988769d307b6511dc2515589332be4e93cdf21019863d91b5ae9454e",
-      "tags": [],
-      "title": "Add scripts directory to path",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
       "headings": [],
       "kind": "execution-source",
       "lines": 253,
@@ -22925,25 +22584,6 @@
     },
     {
       "description": "",
-      "headings": [
-        {
-          "line": 6,
-          "text": "Add scripts directory to path"
-        }
-      ],
-      "kind": "execution-source",
-      "lines": 63,
-      "loads_with": [],
-      "name": null,
-      "path": "tests/production-gate/test_mating.py",
-      "related": [],
-      "sha256": "cd892994f4227c008aa82a128b70ad8889a7a85936518d6cb91aea1c6e30bcf6",
-      "tags": [],
-      "title": "Add scripts directory to path",
-      "use": "inspect-adapt"
-    },
-    {
-      "description": "",
       "headings": [],
       "kind": "execution-source",
       "lines": 149,
@@ -23010,7 +22650,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "699154bd8846080a09a4fe8c64e4a17b4042dbb563ea819a818a2a835022eb5c",
+  "source_digest": "cbafd1ac961a746fbb3c44df59e8e628548132f1c7a00806c787e6a6a2a4b3db",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -23187,6 +22827,7 @@
     "docs/reviews/dc-01/r03/bench-validation.md": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e",
     "docs/reviews/dc-01/r03/electronics-README.md": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765",
     "docs/reviews/dc-01/r03/print/README.md": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
+    "docs/reviews/nodestack/README.md": "b55665d453f5f5f46e9d65909c92ca153c07c657dfc11b5dc261f6efa093e87a",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc",
     "knowledge/00-foundations/agent-workflow-loop.md": "10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3",
@@ -23246,7 +22887,7 @@
     "knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md": "eda812e52299751b0ae30b3f8adde753767850a395aa2d0670bbb7285d95dc87",
     "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md": "4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a",
     "knowledge/INDEX.md": "cee3260720710a8b87724bc9eac66bce1fa7f89ee54791f11e8c3acbdd05e760",
-    "knowledge/catalog-config.json": "5c2bffed986cbcb145f4a19e298428cf0e8743f78fbf5a88dd77348e0cccde15",
+    "knowledge/catalog-config.json": "1d1468afd53c58006e9d6f7f5aa4b55f0797fae8a4c46e859aee9cc15c9d6499",
     "knowledge/generated-workflows.md": "723588b24787066f6d360d04b96defd99ab913676b63f9c3ec950d9b9c1d0d63",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
@@ -23341,7 +22982,6 @@
     "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
     "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
     "scripts/boilerplates/bp_materials_pbr.py": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
-    "scripts/boilerplates/bp_mating_contract.py": "96d5337e127299e8b6bcad9e70fa710aee6ccf8b6c9ea6b5a511872488f7f4a4",
     "scripts/boilerplates/bp_parametric_contract.py": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
     "scripts/boilerplates/bp_physics.py": "310830e00597192f942742ea24a580ba26f1a04e65bf75c8a632fc523201ccea",
     "scripts/boilerplates/bp_render_camera.py": "a0462c9844057b058c04e855b47d26c21be2513adb242a74288e9b9ae20e90e2",
@@ -23376,7 +23016,6 @@
     "scripts/boilerplates/pipeline_render/bp_export_pipeline.py": "f2499c0298d379263e2e8f2078d06ddbbfa6ca326a19e756c4b97290c0ce2ae1",
     "scripts/boilerplates/rigging_kinematics/bp_rig_robot_arm.py": "2ab750a637d9b7668cf0f6dcde63785b8f4cb109ecb820ec876cbe14f9a07651",
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
-    "scripts/bounded-refine.py": "635f89005fd1dc83ad2ec25258e924ac79c6a83d03be3dd3eef6de10c2f83952",
     "scripts/check-html-tag-balance.py": "3fb3f1033942e519dd4aa2c05c307d5a31503dcf783d806723056330467bfefd",
     "scripts/check-pass-coverage.py": "703ba9b7a27bab5b75cfe0e8ec600c2662ad7aafe9485bbe5b62ca7f9856ccc7",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
@@ -23384,13 +23023,12 @@
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
-    "scripts/headless-run.sh": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
+    "scripts/headless-run.sh": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
     "scripts/hq-coverage-gate.py": "0a4310a9247a0b2fdd6674f64e50b560efb03407d481f8cd46e038864636e284",
     "scripts/hq_coverage/__init__.py": "bfbb15696445e3b07f50be8559ddb10aed83526114bfd49dea2131706c2e2e7a",
     "scripts/hq_coverage/core.py": "4044cee0768e615f4695939f1e2677396607a1e91a0561bef1f06b88a3f6edb4",
     "scripts/hq_coverage/inputs.py": "683e55becd49816d41070ea54dc62399b7417f5c9b2932addd3df66203a5dc17",
     "scripts/hq_coverage/png.py": "5c70abf7a7d1224714a20d8a5aee0397ed6610a2f53aa64f373d248791db054f",
-    "scripts/jev-knowledge-curator.py": "29c395702ed83bebc5c61dd959535430f3b6ef167f0783cd730c25738e14688e",
     "scripts/knowledge-catalog.py": "688f29e3e73a9b508e5433e9596b8c146cb53efdbcfb9a09eddeba3c33752c60",
     "scripts/knowledge-pipeline.py": "ad863ad17b6d11e481fd5ccc44410d78d3e344cc74e41335e82a0469682e07ce",
     "scripts/knowledge-playbook.py": "8c1b7e8639dd1040fa0b1b178f1faf1dbdfeef9162838029577514aa5965ceb1",
@@ -23411,32 +23049,26 @@
     "scripts/production-gate.py": "85ba67d838058a3419e29b951d7f2e8c31aaa07057a4e20bdd001230e95d7294",
     "scripts/production_gate/__init__.py": "109af94e2ef97a6a80d27bfb9d41dfe27bc264fc0f0893b51633f015170db5dc",
     "scripts/production_gate/bed_fit.py": "20e6dff82ec9d319be61498941e5f6ecdc69c32e2307cf44a7a013287fa0cebb",
-    "scripts/production_gate/collision.py": "b2162263667e974f8f192d266ddd10936a59a07792148e4a9af0546c2daf2bf6",
-    "scripts/production_gate/connectivity.py": "c28f561e51d1cec84dbe9c20b48f96746d19c2809d11cd4e547eed7b0b4642d5",
     "scripts/production_gate/coverage.py": "7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35",
     "scripts/production_gate/coverage_checks.py": "df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e",
     "scripts/production_gate/dimensions.py": "a3cedf54de7accca3ee65428cf47ff9ffc41811e52712a3330b1f67733c43a2a",
     "scripts/production_gate/export_roundtrip.py": "b4183f34747fc7f1d54af1ab00ac13454390f54f41d326e5b924e09a8878e92c",
     "scripts/production_gate/fastener_tables.py": "6b533860dc236d0d79b4481e1c546c194f7eeedd7d60abdaeb825c78a3041d29",
     "scripts/production_gate/features_fasteners.py": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
-    "scripts/production_gate/mating.py": "a57c367289d6cd7813927dada45700498e7405c295ae0df30fa6ece1f292ec09",
     "scripts/production_gate/meshprep.py": "c75f0725a7222557c079bed0527583af440760c9d44708c95d735f6740e042a4",
-    "scripts/production_gate/report.py": "932fd1b2933ff48645f2fe53beecb570c2869665c279b4ea04f992f4e0c399e3",
+    "scripts/production_gate/report.py": "bc6634d495bf76b637840a23296668f6674cc8231b1abb5ab2b6ff10a8abbefd",
     "scripts/production_gate/run_in_blender.py": "186a9e86f48a8f507860cf54c628e71cb2b02006be8fc67c5c2c0a2add1e8002",
     "scripts/production_gate/spec.py": "0eb9a678de71fc9ca41f92e6ede6f4ad99b22406cd502cabd08d3324136e2a56",
     "scripts/production_gate/topology.py": "8c3b638fc3599f41f6b67b71039d400dc1b88c16d4fd24baa0c2c354888843a4",
     "scripts/production_gate/walls_overhang.py": "488c61bf10979a47074a94c61d56ad72f2bb69b51abd4a06bfa54e59096a9f4f",
     "scripts/qremeshify-headless-adapter.py": "0f52f3c4128ac38cad74d94e99a3273833c9e2215b86a7599cf5a69970f09454",
     "scripts/render-qremeshify-candidate.py": "4dba52ccc917dfb494193d1c91a22d9501869bf74c6ea76f75e3b770baefa923",
-    "scripts/render_evidence.py": "bdc5057748e23b3151afaaf2c2a09aca418dfd1f734448c17545bbc2a86caee3",
     "scripts/run-qremeshify.py": "ebaa502081eab5448e3d7897991d6ca254727c7a33bfc0587cc5fceca6da10bb",
     "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29",
     "scripts/samples/native-iteration-build.py": "2c3ba670461300c5fa744c609b0bc6964598d71e208d29390512cf5c9093f57d",
     "scripts/samples/native-iteration-review.py": "cc2d2ffabd62ef185bc791f9ea4e54077d0f87dab3188b26ae468d4c6dbcf289",
     "scripts/samples/native_iteration_coupon.py": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
-    "scripts/sync-to-external-drive.sh": "b61a93bfbff8f65313c9ef61d968a6f151ca2970ebff7f786bd99db309c8915f",
-    "scripts/test_healing_demo.py": "85a82be78aeaeafd1695e396e8b36a24dc893ea8aead8625cfb29b919b207003",
-    "scripts/turntable-preview.py": "a524383538cf63657933d608659e77c6f7686553b8004c0962564ba1760396d2",
+    "scripts/turntable-preview.py": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
     "scripts/verify-3dprint-tolerances.py": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
     "specs/README.md": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84",
     "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
@@ -23469,7 +23101,6 @@
     "tests/execution/fixtures/verify-lib/state-snapshot.py": "0ab23a48f952c2b27e9f29b9c028cd48ae8dec588add3f6f9bef7008cff09591",
     "tests/execution/test_agent_runtime.py": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e",
     "tests/execution/test_headless_run.py": "6d88ed3a2a185d3c5e5f094792e5aeee6ef58c0dbbcdab3cc4ec5529debdf93a",
-    "tests/execution/test_render_evidence.py": "09eb789ac1ddcc9d7626f20234189bc4fe1bc767c42ce14df1cdfd9b8ce6b6d5",
     "tests/execution/test_socket_client.py": "57f7ac3ca082f8f6d771c8e9596cbafcf43b7e6d13315ef3ecdefc22466dcd28",
     "tests/execution/test_verify_lib.py": "482b16a38979d105b18e87014baedbb61e3fce2710dcb9d6bdeb2b15e0211f55",
     "tests/hq-coverage/test_hq_coverage_gate.py": "40c859250cb78c53d306006d354e351081b6d67eab44f889c5183a035526c75e",
@@ -23487,14 +23118,11 @@
     "tests/production-gate/fixture_specs.py": "de6195fea19f6c695a548c36b6e97335999ada1faf2044cb14784b3e6f2269e1",
     "tests/production-gate/gate_harness.py": "aa3647fd6bc733c4d6c892685cabc83ecc1b1ea3cce0db23431284e19db69602",
     "tests/production-gate/make_fixtures.py": "c0e4522a43badeac2ddddf94982cb36a5f88334f998a6f4b797f1ca8ac90c9bf",
-    "tests/production-gate/test_collision.py": "27825372efcba3f57566b07d8fede15e895bb764dc5357206dbbd322d864bbad",
-    "tests/production-gate/test_connectivity.py": "f0e84ab8988769d307b6511dc2515589332be4e93cdf21019863d91b5ae9454e",
     "tests/production-gate/test_coverage_audit.py": "8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32",
     "tests/production-gate/test_gate_bed_fit.py": "63b00968e4c664e61979342799fcc9a9530e79599250b0a6cc11a72745aded5d",
     "tests/production-gate/test_gate_contract.py": "5bf32b18dd9c0ad2d8102a2d39aae9392355f820938c309b8360b604fccd5cbe",
     "tests/production-gate/test_gate_predicates.py": "51a65586c3defae4d7ab94e99285c3a02277294a00a860660034be4f3154f09d",
     "tests/production-gate/test_large_span_features.py": "01774639f20a361bcabcb6b7ff44656383b90fbfb5b886506a39119714895712",
-    "tests/production-gate/test_mating.py": "cd892994f4227c008aa82a128b70ad8889a7a85936518d6cb91aea1c6e30bcf6",
     "tests/production-gate/test_small_surface_walls.py": "f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3",
     "tests/production-gate/test_wall_origin.py": "fdc220ad1b076a944f067e3c32184e66d870bf0e4e89f06d225170505e0bc05e"
   },
@@ -23507,8 +23135,7 @@
     "Re-review annotation: knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md",
     "Re-review annotation: knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md",
     "Re-review annotation: knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
-    "Re-review annotation: scripts/production_gate/walls_overhang.py",
-    "Re-review annotation: scripts/turntable-preview.py"
+    "Re-review annotation: scripts/production_gate/walls_overhang.py"
   ],
   "workflows": {
     "mechanisms-transmissions": {

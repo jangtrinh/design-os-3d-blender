@@ -327,7 +327,7 @@ if __name__ == '__main__':
 
     sums = [sum(g.weight for g in v.groups) for v in test_data.vertices]
     assert sums, "no vertices were weighted"
-    assert all(w == w for w in sums), "NaN weight produced"
+    assert all(not math.isnan(w) for w in sums), "NaN weight produced"
     assert all(abs(w - 1.0) < 1e-6 for w in sums), f"weights not normalised: {min(sums)}-{max(sums)}"
     assert max(len(v.groups) for v in test_data.vertices) == 1, "nearest-bone bind must be 1 group"
 

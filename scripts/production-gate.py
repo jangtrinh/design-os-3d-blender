@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -72,7 +73,11 @@ def main(argv=None):
         if not os.path.isfile(args.scene):
             raise spec_mod.SpecError("scene not found: %s" % args.scene)
         if not os.path.isfile(args.blender):
-            raise spec_mod.SpecError("blender binary not found: %s" % args.blender)
+            resolved = shutil.which(args.blender)
+            if resolved:
+                args.blender = resolved
+            else:
+                raise spec_mod.SpecError("blender binary not found: %s" % args.blender)
         spec = spec_mod.load(args.spec)
         spec_mod.select_parts(spec, wanted)
     except spec_mod.SpecError as exc:
@@ -88,7 +93,7 @@ def main(argv=None):
     if args.export_dir:
         cmd += ["--export-dir", args.export_dir]
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=args.timeout)
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=args.timeout, check=False)
     except subprocess.TimeoutExpired:
         return emit(False, 3, "GATE ERROR: blender timed out after %ss" % args.timeout,
                     report=None)

@@ -1,0 +1,101 @@
+# Git LFS for NEW large binaries under builds/ (owner 2026-10-13: LFS for new binaries, no history rewrite).
+# docs/ stays out of LFS: GitHub Pages serves docs/ and cannot serve LFS objects.
+builds/**/*.blend filter=lfs diff=lfs merge=lfs -text
+builds/**/*.blend1 filter=lfs diff=lfs merge=lfs -text
+builds/**/*.stl filter=lfs diff=lfs merge=lfs -text
+builds/**/*.glb filter=lfs diff=lfs merge=lfs -text
+builds/**/*.gltf filter=lfs diff=lfs merge=lfs -text
+builds/**/*.3mf filter=lfs diff=lfs merge=lfs -text
+builds/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+builds/**/*.abc filter=lfs diff=lfs merge=lfs -text
+builds/**/*.usd filter=lfs diff=lfs merge=lfs -text
+builds/**/*.usdz filter=lfs diff=lfs merge=lfs -text
+builds/**/*.exr filter=lfs diff=lfs merge=lfs -text
+builds/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+builds/**/*.mov filter=lfs diff=lfs merge=lfs -text
+builds/**/*.zip filter=lfs diff=lfs merge=lfs -text
+
+# Binaries committed before LFS stay ordinary blobs (keeps clones off the LFS bandwidth quota).
+builds/robot-arm-original-refined/arm-original-refined.blend -filter -diff -merge
+builds/robot-arm-original-refined/video/arm-step-by-step-refined.mp4 -filter -diff -merge
+builds/robot-arm-print-assembly/arm-print-plates.blend -filter -diff -merge
+builds/robot-arm-print-assembly/arm-step-assembly-corrected.blend -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P01-base-electronics-shell.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P02-base-matte-cover.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P03-elbow-flush-bearing-cap--1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P04-elbow-flush-bearing-cap-1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P05-elbow-motor-mount--1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P06-elbow-motor-mount-1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P07-electronics-service-lid.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P08-fixed-TPU-pad-40.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P09-fixed-TPU-pad-56.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P10-fixed-TPU-pad-72.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P11-fixed-jaw.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P12-gripper-tool-plate.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P13-hand-case-retainer.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P14-hand-servo-cradle.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P15-lower-U-body.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P16-moving-TPU-pad-40.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P17-moving-TPU-pad-56.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P18-moving-TPU-pad-72.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P19-moving-jaw.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P20-pen-clamp-12mm-adapter.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P21-pen-split-collet.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P22-roll-motor-cradle.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P23-shoulder-diamond-fascia.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P24-shoulder-flush-bearing-cap--1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P25-shoulder-flush-bearing-cap-1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P26-shoulder-motor-mount--1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P27-shoulder-motor-mount-1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P28-tool-dock.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P29-universal-blank-adapter.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P30-upper-U-body.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P31-wrist-case-retainer.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P32-wrist-cheek--1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P33-wrist-cheek-1.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P34-wrist-cross-bridge.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P35-wrist-pitch-cassette.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P36-wrist-vented-cover.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P37-yaw-bearing-pedestal.stl -filter -diff -merge
+builds/robot-arm-print-assembly/parts/P38-yaw-rounded-skirt.stl -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-01-PETG.3mf -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-01-PETG.stl -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-02-PETG.3mf -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-02-PETG.stl -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-03-PETG.3mf -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-03-PETG.stl -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-04-PETG.3mf -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-04-PETG.stl -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-05-TPU.3mf -filter -diff -merge
+builds/robot-arm-print-assembly/plates/plate-05-TPU.stl -filter -diff -merge
+builds/robot-arm-print-assembly/reports/assembly-before-servo-repair.blend -filter -diff -merge
+builds/robot-arm-print-assembly/video/arm-step-by-step.mp4 -filter -diff -merge
+builds/robot-arm-print-assembly/video/assembly-animatic.mp4 -filter -diff -merge
+builds/watch-winder-capsule/parts/cushion.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/finger_tab.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/foot_01.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/front_rim.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/guilloche.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/hinge_fixed.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/hinge_moving.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/inner_liner.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/knob_boss_l.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/knob_l.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/knurl_l.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/leg_01.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/rear_service_cover.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/rotor_cup.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/shaft.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/shell.stl -filter -diff -merge
+builds/watch-winder-capsule/parts/visor.stl -filter -diff -merge
+builds/watch-winder-capsule/plates/fdm-abs-01.stl -filter -diff -merge
+builds/watch-winder-capsule/plates/fdm-petg-01.stl -filter -diff -merge
+builds/watch-winder-capsule/plates/fdm-tpu-01.stl -filter -diff -merge
+builds/watch-winder-capsule/plates/sla-clear-01.stl -filter -diff -merge
+builds/watch-winder-capsule/plates/sla-proxy-01.stl -filter -diff -merge
+builds/watch-winder-capsule/plates/sla-proxy-02.stl -filter -diff -merge
+builds/watch-winder-capsule/watch-winder-capsule-anim.blend -filter -diff -merge
+builds/watch-winder-capsule/watch-winder-capsule-detail-anim.blend -filter -diff -merge
+builds/watch-winder-capsule/watch-winder-capsule-plates.blend -filter -diff -merge
+builds/watch-winder-capsule/watch-winder-capsule-print.blend -filter -diff -merge
+builds/watch-winder-capsule/watch-winder-capsule.blend -filter -diff -merge
