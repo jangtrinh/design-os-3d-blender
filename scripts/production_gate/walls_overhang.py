@@ -54,6 +54,16 @@ def _wall_sample_details(bm):
 
     out = []
     if selected:
+        from mathutils import Vector
+        min_x = min(v.co.x for v in tri.verts)
+        max_x = max(v.co.x for v in tri.verts)
+        min_y = min(v.co.y for v in tri.verts)
+        max_y = max(v.co.y for v in tri.verts)
+        min_z = min(v.co.z for v in tri.verts)
+        max_z = max(v.co.z for v in tri.verts)
+        center = Vector(((min_x + max_x) * 0.5, (min_y + max_y) * 0.5, (min_z + max_z) * 0.5))
+        for v in tri.verts:
+            v.co -= center
         tree = meshprep.bvh(tri)
         for f in selected:
             n = f.normal
@@ -68,6 +78,7 @@ def _wall_sample_details(bm):
         "wall_triangulated_faces": len(tri.faces),
         "wall_positive_area_faces": len(positive),
         "wall_candidate_faces": len(selected),
+        "wall_sampling_frame": "bbox-centered-mm",
     }
     tri.free()
     out.sort()
