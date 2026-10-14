@@ -1,0 +1,15 @@
+{
+  "name": "design-os-3d-blender",
+  "metadata": {
+    "description": "Parametric 3D mechanical parts generator, headless Blender Python (`bpy`) pipeline, and embedded Three.js CAD showcase engine."
+  },
+  "owner": {
+    "name": "Jang Trinh"
+  },
+  "plugins": [
+    {
+      "name": "design-os-3d-blender",
+      "source": "./"
+    }
+  ]
+}

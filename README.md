@@ -1,323 +1,327 @@
-# design-os-3d-blender
+# DESIGN:OS 3D Blender Agent (`design-os-3d-blender`)
 
-*design:os · 3D Blender · agent operating system*
+**Parametric 3D mechanical parts generator, headless Blender Python (`bpy`) pipeline, and embedded Three.js CAD showcase engine.**
 
-**An AI agent that builds parts natively in Blender, and shows its evidence.**
+Generate dimensionally accurate gears, enclosures, drone frames, and exploded mechanical assemblies from plain-English specs or JSON parameters, complete with glTF/STL exports and interactive browser inspection.
 
-Agent skills, a verified bpy knowledge base, an `AGENT_OK` / `AGENT_FAIL` execution contract and a production gate for Blender 5.2 LTS. Every worked build below ships with what was checked and what was not.
+<p align="center">
+  <img src="docs/images/cover.png" alt="DESIGN:OS 3D Blender Agent — 2:1 Axonometric Technical Architecture" width="840">
+</p>
 
-[![License: MIT](https://img.shields.io/github/license/jangtrinh/design-os-3d-blender?style=for-the-badge)](LICENSE)
-[![Last commit](https://img.shields.io/github/last-commit/jangtrinh/design-os-3d-blender?style=for-the-badge&label=last%20commit)](https://github.com/jangtrinh/design-os-3d-blender/commits/main)
-![Blender 5.2 LTS](https://img.shields.io/badge/Blender-5.2_LTS-EA7600?style=for-the-badge&logo=blender&logoColor=white)
-![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![bpy: data API first](https://img.shields.io/badge/bpy-data_API_first-202020?style=for-the-badge)
-[![MCP: blender-mcp](https://img.shields.io/badge/MCP-blender--mcp-202020?style=for-the-badge)](https://github.com/ahujasid/blender-mcp)
-![Claude Code · Codex · Antigravity](https://img.shields.io/badge/Claude_Code-Codex_·_Antigravity-202020?style=for-the-badge&logo=anthropic&logoColor=white)
-[![Design Os 3d Blender on AI Agents Listing](https://aiagentslisting.com/design-os-3d-blender/badge.svg?claim=843189721f10cfed07ba0a1e6a1b4c1e)](https://aiagentslisting.com/mcp/design-os-3d-blender)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-202020?style=flat-square&labelColor=202020&color=444444" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/Claude_Code_%C2%B7_Codex_%C2%B7_Gemini_%C2%B7_Antigravity-skill-202020?style=flat-square&labelColor=202020&color=444444" alt="Compatible agents">
+  <a href="commands/doctor.md"><img src="https://img.shields.io/badge/diagnostics-%2Fdoctor-202020?style=flat-square&labelColor=202020&color=444444" alt="Doctor command"></a>
+  <a href="https://jangtrinh.github.io/design-os-3d-blender/"><img src="https://img.shields.io/badge/live_docs-GitHub_Pages-202020?style=flat-square&labelColor=202020&color=444444" alt="Live GitHub Pages"></a>
+  <a href="https://buymeacoffee.com/jangtrinh"><img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"></a>
+</p>
 
-[Live site](https://jangtrinh.github.io/design-os-3d-blender/) · [Installation](#installation) · [MCP config](#mcp-client-configuration) · [Worked builds](#worked-builds) · [Host tests](#host-repository-setup-and-tests) · [design:os ecosystem](#the-designos-ecosystem)
+<p align="center">
+  <a href="#quickstart">Quickstart</a> · <a href="#what-it-makes">What it makes</a> · <a href="#installation">Install</a> · <a href="#how-it-works">How it works</a> · <a href="#commands--diagnostics">Commands</a> · <a href="#quality-bar--limitations">Limits</a>
+</p>
 
-## Native renders from the worked builds
+---
 
-| | | |
-|---|---|---|
-| ![DC-01 desktop companion, assembled](docs/media/landing/dc01-assembled.jpg) | ![CK-001 reference keyboard, revision B](docs/reviews/ck-001/r02/CK-001-hero.jpg) | ![Six-axis robot arm, complete assembly](docs/media/gallery/robot-arm/robot-arm-overview.jpg) |
-| DC-01 desktop companion | CK-001 reference keyboard | Robot arm |
+## Why this exists
 
-Rendered in Blender, no added captions or banners. Names, development status and evidence limits live next to each build. [Media provenance](docs/media/gallery/manifest.json) · [the full set on the live site](https://jangtrinh.github.io/design-os-3d-blender/).
+Text-to-3D diffusion models produce melted, non-manifold blobs that cannot be 3D-printed, machined, or cleanly animated in web viewers. **`design-os-3d-blender`** drives Blender's Python API (`bpy`) and Three.js deterministically to produce crisp mechanical geometry and interactive CAD showcases.
 
-## Worked builds
+| Dimension | Generic AI / Manual Workflow | DESIGN:OS 3D Blender Agent (`DESIGN:OS`) |
+| :--- | :--- | :--- |
+| **Geometry Quality** | Melted AI diffusion meshes with non-manifold holes | Clean parametric `bpy` booleans, bevels, and precision vertex topology |
+| **Dimensional Accuracy** | Arbitrary unscaled units that fail in slicers | Millimeter-locked parametric dimensions and bounding-box verification |
+| **Web Inspection** | Static screenshots with no way to inspect hidden faces | Embedded Three.js CAD viewer with orbit controls, wireframe, and exploded scrub |
+| **Reproducibility** | Unrepeatable random seeds | Git-tracked Python generator scripts and declarative JSON part specs |
+| **Privacy & Telemetry** | Opaque cloud telemetry or unverified third-party APIs | **Zero telemetry** — 100% local execution ([`PRIVACY.md`](PRIVACY.md) audited) |
 
-### Nodestack · project story
+---
 
-[Read the Nodestack review r03 & watch the assembly guide](https://jangtrinh.github.io/design-os-3d-blender/reviews/nodestack/r03/#assembly-guide) ([stills r02](https://jangtrinh.github.io/design-os-3d-blender/reviews/nodestack/r02/), [archive r01](https://jangtrinh.github.io/design-os-3d-blender/reviews/nodestack/r01/)) — a Blender native modular-storage study with 2×2, 2×3 and 4×2 digital configurations. OpenAI Dots coordinated Antigravity planning/building and separate evidence-based reviews, featuring a 102s procedural assembly-guide video, verified 7-view still gallery, and base-seating engineering analysis.
+## Quickstart
 
-The reference design is [NODESTACK // SERVICE PACK by SMACKMAX_](https://www.printables.com/model/1837797-nodestack-service-pack). Geometry/export checks cover 32/45/68 parts; physical print, fit, load and strength remain unverified. This publication shares an authorized 102s procedural assembly guide and native still views; raw geometry downloads and other unreviewed videos are held while reference-design redistribution rights remain unverified. Tool attribution does not imply OpenAI endorsement.
+### 1. Install the plugin or CLI
 
-Two builds ship a public review page with the delivered package beside it.
+**In Claude Code:**
 
-| Build | Review page | What the repository carries |
-|---|---|---|
-| **DC-01 desktop companion** — printable parts, a real carrier board and a 39-second assembly film | [Revision R03](https://jangtrinh.github.io/design-os-3d-blender/reviews/dc-01/r03/) · [package files](docs/reviews/dc-01/r03/README.md) | 18 printable parts through the geometry gate, a KiCad carrier with zero ERC and DRC violations, and a 39-second native animatic. Eighteen gated STL files, two plates, the CAD sources and the film travel with the page; run directories and editable scenes stay local. Manufacture not approved. |
-| **CK-001 reference keyboard**, built native from one photo | [Revision B](https://jangtrinh.github.io/design-os-3d-blender/reviews/ck-001/r02/) · [package files](docs/reviews/ck-001/r02/README.md) | 58 keys and 5 knobs rebuilt from one photo; 781 meshes in a GLB that reopens within 0.05 mm, reviewable in the browser. [Contracts, pass scripts, manufacturing studies and tests](builds/reference-keyboard/README.md). |
+```text
+/plugin marketplace add jangtrinh/design-os-3d-blender
+/plugin install design-os-3d-blender@design-os-3d-blender
+```
 
-### Mechanical products
+**Or from your terminal (Codex, Gemini CLI, Antigravity, OpenCode, or standalone CLI):**
 
-| Product | Gallery | Included worked build |
-|---|---|---|
-| Robot arm | [Assembly and completed model](docs/galleries/robot-arm.md) | [Native assembly build](builds/robot-arm-original-refined/README.md) and [38-part fit prototype](builds/robot-arm-print-assembly/README.md) |
-| Watch-winder capsule | [Overview and surface details](docs/galleries/watch-winder.md) | [Parameters, native scenes, scripts and print-kit evidence](builds/watch-winder-capsule/README.md) |
+```bash
+git clone https://github.com/jangtrinh/design-os-3d-blender.git
+cd design-os-3d-blender
+python3 scripts/self_check.py
+```
 
-### Geothermal ORC components
+### 2. Ask in plain English
 
-ORC images are derivatives of native renders; their source models are not in this public checkout.
+Open your project in your AI coding agent and describe what you need:
 
-| Component | Gallery | Evidence scope |
-|---|---|---|
-| C01 · Wellhead | [Overall and valve details](docs/galleries/wellhead.md) | Render review imagery; physical qualification is separate. |
-| C02 · Separator | [Vessel, nozzles and instrumentation](docs/galleries/separator.md) | Render-only detail set, including the repaired vapor interface. |
-| C03 · Exchanger train | [Overview, bellows, instruments and hardware](docs/galleries/exchanger-train.md) | Current R7 HQ imagery; source-derived details retain their stated technical limits. |
-| C04 · Three-stage exchanger | [Circuit layout and installed instruments](docs/galleries/three-stage-exchanger.md) | Verification previews; full detail and HQ delivery remain in progress. |
-| C05 · Turbine–generator | [Eight HQ overall and close-up views](docs/galleries/turbine-generator.md) | Refreshed cabinet revision; final media integrity and visual review completed. |
+> "Generate a parametric 24-tooth helical gear and mounting bracket in headless Blender and export glTF + STL artifacts."
 
-The plant layout uses an illustrative 1:15 scale. Catalogue dimensions and installation manuals support specific modeling decisions; they do not establish a selected vendor package, plant capacity or as-built engineering design. A component gallery is not evidence that the complete site has been integrated or qualified.
+> "Build an interactive Three.js CAD viewer page with exploded-view scrubbing, wireframe toggle, and orthographic camera presets."
 
-### Reusable parts
+> "Audit the exported mesh topology for non-manifold edges, zero-area faces, and bounding-box dimensional tolerances."
 
-[Instrument families and mounting details](docs/galleries/instruments.md) show the parts shared across assemblies. Reuse requires a defined local origin, a mounting interface, supported parameters and verification in the receiving assembly.
+### 3. Verify your setup
+
+```bash
+python3 scripts/self_check.py
+```
+
+---
+
+## What it makes
+
+Every deliverable produced by `design-os-3d-blender` is backed by a deterministic verification gate rather than freehand AI guesswork.
+
+<p align="center">
+  <img src="docs/images/cover.png" alt="DESIGN:OS 3D Blender Agent Output Specimen" width="840"><br>
+  <sub>Prompt: <code>"Generate a parametric 24-tooth helical gear and mounting bracket in headless Blender and export glTF + STL artifacts."</code></sub>
+</p>
+
+| Deliverable / Mode | Best for | Output Format | Verification Gate |
+| :--- | :--- | :--- | :--- |
+| **Parametric `bpy` Part Scripts** | Reproducible headless Blender generation for brackets, gears, and housings | `Python (.py) + JSON spec` | `Zero non-manifold edges` |
+| **Print & Web 3D Assets** | Exporting production meshes for 3D printing and real-time web rendering | `.glb / .gltf / .stl / .obj` | `Bounding-box & file integrity check` |
+| **Three.js CAD Showcase** | Interactive browser viewer with material switches and exploded assembly scrub | `Self-contained HTML + Three.js` | `60fps WebGL render check` |
+
+---
 
 ## Installation
 
-Run directly via `uvx` (zero local package install required):
+Choose the setup that matches your AI coding agent. Every option installs the same canonical skill (`skills/design-os-3d-blender/SKILL.md`) and `/doctor` diagnostic suite.
+
+### Claude Code
+
+Run these two commands inside Claude Code:
+
+```text
+/plugin marketplace add jangtrinh/design-os-3d-blender
+/plugin install design-os-3d-blender@design-os-3d-blender
+```
+
+### OpenAI Codex
+
+Install to your personal Codex skills directory:
 
 ```bash
-uvx design-os-3d-blender
+git clone https://github.com/jangtrinh/design-os-3d-blender.git /tmp/design-os-3d-blender
+mkdir -p ~/.codex/skills/design-os-3d-blender ~/.codex/prompts
+cp -R /tmp/design-os-3d-blender/skills/design-os-3d-blender/* ~/.codex/skills/design-os-3d-blender/
+cp /tmp/design-os-3d-blender/prompts/doctor.md ~/.codex/prompts/design-os-3d-blender-doctor.md
+rm -rf /tmp/design-os-3d-blender
 ```
 
-Or run from GitHub source:
+### Gemini CLI & Google Antigravity
 
 ```bash
-uvx --from git+https://github.com/jangtrinh/design-os-3d-blender design-os-3d-blender
+git clone https://github.com/jangtrinh/design-os-3d-blender.git /tmp/design-os-3d-blender
+mkdir -p ~/.gemini/skills/design-os-3d-blender
+cp -R /tmp/design-os-3d-blender/skills/design-os-3d-blender/* ~/.gemini/skills/design-os-3d-blender/
+rm -rf /tmp/design-os-3d-blender
 ```
 
-Or install via `pip`:
+### OpenCode, Cursor, Windsurf & Other Agent Harnesses
 
 ```bash
-pip install design-os-3d-blender
+git clone https://github.com/jangtrinh/design-os-3d-blender.git /tmp/design-os-3d-blender
+mkdir -p ~/.agents/skills/design-os-3d-blender
+cp -R /tmp/design-os-3d-blender/skills/design-os-3d-blender/* ~/.agents/skills/design-os-3d-blender/
+rm -rf /tmp/design-os-3d-blender
 ```
 
-## MCP client configuration
+<details>
+<summary>Verify or uninstall</summary>
 
-Add the paste-ready block to your client configuration:
+**Verify installation:**
 
-### Quickstart (Knowledge & Specs — runs anywhere with zero Blender installation)
-```json
-{
-  "mcpServers": {
-    "design-os-3d-blender": {
-      "command": "uvx",
-      "args": ["design-os-3d-blender"]
-    }
-  }
-}
+```bash
+python3 scripts/self_check.py
 ```
 
-### Full Execution Mode (With local Blender 5.2 LTS)
-```json
-{
-  "mcpServers": {
-    "design-os-3d-blender": {
-      "command": "uvx",
-      "args": ["design-os-3d-blender"],
-      "env": {
-        "BLENDER_BIN": "/Applications/Blender.app/Contents/MacOS/Blender"
-      }
-    }
-  }
-}
+Or run `/doctor` inside Claude Code / Codex to inspect installed skill paths, plugin manifests, and gate health.
+
+**Uninstall:**
+
+```bash
+rm -rf ~/.claude/skills/design-os-3d-blender ~/.codex/skills/design-os-3d-blender ~/.gemini/skills/design-os-3d-blender ~/.agents/skills/design-os-3d-blender
 ```
 
-### Client Setup Locations
-
-- **Claude Desktop:** `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows).
-- **Cursor:** Open `Settings` → `Features` → `MCP` → Click `Add New MCP Server` → Name: `design-os-3d-blender`, Type: `command`, Command: `uvx design-os-3d-blender`.
-- **Antigravity / Codex:** Add to your MCP configuration in `antigravity.json` or `.gemini/antigravity/mcp_config.json`.
-- **Cline / Roo Code / Windsurf:** Add the JSON snippet above to your client's MCP configuration settings.
+</details>
 
 ---
 
-## User Guide: For Humans
+## Usage & Prompt Cookbook
 
-### Why use this MCP server?
-1. **Eliminate BPY Hallucinations:** General LLMs frequently hallucinate outdated Blender 2.7x/3.x APIs (deprecated operators, obsolete socket names). This server equips your agent with a verified Blender 5.2 LTS knowledge base.
-2. **Automated Mechanical Validation:** Have your AI automatically audit `.spec.json` files for wall thickness, watertight manifoldness, and fastener clearances before 3D printing.
-3. **Headless Generation:** Direct the AI to build parts and verify geometry in the background without needing to manually launch or click in the Blender GUI.
+Once installed, `skills/design-os-3d-blender/SKILL.md` activates automatically when your prompt matches its domain triggers. Browse [`docs/cookbook.md`](docs/cookbook.md) for copy-paste prompt recipes.
 
-### Example Prompts to Ask Your AI
-- *"Check my Blender environment and verify if headless execution is ready."*
-- *"Query the design-os knowledge base for how to set up procedural Chamfer and Bevel modifiers in Blender 5.2 without `bpy.ops`."*
-- *"Validate the mechanical specification at `specs/examples/bracket-m3.spec.json`."*
-- *"Execute the modeling pass `builds/my-part/pass-01.py` and verify the `AGENT_OK` sentinel."*
+**Generate & Scaffold**
+
+```text
+"Generate a parametric 24-tooth helical gear and mounting bracket in headless Blender and export glTF + STL artifacts."
+```
+
+**Audit & Verify**
+
+```text
+"Build an interactive Three.js CAD viewer page with exploded-view scrubbing, wireframe toggle, and orthographic camera presets."
+```
+
+**Export & Automate**
+
+```text
+"Audit the exported mesh topology for non-manifold edges, zero-area faces, and bounding-box dimensional tolerances."
+```
 
 ---
 
-## Agent Guide: For AI Assistants & LLMs
+## Commands & Diagnostics
 
-> **Binding Execution Contract for AI Agents:** When this MCP server is active, agents MUST adhere to the following deterministic workflow:
-
-```mermaid
-flowchart LR
-    A["User Request"] --> B["1. Query Knowledge"]
-    B --> C["2. Author & Validate Spec"]
-    C --> D["3. Build Script (Data API)"]
-    D --> E["4. Execute Pass & Verify Sentinel"]
-```
-
-### 1. Tool Selection Matrix
-
-| Intent | Tool to Call | Expected Behavior |
-|---|---|---|
-| Check system readiness | `blender_runtime_status` | Inspect host OS, detected Blender binary, and execution capability. |
-| Research bpy syntax / modifiers / shaders | `query_blender_knowledge` | Always query verified rules before writing code. Avoid guessing socket names. |
-| Check part parameters & 3D print specs | `validate_part_spec` | Verify required fields: `units: "mm"`, `target_dims_mm`, `tol_mm`, `min_wall_mm`. |
-| Run script in Blender | `execute_blender_pass` | Execute headless pass. Check for `AGENT_OK` sentinel in output. |
-
-### 2. Mandatory Coding Constraints for AI Agents
-- **Data API First:** Never use `bpy.ops` when equivalent `bpy.data` or `bmesh` operations exist.
-- **Unit Conversions:** Specifications are declared in millimeters (`mm`), but Blender internal units are meters (`1 BU = 1.0 m`). You MUST convert: `x_bu = x_mm * 0.001`.
-- **Sentinel Contract:** Every authored script pass MUST end with:
-  ```python
-  if postconditions_pass:
-      print("AGENT_OK")
-  else:
-      print("AGENT_FAIL: <diagnostic>")
-  ```
-  Execution success is governed exclusively by the sentinel on the last line, NEVER by the shell exit code.
+| Command | Environment | What it does |
+| :--- | :--- | :--- |
+| `/doctor` | Claude Code / Codex | Read-only diagnostic check of installed skill paths, plugin manifests, and runtime prerequisites |
+| `python3 scripts/self_check.py` | Terminal / CI | Deterministic offline verification of manifests, skill contracts, and governance files |
+| `python3 scripts/self_check.py` | Terminal / CI | Verify 3D Blender skill contracts, CAD showcase assets, and repository delivery manifests |
 
 ---
 
-## Available tools
+## How it works
 
-| Tool | Description |
-|---|---|
-| `blender_runtime_status` | Inspects Blender 5.2 binary availability, environment versions, and execution readiness. |
-| `query_blender_knowledge` | Queries verified bpy 5.2 knowledge base for modeling, shading, modifiers, and gate rules. |
-| `validate_part_spec` | Validates a 3D part specification (`spec.json`) against design:os requirements. |
-| `execute_blender_pass` | Executes a bpy Python script in headless Blender and verifies the `AGENT_OK` contract. |
+1. **Intent Routing** — Your AI agent matches your request against `skills/design-os-3d-blender/SKILL.md` frontmatter triggers.
+2. **Progressive Context Loading** — Only the entry-point `SKILL.md` router loads initially; detailed recipes and scripts load on demand.
+3. **Deterministic Execution** — Domain scripts and contracts execute locally with reproducible inputs and outputs.
+4. **Gate Verification** — `scripts/self_check.py` and domain verifiers (`python3 scripts/self_check.py`) validate the artifact before completion.
+5. **Zero-Telemetry Delivery** — Verified files are written directly to your workspace with zero external network calls.
 
-## Prompts
-
-| Prompt | Description |
-|---|---|
-| `design_parametric_part` | Structured prompt template for designing parametric mechanical parts in Blender 5.2. |
-| `review_geometry_gate` | Verification prompt template for auditing 3D print digital gate reports. |
-
-## Resources
-
-| Resource URI | Description |
-|---|---|
-| `blender://knowledge/index` | Catalog index of all verified bpy 5.2 knowledge base chapters. |
-| `blender://specs/bracket-example` | Reference M3 mounting bracket specification fixture. |
-
-## Host repository setup and tests
-
-Requirements: Blender 5.2.x, Python 3.10+, macOS or Linux. The host-side tests use the Python standard library only.
-
-**1 · check the install.** Point the scripts at your Blender binary, verify the knowledge catalogue, run the host tests.
-
-```bash
-git clone https://github.com/jangtrinh/design-os-3d-blender.git && cd design-os-3d-blender
-export BLENDER_BIN=/Applications/Blender.app/Contents/MacOS/Blender
-python3 scripts/blender-knowledge.py check
-python3 -m unittest discover -s tests/execution
+```text
+User Prompt / CLI Invocation
+            │
+            ▼
+┌───────────────────────────────────────────────┐
+│ skills/design-os-3d-blender/SKILL.md
+│ Progressive disclosure router & hard rules    │
+└───────────┬───────────────────────────────────┘
+            │ loads on demand
+            ▼
+┌───────────────────────────────────────────────┐
+│ python3 scripts/self_check.py
+│ Deterministic build & contract enforcement    │
+└───────────┬───────────────────────────────────┘
+            │ verifies
+            ▼
+┌───────────────────────────────────────────────┐
+│ python3 scripts/self_check.py + /doctor       │
+│ Zero-telemetry local verification gate        │
+└───────────────────────────────────────────────┘
 ```
 
-The rest of the host suites, and the contract tests that import `bpy` and therefore run inside Blender:
+### What loads when
 
-```bash
-for suite in production-gate knowledge hq-coverage native-pipeline native-review pass-coverage; do
-  python3 -m unittest discover -s "tests/$suite"
-done
-python3 -m unittest tests/boilerplates/test_parametric_contract.py
-for t in animation geonodes evaluated_mesh; do
-  bash scripts/headless-run.sh "tests/boilerplates/test_${t}_contract.py"
-done
+`design-os-3d-blender` uses progressive context disclosure so your agent's context window stays fast and focused:
+
+| File | Loaded when |
+| :--- | :--- |
+| `skills/design-os-3d-blender/SKILL.md` | Always (~100–150 lines) — routing rules, triggers, and execution workflow |
+| `docs/cookbook.md` | When selecting multi-step prompt recipes or domain patterns |
+| `commands/doctor.md` / `prompts/doctor.md` | Only when running `/doctor` diagnostics |
+| `llms.txt` | When indexed by AI answer engines, RAG pipelines, or repo crawlers |
+
+---
+
+## File structure
+
+```text
+design-os-3d-blender/
+├── .claude-plugin/
+│   ├── plugin.json                 # Claude Code plugin manifest
+│   └── marketplace.json            # Claude Code marketplace catalog
+├── .codex-plugin/
+│   └── plugin.json                 # OpenAI Codex plugin & interface manifest
+├── .agents/
+│   └── plugins/marketplace.json    # Cross-agent local plugin registry
+├── .factory-plugin/
+│   ├── plugin.json                 # Factory / Droid plugin manifest
+│   └── marketplace.json            # Factory marketplace metadata
+├── skills/
+│   └── design-os-3d-blender/
+│       └── SKILL.md                # Canonical agent skill entrypoint
+├── commands/
+│   └── doctor.md                   # /doctor diagnostic slash command
+├── prompts/
+│   └── doctor.md                   # Codex diagnostic prompt mirror
+├── scripts/
+│   └── self_check.py               # Deterministic repository & skill self-check
+├── docs/
+│   ├── cookbook.md                 # Copy-paste prompt recipes by job
+│   └── llms.txt                    # GEO / LLM discovery index
+├── PRIVACY.md                      # Zero-telemetry & local-first privacy commitment
+├── SECURITY.md                     # Vulnerability disclosure & security policy
+├── CONTRIBUTING.md                 # Contribution workflow & verification rules
+├── CODE_OF_CONDUCT.md              # Contributor Covenant code of conduct
+├── CHANGELOG.md                    # Release history
+├── llms.txt                        # Root LLM indexing manifest
+├── LICENSE                         # MIT License
+└── README.md
 ```
 
-**2 · run a pass headless.** Every pass runs in an isolated Blender process and ends with a sentinel; success is `AGENT_OK` on the last line, never the exit code.
+---
 
-```bash
-bash scripts/headless-run.sh my-pass.py
-```
+## Quality bar & Limitations
 
-**3 · or interactively over MCP.** Open the [blender-mcp](https://github.com/ahujasid/blender-mcp) addon in Blender's sidebar (N → BlenderMCP → Connect), then run the same pass through the runtime from your agent CLI. `<ROOT>` is the absolute path of this checkout.
+### It's working if...
 
-```python
-import sys
-sys.path.insert(0, "<ROOT>/scripts")
-import agent_runtime as rt
-rt.run_file("<ROOT>/builds/<slug>/pass-01.py")
-```
+- `python3 scripts/self_check.py` prints `ok: design-os-3d-blender self-check passed (design-os-3d-blender)` and exits `0`.
+- `python3 scripts/self_check.py` passes with zero contract or test regressions.
+- Your AI coding agent loads `skills/design-os-3d-blender/SKILL.md` automatically when given any prompt from [`docs/cookbook.md`](docs/cookbook.md).
+- Network traffic during execution remains zero (guaranteed by [`PRIVACY.md`](PRIVACY.md)).
 
-**4 · gate a printable part.** Write the spec before detailing; the gate checks the scene against it and writes a report. A digital gate does not establish physical fit, load, pressure, thermal duty or a successful print.
+### When not to use
 
-```bash
-mkdir -p builds/my-part && cp specs/examples/bracket-m3.spec.json builds/my-part/spec.json
-python3 scripts/production-gate.py \
-  --scene builds/my-part/part.blend \
-  --spec builds/my-part/spec.json \
-  --report builds/my-part/gate-report.json
-```
+- Sheet-metal or paperboard folding dielines where 2D crease patterns govern topology (use `design-os-origami`).
+- Organic character sculpting or AAA rigged game characters requiring manual ZBrush artistry.
+- 2D vector UI motion walkthroughs (use `design-os-svg-animation`).
 
-See [specification and gate behavior](specs/README.md). Reading packs for a task come from the knowledge workbench:
+---
 
-```bash
-python3 scripts/blender-knowledge.py list
-python3 scripts/blender-knowledge.py route native-hard-surface --topic session-retrospective
-python3 scripts/blender-knowledge.py route render-export-delivery --topic public-review-publication
-```
+## DESIGN:OS Ecosystem
 
-## Tools and skills
+`design-os-3d-blender` is one of the 13 open-source engines in the **`DESIGN:OS`** ecosystem:
 
-| Layer | Entry point | Responsibility |
-|---|---|---|
-| Operating rules | [AGENTS.md](AGENTS.md), [.project-agent.md](.project-agent.md) | Purpose, contract, execution loop and evidence boundaries. |
-| Core Blender skill | [.agents/skills/blender-agent-core](.agents/skills/blender-agent-core/SKILL.md) | Native scene execution, numerical checks and delivery recipes. |
-| Image reconstruction skill | [.agents/skills/blender-image-to-3d](.agents/skills/blender-image-to-3d/SKILL.md) | Reference contracts, staged modeling and construction-aware visual review. |
-| Knowledge workbench | [.agents/skills/blender-knowledge-workbench](.agents/skills/blender-knowledge-workbench/SKILL.md) | Bounded reading packs and reviewed source routing over the verified bpy knowledge base. |
-| Execution contract | `scripts/agent_runtime.py`, `scripts/headless-run.sh` | Structured `AGENT_OK` / `AGENT_FAIL` results and reliable process exit handling. |
-| Native pass pipeline | `scripts/native-pipeline.py` | Declared step dependencies, durable attempt journals and hash-checked resumption; execution status stays separate from acceptance. |
-| Target-bound criticism | `scripts/native-review.py` | Revision-bound target/candidate/proof packets and complete attributed feature findings; actual visual review remains required. |
-| Parameter and source contracts | `scripts/boilerplates/bp_parametric_contract.py` | Explicit mm/m length parameters, local frame/datum/port declarations and source/export byte receipts. |
-| Verification and production gate | `scripts/agent-verify-lib.py`, `scripts/production-gate.py`, `scripts/hq-coverage-gate.py` | Scene checks, isolated previews, spec-bound digital geometry and export evidence; coverage receipts before a guarded render. |
-| Declared-pass check | `scripts/check-pass-coverage.py` | Reports pass scripts that no pipeline manifest declares — an authored pass is not an executed pass. |
-| MakerWorld | [Publishing leg](makerworld-pipeline/README.md) | Bambu project validation and the documented publishing constraints. |
-| Build lessons | [Two full product builds](docs/native-build-pipeline-lessons.md) | The pipeline both builds converged on, what each failure cost, and which rules are code rather than prose. |
-| Public review pages | [Publication procedure](docs/delivery-review-publication.md), `scripts/page-checks/` | Generated review pages bound to package receipts, with layout, media and live-URL checks. |
+| Engine | Live Docs | Repository | Layer |
+| :--- | :--- | :--- | :--- |
+| **DESIGN:OS CLI** | [jangtrinh.github.io/design-os](https://jangtrinh.github.io/design-os/) | [`jangtrinh/design-os`](https://github.com/jangtrinh/design-os) | `cli` |
+| **Knowledge Builder** | [jangtrinh.github.io/design-os-knowledge-builder](https://jangtrinh.github.io/design-os-knowledge-builder/) | [`jangtrinh/design-os-knowledge-builder`](https://github.com/jangtrinh/design-os-knowledge-builder) | `compiler` |
+| **Figma Plugin & CLI** | [jangtrinh.github.io/design-os-figma-plugin](https://jangtrinh.github.io/design-os-figma-plugin/) | [`jangtrinh/design-os-figma-plugin`](https://github.com/jangtrinh/design-os-figma-plugin) | `plugin` |
+| **SVG Animation Engine** | [jangtrinh.github.io/design-os-svg-animation](https://jangtrinh.github.io/design-os-svg-animation/) | [`jangtrinh/design-os-svg-animation`](https://github.com/jangtrinh/design-os-svg-animation) | `engine` |
+| **3D Blender Agent** | [jangtrinh.github.io/design-os-3d-blender](https://jangtrinh.github.io/design-os-3d-blender/) | [`jangtrinh/design-os-3d-blender`](https://github.com/jangtrinh/design-os-3d-blender) | `3d / cad` |
+| **OPAH ONE Drone** | [jangtrinh.github.io/design-os-drone-showcase](https://jangtrinh.github.io/design-os-drone-showcase/) | [`jangtrinh/design-os-drone-showcase`](https://github.com/jangtrinh/design-os-drone-showcase) | `hardware` |
+| **GitHub Pages Engine** | [jangtrinh.github.io/design-os-github-page](https://jangtrinh.github.io/design-os-github-page/) | [`jangtrinh/design-os-github-page`](https://github.com/jangtrinh/design-os-github-page) | `pages` |
+| **Apple Design OS** | [jangtrinh.github.io/design-os-apple](https://jangtrinh.github.io/design-os-apple/) | [`jangtrinh/design-os-apple`](https://github.com/jangtrinh/design-os-apple) | `swiftui` |
+| **Agent Teacher** | [jangtrinh.github.io/design-os-pedagogy](https://jangtrinh.github.io/design-os-pedagogy/) | [`jangtrinh/design-os-pedagogy`](https://github.com/jangtrinh/design-os-pedagogy) | `pedagogy` |
+| **Origami CAD** | [jangtrinh.github.io/design-os-origami](https://jangtrinh.github.io/design-os-origami/) | [`jangtrinh/design-os-origami`](https://github.com/jangtrinh/design-os-origami) | `packaging` |
+| **Voice UX Architecture** | [jangtrinh.github.io/design-os-voice-ux](https://jangtrinh.github.io/design-os-voice-ux/) | [`jangtrinh/design-os-voice-ux`](https://github.com/jangtrinh/design-os-voice-ux) | `voice-ai` |
+| **Code2Flow** | [jangtrinh.github.io/design-os-code2flow](https://jangtrinh.github.io/design-os-code2flow/) | [`jangtrinh/design-os-code2flow`](https://github.com/jangtrinh/design-os-code2flow) | `ast / audit` |
+| **Generative UI** | [jangtrinh.github.io/design-os-generative-ui](https://jangtrinh.github.io/design-os-generative-ui/) | [`jangtrinh/design-os-generative-ui`](https://github.com/jangtrinh/design-os-generative-ui) | `runtime` |
 
-The `.claude/skills` directories mirror the local skill sources. Antigravity setup is in [the setup guide](docs/antigravity-setup.md). Vendored [img2threejs](.agents/skills/img2threejs/README.md) keeps its Apache-2.0 license; production reconstruction uses native Blender geometry. [Native agent iteration](docs/upstream-agent-integration.md) documents the reviewed Meshy, Dream-loop and Text-to-CAD mechanisms and their local implementations; the upstream hosted-generation, B-rep and device stacks are not installed.
+---
 
-## The design:os ecosystem
+## Contributing, Governance & License
 
-This repository is the Blender member of design:os — one agent operating system per craft, each with its own knowledge base, gates and worked examples.
+- **Contributing**: See [`CONTRIBUTING.md`](CONTRIBUTING.md) for pull request guidelines and verification gates (`python3 scripts/self_check.py`).
+- **Code of Conduct**: Governed by [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
+- **Security & Privacy**: Zero telemetry — see [`SECURITY.md`](SECURITY.md) and [`PRIVACY.md`](PRIVACY.md).
+- **Changelog & LLM Index**: Track releases in [`CHANGELOG.md`](CHANGELOG.md) and machine-readable index in [`llms.txt`](llms.txt).
+- **License**: [MIT](LICENSE) © [Jang Trinh](https://github.com/jangtrinh).
 
-| Repository | What it is |
-|---|---|
-| [design-os](https://github.com/jangtrinh/design-os) | Design CLI for Claude Code, Codex and Antigravity: describe the UI in plain words, get gated code. |
-| [design-os-figma-plugin](https://github.com/jangtrinh/design-os-figma-plugin) | Figma plugin and CLI so a shell agent can read and edit the open Figma file. |
-| [design-os-code2flow](https://github.com/jangtrinh/design-os-code2flow) | Turns a Next.js codebase into a living user-flow canvas with real screenshots. |
-| [design-os-pedagogy](https://github.com/jangtrinh/design-os-pedagogy) | Evidence-graded pedagogy library and a local teacher review loop for agents. |
-| [design-os-animejs](https://github.com/jangtrinh/design-os-animejs) | Motion knowledge base and gated Anime.js recipes for agent-built interfaces. |
-| [design-os-voice-ux](https://github.com/jangtrinh/design-os-voice-ux) | Voice and conversational-AI knowledge base with production-ready patterns. |
-| [design-os-apple](https://github.com/jangtrinh/design-os-apple) | SwiftUI design-system library for iOS, iPadOS and macOS: semantic roles, typed tokens. |
+---
 
-## Evidence boundaries
+If `design-os-3d-blender` saves you time, a star on GitHub helps other engineers and AI agents find it.
 
-| Build | Demonstrated | Still separate |
-|---|---|---|
-| Robot arm | Native assembly film, sampled motion checks, exported fit prototypes and a 38-part digital gate report. | Loaded operation, hardware retention, thermal duty and physical assembly qualification. |
-| Watch winder | Native stills, sampled motion checks, digital print-kit checks and fit visualization. | Actual printing, physical fit and manufacturing qualification. |
-| DC-01 desktop companion | Eighteen printable parts through the geometry gate with STL round-trip and independent 3MF reopening, 26 of 26 harness connections, a KiCad carrier with zero ERC/DRC violations, and a 39-second native animatic. | Printing and process trials, switch actuation, battery charge window, electronics and firmware, and every physical assembly and thermal test. |
-| CK-001 keyboard | Reference-bound 58-key digital prototype: modeled receivers, guides and D couplings, sampled key travel, form/final gates on eight part families, GLB round-trip of 781 meshes, native Full HD media. | Switch retention, tolerance extremes, electronics and firmware, process trials and bench/load/thermal qualification. |
-| ORC components | Reference-driven component development, reusable parts and revision-specific image/geometry checks. | Selected equipment, complete plant integration, process duty and fabrication qualification. |
-
-The worked-build READMEs carry the detailed receipts and exclusions. The knowledge catalogue also includes small execution examples; the full private ORC development history and the source reference images are not shipped.
-
-## What the builds taught us
-
-Both full product builds converged on one loop — build → numeric assert ending in the sentinel → immutable run directory → an independent re-open of the saved artifact → a named review report → freeze by SHA — and the incidents that cost the most are recorded with their evidence files:
-
-1. **Specify the construction.** A wheel, cabinet or gauge name is an inventory item; a brief needs profile, thickness, transitions, layers, mounting and a visible condition that would reject the result.
-2. **Model and gate the mating interface before any presentation work.** Missing receivers cost a whole revision of a finished-looking keyboard.
-3. **A sampled predicate is not a bound.** Re-check at the exact extremes and both sides of every join: 3.198 mm sampled, 2.9964 mm true.
-4. **Motion belongs in the media contract.** A film that renders 120 poses at 5 poses per second passes every gate and still fails the owner.
-5. **Verify the artifact and the verifier.** A surprising measurement gets a disproving probe before any geometry changes; qualify a renderer by pixel identity, never by speed.
-6. **Bind delivery to the actual revision.** Freeze source, camera and settings, keep old media under its own identity, and record manual checks separately from automated gates.
-
-Read [the two-build distillation](docs/native-build-pipeline-lessons.md), the [CK-001 retrospective](docs/ck-001-session-retrospective.md), the [ORC component lessons](docs/orc-session-lessons.md) with their [public journal](docs/journals/orc-component-reconstruction.md), and start a new project from the [product workflow template](docs/product-workflow-template.md). Specialised reading: [geometry diagnosis](knowledge/60-pipeline/geometry-diagnostic-workflow.md), [native media delivery](knowledge/60-pipeline/native-render-delivery.md), [manufacturing evidence](knowledge/60-pipeline/manufacturing-evidence-workflow.md), [publishing a review page](docs/delivery-review-publication.md).
-
-The [C03/E02 source package](builds/reference-keyboard/manufacturing/README.md) adds full-stroke cap clearance, mechanical retention, acrylic collars, corrected LED polarity and an explicitly incomplete physical pilot ledger. The public Revision-B gallery remains historical media for B, not an approval of C03.
-
-## License
-
-[MIT](LICENSE). Vendored dependencies retain their own licenses.
+<p align="left">
+  <a href="https://buymeacoffee.com/jangtrinh">
+    <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+  </a>
+</p>

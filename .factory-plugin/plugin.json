@@ -1,0 +1,21 @@
+{
+  "name": "design-os-3d-blender",
+  "description": "Parametric 3D mechanical parts generator, headless Blender Python (`bpy`) pipeline, and embedded Three.js CAD showcase engine.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jang Trinh",
+    "url": "https://github.com/jangtrinh"
+  },
+  "homepage": "https://jangtrinh.github.io/design-os-3d-blender/",
+  "repository": "https://github.com/jangtrinh/design-os-3d-blender",
+  "license": "MIT",
+  "keywords": [
+    "blender",
+    "3d-cad",
+    "threejs",
+    "parametric-modeling",
+    "gltf",
+    "ai-agents",
+    "design-os"
+  ]
+}
