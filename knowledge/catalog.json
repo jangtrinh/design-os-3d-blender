@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 152,
+    "execution-source": 153,
     "imported-reference": 47,
     "knowledge": 58,
     "research-synthesis": 76,
-    "workflow": 55
+    "workflow": 56
   },
   "dependency_edges": 166,
   "foundations": [
@@ -4336,6 +4336,53 @@
       "sha256": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
       "tags": [],
       "title": "From API research to a tested product workflow",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "`design-os-3d-blender` Prompt & CLI Cookbook"
+        },
+        {
+          "line": 7,
+          "text": "1. Generate & Scaffold"
+        },
+        {
+          "line": 11,
+          "text": "2. Audit & Verify"
+        },
+        {
+          "line": 15,
+          "text": "3. Export & Automate"
+        },
+        {
+          "line": 21,
+          "text": "4. CLI & Diagnostic Commands"
+        },
+        {
+          "line": 24,
+          "text": "Run deterministic offline self-check"
+        },
+        {
+          "line": 27,
+          "text": "Run primary domain verification / workflow"
+        },
+        {
+          "line": 30,
+          "text": "Run primary CLI command"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 32,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/cookbook.md",
+      "related": [],
+      "sha256": "10255b301ba49399cf8e8a431fdfb64364f97fca1305fc846dd6e919447c3933",
+      "tags": [],
+      "title": "`design-os-3d-blender` Prompt & CLI Cookbook",
       "use": "read"
     },
     {
@@ -21745,6 +21792,20 @@
       "use": "inspect-adapt"
     },
     {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 68,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/self_check.py",
+      "related": [],
+      "sha256": "66d578345476c5c74c705187288dc7c9beaef605815f70ef90a5cc5610793a14",
+      "tags": [],
+      "title": "self_check.py",
+      "use": "inspect-adapt"
+    },
+    {
       "annotation": {
         "basis": "static scout; not runtime certification | re-read 2026-09-06: output default now derived from repo root (AGENT_REPO_ROOT / script location), no hardcoded user path",
         "caution": "Scene-specific framing/GPU assumption; no restoration.",
@@ -22650,7 +22711,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "cbafd1ac961a746fbb3c44df59e8e628548132f1c7a00806c787e6a6a2a4b3db",
+  "source_digest": "26fe36fa1d05475cd08d65be2f33e3b238ce29bb8c70f5c4f381af443142a500",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -22796,6 +22857,7 @@
     "docs/blender-knowledge-workflows.md": "331ac96d281a78c190df5dcd00f692f2cc069fa3a415faa0903f824f26487462",
     "docs/blender-workflow-improvement-backlog.md": "e9a986e63df776bd80dd61196972257f3a2d98a1724f1be1fad3029e5df7dc72",
     "docs/ck-001-session-retrospective.md": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
+    "docs/cookbook.md": "10255b301ba49399cf8e8a431fdfb64364f97fca1305fc846dd6e919447c3933",
     "docs/delivery-review-publication.md": "2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55",
     "docs/galleries/exchanger-train.md": "d2f35583e341b5090d6c342a1bdaa41c75da4bea499c3678e072a7b7a0f62fda",
     "docs/galleries/instruments.md": "79bdd0bb06bc63f84e734a0ae35f06c981f4b6d6beb19a5ec60e9335e0c3ac39",
@@ -23068,6 +23130,7 @@
     "scripts/samples/native-iteration-build.py": "2c3ba670461300c5fa744c609b0bc6964598d71e208d29390512cf5c9093f57d",
     "scripts/samples/native-iteration-review.py": "cc2d2ffabd62ef185bc791f9ea4e54077d0f87dab3188b26ae468d4c6dbcf289",
     "scripts/samples/native_iteration_coupon.py": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
+    "scripts/self_check.py": "66d578345476c5c74c705187288dc7c9beaef605815f70ef90a5cc5610793a14",
     "scripts/turntable-preview.py": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
     "scripts/verify-3dprint-tolerances.py": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
     "specs/README.md": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84",
