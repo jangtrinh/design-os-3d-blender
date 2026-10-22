@@ -26,6 +26,9 @@ This skill is a ROUTER + procedure. The deep knowledge lives in `knowledge/` —
 | Surprising bore/wall/collision/export result or a tolerance-extreme failure | `knowledge/60-pipeline/geometry-diagnostic-workflow.md`; `precision-assembly-metrology --topic geometry-diagnostics` |
 | Native Full HD, social media or new media after a model revision | `knowledge/60-pipeline/native-render-delivery.md`; `render-export-delivery --topic native-render-delivery` |
 | Retention, material/process, electronics or physical manufacturing blocker | `knowledge/60-pipeline/manufacturing-evidence-workflow.md`; `precision-assembly-metrology --topic manufacturing-evidence` |
+| CAD STEP ingest, Vietnamese Unicode part decoding, batch parametric part edit or multi-body STEP export | `knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md`; `precision-assembly-metrology --topic cad-step-roundtrip-dfm` |
+| Organic mesh scaffold (jewelry, figurine, scan) needs watertight repair and multi-part machining/molding split with dowel keys | `knowledge/10-modeling/organic-scaffold-machining-split.md`; `native-hard-surface --topic organic-scaffold-machining-split` |
+| Commercial 6-shot studio catalogue render, decoupled wood-grain/stain PBR, Face-vs-CutEdge slotting or AI refine kit | `knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md`; `render-export-delivery --topic studio-catalogue-ai-refine` |
 
 Read the [hard rules](references/hard-rules.md) every session (state explicitly which are ENFORCED vs MANUAL). Deliver results per [revision-bound acceptance](references/recipes.md#revision-bound-acceptance).
 

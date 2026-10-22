@@ -1003,6 +1003,42 @@
       "runtime": "Host Python unittest; temporary directories only.",
       "effects": "Creates throwaway build directories under the system temp dir; the repository is only read (one test audits the shipped builds without asserting they are clean).",
       "caution": "Tests the checker's own contract, not any build's real coverage status."
+    },
+    "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md": {
+      "reviewed_sha256": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+      "runtime": "Blender 5.2 LTS headless + optional build123d/OCP CAD bridge",
+      "caution": "Regex MANIFOLD_SOLID_BREP index order drifts when STEP assemblies reuse shared PRODUCT_DEFINITION instances; prefer XCAF tree traversal when OCP is installed. Keep 1:1 B-Rep mesh geometry locked on extruded T-slot profiles and CNC panels; apply parametric scaling only to explicitly matched hardware part patterns.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "scripts/boilerplates/bp_cad_step_roundtrip.py": {
+      "reviewed_sha256": "9c0cf9430306380766a769aa6841a7da79786eac38600e6e118d5a3c017e8267",
+      "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py (pure-Python/bmesh fallback when build123d is absent)",
+      "caution": "Self-test constructs synthetic panel/frame/fastener solids in an isolated scene; adapt manifest path and pattern rules before running on a user project.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "knowledge/10-modeling/organic-scaffold-machining-split.md": {
+      "reviewed_sha256": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+      "runtime": "Blender 5.2 LTS bmesh + EXACT Boolean solver + offline QRemeshify/Voxel Remesh",
+      "caution": "Never re-code organic silhouettes from 360 turnaround renders using primitive meshes; lock the local frozen scaffold and perform boolean parting + dowel keying on the repaired manifold mesh. Verify positive signed volume (V > 0) and zero non-manifold edges on both scaffold and cutter before applying EXACT boolean modifiers.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "scripts/boilerplates/bp_organic_scaffold_splitter.py": {
+      "reviewed_sha256": "c491de3bc289c45dd2541764a617035ed0d29bbea44d0a4edfaaa7ec69420998",
+      "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py",
+      "caution": "Default radial dowel clearance (0.20 mm) and parting gap (0.30 mm) are baseline FDM/SLA screening values; adjust for specific casting or CNC tool tolerances.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": {
+      "reviewed_sha256": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+      "runtime": "Blender 5.2 LTS Cycles/AgX + OpenPBR Principled BSDF v2",
+      "caution": "AI-refined images (Nano Banana Pro / Imagen / GPT-4o) are POST_RENDER_CONCEPT_MEDIA and must never substitute for NATIVE_BLENDER_RENDER geometry/framing gate evidence. ShaderNodeBevel creates optical specular rounding in Cycles only; it does not alter exported STL/STEP geometry.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "scripts/boilerplates/bp_studio_catalogue_render.py": {
+      "reviewed_sha256": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8",
+      "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py",
+      "caution": "Verifies vertex SHA256 invariance across normal-based Face/CutEdge slotting and 6-camera studio setup; does not launch long Cycles batch renders during self-test.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
     }
   },
   "workflows": {
@@ -1369,6 +1405,35 @@
             "source_hashes": {
               "knowledge/00-foundations/blender-addon-ecosystem.md": "80d2a42dc2bb1f586ee1c175d98c40ecb54e850422f7a35e1787c6fc8595195c",
               "knowledge/00-foundations/bpy-scripting-core.md": "f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed"
+            }
+          }
+        },
+        "organic-scaffold-machining-split": {
+          "when": "When converting a local organic mesh scaffold (jewelry, figurine, creature from Tripo/Meshy/Hy3D or 3D scan) into watertight, multi-part manufacturable solids with parting clearance and alignment dowel keys.",
+          "sources": [
+            "knowledge/10-modeling/organic-scaffold-machining-split.md",
+            "scripts/boilerplates/bp_organic_scaffold_splitter.py"
+          ],
+          "steps": [
+            "Lock the local organic mesh as a frozen scaffold (never re-code organic silhouettes from 360 renders with primitive meshes); strip vendor materials and repair non-manifold defects until signed volume > 0.",
+            "Split the watertight solid along chosen parting planes using EXACT boolean difference cutter boxes offset by +/- clearance/2 (0.2-0.4 mm).",
+            "Generate integral male alignment dowel pins (with 45-degree lead-in chamfers) and female sockets (+0.20 mm radial clearance, +0.50 mm depth relief) across the parting interface."
+          ],
+          "gates": [
+            "Both before and after boolean splitting and dowel keying, every part reports non_manifold_edges == 0 and positive signed volume > 0.",
+            "Pairwise intersection volume between the final keyed upper and lower parts is 0.0 m3.",
+            "External service calls equal 0 (strictly offline processing of user-supplied local scaffold)."
+          ],
+          "limitations": [
+            "Planar boolean splitting does not automatically solve multi-axis undercut draft angles for rigid two-piece metal injection molds.",
+            "Highly fragmented triangle soups require offline QRemeshify or OpenVDB Voxel Remesh before boolean parting if self-intersections persist."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "source_hashes": {
+              "knowledge/10-modeling/organic-scaffold-machining-split.md": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+              "scripts/boilerplates/bp_organic_scaffold_splitter.py": "95ae757b553a40f9879f8fcfea450c2bea7fab4366a66dc49f578e5a5f3e3116"
             }
           }
         }
@@ -2239,6 +2304,36 @@
               "research/industrial-wiring-harness-packaging/04-INGRESS-PROTECTION-SEALING-THERMAL-RELIEF.md": "64e62ff9b34de40a3bee4a3f1adfaa5664b2ea58e673147af981762135390d44",
               "research/industrial-wiring-harness-packaging/05-EMC-GROUNDING-SHIELDING-HARNESS-MANUFACTURING.md": "0187d9f805ba6d158e2e475df576dfa7c692abe33d7088e1d4e85e537b9c7124",
               "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py": "e6799635a8f6275cb8ecd5aeea4c3192ca99720f3e315bcf801f134f79650a8e"
+            }
+          }
+        },
+        "cad-step-roundtrip-dfm": {
+          "when": "When ingesting Fusion 360/SolidWorks STEP files with Vietnamese Unicode part names, batch-editing named hardware parts while locking 1:1 B-Rep profiles, auditing butt-weld/CNC zero-collision DFM, or exporting multi-body STEP compounds.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md",
+            "scripts/boilerplates/bp_cad_step_roundtrip.py"
+          ],
+          "steps": [
+            "Decode ISO-10303-21 hexadecimal Unicode strings (\\X2\\...\\X0\\) and extract per-body bounding boxes, centers of mass, and SHA256 digests into parts_manifest.json.",
+            "Lock 1:1 B-Rep mesh geometry on complex profiles (T-slots, CNC panels) inside hierarchical Blender collections; restrict parametric batch scaling/replacement to explicitly matched part-name patterns.",
+            "Audit pairwise intersection volume (V_intersect == 0.0 mm3) and coplanar butt-weld contact, and wrap sub-assemblies into TopoDS_Compound -> Part containers when exporting multi-body STEP."
+          ],
+          "gates": [
+            "All Vietnamese Unicode part names decode deterministically and map to structured sub-collections under 01_Assembly_Main.",
+            "Batch-edited fasteners/parts have scale applied (1.0, 1.0, 1.0) while locked structural CAD parts preserve exact original vertex coordinates.",
+            "Pairwise solid intersection volume is 0.0 mm3 and coplanar butt-weld contacts meet tangential tolerance <= 0.1 mm."
+          ],
+          "limitations": [
+            "Blender embedded Python does not bundle build123d/OCP by default; B-Rep STEP read/write runs in the host CAD Python environment while Blender executes the bmesh/manifest bridge.",
+            "Regex MANIFOLD_SOLID_BREP name extraction can drift on STEP files with shared assembly instances; use XCAF tree traversal for complex multi-instance assemblies.",
+            "Zero-collision numeric screening does not certify weld structural strength or CNC toolpath reachability."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+              "scripts/boilerplates/bp_cad_step_roundtrip.py": "334fb154c7727a38546e987887cb29b79d8bc4e28420d5673f4ff6af32c22c28"
             }
           }
         }
@@ -3194,6 +3289,35 @@
             "source_hashes": {
               "knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md": "f39da6c43b5acaabfb0334eb768bdd1bbf66e41a5db2d4e657db2e5873b97320",
               "knowledge/60-pipeline/product-viz-and-shots.md": "39a86a300e663f428117ead2556fb9b54c20d5f28833e6fa11b351a5cca5f342"
+            }
+          }
+        },
+        "studio-catalogue-ai-refine": {
+          "when": "When rendering CAD or product assemblies with 100% geometry lockdown, decoupled wood-grain vs color-stain OpenPBR shaders, automatic Face vs CutEdge normal slotting, standardized 6-shot studio cameras, and AI refinement conditioning kits.",
+          "sources": [
+            "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md",
+            "scripts/boilerplates/bp_studio_catalogue_render.py"
+          ],
+          "steps": [
+            "Verify CAD vertex coordinate hash invariance (Geometry Lockdown), then partition laminated/plywood boards into Face veneers and CutEdge multiplex slots by face normal alignment.",
+            "Construct OpenPBR Principled BSDF v2 materials with decoupled Grain/Roughness/Bump and Color Stain (Mix MULTIPLY) branches plus a non-destructive ShaderNodeBevel (0.5-0.8 mm).",
+            "Frame the 6 standardized studio catalogue cameras (01_front_view, 02_side_view, 03_top_view, 04_3_4_beauty, 05_overview_studio, 06_details_macro) with Grazing Chiaroscuro softboxes and AgX color management, and emit ai_refine_manifest.json."
+          ],
+          "gates": [
+            "Mesh vertex SHA256 before and after material slotting and studio rig construction is identical (100% CAD geometry lockdown).",
+            "All 6 studio cameras and 3-point Grazing Chiaroscuro lights are created and framed against evaluated world-space bounds with AgX view transform active.",
+            "AI refine manifest explicitly tags outputs as POST_RENDER_CONCEPT_MEDIA and preserves NATIVE_BLENDER_RENDER_LOCKED provenance."
+          ],
+          "limitations": [
+            "ShaderNodeBevel is a Cycles ray-tracing normal effect and does not render in EEVEE or alter exported CAD/STL geometry.",
+            "AI-refined images produced via Nano Banana Pro, Imagen 3, or GPT-4o are marketing concept media and never qualify as geometric or dimensional gate evidence."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "source_hashes": {
+              "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+              "scripts/boilerplates/bp_studio_catalogue_render.py": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8"
             }
           }
         }

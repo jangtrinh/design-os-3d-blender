@@ -2,13 +2,13 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 153,
+    "execution-source": 156,
     "imported-reference": 47,
-    "knowledge": 58,
+    "knowledge": 61,
     "research-synthesis": 76,
     "workflow": 56
   },
-  "dependency_edges": 166,
+  "dependency_edges": 175,
   "foundations": [
     "knowledge/00-foundations/blender-version-matrix.md",
     "knowledge/00-foundations/bpy-scripting-core.md",
@@ -27,28 +27,28 @@
           "text": "0. Routing by task"
         },
         {
-          "line": 32,
+          "line": 35,
           "text": "1. Knowledge routing (mandatory)"
         },
         {
-          "line": 35,
+          "line": 38,
           "text": "2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)"
         },
         {
-          "line": 61,
+          "line": 64,
           "text": "3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)"
         },
         {
-          "line": 76,
+          "line": 79,
           "text": "4. Execution modes (check in order)"
         },
         {
-          "line": 82,
+          "line": 85,
           "text": "5. Failure quick-map"
         }
       ],
       "kind": "workflow",
-      "lines": 91,
+      "lines": 94,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -57,7 +57,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/SKILL.md",
       "related": [],
-      "sha256": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
+      "sha256": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
       "tags": [],
       "title": "Blender Agent Core",
       "use": "read"
@@ -200,35 +200,35 @@
         },
         {
           "line": 10,
-          "text": "Phase -1 — Fidelity contract"
+          "text": "Phase -1 — Pre-Contract Discovery, Multi-Modal Dossier & Socratic Gate (MANDATORY)"
         },
         {
-          "line": 32,
+          "line": 45,
           "text": "Phase 0 — Native reconstruction mode"
         },
         {
-          "line": 43,
+          "line": 56,
           "text": "Phase 1 — Evidence specification"
         },
         {
-          "line": 50,
+          "line": 63,
           "text": "Phase 2 — Staged construction"
         },
         {
-          "line": 62,
+          "line": 75,
           "text": "Phase 2.5 — Offline retopology gate (frozen scaffold only)"
         },
         {
-          "line": 68,
+          "line": 81,
           "text": "Phase 3 — Verify every pass"
         },
         {
-          "line": 89,
+          "line": 102,
           "text": "Delivery gate"
         }
       ],
       "kind": "workflow",
-      "lines": 114,
+      "lines": 127,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -237,7 +237,7 @@
       "name": null,
       "path": ".agents/skills/blender-image-to-3d/SKILL.md",
       "related": [],
-      "sha256": "297032c6f30c389ad135a4c71973357f290939ff45d1793d05c597e96a39b15b",
+      "sha256": "f255f466c36292a52702a873d3c222247b7eef8d8abaa56a1c8e53a959ee07cb",
       "tags": [],
       "title": "Image → 3D (v3 — Blender native)",
       "use": "read"
@@ -7035,6 +7035,72 @@
       "use": "read-verify"
     },
     {
+      "annotation": {
+        "caution": "Never re-code organic silhouettes from 360 turnaround renders using primitive meshes; lock the local frozen scaffold and perform boolean parting + dowel keying on the repaired manifold mesh. Verify positive signed volume (V > 0) and zero non-manifold edges on both scaffold and cutter before applying EXACT boolean modifiers.",
+        "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py",
+        "reviewed_sha256": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+        "runtime": "Blender 5.2 LTS bmesh + EXACT Boolean solver + offline QRemeshify/Voxel Remesh"
+      },
+      "annotation_revision": "matched",
+      "description": "Convert local organic meshes (jewelry, figurines, scans) into manufacturable multi-part solids via watertight BMesh repair, offline QRemeshify/Voxel retopology, planar boolean splitting with clearance, and integral dowel alignment keys without LLM shape hallucination.",
+      "headings": [
+        {
+          "line": 18,
+          "text": "Organic Mesh Frozen Scaffold Repair, Retopology & Parametric Part Splitting for Manufacturing"
+        },
+        {
+          "line": 20,
+          "text": "Purpose"
+        },
+        {
+          "line": 26,
+          "text": "When to Use / When NOT"
+        },
+        {
+          "line": 28,
+          "text": "ALLOWED (When to Use)"
+        },
+        {
+          "line": 35,
+          "text": "NOT ALLOWED (When NOT to Use)"
+        },
+        {
+          "line": 43,
+          "text": "Core Knowledge Content"
+        },
+        {
+          "line": 62,
+          "text": "Failure Modes (Mandatory)"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 78,
+      "loads_with": [
+        "mesh-optimization-retopology",
+        "dfam-3dprinting-production",
+        "cad-precision-modeling"
+      ],
+      "name": "organic-scaffold-machining-split",
+      "path": "knowledge/10-modeling/organic-scaffold-machining-split.md",
+      "related": [
+        "knowledge/10-modeling/mesh-optimization-retopology.md",
+        "knowledge/60-pipeline/dfam-3dprinting-production.md",
+        "knowledge/70-cad-precision-robotics/cad-precision-modeling.md"
+      ],
+      "sha256": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+      "tags": [
+        "organic",
+        "retopology",
+        "qremeshify",
+        "boolean-split",
+        "dowel-pins",
+        "manufacturing",
+        "frozen-scaffold"
+      ],
+      "title": "Organic Mesh Frozen Scaffold Repair, Retopology & Parametric Part Splitting for Manufacturing",
+      "use": "read-verify"
+    },
+    {
       "description": "Seams, unwrap methods, packing margin math, texel density, UDIMs, multi-UV layouts, and the headless operator-context patterns UV work actually requires.",
       "headings": [
         {
@@ -8365,6 +8431,72 @@
         "render-settings"
       ],
       "title": "Render Engines",
+      "use": "read-verify"
+    },
+    {
+      "annotation": {
+        "caution": "AI-refined images (Nano Banana Pro / Imagen / GPT-4o) are POST_RENDER_CONCEPT_MEDIA and must never substitute for NATIVE_BLENDER_RENDER geometry/framing gate evidence. ShaderNodeBevel creates optical specular rounding in Cycles only; it does not alter exported STL/STEP geometry.",
+        "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py",
+        "reviewed_sha256": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+        "runtime": "Blender 5.2 LTS Cycles/AgX + OpenPBR Principled BSDF v2"
+      },
+      "annotation_revision": "matched",
+      "description": "Render CAD assemblies with 100% geometry lockdown, decoupled wood-grain vs color-stain OpenPBR shaders, automatic Face vs CutEdge normal slotting, standardized 6-angle studio cameras, and provenance-bound Nano Banana Pro AI refinement kits.",
+      "headings": [
+        {
+          "line": 18,
+          "text": "Commercial Studio Catalogue 6-Shot Pipeline, Decoupled PBR Shaders & Hybrid AI Refinement"
+        },
+        {
+          "line": 20,
+          "text": "Purpose"
+        },
+        {
+          "line": 24,
+          "text": "When to Use / When NOT"
+        },
+        {
+          "line": 26,
+          "text": "ALLOWED (When to Use)"
+        },
+        {
+          "line": 32,
+          "text": "NOT ALLOWED (When NOT to Use)"
+        },
+        {
+          "line": 37,
+          "text": "Core Knowledge Content"
+        },
+        {
+          "line": 69,
+          "text": "Failure Modes (Mandatory)"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 89,
+      "loads_with": [
+        "product-viz-and-shots",
+        "native-render-delivery",
+        "materials-pbr"
+      ],
+      "name": "studio-catalogue-and-ai-refine",
+      "path": "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md",
+      "related": [
+        "knowledge/60-pipeline/product-viz-and-shots.md",
+        "knowledge/60-pipeline/native-render-delivery.md",
+        "knowledge/20-shading/materials-pbr.md"
+      ],
+      "sha256": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+      "tags": [
+        "studio-render",
+        "catalogue",
+        "openpbr",
+        "bevel-shader",
+        "agx",
+        "ai-refine",
+        "cad-render"
+      ],
+      "title": "Commercial Studio Catalogue 6-Shot Pipeline, Decoupled PBR Shaders & Hybrid AI Refinement",
       "use": "read-verify"
     },
     {
@@ -11113,6 +11245,90 @@
       "use": "read-verify"
     },
     {
+      "annotation": {
+        "caution": "Regex MANIFOLD_SOLID_BREP index order drifts when STEP assemblies reuse shared PRODUCT_DEFINITION instances; prefer XCAF tree traversal when OCP is installed. Keep 1:1 B-Rep mesh geometry locked on extruded T-slot profiles and CNC panels; apply parametric scaling only to explicitly matched hardware part patterns.",
+        "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py",
+        "reviewed_sha256": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+        "runtime": "Blender 5.2 LTS headless + optional build123d/OCP CAD bridge"
+      },
+      "annotation_revision": "matched",
+      "description": "Ingest Fusion 360 and SolidWorks STEP assemblies with ISO-10303-21 Vietnamese Unicode decoding, lock 1:1 B-Rep geometry while batch-editing named hardware parts, enforce DFM butt-weld and CNC slot clearances, and export multi-body STEP compounds.",
+      "headings": [
+        {
+          "line": 18,
+          "text": "CAD STEP Round-Trip, Hybrid Parametric Batch Editing & DFM Zero-Collision Pipeline"
+        },
+        {
+          "line": 20,
+          "text": "Purpose"
+        },
+        {
+          "line": 24,
+          "text": "When to Use / When NOT"
+        },
+        {
+          "line": 26,
+          "text": "ALLOWED (When to Use)"
+        },
+        {
+          "line": 32,
+          "text": "NOT ALLOWED (When NOT to Use)"
+        },
+        {
+          "line": 37,
+          "text": "Core Knowledge Content"
+        },
+        {
+          "line": 39,
+          "text": "1. ISO-10303-21 Vietnamese Unicode String Decoding"
+        },
+        {
+          "line": 50,
+          "text": "2. Hierarchical CAD Assembly Collection Organization"
+        },
+        {
+          "line": 61,
+          "text": "3. Parametric Batch Editing of Fasteners (Solving Case 1)"
+        },
+        {
+          "line": 72,
+          "text": "4. DFM Zero-Collision and Coplanar Butt-Weld Verification"
+        },
+        {
+          "line": 83,
+          "text": "Failure Modes (Mandatory)"
+        }
+      ],
+      "kind": "knowledge",
+      "lines": 99,
+      "loads_with": [
+        "cad-precision-modeling",
+        "export-interchange",
+        "fasteners-seals-mechanics"
+      ],
+      "name": "cad-step-roundtrip-and-dfm",
+      "path": "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md",
+      "related": [
+        "knowledge/70-cad-precision-robotics/cad-precision-modeling.md",
+        "knowledge/60-pipeline/export-interchange.md",
+        "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md"
+      ],
+      "sha256": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+      "tags": [
+        "step",
+        "cad",
+        "build123d",
+        "opencascade",
+        "fusion360",
+        "dfm",
+        "butt-weld",
+        "cnc-plywood",
+        "multi-body"
+      ],
+      "title": "CAD STEP Round-Trip, Hybrid Parametric Batch Editing & DFM Zero-Collision Pipeline",
+      "use": "read-verify"
+    },
+    {
       "description": "Real-time multi-axis bus networks (CAN-FD, RS-485), cascade control loop timing, trajectory generation, and hardware E-Stop safety architectures.",
       "headings": [
         {
@@ -13069,12 +13285,12 @@
       "description": "",
       "headings": [],
       "kind": "workflow",
-      "lines": 3682,
+      "lines": 3806,
       "loads_with": [],
       "name": null,
       "path": "knowledge/catalog-config.json",
       "related": [],
-      "sha256": "1d1468afd53c58006e9d6f7f5aa4b55f0797fae8a4c46e859aee9cc15c9d6499",
+      "sha256": "b4e9cec098d8bbdf834f25b3cb0f8a614fac849dabe379bb3f41692a816d4686",
       "tags": [],
       "title": "catalog-config.json",
       "use": "read"
@@ -19794,6 +20010,60 @@
     },
     {
       "annotation": {
+        "caution": "Self-test constructs synthetic panel/frame/fastener solids in an isolated scene; adapt manifest path and pattern rules before running on a user project.",
+        "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py",
+        "reviewed_sha256": "9c0cf9430306380766a769aa6841a7da79786eac38600e6e118d5a3c017e8267",
+        "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py (pure-Python/bmesh fallback when build123d is absent)"
+      },
+      "annotation_revision": "changed-since-review",
+      "description": "",
+      "headings": [
+        {
+          "line": 27,
+          "text": "Ensure scripts directory is available for agent_runtime import"
+        },
+        {
+          "line": 34,
+          "text": "--- OpenCASCADE / build123d Inspection & Optional Helpers ------------------"
+        },
+        {
+          "line": 85,
+          "text": "--- 1. ISO-10303-21 Vietnamese Unicode String Decoder -----------------------"
+        },
+        {
+          "line": 116,
+          "text": "--- 2. Hierarchical CAD Assembly Builder ------------------------------------"
+        },
+        {
+          "line": 205,
+          "text": "--- 3. Parametric Batch Edit By Pattern -------------------------------------"
+        },
+        {
+          "line": 248,
+          "text": "--- 4. DFM Zero-Collision & Butt-Weld Auditor -------------------------------"
+        },
+        {
+          "line": 341,
+          "text": "--- Geometry Generation Helpers for Testing ---------------------------------"
+        },
+        {
+          "line": 443,
+          "text": "--- Execution Self-Test ----------------------------------------------------"
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 516,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/bp_cad_step_roundtrip.py",
+      "related": [],
+      "sha256": "334fb154c7727a38546e987887cb29b79d8bc4e28420d5673f4ff6af32c22c28",
+      "tags": [],
+      "title": "Ensure scripts directory is available for agent_runtime import",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
         "basis": "Controller and independent source review 2026-09-17; eight native evaluated-mesh/camera contracts and selected module self-test pass on Blender 5.2.0 fbe6228777e7.",
         "caution": "Use evaluated_mesh() in a with block; the unsafe bare getter was removed. Do not retain mesh RNA or mutate/re-evaluate inside the borrow. Other helpers remain unqualified: clean_scene deletes global objects, mode errors may be swallowed, named removals affect other users, and substring socket resolution is ambiguous.",
         "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
@@ -19856,6 +20126,32 @@
       "sha256": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
       "tags": [],
       "title": "bp_materials_pbr.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "caution": "Default radial dowel clearance (0.20 mm) and parting gap (0.30 mm) are baseline FDM/SLA screening values; adjust for specific casting or CNC tool tolerances.",
+        "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py",
+        "reviewed_sha256": "c491de3bc289c45dd2541764a617035ed0d29bbea44d0a4edfaaa7ec69420998",
+        "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py"
+      },
+      "annotation_revision": "changed-since-review",
+      "description": "",
+      "headings": [
+        {
+          "line": 30,
+          "text": "Ensure agent_runtime is importable from repo scripts"
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 531,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/bp_organic_scaffold_splitter.py",
+      "related": [],
+      "sha256": "95ae757b553a40f9879f8fcfea450c2bea7fab4366a66dc49f578e5a5f3e3116",
+      "tags": [],
+      "title": "Ensure agent_runtime is importable from repo scripts",
       "use": "inspect-adapt"
     },
     {
@@ -19944,6 +20240,32 @@
       "sha256": "6978e0ef90b15f73881915785706c2e9f2a7fcd07c4c5974037a8f25efc46090",
       "tags": [],
       "title": "bp_rigging.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "annotation": {
+        "caution": "Verifies vertex SHA256 invariance across normal-based Face/CutEdge slotting and 6-camera studio setup; does not launch long Cycles batch renders during self-test.",
+        "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py",
+        "reviewed_sha256": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8",
+        "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py"
+      },
+      "annotation_revision": "matched",
+      "description": "",
+      "headings": [
+        {
+          "line": 27,
+          "text": "Import agent_runtime for sentinel contract"
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 688,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/bp_studio_catalogue_render.py",
+      "related": [],
+      "sha256": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8",
+      "tags": [],
+      "title": "Import agent_runtime for sentinel contract",
       "use": "inspect-adapt"
     },
     {
@@ -22711,13 +23033,13 @@
     }
   },
   "schema": 1,
-  "source_digest": "26fe36fa1d05475cd08d65be2f33e3b238ce29bb8c70f5c4f381af443142a500",
+  "source_digest": "c7da30f86880cf41c14c95ab2708254c3604c6fc8e4a2305ad9c6a30cd2731aa",
   "source_hashes": {
-    ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
+    ".agents/skills/blender-agent-core/SKILL.md": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".agents/skills/blender-agent-core/references/hard-rules.md": "43e11eee325f274a477fe750b1fb425d7283f019894a15114781096c7dd98fb0",
     ".agents/skills/blender-agent-core/references/recipes.md": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
-    ".agents/skills/blender-image-to-3d/SKILL.md": "297032c6f30c389ad135a4c71973357f290939ff45d1793d05c597e96a39b15b",
+    ".agents/skills/blender-image-to-3d/SKILL.md": "f255f466c36292a52702a873d3c222247b7eef8d8abaa56a1c8e53a959ee07cb",
     ".agents/skills/blender-image-to-3d/references/review-rubric.md": "4a9c962fe81b716f4d28188e7f2a23c5a9e2d898e9329bedaef0b9ef1f17375b",
     ".agents/skills/blender-knowledge-workbench/SKILL.md": "8c0a67e87576f2dfe006d08fbd750ccb43a6d23f1de550badef4dfb41611411a",
     ".agents/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "c75a0ad2786f0418e9a71ed3000fa5df77774ab895fb04968df7175a0437248b",
@@ -22768,11 +23090,11 @@
     ".agents/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".agents/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".claude/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
+    ".claude/skills/blender-agent-core/SKILL.md": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".claude/skills/blender-agent-core/references/hard-rules.md": "43e11eee325f274a477fe750b1fb425d7283f019894a15114781096c7dd98fb0",
     ".claude/skills/blender-agent-core/references/recipes.md": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
-    ".claude/skills/blender-image-to-3d/SKILL.md": "297032c6f30c389ad135a4c71973357f290939ff45d1793d05c597e96a39b15b",
+    ".claude/skills/blender-image-to-3d/SKILL.md": "f255f466c36292a52702a873d3c222247b7eef8d8abaa56a1c8e53a959ee07cb",
     ".claude/skills/blender-image-to-3d/references/review-rubric.md": "4a9c962fe81b716f4d28188e7f2a23c5a9e2d898e9329bedaef0b9ef1f17375b",
     ".claude/skills/blender-knowledge-workbench/SKILL.md": "8c0a67e87576f2dfe006d08fbd750ccb43a6d23f1de550badef4dfb41611411a",
     ".claude/skills/blender-knowledge-workbench/references/knowledge-to-workflow.md": "c75a0ad2786f0418e9a71ed3000fa5df77774ab895fb04968df7175a0437248b",
@@ -22902,6 +23224,7 @@
     "knowledge/10-modeling/mesh-optimization-retopology.md": "d1453ee1e34d48489030a9bef5e45316442d97fc64cfcd138b023e73c2dc5576",
     "knowledge/10-modeling/modeling-topology.md": "5c83f88ce45805aa9b06fe0c893629d49deaf11693cd7693b6ca63981ca419c8",
     "knowledge/10-modeling/modifiers.md": "80f45ba7cf4d2d8d3787aa24d0e448e1c5e5498cc9c9a45fbcf8a1b287e3fab8",
+    "knowledge/10-modeling/organic-scaffold-machining-split.md": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
     "knowledge/10-modeling/uv-unwrapping.md": "97dd26a59cecc52f0a9601c62ba2d976c245c5c8839e880a5becffae13a83cd8",
     "knowledge/15-character-creature/character-creature-modeling.md": "6ac3ffbf685a531f4051f7c8b2c44d8ebe977a51187e49d4102ad0ec0c02fa6a",
     "knowledge/20-shading/master-artisan-pbr-and-grooming.md": "86b55391ecb8ce83d25a31d5dcab7b9ccb6cfb2364566124024b6ff640ce0750",
@@ -22910,6 +23233,7 @@
     "knowledge/30-lighting-render/compositing-output.md": "0528c5e2114f45647c05c0bd9f3b97247a805bad43975e8b70f01b655b2c28b6",
     "knowledge/30-lighting-render/lighting.md": "088816c0c0073751bdd8bdc865de102ac20a12577405054e9dede45c8345bfec",
     "knowledge/30-lighting-render/render-engines.md": "8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8",
+    "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
     "knowledge/30-lighting-render/video-animation-cinematics.md": "3919a180a8f3b7c701f1d76d1aa3ee8fbe567d5aa642ea935abe91bad2023bfd",
     "knowledge/40-animation/animation-fcurves.md": "25dbdbf28a4136a6a172e5367fe480bbb59d9aa7252f79d0faa458bd54723512",
     "knowledge/40-animation/mocap-retargeting.md": "1f4928baec3b091faf925399bb8524a3ca02ab980e8aa4fc6dd347fefc35b7ff",
@@ -22930,6 +23254,7 @@
     "knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md": "f39da6c43b5acaabfb0334eb768bdd1bbf66e41a5db2d4e657db2e5873b97320",
     "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md": "e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0",
     "knowledge/70-cad-precision-robotics/cad-precision-modeling.md": "e1c1c8da92c1394b73ac08934439556dc8f7966c3c188d51675662a94912d559",
+    "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
     "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md": "ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787",
     "knowledge/70-cad-precision-robotics/emc-emi-environmental-qualification.md": "88a149d2b56160ab8bdd08861ec4eb33bff52ef80365b99a729c66c81aac13df",
     "knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md": "e51fbd22ca45df695560d44198313bf099f5bf0d87bcbbfad6875e9ae404f8a6",
@@ -22949,7 +23274,7 @@
     "knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md": "eda812e52299751b0ae30b3f8adde753767850a395aa2d0670bbb7285d95dc87",
     "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md": "4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a",
     "knowledge/INDEX.md": "cee3260720710a8b87724bc9eac66bce1fa7f89ee54791f11e8c3acbdd05e760",
-    "knowledge/catalog-config.json": "1d1468afd53c58006e9d6f7f5aa4b55f0797fae8a4c46e859aee9cc15c9d6499",
+    "knowledge/catalog-config.json": "b4e9cec098d8bbdf834f25b3cb0f8a614fac849dabe379bb3f41692a816d4686",
     "knowledge/generated-workflows.md": "723588b24787066f6d360d04b96defd99ab913676b63f9c3ec950d9b9c1d0d63",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
@@ -23041,13 +23366,16 @@
     "scripts/boilerplates/bp_animation.py": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
     "scripts/boilerplates/bp_bmesh_cad.py": "c68939cd8ecf5e31c0b0b577e14f7c742af3ace3debd6bd8f0e940161d327086",
     "scripts/boilerplates/bp_cad_robotics.py": "295454702a567fd0f07c0ce956ea52f82d93f568f3ae6d1dc6bbaa1ef02a29d9",
+    "scripts/boilerplates/bp_cad_step_roundtrip.py": "334fb154c7727a38546e987887cb29b79d8bc4e28420d5673f4ff6af32c22c28",
     "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
     "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
     "scripts/boilerplates/bp_materials_pbr.py": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
+    "scripts/boilerplates/bp_organic_scaffold_splitter.py": "95ae757b553a40f9879f8fcfea450c2bea7fab4366a66dc49f578e5a5f3e3116",
     "scripts/boilerplates/bp_parametric_contract.py": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
     "scripts/boilerplates/bp_physics.py": "310830e00597192f942742ea24a580ba26f1a04e65bf75c8a632fc523201ccea",
     "scripts/boilerplates/bp_render_camera.py": "a0462c9844057b058c04e855b47d26c21be2513adb242a74288e9b9ae20e90e2",
     "scripts/boilerplates/bp_rigging.py": "6978e0ef90b15f73881915785706c2e9f2a7fcd07c4c5974037a8f25efc46090",
+    "scripts/boilerplates/bp_studio_catalogue_render.py": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8",
     "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py": "e7af4179f5ff43404dbbbc791c688f01a93040e6c8d00b0ee8cd76a88aa433ad",
     "scripts/boilerplates/cad_mechanics/bp_ball_bearing.py": "8383db28f846246672060a6ea553a3314bc9525d7115b2cdabb08cb203b99b4d",
     "scripts/boilerplates/cad_mechanics/bp_cable_dragchain.py": "d1a95bc9acd1f7473c037a5716cb53dd9214ea38c865cb25c4489e972c79d978",
@@ -23198,6 +23526,8 @@
     "Re-review annotation: knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md",
     "Re-review annotation: knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md",
     "Re-review annotation: knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
+    "Re-review annotation: scripts/boilerplates/bp_cad_step_roundtrip.py",
+    "Re-review annotation: scripts/boilerplates/bp_organic_scaffold_splitter.py",
     "Re-review annotation: scripts/production_gate/walls_overhang.py"
   ],
   "workflows": {
@@ -23963,6 +24293,35 @@
           ],
           "when": "When optimizing raw scans, high-poly sculpts, or repairing non-manifold geometry for downstream animation."
         },
+        "organic-scaffold-machining-split": {
+          "gates": [
+            "Both before and after boolean splitting and dowel keying, every part reports non_manifold_edges == 0 and positive signed volume > 0.",
+            "Pairwise intersection volume between the final keyed upper and lower parts is 0.0 m3.",
+            "External service calls equal 0 (strictly offline processing of user-supplied local scaffold)."
+          ],
+          "limitations": [
+            "Planar boolean splitting does not automatically solve multi-axis undercut draft angles for rigid two-piece metal injection molds.",
+            "Highly fragmented triangle soups require offline QRemeshify or OpenVDB Voxel Remesh before boolean parting if self-intersections persist."
+          ],
+          "review": {
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/10-modeling/organic-scaffold-machining-split.md": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+              "scripts/boilerplates/bp_organic_scaffold_splitter.py": "95ae757b553a40f9879f8fcfea450c2bea7fab4366a66dc49f578e5a5f3e3116"
+            }
+          },
+          "sources": [
+            "knowledge/10-modeling/organic-scaffold-machining-split.md",
+            "scripts/boilerplates/bp_organic_scaffold_splitter.py"
+          ],
+          "steps": [
+            "Lock the local organic mesh as a frozen scaffold (never re-code organic silhouettes from 360 renders with primitive meshes); strip vendor materials and repair non-manifold defects until signed volume > 0.",
+            "Split the watertight solid along chosen parting planes using EXACT boolean difference cutter boxes offset by +/- clearance/2 (0.2-0.4 mm).",
+            "Generate integral male alignment dowel pins (with 45-degree lead-in chamfers) and female sockets (+0.20 mm radial clearance, +0.50 mm depth relief) across the parting interface."
+          ],
+          "when": "When converting a local organic mesh scaffold (jewelry, figurine, creature from Tripo/Meshy/Hy3D or 3D scan) into watertight, multi-part manufacturable solids with parting clearance and alignment dowel keys."
+        },
         "python-adapter-review": {
           "gates": [
             "Check the API/runtime and assertions against task behavior, not against a verified header.",
@@ -24718,6 +25077,36 @@
         "research/robotics-precision-cad/08-TOLERANCE-STACKUP-METROLOGY.md"
       ],
       "topics": {
+        "cad-step-roundtrip-dfm": {
+          "gates": [
+            "All Vietnamese Unicode part names decode deterministically and map to structured sub-collections under 01_Assembly_Main.",
+            "Batch-edited fasteners/parts have scale applied (1.0, 1.0, 1.0) while locked structural CAD parts preserve exact original vertex coordinates.",
+            "Pairwise solid intersection volume is 0.0 mm3 and coplanar butt-weld contacts meet tangential tolerance <= 0.1 mm."
+          ],
+          "limitations": [
+            "Blender embedded Python does not bundle build123d/OCP by default; B-Rep STEP read/write runs in the host CAD Python environment while Blender executes the bmesh/manifest bridge.",
+            "Regex MANIFOLD_SOLID_BREP name extraction can drift on STEP files with shared assembly instances; use XCAF tree traversal for complex multi-instance assemblies.",
+            "Zero-collision numeric screening does not certify weld structural strength or CNC toolpath reachability."
+          ],
+          "review": {
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+              "scripts/boilerplates/bp_cad_step_roundtrip.py": "334fb154c7727a38546e987887cb29b79d8bc4e28420d5673f4ff6af32c22c28"
+            }
+          },
+          "sources": [
+            "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md",
+            "scripts/boilerplates/bp_cad_step_roundtrip.py"
+          ],
+          "steps": [
+            "Decode ISO-10303-21 hexadecimal Unicode strings (\\X2\\...\\X0\\) and extract per-body bounding boxes, centers of mass, and SHA256 digests into parts_manifest.json.",
+            "Lock 1:1 B-Rep mesh geometry on complex profiles (T-slots, CNC panels) inside hierarchical Blender collections; restrict parametric batch scaling/replacement to explicitly matched part-name patterns.",
+            "Audit pairwise intersection volume (V_intersect == 0.0 mm3) and coplanar butt-weld contact, and wrap sub-assemblies into TopoDS_Compound -> Part containers when exporting multi-body STEP."
+          ],
+          "when": "When ingesting Fusion 360/SolidWorks STEP files with Vietnamese Unicode part names, batch-editing named hardware parts while locking 1:1 B-Rep profiles, auditing butt-weld/CNC zero-collision DFM, or exporting multi-body STEP compounds."
+        },
         "compliant-tendon-motion": {
           "gates": [
             "Measure neck/strain, clearance across the envelope, and bend/tension limits.",
@@ -25329,6 +25718,35 @@
             "Keep batch rendering on Cycles per policy; use EEVEE only when its capability is confirmed."
           ],
           "when": "When CPU/Metal measurement, sampling, or a renderer-limit comparison is needed."
+        },
+        "studio-catalogue-ai-refine": {
+          "gates": [
+            "Mesh vertex SHA256 before and after material slotting and studio rig construction is identical (100% CAD geometry lockdown).",
+            "All 6 studio cameras and 3-point Grazing Chiaroscuro lights are created and framed against evaluated world-space bounds with AgX view transform active.",
+            "AI refine manifest explicitly tags outputs as POST_RENDER_CONCEPT_MEDIA and preserves NATIVE_BLENDER_RENDER_LOCKED provenance."
+          ],
+          "limitations": [
+            "ShaderNodeBevel is a Cycles ray-tracing normal effect and does not render in EEVEE or alter exported CAD/STL geometry.",
+            "AI-refined images produced via Nano Banana Pro, Imagen 3, or GPT-4o are marketing concept media and never qualify as geometric or dimensional gate evidence."
+          ],
+          "review": {
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "kind": "static-routing-review",
+            "source_hashes": {
+              "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+              "scripts/boilerplates/bp_studio_catalogue_render.py": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8"
+            }
+          },
+          "sources": [
+            "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md",
+            "scripts/boilerplates/bp_studio_catalogue_render.py"
+          ],
+          "steps": [
+            "Verify CAD vertex coordinate hash invariance (Geometry Lockdown), then partition laminated/plywood boards into Face veneers and CutEdge multiplex slots by face normal alignment.",
+            "Construct OpenPBR Principled BSDF v2 materials with decoupled Grain/Roughness/Bump and Color Stain (Mix MULTIPLY) branches plus a non-destructive ShaderNodeBevel (0.5-0.8 mm).",
+            "Frame the 6 standardized studio catalogue cameras (01_front_view, 02_side_view, 03_top_view, 04_3_4_beauty, 05_overview_studio, 06_details_macro) with Grazing Chiaroscuro softboxes and AgX color management, and emit ai_refine_manifest.json."
+          ],
+          "when": "When rendering CAD or product assemblies with 100% geometry lockdown, decoupled wood-grain vs color-stain OpenPBR shaders, automatic Face vs CutEdge normal slotting, standardized 6-shot studio cameras, and AI refinement conditioning kits."
         },
         "visual-fidelity-image-matching": {
           "gates": [
