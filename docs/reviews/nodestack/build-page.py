@@ -526,7 +526,7 @@ tbody tr {{border-bottom:1px solid var(--c-preview-border)}}
         <p class="ds-heading eyebrow" data-level="3">Provenance &amp; licensing</p>
         <h2 id="provenance-title" class="ds-heading" data-level="2">Reference design attribution and rights status</h2>
         <p>The reference design is <a href="https://www.printables.com/model/1837797-nodestack-service-pack">NODESTACK // SERVICE PACK by SMACKMAX_ (@SMACKMAX) on Printables</a>. This project is an independent procedural reconstruction and digital engineering study; it does not claim original design ownership.</p>
-        <p>The reference-design redistribution license has not been verified. The repository’s MIT software license covers codebase scripts, but does not grant third-party design or media distribution rights. At the owner’s direction, geometry downloads (STLs, .blend files, 3MF, ZIP archives) and video files are withheld from public distribution.</p>
+        <p>The reference-design redistribution license has not been verified. The repository’s PolyForm Shield software license covers codebase scripts, but does not grant third-party design or media distribution rights. At the owner’s direction, geometry downloads (STLs, .blend files, 3MF, ZIP archives) and video files are withheld from public distribution.</p>
       </section>
 
       <section id="faq" class="faq" aria-labelledby="faq-title">
@@ -554,7 +554,7 @@ tbody tr {{border-bottom:1px solid var(--c-preview-border)}}
       <div class="ds-shell-footer-nav">
         <a class="ds-tab" href="{repo}">GitHub repository</a>
         <a class="ds-tab" href="../r01/">Revision r01 (previous)</a>
-        <a class="ds-tab" href="{repo}/blob/main/LICENSE">MIT License</a>
+        <a class="ds-tab" href="{repo}/blob/main/LICENSE">PolyForm Shield</a>
         <a class="ds-tab" href="#top">Back to top</a>
       </div>
       <p>Nodestack review r02 · Built with Antigravity and OpenAI Dots · design:os</p>
@@ -1223,7 +1223,7 @@ tbody tr {{border-bottom:1px solid var(--c-preview-border)}}
         <p class="ds-heading eyebrow" data-level="3">Provenance &amp; licensing</p>
         <h2 id="provenance-title" class="ds-heading" data-level="2">Reference design attribution and rights status</h2>
         <p>The reference design is <a href="https://www.printables.com/model/1837797-nodestack-service-pack">NODESTACK // SERVICE PACK by SMACKMAX_ (@SMACKMAX) on Printables</a>. This project is an independent procedural reconstruction and digital engineering study; it does not claim original design ownership.</p>
-        <p>The reference-design redistribution license has not been verified. The repository’s MIT software license covers codebase scripts, but does not grant third-party design or media distribution rights. At the owner’s direction, geometry downloads (STLs, .blend files, 3MF, ZIP archives) and unreviewed video files are withheld from public distribution.</p>
+        <p>The reference-design redistribution license has not been verified. The repository’s PolyForm Shield software license covers codebase scripts, but does not grant third-party design or media distribution rights. At the owner’s direction, geometry downloads (STLs, .blend files, 3MF, ZIP archives) and unreviewed video files are withheld from public distribution.</p>
       </section>
 
       <section id="faq" class="faq" aria-labelledby="faq-title">
@@ -1252,7 +1252,7 @@ tbody tr {{border-bottom:1px solid var(--c-preview-border)}}
         <a class="ds-tab" href="{repo}">GitHub repository</a>
         <a class="ds-tab" href="../r02/">Revision r02 (stills)</a>
         <a class="ds-tab" href="../r01/">Revision r01 (archive)</a>
-        <a class="ds-tab" href="{repo}/blob/main/LICENSE">MIT License</a>
+        <a class="ds-tab" href="{repo}/blob/main/LICENSE">PolyForm Shield</a>
         <a class="ds-tab" href="#top">Back to top</a>
       </div>
       <p>Nodestack review r03 · Built with Antigravity and OpenAI Dots · Generated with Gemini 3.8 Flash · design:os</p>

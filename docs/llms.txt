@@ -65,3 +65,19 @@ uvx design-os-3d-blender
 ## Nodestack project story
 
 - [Nodestack Review r03](https://jangtrinh.github.io/design-os-3d-blender/reviews/nodestack/r03/): Modular desk-storage reconstruction and engineering study, referencing SMACKMAX_'s NODESTACK // SERVICE PACK. Features an authorized 102-second procedural assembly-guide video (1080p60, 7 chapters), verified 7-view native still gallery, and base-seating engineering cross-section analysis. OpenAI Dots coordinated Antigravity planning/building and separate evidence-based reviews with human direction and feedback. The v16b digital package covers three configurations (32/45/68 parts); physical qualification remains unverified. Raw geometry and unreviewed videos held pending reference-design rights verification. ([Revision r02 stills](https://jangtrinh.github.io/design-os-3d-blender/reviews/nodestack/r02/), [Archive r01](https://jangtrinh.github.io/design-os-3d-blender/reviews/nodestack/r01/)). Tool attribution does not imply endorsement.
+
+## DESIGN:OS Ecosystem
+
+- [design-os](https://jangtrinh.github.io/design-os/): DESIGN:OS CLI — Multi-runtime design CLI for Claude Code, Codex & Antigravity (cli)
+- [design-os-knowledge-builder](https://jangtrinh.github.io/design-os-knowledge-builder/): Knowledge Builder — Multimodal knowledge compiler with UKMC.v1 contract & epistemic gate (compiler)
+- [design-os-figma-plugin](https://jangtrinh.github.io/design-os-figma-plugin/): Figma Plugin & CLI — Live canvas bridge for AI coding agents on Figma Free (plugin)
+- [design-os-svg-animation](https://jangtrinh.github.io/design-os-svg-animation/): SVG Animation Engine — Deterministic vector animation & 1080p 60fps video pipeline (engine)
+- [design-os-3d-blender](https://jangtrinh.github.io/design-os-3d-blender/): 3D Blender Agent — Mechanical parts generation with embedded Three.js CAD viewer (3d / cad)
+- [design-os-drone-showcase](https://jangtrinh.github.io/design-os-drone-showcase/): OPAH ONE — 249g indoor drone showcase with scroll-scrub kinematics (hardware)
+- [design-os-github-page](https://jangtrinh.github.io/design-os-github-page/): GitHub Pages Engine — 9-tier zero-dependency scaffolder with SEO, AEO & GEO (pages)
+- [design-os-apple](https://jangtrinh.github.io/design-os-apple/): Apple Design OS — Native SwiftUI 6.2 component system for iOS, iPadOS & macOS (swiftui)
+- [design-os-pedagogy](https://jangtrinh.github.io/design-os-pedagogy/): Agent Teacher — Evidence-graded pedagogy library and curriculum tree runtime (pedagogy)
+- [design-os-origami](https://jangtrinh.github.io/design-os-origami/): Origami CAD — Parametric packaging dielines, spot-color PDFs & 3D fold previews (packaging)
+- [design-os-voice-ux](https://jangtrinh.github.io/design-os-voice-ux/): Voice UX & AI Agent Architecture — Full-duplex barge-in FSMs & sub-500ms voice specs (voice-ai)
+- [design-os-code2flow](https://jangtrinh.github.io/design-os-code2flow/): Code2Flow — Local-first codebase-to-user-flow audit CLI across 7 UI frameworks (ast / audit)
+- [design-os-generative-ui](https://jangtrinh.github.io/design-os-generative-ui/): Generative UI — Streaming interactive visual runtime with morphdom & WebGL (runtime)

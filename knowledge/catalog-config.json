@@ -102,8 +102,8 @@
       "caution": "Controlled calibration fixture, not autonomous learning or a general reconstruction benchmark. Do not run in a live GUI/product scene. Checks overall height and units, deliberately not every feature; actual critic must inspect the pictures. Manufacture NOT_REQUESTED."
     },
     "scripts/headless-run.sh": {
-      "reviewed_sha256": "ed73fd8fc8dfb1abbb0879961692f992d462e3a6d8a6a17b1606ede0e177d449",
-      "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py)",
+      "reviewed_sha256": "10addcef6e93e60558f002882330593882b8050495e3c41a4760cf32efcc75f6",
+      "basis": "Controller runtime verification 2026-09-06 (tests/execution/test_headless_run.py) | re-verified 2026-10-13 after portable mktemp fix (GNU/BSD): tests/execution/test_headless_run.py 13/13 on macOS 5.2.0 and in Linux CI",
       "runtime": "shell → Blender",
       "effects": "Runs payload through scripts/agent-run-headless.py → agent_runtime.run_file in a fresh --factory-startup process; writes whatever the payload writes.",
       "caution": "Exit 0/1/2/3 derived from the last-line AGENT_OK/AGENT_FAIL sentinel; HEADLESS_RAW=1 bypasses the runtime and falls back to Blender's unreliable exit. Not a sandbox."
@@ -662,7 +662,7 @@
       "caution": "World setup uses operators; linking a collection is assumed to create rigid_body immediately. Cache frame stepping lacks clear/bake/context restoration; isolate and verify actual world membership."
     },
     "scripts/boilerplates/bp_cad_robotics.py": {
-      "reviewed_sha256": "f4cefba47a6540da6fd19de46eb9cee9998c3065d9f974a2dcde69498435b566",
+      "reviewed_sha256": "295454702a567fd0f07c0ce956ea52f82d93f568f3ae6d1dc6bbaa1ef02a29d9",
       "basis": "Full static source and AST review by boilerplate scout; no runtime certification.",
       "runtime": "bpy; inspect/adapt only",
       "effects": "May modify/delete scene data, preferences or output; review ownership and isolate before execution.",
@@ -774,7 +774,7 @@
       "caution": "Disc-minus-bore only; promised Hub Length, bolt pattern and ASME dimensional/class contract absent. Positional Boolean sockets need runtime inspection; replaces group; nonempty-mesh test only."
     },
     "scripts/boilerplates/materials_shading/bp_mat_metals.py": {
-      "reviewed_sha256": "c8ec6e3e66989bac62cc2a22c02c902666a8368ed77145c938aaac04de6775e9",
+      "reviewed_sha256": "e8ee6d36e3ad8e0468d9ba6b294350bdc5e30361a376a80236463f06842be86f",
       "basis": "Specialist source scout full static read and AST parse; no runtime certification.",
       "runtime": "bpy inspect/adapt",
       "effects": "Replaces globally named material; guarded demo creates materials in current data.",
@@ -970,7 +970,7 @@
       "caution": "subsurface_method must be set BEFORE Subsurface IOR (that socket is disabled and unreachable by name under the default BURLEY). Radius (1.0, 0.22, 0.08) and scale 0.025 m are look choices; Blender's defaults are (1.0, 0.2, 0.1) and 0.005 m."
     },
     "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py": {
-      "reviewed_sha256": "079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3",
+      "reviewed_sha256": "892d714c228b187677609f5fa3bd9a98a412d09b16058dd4ecc7a1e1b79327dc",
       "basis": "Onboarding audit 2026-09-06: control-bone leak into deform groups fixed, bpy.ops primitive replaced with bmesh, 33 bones + IK + twist + weight-normalisation asserted; AGENT_OK.",
       "runtime": "bpy; inspect/adapt only",
       "effects": "Enters and leaves Edit Mode on the new armature; creates an armature, a test mesh, vertex groups and an Armature modifier.",
@@ -991,7 +991,7 @@
       "caution": "Declaration coverage only: it proves a manifest step exists for each authored pass, not that the pass ran, that its run directory is current, or that its assertions are adequate. An allowlist entry with a reason silences a finding, so the reason is the evidence."
     },
     "scripts/check-html-tag-balance.py": {
-      "reviewed_sha256": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3",
+      "reviewed_sha256": "3fb3f1033942e519dd4aa2c05c307d5a31503dcf783d806723056330467bfefd",
       "basis": "Written and reviewed 2026-09-18 after regex edits to a shipped page closed a fieldset early; run on all four published pages, which reported balanced.",
       "runtime": "Host Python standard library only (html.parser); no browser, no Blender.",
       "effects": "Reads the given HTML files; writes nothing; exits 1 on an unbalanced or unclosed tag.",
@@ -1003,6 +1003,42 @@
       "runtime": "Host Python unittest; temporary directories only.",
       "effects": "Creates throwaway build directories under the system temp dir; the repository is only read (one test audits the shipped builds without asserting they are clean).",
       "caution": "Tests the checker's own contract, not any build's real coverage status."
+    },
+    "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md": {
+      "reviewed_sha256": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+      "runtime": "Blender 5.2 LTS headless + optional build123d/OCP CAD bridge",
+      "caution": "Regex MANIFOLD_SOLID_BREP index order drifts when STEP assemblies reuse shared PRODUCT_DEFINITION instances; prefer XCAF tree traversal when OCP is installed. Keep 1:1 B-Rep mesh geometry locked on extruded T-slot profiles and CNC panels; apply parametric scaling only to explicitly matched hardware part patterns.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "scripts/boilerplates/bp_cad_step_roundtrip.py": {
+      "reviewed_sha256": "9c0cf9430306380766a769aa6841a7da79786eac38600e6e118d5a3c017e8267",
+      "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py (pure-Python/bmesh fallback when build123d is absent)",
+      "caution": "Self-test constructs synthetic panel/frame/fastener solids in an isolated scene; adapt manifest path and pattern rules before running on a user project.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "knowledge/10-modeling/organic-scaffold-machining-split.md": {
+      "reviewed_sha256": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+      "runtime": "Blender 5.2 LTS bmesh + EXACT Boolean solver + offline QRemeshify/Voxel Remesh",
+      "caution": "Never re-code organic silhouettes from 360 turnaround renders using primitive meshes; lock the local frozen scaffold and perform boolean parting + dowel keying on the repaired manifold mesh. Verify positive signed volume (V > 0) and zero non-manifold edges on both scaffold and cutter before applying EXACT boolean modifiers.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "scripts/boilerplates/bp_organic_scaffold_splitter.py": {
+      "reviewed_sha256": "c491de3bc289c45dd2541764a617035ed0d29bbea44d0a4edfaaa7ec69420998",
+      "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py",
+      "caution": "Default radial dowel clearance (0.20 mm) and parting gap (0.30 mm) are baseline FDM/SLA screening values; adjust for specific casting or CNC tool tolerances.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": {
+      "reviewed_sha256": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+      "runtime": "Blender 5.2 LTS Cycles/AgX + OpenPBR Principled BSDF v2",
+      "caution": "AI-refined images (Nano Banana Pro / Imagen / GPT-4o) are POST_RENDER_CONCEPT_MEDIA and must never substitute for NATIVE_BLENDER_RENDER geometry/framing gate evidence. ShaderNodeBevel creates optical specular rounding in Cycles only; it does not alter exported STL/STEP geometry.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
+    },
+    "scripts/boilerplates/bp_studio_catalogue_render.py": {
+      "reviewed_sha256": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8",
+      "runtime": "Blender 5.2 LTS --factory-startup via agent_runtime.py",
+      "caution": "Verifies vertex SHA256 invariance across normal-based Face/CutEdge slotting and 6-camera studio setup; does not launch long Cycles batch renders during self-test.",
+      "effects": "read-only knowledge or isolated headless self-test via agent_runtime.py"
     }
   },
   "workflows": {
@@ -1010,10 +1046,13 @@
       "purpose": "Build from reference images, silhouette, topology, and softly filleted bodies using Blender-native tools.",
       "required": [
         "knowledge/10-modeling/modeling-topology.md",
-        "knowledge/10-modeling/modifiers.md"
+        "knowledge/10-modeling/modifiers.md",
+        "knowledge/10-modeling/game-asset-pipeline-low-to-aaa.md"
       ],
       "supplemental": [
-        "knowledge/10-modeling/uv-unwrapping.md"
+        "knowledge/10-modeling/uv-unwrapping.md",
+        "knowledge/10-modeling/mesh-optimization-retopology.md",
+        "knowledge/00-foundations/blender-addon-ecosystem.md"
       ],
       "concepts": [
         ".agents/skills/img2threejs/grimoire/intake/image_analysis.md",
@@ -1065,12 +1104,12 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: motion contract and pass-inventory rows added, qualification enforcement row corrected, two new procedures routed.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: motion contract and pass-inventory rows added, qualification enforcement row corrected, two new procedures routed.",
             "source_hashes": {
               "docs/ck-001-session-retrospective.md": "9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e",
               "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
               "docs/product-workflow-template.md": "dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b",
-              "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d",
+              "knowledge/60-pipeline/native-agent-iteration.md": "1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78",
               "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833"
             }
           }
@@ -1101,12 +1140,12 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller and two source reviewers, 2026-09-17; pinned source audit and separately tested native adaptations.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller and two source reviewers, 2026-09-17; pinned source audit and separately tested native adaptations.",
             "source_hashes": {
               "research/upstream-agent-patterns/meshy.md": "0fe883d2734647eb50dce07c655926df85765a8bade05d802430456c90a82c33",
               "research/upstream-agent-patterns/dream-loop.md": "55e02f0155ed1a3f441feb1c64a1b62d883c67b1276fb16ba55c8662aea1ab07",
               "research/upstream-agent-patterns/text-to-cad.md": "77babb47e52062e987404c3c0416dbe01fdd2103fab555e11a9f496db0f349ec",
-              "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d",
+              "knowledge/60-pipeline/native-agent-iteration.md": "1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78",
               "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc"
             }
           }
@@ -1137,13 +1176,13 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller/independent review 2026-09-17; 18 contract tests, with actual native capture evidence handled separately.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller/independent review 2026-09-17; 18 contract tests, with actual native capture evidence handled separately.",
             "source_hashes": {
               "scripts/native-review.py": "45dce9a430642a6595da3075791afd99bbde644aed678cd5ac1ee52685b7b917",
               "scripts/native_review/packets.py": "7eb1071820061527f63303b80aa2fb05cce7869064e0e378d2e218274f33f5ed",
               "scripts/native_review/decision.py": "19ece8175b2d0fd33fac9511352ea594446bed0261ef4da81adb8242f892e9df",
               "tests/native-review/test_native_review.py": "b85203113b958d8b79c847f5a3d714ea2533cd3a732a6340384fd51add3df338",
-              "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d"
+              "knowledge/60-pipeline/native-agent-iteration.md": "1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78"
             }
           }
         },
@@ -1206,9 +1245,9 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller and independent review 2026-09-17; Blender 5.2.0 evaluated-mesh controls and integrated sample.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller and independent review 2026-09-17; Blender 5.2.0 evaluated-mesh controls and integrated sample.",
             "source_hashes": {
-              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "knowledge/00-foundations/native-api-contracts.md": "0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9",
               "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
               "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
               "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
@@ -1241,13 +1280,13 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller review 2026-09-17; 16 runtime tests including the actual Blender facade/dependency fixture, included in the 48 execution regressions.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller review 2026-09-17; 16 runtime tests including the actual Blender facade/dependency fixture, included in the 48 execution regressions.",
             "source_hashes": {
               "scripts/agent_runtime.py": "c7e85e03adef537002e0b3d071aa117537f78447ea587352bc146b40e43a5438",
               "scripts/agent-verify-lib.py": "9257d42d4d94fcbae46d55e2ad94fdd94861b4225b6203436cc9ff80e8bc1a64",
               "tests/execution/test_agent_runtime.py": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e",
               "tests/execution/fixtures/verify-lib/reload_dependencies.py": "992ebe378854f93f8b9c6b111c28ee38f2646b371077cba09c658e05410799a4",
-              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8"
+              "knowledge/00-foundations/native-api-contracts.md": "0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9"
             }
           }
         },
@@ -1268,15 +1307,133 @@
           ],
           "limitations": [
             "clean_scene and node group/mesh replacement can destroy another scene; do not run them just because they are indexed.",
-            "Knowledge routing does not certify mass/inertia, bone roll, or physics."
+            "Knowledge routing does not certify mass/inertia, bone roll, or physics.",
+            "The module's standards/literature matrix is provenance leads only (draft tier; two suspected-wrong citations: ISO/ASTM 52915:2020 is AMF, ISO 16903:2015 looks like an LNG standard); a listed module is not standards-compliant or print-ready."
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: claude-controller re-review 2026-09-06 (audit program W4/W5: asserts added, runner sentinel, bp_render_camera Metal fix, formatting)",
             "source_hashes": {
-              "knowledge/00-foundations/python-agent-boilerplates.md": "0d9f3d3a9715aa03ef10d139ccf941a9199957b862abf45a2036973b56e629e0",
+              "knowledge/00-foundations/python-agent-boilerplates.md": "8bd1b7f0b2ff3da98e52f037a1475ce4d2548526835beaf62e283caefd0c953d",
               "scripts/boilerplates/bp_core.py": "7d962bf5f50306ab985443f15f08e9b74b8f0de55d09bb30acacecd04b7efb4d",
               "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f"
+            }
+          }
+        },
+        "game-asset-low-to-aaa": {
+          "when": "When authoring real-time game assets, managing poly budgets, baking normal maps, or configuring LOD/Nanite meshes.",
+          "sources": [
+            "knowledge/10-modeling/game-asset-pipeline-low-to-aaa.md",
+            "knowledge/10-modeling/modeling-topology.md"
+          ],
+          "steps": [
+            "Allocate polygon budget from target platform and silhouette curvature; the module's budget table values are UNVERIFIED conventions, not limits.",
+            "Split UVs on every hard edge (module's Hard Edge Law is an UNVERIFIED bake convention; check bake seams on the actual result).",
+            "Standardize texel density per asset tier with TD = R*sqrt(A_uv/A_world) on world-space areas with scale applied; 2048 px/m for hero items is an UNVERIFIED convention example."
+          ],
+          "gates": [
+            "Object transforms applied with scale (1.0, 1.0, 1.0).",
+            "Zero non-manifold edges, internal faces, or unmapped vertices, measured on the actual mesh.",
+            "Normal-map green channel matches the target engine: Blender bake default, Unity and Godot are Y+ (OpenGL); flip green only for Unreal (DirectX -Y, vendor page not found, UNVERIFIED) and confirm in the engine."
+          ],
+          "limitations": [
+            "Nanite (UE 5.8 docs) supports skeletal meshes, Masked materials and splines; translucent materials and morph targets are not supported. The module still advises LODs for hero characters; re-check the Nanite page for the engine version shipped.",
+            "Aggressive planar decimation can create sliver triangles that cause shading artifacts in mobile engines."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One 3D Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/10-modeling/game-asset-pipeline-low-to-aaa.md": "887f4c901c58bf6c6e07eb44c47e100203659d2d6abb618bb064762e8a81717a",
+              "knowledge/10-modeling/modeling-topology.md": "5c83f88ce45805aa9b06fe0c893629d49deaf11693cd7693b6ca63981ca419c8"
+            }
+          }
+        },
+        "mesh-optimization-retopology": {
+          "when": "When optimizing raw scans, high-poly sculpts, or repairing non-manifold geometry for downstream animation.",
+          "sources": [
+            "knowledge/10-modeling/mesh-optimization-retopology.md",
+            "knowledge/10-modeling/modifiers.md"
+          ],
+          "steps": [
+            "Select a native retopology path: Voxel Remesh, QuadriFlow, Poly Build + Snapping for rigid parts; manual retopo for deforming loops. Quad Remesher/RetopoFlow/PolyQuilt/MeshMachine are out-of-policy (.project-agent.md); QRemeshify offline gate only if the owner selected it.",
+            "Clean non-manifold edges and degenerate faces; clean_and_repair_mesh only detects internal-face conflicts (measured faces 7 -> 7, 1 edge still on >2 faces), so delete/split them explicitly and re-audit.",
+            "Enforce outward normal orientation (signed volume > 0) and check quad aspect ratio to avoid pinching."
+          ],
+          "gates": [
+            "BMesh validation returns zero open boundaries and zero non-manifold vertices on the actual mesh.",
+            "Report the valence-4 ratio for deforming meshes; the module's 92% figure is an UNVERIFIED convention, not an acceptance threshold.",
+            "UV seams/material borders: `delimit` protects only Planar (DISSOLVE) decimation; after Collapse inspect UV stretch and material borders by hand."
+          ],
+          "limitations": [
+            "Automated quad remeshing does not align edge loops to anatomical muscle deformation lines.",
+            "Un-Subdivide is intended for mainly grid-based topology (manual); results on irregular or triangulated meshes are unreliable, not guaranteed to fail."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One 3D Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/10-modeling/mesh-optimization-retopology.md": "d1453ee1e34d48489030a9bef5e45316442d97fc64cfcd138b023e73c2dc5576",
+              "knowledge/10-modeling/modifiers.md": "80f45ba7cf4d2d8d3787aa24d0e448e1c5e5498cc9c9a45fbcf8a1b287e3fab8"
+            }
+          }
+        },
+        "blender-addon-ecosystem": {
+          "when": "When choosing third-party add-ons versus native workflows, or developing headless automation scripts.",
+          "sources": [
+            "knowledge/00-foundations/blender-addon-ecosystem.md",
+            "knowledge/00-foundations/bpy-scripting-core.md"
+          ],
+          "steps": [
+            "Compare the task against the add-on decision matrix as orientation only; production geometry stays native per the Native Asset Policy (.project-agent.md), and Hard Ops, Quad Remesher and UVPackmaster are vendor-doc UNVERIFIED context, not recommendations.",
+            "Avoid context-dependent UI operator calls (view3d ops need VIEW_3D) inside headless background build scripts.",
+            "Use native bmesh/data-API fallbacks (e.g. obj.modifiers.new) for CI/headless server execution; Node Wrangler is bundled but disabled by default under --factory-startup."
+          ],
+          "gates": [
+            "Project files containing custom modifier setups open cleanly on stock Blender (apply or package helper modifiers before export).",
+            "UV packing coverage is measured on the actual layout; the module's >= 70% is an unsourced figure, not an acceptance threshold.",
+            "Headless scripts run without Viewport context errors in background mode."
+          ],
+          "limitations": [
+            "Third-party add-on updates can break compatibility across major Blender releases; 4.2+ uses the extensions platform (`blender --command extension install-file`).",
+            "Proprietary compiled add-ons cannot run inside sandboxed cloud server nodes without licenses.",
+            "Vendor quality claims (quad %, packing gain) are marketing, not measurements; module trust tier is draft."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One 3D Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/00-foundations/blender-addon-ecosystem.md": "80d2a42dc2bb1f586ee1c175d98c40ecb54e850422f7a35e1787c6fc8595195c",
+              "knowledge/00-foundations/bpy-scripting-core.md": "f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed"
+            }
+          }
+        },
+        "organic-scaffold-machining-split": {
+          "when": "When converting a local organic mesh scaffold (jewelry, figurine, creature from Tripo/Meshy/Hy3D or 3D scan) into watertight, multi-part manufacturable solids with parting clearance and alignment dowel keys.",
+          "sources": [
+            "knowledge/10-modeling/organic-scaffold-machining-split.md",
+            "scripts/boilerplates/bp_organic_scaffold_splitter.py"
+          ],
+          "steps": [
+            "Lock the local organic mesh as a frozen scaffold (never re-code organic silhouettes from 360 renders with primitive meshes); strip vendor materials and repair non-manifold defects until signed volume > 0.",
+            "Split the watertight solid along chosen parting planes using EXACT boolean difference cutter boxes offset by +/- clearance/2 (0.2-0.4 mm).",
+            "Generate integral male alignment dowel pins (with 45-degree lead-in chamfers) and female sockets (+0.20 mm radial clearance, +0.50 mm depth relief) across the parting interface."
+          ],
+          "gates": [
+            "Both before and after boolean splitting and dowel keying, every part reports non_manifold_edges == 0 and positive signed volume > 0.",
+            "Pairwise intersection volume between the final keyed upper and lower parts is 0.0 m3.",
+            "External service calls equal 0 (strictly offline processing of user-supplied local scaffold)."
+          ],
+          "limitations": [
+            "Planar boolean splitting does not automatically solve multi-axis undercut draft angles for rigid two-piece metal injection molds.",
+            "Highly fragmented triangle soups require offline QRemeshify or OpenVDB Voxel Remesh before boolean parting if self-intersections persist."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "source_hashes": {
+              "knowledge/10-modeling/organic-scaffold-machining-split.md": "c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca",
+              "scripts/boilerplates/bp_organic_scaffold_splitter.py": "95ae757b553a40f9879f8fcfea450c2bea7fab4366a66dc49f578e5a5f3e3116"
             }
           }
         }
@@ -1291,7 +1448,8 @@
       ],
       "supplemental": [
         "knowledge/20-shading/texturing-baking.md",
-        "knowledge/30-lighting-render/compositing-output.md"
+        "knowledge/30-lighting-render/compositing-output.md",
+        "knowledge/20-shading/master-artisan-pbr-and-grooming.md"
       ],
       "concepts": [
         ".agents/skills/img2threejs/grimoire/feedback/shading_realism.md",
@@ -1343,7 +1501,7 @@
               "research/blender-advanced-materials-shading/01-OPENPBR-PRINCIPLED-BSDF-SURFACE.md": "7d05fab6bb6ed95d4201618835091fbbc0522dab79320c7ae0b0d78e4332fc46",
               "research/blender-advanced-materials-shading/04-PROCEDURAL-MICRO-SURFACE-IMPERFECTIONS.md": "e41d624f3506ba398bab369df5770050e4e52f0d708e860966a08a685b27fc2a",
               "scripts/boilerplates/bp_materials_pbr.py": "8b143fdc2ad121976ad8f5e555f648b4e49b6a3d9265ea5fdf9d25da2846e2cd",
-              "scripts/boilerplates/materials_shading/bp_mat_metals.py": "c8ec6e3e66989bac62cc2a22c02c902666a8368ed77145c938aaac04de6775e9"
+              "scripts/boilerplates/materials_shading/bp_mat_metals.py": "e8ee6d36e3ad8e0468d9ba6b294350bdc5e30361a376a80236463f06842be86f"
             }
           }
         },
@@ -1418,6 +1576,36 @@
             "by": "evolution_render_scout; controller source mapping",
             "source_hashes": {
               "research/blender-advanced-materials-shading/05-PHYSICAL-HAIR-FABRIC-SHADING.md": "83846c13bd7c1938d3616f0eb7c4a27bd86e7da6808402b8f589f5a9a31f9c7a"
+            }
+          }
+        },
+        "master-artisan-pbr-grooming": {
+          "when": "When rendering physically accurate organic skin, thin-film iridescence, microfiber sheen, or procedural Hair Curves grooming.",
+          "sources": [
+            "knowledge/20-shading/master-artisan-pbr-and-grooming.md",
+            "knowledge/20-shading/materials-pbr.md"
+          ],
+          "steps": [
+            "Configure Principled BSDF with subsurface_method RANDOM_WALK_SKIN and a per-channel Subsurface Radius (x Subsurface Scale); Subsurface IOR (default 1.4, Cycles only) exists only with that method and is separate from the surface IOR.",
+            "Use the Principled Sheen inputs (Weight/Roughness/Tint) or the Sheen BSDF default Microfiber model (linearly transformed cosines multiple-scattering sheen) for peach fuzz and fabric; there is no 'Charlie' option.",
+            "Construct the Geometry Nodes Hair Curves groom from the bundled assets (Generate -> Interpolate -> Clump -> Frizz/Curl -> Trim, Attach Hair Curves to Surface) with surface-UV attachment."
+          ],
+          "gates": [
+            "Dielectric energy stays within E_total = (1-F)*E_diffuse + F*E_specular <= 1 (formula, not a render proof); inspect grazing-angle fringes visually.",
+            "Subsurface keeps a crisp silhouette without light leaking through thin geometry, checked on the actual render.",
+            "Cycles hair uses scene.cycles_curves.shape RIBBONS (default) or THICK; the module's transparent-bounce 8-12, BVH-memory and speed-up figures are UNVERIFIED, so measure on the real scene."
+          ],
+          "limitations": [
+            "Volumetric SSS requires manifold, closed-surface geometry; open planar meshes cause artifacts.",
+            "Hair Curves objects (3.5+ introduction not source-verified) are evaluated through Geometry Nodes; legacy particle hair still exists on 5.2.0 as a separate system.",
+            "Skin radius/melanin ranges and Cycles hair/SSS speed-up percentages are practitioner values, not sourced thresholds (module trust tier draft)."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Shading Auditor",
+            "source_hashes": {
+              "knowledge/20-shading/master-artisan-pbr-and-grooming.md": "86b55391ecb8ce83d25a31d5dcab7b9ccb6cfb2364566124024b6ff640ce0750",
+              "knowledge/20-shading/materials-pbr.md": "b087af786748fae21ed68c3f0f76d2e47a1a9f73db557ea0b837f8b8f404e6e3"
             }
           }
         }
@@ -1545,11 +1733,11 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller re-review 2026-09-17; five Blender 5.2 contracts are scoped runtime evidence, not whole-motion certification.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller re-review 2026-09-17; five Blender 5.2 contracts are scoped runtime evidence, not whole-motion certification.",
             "source_hashes": {
               "scripts/boilerplates/bp_animation.py": "0fb644479e133e3c5c473bb644cda4247a6dd406c199d9ce28f299be7a792ac5",
               "tests/boilerplates/test_animation_contract.py": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0",
-              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8"
+              "knowledge/00-foundations/native-api-contracts.md": "0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9"
             }
           }
         },
@@ -1625,7 +1813,8 @@
         "research/3d-printing-polymer-engineering/03-DFAM-GEOMETRIC-RULES-TOLERANCES.md",
         "research/3d-printing-polymer-engineering/04-FASTENERS-INSERTS-BEARINGS-INTEGRATION.md",
         "research/3d-printing-polymer-engineering/05-THERMAL-WARPING-CHAMBER-ANNEALING.md",
-        "knowledge/70-cad-precision-robotics/print-plate-layout.md"
+        "knowledge/70-cad-precision-robotics/print-plate-layout.md",
+        "knowledge/60-pipeline/dfam-3dprinting-production.md"
       ],
       "concepts": [],
       "adapters": [
@@ -1754,6 +1943,36 @@
               "scripts/boilerplates/cad_mechanics/bp_assembly_collision_audit.py": "e7af4179f5ff43404dbbbc791c688f01a93040e6c8d00b0ee8cd76a88aa433ad"
             }
           }
+        },
+        "dfam-3dprinting-production": {
+          "when": "When designing parts for FDM, SLA, or SLS 3D printing, sizing heat-set inserts, or avoiding overhang failures.",
+          "sources": [
+            "knowledge/60-pipeline/dfam-3dprinting-production.md",
+            "knowledge/60-pipeline/3d-printing.md"
+          ],
+          "steps": [
+            "Treat 45 degrees from vertical as the FDM-derived self-support rule (SLA metrics differ per Formlabs) and start anti-elephant-foot with a 0.8 mm x 45 degree bottom chamfer (unverified starting point; slicer compensation is the alternative).",
+            "Size brass heat-set insert holes at D_hole ~ D_insert_outer - 0.4 mm (M3 knurl 4.6 mm -> 4.2 mm as printed, 4.0 mm drilled; other sizes are INFERENCE) and boss OD >= 2.0 x insert OD (UNVERIFIED), then prove with a pull-out/torque coupon.",
+            "Orient primary tension/bending load paths along the in-plane extrusion direction to avoid delamination; confirm by test."
+          ],
+          "gates": [
+            "Mesh verified as 2-manifold with zero open boundaries via BMesh inspection.",
+            "Minimum wall meets the spec min_wall_mm or the module's conservative table (FDM 1.2 mm ~3 perimeters at 0.45 mm, SLA 0.8 mm); these are policy values, vendor minima are lower.",
+            "Hollow printed cavities have at least two escape holes sized from the larger of the cited guidance (Fuse SLS >= 3.5 mm; 3d-printing R11 4 mm); the SLA 3.0 mm figure is unverified."
+          ],
+          "limitations": [
+            "FDM Z-axis strength is lower than in-plane (module: S5 'significantly lower'); the 40-60% ratio and PLA MPa figures are UNVERIFIED, so test.",
+            "Printed threads wear/strip with repeated assembly; the M6 cut-off and '2-3 cycles' are UNVERIFIED, so prefer inserts and test the actual thread.",
+            "Module is trust_tier draft: bridge span 10-15 mm vs 3d-printing 5-10 mm is an unresolved conflict; wall/hole numbers are not printer-qualified."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One 3D Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/60-pipeline/dfam-3dprinting-production.md": "d391e808cc31aa478792ac6804b0b998c65bb19c1a9eb3ebac225ccbe9e408eb",
+              "knowledge/60-pipeline/3d-printing.md": "dbeb2fdbc055332cc1dd3ef2f1e71f98b4ac4a6d8ed9e805d34a64b328cc4d66"
+            }
+          }
         }
       }
     },
@@ -1818,7 +2037,7 @@
             "source_hashes": {
               "scripts/production_gate/coverage.py": "7877886e67a9be0522059dfc4345c9c171459ee20668b411092c96a103748c35",
               "scripts/production_gate/coverage_checks.py": "df07f20b16e9484198f1f41d2e1e2563db4cfbf80ee9366011b24b7cc7c27b7e",
-              "scripts/production-gate.py": "c43a4dfd0ac1d04e8bdb8f9f847d84c68dbd5dc6a0ac544ff52b173890f51930",
+              "scripts/production-gate.py": "85ba67d838058a3419e29b951d7f2e8c31aaa07057a4e20bdd001230e95d7294",
               "tests/production-gate/test_coverage_audit.py": "8411ef0d80356407ff7f95bbc9f4faefb2509246397b6a0e77a886cdc8fb1b32",
               "specs/README.md": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84"
             }
@@ -1840,20 +2059,21 @@
           ],
           "gates": [
             "Filled bores, thin walls, empty/degenerate meshes and deliberate overtravel must be rejected by their applicable controls.",
-            "Fine-face fallback activates only for an empty primary eligible set; minimum wall and geometry density remain unchanged.",
-            "Tolerance extrema and sampling scope must match the claim; export vertex splitting alone is not geometry loss."
+            "Fine-face fallback activates only for an empty primary eligible set; minimum wall and geometry density remain unchanged, and the wall verdict must not depend on world offset (samples are taken in the bbox-centered `wall_sampling_frame`).",
+            "Tolerance extrema and sampling scope must match the claim (nominal 3.0 mm plus worst case 3.2 mm, plus a negative overtravel control); export vertex splitting alone is not geometry loss."
           ],
           "limitations": [
             "Centroid/ring/surface samples are not exhaustive thickness, continuous collision or Hausdorff proof.",
             "The production mesh preparer uses the input object matrix; use a verified identity bake for constrained parts rather than infer evaluated-transform parity.",
-            "Thread pilots and nominal support contact do not establish final thread strength, preload, bearing or factory fit."
+            "Thread pilots and nominal support contact do not establish final thread strength, preload, bearing or factory fit.",
+            "Recentring the wall samples cannot restore detail an input mesh has already quantized away (huge world offsets)."
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller and geometry reviewer, actual source and session failures, 2026-09-17.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller and geometry reviewer, actual source and session failures, 2026-09-17.",
             "source_hashes": {
-              "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "f39daca0cf9bb57fedf035f10d679fdddba6551b4b27c4f07020ae6b9b9e94bf",
-              "scripts/production_gate/walls_overhang.py": "5da757ffa3f946e2b1a07158e07840bb82fb0c15ac34969d4e9f60cc4b63fd54",
+              "knowledge/60-pipeline/geometry-diagnostic-workflow.md": "ea5b21d001d858ae48344d08f431476075d7ca5c6eab75b894f9793a0fe2b32a",
+              "scripts/production_gate/walls_overhang.py": "488c61bf10979a47074a94c61d56ad72f2bb69b51abd4a06bfa54e59096a9f4f",
               "scripts/production_gate/features_fasteners.py": "dc01148370ad6ae8c78ab8c65900409e504d095ed7e45e823f4ed70a68f610ad",
               "tests/production-gate/test_small_surface_walls.py": "f3fa0c23e4fcf4a36a536228456d1b8e856b40ffbeaa7f95bd2bb7078fc804d3",
               "builds/reference-keyboard/scripts/export_compare.py": "906a0cbfb1a196c469c0f38bc45bd3ef5c2ce978e7dc87b35ddcb913b24be6cf"
@@ -1887,9 +2107,9 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller and manufacturing reviewer, source/caller and evidence-boundary review, 2026-09-17.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller and manufacturing reviewer, source/caller and evidence-boundary review, 2026-09-17.",
             "source_hashes": {
-              "knowledge/60-pipeline/manufacturing-evidence-workflow.md": "20028e1a959135c553a0d170689a0c1310c0a01bf6853220160aaf5616b6d7a3",
+              "knowledge/60-pipeline/manufacturing-evidence-workflow.md": "9ef859a1eff50adc593437415563340596c753c28d89417d9d104ba367644ea5",
               "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py": "6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa",
               "builds/reference-keyboard/manufacturing/qualification/record_checks.py": "1a38c0f322117df386b9c873eec096649faceb641af93efccd2f50e2803bf992",
               "builds/reference-keyboard/manufacturing/qualification/evidence_io.py": "8000a8da7b3da47f732d3f7f7184449310bb83e28c70d2ac9c9d174bc5830393",
@@ -1922,12 +2142,12 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller and CAD-source reviewer 2026-09-17; eight host contract tests and a separate native geometry consumer.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller and CAD-source reviewer 2026-09-17; eight host contract tests and a separate native geometry consumer.",
             "source_hashes": {
               "scripts/boilerplates/bp_parametric_contract.py": "a6b914351332bcd8a3e494e924bbcf76a3df8022b47062851e4017b776863898",
               "tests/boilerplates/test_parametric_contract.py": "7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4",
               "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
-              "knowledge/60-pipeline/native-agent-iteration.md": "3f442767f0bf8187dbf5370f224ca043bc8bf9e6bd2e4bdb36ee81daca5ca36d"
+              "knowledge/60-pipeline/native-agent-iteration.md": "1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78"
             }
           }
         },
@@ -1988,7 +2208,7 @@
             "source_hashes": {
               "research/robotics-precision-cad/04-CAD-VS-POLY-BLENDER-BRIDGE.md": "c2aec3777fa475e9d3e285c4b18bcc86ca918f3bf78dcc03f1ea19fa8860fe49",
               "research/mechanical-engineering-foundations/03-MATERIALS-METALLURGY-HEAT-TREATMENT.md": "73724dbe3b68749c29462f8093f84a183dc5fc8df897ecdbff16cc2a8a648f13",
-              "scripts/boilerplates/bp_cad_robotics.py": "f4cefba47a6540da6fd19de46eb9cee9998c3065d9f974a2dcde69498435b566"
+              "scripts/boilerplates/bp_cad_robotics.py": "295454702a567fd0f07c0ce956ea52f82d93f568f3ae6d1dc6bbaa1ef02a29d9"
             }
           }
         },
@@ -2033,23 +2253,23 @@
             "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py"
           ],
           "steps": [
-            "Lock connector/contact part numbers, pin view, protocol, cable, and the specific drawing; record where the sources conflict.",
-            "Inspect/adapt the cutter in a separate scene; measure the cross-section, panel thickness, mounting face, and tool approach.",
-            "Declare the pin-to-pin wire list, terminals/crimps, and the install/removal clearance."
+            "Lock connector/contact part numbers, pin view, protocol, cable, the specific drawing and the governing standard part (M12 D-coding IEC 61076-2-101:2024, X/H-coding IEC 61076-2-109:2014); record where the sources conflict.",
+            "Inspect/adapt the cutter in a separate scene; measure the cross-section, panel thickness, mounting face and tool approach; the +0.2 mm process offset is a heuristic.",
+            "Declare the pin-to-pin wire list, terminals/crimps and the install/removal clearance."
           ],
           "gates": [
             "Changing a parameter must change the geometry accordingly; check dimensions, topology, and the actual Boolean after the cut.",
             "A D-cut smoke test does not replace a fit coupon; pin orientation and drawing revision must match the selected hardware."
           ],
           "limitations": [
-            "The pinout/dimension tables are unvalidated synthesis; do not treat a pitch or an ISO name as a compatibility guarantee.",
+            "The pinout/dimension tables are unvalidated synthesis (standards cited from IEC abstracts, not clause text); every cutout dimension must come from the selected part drawing, and a pitch or ISO name is not a compatibility guarantee.",
             "The saddle is currently a cube with no slot; the vent lacks thread/membrane and ignores its parameters; the adapter must be fixed before production."
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
             "source_hashes": {
-              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c",
+              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef",
               "research/industrial-wiring-harness-packaging/01-INDUSTRIAL-BUS-PHYSICAL-LAYERS-PINOUTS.md": "0de4f110d19f68c8b2fa83b1942970b058878e86f220e6aea2874fb11028d593",
               "research/industrial-wiring-harness-packaging/02-CONNECTOR-DIMENSIONAL-STANDARDS-PANEL-CUTOUTS.md": "9bfd07b3b14ff26bc4ce263638dd428616117fb211398719b2c844e9284140b7",
               "scripts/boilerplates/cad_mechanics/bp_connectors_wiring.py": "c562ffea81232edf20bb2236280cc06dc96f955f8796e2ac5be368e527850ce2",
@@ -2084,6 +2304,36 @@
               "research/industrial-wiring-harness-packaging/04-INGRESS-PROTECTION-SEALING-THERMAL-RELIEF.md": "64e62ff9b34de40a3bee4a3f1adfaa5664b2ea58e673147af981762135390d44",
               "research/industrial-wiring-harness-packaging/05-EMC-GROUNDING-SHIELDING-HARNESS-MANUFACTURING.md": "0187d9f805ba6d158e2e475df576dfa7c692abe33d7088e1d4e85e537b9c7124",
               "scripts/boilerplates/cad_mechanics/bp_connectors_extended.py": "e6799635a8f6275cb8ecd5aeea4c3192ca99720f3e315bcf801f134f79650a8e"
+            }
+          }
+        },
+        "cad-step-roundtrip-dfm": {
+          "when": "When ingesting Fusion 360/SolidWorks STEP files with Vietnamese Unicode part names, batch-editing named hardware parts while locking 1:1 B-Rep profiles, auditing butt-weld/CNC zero-collision DFM, or exporting multi-body STEP compounds.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md",
+            "scripts/boilerplates/bp_cad_step_roundtrip.py"
+          ],
+          "steps": [
+            "Decode ISO-10303-21 hexadecimal Unicode strings (\\X2\\...\\X0\\) and extract per-body bounding boxes, centers of mass, and SHA256 digests into parts_manifest.json.",
+            "Lock 1:1 B-Rep mesh geometry on complex profiles (T-slots, CNC panels) inside hierarchical Blender collections; restrict parametric batch scaling/replacement to explicitly matched part-name patterns.",
+            "Audit pairwise intersection volume (V_intersect == 0.0 mm3) and coplanar butt-weld contact, and wrap sub-assemblies into TopoDS_Compound -> Part containers when exporting multi-body STEP."
+          ],
+          "gates": [
+            "All Vietnamese Unicode part names decode deterministically and map to structured sub-collections under 01_Assembly_Main.",
+            "Batch-edited fasteners/parts have scale applied (1.0, 1.0, 1.0) while locked structural CAD parts preserve exact original vertex coordinates.",
+            "Pairwise solid intersection volume is 0.0 mm3 and coplanar butt-weld contacts meet tangential tolerance <= 0.1 mm."
+          ],
+          "limitations": [
+            "Blender embedded Python does not bundle build123d/OCP by default; B-Rep STEP read/write runs in the host CAD Python environment while Blender executes the bmesh/manifest bridge.",
+            "Regex MANIFOLD_SOLID_BREP name extraction can drift on STEP files with shared assembly instances; use XCAF tree traversal for complex multi-instance assemblies.",
+            "Zero-collision numeric screening does not certify weld structural strength or CNC toolpath reachability."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md": "9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07",
+              "scripts/boilerplates/bp_cad_step_roundtrip.py": "334fb154c7727a38546e987887cb29b79d8bc4e28420d5673f4ff6af32c22c28"
             }
           }
         }
@@ -2234,12 +2484,25 @@
       "required": [
         "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
         "knowledge/40-animation/rigging-armature.md",
-        "knowledge/60-pipeline/export-interchange.md"
+        "knowledge/60-pipeline/export-interchange.md",
+        "knowledge/70-cad-precision-robotics/production-mechatronics-gate.md"
       ],
       "supplemental": [
         "research/robotics-precision-cad/01-MECHANICAL-ROBOTICS-FUNDAMENTALS.md",
         "research/robotics-precision-cad/05-ROBOTICS-SIMULATION-PIPELINE.md",
-        "research/robotics-precision-cad/10-HUMANOID-HARDWARE-ACTUATORS.md"
+        "research/robotics-precision-cad/10-HUMANOID-HARDWARE-ACTUATORS.md",
+        "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md",
+        "knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md",
+        "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md",
+        "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md",
+        "knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md",
+        "knowledge/70-cad-precision-robotics/functional-safety-iso13849-robotics.md",
+        "knowledge/70-cad-precision-robotics/impedance-admittance-contact-control.md",
+        "knowledge/70-cad-precision-robotics/kinematic-calibration-dh-metrology.md",
+        "knowledge/70-cad-precision-robotics/joint-bearing-preload-fatigue-life.md",
+        "knowledge/70-cad-precision-robotics/robot-pcb-layout-power-electronics.md",
+        "knowledge/70-cad-precision-robotics/ros2-realtime-control-architecture.md",
+        "knowledge/70-cad-precision-robotics/emc-emi-environmental-qualification.md"
       ],
       "concepts": [
         ".agents/skills/img2threejs/grimoire/readiness/joint_attachment.md"
@@ -2285,16 +2548,404 @@
           ],
           "limitations": [
             "A curve reveal does not preserve length or prove real routing.",
-            "The boilerplate currently creates detached primitives and lacks sockets/stops; a conductor type does not certify flex life."
+            "The boilerplate currently creates detached primitives and lacks sockets/stops; a conductor type does not certify flex life.",
+            "Bend-radius multipliers (6x static, 12x dynamic of cable diameter) are UNVERIFIED: the cable datasheet minimum wins, and the waypoint-level bend check must be repeated on the evaluated curve."
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Full-source scout; controller curation with isolated runtime diagnostics; not engineering certification",
             "source_hashes": {
-              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "8835efc6e74d6ba2c45d0a0f0b2fc9b75e3b10d39a2af967511598b6a74fae1c",
+              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef",
               "research/industrial-wiring-harness-packaging/03-CABLE-MECHANICS-FLEX-LIFE-DRAG-CHAINS.md": "9505da833fe0db557b3385b4c94251829a5e5926ce37c86ed8987d98049256c6",
               "research/robotics-precision-cad/12-INDUSTRIAL-WIRING-CONNECTORS-HARNESS-ROUTING.md": "6ac53feff1fdfe7a1f10cb7e12875c130f24ecfb966357f6c80a6ca74754ed04",
               "scripts/boilerplates/cad_mechanics/bp_cable_dragchain.py": "d1a95bc9acd1f7473c037a5716cb53dd9214ea38c865cb25c4489e972c79d978"
+            }
+          }
+        },
+        "actuator-foc-motion-control": {
+          "when": "When sizing BLDC/PMSM motors, configuring Field-Oriented Control (FOC), or tuning torque/velocity/position cascade loops.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md",
+            "research/robotics-precision-cad/10-HUMANOID-HARDWARE-ACTUATORS.md"
+          ],
+          "steps": [
+            "Compute reflected load inertia J_L = J_load/N^2 against rotor inertia: sourced guideline 10:1 or lower, project rule 5:1 (a stricter choice, not a vendor limit).",
+            "Use Clarke/Park transforms with SVPWM and closed-loop Iq current control; calibrate electrical angle at boot; encoder >= 12-bit and low axial runout (project rule R2).",
+            "Check thermal equilibrium at continuous torque with a metal heat path; take limits from the motor datasheet (Class B 130 C / Class F 155 C insulation)."
+          ],
+          "gates": [
+            "Phase currents stay within the driver and motor datasheet continuous limits under rated payload.",
+            "Inertia gate: size_rotary_actuator() inertia_ratio <= 5.0 (project rule); phase R/L balanced within 5% (module ladder).",
+            "Thermal bench: 100% duty for 20 minutes keeps motor surface below the module's 75 C project target (not a datasheet limit); trip thresholds come from the datasheet."
+          ],
+          "limitations": [
+            "Theoretical torque constants degrade with motor magnet temperature rise.",
+            "Design-reference note, not certification: current-loop rates, bandwidth targets and thermal limits must come from the motor/driver datasheets and tests, not from this module."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md": "e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0",
+              "research/robotics-precision-cad/10-HUMANOID-HARDWARE-ACTUATORS.md": "3745640e0eb1e416bd13a0a4628d91b789e2c9846cb96596f041224d1874af7a"
+            }
+          }
+        },
+        "sensor-fusion-state-estimation": {
+          "when": "When designing joint feedback, configuring dual magnetic/optical encoders, or filtering IMU states with EKF/Complementary filters.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md",
+            "research/robotics-precision-cad/01-MECHANICAL-ROBOTICS-FUNDAMENTALS.md"
+          ],
+          "steps": [
+            "Mount the diametric magnet at the sensor-datasheet air gap (module 0.5-1.5 mm is UNVERIFIED) and keep axial runout small (module: > 0.2 mm distorts angle); verify angle increases monotonically over 360 degrees.",
+            "Calibrate gyro bias at zero motion, then fuse gyro and accelerometer with a complementary filter (tau = alpha*dt/(1-alpha) = 0.245 s for alpha 0.98 at 200 Hz) or an EKF with acceleration gating.",
+            "Map joint-side absolute position against motor-side incremental position for backlash and belt slip detection."
+          ],
+          "gates": [
+            "Static gyro noise (60 s) and homing repeatability over 10 cycles are checked against project heuristics (0.05 deg/s RMS, +-0.05 mm), which are UNVERIFIED and not acceptance standards.",
+            "Filter step response matches the computed time constant (98% settling about 0.97 s for alpha 0.98), not a fixed 150 ms.",
+            "Encoder, endstop and homing signals are filtered (RC 1 kOhm x 100 nF = 100 us is arithmetic) and homing does not shift between boots."
+          ],
+          "limitations": [
+            "Ferromagnetic components, motor phase cables and the stator field distort magnetometer and Hall/magnetic-encoder readings.",
+            "Design-reference note, not certification: sensor part numbers, protocols (the AS5600 interface list is inconsistent in the module) and thresholds are unverified; confirm against datasheets before design freeze."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/sensor-fusion-state-estimation.md": "eda812e52299751b0ae30b3f8adde753767850a395aa2d0670bbb7285d95dc87",
+              "research/robotics-precision-cad/01-MECHANICAL-ROBOTICS-FUNDAMENTALS.md": "072a2394e501f873e2acff6665cb49c5b7cdd76b9909f551e36312feb7b956f8"
+            }
+          }
+        },
+        "embedded-realtime-bus-safety": {
+          "when": "When architecting CAN-FD/EtherCAT real-time communication, deterministic multi-axis sync, or hardware E-Stop/STO fail-safe circuits.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md",
+            "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md"
+          ],
+          "steps": [
+            "Terminate a linear CAN-FD bus with 120 ohm at both physical ends and measure 60 ohm CAN_H-CAN_L unpowered.",
+            "Choose loop rates from the drive/MCU budget; the module's tiers (current 20-50 kHz, velocity 1-5 kHz, trajectory 200-1000 Hz) are design guidance, not standard values, and CAN-FD arbitration is limited to 1 Mbit/s.",
+            "Wire Safe Torque Off so it cuts gate-driver power or enables directly in hardware, never through software handlers; any safety-function claim needs functional-safety-iso13849-robotics and the licensed standards."
+          ],
+          "gates": [
+            "No bus error-passive or bus-off state during a soak run with the project-defined duration under high-speed motion.",
+            "Heartbeat loss reaches safe torque off within the 50 ms project target and E-Stop drops gate voltage to 0 V within 5 ms project target (UNVERIFIED, not safety-rated).",
+            "Measured CAN_H-CAN_L resistance is 60 ohm +-5% unpowered (the +-5% band is a project choice)."
+          ],
+          "limitations": [
+            "Star or tree topology on high-speed CAN-FD is not allowed by the module (R1 linear daisy-chain trunk).",
+            "Software E-Stop over the bus is supplemental only; hardware STO is required, and the module is a design reference, not certification."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md": "ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787",
+              "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef"
+            }
+          }
+        },
+        "production-mechatronics-gate": {
+          "when": "When evaluating end-to-end mechatronics models from Blender/CAD through electrical, kinematic, and manufacturing export readiness.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/production-mechatronics-gate.md",
+            "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md"
+          ],
+          "steps": [
+            "Execute the 4-level gate check (Form & Fit, Electrical & Harness, Kinematic Integrity, Manufacturing Pack); a pass is digital evidence only.",
+            "Validate thread engagements, insert wall thicknesses and connector clearances against the spec (min_wall_mm per part; module default 1.2 mm is not built into the gate script).",
+            "Audit URDF joint limits and visual-vs-collision mesh separation; positive-definite and triangle-inequality inertia checks are necessary conditions only."
+          ],
+          "gates": [
+            "Zero zero-area faces, non-manifold edges or unmodeled fastener clearances across all BOM components, measured on the actual geometry.",
+            "Harness bend radii are at least the cable datasheet minimum (module's 10 x OD is an UNVERIFIED default; DIN EN 50618 is not cited by the module).",
+            "Manufacturing pack exports match the master CAD revision and report a digital-evidence verdict (not PRODUCTION_READY); manufacture stays BLOCKED until physical evidence exists."
+          ],
+          "limitations": [
+            "CAD geometry clearances do not account for injection mold thermal shrinkage or 3D print creep over time.",
+            "Kinematic simulation does not predict flexure deflection under extreme cantilever dynamic shock loads.",
+            "Design-reference note, not certification: a gate pass never replaces physical testing; motion sweeps need a separate pass (the gate has no link-collision sweep driver)."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/production-mechatronics-gate.md": "47c9a045ae7b381f315b797b0d81d52115c80d6f7ed404fa3376d76e8e30684d",
+              "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "b32fed6971b00d98126c3ac8ddc457dedf84ae04a1779094c380bf4e1f7027bf"
+            }
+          }
+        },
+        "thermal-management-actuator-cooling": {
+          "when": "When sizing continuous motor torque, designing conductive/convective heat dissipation, or selecting thermal interface materials.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md",
+            "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md"
+          ],
+          "steps": [
+            "Model the two-node lumped thermal network (winding, case) as an in-module derivation (UNVERIFIED) and compute T_cont with the corrected P_joule (3/2 factor) and S3 peak current from the corrected formula (no extra CDF term).",
+            "Route heat through direct metal or an intermediate aluminum spreader when mounting to polymer/3D-printed chassis (spreader >2.5 mm and polymer k 0.3-0.7 W/mK are unsourced).",
+            "Place a PT1000/KTY84 sensor in the hot winding slot and sample at >= 10 Hz with current foldback; 110 C and 125 C trips are project choices to be set from the insulation class and datasheet."
+          ],
+          "gates": [
+            "Continuous rated-torque test reaches thermal equilibrium (dT/dt < 1 C per 10 min) below the project target of 110 C winding in 25 C ambient (UNVERIFIED; insulation class governs).",
+            "TIM compression stays within the chosen pad datasheet range (module lists 20-35% in the table and 20-30% in the checklist; project targets) without stressing the driver PCB.",
+            "Insulation/dielectric withstand per the applicable standard (module 1000 V + 2 x V_bus, 60 s, < 1.0 mA is UNVERIFIED, not confirmed against IEC 60034-1)."
+          ],
+          "limitations": [
+            "The lumped network assumes uniform stator heat; end-turn hotspots can exceed the model, so keep margin.",
+            "Polymer structural relaxation under thermal cycling reduces fastener clamping force over time (values unverified).",
+            "Design-reference note, not certification: material/standard numbers (IEC 60085, ASTM D5470, ISO 13732-1) were not captured; module is trust_tier draft."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md": "4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a",
+              "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md": "e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0"
+            }
+          }
+        },
+        "power-distribution-bms-protection": {
+          "when": "When architecting robot 48V DC bus power distribution, inrush pre-charge circuits, or active regenerative braking choppers.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md",
+            "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md"
+          ],
+          "steps": [
+            "Size the pre-charge resistor from the energy 1/2 C V^2 with a pulse rating over 3-5 tau (heuristic) and close the main contactor/MOSFET only when V_bus >= 0.90 x V_bat (90% is 2.3 tau; 3 tau is 95%).",
+            "Set the brake-chopper trip window below the derated driver FET rating (68 V for an 80 V FET, 85 V for a 100 V FET); the 57 V trip and 60 V SELV claim are unverified project values.",
+            "Separate high-current motor return from logic ground with a single star-point tie next to the isolated DC-DC output (design heuristic)."
+          ],
+          "gates": [
+            "Pre-charge current peak is measured below the project target of 5.0 A (heuristic, not a contactor rating).",
+            "Emergency reversal at max payload keeps bus voltage below the derated FET limit with the chopper active (58 V is a project target, not a standard).",
+            "No MCU resets or CAN/SPI frame errors during step transients; the di/dt > 100 A/us figure is illustrative, so use the real transient."
+          ],
+          "limitations": [
+            "Braking resistors accumulate heat rapidly during sustained payload descents; thermal cutoff is required.",
+            "TVS clamping must stay at or below the derated FET V_DS,max (85 V clamp on an 80 V FET was wrong) and cannot sink continuous regenerative overvoltage.",
+            "Design-reference note, not certification: cell limits, SELV and IPC-2152 figures are not verified against standards."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md": "fd3d05b99ac326f28776895f4fa096457a2094bef2c37c10fb34d5f7fdb4e75a",
+              "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md": "ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787"
+            }
+          }
+        },
+        "functional-safety-iso13849": {
+          "when": "When architecting collaborative robot safety zones, dual OSSD monitoring, or ISO/TS 15066 contact force limits.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/functional-safety-iso13849-robotics.md",
+            "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md"
+          ],
+          "steps": [
+            "Structure dual-channel OSSD circuits with test pulses and a discrepancy window; 50 ms is a project design target, not a standard value.",
+            "Derive collaborative speed caps from force/pressure values read from the licensed ISO/TS 15066 Annex A (module pressure column and 2x transient rule are UNVERIFIED and must not be used) with the sourced K and effective mass per body region.",
+            "Remove gate-driver bias supply galvanically for hardware Safe Torque Off (STO), independent of firmware."
+          ],
+          "gates": [
+            "STO response is taken from the drive datasheet (module's 8 ms nominal / 15 ms max is an UNVERIFIED design target), not from this module.",
+            "Contact force/pressure is measured with a calibrated biofidelic device and compared with values read from the licensed standard; a pass is not certification.",
+            "A single-channel discrepancy fault latches a fail-safe lockout requiring manual reset."
+          ],
+          "limitations": [
+            "PL claims must be evaluated from DC, MTTFd and CCF per ISO 13849-1 (Figure 5/Annex K/SISTEMA); Cat 3/medium DC/high MTTFd attaining PL d is unconfirmed, and redundant safety encoders are needed for SLS at PL d/e.",
+            "Sharp workpiece geometry or tooling pinch points can cause severe local pressure even if total force is low.",
+            "Design-reference note, not a substitute for the standards, a risk assessment or certification."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/functional-safety-iso13849-robotics.md": "b3f8a0317e86c765fd5c807ff606c26c258b74ef957aa1cc118bd4483455316c",
+              "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md": "ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787"
+            }
+          }
+        },
+        "impedance-admittance-control": {
+          "when": "When designing compliant physical interaction, peg-in-hole assembly, or surface contouring under external contact.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/impedance-admittance-contact-control.md",
+            "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md"
+          ],
+          "steps": [
+            "Formulate Cartesian target impedance with symmetric positive-definite M_d, D_d and K_d matrices.",
+            "Enforce zeta = D_d/(2*sqrt(M_d*K_d)) >= 1.0 (critical damping or slight overdamping; 0.707 is lightly underdamped and still overshoots about 4.3%).",
+            "Map Cartesian compliance to joint torques via Jacobian transpose with gravity compensation; tuning ranges are starting-point heuristics, tune per robot."
+          ],
+          "gates": [
+            "Step approach to a rigid steel plate at 100 mm/s shows zero overshoot bounce and no sustained chatter.",
+            "Free-space gravity compensation holds with net force error under the project target of 0.5 N (UNVERIFIED target).",
+            "Peg-in-hole insertion (project target: 25 um clearance H7/g6, UNVERIFIED) succeeds without force jamming on the real fixture."
+          ],
+          "limitations": [
+            "Admittance control relies on outer-loop trajectory updates; latency causes phase lag on very stiff contacts.",
+            "Singularities in the Jacobian inverse will command unbounded joint velocities without damping.",
+            "Design-reference note, not certification: gate thresholds and DFMEA guardrails are heuristics, not standards."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/impedance-admittance-contact-control.md": "e8a720ca29cafbcb483e6011758aa3dfb4ec3c5c5576df847b7755bd15ad7253",
+              "knowledge/70-cad-precision-robotics/actuators-motors-foc-control.md": "e8460cc852fa62bb741b7d97ecc80a80920ff6189b024857fdd8bc55f0c282a0"
+            }
+          }
+        },
+        "kinematic-calibration-metrology": {
+          "when": "When identifying robot geometric errors, compensating DH/Hayati parameters, or calibrating Tool Center Points.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/kinematic-calibration-dh-metrology.md",
+            "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md"
+          ],
+          "steps": [
+            "Choose measurement poses that maximize an SVD observability index (O_1; the module's sqrt(5N) normaliser is flagged doubtful, re-check Borm-Menq before implementing) with wide envelope coverage (80% is a heuristic).",
+            "Identify Hayati-Mirmirani parameters with damped Levenberg-Marquardt and check the Jacobian condition number (kappa < 100 is a heuristic).",
+            "Calibrate the TCP by 4-point or 6-point pivot least squares to isolate the tool offset vector."
+          ],
+          "gates": [
+            "Post-calibration absolute accuracy is verified on an independent path (module: 500 mm diagonal cube); the < 0.25 mm figure is an UNVERIFIED project target, not an ISO 9283 limit.",
+            "TCP sphere-fit residual is recorded; <= 0.12 mm is a project heuristic.",
+            "Environmental drift is controlled or compensated (steel CTE about 12 um/m/K, 20 +-1 C cell) and recorded with the calibration."
+          ],
+          "limitations": [
+            "Kinematic calibration does not compensate for dynamic link flexure under high inertial accelerations.",
+            "Ambient thermal drift can introduce apparent link length scaling errors unless climate-controlled.",
+            "Design-reference note, not certification: ISO 9283, Hayati-Mirmirani and Borm-Menq sources were paywalled/not re-read; module is trust_tier draft."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/kinematic-calibration-dh-metrology.md": "f43664571e1bd40d43d6cb843052f31aa850348c0fd8680e4276093c5861a3b0",
+              "knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md": "b32fed6971b00d98126c3ac8ddc457dedf84ae04a1779094c380bf4e1f7027bf"
+            }
+          }
+        },
+        "joint-bearing-preload-life": {
+          "when": "When sizing robot joint cross-roller bearings, grinding precision preload shims, or verifying tilting moment life.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/joint-bearing-preload-fatigue-life.md",
+            "knowledge/70-cad-precision-robotics/gears-transmission-modeling.md"
+          ],
+          "steps": [
+            "Select the cross-roller bearing from combined loads using the catalog equivalent load P = X(Fr + 2M/Dpw) + Y Fa with manufacturer X, Y (NSK pairs (1.0, 0.45) and (0.67, 0.67), side of the 1.5 split ambiguous in the extracted PDF) and L10 exponent 10/3.",
+            "Apply the ground precision shim or locknut preload per the manufacturer's preload code; check negative internal clearance and the resulting tilting stiffness against the catalog moment-rigidity curves (the 2.5-4x stiffness gain is unsourced).",
+            "Check static safety with P0 = Fr + 2M/Dpw + 0.44 Fa and fs = C0r/P0 against the manufacturer's recommended fs; the 1800 MPa Hertz limit is NOT an ISO 76 value."
+          ],
+          "gates": [
+            "Runout/TIR (module target <= 0.005 mm) and drag torque (module 0.20-0.70 Nm, breakaway ratio max 1.5x) are project gate targets, not manufacturer or standard values; set them from the catalog.",
+            "Static safety factor meets the manufacturer's recommended fs for the emergency-stop load case.",
+            "Tilting stiffness K_theta (module min 25 kNm/rad for an 80 mm bearing, project target) is confirmed from catalog curves or a measured moment test."
+          ],
+          "limitations": [
+            "Heavy preload combined with high motor stator temperatures can cause thermal runaway and seizure (0.08 C threshold and 30 minute scale are unsourced heuristics).",
+            "Repetitive small-angle dithering motion can cause false brinelling fretting corrosion.",
+            "Design-reference note, not certification or a manufacturer calculation; module is trust_tier draft."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/joint-bearing-preload-fatigue-life.md": "574af99c0f4795fb827333a85b6f547d2ed60881fcd668586f2e5cb8f73c6557",
+              "knowledge/70-cad-precision-robotics/gears-transmission-modeling.md": "4033f63e73706b9e9c98108ce88a3f3c4a04248265379d58ed5c95c37bf6a81c"
+            }
+          }
+        },
+        "robot-pcb-layout-power": {
+          "when": "When routing motor controller inverters, high-current H-bridges, gate driver traces, or Kelvin shunt sensing.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/robot-pcb-layout-power-electronics.md",
+            "knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md"
+          ],
+          "steps": [
+            "Keep the gate loop small: gate resistor adjacent to the gate pin (module < 5 mm heuristic) with the return trace on the layer directly beneath.",
+            "Route Kelvin current-sense connections from the inner shunt pads as a tightly coupled differential pair with no shared return.",
+            "Stitch thermal vias under power MOSFET exposed pads (0.3 mm drill; module pitch 1.0 mm, range 0.8-1.2 mm, is unsourced; 16 vias derive to about 10.2 K/W ideal)."
+          ],
+          "gates": [
+            "Gate loop inductance target below 5.0 nH is UNVERIFIED (source is qualitative); measure ringing on the real board (module: <= 10% of drive voltage, project heuristic).",
+            "MOSFET junction-to-ambient rise at full phase current is measured with a thermal soak; module target <= 45 K is a project heuristic.",
+            "Power ground and analog ground meet at a single star point near the current-sense shunt; 48 V clearance audited against IPC-2221B (0.6 mm minimum for B2 per a secondary source, 1.5 mm kept as design margin)."
+          ],
+          "limitations": [
+            "PCB layout heuristics cannot substitute for full 3D electromagnetic simulation or a real EMC test at high switching frequencies.",
+            "Thermal via conduction assumes solid copper infill or solder-filled vias during assembly (tenting/VIPPO advice is unsourced).",
+            "Design-reference note, not certification: most thresholds are unverified heuristics; follow FET, driver and fab datasheets; module is trust_tier draft."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/robot-pcb-layout-power-electronics.md": "f9b41056563b6121a3abc677a7a50f96620787f59425b2a165a3d714994c928c",
+              "knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md": "fd3d05b99ac326f28776895f4fa096457a2094bef2c37c10fb34d5f7fdb4e75a"
+            }
+          }
+        },
+        "ros2-realtime-control": {
+          "when": "When configuring PREEMPT_RT Linux kernels, writing ros2_control HardwareInterface plugins, or running CiA 402 CST/CSV drives.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/ros2-realtime-control-architecture.md",
+            "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md"
+          ],
+          "steps": [
+            "Configure the PREEMPT_RT kernel with isolcpus/nohz_full/rcu_nocbs for dedicated RT cores (kernel-parameters doc), mlockall(MCL_CURRENT|MCL_FUTURE) and SCHED_FIFO (priority 95-98 is a convention).",
+            "Implement ros2_control SystemInterface read/write loops allocation-free at the chosen update rate (module project target 1 kHz, 1.0 ms period).",
+            "Enforce the CiA 402 state machine for power-up, fault reset and Cyclic Synchronous Torque (CST); keep STO fault latched, no automatic reset."
+          ],
+          "gates": [
+            "Worst-case latency is measured with cyclictest under CPU/IO stress (module project targets: nominal 15 us, max 50 us, <= 45 us in the 24 h run, UNVERIFIED) with zero overruns.",
+            "Zero page faults in RT threads after mlockall, observed with a method the project chooses (e.g. fault counters).",
+            "Heartbeat or bus loss triggers a safe stop within the project target (module 50 ms heartbeat, 15 ms STO fault injection), not a safety-rated figure."
+          ],
+          "limitations": [
+            "PREEMPT_RT is designed for bounded worst-case latency, but the achieved bound depends on hardware, firmware and configuration; physical packet jitter is also bounded by CAN/EtherCAT hardware.",
+            "micro-ROS transport over UART/CAN requires hardware DMA buffers to avoid dropped serial frames.",
+            "Design-reference note, not certification: rate/jitter/timeouts are project targets; CiA 402 mode numbers 8/9/10 were not seen in the fetched source."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/ros2-realtime-control-architecture.md": "62d7bd39a5f0bc0743548aa69ff36a37027ffdc8d9d416c3de9231d8ed01f003",
+              "knowledge/70-cad-precision-robotics/embedded-realtime-bus-architecture.md": "ae5fd4df2db94b9433ef86ff7092ad8466acd1c587cb5de6dd27375fc8ade787"
+            }
+          }
+        },
+        "emc-environmental-qualification": {
+          "when": "When qualifying robot enclosures, actuators, and electronics for CISPR 25 radiated emissions, IEC 61000 ESD, MIL-STD-810H vibration, or IP67 sealing.",
+          "sources": [
+            "knowledge/70-cad-precision-robotics/emc-emi-environmental-qualification.md",
+            "knowledge/70-cad-precision-robotics/production-mechatronics-gate.md"
+          ],
+          "steps": [
+            "Terminate cable shield braid 360 degrees circumferentially to chassis ground; avoid pigtails.",
+            "Size the O-ring groove: static squeeze nominal 25% (Parker max about 30%; the 20% floor is cross-section dependent, UNVERIFIED) and gland fill about 75% (60-85%, keep at least 10% void), with an e-PTFE pressure vent.",
+            "Compute random-vibration G_RMS from the test plan's PSD (Cat 24 7.7 g rms in the module is 810G Change 1 text, not for qualification) and run HALT screening with ranges from the plan."
+          ],
+          "gates": [
+            "Radiated emissions are measured against the applicable CISPR 25 class limit from the licensed standard; the module's 28 dBuV/m figure is UNVERIFIED.",
+            "ESD per IEC 61000-4-2 at the product's chosen level (module: +-8 kV contact, +-15 kV air, class 4 table) with the criterion set by the product requirement.",
+            "IP67 submersion leak test by pressure decay; the module's < 0.5 mbar/min, 30 min and 10+10 ESD strikes are project targets, not standard values."
+          ],
+          "limitations": [
+            "Pre-compliance sniffer probes provide relative near-field hot-spot detection but do not guarantee far-field ALSE compliance.",
+            "O-ring chemical compatibility must be verified for the specific operating fluid/solvent envelope.",
+            "Design-reference note, not a test plan or certification: IP69K is a high-pressure 80 C water jet (not steam); limits come from the licensed standards."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Mechatronics Auditor",
+            "source_hashes": {
+              "knowledge/70-cad-precision-robotics/emc-emi-environmental-qualification.md": "88a149d2b56160ab8bdd08861ec4eb33bff52ef80365b99a729c66c81aac13df",
+              "knowledge/70-cad-precision-robotics/production-mechatronics-gate.md": "47c9a045ae7b381f315b797b0d81d52115c80d6f7ed404fa3376d76e8e30684d"
             }
           }
         }
@@ -2309,7 +2960,9 @@
       ],
       "supplemental": [
         "knowledge/60-pipeline/optimization-realtime.md",
-        "knowledge/60-pipeline/product-viz-and-shots.md"
+        "knowledge/60-pipeline/product-viz-and-shots.md",
+        "knowledge/30-lighting-render/video-animation-cinematics.md",
+        "knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md"
       ],
       "concepts": [],
       "adapters": [
@@ -2362,9 +3015,9 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: product-workflow-template gained a motion contract and a pass-inventory row.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller re-read after the DC-01/CK-001 cross-build distillation, 2026-09-18: product-workflow-template gained a motion contract and a pass-inventory row.",
             "source_hashes": {
-              "knowledge/60-pipeline/native-render-delivery.md": "9dc0c2f2b0519538799bae98de6d6b837e13a36e09d453b3f5f84a02c06e9171",
+              "knowledge/60-pipeline/native-render-delivery.md": "a646027c50b2eb968654d5cb2ad447f0d544f8cbc55245c51fd3ad64d2ba38a1",
               "builds/reference-keyboard/scripts/fullhd.py": "d4cc9becb1844d95510a6661adc02bb2bd064276e32ab6d2899d115c099bee2a",
               "builds/reference-keyboard/scripts/package_delivery.py": "3be842bc7ee7b82107ece3c2801c86ab202ea9396d591f95050c86800783c852",
               "builds/reference-keyboard/scripts/prepare_reference_review.py": "aea46f665a503f9a68475af8bc9ec96de7dac2cf4c3fe4ee1dd74ec3d59818b5",
@@ -2431,9 +3084,9 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller and independent review 2026-09-17; shared evaluated-mesh/camera tests and measured sample.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller and independent review 2026-09-17; shared evaluated-mesh/camera tests and measured sample.",
             "source_hashes": {
-              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "knowledge/00-foundations/native-api-contracts.md": "0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9",
               "scripts/agent_verify/inspect_scene.py": "49a1534b4dfb97169c768ce3c320e1d5d46f516ea935475090f376b92d9284b5",
               "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
               "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29"
@@ -2575,7 +3228,96 @@
             "source_hashes": {
               "docs/delivery-review-publication.md": "2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55",
               "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
-              "scripts/check-html-tag-balance.py": "28f2b3df00a6b1e8f4e33e7c7a47d306d9e75d52b92858033ff70e3dbdf5e8a3"
+              "scripts/check-html-tag-balance.py": "3fb3f1033942e519dd4aa2c05c307d5a31503dcf783d806723056330467bfefd"
+            }
+          }
+        },
+        "cinematic-animation-render": {
+          "when": "When configuring cinematic cameras, optimizing multi-frame Cycles animation renders, or staging optical shots.",
+          "sources": [
+            "knowledge/30-lighting-render/video-animation-cinematics.md",
+            "knowledge/30-lighting-render/render-engines.md"
+          ],
+          "steps": [
+            "Stage cameras with a 3-tier crane rig (practitioner pattern, UNVERIFIED) and choose focal length/shutter for the shot.",
+            "Enable Persistent Data only for static-scene animations; Cycles sample_clamp_indirect is already 10.0 (unitless), so change it only for a measured firefly reason.",
+            "Render to 16-bit OpenEXR half-float or 16-bit PNG frame sequences before encoding to final video."
+          ],
+          "gates": [
+            "Measure per-frame render time with and without Persistent Data on the actual scene; the 40-70% reduction is an unmeasured claim.",
+            "A 3-frame preview strip shows no frame-to-frame denoise crawl at the chosen samples (the 64-sample floor is practitioner guidance).",
+            "Color management uses the AgX view transform with a valid look id ('AgX - High Contrast', 'AgX - Medium High Contrast' or 'AgX - Base Contrast'; 'AgX - Medium Contrast' does not exist); highlight hue behaviour is judged visually, not asserted."
+          ],
+          "limitations": [
+            "Persistent Data keeps BVH/textures in memory between frames, which can run out of GPU memory on heavy scenes and leaves stale data if the scene is mutated from Python.",
+            "Aggressive denoising at low sample counts can make noise crawl between frames; thresholds here are practitioner guidance, not measured."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One 3D Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/30-lighting-render/video-animation-cinematics.md": "3919a180a8f3b7c701f1d76d1aa3ee8fbe567d5aa642ea935abe91bad2023bfd",
+              "knowledge/30-lighting-render/render-engines.md": "8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8"
+            }
+          }
+        },
+        "visual-fidelity-image-matching": {
+          "when": "When reconstructing 3D assets from 2D image references with high geometric and visual fidelity.",
+          "sources": [
+            "knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md",
+            "knowledge/60-pipeline/product-viz-and-shots.md"
+          ],
+          "steps": [
+            "Do not synthesize blueprints, exploded assemblies or parts catalogs with Nano Banana or any hosted model (Native Asset Policy); work from the supplied reference images and record what each view proves.",
+            "Load orthographic reference views as image empties (EMPTY IMAGE) and orthographic cameras to remove perspective drift in the Blender view; hidden sides stay UNKNOWN.",
+            "Deconstruct the assembly into modular parts following the visible hierarchy and mirror across the plane that matches the module's Front-view convention (YZ plane, mirror X).",
+            "Match materials with Principled BSDF inputs (e.g. Coat Weight; Blender 5.2 has no OpenPBR node) from the CMF specification, then review per feature."
+          ],
+          "gates": [
+            "The reference/spec establishes an explicit metric bounding box; the module's landmark tolerance of 1.0 mm is a local heuristic.",
+            "Silhouette IoU and MAE are diagnostics only (the module's 98%/MAE<5 are unsourced heuristics); the verdict is a per-feature PASS/FAIL/UNKNOWN review per blender-image-to-3d review-rubric.",
+            "PBR albedo is delit without baked specular contamination, checked on the actual textures."
+          ],
+          "limitations": [
+            "Single-view inputs leave hidden sides unknown; do not fill them with hosted generation, record UNKNOWN or request more references.",
+            "High-frequency decal textures require vector artwork for sub-pixel sharpness.",
+            "The module's Nano Banana section is historical and policy-forbidden; module is trust_tier draft and its numeric gates are heuristics."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md": "f39da6c43b5acaabfb0334eb768bdd1bbf66e41a5db2d4e657db2e5873b97320",
+              "knowledge/60-pipeline/product-viz-and-shots.md": "39a86a300e663f428117ead2556fb9b54c20d5f28833e6fa11b351a5cca5f342"
+            }
+          }
+        },
+        "studio-catalogue-ai-refine": {
+          "when": "When rendering CAD or product assemblies with 100% geometry lockdown, decoupled wood-grain vs color-stain OpenPBR shaders, automatic Face vs CutEdge normal slotting, standardized 6-shot studio cameras, and AI refinement conditioning kits.",
+          "sources": [
+            "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md",
+            "scripts/boilerplates/bp_studio_catalogue_render.py"
+          ],
+          "steps": [
+            "Verify CAD vertex coordinate hash invariance (Geometry Lockdown), then partition laminated/plywood boards into Face veneers and CutEdge multiplex slots by face normal alignment.",
+            "Construct OpenPBR Principled BSDF v2 materials with decoupled Grain/Roughness/Bump and Color Stain (Mix MULTIPLY) branches plus a non-destructive ShaderNodeBevel (0.5-0.8 mm).",
+            "Frame the 6 standardized studio catalogue cameras (01_front_view, 02_side_view, 03_top_view, 04_3_4_beauty, 05_overview_studio, 06_details_macro) with Grazing Chiaroscuro softboxes and AgX color management, and emit ai_refine_manifest.json."
+          ],
+          "gates": [
+            "Mesh vertex SHA256 before and after material slotting and studio rig construction is identical (100% CAD geometry lockdown).",
+            "All 6 studio cameras and 3-point Grazing Chiaroscuro lights are created and framed against evaluated world-space bounds with AgX view transform active.",
+            "AI refine manifest explicitly tags outputs as POST_RENDER_CONCEPT_MEDIA and preserves NATIVE_BLENDER_RENDER_LOCKED provenance."
+          ],
+          "limitations": [
+            "ShaderNodeBevel is a Cycles ray-tracing normal effect and does not render in EEVEE or alter exported CAD/STL geometry.",
+            "AI-refined images produced via Nano Banana Pro, Imagen 3, or GPT-4o are marketing concept media and never qualify as geometric or dimensional gate evidence."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Controller (gemini-4-argon-high) + UKMC.v1 Stopping Gate STOP_SUFFICIENT 2026-10-21: verified in Blender 5.2.0 LTS --factory-startup via headless-run.sh",
+            "source_hashes": {
+              "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
+              "scripts/boilerplates/bp_studio_catalogue_render.py": "7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8"
             }
           }
         }
@@ -2590,7 +3332,8 @@
       ],
       "supplemental": [
         "knowledge/40-animation/animation-fcurves.md",
-        "knowledge/60-pipeline/optimization-realtime.md"
+        "knowledge/60-pipeline/optimization-realtime.md",
+        "knowledge/50-procedural/geometry-nodes-advanced-production.md"
       ],
       "concepts": [],
       "adapters": [
@@ -2638,9 +3381,9 @@
           ],
           "review": {
             "kind": "static-routing-review",
-            "by": "Controller review 2026-09-17; nine native Geometry Nodes controls and the integrated sample on Blender 5.2.0.",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (KEEP; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: Controller review 2026-09-17; nine native Geometry Nodes controls and the integrated sample on Blender 5.2.0.",
             "source_hashes": {
-              "knowledge/00-foundations/native-api-contracts.md": "4a4a999a8d02d770e83503cb472a2cd5d72b88da7e83f4fec885a2a468d509d8",
+              "knowledge/00-foundations/native-api-contracts.md": "0a6abb42733af1ec4309affe49cb79a9f0c93e1c5b0e0dc1412ebbd1d1aa24d9",
               "scripts/boilerplates/bp_geonodes.py": "53c196d34ea95ca74ecc0a3f3bd0ccb5d4c1edfc16cf91f7993051bfe1afc70e",
               "tests/boilerplates/test_geonodes_contract.py": "88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30",
               "scripts/samples/native-api-contract.py": "45242b2b746f3a8d546b2d47184478a684920f8f0ae70edd3897a5e0114e7a29"
@@ -2784,6 +3527,36 @@
             "source_hashes": {
               "scripts/boilerplates/geometry_nodes/bp_gn_cables.py": "5212fe937edc66bab7b449d0232199ae768b21cc4bd98325e447c433df97eee0",
               "scripts/boilerplates/geometry_nodes/bp_gn_pipe_flange.py": "7e7ea9168e56dc6d4c677a548e3815d46786ca9845c479f3402b4fc3685991e1"
+            }
+          }
+        },
+        "geometry-nodes-production": {
+          "when": "When designing complex procedural patterns, surface scatter graphs, or simulation zone animations.",
+          "sources": [
+            "knowledge/50-procedural/geometry-nodes-advanced-production.md",
+            "knowledge/50-procedural/geometry-nodes.md"
+          ],
+          "steps": [
+            "Maintain strict field-domain understanding (Point, Edge, Face, Corner, Instance); fields evaluate lazily per context.",
+            "Scatter with Distribute Points on Faces (Poisson mode uses Distance Min/Density Max) plus slope masks from Normal for natural distribution.",
+            "Keep instances on scatter systems and realize only before booleans, per-instance deformation or game export; realizing multiplies geometry by instance count (measured 408 x 12 = 4,896 vertices)."
+          ],
+          "gates": [
+            "User parameters are exposed in the modifier panel with explicit min, max and units.",
+            "Evaluation cost is measured on the target scene; the module's 60 vs 4 FPS and 5 MB vs 2.5 GB figures are illustrative and unsourced, so no fixed fps threshold applies.",
+            "Simulation zones use Delta Time (the only time output of Simulation Input) so physics is frame-rate independent."
+          ],
+          "limitations": [
+            "Realize Instances is required before boolean cuts, per-instance deformation or export, but it multiplies geometry by instance count and is costly on dense scatters.",
+            "Geometry Nodes evaluate lazily; attributes written in the point domain cannot be directly sampled on faces without interpolation.",
+            "Evaluated mesh read-back of an instance-only tree returns 0 vertices (new_from_object); read evaluated_geometry().instances_pointcloud() or realize first."
+          ],
+          "review": {
+            "kind": "static-routing-review",
+            "by": "Independent static-routing review 2026-10-13 after the Hybrid UKMC knowledge upgrade (AMEND; plans/261013-0928-knowledge-ukmc-hybrid-upgrade/reports/topic-review.md); controller re-bound hashes. Prior: JEV System One 3D Pipeline Auditor",
+            "source_hashes": {
+              "knowledge/50-procedural/geometry-nodes-advanced-production.md": "941c4ef0f8a52626dccef2ababf09f8966bb29ea36cae27492ee316b35f04fe3",
+              "knowledge/50-procedural/geometry-nodes.md": "866d83eeeec5b18a97b854f2bb66f8ebab7a7cadaab0b7c0a9e94dfd8b8511c7"
             }
           }
         }
@@ -2984,7 +3757,7 @@
             "by": "character/creature onboarding audit 2026-09-06 (claude general-purpose subagent): runtime API introspection in Blender 5.2.0 LTS --factory-startup + all 8 modules re-run to AGENT_OK after fixes; anatomical/bibliographic figures NOT certified",
             "source_hashes": {
               "research/character-creature-anatomy-modeling/06-SKELETAL-KINEMATICS-LOCOMOTION-SKIN-SHADING.md": "eedfaf1542ece694fd65120771fa3bdeb0320d9211083b07f1eff4042be6451d",
-              "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py": "079383f9db4a556a9e848af089205c28e8594993fc8b5b9da9c212d84f62d7a3",
+              "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py": "892d714c228b187677609f5fa3bd9a98a412d09b16058dd4ecc7a1e1b79327dc",
               "scripts/boilerplates/character_creature/bp_biped_locomotion.py": "220d14ce2637618e974f0f7dd9b35f797197caa2902793e51387c7a3832cdb43"
             }
           }

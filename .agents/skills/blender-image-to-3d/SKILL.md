@@ -7,14 +7,27 @@ description: Reconstruct assets in Blender from reference images using only nati
 
 Build from supplied references without new generated/retrieved vendor meshes, hosted model calls, paid credits, or third-party downloads. Load `blender-agent-core` first and use `references/review-rubric.md` for visual verdicts.
 
-## Phase -1 — Fidelity contract
+## Phase -1 — Pre-Contract Discovery, Multi-Modal Dossier & Socratic Gate (MANDATORY)
 
-Record before construction:
+Before writing `spec.json` or running any Blender construction pass, execute this 4-step pre-contract sequence (`knowledge/60-pipeline/visual-fidelity-image-to-3d-matching.md` §2):
 
-1. Target use: hero still, turntable, animation, realtime, or print.
-2. Observable fidelity target and critical features in each supplied view.
-3. Treatment of unseen surfaces: mirrored/plausible inference or more references required.
-4. Production constraints: editability, topology, materials, dimensions, and output views.
+1. **Phase -1A — Pin Primary Reference Bytes & Internet Datasheet Research (`engineering-research.md`):**
+   - Pin all supplied reference images in `builds/<slug>/references/` with SHA-256 hashes recorded in `source-registry.json`.
+   - For any mechanical, industrial, or COTS-based product, research the web for manufacturer datasheets and standard part specifications (actuators, gas springs, bearings, fasteners, stroke envelopes) and save `builds/<slug>/engineering-research.md`.
+2. **Phase -1B — Super-Detailed Engineering & CMF Prompt (`super-detail-prompt.md`):**
+   - Deconstruct every visible and occluded sub-assembly into `builds/<slug>/super-detail-prompt.md`: exact millimeter envelopes, asymmetry (e.g., Double-Y vs X-base, rear-offset column), internal ribs/bosses, coaxial pivot coordinates, kinematic invariants, and OpenPBR CMF parameters.
+3. **Phase -1C — 4-Sheet Multi-Modal Technical Dossier (`secondary_generated_sheet`):**
+   - Generate and pin the 4 technical dossier sheets in `builds/<slug>/references/` (subordinate to primary photos/CAD in authority, used to resolve occluded angles and assembly hierarchy before modeling):
+     1. **4-View Orthographic Blueprint** (`Front, Side, Top, Back` with millimeter bounding dimensions).
+     2. **360° Turnaround Sheet** (resolving rear, opposite flank, and underside views).
+     3. **Mechanical Exploded View** (discrete sub-assemblies, pins, bushings, and axial assembly vectors).
+     4. **Parts Catalog & CMF Matrix Sheet** (knolling layout of all individual parts with IDs, dimensions, and material finishes).
+4. **Phase -1D — Socratic Gate with Owner (before locking `master-contract.md` & `spec.json`):**
+   - Present the extracted dossier (`super-detail-prompt.md`, `engineering-research.md`, and the 4 technical sheets) and ask the owner (`ask_question`) to confirm:
+     1. **Target Purpose (`AGENTS.md` §0b):** `both` (recommended: 3D-printable closed solids + studio media), `print`, or `render-only`.
+     2. **Mechanical & Component Scope:** primary structural parts vs full functional mechanical / internal COTS hardware discovery and working kinematics.
+     3. **Motion & Media Contract:** frame rate (`30 fps`), distinct rendered states (`<= 120` frames animatic cap), stroke/exploded choreography, and camera views.
+   - Lock `builds/<slug>/master-contract.md`, `design-parameters.json`, and `spec.json` only after the Socratic Gate is answered (or explicitly waived by the owner).
 
 For a mechanical or industrial reference, designate one primary view for visible count, facing, placement, and silhouette; use close-ups for local section and construction. Before choosing functional routing, ports, instrument stations, or connection anatomy, read the applicable project drawings or official installation/technical documents. Record whether each rule is a fact, a design choice, or unknown. CAD can support a profile or architecture only when its match and units are recorded; it never establishes identity, dimensions, selection, or compliance by itself.
 

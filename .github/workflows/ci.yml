@@ -1,0 +1,57 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      BLENDER_VERSION: "5.2.0"
+      BLENDER_SHA256: "96f6c181a30f4950607839dc84d42a354b250d8a0231b098b59b7bc69c351c48"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: System libraries for headless Blender
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -yq --no-install-recommends \
+            libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 \
+            libsm6 libice6 libgl1 libegl1 libglu1-mesa
+
+      - name: Cache Blender
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/blender
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
+
+      - name: Download Blender (pinned, checksum-verified)
+        if: steps.blender-cache.outputs.cache-hit != 'true'
+        run: |
+          archive="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          curl -fsSL -o "$archive" "https://download.blender.org/release/Blender5.2/$archive"
+          echo "${BLENDER_SHA256}  $archive" | sha256sum -c -
+          mkdir -p ~/blender
+          tar -xJf "$archive" -C ~/blender --strip-components=1
+
+      - name: Blender version
+        run: ~/blender/blender -b --factory-startup --version | head -1
+
+      - name: Tests
+        run: |
+          export BLENDER_BIN="$HOME/blender/blender"
+          uv run --group dev pytest -q
+
+      - name: Knowledge catalog is current
+        run: python3 scripts/blender-knowledge.py check

@@ -37,7 +37,8 @@ def main(paths):
     failed = False
     for path in paths:
         parser = TagStack()
-        parser.feed(open(path, encoding="utf-8").read())
+        with open(path, encoding="utf-8") as handle:
+            parser.feed(handle.read())
         for tag, pos, expected in parser.mismatched:
             print(f"{path}:{pos[0]}: </{tag}> closes nothing"
                   f"{' (open: <' + expected[0] + '> from line ' + str(expected[1][0]) + ')' if expected else ''}")

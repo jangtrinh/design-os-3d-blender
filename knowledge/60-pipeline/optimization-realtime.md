@@ -7,11 +7,30 @@ audience: ai-agent-bpy
 description: Poly/draw-call budgets, LODs, atlasing, high-to-low baking, instancing, simplify, and what actually costs time in Cycles.
 loads_with: [export-interchange, scene-organization, product-viz-and-shots]
 tags: [lod, decimate, budget, baking, atlas, instancing, simplify, cycles-performance]
+id: optimization-realtime
+title: "Optimization for Realtime and for Render Time"
+when: [lod-chain, draw-call-budget, decimate-vs-retopo, high-to-low-bake, instancing, cycles-render-time, texture-memory]
+trust_tier: community_reference
+sources_checked: 2026-10-13
 ---
 
 # Optimization for Realtime and for Render Time
 
-## 1. Mental model
+## Purpose
+Separate realtime cost (draw calls, materials, textures) from path-tracer cost (samples, bounces, volumes) and give measurable, bpy-checkable steps to reduce each without damaging the look.
+
+## When to Use / When NOT
+- ALLOWED: auditing a scene's evaluated triangles, materials, images and instances before optimizing — §4.1 (executed on 5.2.0).
+- ALLOWED: building LOD chains, linked duplicates, high-to-low bakes, lightmap UVs — §4.2-4.5.
+- ALLOWED: reducing Cycles time with sampling, denoise, bounce and volume settings — §4.7 (defaults verified on 5.2.0).
+- NOT ALLOWED: collection/visibility/unit hygiene — use `scene-organization` instead.
+- NOT ALLOWED: choosing export formats or glTF/USD options beyond instancing notes — use `export-interchange` instead.
+- NOT ALLOWED: camera, lighting and shot composition — use `product-viz-and-shots` instead.
+- NOT ALLOWED: texture baking workflows for materials beyond the normal/AO pipeline step here — use `texturing-baking` instead.
+
+## Core Knowledge Content
+
+### 1. Mental model
 
 Two different optimisation problems share this file because agents conflate
 them. **Realtime optimisation** is about what the GPU has to do 60–120 times a
@@ -30,12 +49,12 @@ optimisation order is: merge/instance → reduce materials → atlas textures �
 For Cycles, the binding constraint is **samples × (rays per sample) × (cost per
 ray)**. Bounces multiply rays; transparent shadows multiply them again inside
 foliage/hair; volumes multiply them per step. Denoising lets you cut samples by
-roughly an order of magnitude and is the single largest lever.
+roughly an order of magnitude and is the single largest lever. <!-- ease:source UNVERIFIED reason=""order of magnitude" is a practitioner heuristic, not benchmarked" -->
 
 The most common agent mistake is decimating first (destroying UVs and normals)
 instead of instancing and merging first.
 
-## 2. Decision first
+### 2. Decision first
 
 | Situation | Do this | Not this |
 |---|---|---|
@@ -52,7 +71,7 @@ instead of instancing and merging first.
 | Cycles render too slow, foliage/hair | cut `transparent_max_bounces` | anything else |
 | Cycles render too slow, smoke/fire | reduce volume resolution; `volume_biased` + step rate | more samples |
 
-Poly budget reference (triangles, per asset, drawn every frame):
+Poly budget reference (triangles, per asset, drawn every frame) <!-- ease:source UNVERIFIED reason="budget table is industry practice, not Blender documentation" -->:
 
 | Asset class | Mobile / WebGL | PC / console realtime | Cinematic realtime | Offline |
 |---|---|---|---|---|
@@ -68,14 +87,14 @@ Poly budget reference (triangles, per asset, drawn every frame):
 Treat these as starting points to be reported, not laws. Always print the actual
 counts (see §4.1) rather than guessing.
 
-## 3. Rules
+### 3. Rules
 
 R1. Measure before optimising: triangles, objects, materials, images, and their memory.
     Why: the agent cannot see the viewport FPS; the only feedback is numbers it prints.
     Violation: hours spent decimating a scene whose real problem was 4,000 draw calls.
 
 R2. Count triangles from `loop_triangles` on the **evaluated** mesh, not from `len(mesh.polygons)`.
-    Why: `polygons` are n-gons pre-modifier; the engine sees post-modifier triangles.
+    Why: `polygons` are n-gons pre-modifier; the engine sees post-modifier triangles (measured: a 1280-face source evaluated to 320 triangles under Decimate 0.25 <!-- ease:source S8 anchor="decimate face_count after eval 320; base faces 1280; evaluated tris 320" -->).
     Violation: reported 2k tris, engine reports 34k after subdivision.
 
 R3. Share mesh data for repeats (`ob2.data = ob1.data`) instead of copying it.
@@ -83,19 +102,19 @@ R3. Share mesh data for repeats (`ob2.data = ob1.data`) instead of copying it.
     Violation: `.blend` size and GPU memory scale linearly with instance count.
 
 R4. Set both `SubsurfModifier.levels` (viewport) and `.render_levels` deliberately; they are independent.
-    Why: `levels` drives interactive cost, `render_levels` drives final cost; the defaults are 1 and 2.
+    Why: `levels` drives interactive cost, `render_levels` drives final cost; the defaults are 1 and 2 <!-- ease:source S10 anchor="rna SubsurfModifier.levels default 1, render_levels default 2" -->.
     Violation: a viewport at level 3 that is unusable, or a render at level 1 that looks faceted.
 
 R5. Use `render.use_simplify` for global control instead of editing every modifier.
-    Why: `simplify_subdivision` caps every subsurf in the viewport and `simplify_subdivision_render` caps them at render time — `simplify_subdivision_render = 0` flattens all subdivision, which is a common accidental foot-gun.
+    Why: `simplify_subdivision` caps every subsurf in the viewport and `simplify_subdivision_render` caps them at render time <!-- ease:source S10 anchor="rna RenderSettings.simplify_subdivision_render: Global maximum subdivision level during rendering" --> — `simplify_subdivision_render = 0` flattens all subdivision, which is a common accidental foot-gun. Measured: the factory-startup scene holds 6/6, but a scene made with `bpy.data.scenes.new()` holds `simplify_subdivision=6`, `simplify_subdivision_render=0`, so enabling `use_simplify` there flattens the final render <!-- ease:source S8 anchor="new scene simplify 6 0; instance values 6 6" -->.
     Violation: a "fast preview" that is also the final render, delivered flat.
 
 R6. Decimate on a **copy** with a Decimate modifier, never destructively on the source.
-    Why: LODs must be regenerable when the source changes; `modifier.face_count` is readable only after evaluation.
+    Why: LODs must be regenerable when the source changes; `modifier.face_count` is readable only after evaluation (0 before, 320 after in 5.2.0) <!-- ease:source S8 anchor="decimate face_count before eval 0" --><!-- ease:source S1 anchor="face_count: current number of faces in the decimated mesh" -->.
     Violation: LOD1 exists, source is gone, art change requires redoing everything.
 
 R7. Bake high-to-low with a cage and a bounded ray distance.
-    Why: without `use_cage`/`cage_extrusion`/`max_ray_distance`, rays from concave low-poly regions hit the wrong high-poly surface.
+    Why: without `use_cage`/`cage_extrusion`/`max_ray_distance`, rays from concave low-poly regions hit the wrong high-poly surface <!-- ease:source S5 anchor="Selected to Active: rays cast from low-poly inwards; Max Ray Distance, Extrusion, Cage" -->.
     Violation: normal map with black/rainbow blotches around concave corners.
 
 R8. Give lightmaps their own second UV map, non-overlapping, with margin.
@@ -103,20 +122,20 @@ R8. Give lightmaps their own second UV map, non-overlapping, with margin.
     Violation: light bleeding, or one lit patch replicated across the model.
 
 R9. Cut samples with a denoiser before cutting bounces.
-    Why: denoising is roughly a 5–10x sample reduction at similar perceived quality; bounce reduction changes the *look* (energy loss, darker interiors).
+    Why: denoising is roughly a 5–10x sample reduction at similar perceived quality <!-- ease:source UNVERIFIED reason="5-10x is a heuristic" -->; bounce reduction changes the *look* (energy loss, darker interiors).
     Violation: renders that are fast but visibly darker/flatter than the reference.
 
 R10. Never enable adaptive subdivision on assets destined for a realtime engine.
-    Why: it produces camera-dependent tessellation; there is no camera at export time and the result is either enormous or degenerate.
+    Why: it produces camera-dependent tessellation <!-- ease:source S10 anchor="rna SubsurfModifier.use_adaptive_subdivision: Adaptively subdivide mesh based on camera distance" -->; there is no camera at export time and the result is either enormous or degenerate.
     Violation: a 4M-triangle export of a 2k-triangle asset.
 
 R11. Purge and pack-audit before measuring memory.
     Why: orphaned images and meshes still occupy RAM and file size until purged.
     Violation: memory numbers that do not match what the scene actually draws.
 
-## 4. bpy patterns
+### 4. bpy patterns
 
-### 4.1 Scene audit — always run this first
+#### 4.1 Scene audit — always run this first
 
 ```python
 import bpy
@@ -132,7 +151,7 @@ def audit(scene=None, view_layer=None):
         if ob.type != 'MESH':
             continue
         me = ob.data
-        me.calc_loop_triangles()
+        me.calc_loop_triangles()                # explicit call kept for older versions; in 5.2.0 `loop_triangles` is already populated  [ease:source S8 anchor="mesh calc_loop_triangles on instance True, len loop_triangles 2"]
         t = len(me.loop_triangles)
         tris += t
         verts += len(me.vertices)
@@ -159,15 +178,15 @@ def audit(scene=None, view_layer=None):
     )
 
 print(audit())
-bpy.ops.wm.memory_statistics()      # prints allocator totals to stdout
+bpy.ops.wm.memory_statistics()      # prints allocator totals to stdout  [ease:source S3 anchor="memory_statistics operator"]  [ease:source S11 anchor="memory_statistics desc: Print memory statistics to the console"]
 ```
 
-`unique_meshes` far below `mesh_objects` means instancing is working.
+This block ran unmodified on Blender 5.2.0 (2 objects sharing one mesh: 640 tris, 1 unique mesh, 1 material) <!-- ease:source S13 anchor="HARNESS audit" -->. `unique_meshes` far below `mesh_objects` means instancing is working.
 `instances` far above `mesh_objects` means geometry-node/collection instancing is
 in play — that is cheap in Blender but the *engine* may still see one draw call
 each.
 
-### 4.2 LOD generation
+#### 4.2 LOD generation
 
 ```python
 import bpy
@@ -196,7 +215,7 @@ def make_lods(src, ratios=LOD_RATIOS, collection=None,
                 m.use_symmetry = True
                 m.symmetry_axis = symmetry_axis  # 'X'|'Y'|'Z'
         out.append(lod)
-    return out
+    return out    # executed 5.2.0: ['A','A_LOD1'..'A_LOD4'] evaluated 320/160/80/32/12 faces  [ease:source S13 anchor="HARNESS lods"]
 
 def decimated_face_count(ob):
     """modifier.face_count is only valid after depsgraph evaluation."""
@@ -205,7 +224,7 @@ def decimated_face_count(ob):
     return [(m.name, m.face_count) for m in ev.modifiers if m.type == 'DECIMATE']
 ```
 
-Decimate type selection, verified enum and semantics:
+Decimate type selection, verified enum and semantics <!-- ease:source S1 anchor="decimate_type COLLAPSE/UNSUBDIV/DISSOLVE" --><!-- ease:source S7 anchor="decimate_type enum; angle_limit default 0.0872664" -->:
 
 | `decimate_type` | Controls | Good for | Destroys |
 |---|---|---|---|
@@ -215,14 +234,14 @@ Decimate type selection, verified enum and semantics:
 
 Use `vertex_group` + `vertex_group_factor` to protect silhouettes and faces:
 weight 1.0 = full decimation, 0.0 = protected (invert with
-`invert_vertex_group`).
+`invert_vertex_group`) <!-- ease:source UNVERIFIED reason="weight semantics not confirmed in the fetched docs; property names verified in probe 1" -->.
 
 When Decimate is not acceptable — sculpts, anything that will deform, anything
 needing clean UVs — retopologise instead (Quadriflow via
-`bpy.ops.object.quadriflow_remesh`, or a Remesh modifier as a base) and then
+`bpy.ops.object.quadriflow_remesh` <!-- ease:source S7 anchor="quadriflow op True" -->, or a Remesh modifier as a base) and then
 bake the high-poly detail down (§4.4).
 
-### 4.3 Instancing, linked duplicates, and merging
+#### 4.3 Instancing, linked duplicates, and merging
 
 ```python
 import bpy
@@ -260,9 +279,9 @@ Cost model to reason with:
 | Joined into one object | 1 × merged mesh | 1 | 1 | none |
 
 glTF exports collection/geo-node instances as real nodes unless
-`export_gpu_instances=True` (writes `EXT_mesh_gpu_instancing`).
+`export_gpu_instances=True` (writes `EXT_mesh_gpu_instancing`) <!-- ease:source S11 anchor="gltf export_gpu_instances parameter exists" --><!-- ease:source UNVERIFIED reason="extension name and 'real nodes' default not verified against the exporter source" -->.
 
-### 4.4 High-to-low baking as a pipeline step
+#### 4.4 High-to-low baking as a pipeline step
 
 ```python
 import bpy
@@ -302,7 +321,9 @@ def bake_high_to_low(low, high, image, bake_type='NORMAL',
     return image
 ```
 
-Verified `bpy.ops.object.bake` signature (5.2):
+Executed on 5.2.0 with a one-quad low/high pair and an active Image Texture node: the function ran and wrote the image <!-- ease:source S13 anchor="HARNESS bake ran" -->.
+
+Verified `bpy.ops.object.bake` signature (5.2) <!-- ease:source S2 anchor="bake parameters" --><!-- ease:source S7 anchor="bake params" -->:
 `type, pass_filter, filepath, width, height, margin, margin_type,
 use_selected_to_active, max_ray_distance, cage_extrusion, cage_object,
 normal_space, normal_r, normal_g, normal_b, target, save_mode, use_clear,
@@ -311,15 +332,15 @@ use_cage, use_split_materials, use_automatic_name, uv_layer`.
 Bake order that works: **Normal → AO → Curvature → Diffuse/Albedo → Roughness**.
 
 - **Normal** must be `normal_space='TANGENT'` with `+X +Y +Z` for glTF/Unity/
-  Unreal (Unreal flips green on import, not on export).
-- **AO** is `type='AO'`; for glTF it belongs in the R channel of the ORM texture.
-- **Curvature** has no dedicated bake pass. Bake `type='NORMAL'` and derive
+  Unreal (Unreal flips green on import, not on export) <!-- ease:source UNVERIFIED reason="engine conventions are practice-derived; Unreal behaviour not sourced" -->.
+- **AO** is `type='AO'` <!-- ease:source S11 anchor="bake type enum" -->; for glTF it belongs in the R channel of the ORM texture <!-- ease:source S6 anchor="occlusion texture: the red channel encodes the occlusion value" -->.
+- **Curvature** has no dedicated bake pass (the 5.2.0 `type` enum is COMBINED, AO, SHADOW, POSITION, NORMAL, UV, ROUGHNESS, EMIT, ENVIRONMENT, DIFFUSE, GLOSSY, TRANSMISSION) <!-- ease:source S11 anchor="bake type enum" -->. Bake `type='NORMAL'` and derive
   curvature in the compositor/shader, or bake an `EMIT` pass driven by a
-  Geometry ▸ Pointiness node — that is the standard workaround.
+  Geometry ▸ Pointiness node (the Geometry node has a `Pointiness` output in 5.2.0 <!-- ease:source S11 anchor="Geometry node outputs includes Pointiness" -->) — a community workaround <!-- ease:source UNVERIFIED reason="workaround quality is community practice" -->.
 - Set the Image Texture node holding the target to **Non-Color** for normal, AO,
-  roughness and metallic; sRGB only for base colour.
+  roughness and metallic; sRGB only for base colour <!-- ease:source UNVERIFIED reason="colour-space rule is standard practice, not re-verified here" -->.
 
-### 4.5 Atlasing and lightmap UVs
+#### 4.5 Atlasing and lightmap UVs
 
 ```python
 import bpy
@@ -363,16 +384,16 @@ def make_lightmap_uv(ob, name="Lightmap", angle_limit=1.15192, margin=0.02):
 ```
 
 `bpy.ops.uv.lightmap_pack(PREF_CONTEXT='ALL_FACES', PREF_PACK_IN_ONE=True,
-PREF_NEW_UVLAYER=True, PREF_BOX_DIV=12, PREF_MARGIN_DIV=0.1)` still exists and
+PREF_NEW_UVLAYER=True, PREF_BOX_DIV=12, PREF_MARGIN_DIV=0.1)` still exists <!-- ease:source S7 anchor="uv.lightmap_pack params; pack_islands params; smart_project params" --> and
 guarantees non-overlap across a whole selection, at the cost of very fragmented
 islands. `smart_project` gives better islands but you must verify non-overlap.
 
-UV-mode operators require Edit Mode; under `--background` they still work
+UV-mode operators require Edit Mode; under `--background` they still work <!-- ease:source S13 anchor="HARNESS uv layers ['UVMap','Lightmap']" -->
 because they operate on the mesh, but the object must be made active and the
 mode toggled as shown. Wrap in `bpy.context.temp_override(...)` if a specific
 area is required.
 
-### 4.6 Simplify and viewport-vs-render subdivision
+#### 4.6 Simplify and viewport-vs-render subdivision
 
 ```python
 import bpy
@@ -385,7 +406,7 @@ def set_preview_mode(scene, on=True):
         r.simplify_child_particles = 0.05
         r.simplify_volumes = 0.25
         r.use_simplify_normals = True       # skip custom normal eval in viewport
-    # DANGER: simplify_subdivision_render caps the FINAL render too.
+    # DANGER: simplify_subdivision_render caps the FINAL render too (RNA default 0 on a scene made with bpy.data.scenes.new()).
     # r.simplify_subdivision_render = 0  ->  flat final renders.
 
 def set_subsurf(ob, viewport=1, render=2, adaptive=False):
@@ -407,12 +428,11 @@ def set_subsurf(ob, viewport=1, render=2, adaptive=False):
 Adaptive subdivision left experimental status in Blender 5.0 and now lives
 directly on the Subdivision Surface modifier. The `'OBJECT'` space option was
 added in 5.0 specifically so instanced meshes can be tessellated once,
-independent of camera distance.
+independent of camera distance <!-- ease:source S4 anchor="Adaptive subdivision no longer experimental; new Object space option" --><!-- ease:source S7 anchor="subsurf adaptive props; adaptive_space enum PIXEL OBJECT" -->.
 
-### 4.7 What actually costs time in Cycles
+#### 4.7 What actually costs time in Cycles
 
-Property names are on `scene.cycles` (verified against the Cycles add-on
-source); defaults in brackets.
+Property names are on `scene.cycles` (verified at runtime on 5.2.0, including every default in brackets) <!-- ease:source S7 anchor="cycles props" --><!-- ease:source S11 anchor="rna cycles descriptions" -->.
 
 ```python
 import bpy
@@ -426,7 +446,7 @@ c.adaptive_threshold = 0.01       # [0.01] higher = fewer samples, more noise
 c.adaptive_min_samples = 0        # [0] = automatic
 c.time_limit = 0.0                # seconds; 0 = unlimited
 c.use_denoising = True            # [True]
-c.denoiser = 'OPENIMAGEDENOISE'   # or 'OPTIX'
+c.denoiser = 'OPENIMAGEDENOISE'   # or 'OPTIX' (only listed when a supporting GPU is present; the 5.2.0 CPU-only probe offered OPENIMAGEDENOISE alone  [ease:source S8 anchor="denoiser enum ('OPENIMAGEDENOISE')"])
 
 # --- ray depth: changes the LOOK, not just the speed -------------------
 c.max_bounces = 12                # [12]
@@ -449,7 +469,7 @@ c.tile_size = 2048                # [2048] lower only if VRAM-bound
 bpy.context.scene.render.use_persistent_data = True   # animation re-renders
 ```
 
-Rough cost multipliers for a typical interior/product scene. These are
+<!-- ease:source UNVERIFIED reason="all cost multipliers below are order-of-magnitude planning heuristics, not measured" --> Rough cost multipliers for a typical interior/product scene. These are
 order-of-magnitude planning aids, **not measured guarantees** — always A/B with
 `time_limit` or wall-clock on the actual scene.
 
@@ -469,14 +489,14 @@ order-of-magnitude planning aids, **not measured guarantees** — always A/B wit
 | Motion blur on | ×1.3–2 | — |
 | Resolution ×2 (each axis) | ×4 | — |
 | `use_persistent_data=True` on a 250-frame anim | ÷1.2–2 of total | none; costs RAM |
-| Hair/curves `shape='RIBBON'` vs 3D | ×0.6–0.8 | no self-shadow thickness |
+| Hair/curves `scene.cycles_curves.shape` `'RIBBONS'` vs `'THICK'` (enum: RIBBONS, THICK, THICK_LINEAR in 5.2.0 <!-- ease:source S9 anchor="cycles_curves enum" -->) | ×0.6–0.8 | no self-shadow thickness |
 
-Blender 5.0 changed volume rendering to unbiased null-scattering by default;
+Blender 5.0 changed volume rendering to unbiased null-scattering by default <!-- ease:source S4 anchor="Volumes: Unbiased Sampling, null scattering default" -->;
 `volume_step_rate` / `volume_max_steps` only apply when
-`scene.cycles.volume_biased = True`. If a 4.5 scene renders differently or
+`scene.cycles.volume_biased = True` <!-- ease:source S10 anchor="rna cycles.volume_biased: Biased option uses ray marching, with controls for steps size and max steps" -->. If a 4.5 scene renders differently or
 slower after upgrade, that is why.
 
-### 4.8 Memory profiling
+#### 4.8 Memory profiling
 
 ```python
 import bpy, sys
@@ -504,30 +524,32 @@ string (objects/verts/faces/tris/memory) and `bpy.ops.wm.memory_statistics()`
 prints allocator totals to stdout — both are readable in a headless log.
 
 Texture memory is usually the dominant term. A 4096² RGBA 8-bit image is 64 MiB
-uncompressed in Blender (no GPU block compression at authoring time); ten of
+uncompressed in Blender (4096×4096×4 bytes; `Image.channels == 4` for a new RGBA image <!-- ease:source S7 anchor="4096^2 RGBA8 MiB 64.0 channels 4" -->) (no GPU block compression at authoring time); ten of
 them is 640 MiB before any geometry. `scene.cycles.texture_limit_render` /
-`texture_limit` cap the size Cycles actually uploads.
+`texture_limit` cap the size Cycles actually uploads (enum OFF, 128 … 8192 <!-- ease:source S11 anchor="texture_limit_render items" -->).
 
-## 5. Failure modes
+### 5. Failure modes
 
 | Symptom (what the agent sees) | Root cause | Fix |
 |---|---|---|
 | Reported triangle count is a fraction of the engine's | counted `len(mesh.polygons)` on unevaluated data | `evaluated_get(dg)` + `calc_loop_triangles()` |
 | `modifier.face_count == 0` after setting `ratio` | Decimate not evaluated yet | read it from `ob.evaluated_get(depsgraph)` |
 | Decimated LOD has torn/stretched textures | `COLLAPSE` on UV-critical geometry | `DISSOLVE`, or retopo + bake |
-| Final render comes out flat/faceted | `render.simplify_subdivision_render` left at 0 | set it to ≥ 6 or `use_simplify=False` |
+| Final render comes out flat/faceted | `render.simplify_subdivision_render` left at 0 (default on scenes created with `bpy.data.scenes.new()`) <!-- ease:source S8 anchor="new scene simplify 6 0" --> | set it to ≥ 6 or `use_simplify=False` |
 | Baked normal map has black/rainbow blotches | no cage, or ray distance too large | `use_cage=True` + cage object, or lower `max_ray_distance` |
-| Bake is entirely black | no active Image Texture node in the material, or wrong active object | make the target image node active on every material; low-poly must be the active object |
-| `RuntimeError: Error: No active image found in material ...` | same as above | assign and activate the image node |
+| Bake does nothing / returns `{'CANCELLED'}` (observed 5.2.0, reported as `Info: No active and selected image texture node found in material "<name>" (<slot>) for object "<name>"`) <!-- ease:source S12 anchor="BK result CANCELLED; Info: No active and selected image texture node" --> | no active, selected Image Texture node in the material, or wrong active object | make the target image node active and selected on every material; low-poly must be the active object. **Correction:** the previous text promised `RuntimeError: ... No active image found` and an all-black bake; neither occurred |
+| Bake output is entirely black | image node active but rays miss the high-poly, or the wrong active object | check cage/`max_ray_distance` and that the low-poly is the active object |
 | Lightmap shows one patch repeated | overlapping UVs in the lightmap channel | `lightmap_pack` or `pack_islands(merge_overlap=False)` |
 | `.blend` grows linearly with copies | `duplicate(linked=False)` or `ob.data = src.data.copy()` | share `ob.data` |
-| Cycles render 10x slower after 5.0 upgrade | new unbiased volume sampling | `scene.cycles.volume_biased = True` and tune step rate |
+| Cycles render 10x slower after 5.0 upgrade | new unbiased volume sampling (release notes: may render slower, biased mode can be faster for simple scenes <!-- ease:source S4 anchor="Volumes note" -->) | `scene.cycles.volume_biased = True` and tune step rate |
 | Out of GPU memory | 4k+ float textures, or `tile_size` too large | `texture_limit_render='2048'`, lower `tile_size` |
 | Foliage render crawls | `transparent_max_bounces=8` × alpha-clipped leaves | drop to 2–4, or use alpha-hashed/opaque leaves |
 | Viewport unusable, render fine | high `SubsurfModifier.levels` | `use_simplify=True; simplify_subdivision=0` |
 | Export is 4M triangles from a 2k asset | adaptive subdivision left on | `use_adaptive_subdivision=False` before export |
 
-## 6. Parameter defaults by use case
+### 6. Parameter defaults by use case
+
+<!-- ease:source UNVERIFIED reason="section 6 per-use-case defaults are practice-derived starting points, not documented by Blender" -->
 
 | Parameter | Game/realtime | Character anim | Motion graphics | Product viz | 3D print |
 |---|---|---|---|---|---|
@@ -551,7 +573,7 @@ them is 640 MiB before any geometry. `scene.cycles.texture_limit_render` /
 | Bake passes required | Normal, AO, Albedo, Roughness, Metallic | Normal, AO | none | none | none |
 | Second UV set (lightmap) | yes | no | no | no | no |
 
-## 7. Verification checklist
+### 7. Verification checklist
 
 - [ ] `a = audit(); assert a["tris"] <= BUDGET` — the scene fits the stated budget.
 - [ ] `assert a["unique_meshes"] < a["mesh_objects"]` when repeats exist — instancing is actually happening.
@@ -564,16 +586,27 @@ them is 640 MiB before any geometry. `scene.cycles.texture_limit_render` /
 - [ ] `assert memory_report()["image_total_bytes"] < VRAM_BUDGET`.
 - [ ] Time an A/B: render the same frame with `time_limit=30` before and after a change and compare the noise level in the screenshot.
 
-## 8. Sources
+## Failure Modes (Mandatory)
+- **Engine reports far more triangles than the audit** — cause: `len(mesh.polygons)` on unevaluated data ignores modifiers (1280 faces became 320 tris under Decimate in the 5.2.0 test) — fix: `evaluated_get(dg)` and read `loop_triangles` <!-- ease:source S8 anchor="decimate face_count after eval" -->.
+- **`bpy.ops.object.bake` returns `{'CANCELLED'}` with no image written** — cause: no active, selected Image Texture node in the low-poly material (5.2.0 Info message) — fix: assign the target image to that node and make it active <!-- ease:source S12 anchor="BK result CANCELLED" -->.
+- **Final render flat or faceted after enabling Simplify** — cause: `simplify_subdivision_render` is 0 on a scene made by `bpy.data.scenes.new()` — fix: set it to at least 6 or leave `use_simplify` off <!-- ease:source S8 anchor="new scene simplify 6 0" -->.
+- **Cycles volume shot is much slower after upgrading from 4.x** — cause: 5.0 switched volumes to unbiased null scattering by default — fix: `scene.cycles.volume_biased = True` and tune step rate/max steps <!-- ease:source S4 anchor="Volumes: Unbiased Sampling" -->.
+- **`modifier.face_count` is 0** — cause: Decimate read before depsgraph evaluation — fix: read it from `ob.evaluated_get(depsgraph)` <!-- ease:source S8 anchor="decimate face_count before eval 0" -->.
 
-- [bpy.types.DecimateModifier — 5.2](https://docs.blender.org/api/current/bpy.types.DecimateModifier.html)
-- [bpy.types.SubsurfModifier — 5.2](https://docs.blender.org/api/current/bpy.types.SubsurfModifier.html) (`use_adaptive_subdivision`, `adaptive_space`, `adaptive_pixel_size`, `adaptive_object_edge_length`)
-- [bpy.types.RenderSettings — 5.2](https://docs.blender.org/api/current/bpy.types.RenderSettings.html) (`use_simplify`, `simplify_subdivision*`, `use_persistent_data`)
-- [bpy.ops.object.bake — 5.2](https://docs.blender.org/api/current/bpy.ops.object.html)
-- [bpy.ops.uv (`smart_project`, `pack_islands`, `lightmap_pack`) — 5.2](https://docs.blender.org/api/current/bpy.ops.uv.html)
-- [bpy.types.Depsgraph — 5.2](https://docs.blender.org/api/current/bpy.types.Depsgraph.html)
-- [Blender 5.0: Cycles release notes](https://developer.blender.org/docs/release_notes/5.0/cycles/) — unbiased volumes, adaptive subdivision out of experimental, multi-bounce SSS
-- [Cycles property definitions (`intern/cycles/blender/addon/properties.py`)](https://projects.blender.org/blender/blender/src/branch/main/intern/cycles/blender/addon/properties.py) — verified names and defaults
-- `[UNVERIFIED]` All cost multipliers in §4.7 are order-of-magnitude planning heuristics, not benchmarked figures from Blender documentation.
-- `[UNVERIFIED]` Poly/draw-call budget tables in §2 are industry practice, not Blender documentation.
-- `[UNVERIFIED]` Curvature baking via a Pointiness-driven `EMIT` pass is a community workaround; Blender has no curvature bake pass.
+## Sources
+- [S1] bpy.types.DecimateModifier — https://docs.blender.org/api/current/bpy.types.DecimateModifier.html → knowledge/_evidence/kb-261013/w5-bpy-DecimateModifier.html — captured 2026-10-13 — sha256 05660eb194441ab7ebe7f9a17bd4063566367159329d737dbf982028bd3a33a3
+- [S2] bpy.ops.object (bake) — https://docs.blender.org/api/current/bpy.ops.object.html → knowledge/_evidence/kb-261013/w5-bpy-ops-object.html — captured 2026-10-13 — sha256 e372b214a012ea091e9c61c69cc930d08e047e4aba27f21eb806ed2ee25cba5a
+- [S3] bpy.ops.wm (append, link, save, open, collection_export_all) — https://docs.blender.org/api/current/bpy.ops.wm.html → knowledge/_evidence/kb-261013/w5-bpy-ops-wm.html — captured 2026-10-13 — sha256 ada74a22a286b954f93ae9389100f8b5ce2ff4f4d9210c355ec95c7d04a395be
+- [S4] Blender 5.0 release notes: Cycles — https://developer.blender.org/docs/release_notes/5.0/cycles/ → knowledge/_evidence/kb-261013/w5-rn50-cycles.html — captured 2026-10-13 — sha256 b1dc6347bc6056ff4cb7d47330e1d82f48867b337488545456a49a0708234da7
+- [S5] Blender 5.2 Manual: Cycles baking — https://docs.blender.org/manual/en/latest/render/cycles/baking.html → knowledge/_evidence/kb-261013/w5-man-baking.html — captured 2026-10-13 — sha256 4a443e80a7136042d854297a65ea5b92b992c3ad74b869fbef0103e913fb4865
+- [S6] glTF 2.0 Specification (Khronos) — https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html → knowledge/_evidence/kb-261013/w5-gltf-spec-2.0.html — captured 2026-10-13 — sha256 0786a11be9a1ff1dacd6f1cb76d0ee83e53a6bc87c2de77da88fabc1bfef3c60
+- [S7] Blender 5.2.0 LTS runtime probe 1 (API shape, defaults, framing math); script w5-probe-blender-52-api.py — local run /Applications/Blender.app → knowledge/_evidence/kb-261013/w5-blender-52-runtime-probe-output.txt — captured 2026-10-13 — sha256 9fe8eb4c002bea2338899e4090d52659e26418189a9363838b9dab08fc386974
+- [S8] Blender 5.2.0 LTS runtime probe 2 (hide flags, glTF filters, USD names, decimate, alpha); script w5-probe2-blender-52-behaviour.py — local run /Applications/Blender.app → knowledge/_evidence/kb-261013/w5-blender-52-runtime-probe2-output.txt — captured 2026-10-13 — sha256 563dd275f28aedc3f35dce792110ba10e400f4467ff7263b1616da0273aa32d1
+- [S9] Blender 5.2.0 LTS runtime probe 3 (F12 render alpha test per hide flag, glTF exclude); script w5-probe3-blender-52-render-visibility.py — local run /Applications/Blender.app → knowledge/_evidence/kb-261013/w5-blender-52-runtime-probe3-output.txt — captured 2026-10-13 — sha256 7bc31c8d17a854077b7205ff9ca725fdb5aabc12bb871bdfdf37f51f2815e7b0
+- [S10] Blender 5.2.0 LTS runtime probe 4 (RNA descriptions, Principled inputs, modifier defaults); script w5-probe4-blender-52-rna-descriptions.py — local run /Applications/Blender.app → knowledge/_evidence/kb-261013/w5-blender-52-runtime-probe4-output.txt — captured 2026-10-13 — sha256 bcefc0f57b0b5accab6fe6d589b642ca522734407791b0eb4b795b0280d7c54e
+- [S11] Blender 5.2.0 LTS runtime probe 5 (purge, reload, error texts, enums, turntable closure); script w5-probe5-blender-52-misc.py — local run /Applications/Blender.app → knowledge/_evidence/kb-261013/w5-blender-52-runtime-probe5-output.txt — captured 2026-10-13 — sha256 2ed858235c4be1a8e6dc98c618b9d757f9e79a72517fb17b92c25d3eb4ca1179
+- [S12] Blender 5.2.0 LTS runtime probe 6 (bake without image texture node); script w5-probe6-bake-no-image.py — local run /Applications/Blender.app → knowledge/_evidence/kb-261013/w5-blender-52-runtime-probe6-output.txt — captured 2026-10-13 — sha256 9c3d2045cb867fcdedec59112979291c65d683b452b82b8158b5f100750ed2ba
+- [S13] Blender 5.2.0 LTS harness run: this module's python blocks executed (audit, LODs, linked dupes, bake, UV, simplify, Cycles props, memory) — local run /Applications/Blender.app (harness knowledge/_evidence/kb-261013/w5-harness-optimization-realtime-output.txt) → knowledge/_evidence/kb-261013/w5-harness-optimization-realtime-output.txt — captured 2026-10-13 — sha256 8398744b1d750effef10712d1921ba2c207d75dd46183fc18b7c8ae58c9cb2c7
+- Retained unverified note: All cost multipliers in §4.7 are order-of-magnitude planning heuristics, not benchmarked figures from Blender documentation. <!-- ease:source UNVERIFIED reason="retained from original sources list; no primary source found" -->
+- Retained unverified note: Poly/draw-call budget tables in §2 are industry practice, not Blender documentation. <!-- ease:source UNVERIFIED reason="retained from original sources list; no primary source found" -->
+- Retained unverified note: Curvature baking via a Pointiness-driven `EMIT` pass is a community workaround; Blender has no curvature bake pass. <!-- ease:source UNVERIFIED reason="retained from original sources list; no primary source found" -->

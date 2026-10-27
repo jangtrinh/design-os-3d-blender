@@ -82,7 +82,7 @@ else
   [[ "$HAVE_FORWARD" == "1" ]] && ARGS+=("${FORWARD[@]}")
 fi
 
-LOG="$(mktemp -t headless-run)"
+LOG="$(mktemp "${TMPDIR:-/tmp}/headless-run.XXXXXX")"  # portable: GNU mktemp needs explicit Xs
 trap 'rm -f "$LOG"' EXIT
 
 # stdout is teed so we can scan for the sentinel; stderr passes through as-is.
