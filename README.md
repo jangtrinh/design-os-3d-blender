@@ -4,20 +4,8 @@
 
 Generate dimensionally accurate gears, enclosures, drone frames, and exploded mechanical assemblies from plain-English specs or JSON parameters, complete with glTF/STL exports and interactive browser inspection.
 
-<<<<<<< HEAD
-design-os-3d-blender is a free MCP server (Model Context Protocol, stdio) for Blender. Connect it to Claude Code, Codex, Cursor or any MCP client to model, render and verify parts in Blender 5.2 LTS. It is free, nothing is sold, and it is source-available under PolyForm Shield 1.0.0.
+**design-os-3d-blender is a free MCP server** (Model Context Protocol, stdio) for Blender. Connect it to Claude Code, Codex, Cursor or any MCP client to model, render and verify parts in Blender 5.2 LTS. Free, nothing sold, source-available under PolyForm Shield 1.0.0.
 
-Agent skills, a verified bpy knowledge base, an `AGENT_OK` / `AGENT_FAIL` execution contract and a production gate for Blender 5.2 LTS. Every worked build below ships with what was checked and what was not.
-
-[![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/license-PolyForm_Shield_1.0.0-202020?style=for-the-badge)](LICENSE)
-[![Last commit](https://img.shields.io/github/last-commit/jangtrinh/design-os-3d-blender?style=for-the-badge&label=last%20commit)](https://github.com/jangtrinh/design-os-3d-blender/commits/main)
-![Blender 5.2 LTS](https://img.shields.io/badge/Blender-5.2_LTS-EA7600?style=for-the-badge&logo=blender&logoColor=white)
-![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![bpy: data API first](https://img.shields.io/badge/bpy-data_API_first-202020?style=for-the-badge)
-[![MCP: blender-mcp](https://img.shields.io/badge/MCP-blender--mcp-202020?style=for-the-badge)](https://github.com/ahujasid/blender-mcp)
-![Claude Code · Codex · Antigravity](https://img.shields.io/badge/Claude_Code-Codex_·_Antigravity-202020?style=for-the-badge&logo=anthropic&logoColor=white)
-[![Design Os 3d Blender on AI Agents Listing](https://aiagentslisting.com/design-os-3d-blender/badge.svg?claim=843189721f10cfed07ba0a1e6a1b4c1e)](https://aiagentslisting.com/mcp/design-os-3d-blender)
-=======
 <p align="center">
   <img src="docs/images/cover.png" alt="DESIGN:OS 3D Blender Agent — 2:1 Axonometric Technical Architecture" width="840">
 </p>
@@ -29,7 +17,6 @@ Agent skills, a verified bpy knowledge base, an `AGENT_OK` / `AGENT_FAIL` execut
   <a href="https://jangtrinh.github.io/design-os-3d-blender/"><img src="https://img.shields.io/badge/live_docs-GitHub_Pages-202020?style=flat-square&labelColor=202020&color=444444" alt="Live GitHub Pages"></a>
   <a href="https://buymeacoffee.com/jangtrinh"><img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"></a>
 </p>
->>>>>>> origin/main
 
 <p align="center">
   <a href="#quickstart">Quickstart</a> · <a href="#what-it-makes">What it makes</a> · <a href="#installation">Install</a> · <a href="#how-it-works">How it works</a> · <a href="#commands--diagnostics">Commands</a> · <a href="#quality-bar--limitations">Limits</a>
@@ -335,39 +322,8 @@ design-os-3d-blender/
 
 If `design-os-3d-blender` saves you time, a star on GitHub helps other engineers and AI agents find it.
 
-<<<<<<< HEAD
-| Build | Demonstrated | Still separate |
-|---|---|---|
-| Robot arm | Native assembly film, sampled motion checks, exported fit prototypes and a 38-part digital gate report. | Loaded operation, hardware retention, thermal duty and physical assembly qualification. |
-| Watch winder | Native stills, sampled motion checks, digital print-kit checks and fit visualization. | Actual printing, physical fit and manufacturing qualification. |
-| DC-01 desktop companion | Eighteen printable parts through the geometry gate with STL round-trip and independent 3MF reopening, 26 of 26 harness connections, a KiCad carrier with zero ERC/DRC violations, and a 39-second native animatic. | Printing and process trials, switch actuation, battery charge window, electronics and firmware, and every physical assembly and thermal test. |
-| CK-001 keyboard | Reference-bound 58-key digital prototype: modeled receivers, guides and D couplings, sampled key travel, form/final gates on eight part families, GLB round-trip of 781 meshes, native Full HD media. | Switch retention, tolerance extremes, electronics and firmware, process trials and bench/load/thermal qualification. |
-| ORC components | Reference-driven component development, reusable parts and revision-specific image/geometry checks. | Selected equipment, complete plant integration, process duty and fabrication qualification. |
-
-The worked-build READMEs carry the detailed receipts and exclusions. The knowledge catalogue also includes small execution examples; the full private ORC development history and the source reference images are not shipped.
-
-## What the builds taught us
-
-Both full product builds converged on one loop — build → numeric assert ending in the sentinel → immutable run directory → an independent re-open of the saved artifact → a named review report → freeze by SHA — and the incidents that cost the most are recorded with their evidence files:
-
-1. **Specify the construction.** A wheel, cabinet or gauge name is an inventory item; a brief needs profile, thickness, transitions, layers, mounting and a visible condition that would reject the result.
-2. **Model and gate the mating interface before any presentation work.** Missing receivers cost a whole revision of a finished-looking keyboard.
-3. **A sampled predicate is not a bound.** Re-check at the exact extremes and both sides of every join: 3.198 mm sampled, 2.9964 mm true.
-4. **Motion belongs in the media contract.** A film that renders 120 poses at 5 poses per second passes every gate and still fails the owner.
-5. **Verify the artifact and the verifier.** A surprising measurement gets a disproving probe before any geometry changes; qualify a renderer by pixel identity, never by speed.
-6. **Bind delivery to the actual revision.** Freeze source, camera and settings, keep old media under its own identity, and record manual checks separately from automated gates.
-
-Read [the two-build distillation](docs/native-build-pipeline-lessons.md), the [CK-001 retrospective](docs/ck-001-session-retrospective.md), the [ORC component lessons](docs/orc-session-lessons.md) with their [public journal](docs/journals/orc-component-reconstruction.md), and start a new project from the [product workflow template](docs/product-workflow-template.md). Specialised reading: [geometry diagnosis](knowledge/60-pipeline/geometry-diagnostic-workflow.md), [native media delivery](knowledge/60-pipeline/native-render-delivery.md), [manufacturing evidence](knowledge/60-pipeline/manufacturing-evidence-workflow.md), [publishing a review page](docs/delivery-review-publication.md).
-
-The [C03/E02 source package](builds/reference-keyboard/manufacturing/README.md) adds full-stroke cap clearance, mechanical retention, acrylic collars, corrected LED polarity and an explicitly incomplete physical pilot ledger. The public Revision-B gallery remains historical media for B, not an approval of C03.
-
-## License
-
-Source-available under [PolyForm Shield 1.0.0](LICENSE) © [Jang Trinh](https://github.com/jangtrinh). Free to use and modify, including for paid work; you cannot resell it or build a competing product with it. Vendored dependencies retain their own licenses.
-=======
 <p align="left">
   <a href="https://buymeacoffee.com/jangtrinh">
     <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
   </a>
 </p>
->>>>>>> origin/main
