@@ -4,6 +4,8 @@
 
 Generate dimensionally accurate gears, enclosures, drone frames, and exploded mechanical assemblies from plain-English specs or JSON parameters, complete with glTF/STL exports and interactive browser inspection.
 
+**design-os-3d-blender is a free MCP server** (Model Context Protocol, stdio) for Blender. Connect it to Claude Code, Codex, Cursor or any MCP client to model, render and verify parts in Blender 5.2 LTS. Free, nothing sold, source-available under PolyForm Shield 1.0.0.
+
 <p align="center">
   <img src="docs/images/cover.png" alt="DESIGN:OS 3D Blender Agent — 2:1 Axonometric Technical Architecture" width="840">
 </p>
