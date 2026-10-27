@@ -4,9 +4,11 @@
 
 **An AI agent that builds parts natively in Blender, and shows its evidence.**
 
+design-os-3d-blender is a free MCP server (Model Context Protocol, stdio) for Blender. Connect it to Claude Code, Codex, Cursor or any MCP client to model, render and verify parts in Blender 5.2 LTS. It is free, nothing is sold, and it is source-available under PolyForm Shield 1.0.0.
+
 Agent skills, a verified bpy knowledge base, an `AGENT_OK` / `AGENT_FAIL` execution contract and a production gate for Blender 5.2 LTS. Every worked build below ships with what was checked and what was not.
 
-[![License: MIT](https://img.shields.io/github/license/jangtrinh/design-os-3d-blender?style=for-the-badge)](LICENSE)
+[![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/license-PolyForm_Shield_1.0.0-202020?style=for-the-badge)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/jangtrinh/design-os-3d-blender?style=for-the-badge&label=last%20commit)](https://github.com/jangtrinh/design-os-3d-blender/commits/main)
 ![Blender 5.2 LTS](https://img.shields.io/badge/Blender-5.2_LTS-EA7600?style=for-the-badge&logo=blender&logoColor=white)
 ![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -320,4 +322,4 @@ The [C03/E02 source package](builds/reference-keyboard/manufacturing/README.md) 
 
 ## License
 
-[MIT](LICENSE). Vendored dependencies retain their own licenses.
+Source-available under [PolyForm Shield 1.0.0](LICENSE) © [Jang Trinh](https://github.com/jangtrinh). Free to use and modify, including for paid work; you cannot resell it or build a competing product with it. Vendored dependencies retain their own licenses.

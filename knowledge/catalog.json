@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 150,
+    "execution-source": 151,
     "imported-reference": 47,
     "knowledge": 37,
     "research-synthesis": 76,
-    "workflow": 54
+    "workflow": 55
   },
   "dependency_edges": 108,
   "foundations": [
@@ -5661,6 +5661,25 @@
       "sha256": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
       "tags": [],
       "title": "DC01 P03 print kit",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Nodestack public story"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 14,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/reviews/nodestack/README.md",
+      "related": [],
+      "sha256": "b55665d453f5f5f46e9d65909c92ca153c07c657dfc11b5dc261f6efa093e87a",
+      "tags": [],
+      "title": "Nodestack public story",
       "use": "read"
     },
     {
@@ -19357,6 +19376,20 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
+      "lines": 83,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/mcp/test_mcp_server.py",
+      "related": [],
+      "sha256": "7e5403fc19a8dc48d0b2b7dcc6d6d57f5a23641c672b76a06d004b9d9363ed64",
+      "tags": [],
+      "title": "test_mcp_server.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
       "lines": 20,
       "loads_with": [],
       "name": null,
@@ -19639,7 +19672,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "e78f056df03acdb3c23322afbd931117bda465ce8e1fbdabc7d962c845c66180",
+  "source_digest": "b1b354f5d98a3de30d94b8c71b35db11677da015cf49edc391514680dc22e65f",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ade13e94715fc928980e0a83d937abfb508d53ba47b74d9798fa73c71df5928e",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -19816,6 +19849,7 @@
     "docs/reviews/dc-01/r03/bench-validation.md": "60e59f176b2738f0090248187fc198219b6e6729d7f87c668d76026e7c1d016e",
     "docs/reviews/dc-01/r03/electronics-README.md": "eacedb397dece7c8bfbde58bcb5a7b890c0cec4c99038ee283b446b7ebaf0765",
     "docs/reviews/dc-01/r03/print/README.md": "5f0f6a946926ddcf746bbcd55df00538b3e92bb35a5c73c2a7acc99b14ba7c16",
+    "docs/reviews/nodestack/README.md": "b55665d453f5f5f46e9d65909c92ca153c07c657dfc11b5dc261f6efa093e87a",
     "docs/system-architecture.md": "26b32a8ffc313df02f51a2652e138d31783d256ee2e718e48cfa3c9b86dcfca4",
     "docs/upstream-agent-integration.md": "e70185f20ecacf702ec5292c8ab869ea24a91dcff90059b846887408623031fc",
     "knowledge/00-foundations/agent-workflow-loop.md": "087509e5c612479b7c37b99912ab8428cfecbffa7d119efaac56d833328827d3",
@@ -20073,6 +20107,7 @@
     "tests/hq-coverage/test_hq_coverage_gate.py": "40c859250cb78c53d306006d354e351081b6d67eab44f889c5183a035526c75e",
     "tests/knowledge/test_catalog.py": "1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824",
     "tests/knowledge/test_evolution.py": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
+    "tests/mcp/test_mcp_server.py": "7e5403fc19a8dc48d0b2b7dcc6d6d57f5a23641c672b76a06d004b9d9363ed64",
     "tests/native-pipeline/fixtures/forged_artifact.py": "701d35dc56ec8c1a256ba27980a9278388ffd3c7d534f7568c9f7f141ddb991a",
     "tests/native-pipeline/fixtures/valid_artifact.py": "4fdd69443f5e51797523036ad1a36abf7b1e4a34b8b566a01547aa569a98808f",
     "tests/native-pipeline/test_journal.py": "ffb78a6040fc4a6624fcec8130c2f50c1f48a6435f954c271f996230ac2bd6c2",

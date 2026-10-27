@@ -7,7 +7,7 @@ name = "design-os-3d-blender"
 version = "0.2.0"
 description = "Evidence-first native Blender modeling and verification for Blender 5.2 LTS."
 readme = "README.md"
-license = "MIT"
+license = "LicenseRef-PolyForm-Shield-1.0.0"
 requires-python = ">=3.10"
 authors = [
     { name = "Jang Trinh" }
