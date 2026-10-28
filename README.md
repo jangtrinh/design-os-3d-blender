@@ -320,6 +320,15 @@ design-os-3d-blender/
 
 ---
 
+## Listed on
+
+<p align="left">
+  <a href="https://mcpservers.org/servers/jangtrinh/design-os-3d-blender"><img src="https://mcpservers.org/badge.svg" alt="Listed on mcpservers.org" width="163" height="20"></a>
+  <a href="https://aiagentsdirectory.com?utm_source=badge&utm_medium=referral&utm_campaign=free_listing&utm_content=homepage"><img src="https://aiagentsdirectory.com/featured-badge.svg?v=2024" alt="Featured AI Agents on AI Agents Directory" width="160" height="40"></a>
+</p>
+
+---
+
 If `design-os-3d-blender` saves you time, a star on GitHub helps other engineers and AI agents find it.
 
 <p align="left">

@@ -187,6 +187,12 @@ ol.steps .ds-code{margin-top:var(--s-3)}
 .faq details[open] summary .ph{transform:rotate(180deg)}
 .faq details p{margin:0 0 var(--s-8);color:var(--c-gray-1100)}
 
+.listed-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2) var(--s-10);margin:0;padding:0;list-style:none}
+.listed-row a{display:flex;align-items:center;min-height:var(--tap-min);border-radius:var(--r-3)}
+.listed-row img{width:auto;opacity:.9}
+.listed-row .badge-sm{height:20px}
+.listed-row .badge-md{height:40px}
+@media (hover:hover){.listed-row a:hover img{opacity:1}}
 .ds-shell-footer{padding-top:var(--s-24);border-top:1px solid var(--c-gray-300)}
 .ds-shell-footer-inner{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:var(--s-12);padding-bottom:var(--s-24);color:var(--c-gray-1100);font-size:var(--t-14)}
 .ds-shell-footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
@@ -464,6 +470,14 @@ python3 scripts/production-gate.py --scene builds/my-part/part.blend --spec buil
         <a class="ds-icon-row" href="https://github.com/jangtrinh/design-os-3d-blender/blob/main/knowledge/INDEX.md"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" data-lead="true"><path d="M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"/></svg><span class="ds-icon-row-label">Knowledge base index</span><span class="ds-icon-row-meta">knowledge</span><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
         <a class="ds-icon-row" href="https://github.com/jangtrinh/design-os-3d-blender/blob/main/AGENTS.md"><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" data-lead="true"><path d="M117.31,134l-72,64a8,8,0,1,1-10.63-12L100,128,34.69,70A8,8,0,1,1,45.32,58l72,64a8,8,0,0,1,0,12ZM216,184H120a8,8,0,0,0,0,16h96a8,8,0,0,0,0-16Z"/></svg><span class="ds-icon-row-label">AGENTS.md: the execution loop and the verify ladder</span><span class="ds-icon-row-meta">rules</span><svg class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
       </div>
+    </section>
+
+    <section aria-labelledby="listed-h">
+      <h2 id="listed-h" class="ds-heading" data-level="3">Listed on</h2>
+      <ul class="listed-row">
+        <li><a href="https://mcpservers.org/servers/jangtrinh/design-os-3d-blender" target="_blank" rel="noopener"><img class="badge-sm" src="https://mcpservers.org/badge.svg" alt="Listed on mcpservers.org" width="163" height="20" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://aiagentsdirectory.com?utm_source=badge&amp;utm_medium=referral&amp;utm_campaign=free_listing&amp;utm_content=homepage" target="_blank" rel="noopener"><img class="badge-md" src="https://aiagentsdirectory.com/featured-badge.svg?v=2024" alt="Featured AI Agents on AI Agents Directory" width="160" height="40" loading="lazy" decoding="async"></a></li>
+      </ul>
     </section>
   </main>
 
