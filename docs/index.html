@@ -39,6 +39,54 @@
         { "@type": "Question", "name": "How does the AI agent interact with Blender?", "acceptedAnswer": { "@type": "Answer", "text": "Through verified bpy scripts executed via Blender background mode with an AGENT_OK or AGENT_FAIL exit contract." } },
         { "@type": "Question", "name": "Can the 3D models be reviewed interactively?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, each delivery package includes a Three.js WebGL viewer with orbit controls, layer explosion, and BOM catalog dimming." } }
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "How to use design os 3d blender repo - ep 1",
+      "description": "Episode 1: building a keyboard (CK-001) end to end with design-os-3d-blender: photo, spec, gates, STL and GLB export. Vietnamese.",
+      "thumbnailUrl": "https://jangtrinh.github.io/design-os-3d-blender/images/video/P1pbpKsjhBg.jpg",
+      "uploadDate": "2026-10-15T17:06:56+00:00",
+      "duration": "PT2M57S",
+      "inLanguage": "vi",
+      "contentUrl": "https://www.youtube.com/watch?v=P1pbpKsjhBg",
+      "embedUrl": "https://www.youtube.com/embed/P1pbpKsjhBg",
+      "publisher": {
+        "@type": "Person",
+        "name": "Jang Trịnh",
+        "url": "https://www.youtube.com/@designosbyjang"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "How to use design os 3d blender repo - ep 2",
+      "description": "Episode 2: the DC-01 desk robot with 29 mechanical revisions, four gated runs and a printable kit. Vietnamese.",
+      "thumbnailUrl": "https://jangtrinh.github.io/design-os-3d-blender/images/video/LKL7ZHMz5KI.jpg",
+      "uploadDate": "2026-10-15T17:25:22+00:00",
+      "duration": "PT5M34S",
+      "inLanguage": "vi",
+      "contentUrl": "https://www.youtube.com/watch?v=LKL7ZHMz5KI",
+      "embedUrl": "https://www.youtube.com/embed/LKL7ZHMz5KI",
+      "publisher": {
+        "@type": "Person",
+        "name": "Jang Trịnh",
+        "url": "https://www.youtube.com/@designosbyjang"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Fanmade 3D model for Nowa planet - by design os 3d blender",
+      "description": "27-second fan-made 3D model of the Nowa desktop product, built with design-os-3d-blender.",
+      "thumbnailUrl": "https://jangtrinh.github.io/design-os-3d-blender/images/video/XSKZYudfMt8.jpg",
+      "uploadDate": "2026-10-15T16:45:01+00:00",
+      "duration": "PT27S",
+      "inLanguage": "vi",
+      "contentUrl": "https://www.youtube.com/watch?v=XSKZYudfMt8",
+      "embedUrl": "https://www.youtube.com/embed/XSKZYudfMt8",
+      "publisher": {
+        "@type": "Person",
+        "name": "Jang Trịnh",
+        "url": "https://www.youtube.com/@designosbyjang"
+      }
     }
   ]
 }
@@ -187,6 +235,11 @@ ol.steps .ds-code{margin-top:var(--s-3)}
 .faq details[open] summary .ph{transform:rotate(180deg)}
 .faq details p{margin:0 0 var(--s-8);color:var(--c-gray-1100)}
 
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--s-8);margin:var(--s-8) 0 0;padding:0;list-style:none}
+.watch-play{position:relative;display:block;border-radius:var(--r-3);overflow:hidden;box-shadow:var(--shadow-custom)}
+.watch-play img,.watch-card iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0}
+.watch-len{position:absolute;right:var(--s-4);bottom:var(--s-4);padding:2px var(--s-4);border-radius:var(--r-3);background:var(--c-gray-1200);color:var(--c-canvas);font-size:var(--t-13)}
+.watch-card h3{margin:var(--s-4) 0 0;font-size:var(--t-14);font-weight:var(--fw-medium);color:var(--c-gray-1000)}
 .listed-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2) var(--s-10);margin:0;padding:0;list-style:none}
 .listed-row a{display:flex;align-items:center;min-height:var(--tap-min);border-radius:var(--r-3)}
 .listed-row img{width:auto;opacity:.9}
@@ -472,6 +525,26 @@ python3 scripts/production-gate.py --scene builds/my-part/part.blend --spec buil
       </div>
     </section>
 
+    <section id="watch" aria-labelledby="watch-h">
+      <h2 id="watch-h" class="ds-heading" data-level="3">Watch</h2>
+      <p class="lede" style="margin-bottom:var(--s-6);color:var(--c-gray-1000)">Three videos from the design:os by Jang channel. Thumbnails are self-hosted; the player loads only when you press play.</p>
+      <ul class="watch-grid">
+        <li class="watch-card">
+          <a class="watch-play" href="https://www.youtube.com/watch?v=P1pbpKsjhBg" data-yt="P1pbpKsjhBg" data-title="How to use design os 3d blender repo - ep 1" target="_blank" rel="noopener"><img src="images/video/P1pbpKsjhBg.jpg" width="640" height="360" loading="lazy" decoding="async" alt="How to use design os 3d blender repo - ep 1 (YouTube, 2:57)"><span class="watch-len">2:57</span></a>
+          <h3>Ep 1: CK-001 keyboard</h3>
+        </li>
+        <li class="watch-card">
+          <a class="watch-play" href="https://www.youtube.com/watch?v=LKL7ZHMz5KI" data-yt="LKL7ZHMz5KI" data-title="How to use design os 3d blender repo - ep 2" target="_blank" rel="noopener"><img src="images/video/LKL7ZHMz5KI.jpg" width="640" height="360" loading="lazy" decoding="async" alt="How to use design os 3d blender repo - ep 2 (YouTube, 5:34)"><span class="watch-len">5:34</span></a>
+          <h3>Ep 2: DC-01 desk robot</h3>
+        </li>
+        <li class="watch-card">
+          <a class="watch-play" href="https://www.youtube.com/watch?v=XSKZYudfMt8" data-yt="XSKZYudfMt8" data-title="Fanmade 3D model for Nowa planet - by design os 3d blender" target="_blank" rel="noopener"><img src="images/video/XSKZYudfMt8.jpg" width="640" height="360" loading="lazy" decoding="async" alt="Fanmade 3D model for Nowa planet - by design os 3d blender (YouTube, 0:27)"><span class="watch-len">0:27</span></a>
+          <h3>Fan-made Nowa model (Short)</h3>
+        </li>
+      </ul>
+      <p class="lede" style="margin-top:var(--s-6)"><a href="https://www.youtube.com/@designosbyjang" target="_blank" rel="noopener">More on the channel</a></p>
+    </section>
+
     <section aria-labelledby="listed-h">
       <h2 id="listed-h" class="ds-heading" data-level="3">Listed on</h2>
       <ul class="listed-row">
@@ -492,6 +565,11 @@ python3 scripts/production-gate.py --scene builds/my-part/part.blend --spec buil
     </div>
   </footer>
 </div>
+<script>
+/* Watch: thumbnails are self-hosted; the YouTube player (privacy-enhanced youtube-nocookie.com) loads only on click.
+   Without JS the card is a plain link to YouTube. */
+(function(){document.querySelectorAll("[data-yt]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+a.dataset.yt+"?autoplay=1&rel=0";f.title=a.dataset.title;f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;f.width=640;f.height=360;f.setAttribute("referrerpolicy","strict-origin-when-cross-origin");a.replaceWith(f);f.focus();});});})();
+</script>
 <script>
 /* Carousel: tabs and prev/next scroll the snap track; the snapped slide drives the pressed
    tab, the counter and the caption. No timers, no autoplay. */
