@@ -81,3 +81,10 @@ uvx design-os-3d-blender
 - [design-os-voice-ux](https://jangtrinh.github.io/design-os-voice-ux/): Voice UX & AI Agent Architecture — Full-duplex barge-in FSMs & sub-500ms voice specs (voice-ai)
 - [design-os-code2flow](https://jangtrinh.github.io/design-os-code2flow/): Code2Flow — Local-first codebase-to-user-flow audit CLI across 7 UI frameworks (ast / audit)
 - [design-os-generative-ui](https://jangtrinh.github.io/design-os-generative-ui/): Generative UI — Streaming interactive visual runtime with morphdom & WebGL (runtime)
+
+## Videos
+
+- [How to use design os 3d blender repo - ep 1](https://www.youtube.com/watch?v=P1pbpKsjhBg): Episode 1: building a keyboard (CK-001) end to end with design-os-3d-blender: photo, spec, gates, STL and GLB export. Vietnamese.
+- [How to use design os 3d blender repo - ep 2](https://www.youtube.com/watch?v=LKL7ZHMz5KI): Episode 2: the DC-01 desk robot with 29 mechanical revisions, four gated runs and a printable kit. Vietnamese.
+- [Fanmade 3D model for Nowa planet - by design os 3d blender](https://www.youtube.com/watch?v=XSKZYudfMt8): 27-second fan-made 3D model of the Nowa desktop product, built with design-os-3d-blender.
+- [design:os by Jang on YouTube](https://www.youtube.com/@designosbyjang): channel.
