@@ -302,6 +302,32 @@ When: When choosing third-party add-ons versus native workflows, or developing h
 - Proprietary compiled add-ons cannot run inside sandboxed cloud server nodes without licenses.
 - Vendor quality claims (quad %, packing gain) are marketing, not measurements; module trust tier is draft.
 
+### Topic: organic-scaffold-machining-split
+
+When: When converting a local organic mesh scaffold (jewelry, figurine, creature from Tripo/Meshy/Hy3D or 3D scan) into watertight, multi-part manufacturable solids with parting clearance and alignment dowel keys.
+
+- `knowledge/10-modeling/organic-scaffold-machining-split.md` — read-verify; SHA256 `c4f36bf77a9b2aea4d93d45de0151494971ffc1e6795354017cfade324dbfcca`
+  Caution: Never re-code organic silhouettes from 360 turnaround renders using primitive meshes; lock the local frozen scaffold and perform boolean parting + dowel keying on the repaired manifold mesh. Verify positive signed volume (V > 0) and zero non-manifold edges on both scaffold and cutter before applying EXACT boolean modifiers.
+- `scripts/boilerplates/bp_organic_scaffold_splitter.py` — inspect-adapt; SHA256 `95ae757b553a40f9879f8fcfea450c2bea7fab4366a66dc49f578e5a5f3e3116`
+  Caution: Default radial dowel clearance (0.20 mm) and parting gap (0.30 mm) are baseline FDM/SLA screening values; adjust for specific casting or CNC tool tolerances.
+
+**Steps**
+
+- Lock the local organic mesh as a frozen scaffold (never re-code organic silhouettes from 360 renders with primitive meshes); strip vendor materials and repair non-manifold defects until signed volume > 0.
+- Split the watertight solid along chosen parting planes using EXACT boolean difference cutter boxes offset by +/- clearance/2 (0.2-0.4 mm).
+- Generate integral male alignment dowel pins (with 45-degree lead-in chamfers) and female sockets (+0.20 mm radial clearance, +0.50 mm depth relief) across the parting interface.
+
+**Gates**
+
+- Both before and after boolean splitting and dowel keying, every part reports non_manifold_edges == 0 and positive signed volume > 0.
+- Pairwise intersection volume between the final keyed upper and lower parts is 0.0 m3.
+- External service calls equal 0 (strictly offline processing of user-supplied local scaffold).
+
+**Limitations**
+
+- Planar boolean splitting does not automatically solve multi-axis undercut draft angles for rigid two-piece metal injection molds.
+- Highly fragmented triangle soups require offline QRemeshify or OpenVDB Voxel Remesh before boolean parting if self-intersections persist.
+
 ## native-product-visualization
 
 Matte plastic materials, studio setup, camera, and polished product imagery.
@@ -1055,6 +1081,33 @@ When: When control-enclosure packaging needs sealing, thermal management, shield
 
 - The bolt spacing, membrane, EMC spacing, and pull force thresholds in the sources are not confirmed for this target.
 - The boilerplate vent ignores thread/panel dimensions; looking sealed or compact does not confirm function.
+
+### Topic: cad-step-roundtrip-dfm
+
+When: When ingesting Fusion 360/SolidWorks STEP files with Vietnamese Unicode part names, batch-editing named hardware parts while locking 1:1 B-Rep profiles, auditing butt-weld/CNC zero-collision DFM, or exporting multi-body STEP compounds.
+
+- `knowledge/70-cad-precision-robotics/cad-step-roundtrip-and-dfm.md` — read-verify; SHA256 `9feafdb00b0016b6a8880632db0e1d2266d664ee8533c18b4ad63a3f3e489b07`
+  Caution: Regex MANIFOLD_SOLID_BREP index order drifts when STEP assemblies reuse shared PRODUCT_DEFINITION instances; prefer XCAF tree traversal when OCP is installed. Keep 1:1 B-Rep mesh geometry locked on extruded T-slot profiles and CNC panels; apply parametric scaling only to explicitly matched hardware part patterns.
+- `scripts/boilerplates/bp_cad_step_roundtrip.py` — inspect-adapt; SHA256 `334fb154c7727a38546e987887cb29b79d8bc4e28420d5673f4ff6af32c22c28`
+  Caution: Self-test constructs synthetic panel/frame/fastener solids in an isolated scene; adapt manifest path and pattern rules before running on a user project.
+
+**Steps**
+
+- Decode ISO-10303-21 hexadecimal Unicode strings (\X2\...\X0\) and extract per-body bounding boxes, centers of mass, and SHA256 digests into parts_manifest.json.
+- Lock 1:1 B-Rep mesh geometry on complex profiles (T-slots, CNC panels) inside hierarchical Blender collections; restrict parametric batch scaling/replacement to explicitly matched part-name patterns.
+- Audit pairwise intersection volume (V_intersect == 0.0 mm3) and coplanar butt-weld contact, and wrap sub-assemblies into TopoDS_Compound -> Part containers when exporting multi-body STEP.
+
+**Gates**
+
+- All Vietnamese Unicode part names decode deterministically and map to structured sub-collections under 01_Assembly_Main.
+- Batch-edited fasteners/parts have scale applied (1.0, 1.0, 1.0) while locked structural CAD parts preserve exact original vertex coordinates.
+- Pairwise solid intersection volume is 0.0 mm3 and coplanar butt-weld contacts meet tangential tolerance <= 0.1 mm.
+
+**Limitations**
+
+- Blender embedded Python does not bundle build123d/OCP by default; B-Rep STEP read/write runs in the host CAD Python environment while Blender executes the bmesh/manifest bridge.
+- Regex MANIFOLD_SOLID_BREP name extraction can drift on STEP files with shared assembly instances; use XCAF tree traversal for complex multi-instance assemblies.
+- Zero-collision numeric screening does not certify weld structural strength or CNC toolpath reachability.
 
 ## mechanisms-transmissions
 
@@ -1859,6 +1912,32 @@ When: When reconstructing 3D assets from 2D image references with high geometric
 - Single-view inputs leave hidden sides unknown; do not fill them with hosted generation, record UNKNOWN or request more references.
 - High-frequency decal textures require vector artwork for sub-pixel sharpness.
 - The module's Nano Banana section is historical and policy-forbidden; module is trust_tier draft and its numeric gates are heuristics.
+
+### Topic: studio-catalogue-ai-refine
+
+When: When rendering CAD or product assemblies with 100% geometry lockdown, decoupled wood-grain vs color-stain OpenPBR shaders, automatic Face vs CutEdge normal slotting, standardized 6-shot studio cameras, and AI refinement conditioning kits.
+
+- `knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md` — read-verify; SHA256 `e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52`
+  Caution: AI-refined images (Nano Banana Pro / Imagen / GPT-4o) are POST_RENDER_CONCEPT_MEDIA and must never substitute for NATIVE_BLENDER_RENDER geometry/framing gate evidence. ShaderNodeBevel creates optical specular rounding in Cycles only; it does not alter exported STL/STEP geometry.
+- `scripts/boilerplates/bp_studio_catalogue_render.py` — inspect-adapt; SHA256 `7f0e5ac12c0089113758ba11f84fb9f6b2a6d4612b66eff69a83057b3fa932d8`
+  Caution: Verifies vertex SHA256 invariance across normal-based Face/CutEdge slotting and 6-camera studio setup; does not launch long Cycles batch renders during self-test.
+
+**Steps**
+
+- Verify CAD vertex coordinate hash invariance (Geometry Lockdown), then partition laminated/plywood boards into Face veneers and CutEdge multiplex slots by face normal alignment.
+- Construct OpenPBR Principled BSDF v2 materials with decoupled Grain/Roughness/Bump and Color Stain (Mix MULTIPLY) branches plus a non-destructive ShaderNodeBevel (0.5-0.8 mm).
+- Frame the 6 standardized studio catalogue cameras (01_front_view, 02_side_view, 03_top_view, 04_3_4_beauty, 05_overview_studio, 06_details_macro) with Grazing Chiaroscuro softboxes and AgX color management, and emit ai_refine_manifest.json.
+
+**Gates**
+
+- Mesh vertex SHA256 before and after material slotting and studio rig construction is identical (100% CAD geometry lockdown).
+- All 6 studio cameras and 3-point Grazing Chiaroscuro lights are created and framed against evaluated world-space bounds with AgX view transform active.
+- AI refine manifest explicitly tags outputs as POST_RENDER_CONCEPT_MEDIA and preserves NATIVE_BLENDER_RENDER_LOCKED provenance.
+
+**Limitations**
+
+- ShaderNodeBevel is a Cycles ray-tracing normal effect and does not render in EEVEE or alter exported CAD/STL geometry.
+- AI-refined images produced via Nano Banana Pro, Imagen 3, or GPT-4o are marketing concept media and never qualify as geometric or dimensional gate evidence.
 
 ## native-procedural-simulation
 

@@ -13364,448 +13364,460 @@
         },
         {
           "line": 305,
-          "text": "native-product-visualization"
-        },
-        {
-          "line": 309,
-          "text": "Base reading"
-        },
-        {
-          "line": 318,
-          "text": "Steps"
-        },
-        {
-          "line": 325,
-          "text": "Gates"
+          "text": "Topic: organic-scaffold-machining-split"
         },
         {
           "line": 331,
+          "text": "native-product-visualization"
+        },
+        {
+          "line": 335,
+          "text": "Base reading"
+        },
+        {
+          "line": 344,
+          "text": "Steps"
+        },
+        {
+          "line": 351,
+          "text": "Gates"
+        },
+        {
+          "line": 357,
           "text": "Limitations"
         },
         {
-          "line": 336,
+          "line": 362,
           "text": "Topic: opaque-micro-surfaces"
         },
         {
-          "line": 363,
+          "line": 389,
           "text": "Topic: subsurface-optics"
         },
         {
-          "line": 384,
+          "line": 410,
           "text": "Topic: thin-film-optics"
         },
         {
-          "line": 407,
+          "line": 433,
           "text": "Topic: fiber-fabric-surfaces"
         },
         {
-          "line": 428,
+          "line": 454,
           "text": "Topic: master-artisan-pbr-grooming"
         },
         {
-          "line": 453,
+          "line": 479,
           "text": "native-animation-rigging"
         },
         {
-          "line": 457,
+          "line": 483,
           "text": "Base reading"
         },
         {
-          "line": 468,
+          "line": 494,
           "text": "Steps"
         },
         {
-          "line": 475,
+          "line": 501,
           "text": "Gates"
         },
         {
-          "line": 483,
+          "line": 509,
           "text": "Limitations"
         },
         {
-          "line": 489,
+          "line": 515,
           "text": "Topic: rig-spaces-ik-mechanisms"
         },
         {
-          "line": 521,
+          "line": 547,
           "text": "Topic: skinning-modular-rigs"
         },
         {
-          "line": 545,
+          "line": 571,
           "text": "Topic: animation-curves-drivers"
         },
         {
-          "line": 569,
+          "line": 595,
           "text": "Topic: robot-joint-frame-adapter"
         },
         {
-          "line": 591,
+          "line": 617,
           "text": "Topic: assembly-collision-staging"
         },
         {
-          "line": 620,
+          "line": 646,
           "text": "polymer-functional-print"
         },
         {
-          "line": 624,
+          "line": 650,
           "text": "Base reading"
         },
         {
-          "line": 634,
+          "line": 660,
           "text": "Steps"
         },
         {
-          "line": 641,
+          "line": 667,
           "text": "Gates"
         },
         {
-          "line": 648,
+          "line": 674,
           "text": "Limitations"
         },
         {
-          "line": 654,
+          "line": 680,
           "text": "Topic: advanced-deposition-process"
         },
         {
-          "line": 678,
+          "line": 704,
           "text": "Topic: polymer-selection"
         },
         {
-          "line": 697,
+          "line": 723,
           "text": "Topic: print-boss-cutouts"
         },
         {
-          "line": 721,
+          "line": 747,
           "text": "Topic: plate-nesting-screen"
         },
         {
-          "line": 746,
+          "line": 772,
           "text": "Topic: dfam-3dprinting-production"
         },
         {
-          "line": 771,
+          "line": 797,
           "text": "precision-assembly-metrology"
         },
         {
-          "line": 775,
+          "line": 801,
           "text": "Base reading"
         },
         {
-          "line": 783,
+          "line": 809,
           "text": "Steps"
         },
         {
-          "line": 790,
+          "line": 816,
           "text": "Gates"
         },
         {
-          "line": 796,
+          "line": 822,
           "text": "Limitations"
         },
         {
-          "line": 801,
+          "line": 827,
           "text": "Topic: production-coverage-audit"
         },
         {
-          "line": 830,
+          "line": 856,
           "text": "Topic: geometry-diagnostics"
         },
         {
-          "line": 860,
+          "line": 886,
           "text": "Topic: manufacturing-evidence"
         },
         {
-          "line": 890,
+          "line": 916,
           "text": "Topic: parametric-source-contract"
         },
         {
-          "line": 918,
+          "line": 944,
           "text": "Topic: compliant-tendon-motion"
         },
         {
-          "line": 948,
+          "line": 974,
           "text": "Topic: precision-material-tessellation"
         },
         {
-          "line": 973,
+          "line": 999,
           "text": "Topic: hardware-interface-geometry"
         },
         {
-          "line": 1001,
+          "line": 1027,
           "text": "Topic: industrial-connector-panel-packaging"
         },
         {
-          "line": 1032,
+          "line": 1058,
           "text": "Topic: enclosure-sealing-emc-harness"
         },
         {
-          "line": 1059,
+          "line": 1085,
+          "text": "Topic: cad-step-roundtrip-dfm"
+        },
+        {
+          "line": 1112,
           "text": "mechanisms-transmissions"
         },
         {
-          "line": 1063,
+          "line": 1116,
           "text": "Base reading"
         },
         {
-          "line": 1073,
+          "line": 1126,
           "text": "Steps"
         },
         {
-          "line": 1080,
+          "line": 1133,
           "text": "Gates"
         },
         {
-          "line": 1087,
+          "line": 1140,
           "text": "Limitations"
         },
         {
-          "line": 1093,
+          "line": 1146,
           "text": "Topic: contact-wear-sealing"
         },
         {
-          "line": 1119,
+          "line": 1172,
           "text": "Topic: cycloid-profile-kinematics"
         },
         {
-          "line": 1143,
+          "line": 1196,
           "text": "Topic: actuator-duty-thermal"
         },
         {
-          "line": 1163,
+          "line": 1216,
           "text": "Topic: parametric-gear-profile"
         },
         {
-          "line": 1184,
+          "line": 1237,
           "text": "robotics-links-simulation"
         },
         {
-          "line": 1188,
+          "line": 1241,
           "text": "Base reading"
         },
         {
-          "line": 1199,
+          "line": 1252,
           "text": "Steps"
         },
         {
-          "line": 1206,
+          "line": 1259,
           "text": "Gates"
         },
         {
-          "line": 1213,
+          "line": 1266,
           "text": "Limitations"
         },
         {
-          "line": 1219,
+          "line": 1272,
           "text": "Topic: dynamic-harness-routing"
         },
         {
-          "line": 1249,
+          "line": 1302,
           "text": "Topic: actuator-foc-motion-control"
         },
         {
-          "line": 1273,
+          "line": 1326,
           "text": "Topic: sensor-fusion-state-estimation"
         },
         {
-          "line": 1297,
+          "line": 1350,
           "text": "Topic: embedded-realtime-bus-safety"
         },
         {
-          "line": 1322,
+          "line": 1375,
           "text": "Topic: production-mechatronics-gate"
         },
         {
-          "line": 1348,
+          "line": 1401,
           "text": "Topic: thermal-management-actuator-cooling"
         },
         {
-          "line": 1373,
+          "line": 1426,
           "text": "Topic: power-distribution-bms-protection"
         },
         {
-          "line": 1398,
+          "line": 1451,
           "text": "Topic: functional-safety-iso13849"
         },
         {
-          "line": 1423,
+          "line": 1476,
           "text": "Topic: impedance-admittance-control"
         },
         {
-          "line": 1448,
+          "line": 1501,
           "text": "Topic: kinematic-calibration-metrology"
         },
         {
-          "line": 1474,
+          "line": 1527,
           "text": "Topic: joint-bearing-preload-life"
         },
         {
-          "line": 1500,
+          "line": 1553,
           "text": "Topic: robot-pcb-layout-power"
         },
         {
-          "line": 1525,
+          "line": 1578,
           "text": "Topic: ros2-realtime-control"
         },
         {
-          "line": 1550,
+          "line": 1603,
           "text": "Topic: emc-environmental-qualification"
         },
         {
-          "line": 1575,
+          "line": 1628,
           "text": "render-export-delivery"
         },
         {
-          "line": 1579,
+          "line": 1632,
           "text": "Base reading"
         },
         {
-          "line": 1588,
+          "line": 1641,
           "text": "Steps"
         },
         {
-          "line": 1595,
+          "line": 1648,
           "text": "Gates"
         },
         {
-          "line": 1602,
+          "line": 1655,
           "text": "Limitations"
         },
         {
-          "line": 1608,
+          "line": 1661,
           "text": "Topic: native-render-delivery"
         },
         {
-          "line": 1637,
+          "line": 1690,
           "text": "Topic: native-task-lifecycle"
         },
         {
-          "line": 1666,
+          "line": 1719,
           "text": "Topic: evaluated-camera-screen"
         },
         {
-          "line": 1691,
+          "line": 1744,
           "text": "Topic: renderer-diagnostics"
         },
         {
-          "line": 1717,
+          "line": 1770,
           "text": "Topic: participating-media"
         },
         {
-          "line": 1738,
+          "line": 1791,
           "text": "Topic: color-denoise-delivery"
         },
         {
-          "line": 1762,
+          "line": 1815,
           "text": "Topic: framing-export-contract"
         },
         {
-          "line": 1786,
+          "line": 1839,
           "text": "Topic: public-review-publication"
         },
         {
-          "line": 1813,
+          "line": 1866,
           "text": "Topic: cinematic-animation-render"
         },
         {
-          "line": 1837,
+          "line": 1890,
           "text": "Topic: visual-fidelity-image-matching"
         },
         {
-          "line": 1863,
+          "line": 1916,
+          "text": "Topic: studio-catalogue-ai-refine"
+        },
+        {
+          "line": 1942,
           "text": "native-procedural-simulation"
         },
         {
-          "line": 1867,
+          "line": 1946,
           "text": "Base reading"
         },
         {
-          "line": 1877,
+          "line": 1956,
           "text": "Steps"
         },
         {
-          "line": 1884,
+          "line": 1963,
           "text": "Gates"
         },
         {
-          "line": 1891,
+          "line": 1970,
           "text": "Limitations"
         },
         {
-          "line": 1896,
+          "line": 1975,
           "text": "Topic: modifier-input-contract"
         },
         {
-          "line": 1924,
+          "line": 2003,
           "text": "Topic: fields-parametric-solids"
         },
         {
-          "line": 1954,
+          "line": 2033,
           "text": "Topic: simulation-repeat-budgets"
         },
         {
-          "line": 1981,
+          "line": 2060,
           "text": "Topic: sdf-feature-preservation"
         },
         {
-          "line": 2003,
+          "line": 2082,
           "text": "Topic: graded-lattice-reinforcement"
         },
         {
-          "line": 2025,
+          "line": 2104,
           "text": "Topic: procedural-component-adapters"
         },
         {
-          "line": 2049,
+          "line": 2128,
           "text": "Topic: geometry-nodes-production"
         },
         {
-          "line": 2075,
+          "line": 2154,
           "text": "native-character-creature"
         },
         {
-          "line": 2079,
+          "line": 2158,
           "text": "Base reading"
         },
         {
-          "line": 2091,
+          "line": 2170,
           "text": "Steps"
         },
         {
-          "line": 2099,
+          "line": 2178,
           "text": "Gates"
         },
         {
-          "line": 2107,
+          "line": 2186,
           "text": "Limitations"
         },
         {
-          "line": 2115,
+          "line": 2194,
           "text": "Topic: character-proportion-anatomy"
         },
         {
-          "line": 2146,
+          "line": 2225,
           "text": "Topic: animation-topology-facial-loops"
         },
         {
-          "line": 2171,
+          "line": 2250,
           "text": "Topic: facs-blendshape-targets"
         },
         {
-          "line": 2198,
+          "line": 2277,
           "text": "Topic: hair-curves-grooming-shading"
         },
         {
-          "line": 2229,
+          "line": 2308,
           "text": "Topic: character-rig-locomotion"
         }
       ],
       "kind": "knowledge",
-      "lines": 2257,
+      "lines": 2336,
       "loads_with": [],
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "723588b24787066f6d360d04b96defd99ab913676b63f9c3ec950d9b9c1d0d63",
+      "sha256": "c2dd79f907dc4505661cd80cc6ec588e68107433475dc7a32d5b060b56301446",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -23033,7 +23045,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "c7da30f86880cf41c14c95ab2708254c3604c6fc8e4a2305ad9c6a30cd2731aa",
+  "source_digest": "234a4fcd64a154305c3385c5209c2c84720b25ce11d504d71beffacf4291dc1d",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -23275,7 +23287,7 @@
     "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md": "4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a",
     "knowledge/INDEX.md": "cee3260720710a8b87724bc9eac66bce1fa7f89ee54791f11e8c3acbdd05e760",
     "knowledge/catalog-config.json": "b4e9cec098d8bbdf834f25b3cb0f8a614fac849dabe379bb3f41692a816d4686",
-    "knowledge/generated-workflows.md": "723588b24787066f6d360d04b96defd99ab913676b63f9c3ec950d9b9c1d0d63",
+    "knowledge/generated-workflows.md": "c2dd79f907dc4505661cd80cc6ec588e68107433475dc7a32d5b060b56301446",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
