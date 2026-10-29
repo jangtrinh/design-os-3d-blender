@@ -37,6 +37,7 @@
       "Audit the exported mesh topology for non-manifold edges, zero-area faces, and bounding-box dimensional tolerances."
     ],
     "brandColor": "#202020",
+    "composerIcon": "./docs/images/composer-icon.svg",
     "logo": "./docs/images/cover.png"
   }
 }
