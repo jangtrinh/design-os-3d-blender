@@ -22,6 +22,12 @@ design-os-3d-blender = "design_os_3d_blender_mcp.server:main"
 [tool.hatch.build.targets.wheel]
 packages = ["src/design_os_3d_blender_mcp"]
 
+# The server reads knowledge/ and specs/ at run time; ship them inside the wheel
+# so `uvx design-os-3d-blender` from PyPI has them (a checkout still uses the repo copies).
+[tool.hatch.build.targets.wheel.force-include]
+"knowledge" = "design_os_3d_blender_mcp/_data/knowledge"
+"specs" = "design_os_3d_blender_mcp/_data/specs"
+
 [tool.hatch.build.targets.sdist]
 only-include = [
     "src",

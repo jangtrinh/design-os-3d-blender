@@ -7,5 +7,16 @@
   "repository": {
     "url": "https://github.com/jangtrinh/design-os-3d-blender",
     "source": "github"
-  }
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "design-os-3d-blender",
+      "version": "0.2.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
 }
