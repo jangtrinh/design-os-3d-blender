@@ -1,5 +1,7 @@
 # DESIGN:OS 3D Blender Agent (`design-os-3d-blender`)
 
+<!-- mcp-name: io.github.jangtrinh/design-os-3d-blender -->
+
 **Parametric 3D mechanical parts generator, headless Blender Python (`bpy`) pipeline, and embedded Three.js CAD showcase engine.**
 
 Generate dimensionally accurate gears, enclosures, drone frames, and exploded mechanical assemblies from plain-English specs or JSON parameters, complete with glTF/STL exports and interactive browser inspection.

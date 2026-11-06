@@ -40,6 +40,7 @@ mcp = ServerClass("design-os-3d-blender")
 _CURRENT_DIR = Path(__file__).resolve().parent
 _CANDIDATE_ROOTS = [
     _CURRENT_DIR.parent.parent,
+    _CURRENT_DIR / "_data",  # wheel install: knowledge/ and specs/ are bundled here
     Path.cwd(),
 ]
 REPO_ROOT = _CURRENT_DIR.parent.parent
