@@ -1,13 +1,12 @@
-# Two full product builds: the pipeline that ran, and what it cost
+# Three full product builds: the pipeline that ran, and what it cost
 
-September 2026. CK-001 (reference keyboard, from one owner photo) and DC-01 (desktop companion,
+September–November 2026. CK-001 (reference keyboard, from one owner photo), DC-01 (desktop companion,
 from "build it until it is ready for 3D printing, including the board, wiring, display, charger
-and battery") were built end to end in Blender 5.2 by an agent. This is the distillation of both
-working records: `plans/260917-reference-keyboard`, `plans/260917-keyboard-refinement`,
-`plans/260917-keyboard-manufacturing`, `plans/260917-desktop-companion`,
-`plans/260918-production-coverage`, and the build directories they produced.
+and battery"), and MC-RB5320 (Mochi-Soul companion housing and 36-second 12-shot Cycles 3D product film)
+were built end to end in Blender 5.2 by an agent. This is the distillation of their working records.
 
 The incident-level table for CK-001 lives in [the CK-001 retrospective](ck-001-session-retrospective.md);
+the MC-RB5320 retrospective lives in [the MC-RB5320 retrospective](mc-rb5320-session-retrospective.md);
 the publishing leg lives in [delivery review publication](delivery-review-publication.md). This
 file is the cross-build view: the shape of the pipeline, the failures that cost the most, and
 which lessons are now code rather than prose.
@@ -85,6 +84,10 @@ negative control.
 | Harness curvature at extrema and joins | `integration/harness/verify_saved.py`, `verify_pair_curvature.py` |
 | ECAD | native KiCad ERC/DRC plus `check_electronics.py`, `check_copper.py` with injected faults |
 | Media chain, frame identity, decode | `presentation/smooth/{verify30,render30,compose30}.py`, `delivery/package.py` |
+| Sequence render continuity & shader drops | `scripts/check-sequence-continuity.py` (E4 partial resume via `--emit-rerun-json`) |
+| Video bitstream, tv range & framemd5 decode | `scripts/verify-video-bitstream.py` (ROB-AD §7 & distinct-ratio gate) |
+| Image metadata & host path hygiene | `scripts/sanitize-delivery-assets.py` (strips tEXt chunks, relativizes JSON paths) |
+| Zero-screw enclosure & perforation generators | `scripts/boilerplates/dfam_3dprint/bp_enclosure_joints.py`, `bp_parametric_perforations.py` |
 | Physical-record honesty | `manufacturing/qualification/evidence_gate.py` (fail-closed, `frozen_at`, snapshot sha, required configurations) |
 | Published review pages | `scripts/check-html-tag-balance.py`, `scripts/page-checks/` |
 

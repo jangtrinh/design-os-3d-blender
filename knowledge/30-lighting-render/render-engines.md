@@ -139,10 +139,13 @@ R10. Do not render straight to FFmpeg for anything you may need to re-do.
     Why: a crash at frame 400 of 500 loses the whole file; frames are resumable.
     Violation: hours of GPU time gone; no partial deliverable.
 
-R11. `use_persistent_data = True` only for animations of a static scene. <!-- ease:source S2 anchor="RenderSettings use_persistent_data" -->
+R11. `use_persistent_data = True` only for animations of a truly static scene (camera fly-through only). <!-- ease:source S2 anchor="RenderSettings use_persistent_data" -->
     Why: it keeps the whole Cycles scene resident between frames — big speedup, big RAM
     cost, and it can retain stale data if you mutate the scene between frames from Python.
-    Violation: OOM kill, or frames that render with the previous frame's data.
+    Crucially on Apple Silicon Cycles Metal, `persistent_data = True` intermittently drops
+    procedural shaders (like `ShaderNodeBevel` or dynamic image swaps) into black silhouettes
+    across intermediate frames while endpoint frames look valid.
+    Violation: OOM kill, frames that render with previous frame's data, or intermittent mid-sequence black silhouettes (audit with `scripts/check-sequence-continuity.py`).
 
 R12. EEVEE raytracing is **off** by default; without it there are no ray-traced <!-- ease:source UNVERIFIED reason="RNA defines use_raytracing but the default lives in DNA defaults, which were not frozen" -->
     reflections/GI.

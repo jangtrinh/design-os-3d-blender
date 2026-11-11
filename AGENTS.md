@@ -50,6 +50,7 @@ Getting this wrong costs a rebuild, not a tweak: `render-only` geometry cannot b
 | Geometry/STL assert fails although the mesh looks "clean" | degenerate faces, non-manifold after boolean | `production-gate.py` topology + re-read the STL |
 | Endpoint PASS but interpenetration mid-motion | only the final state was verified | per-frame sweep + animatic; `assembly-sequences.md` |
 | Black render / black silhouette | persistent_data stale, camera inside a wall, no light | `framing()`, `frame_stats()`, `persistent_data=False` |
+| Mid-sequence shader drop to black silhouette while endpoints pass | Cycles Metal with `persistent_data=True` dropping `ShaderNodeBevel`/procedural shaders during multi-frame mutations | `persistent_data=False` for sequence renders; `scripts/check-sequence-continuity.py --emit-rerun-json` to resume only failed frames (Backlog E4) |
 | Render correct but owner rejects it | camera/pacing/scope not in the contract | `refine-spec`; ask first, do not blindly re-render |
 | `ModuleNotFoundError` (scipy/fitz) | Blender's Python ≠ host Python | `importlib.util.find_spec` in preflight; code must not depend on it |
 | MCP connection error | addon not Connected | tell the user, do not retry |

@@ -205,6 +205,8 @@ def assert_minimum_wall_thickness(obj, min_thickness_mm=1.6):
 ### 7. Production edge cases
 
 *   **CF-Filled Abrasive Nozzle Wear:** When printing carbon-fiber filaments (PA-CF, PET-CF), nozzle orifices wear from $\varnothing 0.4\text{ mm}$ to $\varnothing 0.65\text{ mm}$ over a single spool. As the orifice widens, dimensional hole tolerances expand unpredictably. Always calibrate flow with a dedicated hardened steel or ruby nozzle. <!-- ease:source UNVERIFIED reason="0.4 to 0.65 mm wear figure unsourced" -->
+*   **Zero-Screw Clamshell Enclosure Joints:** Pure FDM snap enclosures require a top hook-hinge pair ($\theta \approx 10^\circ\text{–}12^\circ$ swing entry) combined with lower cantilever snap locks. Use `scripts/boilerplates/dfam_3dprint/bp_enclosure_joints.py` to calculate permissible insertion angles and spring deflection. Keep mating clearance at $0.20\text{–}0.25\text{ mm}$.
+*   **Acoustic & Thermal Perforation Grilles:** Concentric or hexagonal micro-bore arrays (e.g. speaker/mic grilles) must maintain ligament thickness $w_{\text{ligament}} = \text{pitch} - \varnothing \ge 2 \times \text{nozzle diameter}$ ($1.20\text{ mm}$ minimum). When boolean-cutting curved inner walls, truncate internal cavities with a flat ceiling to eliminate knife-edge lips. Implemented in `scripts/boilerplates/dfam_3dprint/bp_parametric_perforations.py`.
 
 ### 8. Sources & References
 
