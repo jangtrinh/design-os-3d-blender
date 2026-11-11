@@ -82,6 +82,10 @@ done
 if grep -rIlE 'sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH) PRIVATE' . --exclude-dir=.git >/dev/null; then
   echo "export-public-repo: secret-looking string found; refusing" >&2; exit 1
 fi
+# Privacy hygiene: check for developer host paths (/Users/ or /home/) in exported JSON manifests
+if grep -rIlE '"/(Users|home)/[^"]+' builds/ --include='*.json' --exclude-dir=.git >/dev/null 2>&1; then
+  echo "export-public-repo: developer workstation paths found in exported JSON manifests; run scripts/sanitize-delivery-assets.py" >&2; exit 1
+fi
 # Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in
 # shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt.
 # Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies).

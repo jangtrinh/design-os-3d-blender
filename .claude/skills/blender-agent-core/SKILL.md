@@ -19,6 +19,7 @@ This skill is a ROUTER + procedure. The deep knowledge lives in `knowledge/` —
 | Assembly/exploded view | [Assembly sequences](references/assembly-sequences.md) |
 | Load-bearing, duty, working mechanism | [Mechanical evidence](references/recipes.md#mechanical-evidence) |
 | Batch render, video, export | [Render delivery](references/recipes.md#render-delivery) |
+| Product video, hybrid 3D+SVG animation, or sequence batch render | Chunked Visual Gates: Stage 1 Form Gate → Stage 2 Mechanical Gate → Stage 3 Storyboard Sheet Gate before GPU batch render; audit with `scripts/check-sequence-continuity.py` and `scripts/verify-video-bitstream.py` |
 | Turntable / product shot | `scripts/turntable-preview.py` + `knowledge/60-pipeline/product-viz-and-shots.md` |
 | Python API research, evaluated geometry, Action slots or Geometry Nodes inputs | `knowledge/00-foundations/native-api-contracts.md`; route the relevant contract topic through `blender-knowledge-workbench` |
 | Multi-pass native work needs resumable evidence, explicit parameters or independent criticism | `knowledge/60-pipeline/native-agent-iteration.md`; use `scripts/native-pipeline.py` for declared execution and `scripts/native-review.py` for revision-bound review |

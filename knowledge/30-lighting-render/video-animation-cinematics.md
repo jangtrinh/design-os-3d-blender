@@ -130,6 +130,19 @@ Blender 4.x and 5.x default to **AgX** color management for good reason: <!-- ea
 - [ ] **Frame Budget:** Test frame rendered at full resolution finishes within $\le 45\,\text{seconds}$ on target GPU. <!-- ease:source UNVERIFIED reason="45 s per frame is an arbitrary gate; set the budget from a measured full-size preflight render" -->
 - [ ] **Color Space:** Scene verified in `AgX` transform; zero clipped oversaturated digital clipping.
 - [ ] **Output Sequence:** Render output path points to a dedicated folder writing `.png` or `.exr` frames, not a direct `.mp4`.
+- [ ] **Bitstream Verification:** Final deliverable verified via `scripts/verify-video-bitstream.py` (strict `H.264`, `yuv420p`, `color_range=tv`, `bt709`, `framemd5` distinct-state ratio $\ge 0.85$, and audio policy).
+
+---
+
+### 6. Hybrid 3D Sequence + SVG Cinematics Pipeline
+
+When pairing high-fidelity 3D sequence renders with SVG/HTML graphics engines (e.g. Design OS SVG Animation / `seek-capture`):
+1. **3D-First Screen Real Estate:** 90%+ of visible canvas is raw 3D sequence; vector HUD elements remain unobtrusive callouts.
+2. **Headless Chrome Frame Sync:** In `seek-capture`, sequence images must wait for `await img.decode()` inside `window.__seekToTime(t)` to ensure zero dropped or black frames.
+3. **Strict Color Matrix Conversion:** Browser `mjpeg` pipes default to `pc` full-range (`yuvj420p`), which causes QuickTime/Safari gamma shifts. Re-encode with:
+   `-vf "scale=in_range=pc:out_range=tv,format=yuv420p" -color_range tv -colorspace bt709`
+4. **Distinct Frame Audit:** Run `ffmpeg -f framemd5` via `scripts/verify-video-bitstream.py` to prove every rendered state is unique ($1,080 / 1,080$ frames for 36s @ 30 fps).
+5. **Clean Poster Frames:** Ensure the first and last frames have $L \ge 2.0$ (no black dips ruining paused video players). Hold final title cards for $\ge 1.0\text{ s}$.
 
 ## Failure Modes (Mandatory)
 

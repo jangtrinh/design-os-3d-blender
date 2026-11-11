@@ -2,11 +2,11 @@
   "boundaries": "Local text inventory; no execution or technical certification. research/tools, binaries, caches, generated media and unselected builds excluded. Imported text retained as provenance; only explicitly portable references route by default.",
   "counts": {
     "asset-example": 30,
-    "execution-source": 156,
+    "execution-source": 165,
     "imported-reference": 47,
     "knowledge": 61,
-    "research-synthesis": 76,
-    "workflow": 56
+    "research-synthesis": 77,
+    "workflow": 57
   },
   "dependency_edges": 175,
   "foundations": [
@@ -27,28 +27,28 @@
           "text": "0. Routing by task"
         },
         {
-          "line": 35,
+          "line": 36,
           "text": "1. Knowledge routing (mandatory)"
         },
         {
-          "line": 38,
+          "line": 39,
           "text": "2. Loop (R1–R8 condensed — full version in agent-workflow-loop.md)"
         },
         {
-          "line": 64,
+          "line": 65,
           "text": "3. Verify ladder (cheap → expensive; if a number answers the question, do not spend an image)"
         },
         {
-          "line": 79,
+          "line": 80,
           "text": "4. Execution modes (check in order)"
         },
         {
-          "line": 85,
+          "line": 86,
           "text": "5. Failure quick-map"
         }
       ],
       "kind": "workflow",
-      "lines": 94,
+      "lines": 95,
       "loads_with": [],
       "mirror": {
         "matches": true,
@@ -57,7 +57,7 @@
       "name": null,
       "path": ".agents/skills/blender-agent-core/SKILL.md",
       "related": [],
-      "sha256": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
+      "sha256": "2668920805d7e86f7dcccba670d997d11533cc859785a1b5cbd627671f51d667",
       "tags": [],
       "title": "Blender Agent Core",
       "use": "read"
@@ -3399,29 +3399,29 @@
           "text": "Failure map (from real records, not theory)"
         },
         {
-          "line": 59,
+          "line": 60,
           "text": "Product evidence and recovery"
         },
         {
-          "line": 108,
+          "line": 109,
           "text": "Visual feedback for the user (MANDATORY)"
         },
         {
-          "line": 111,
+          "line": 112,
           "text": "Delivery"
         },
         {
-          "line": 137,
+          "line": 138,
           "text": "Resource map"
         }
       ],
       "kind": "workflow",
-      "lines": 152,
+      "lines": 153,
       "loads_with": [],
       "name": null,
       "path": "AGENTS.md",
       "related": [],
-      "sha256": "d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7",
+      "sha256": "6f97b37688520d94e082cb5e8889a4094d970c673d111650c7589398bf743b57",
       "tags": [],
       "title": "AGENTS.md — Blender AI Orchestration (primary operational file)",
       "use": "read"
@@ -4779,38 +4779,85 @@
       "headings": [
         {
           "line": 1,
-          "text": "Two full product builds: the pipeline that ran, and what it cost"
+          "text": "MC-RB5320 Session Retrospective: Zero-Screw FDM Enclosure & 12-Shot Product Film"
         },
         {
-          "line": 15,
-          "text": "The shape both builds converged on"
+          "line": 10,
+          "text": "1. What is Now Reusable"
         },
         {
-          "line": 33,
-          "text": "What actually cost the most"
+          "line": 24,
+          "text": "2. Key Incidents & Falsifiers"
+        },
+        {
+          "line": 26,
+          "text": "Incident 1: Cycles Metal `use_persistent_data = True` Blackout Drops"
+        },
+        {
+          "line": 36,
+          "text": "Incident 2: Headless Chrome Seek-Capture `mjpeg` Gamma Shifts"
+        },
+        {
+          "line": 45,
+          "text": "Incident 3: Mid-Film Fade Blackouts and Paused Poster Degradation"
         },
         {
           "line": 51,
+          "text": "Incident 4: Downstream CI Failures on Exported Assets"
+        },
+        {
+          "line": 60,
+          "text": "3. The 3-Stage Chunked Visual Decision Gate"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 78,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/mc-rb5320-session-retrospective.md",
+      "related": [],
+      "sha256": "fa393a19bcf8ce8ffb2015f2ecc246b832bc974e8e85c92c5b0246bf65bb0595",
+      "tags": [],
+      "title": "MC-RB5320 Session Retrospective: Zero-Screw FDM Enclosure & 12-Shot Product Film",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Three full product builds: the pipeline that ran, and what it cost"
+        },
+        {
+          "line": 14,
+          "text": "The shape both builds converged on"
+        },
+        {
+          "line": 32,
+          "text": "What actually cost the most"
+        },
+        {
+          "line": 50,
           "text": "The ten rules worth carrying to the next build"
         },
         {
-          "line": 75,
+          "line": 74,
           "text": "Enforced by code today"
         },
         {
-          "line": 91,
+          "line": 94,
           "text": "Still controller discipline, not code"
         }
       ],
       "kind": "workflow",
-      "lines": 105,
+      "lines": 108,
       "loads_with": [],
       "name": null,
       "path": "docs/native-build-pipeline-lessons.md",
       "related": [],
-      "sha256": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+      "sha256": "7cf7e1ded1cfc92bcdc348e77c845cdc1e81fcbad8ae8c5099192788f4a402ff",
       "tags": [],
-      "title": "Two full product builds: the pipeline that ran, and what it cost",
+      "title": "Three full product builds: the pipeline that ran, and what it cost",
       "use": "read"
     },
     {
@@ -8280,132 +8327,132 @@
           "text": "3. Rules"
         },
         {
-          "line": 164,
+          "line": 167,
           "text": "4. bpy patterns"
         },
         {
-          "line": 166,
+          "line": 169,
           "text": "4.1 Engine selection that survives 4.5 ↔ 5.2"
         },
         {
-          "line": 201,
+          "line": 204,
           "text": "4.2 Cycles device selection (verified 5.2)"
         },
         {
-          "line": 259,
+          "line": 262,
           "text": "4.3 Cycles sampling, denoising, light paths (verified defaults in parentheses) <!-- ease:source S3 anchor=\"samples 4096, preview_samples 1024, adaptive_threshold 0.01, denoising_* defaults, max_bounces 12\" -->"
         },
         {
-          "line": 264,
+          "line": 267,
           "text": "Sampling"
         },
         {
-          "line": 275,
+          "line": 278,
           "text": "Denoising  -- OFF while verifying, ON for delivery"
         },
         {
-          "line": 283,
+          "line": 286,
           "text": "Light paths"
         },
         {
-          "line": 293,
+          "line": 296,
           "text": "Clamping / caustics"
         },
         {
-          "line": 300,
+          "line": 303,
           "text": "Light sampling"
         },
         {
-          "line": 304,
+          "line": 307,
           "text": "Performance"
         },
         {
-          "line": 320,
+          "line": 323,
           "text": "4.4 EEVEE settings (verified 5.2 RNA) <!-- ease:source S2 anchor=\"shadow_pool_size, use_backface_hit, direct/indirect_light_intensity, use_overscan\" -->"
         },
         {
-          "line": 362,
+          "line": 365,
           "text": "Ambient occlusion distance moved to the VIEW LAYER in 5.0:"
         },
         {
-          "line": 364,
+          "line": 367,
           "text": "(scene.eevee.gtao_distance, gtao_quality, use_gtao were removed in 5.0)"
         },
         {
-          "line": 384,
+          "line": 387,
           "text": "4.5 Workbench"
         },
         {
-          "line": 403,
+          "line": 406,
           "text": "4.6 Resolution, format, output (5.x `media_type` first!)"
         },
         {
-          "line": 425,
+          "line": 428,
           "text": "Multilayer EXR (passes):"
         },
         {
-          "line": 431,
+          "line": 434,
           "text": "Video:"
         },
         {
-          "line": 451,
+          "line": 454,
           "text": "4.7 Rendering headlessly"
         },
         {
-          "line": 454,
+          "line": 457,
           "text": "Still, frame 1, PNG"
         },
         {
-          "line": 457,
+          "line": 460,
           "text": "Animation range, with format forced from the CLI"
         },
         {
-          "line": 460,
+          "line": 463,
           "text": "Run a script instead of the built-in render pipeline"
         },
         {
-          "line": 465,
+          "line": 468,
           "text": "render.py"
         },
         {
-          "line": 476,
+          "line": 479,
           "text": "Still:"
         },
         {
-          "line": 479,
+          "line": 482,
           "text": "Animation (5.0+ accepts an explicit range on the operator):"
         },
         {
-          "line": 523,
+          "line": 526,
           "text": "4.8 Headless viability matrix"
         },
         {
-          "line": 550,
+          "line": 553,
           "text": "5. Failure modes"
         },
         {
-          "line": 574,
+          "line": 577,
           "text": "6. Parameter defaults by use case"
         },
         {
-          "line": 600,
+          "line": 603,
           "text": "7. Verification checklist"
         },
         {
-          "line": 614,
+          "line": 617,
           "text": "8. Source notes and unverified items (legacy list)"
         },
         {
-          "line": 631,
+          "line": 634,
           "text": "Failure Modes (Mandatory)"
         },
         {
-          "line": 639,
+          "line": 642,
           "text": "Sources"
         }
       ],
       "kind": "knowledge",
-      "lines": 648,
+      "lines": 651,
       "loads_with": [
         "lighting",
         "compositing-output",
@@ -8418,7 +8465,7 @@
         "knowledge/30-lighting-render/compositing-output.md",
         "knowledge/20-shading/materials-pbr.md"
       ],
-      "sha256": "8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8",
+      "sha256": "3e8a81e8a1d8fdacaf67351755cce901a2f8de1a5a91ceb4e54e0565dd48ab33",
       "tags": [
         "cycles",
         "eevee",
@@ -8563,16 +8610,20 @@
           "text": "5. Production Gate Checklist (Animation & Render)"
         },
         {
-          "line": 134,
+          "line": 137,
+          "text": "6. Hybrid 3D Sequence + SVG Cinematics Pipeline"
+        },
+        {
+          "line": 147,
           "text": "Failure Modes (Mandatory)"
         },
         {
-          "line": 142,
+          "line": 155,
           "text": "Sources"
         }
       ],
       "kind": "knowledge",
-      "lines": 150,
+      "lines": 163,
       "loads_with": [
         "render-engines",
         "compositing-output",
@@ -8585,7 +8636,7 @@
         "knowledge/30-lighting-render/compositing-output.md",
         "knowledge/40-animation/animation-fcurves.md"
       ],
-      "sha256": "3919a180a8f3b7c701f1d76d1aa3ee8fbe567d5aa642ea935abe91bad2023bfd",
+      "sha256": "d6136f9cfe91d1313a0ec4d9588b9f0029eff81f1ceb1022468b1d7ec92f3d6d",
       "tags": [
         "blender",
         "animation",
@@ -12329,20 +12380,20 @@
           "text": "7. Production edge cases"
         },
         {
-          "line": 209,
+          "line": 211,
           "text": "8. Sources & References"
         },
         {
-          "line": 219,
+          "line": 221,
           "text": "Failure Modes (Mandatory)"
         },
         {
-          "line": 226,
+          "line": 228,
           "text": "Sources"
         }
       ],
       "kind": "knowledge",
-      "lines": 232,
+      "lines": 234,
       "loads_with": [
         "cad-precision-modeling",
         "3d-printing",
@@ -12357,7 +12408,7 @@
         "knowledge/10-modeling/modifiers.md",
         "knowledge/60-pipeline/export-interchange.md"
       ],
-      "sha256": "cbc3300f08b8a739940d0a37403ee725fca8adbc9f19b4c8872e45b9d62a624a",
+      "sha256": "53bffe76505720b01f1e0430499cd3b17c74e3d89e0ca40c82515940b527e0e7",
       "tags": [
         "3d-printing",
         "polymers",
@@ -13817,7 +13868,7 @@
       "name": null,
       "path": "knowledge/generated-workflows.md",
       "related": [],
-      "sha256": "c2dd79f907dc4505661cd80cc6ec588e68107433475dc7a32d5b060b56301446",
+      "sha256": "afaa689b589e828a2761137ff3fc389ef354e438bc9472af6f053411bf2a2936",
       "tags": [],
       "title": "Generated Blender workflow playbook",
       "use": "read-verify"
@@ -13906,6 +13957,117 @@
       "sha256": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
       "tags": [],
       "title": "Research: turn Blender API findings into reusable contracts",
+      "use": "read-verify"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Deep Repository Audit: LayerZero 3D Print Optimizer (`nnmduc/layerzero`)"
+        },
+        {
+          "line": 12,
+          "text": "1. Executive Summary & Verdict"
+        },
+        {
+          "line": 14,
+          "text": "1.1 What LayerZero Actually Is"
+        },
+        {
+          "line": 19,
+          "text": "1.2 Core Architectural Strength: Zero-Heavy-Dependency Pure NumPy Geometry"
+        },
+        {
+          "line": 24,
+          "text": "1.3 Key Realities vs Hype / Common Assumptions"
+        },
+        {
+          "line": 38,
+          "text": "2. Pinned Repository Identity & Licensing Audit"
+        },
+        {
+          "line": 51,
+          "text": "3. Module-by-Module Code Analysis with Exact Permalinks"
+        },
+        {
+          "line": 53,
+          "text": "3.1 3D Morphology & Vectorized Profiling (`backend/profiler.py`)"
+        },
+        {
+          "line": 57,
+          "text": "Key Algorithms & Mechanics:"
+        },
+        {
+          "line": 87,
+          "text": "3.2 Universal 3MF & STL Patcher (`backend/patcher.py`)"
+        },
+        {
+          "line": 91,
+          "text": "Key Algorithms & Mechanics:"
+        },
+        {
+          "line": 115,
+          "text": "3.3 Slicer Preset Resolution & Material Policies (`backend/filament_profiles.py`)"
+        },
+        {
+          "line": 119,
+          "text": "Key Algorithms & Mechanics:"
+        },
+        {
+          "line": 131,
+          "text": "3.4 Cross-Vendor Slicer Configuration Retargeting (`backend/cross_vendor_config.py`)"
+        },
+        {
+          "line": 135,
+          "text": "Key Algorithms & Mechanics:"
+        },
+        {
+          "line": 144,
+          "text": "3.5 AI Agent Stream Runner (`backend/ai_runner.py`)"
+        },
+        {
+          "line": 148,
+          "text": "Key Algorithms & Mechanics:"
+        },
+        {
+          "line": 158,
+          "text": "4. Applicability & Gap Matrix vs `design-os-3d-blender`"
+        },
+        {
+          "line": 175,
+          "text": "5. Detailed Breakdown of High-Leverage (P0) Adoptions"
+        },
+        {
+          "line": 177,
+          "text": "5.1 P0-1: First-Layer Adhesion & Contact Area Screen (`production_gate/adhesion.py`)"
+        },
+        {
+          "line": 187,
+          "text": "5.2 P0-2: Direct Headless STL-to-3MF Packager (`makerworld-pipeline/scripts/stl_to_bambu_3mf.py`)"
+        },
+        {
+          "line": 199,
+          "text": "5.3 P0-3: Mechanical Fastener Slicing Standards (`knowledge/30-3dprint/mechanical-fasteners-slicing.md`)"
+        },
+        {
+          "line": 224,
+          "text": "6. Proposed Mechanical Verification & Regression Suite"
+        },
+        {
+          "line": 239,
+          "text": "7. Conclusion"
+        }
+      ],
+      "kind": "research-synthesis",
+      "lines": 246,
+      "loads_with": [],
+      "name": null,
+      "path": "research/261111-layerzero-3d-print-optimizer.md",
+      "related": [],
+      "sha256": "75aa99a5befb5b7cde40c3835af7768cd367a55555004486454c82577715a03c",
+      "tags": [],
+      "title": "Deep Repository Audit: LayerZero 3D Print Optimizer (`nnmduc/layerzero`)",
       "use": "read-verify"
     },
     {
@@ -20721,6 +20883,25 @@
       "use": "inspect-adapt"
     },
     {
+      "description": "",
+      "headings": [
+        {
+          "line": 29,
+          "text": "Permissible FDM Clearances by Process & Material Class"
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 190,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/dfam_3dprint/bp_enclosure_joints.py",
+      "related": [],
+      "sha256": "6420798dcdd0676661927e88dca3ac1bd2b8cdd100869b6e27371190d6a0bb64",
+      "tags": [],
+      "title": "Permissible FDM Clearances by Process & Material Class",
+      "use": "inspect-adapt"
+    },
+    {
       "annotation": {
         "basis": "Full static source and AST review by mechanical adapter scout; no runtime certification.",
         "caution": "8-degree taper/minimum-wall claims not implemented; separate pillar/cutter are not assembled; unknown size falls back to M3.",
@@ -20745,6 +20926,20 @@
       "sha256": "0bb053452708229c3a3a7f85e53a20eb32b28b3865d30f9d7b33ee045e87992b",
       "tags": [],
       "title": "Insert Specs: (pilot_hole_dia, insert_length, recommended_boss_od, counterbore_depth)",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 146,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/boilerplates/dfam_3dprint/bp_parametric_perforations.py",
+      "related": [],
+      "sha256": "4193797363e28bdbda3fa797ee57dfbabed02197100191983a70618a746614d8",
+      "tags": [],
+      "title": "bp_parametric_perforations.py",
       "use": "inspect-adapt"
     },
     {
@@ -21044,6 +21239,20 @@
       "use": "inspect-adapt"
     },
     {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 255,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/check-sequence-continuity.py",
+      "related": [],
+      "sha256": "538529d55ca141c88bca8081606756c0f46b92efd4633b4be9013bbe5c5cbffd",
+      "tags": [],
+      "title": "check-sequence-continuity.py",
+      "use": "inspect-adapt"
+    },
+    {
       "annotation": {
         "basis": "static scout; not runtime certification",
         "caution": "Local coordinates: ignores object scale and scene scale_length; identity-cube test only.",
@@ -21175,24 +21384,28 @@
         },
         {
           "line": 85,
+          "text": "Privacy hygiene: check for developer host paths (/Users/ or /home/) in exported JSON manifests"
+        },
+        {
+          "line": 89,
           "text": "Published text is English-only (owner rule 2026-09-06); Vietnamese diacritics anywhere in"
         },
         {
-          "line": 86,
+          "line": 90,
           "text": "shipped Markdown/JSON/Python/shell fail the export. Vendored img2threejs is exempt."
         },
         {
-          "line": 87,
+          "line": 91,
           "text": "Letters unique to Vietnamese orthography (é/ý/à… are skipped: Bézier, Křivánek, Lévy appear in bibliographies)."
         }
       ],
       "kind": "execution-source",
-      "lines": 92,
+      "lines": 96,
       "loads_with": [],
       "name": null,
       "path": "scripts/export-public-repo.sh",
       "related": [],
-      "sha256": "acb1ed3067de86750b74b371ef840ab40493c1014743af4388fb50e136b9fa38",
+      "sha256": "f4a2e4c506e17d07c0edc347ed47e15ffced2773d500fdbb044ae5d850006116",
       "tags": [],
       "title": "Export the curated public tree of this project into the design-os-3d-blender",
       "use": "inspect-adapt"
@@ -22127,6 +22340,25 @@
     },
     {
       "description": "",
+      "headings": [
+        {
+          "line": 33,
+          "text": "Chunks to remove from PNG files"
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 197,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/sanitize-delivery-assets.py",
+      "related": [],
+      "sha256": "2e42a2f34b6d7f4838c7e344ad31d73787f29311c1782ff91efcd13384ed4970",
+      "tags": [],
+      "title": "Chunks to remove from PNG files",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
       "headings": [],
       "kind": "execution-source",
       "lines": 68,
@@ -22186,6 +22418,20 @@
       "sha256": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
       "tags": [],
       "title": "CNC Kitchen / Ruthex Standard Boss Database (dimensions in mm)",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 246,
+      "loads_with": [],
+      "name": null,
+      "path": "scripts/verify-video-bitstream.py",
+      "related": [],
+      "sha256": "91448423830cbec4cfe3fc15d00fa4785979f253fc2c6e50f4a85f944f3f2772",
+      "tags": [],
+      "title": "verify-video-bitstream.py",
       "use": "inspect-adapt"
     },
     {
@@ -22341,6 +22587,25 @@
       "sha256": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0",
       "tags": [],
       "title": "test_animation_contract.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 13,
+          "text": "Dynamic import of modules"
+        }
+      ],
+      "kind": "execution-source",
+      "lines": 98,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/boilerplates/test_enclosure_boilerplates.py",
+      "related": [],
+      "sha256": "22c0fcd70a872905f2c7d066950ba697cb4df4b335e56105ff91740e855231f9",
+      "tags": [],
+      "title": "Dynamic import of modules",
       "use": "inspect-adapt"
     },
     {
@@ -22660,6 +22925,34 @@
       "description": "",
       "headings": [],
       "kind": "execution-source",
+      "lines": 78,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/execution/test_sanitize_assets.py",
+      "related": [],
+      "sha256": "2e3b53c37de903b20b4768fadcd3f87c2faec32b6452fd9f826b8969a9156084",
+      "tags": [],
+      "title": "test_sanitize_assets.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 97,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/execution/test_sequence_continuity.py",
+      "related": [],
+      "sha256": "61a5169bbf8bc0fe9ee440441bd9b4156608057358735ddb047bacf20b0d7026",
+      "tags": [],
+      "title": "test_sequence_continuity.py",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
       "lines": 148,
       "loads_with": [],
       "name": null,
@@ -22687,6 +22980,20 @@
       "sha256": "482b16a38979d105b18e87014baedbb61e3fce2710dcb9d6bdeb2b15e0211f55",
       "tags": [],
       "title": "every render/scene setting preview_render is allowed to touch",
+      "use": "inspect-adapt"
+    },
+    {
+      "description": "",
+      "headings": [],
+      "kind": "execution-source",
+      "lines": 100,
+      "loads_with": [],
+      "name": null,
+      "path": "tests/execution/test_video_bitstream.py",
+      "related": [],
+      "sha256": "aa43c02d0ff0fa4fb1996f99822d09cbc34e44a998435308bfe2be80db270967",
+      "tags": [],
+      "title": "test_video_bitstream.py",
       "use": "inspect-adapt"
     },
     {
@@ -23045,9 +23352,9 @@
     }
   },
   "schema": 1,
-  "source_digest": "234a4fcd64a154305c3385c5209c2c84720b25ce11d504d71beffacf4291dc1d",
+  "source_digest": "80bb0bc676a1cf030fb38e64cb8b4b4b5f7fc350d42703a71071f091846fe051",
   "source_hashes": {
-    ".agents/skills/blender-agent-core/SKILL.md": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
+    ".agents/skills/blender-agent-core/SKILL.md": "2668920805d7e86f7dcccba670d997d11533cc859785a1b5cbd627671f51d667",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".agents/skills/blender-agent-core/references/hard-rules.md": "43e11eee325f274a477fe750b1fb425d7283f019894a15114781096c7dd98fb0",
     ".agents/skills/blender-agent-core/references/recipes.md": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
@@ -23102,7 +23409,7 @@
     ".agents/skills/img2threejs/skills/cs2-pistol.md": "6681a29f650e781cdc63cd4a00da2ccaa744ff78f1b068f51baac48321e03236",
     ".agents/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".agents/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
-    ".claude/skills/blender-agent-core/SKILL.md": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
+    ".claude/skills/blender-agent-core/SKILL.md": "2668920805d7e86f7dcccba670d997d11533cc859785a1b5cbd627671f51d667",
     ".claude/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
     ".claude/skills/blender-agent-core/references/hard-rules.md": "43e11eee325f274a477fe750b1fb425d7283f019894a15114781096c7dd98fb0",
     ".claude/skills/blender-agent-core/references/recipes.md": "8e492573f7f57e8d837eeb4e24b12853c8497b49ca871955a5b829cc2fc0a1e4",
@@ -23158,7 +23465,7 @@
     ".claude/skills/img2threejs/skills/cs2_technical_analysis.md": "1c69d17a3fed1219e7e98a277bfb27fc4abf3964211306b7a74f324c6dd87cb2",
     ".claude/skills/img2threejs/skills/generic-extract-skill.md": "1ca28b9a27d4318da7f863f348ba5ad14fbf1c15bd714e158544941644667d8d",
     ".project-agent.md": "8cde6609763c6f287717b23587c6f542f195e506e1c9fa283f40b3eaf65af82c",
-    "AGENTS.md": "d994b27effa2f9ae859d2a4215fa53bfe3902c50396f0a019eb3cd2a0a63ecc7",
+    "AGENTS.md": "6f97b37688520d94e082cb5e8889a4094d970c673d111650c7589398bf743b57",
     "CLAUDE.md": "bb60b7245b282e45e5250e7bf6e318fcca9fc01198ca67ffda6782049c6bcc53",
     "CONTEXT.md": "52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833",
     "builds/reference-keyboard/manufacturing/qualification/evidence_gate.py": "6de1db116ecd23f5c683e73334dc5189c12560fe3b9fa084a7e84d6950ede1fa",
@@ -23203,7 +23510,8 @@
     "docs/galleries/wellhead.md": "527d45bf296542c7a8a43788d59d0b521d3669b9ecefe70673e70e5da88c917e",
     "docs/hq-coverage-gate.md": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
     "docs/journals/orc-component-reconstruction.md": "c1da71e4925251a63f3d57a72125237c90390a412d5b8bbf2697f64264bb0a93",
-    "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
+    "docs/mc-rb5320-session-retrospective.md": "fa393a19bcf8ce8ffb2015f2ecc246b832bc974e8e85c92c5b0246bf65bb0595",
+    "docs/native-build-pipeline-lessons.md": "7cf7e1ded1cfc92bcdc348e77c845cdc1e81fcbad8ae8c5099192788f4a402ff",
     "docs/orc-component-brief-template.md": "c5c56946b063550ad27115d8475040e6c7b730dee0ace4a04242cf15b4b32326",
     "docs/orc-component-workflow.md": "18bc17390437d634cc92b079b3b76bd7aa50c526feec5db6ea64834b9f9dbad4",
     "docs/orc-separator-worked-example.md": "b22de7ddd8d962403b73bb83fb53084c7d6788c9625d02077121e5cabf1edfd1",
@@ -23244,9 +23552,9 @@
     "knowledge/20-shading/texturing-baking.md": "f8347cf6060e56c45e5cb8fb6a30110767562fc192866114d681fcc49c2d8004",
     "knowledge/30-lighting-render/compositing-output.md": "0528c5e2114f45647c05c0bd9f3b97247a805bad43975e8b70f01b655b2c28b6",
     "knowledge/30-lighting-render/lighting.md": "088816c0c0073751bdd8bdc865de102ac20a12577405054e9dede45c8345bfec",
-    "knowledge/30-lighting-render/render-engines.md": "8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8",
+    "knowledge/30-lighting-render/render-engines.md": "3e8a81e8a1d8fdacaf67351755cce901a2f8de1a5a91ceb4e54e0565dd48ab33",
     "knowledge/30-lighting-render/studio-catalogue-and-ai-refine.md": "e7ea065f42dcdc97acc9c7b10b883558dc6709e2376841ba6b6231aab23d3b52",
-    "knowledge/30-lighting-render/video-animation-cinematics.md": "3919a180a8f3b7c701f1d76d1aa3ee8fbe567d5aa642ea935abe91bad2023bfd",
+    "knowledge/30-lighting-render/video-animation-cinematics.md": "d6136f9cfe91d1313a0ec4d9588b9f0029eff81f1ceb1022468b1d7ec92f3d6d",
     "knowledge/40-animation/animation-fcurves.md": "25dbdbf28a4136a6a172e5367fe480bbb59d9aa7252f79d0faa458bd54723512",
     "knowledge/40-animation/mocap-retargeting.md": "1f4928baec3b091faf925399bb8524a3ca02ab980e8aa4fc6dd347fefc35b7ff",
     "knowledge/40-animation/rigging-armature.md": "540a630c008c22c42e69492935c5066796cb616f5c5d91bdca7f26d18feea478",
@@ -23276,7 +23584,7 @@
     "knowledge/70-cad-precision-robotics/industrial-connectors-wire-harness.md": "6ec85e179e57365672704fdd788e07616fde1009007ca46cc31972c897d258ef",
     "knowledge/70-cad-precision-robotics/joint-bearing-preload-fatigue-life.md": "574af99c0f4795fb827333a85b6f547d2ed60881fcd668586f2e5cb8f73c6557",
     "knowledge/70-cad-precision-robotics/kinematic-calibration-dh-metrology.md": "f43664571e1bd40d43d6cb843052f31aa850348c0fd8680e4276093c5861a3b0",
-    "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md": "cbc3300f08b8a739940d0a37403ee725fca8adbc9f19b4c8872e45b9d62a624a",
+    "knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md": "53bffe76505720b01f1e0430499cd3b17c74e3d89e0ca40c82515940b527e0e7",
     "knowledge/70-cad-precision-robotics/power-distribution-bms-protection.md": "fd3d05b99ac326f28776895f4fa096457a2094bef2c37c10fb34d5f7fdb4e75a",
     "knowledge/70-cad-precision-robotics/print-plate-layout.md": "ec1e94fe1243a5f1cdb233c2b216b5d54c03d2587a6712a89614899c80d7209e",
     "knowledge/70-cad-precision-robotics/production-mechatronics-gate.md": "47c9a045ae7b381f315b797b0d81d52115c80d6f7ed404fa3376d76e8e30684d",
@@ -23287,9 +23595,10 @@
     "knowledge/70-cad-precision-robotics/thermal-management-actuator-cooling.md": "4bbc3c73cbfc60328b7d83eca45bb9a9f7f8aba28de1ffd48d2c71fc39b6be5a",
     "knowledge/INDEX.md": "cee3260720710a8b87724bc9eac66bce1fa7f89ee54791f11e8c3acbdd05e760",
     "knowledge/catalog-config.json": "b4e9cec098d8bbdf834f25b3cb0f8a614fac849dabe379bb3f41692a816d4686",
-    "knowledge/generated-workflows.md": "c2dd79f907dc4505661cd80cc6ec588e68107433475dc7a32d5b060b56301446",
+    "knowledge/generated-workflows.md": "afaa689b589e828a2761137ff3fc389ef354e438bc9472af6f053411bf2a2936",
     "research/00-SYNTHESIS.md": "fe6dabff7659a61a30ea4c0169144cf138d27a56e33c070f111d90ac5936e3b9",
     "research/260917-blender-api-contracts.md": "be10db74fd166a9a2f1ec3ca07f0be0643a338c0ca7ad3d8861e129c05f65bde",
+    "research/261111-layerzero-3d-print-optimizer.md": "75aa99a5befb5b7cde40c3835af7768cd367a55555004486454c82577715a03c",
     "research/3d-printing-polymer-engineering/01-POLYMER-MATERIALS-TAXONOMY.md": "593b87a33135aa9734fb6e80857794eee902a539cc3a16a2c487fbd43483de57",
     "research/3d-printing-polymer-engineering/02-ANISOTROPY-INTERLAYER-BONDING.md": "619fc507661f1e78eb7e0d9c5b8f0d0f539f482c963f31669c76596cd5753dfc",
     "research/3d-printing-polymer-engineering/03-DFAM-GEOMETRIC-RULES-TOLERANCES.md": "9aca2284a2661c892c72c3eb4f85c4a27eac057999825766bb2557c2bbf31cd8",
@@ -23407,7 +23716,9 @@
     "scripts/boilerplates/character_creature/bp_humanoid_basemesh.py": "48f5bcc2ae2460dae78e17d64e3e925ca2d2dc4435c1e6cc998458b4e1d9b09f",
     "scripts/boilerplates/character_creature/bp_humanoid_rig_ikfk.py": "892d714c228b187677609f5fa3bd9a98a412d09b16058dd4ecc7a1e1b79327dc",
     "scripts/boilerplates/character_creature/bp_skin_sss_shader.py": "2fa9c2a68e5ccf3022bb62eaf0e66ef46db1f5506b5e0d93380243555dd891bc",
+    "scripts/boilerplates/dfam_3dprint/bp_enclosure_joints.py": "6420798dcdd0676661927e88dca3ac1bd2b8cdd100869b6e27371190d6a0bb64",
     "scripts/boilerplates/dfam_3dprint/bp_insert_boss.py": "0bb053452708229c3a3a7f85e53a20eb32b28b3865d30f9d7b33ee045e87992b",
+    "scripts/boilerplates/dfam_3dprint/bp_parametric_perforations.py": "4193797363e28bdbda3fa797ee57dfbabed02197100191983a70618a746614d8",
     "scripts/boilerplates/dfam_3dprint/bp_snap_fits.py": "1af01f09b98946ed9da8068e55e75383caa62d0a36dfecaa2780998c3e7bc488",
     "scripts/boilerplates/dfam_3dprint/bp_teardrop_holes.py": "9e2919971fb179490cae5b3b8344b5a28b01c3abc97e30a65907e4c81691c219",
     "scripts/boilerplates/geometry_nodes/bp_gn_cables.py": "5212fe937edc66bab7b449d0232199ae768b21cc4bd98325e447c433df97eee0",
@@ -23420,8 +23731,9 @@
     "scripts/boilerplates/run_all_boilerplate_tests.py": "bce4755c515b1b9028e8a52c7c8d84eb86e6155e1a578e58db6424dee30e3f9f",
     "scripts/check-html-tag-balance.py": "3fb3f1033942e519dd4aa2c05c307d5a31503dcf783d806723056330467bfefd",
     "scripts/check-pass-coverage.py": "703ba9b7a27bab5b75cfe0e8ec600c2662ad7aafe9485bbe5b62ca7f9856ccc7",
+    "scripts/check-sequence-continuity.py": "538529d55ca141c88bca8081606756c0f46b92efd4633b4be9013bbe5c5cbffd",
     "scripts/compute-mesh-inertia.py": "5b381924096c47c2c1ae38bb7385447eb008edef85f2d39bed9097d8d9fc1c7d",
-    "scripts/export-public-repo.sh": "acb1ed3067de86750b74b371ef840ab40493c1014743af4388fb50e136b9fa38",
+    "scripts/export-public-repo.sh": "f4a2e4c506e17d07c0edc347ed47e15ffced2773d500fdbb044ae5d850006116",
     "scripts/generate-cycloid-drive.py": "1364eb417d11e4a4a189864b1a0bc126ed5cf56dc7ded9e8484bf828edd018e8",
     "scripts/generate-procedural-geonodes.py": "294e8ea053d503b169b622bd9bbc804b830f4ecb6161fa1efca9e5baec07e76d",
     "scripts/generate-procedural-rig.py": "2f77cb8f2da4017204e0b6b107248b579e9ac8a51a4f5f11991228cf27e7ab32",
@@ -23470,9 +23782,11 @@
     "scripts/samples/native-iteration-build.py": "2c3ba670461300c5fa744c609b0bc6964598d71e208d29390512cf5c9093f57d",
     "scripts/samples/native-iteration-review.py": "cc2d2ffabd62ef185bc791f9ea4e54077d0f87dab3188b26ae468d4c6dbcf289",
     "scripts/samples/native_iteration_coupon.py": "9499c0638cbf877117eb968c475020ee743dbaeb582d8e101b07a3d3a44b1aab",
+    "scripts/sanitize-delivery-assets.py": "2e42a2f34b6d7f4838c7e344ad31d73787f29311c1782ff91efcd13384ed4970",
     "scripts/self_check.py": "66d578345476c5c74c705187288dc7c9beaef605815f70ef90a5cc5610793a14",
     "scripts/turntable-preview.py": "b6bea4e24732a9088a75d4ac0f14280b2bc8f0a01d4dfbcb1c3d3d631a65d243",
     "scripts/verify-3dprint-tolerances.py": "77d4cbe20431d8c51802bafec03454c2d9a8039df155d172c94c360ca311b69e",
+    "scripts/verify-video-bitstream.py": "91448423830cbec4cfe3fc15d00fa4785979f253fc2c6e50f4a85f944f3f2772",
     "specs/README.md": "6c032881cd113f59cdba8a37a871b73db0bf9b97327de32c17e64ec920e1cc84",
     "specs/examples/native-iteration-parameters.json": "e5f064002eaa91a35ed4ef92ae3a136d41d4b09418d15a8db037d50dacfbcd1b",
     "specs/examples/native-iteration-pipeline.json": "d15110027c9e274870d859628ae82c78d8902f2bf4afc6095b6678d450bac3f4",
@@ -23482,6 +23796,7 @@
     "tests/blender/rodin-optimized-geometry-test.py": "12e62782df11ecf116a51d867da51634226f9d5a391f5cdaa17c25b5d2859f74",
     "tests/blender/rodin-optimized-presentation-test.py": "e9a7f18bc6c3e02427c1ba0e987574f397deb94a4a43339cd1546f161c8e2d27",
     "tests/boilerplates/test_animation_contract.py": "e02f76c220b2be688b594c8dff9b68d19d175643d428926a2fa332fb5770b9e0",
+    "tests/boilerplates/test_enclosure_boilerplates.py": "22c0fcd70a872905f2c7d066950ba697cb4df4b335e56105ff91740e855231f9",
     "tests/boilerplates/test_evaluated_mesh_contract.py": "ec7b7f7a7a963f0d44ad97d8a39a1377288258362dada2b10a00fcab61602de4",
     "tests/boilerplates/test_geonodes_contract.py": "88d134b15c075ec411c30ac4c4a4886ca63db4bdf6edda25eff3ed9eeeb3fb30",
     "tests/boilerplates/test_parametric_contract.py": "7d983d0c3cd1363bdfa9b6ec9dd6a9599dbeb489638f4f6c0500b3cfd4a0e1c4",
@@ -23504,8 +23819,11 @@
     "tests/execution/fixtures/verify-lib/state-snapshot.py": "0ab23a48f952c2b27e9f29b9c028cd48ae8dec588add3f6f9bef7008cff09591",
     "tests/execution/test_agent_runtime.py": "6df3ff0c8a896666a2a60c00eba8042c983574d2a41c18dac3943e8d0cf7e12e",
     "tests/execution/test_headless_run.py": "6d88ed3a2a185d3c5e5f094792e5aeee6ef58c0dbbcdab3cc4ec5529debdf93a",
+    "tests/execution/test_sanitize_assets.py": "2e3b53c37de903b20b4768fadcd3f87c2faec32b6452fd9f826b8969a9156084",
+    "tests/execution/test_sequence_continuity.py": "61a5169bbf8bc0fe9ee440441bd9b4156608057358735ddb047bacf20b0d7026",
     "tests/execution/test_socket_client.py": "57f7ac3ca082f8f6d771c8e9596cbafcf43b7e6d13315ef3ecdefc22466dcd28",
     "tests/execution/test_verify_lib.py": "482b16a38979d105b18e87014baedbb61e3fce2710dcb9d6bdeb2b15e0211f55",
+    "tests/execution/test_video_bitstream.py": "aa43c02d0ff0fa4fb1996f99822d09cbc34e44a998435308bfe2be80db270967",
     "tests/hq-coverage/test_hq_coverage_gate.py": "40c859250cb78c53d306006d354e351081b6d67eab44f889c5183a035526c75e",
     "tests/knowledge/test_catalog.py": "1c42b47950274ff064e105a87ac64483f51406a20468b293cb2ed9fa87833824",
     "tests/knowledge/test_evolution.py": "d24eb42b63e365e3fa0b1ffa181ea9d8f2e3ccf20fbe8230edf0b93827e4479a",
@@ -23540,7 +23858,11 @@
     "Re-review annotation: knowledge/70-cad-precision-robotics/robotics-urdf-mechanisms.md",
     "Re-review annotation: scripts/boilerplates/bp_cad_step_roundtrip.py",
     "Re-review annotation: scripts/boilerplates/bp_organic_scaffold_splitter.py",
-    "Re-review annotation: scripts/production_gate/walls_overhang.py"
+    "Re-review annotation: scripts/production_gate/walls_overhang.py",
+    "Topic review stale: native-hard-surface/session-retrospective: docs/native-build-pipeline-lessons.md",
+    "Topic review stale: render-export-delivery/public-review-publication: docs/native-build-pipeline-lessons.md",
+    "Topic review stale: render-export-delivery/cinematic-animation-render: knowledge/30-lighting-render/video-animation-cinematics.md",
+    "Topic review stale: render-export-delivery/cinematic-animation-render: knowledge/30-lighting-render/render-engines.md"
   ],
   "workflows": {
     "mechanisms-transmissions": {

@@ -41,7 +41,7 @@ Build from reference images, silhouette, topology, and softly filleted bodies us
 When: When starting a serious product project or converting a completed session into reusable workflow and skills.
 
 - `docs/ck-001-session-retrospective.md` — read; SHA256 `9b3a2cfedbb2fe84af493543b55d03282513a870d36d9e74f37585d3e4950c4e`
-- `docs/native-build-pipeline-lessons.md` — read; SHA256 `f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb`
+- `docs/native-build-pipeline-lessons.md` — read; SHA256 `7cf7e1ded1cfc92bcdc348e77c845cdc1e81fcbad8ae8c5099192788f4a402ff`
 - `docs/product-workflow-template.md` — read; SHA256 `dcb71ea9d00a8f1773215bd4dd676ea37d0acfa7e30e665f58fd72ca622bb89b`
 - `knowledge/60-pipeline/native-agent-iteration.md` — read-verify; SHA256 `1404e3ddccf19689bc26431bb3cb3c2fc67d1cd89bbe4e94965b8f7b41025a78`
 - `CONTEXT.md` — read; SHA256 `52552875d8a7d144a28fd5224fd97ee16e3f6ac2e8679f5db90f0dac31cb7833`
@@ -653,7 +653,7 @@ FDM plastic printing, fit, inserts, assembly/disassembly, durability, and materi
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
 - `knowledge/60-pipeline/3d-printing.md` — read-verify; SHA256 `dbeb2fdbc055332cc1dd3ef2f1e71f98b4ac4a6d8ed9e805d34a64b328cc4d66`
-- `knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md` — read-verify; SHA256 `cbc3300f08b8a739940d0a37403ee725fca8adbc9f19b4c8872e45b9d62a624a`
+- `knowledge/70-cad-precision-robotics/polymer-3dprinting-cad.md` — read-verify; SHA256 `53bffe76505720b01f1e0430499cd3b17c74e3d89e0ca40c82515940b527e0e7`
   Caution: Static audit: bottom semicircle spans90deg; chamfer example creates cylinder; wall test is bbox. Verify actual geometry before reuse.
 - `knowledge/70-cad-precision-robotics/fasteners-seals-mechanics.md` — read-verify; SHA256 `e51fbd22ca45df695560d44198313bf099f5bf0d87bcbbfad6875e9ae404f8a6`
 
@@ -1634,7 +1634,7 @@ Caption-free video, batch rendering, encoding, and export/re-import.
 - `knowledge/00-foundations/blender-version-matrix.md` — read-verify; SHA256 `89fe7a4147177994095119876792f3191e480adbb5ab27be40b4e939b3c4b0a9`
 - `knowledge/00-foundations/bpy-scripting-core.md` — read-verify; SHA256 `f7fc5a771877aa357b21fd846f4bddc5b3daf882f5e4bb5e53c48e584f0e85ed`
 - `knowledge/00-foundations/agent-workflow-loop.md` — read-verify; SHA256 `10cf7a8035403c380d90c7a8cecfdd7d32b5bd5229c7bbabef228d865f60bbf3`
-- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8`
+- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `3e8a81e8a1d8fdacaf67351755cce901a2f8de1a5a91ceb4e54e0565dd48ab33`
 - `knowledge/30-lighting-render/compositing-output.md` — read-verify; SHA256 `0528c5e2114f45647c05c0bd9f3b97247a805bad43975e8b70f01b655b2c28b6`
 - `knowledge/60-pipeline/export-interchange.md` — read-verify; SHA256 `43f9a23b6b8b7c9441b72ca1b09c62b69c6f41effbeba0ba150b557d64166068`
 
@@ -1841,7 +1841,7 @@ When: When auto-framing the camera or exporting GLB/STL through an adapter.
 When: When a delivered package must be published as a public review page, or an existing published revision is superseded.
 
 - `docs/delivery-review-publication.md` — read; SHA256 `2544a0be212b1a5e1e4e906b99342b85e3a710e8659e58b1e5e5f5262c36de55`
-- `docs/native-build-pipeline-lessons.md` — read; SHA256 `f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb`
+- `docs/native-build-pipeline-lessons.md` — read; SHA256 `7cf7e1ded1cfc92bcdc348e77c845cdc1e81fcbad8ae8c5099192788f4a402ff`
 - `scripts/check-html-tag-balance.py` — inspect-adapt; SHA256 `3fb3f1033942e519dd4aa2c05c307d5a31503dcf783d806723056330467bfefd`
   Caution: Nesting only: it says nothing about layout, accessibility, tokens, copy or whether the page's claims are supported. It is the cheapest rung, not the gate.
 
@@ -1867,8 +1867,8 @@ When: When a delivered package must be published as a public review page, or an 
 
 When: When configuring cinematic cameras, optimizing multi-frame Cycles animation renders, or staging optical shots.
 
-- `knowledge/30-lighting-render/video-animation-cinematics.md` — read-verify; SHA256 `3919a180a8f3b7c701f1d76d1aa3ee8fbe567d5aa642ea935abe91bad2023bfd`
-- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `8595211d0143cfccfbab43c1656f2bf9b495b358a4531b46ef230f1d730ac2e8`
+- `knowledge/30-lighting-render/video-animation-cinematics.md` — read-verify; SHA256 `d6136f9cfe91d1313a0ec4d9588b9f0029eff81f1ceb1022468b1d7ec92f3d6d`
+- `knowledge/30-lighting-render/render-engines.md` — read-verify; SHA256 `3e8a81e8a1d8fdacaf67351755cce901a2f8de1a5a91ceb4e54e0565dd48ab33`
 
 **Steps**
 

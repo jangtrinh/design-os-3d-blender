@@ -32,6 +32,10 @@ builds/*/manufacturing/*.zip
 builds/*/manufacturing/qualification/C[0-9]*/
 builds/*/delivery/
 builds/*/*.zip
+# Intermediate render frames and draft archives stay local (published films live under docs/ or film/out/)
+builds/*/film/frames/
+builds/*/archive-*/
+builds/*/mechanical/
 # Manufacturer datasheets are cited by URL + SHA-256 in source-registry.json, not redistributed.
 builds/reference-keyboard/references/**/*.pdf
 # Superseded sample build, kept local.
