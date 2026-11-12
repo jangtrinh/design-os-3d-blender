@@ -6,7 +6,7 @@
     "imported-reference": 47,
     "knowledge": 61,
     "research-synthesis": 76,
-    "workflow": 56
+    "workflow": 57
   },
   "dependency_edges": 175,
   "foundations": [
@@ -4753,6 +4753,37 @@
       "sha256": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
       "tags": [],
       "title": "Check reference coverage before HQ rendering",
+      "use": "read"
+    },
+    {
+      "description": "",
+      "headings": [
+        {
+          "line": 1,
+          "text": "Asset provenance"
+        },
+        {
+          "line": 3,
+          "text": "Clay marks"
+        },
+        {
+          "line": 10,
+          "text": "Covers, flow diagrams, and social preview"
+        },
+        {
+          "line": 19,
+          "text": "Real builds (`builds/`)"
+        }
+      ],
+      "kind": "workflow",
+      "lines": 33,
+      "loads_with": [],
+      "name": null,
+      "path": "docs/images/readme/PROVENANCE.md",
+      "related": [],
+      "sha256": "32ac27f4bd68bbda7e03718dac58a6ecaf4c71323904681390af310f8b9bfdff",
+      "tags": [],
+      "title": "Asset provenance",
       "use": "read"
     },
     {
@@ -23045,7 +23076,7 @@
     }
   },
   "schema": 1,
-  "source_digest": "234a4fcd64a154305c3385c5209c2c84720b25ce11d504d71beffacf4291dc1d",
+  "source_digest": "51a4d302932c620a63594b932a5ee6fbf242f463a9554268ed502aaa400975f3",
   "source_hashes": {
     ".agents/skills/blender-agent-core/SKILL.md": "ea1c0e9716cae6f41e6337ba5ee57d54449968a9473b9cdcfbf8b4d7fab3e578",
     ".agents/skills/blender-agent-core/references/assembly-sequences.md": "9488f39087d6e1f3d5827ec03cc571b95979247ccac162a212df0b367c97aef7",
@@ -23202,6 +23233,7 @@
     "docs/galleries/watch-winder.md": "01bf7ef3611e1efd9e52d08c55a3ec077b6c4548d4a28c378f9682d2b3ea0451",
     "docs/galleries/wellhead.md": "527d45bf296542c7a8a43788d59d0b521d3669b9ecefe70673e70e5da88c917e",
     "docs/hq-coverage-gate.md": "101c09d2f2adb265c5e96169a36cb80c6130240520a2742a88c269b8f5bd9b18",
+    "docs/images/readme/PROVENANCE.md": "32ac27f4bd68bbda7e03718dac58a6ecaf4c71323904681390af310f8b9bfdff",
     "docs/journals/orc-component-reconstruction.md": "c1da71e4925251a63f3d57a72125237c90390a412d5b8bbf2697f64264bb0a93",
     "docs/native-build-pipeline-lessons.md": "f3bce9c77b38489998cbf42f9ee068b382a8ad09f782182a5ad61f784c38accb",
     "docs/orc-component-brief-template.md": "c5c56946b063550ad27115d8475040e6c7b730dee0ace4a04242cf15b4b32326",
